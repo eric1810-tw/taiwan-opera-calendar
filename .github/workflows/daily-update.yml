@@ -1,6 +1,8 @@
 name: Daily Opera Schedule Auto-Updater
 
 on:
+  push:
+    branches: [main]
   schedule:
     # 每天台灣時間早上 7 點（UTC 23:00）自動執行更新
     - cron: '0 23 * * *'
