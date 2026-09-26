@@ -585,7 +585,7 @@
     "description": "怪談喜劇《南都幽靈夜譚》年終壓軸移師台中！府城歷史奇案與人鬼深情在國家歌劇院大劇院感動呈獻。",
     "link": "https://www.npac-ntt.org/program/events/c-OuYU3Spov2r?tapeID=n06xzYR3-",
     "linkLabel": "臺中國家歌劇院官方節目頁",
-    "sourceUrl": "https://www.npac-ntt.org/program/events/c-OuYU3Spov2r?tapeID=n06xzYR3-",
+    "sourceUrl": "https://www.opentix.life/event/2081542988953264129",
     "tags": [
       "唐美雲"
     ]
@@ -869,32 +869,6 @@
       "秀琴歌劇團",
       "張秀琴",
       "莊金梅"
-    ]
-  },
-  {
-    "id": "moc-20261226-8e323b97c4",
-    "date": "2026-12-26",
-    "dateFormatted": "2026/12/26",
-    "daysAway": 90,
-    "time": "2026/12/26 14:30:00",
-    "troupe": "文化部開放資料候選",
-    "genre": "歌仔戲",
-    "artist": "待查官方公告",
-    "title": "2026 NTT遇見巨人—唐美雲歌仔戲團《南都幽靈夜譚》",
-    "category": "文化部 Open Data 候選（待人工核實）",
-    "badgeType": "plan",
-    "verifyStatus": "pending",
-    "verifyLabel": "⏳ 自動發現・待人工核實",
-    "location": "臺中國家歌劇院大劇院",
-    "region": "中部",
-    "status": "待人工核實",
-    "description": "由文化部公開資料關鍵字找到；發布前請人工核對劇種、主辦單位、日期與場地。",
-    "link": "https://www.opentix.life/program/2081542988953264129",
-    "linkLabel": "來源資訊（待核實）",
-    "sourceUrl": "https://www.opentix.life/program/2081542988953264129",
-    "tags": [
-      "自動發現候選",
-      "歌仔戲"
     ]
   }
 ]
