@@ -134,6 +134,20 @@ def remove_duplicate_candidates(events):
     ]
 
 
+def infer_region(location):
+    """Map an explicit Taiwan city/county name to the site's region filters."""
+    text = str(location or "")
+    regions = {
+        "北部": ("基隆", "臺北", "台北", "新北", "桃園", "新竹", "宜蘭"),
+        "中部": ("苗栗", "臺中", "台中", "彰化", "南投", "雲林"),
+        "南部": ("嘉義", "臺南", "台南", "高雄", "屏東", "澎湖"),
+        "東部": ("花蓮", "臺東", "台東"),
+    }
+    matches = [region for region, place_names in regions.items()
+               if any(place in text for place in place_names)]
+    return matches[0] if len(matches) == 1 else "未分類"
+
+
 def fetch_culture_events():
     """Fetch the Ministry of Culture's documented all-category JSON feed."""
     request = Request(
@@ -213,7 +227,12 @@ def culture_candidates(records, today=None):
                 "category": "文化部 Open Data 候選（待人工核實）", "badgeType": "plan",
                 "verifyStatus": "pending", "verifyLabel": "⏳ 自動發現・待人工核實",
                 "location": str(show.get("locationName") or show.get("location") or record.get("location") or "地點請查官方公告"),
-                "region": "全台", "status": "待人工核實", "description": "由文化部公開資料關鍵字找到；發布前請人工核對劇種、主辦單位、日期與場地。",
+                "region": infer_region(" ".join(
+                    str(value) for value in
+                    (show.get("locationName"), show.get("location"), record.get("location"))
+                    if value
+                )),
+                "status": "待人工核實", "description": "由文化部公開資料關鍵字找到；發布前請人工核對劇種、主辦單位、日期與場地。",
                 "link": str(raw_link),
                 "linkLabel": "來源資訊（待核實）", "sourceUrl": str(raw_link),
                 "tags": ["自動發現候選", genre],
@@ -234,12 +253,23 @@ def fetch_latest_updates():
             (event["date"][:10], event["title"])
             for event in schedule
         }
+        existing_program_ids = {
+            program_id for event in schedule
+            if event.get("verifyStatus") != "pending"
+            for program_id in (opentix_program_id(event),)
+            if program_id
+        }
         new_events = []
         for event in discovered:
+            program_id = opentix_program_id(event)
+            if program_id and program_id in existing_program_ids:
+                continue
             event_key = (event["date"][:10], event["title"])
             if event_key not in existing_event_keys:
                 new_events.append(event)
                 existing_event_keys.add(event_key)
+                if program_id:
+                    existing_program_ids.add(program_id)
             elif event["id"] in existing_by_id and existing_by_id[event["id"]].get("verifyStatus") == "pending":
                 # Refresh only machine-generated candidates. Human-verified
                 # entries and their editorial fields are never overwritten.

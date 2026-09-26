@@ -177,9 +177,9 @@
 
     <!-- 快速切換名家／類別：嚴格 3 行完整排列 (完全免滑動、全部即時可見) -->
     <div class="mb-4">
-      <div class="flex items-center justify-between text-[11px] font-bold text-stone-500 mb-2 px-1">
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 text-[11px] font-bold text-stone-500 mb-2 px-1">
         <span>快速篩選</span>
-        <span id="filteredStats" class="text-[#8E162A] font-bold">載入中...</span>
+        <span id="filteredStats" class="text-[10px] sm:text-[11px] text-[#8E162A] font-bold">載入中...</span>
       </div>
 
       <div class="grid grid-cols-4 gap-1.5 text-xs text-center" id="multiRowChips">
@@ -207,9 +207,11 @@
     <div class="flex items-center gap-2 mb-4 text-xs">
       <select id="regionSelect" class="flex-1 bg-white border border-stone-300 rounded-xl px-2.5 py-1.5 text-stone-700 focus:outline-none focus:border-[#8E162A]">
         <option value="all">📍 全台各地 (所有縣市)</option>
-        <option value="北部">北部 (台北/新北/新竹)</option>
-        <option value="中部">中部 (台中)</option>
-        <option value="南部">南部 (台南/高雄/屏東)</option>
+        <option value="北部">北部（基隆／台北／新北／桃園／新竹／宜蘭）</option>
+        <option value="中部">中部（苗栗／台中／彰化／南投／雲林）</option>
+        <option value="南部">南部（嘉義／台南／高雄／屏東／澎湖）</option>
+        <option value="東部">東部（花蓮／台東）</option>
+        <option value="未分類">地點待確認／跨區</option>
       </select>
 
       <select id="typeSelect" class="flex-1 bg-white border border-stone-300 rounded-xl px-2.5 py-1.5 text-stone-700 focus:outline-none focus:border-[#8E162A]">
@@ -434,7 +436,10 @@
         return true;
       });
 
-      filteredStats.textContent = `共 ${filtered.length} 場演出`;
+      const verifiedCount = filtered.filter(ev => ev.verifyStatus === 'verified').length;
+      const pendingCount = filtered.filter(ev => ev.verifyStatus === 'pending').length;
+      const communityCount = filtered.filter(ev => ev.verifyStatus === 'community').length;
+      filteredStats.textContent = `共 ${filtered.length} 筆節目卡片：已核實 ${verifiedCount}・待確認 ${pendingCount}・社群來源 ${communityCount}`;
 
       if (filtered.length === 0) {
         eventsContainer.innerHTML = '';
