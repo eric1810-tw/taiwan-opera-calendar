@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-TW" data-theme="crimson-classic">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-  <title>台灣傳統戲曲演出行事曆 | 未來90天追劇指南</title>
+  <title>台灣傳統戲曲演出行事曆 | 未來90天歌仔戲與布袋戲公演總覽</title>
   
-  <!-- Google Fonts: 典雅明體與清晰無襯線 -->
+  <!-- Google Fonts: 傳統楷書、古典宋明體與清晰無襯線 -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;900&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;700;900&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
   
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -19,24 +19,6 @@
           fontFamily: {
             serif: ['"Noto Serif TC"', 'serif'],
             sans: ['"Noto Sans TC"', 'sans-serif'],
-          },
-          colors: {
-            parchment: {
-              50: '#FAF8F3',
-              100: '#F5EFE4',
-              200: '#EBDDC5',
-              300: '#DEC49F'
-            },
-            crimson: {
-              DEFAULT: '#9B1B30',
-              dark: '#6B0F20',
-              light: '#BE2641'
-            },
-            theatreGold: {
-              DEFAULT: '#C59B27',
-              light: '#EAD186',
-              dark: '#936F11'
-            }
           }
         }
       }
@@ -44,335 +26,343 @@
   </script>
 
   <style>
-    /* 溫潤典雅宣紙背景與戲台美學 */
-    body {
-      background-color: #FAF8F3;
-      color: #27221F;
-      font-family: 'Noto Sans TC', sans-serif;
-      -webkit-tap-highlight-color: transparent;
-      overflow-x: hidden;
+    /* ==============================================================
+       主題 1：經典戲台絳紅金殿 (仿鍘美紅色系・大氣劇院天鵝絨帷幔)
+       ============================================================== */
+    html[data-theme="crimson-classic"] body {
+      background-color: #F8F4EC;
+      color: #261B1C;
     }
-    
-    .serif-title {
-      font-family: 'Noto Serif TC', serif;
+    html[data-theme="crimson-classic"] .theater-curtain-left {
+      background: linear-gradient(to right, #610B1B 0%, #8E162A 60%, rgba(142, 22, 42, 0.7) 90%, transparent 100%);
+    }
+    html[data-theme="crimson-classic"] .theater-curtain-right {
+      background: linear-gradient(to left, #610B1B 0%, #8E162A 60%, rgba(142, 22, 42, 0.7) 90%, transparent 100%);
+    }
+    html[data-theme="crimson-classic"] .theater-top-drape {
+      background: radial-gradient(circle at 50% 0%, #A81B34 0%, #7A1022 65%, #520915 100%);
+      box-shadow: 0 4px 15px rgba(82, 9, 21, 0.35);
+    }
+    html[data-theme="crimson-classic"] .opera-card {
+      background: #FFFFFF;
+      border: 1px solid rgba(197, 155, 39, 0.4);
+      box-shadow: 0 4px 16px -2px rgba(97, 11, 27, 0.06);
+    }
+    html[data-theme="crimson-classic"] .accent-btn {
+      background: linear-gradient(135deg, #9E1930 0%, #7E1023 100%);
+      color: #FFFFFF;
+    }
+    html[data-theme="crimson-classic"] .chip-active {
+      background: #8E162A !important;
+      color: #FFFFFF !important;
+      border-color: #8E162A !important;
+      box-shadow: 0 2px 6px rgba(142, 22, 42, 0.25);
+    }
+    html[data-theme="crimson-classic"] .theme-gold-line {
+      border-color: #C59B27;
     }
 
-    /* 頂端古典戲台帷幔裝飾 SVG 樣式 */
-    .theatre-drape {
-      background-image: radial-gradient(circle at 50% 0%, #B8223C 0%, #821225 70%, #520915 100%);
-      clip-path: ellipse(75% 100% at 50% 0%);
+    /* ==============================================================
+       主題 2：新古典宮廷絳紫金繡 (華貴深色夜宴模式)
+       ============================================================== */
+    html[data-theme="purple-regal"] body {
+      background-color: #16080E;
+      color: #F3EAE4;
     }
+    html[data-theme="purple-regal"] .theater-curtain-left {
+      background: linear-gradient(to right, #2E0514 0%, #4D0A23 70%, transparent 100%);
+    }
+    html[data-theme="purple-regal"] .theater-curtain-right {
+      background: linear-gradient(to left, #2E0514 0%, #4D0A23 70%, transparent 100%);
+    }
+    html[data-theme="purple-regal"] .theater-top-drape {
+      background: radial-gradient(circle at 50% 0%, #5C0C2A 0%, #360618 70%, #1A030C 100%);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    }
+    html[data-theme="purple-regal"] .opera-card {
+      background: #220C16;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+      color: #F5EBE1;
+    }
+    html[data-theme="purple-regal"] .accent-btn {
+      background: linear-gradient(135deg, #D4AF37 0%, #AA8C2C 100%);
+      color: #1E0711;
+    }
+    html[data-theme="purple-regal"] .chip-active {
+      background: #D4AF37 !important;
+      color: #1A040D !important;
+      border-color: #D4AF37 !important;
+    }
+    html[data-theme="purple-regal"] .text-stone-900 { color: #FAF2EB !important; }
+    html[data-theme="purple-regal"] .text-stone-700 { color: #E0D3C7 !important; }
+    html[data-theme="purple-regal"] .text-stone-600 { color: #C5B6A8 !important; }
+    html[data-theme="purple-regal"] .text-stone-500 { color: #A69688 !important; }
+    html[data-theme="purple-regal"] .bg-stone-50 { background-color: #2D101E !important; }
+    html[data-theme="purple-regal"] .bg-white { background-color: #220C16 !important; }
 
-    /* 隱藏滾動條但保持橫向滑動 */
-    .no-scrollbar::-webkit-scrollbar {
+    /* ==============================================================
+       主題 3：典雅文人宣紙墨金 (素雅文青雅集模式)
+       ============================================================== */
+    html[data-theme="literati-ink"] body {
+      background-color: #FAF7F2;
+      color: #1F1E1B;
+    }
+    html[data-theme="literati-ink"] .theater-curtain-left,
+    html[data-theme="literati-ink"] .theater-curtain-right {
       display: none;
     }
-    .no-scrollbar {
-      -ms-overflow-style: none;
-      scrollbar-width: none;
+    html[data-theme="literati-ink"] .theater-top-drape {
+      background: #2B2625;
+      box-shadow: none;
+    }
+    html[data-theme="literati-ink"] .opera-card {
+      background: #FFFFFF;
+      border: 1px solid #E5DFD5;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+    html[data-theme="literati-ink"] .accent-btn {
+      background: #2B2625;
+      color: #FAF7F2;
+    }
+    html[data-theme="literati-ink"] .chip-active {
+      background: #2B2625 !important;
+      color: #FAF7F2 !important;
+      border-color: #2B2625 !important;
     }
 
-    /* 浮雕與古典金邊飾線 */
-    .classic-border {
-      border: 1px solid rgba(197, 155, 39, 0.35);
-      box-shadow: 0 4px 20px -2px rgba(107, 15, 32, 0.05);
-    }
-
-    .classic-gold-text {
-      background: linear-gradient(135deg, #821225 0%, #C59B27 60%, #8A152A 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    /* 底部工筆牡丹吉祥波浪裝飾 (純CSS/SVG無侵權疑慮) */
-    .traditional-corner-bg {
-      background-image: radial-gradient(#C59B27 0.75px, transparent 0.75px);
-      background-size: 16px 16px;
-      opacity: 0.15;
-    }
+    /* 通用字體 */
+    .serif-title { font-family: 'Noto Serif TC', serif; }
   </style>
 </head>
-<body class="min-h-screen flex flex-col justify-between relative selection:bg-crimson selection:text-white">
+<body class="min-h-screen flex flex-col justify-between relative selection:bg-[#8E162A] selection:text-white transition-colors duration-300">
 
-  <!-- 傳統背景暗紋層 (防單調且不干擾閱讀) -->
-  <div class="fixed inset-0 pointer-events-none traditional-corner-bg z-0"></div>
+  <!-- 仿鍘美劇場：兩側大氣紅色天鵝絨帷幔 (原創純CSS漸層繪製，無版權爭議) -->
+  <div class="fixed top-0 bottom-0 left-0 w-3 sm:w-8 theater-curtain-left pointer-events-none z-30 transition-all duration-300"></div>
+  <div class="fixed top-0 bottom-0 right-0 w-3 sm:w-8 theater-curtain-right pointer-events-none z-30 transition-all duration-300"></div>
 
-  <!-- 頂部古典劇院帷幔與宮廷徽紋裝飾 (原創純向量無版權問題) -->
-  <div class="relative w-full overflow-hidden z-10">
-    <div class="w-full h-8 sm:h-12 theatre-drape shadow-md flex items-center justify-center">
-      <!-- 傳統如意流蘇意象裝飾 -->
-      <div class="flex items-center gap-4 text-theatreGold-light text-xs opacity-90">
-        <svg class="w-5 h-5 text-theatreGold-light" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 2C8 2 6 5 6 7c0 2.5 2 4.5 4 5v6l2 2 2-2v-6c2-.5 4-2.5 4-5 0-2-2-5-6-5zm0 2c3 0 4 2 4 3 0 1.5-1.5 3-4 3s-4-1.5-4-3c0-1 1-3 4-3z"/>
-        </svg>
+  <!-- 頂部戲台雙弧金色下擺帷幔裝飾 -->
+  <header class="relative w-full z-20">
+    <div class="theater-top-drape w-full h-8 sm:h-11 flex items-center justify-center transition-all duration-300">
+      <div class="flex items-center gap-2 text-[#EED896] text-xs font-serif tracking-widest opacity-95">
+        <span>❖</span>
+        <span class="text-[11px] font-bold">全臺傳統戲曲公演行事曆</span>
+        <span>❖</span>
       </div>
     </div>
-    <!-- 帷幔下擺金線 -->
-    <div class="w-full h-1 bg-gradient-to-r from-theatreGold-dark via-theatreGold-light to-theatreGold-dark shadow-sm"></div>
-  </div>
+    <!-- 金色下擺飾線 -->
+    <div class="w-full h-1 bg-gradient-to-r from-[#936F11] via-[#EED896] to-[#936F11] shadow-sm"></div>
+  </header>
 
-  <!-- 主內容容器 (Mobile-First 最佳視寬) -->
-  <main class="w-full max-w-lg mx-auto px-4 pt-4 pb-20 relative z-10 flex-grow">
+  <!-- 主內容容器 (Mobile-First 專注手機版寬度) -->
+  <main class="w-full max-w-md mx-auto px-4 pt-3 pb-16 relative z-10 flex-grow">
 
-    <!-- 標題與藝文精神 Header -->
-    <header class="text-center mb-5">
-      <!-- 鍘美回響徽章 -->
-      <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-crimson/10 border border-crimson/30 text-crimson text-[11px] font-bold tracking-wider mb-2">
-        <span>🏮 鍘美藝術節後續・戲曲文藝復興</span>
-      </div>
-      
-      <h1 class="text-2xl sm:text-3xl font-black serif-title tracking-wide text-stone-900 mb-1.5">
-        台灣傳統戲曲・未來90天行事曆
+    <!-- 標題與簡介 (清爽高雅，完全移除蹭熱度標籤) -->
+    <div class="text-center mb-4">
+      <h1 class="text-xl sm:text-2xl font-black serif-title tracking-wide text-stone-900 mb-1">
+        台灣傳統戲曲演出行事曆
       </h1>
-      
-      <p class="text-xs text-stone-600 leading-relaxed px-2">
-        收錄 <span class="text-crimson font-bold">呂雪鳳、吳奕萱、孫凱琳、郭春美、秀琴、唐美雲、天字團、羅裕誴、古都木偶</span> 等鍘美藝術節名家卡司，以及全台精選歌仔戲與布袋戲公演！
+      <p class="text-xs text-stone-600">
+        未來 90 天全台歌仔戲與布袋戲公演總覽（2026/10 ～ 2026/12）
       </p>
+    </div>
 
-      <!-- 審核機制與即時狀態列 -->
-      <div class="mt-3 flex items-center justify-between bg-white/80 backdrop-blur border border-stone-200/80 rounded-xl px-3 py-2 text-[11px] shadow-sm">
-        <div class="flex items-center gap-1.5 text-emerald-700 font-medium">
-          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-          <span>已啟動官方雙重核實</span>
-        </div>
-        <div class="flex items-center gap-2">
-          <span class="text-stone-400">|</span>
-          <button onclick="openVerifyModal()" class="text-crimson hover:underline font-semibold flex items-center gap-1">
-            <span>🛡️ 審核機制</span>
-          </button>
-        </div>
-      </div>
-    </header>
-
-    <!-- 關鍵字搜尋欄 (好輸入、大拇指友善) -->
+    <!-- 快速切換名家／類別：嚴格 3 行完整排列 (完全免滑動、全部即時可見) -->
     <div class="mb-4">
-      <div class="relative">
-        <input 
-          id="mobileSearch"
-          type="text" 
-          placeholder="🔍 搜尋演員（如呂雪鳳、吳奕萱）、劇團或城市..." 
-          class="w-full bg-white border border-stone-300 rounded-2xl py-2.5 pl-10 pr-9 text-xs sm:text-sm text-stone-800 placeholder-stone-400 focus:outline-none focus:border-crimson focus:ring-2 focus:ring-crimson/20 shadow-sm transition"
-        />
-        <svg class="w-4 h-4 text-stone-400 absolute left-3.5 top-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-        </svg>
-        <button id="clearSearchBtn" class="hidden absolute right-3 top-2.5 text-stone-400 hover:text-stone-600">
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path></svg>
-        </button>
+      <div class="flex items-center justify-between text-[11px] font-bold text-stone-500 mb-2 px-1">
+        <span>快速篩選</span>
+        <span id="filteredStats" class="text-[#8E162A] font-bold">載入中...</span>
+      </div>
+
+      <div class="grid grid-cols-4 gap-1.5 text-xs text-center" id="multiRowChips">
+        <!-- 第 1 行：焦點卡司 -->
+        <button data-filter="all" class="chip chip-active py-2 rounded-xl text-[11px] font-bold border transition">全部</button>
+        <button data-filter="吳奕萱" class="chip py-2 rounded-xl text-[11px] font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#8E162A] transition">🤣 吳奕萱</button>
+        <button data-filter="呂雪鳳" class="chip py-2 rounded-xl text-[11px] font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#8E162A] transition">👑 呂雪鳳</button>
+        <button data-filter="孫凱琳" class="chip py-2 rounded-xl text-[11px] font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#8E162A] transition">✨ 孫凱琳</button>
+
+        <!-- 第 2 行：代表劇團 -->
+        <button data-filter="春美歌劇團" class="chip py-2 rounded-xl text-[11px] font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#8E162A] transition">🌸 春美</button>
+        <button data-filter="明華園天字團" class="chip py-2 rounded-xl text-[11px] font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#8E162A] transition">⭐ 天字團</button>
+        <button data-filter="秀琴戲劇團" class="chip py-2 rounded-xl text-[11px] font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#8E162A] transition">🏮 秀琴</button>
+        <button data-filter="羅裕誴" class="chip py-2 rounded-xl text-[11px] font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#8E162A] transition">⚔️ 羅裕誴</button>
+
+        <!-- 第 3 行：名家與其他類別 (含亦宛然/其他歌仔戲/其他布袋戲) -->
+        <button data-filter="古都木偶" class="chip py-2 rounded-xl text-[11px] font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#8E162A] transition">🎭 古都木偶</button>
+        <button data-filter="唐美雲" class="chip py-2 rounded-xl text-[11px] font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#8E162A] transition">👑 唐美雲</button>
+        <button data-filter="其他歌仔戲" class="chip py-2 rounded-xl text-[11px] font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#8E162A] transition">🎪 其他歌仔</button>
+        <button data-filter="其他布袋戲" class="chip py-2 rounded-xl text-[11px] font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#8E162A] transition">🪵 其他布袋</button>
       </div>
     </div>
 
-    <!-- 頂端橫向滑動標籤條 (Horizontal Scrollable Chips - 手機極致滑動體驗) -->
-    <div class="mb-4">
-      <div class="flex items-center justify-between text-[11px] font-bold text-stone-500 mb-1.5 px-0.5">
-        <span>⚡ 快速切換名家／類別</span>
-        <span id="filteredStats" class="text-crimson font-semibold">載入中...</span>
-      </div>
-
-      <!-- 滑動膠囊標籤 -->
-      <div class="flex gap-2 overflow-x-auto no-scrollbar py-1 -mx-4 px-4 scroll-smooth" id="chipContainer">
-        <button data-filter="all" class="chip active shrink-0 px-3.5 py-1.5 rounded-full text-xs font-bold bg-crimson text-white shadow-sm border border-crimson">全部場次</button>
-        <button data-filter="吳奕萱" class="chip shrink-0 px-3.5 py-1.5 rounded-full text-xs font-bold bg-white text-stone-700 border border-stone-300 hover:border-crimson">🤣 吳奕萱 (周阿司)</button>
-        <button data-filter="呂雪鳳" class="chip shrink-0 px-3.5 py-1.5 rounded-full text-xs font-bold bg-white text-stone-700 border border-stone-300 hover:border-crimson">👑 呂雪鳳</button>
-        <button data-filter="孫凱琳" class="chip shrink-0 px-3.5 py-1.5 rounded-full text-xs font-bold bg-white text-stone-700 border border-stone-300 hover:border-crimson">✨ 孫凱琳</button>
-        <button data-filter="郭春美" class="chip shrink-0 px-3.5 py-1.5 rounded-full text-xs font-bold bg-white text-stone-700 border border-stone-300 hover:border-crimson">🌸 春美歌劇團</button>
-        <button data-filter="明華園天字團" class="chip shrink-0 px-3.5 py-1.5 rounded-full text-xs font-bold bg-white text-stone-700 border border-stone-300 hover:border-crimson">⭐ 明華園天字團</button>
-        <button data-filter="秀琴戲劇團" class="chip shrink-0 px-3.5 py-1.5 rounded-full text-xs font-bold bg-white text-stone-700 border border-stone-300 hover:border-crimson">🏮 秀琴歌劇團</button>
-        <button data-filter="羅裕誴" class="chip shrink-0 px-3.5 py-1.5 rounded-full text-xs font-bold bg-white text-stone-700 border border-stone-300 hover:border-crimson">⚔️ 羅裕誴</button>
-        <button data-filter="古都木偶" class="chip shrink-0 px-3.5 py-1.5 rounded-full text-xs font-bold bg-white text-stone-700 border border-stone-300 hover:border-crimson">🎭 古都木偶</button>
-        <button data-filter="唐美雲" class="chip shrink-0 px-3.5 py-1.5 rounded-full text-xs font-bold bg-white text-stone-700 border border-stone-300 hover:border-crimson">👑 唐美雲歌仔戲</button>
-        <button data-filter="其他歌仔戲" class="chip shrink-0 px-3.5 py-1.5 rounded-full text-xs font-bold bg-white text-stone-700 border border-stone-300 hover:border-crimson">🎪 其他歌仔戲</button>
-        <button data-filter="其他布袋戲" class="chip shrink-0 px-3.5 py-1.5 rounded-full text-xs font-bold bg-white text-stone-700 border border-stone-300 hover:border-crimson">🪵 其他布袋戲</button>
-      </div>
-    </div>
-
-    <!-- 地區與形式二級選單 -->
+    <!-- 地區與形式二級下拉 (簡約緊湊) -->
     <div class="flex items-center gap-2 mb-4 text-xs">
-      <select id="regionSelect" class="flex-1 bg-white border border-stone-300 rounded-xl px-2.5 py-1.5 text-stone-700 focus:outline-none focus:border-crimson">
-        <option value="all">📍 全台灣 (全區)</option>
+      <select id="regionSelect" class="flex-1 bg-white border border-stone-300 rounded-xl px-2.5 py-1.5 text-stone-700 focus:outline-none focus:border-[#8E162A]">
+        <option value="all">📍 全台各地 (所有縣市)</option>
         <option value="北部">北部 (台北/新北/新竹)</option>
-        <option value="中部">中部 (台中/南投)</option>
+        <option value="中部">中部 (台中)</option>
         <option value="南部">南部 (台南/高雄/屏東)</option>
       </select>
 
-      <select id="typeSelect" class="flex-1 bg-white border border-stone-300 rounded-xl px-2.5 py-1.5 text-stone-700 focus:outline-none focus:border-crimson">
-        <option value="all">🎭 所有形式</option>
-        <option value="free">戶外庄頭/免費演出</option>
-        <option value="ticket">售票劇院旗艦公演</option>
-        <option value="temple">廟會外台民戲</option>
+      <select id="typeSelect" class="flex-1 bg-white border border-stone-300 rounded-xl px-2.5 py-1.5 text-stone-700 focus:outline-none focus:border-[#8E162A]">
+        <option value="all">🎭 所有演出類型</option>
+        <option value="ticket">售票劇院旗艦大戲</option>
+        <option value="free">庄頭/戶外免費演出</option>
+        <option value="temple">廟口外台民戲</option>
       </select>
     </div>
 
-    <!-- 演出卡片串流 (Cards Stream) -->
-    <div id="eventsContainer" class="space-y-3.5">
-      <!-- 動態載入 -->
+    <!-- 演出卡片串流容器 (Cards List) -->
+    <div id="eventsContainer" class="space-y-3">
+      <!-- JS 動態加載 -->
       <div class="text-center py-12 text-stone-400 text-xs">
-        <svg class="w-6 h-6 animate-spin mx-auto text-crimson mb-2" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path></svg>
-        <span>正在載入最新 90 天演出行事曆...</span>
+        <svg class="w-6 h-6 animate-spin mx-auto text-[#8E162A] mb-2" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path></svg>
+        <span>正在載入已核實之 90 天演出資料...</span>
       </div>
     </div>
 
     <!-- 空白提示 -->
     <div id="emptyView" class="hidden text-center py-12 bg-white/70 rounded-2xl border border-stone-200 p-6">
-      <div class="text-4xl mb-2">🏮</div>
-      <h3 class="text-sm font-bold text-stone-800">查無相符的戲曲演出</h3>
-      <p class="text-xs text-stone-500 mt-1">請嘗試清除篩選標籤或搜尋其他關鍵字</p>
-      <button onclick="resetAllFilters()" class="mt-3 px-4 py-1.5 bg-crimson text-white rounded-lg text-xs font-bold shadow-sm">重設所有條件</button>
+      <div class="text-3xl mb-2">🎭</div>
+      <h3 class="text-sm font-bold text-stone-800">查無相符的演出</h3>
+      <p class="text-xs text-stone-500 mt-1">此類別在未來 90 天暫無排定場次</p>
+      <button onclick="resetAllFilters()" class="mt-3 px-4 py-1.5 accent-btn rounded-xl text-xs font-bold shadow-sm">顯示全部場次</button>
     </div>
 
-    <!-- 鍘美藝術節回響焦點卡片 -->
-    <section class="mt-8 bg-gradient-to-br from-white via-parchment-50 to-white border border-theatreGold/40 rounded-2xl p-4 shadow-sm relative overflow-hidden">
-      <div class="flex items-center gap-2 mb-2">
-        <span class="text-base">✨</span>
-        <h3 class="text-sm font-black serif-title text-stone-900">鍘美藝術節回顧與戲曲新狂潮</h3>
-      </div>
-      <p class="text-[11px] text-stone-600 leading-relaxed mb-3">
-        2026年9月台南文藝負心運動「鍘美藝術節」掀起現象級狂潮！呂雪鳳即興金句連發、吳奕萱「周阿司」圈粉無數、孫凱琳與羅裕誴新世代團長挑大樑。本站持續為您追蹤全台各大劇團最新巡演！
-      </p>
-      <div class="flex items-center justify-between text-[11px] pt-2 border-t border-stone-200">
-        <span class="text-stone-500">演出有異動或漏列？</span>
-        <button onclick="openReportModal('一般回報')" class="text-crimson font-bold hover:underline">
-          ⚠️ 提交回報或推薦演出
+    <!-- 底部審核機制說明 (原本在上方，依指示下移至此避免佔用寶貴頂端空間) -->
+    <section class="mt-8 bg-white/80 border border-stone-200 rounded-2xl p-4 shadow-sm text-xs">
+      <div class="flex items-center justify-between pb-2 mb-2 border-b border-stone-100">
+        <div class="flex items-center gap-1.5 text-emerald-700 font-bold">
+          <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+          <span>資料核實機制</span>
+        </div>
+        <button onclick="openReportModal('一般演出提報')" class="text-[#8E162A] font-bold hover:underline">
+          ⚠️ 回報或推薦場次
         </button>
       </div>
+      <p class="text-[11px] text-stone-600 leading-relaxed">
+        本行事曆由系統定時交叉比對 OPENTIX、KKTIX、文化部 Open Data 及劇團官方公告。
+        標有 <span class="text-emerald-700 font-bold">🛡️ 官方認證</span> 之場次皆已確認售票與檔期無誤。
+      </p>
     </section>
+
+    <!-- 提供 3 個版面風格切換器 (供使用者即時預覽挑選) -->
+    <div class="mt-6 p-3 bg-white/90 border border-stone-300 rounded-2xl text-center shadow-sm">
+      <span class="text-[11px] font-bold text-stone-600 block mb-2">🎨 選擇您喜愛的版面設計風格：</span>
+      <div class="grid grid-cols-3 gap-1.5 text-[11px]">
+        <button onclick="changeTheme('crimson-classic')" id="btn-theme-1" class="py-1.5 px-2 rounded-xl font-bold bg-[#8E162A] text-white shadow-sm border border-[#8E162A]">
+          1. 經典絳紅
+        </button>
+        <button onclick="changeTheme('purple-regal')" id="btn-theme-2" class="py-1.5 px-2 rounded-xl font-bold bg-stone-100 text-stone-700 border border-stone-300">
+          2. 宮廷絳紫
+        </button>
+        <button onclick="changeTheme('literati-ink')" id="btn-theme-3" class="py-1.5 px-2 rounded-xl font-bold bg-stone-100 text-stone-700 border border-stone-300">
+          3. 宣紙墨金
+        </button>
+      </div>
+    </div>
 
   </main>
 
-  <!-- 頁尾 (乾淨簡潔，絕不重複) -->
-  <footer class="w-full bg-[#1A1416] text-stone-400 py-6 px-4 text-center text-[11px] border-t border-theatreGold/30 relative z-10">
-    <div class="max-w-lg mx-auto space-y-2">
-      <div class="flex items-center justify-center gap-2 text-theatreGold-light font-bold">
+  <!-- 簡約底端 Footer -->
+  <footer class="w-full bg-[#181214] text-stone-400 py-5 px-4 text-center text-[11px] border-t border-[#936F11]/40 relative z-20">
+    <div class="max-w-md mx-auto space-y-1.5">
+      <div class="text-[#EED896] font-bold">
         <span>© 2026 台灣傳統戲曲演出行事曆</span>
       </div>
-      <p class="text-stone-500">本行事曆由 GitHub Actions 每日清晨自動更新・資料以官方售票與劇團最新公告為準</p>
-      <div class="flex justify-center gap-4 text-stone-400 pt-1">
-        <a href="https://www.opentix.life/" target="_blank" class="hover:text-theatreGold-light transition">OPENTIX 售票網</a>
+      <p class="text-stone-500">每日清晨自動更新・資料以各大售票系統及劇團最新公告為準</p>
+      <div class="flex justify-center gap-3 text-stone-400 pt-1 text-[10px]">
+        <a href="https://www.opentix.life/" target="_blank" class="hover:text-[#EED896] transition">OPENTIX 售票</a>
         <span>•</span>
-        <a href="https://github.com/eric1810-tw/taiwan-opera-calendar" target="_blank" class="hover:text-theatreGold-light transition">GitHub 專案原始碼</a>
+        <a href="https://kktix.com" target="_blank" class="hover:text-[#EED896] transition">KKTIX 售票</a>
+        <span>•</span>
+        <a href="https://github.com/eric1810-tw/taiwan-opera-calendar" target="_blank" class="hover:text-[#EED896] transition">專案原始碼</a>
       </div>
     </div>
   </footer>
 
-  <!-- 審核機制說明 Modal -->
-  <div id="verifyModal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
-    <div class="bg-white rounded-2xl max-w-sm w-full p-5 shadow-2xl border border-stone-200 animate-in fade-in zoom-in-95 duration-200">
-      <div class="flex items-center justify-between pb-3 border-b border-stone-200 mb-3">
-        <div class="flex items-center gap-2">
-          <span class="text-lg">🛡️</span>
-          <h3 class="font-bold text-sm text-stone-900">雙重資料審核機制說明</h3>
-        </div>
-        <button onclick="closeVerifyModal()" class="text-stone-400 hover:text-stone-700 text-lg">&times;</button>
-      </div>
-      <div class="space-y-2.5 text-xs text-stone-600 leading-relaxed">
-        <div class="bg-emerald-50 border border-emerald-200 p-2.5 rounded-xl">
-          <span class="font-bold text-emerald-800 block mb-0.5">🛡️ 官方認證標章</span>
-          <span>來自 OPENTIX、文化部或縣市文化局已正式公布並核實之售票與免費公演，時間地點皆已鎖定。</span>
-        </div>
-        <div class="bg-blue-50 border border-blue-200 p-2.5 rounded-xl">
-          <span class="font-bold text-blue-800 block mb-0.5">📣 官方粉專動態發布</span>
-          <span>來自各劇團官方 Facebook 粉專或痞客邦戲路，由劇團官方小編公告，通常為廟會外台或巡演。</span>
-        </div>
-        <div class="bg-amber-50 border border-amber-200 p-2.5 rounded-xl">
-          <span class="font-bold text-amber-800 block mb-0.5">⏳ 籌劃洽詢中標章</span>
-          <span>劇團正與各地文化局或場地洽辦中，確切時間與地點待最終公告，供戲迷提早掌握動向。</span>
-        </div>
-      </div>
-      <button onclick="closeVerifyModal()" class="w-full mt-4 py-2 bg-stone-900 text-white font-bold rounded-xl text-xs hover:bg-stone-800">
-        我知道了
-      </button>
-    </div>
-  </div>
-
   <!-- 回報錯誤 Modal -->
   <div id="reportModal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
-    <div class="bg-white rounded-2xl max-w-sm w-full p-5 shadow-2xl border border-stone-200 animate-in fade-in zoom-in-95 duration-200">
+    <div class="bg-white rounded-2xl max-w-sm w-full p-5 shadow-2xl border border-stone-200">
       <div class="flex items-center justify-between pb-2 border-b border-stone-200 mb-3">
-        <div class="flex items-center gap-1.5">
-          <span class="text-lg">⚠️</span>
-          <h3 class="font-bold text-sm text-stone-900">回報演出資訊或異動</h3>
-        </div>
+        <h3 class="font-bold text-sm text-stone-900 flex items-center gap-1">⚠️ 演出資訊回報 / 新增推薦</h3>
         <button onclick="closeReportModal()" class="text-stone-400 hover:text-stone-700 text-lg">&times;</button>
       </div>
       
-      <p id="reportTargetTitle" class="text-xs text-crimson font-bold mb-3 bg-red-50 p-2 rounded-lg"></p>
+      <p id="reportTargetTitle" class="text-xs text-[#8E162A] font-bold mb-2.5 bg-red-50 p-2 rounded-lg"></p>
 
-      <form id="reportForm" onsubmit="submitReport(event)" class="space-y-3 text-xs">
+      <form onsubmit="submitReport(event)" class="space-y-2.5 text-xs">
         <div>
-          <label class="block text-stone-600 font-semibold mb-1">異動或錯誤類型：</label>
+          <label class="block text-stone-600 font-semibold mb-1">回報類型：</label>
           <select id="reportReason" class="w-full border border-stone-300 rounded-lg p-2 text-stone-800 bg-white">
-            <option value="時間或地點有誤">時間或地點有誤</option>
-            <option value="演出已取消或延期">演出已取消或延期</option>
-            <option value="主演演員名單有誤">主演演員名單有誤</option>
-            <option value="推薦新演出場次">推薦新增未收錄的演出</option>
+            <option value="時間或地點異動">時間或地點異動</option>
+            <option value="場次取消或延期">場次取消或延期</option>
+            <option value="推薦新增未列出演出（如亦宛然等）">推薦新增未列出之演出</option>
             <option value="其他建議">其他回報</option>
           </select>
         </div>
         <div>
-          <label class="block text-stone-600 font-semibold mb-1">詳細說明 / 正確官方來源：</label>
-          <textarea id="reportDetail" rows="3" placeholder="請填寫正確資訊或附上官方粉專貼文連結..." class="w-full border border-stone-300 rounded-lg p-2 text-stone-800 focus:outline-none focus:border-crimson" required></textarea>
+          <label class="block text-stone-600 font-semibold mb-1">說明與官方連結：</label>
+          <textarea id="reportDetail" rows="3" placeholder="請填寫正確資訊或附上售票/粉專網址..." class="w-full border border-stone-300 rounded-lg p-2 text-stone-800 focus:outline-none focus:border-[#8E162A]" required></textarea>
         </div>
         <div class="flex gap-2 pt-1">
           <button type="button" onclick="closeReportModal()" class="flex-1 py-2 bg-stone-100 text-stone-700 font-bold rounded-xl text-xs">取消</button>
-          <button type="submit" class="flex-1 py-2 bg-crimson text-white font-bold rounded-xl text-xs hover:bg-crimson-light">確認送出</button>
+          <button type="submit" class="flex-1 py-2 accent-btn font-bold rounded-xl text-xs">送出回報</button>
         </div>
       </form>
     </div>
   </div>
 
-  <!-- 純前端邏輯：徹底解耦，從 data/schedule.json 動態讀取 -->
+  <!-- 純前端 JavaScript 邏輯 -->
   <script>
     let eventsData = [];
     let currentFilter = 'all';
     let currentRegion = 'all';
     let currentType = 'all';
-    let currentSearch = '';
 
     const eventsContainer = document.getElementById('eventsContainer');
     const emptyView = document.getElementById('emptyView');
     const filteredStats = document.getElementById('filteredStats');
-    const mobileSearch = document.getElementById('mobileSearch');
-    const clearSearchBtn = document.getElementById('clearSearchBtn');
     const regionSelect = document.getElementById('regionSelect');
     const typeSelect = document.getElementById('typeSelect');
     const chips = document.querySelectorAll('.chip');
 
-    // 取得驗證標章樣式
-    function getVerifyBadge(item) {
-      if (item.verifyStatus === 'verified') {
-        return `<span onclick="openVerifyModal()" class="cursor-pointer inline-flex items-center gap-1 text-[10px] font-semibold bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded-full border border-emerald-300/80">
-          <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>${item.verifyLabel}
-        </span>`;
-      } else if (item.verifyStatus === 'community') {
-        return `<span onclick="openVerifyModal()" class="cursor-pointer inline-flex items-center gap-1 text-[10px] font-semibold bg-blue-50 text-blue-700 px-2 py-0.5 rounded-full border border-blue-300/80">
-          <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>${item.verifyLabel}
-        </span>`;
-      } else {
-        return `<span onclick="openVerifyModal()" class="cursor-pointer inline-flex items-center gap-1 text-[10px] font-semibold bg-amber-50 text-amber-700 px-2 py-0.5 rounded-full border border-amber-300/80">
-          <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>${item.verifyLabel}
-        </span>`;
+    // 切換主題風格 (提供 3 種設計)
+    function changeTheme(themeName) {
+      document.documentElement.setAttribute('data-theme', themeName);
+      
+      // 更新按鈕樣式
+      const b1 = document.getElementById('btn-theme-1');
+      const b2 = document.getElementById('btn-theme-2');
+      const b3 = document.getElementById('btn-theme-3');
+
+      [b1, b2, b3].forEach(b => {
+        b.className = "py-1.5 px-2 rounded-xl font-bold bg-stone-100 text-stone-700 border border-stone-300";
+      });
+
+      if (themeName === 'crimson-classic') {
+        b1.className = "py-1.5 px-2 rounded-xl font-bold bg-[#8E162A] text-white shadow-sm border border-[#8E162A]";
+      } else if (themeName === 'purple-regal') {
+        b2.className = "py-1.5 px-2 rounded-xl font-bold bg-[#D4AF37] text-stone-950 shadow-sm border border-[#D4AF37]";
+      } else if (themeName === 'literati-ink') {
+        b3.className = "py-1.5 px-2 rounded-xl font-bold bg-[#2B2625] text-white shadow-sm border border-[#2B2625]";
       }
     }
 
-    // 倒數天數計算
-    function getDaysBadge(dateStr) {
-      const today = new Date('2026-09-26');
-      const target = new Date(dateStr.substring(0, 10));
-      const diffTime = target - today;
-      const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-      
-      if (diffDays <= 0) {
-        return `<span class="text-[10px] font-bold text-stone-500 bg-stone-100 px-2 py-0.5 rounded">即將開演</span>`;
-      } else if (diffDays <= 14) {
-        return `<span class="text-[10px] font-bold text-crimson bg-crimson/10 px-2 py-0.5 rounded border border-crimson/20">🔥 還有 ${diffDays} 天</span>`;
+    // 倒數天數
+    function getDaysBadge(daysAway) {
+      if (daysAway <= 7) {
+        return `<span class="text-[10px] font-bold text-[#8E162A] bg-red-100/80 px-2 py-0.5 rounded border border-red-200">🔥 還有 ${daysAway} 天</span>`;
+      } else if (daysAway <= 21) {
+        return `<span class="text-[10px] font-bold text-amber-800 bg-amber-100/70 px-2 py-0.5 rounded border border-amber-200">倒數 ${daysAway} 天</span>`;
       } else {
-        return `<span class="text-[10px] font-bold text-stone-600 bg-stone-100 px-2 py-0.5 rounded">倒數 ${diffDays} 天</span>`;
+        return `<span class="text-[10px] font-bold text-stone-500 bg-stone-100 px-2 py-0.5 rounded">${daysAway} 天後</span>`;
       }
     }
 
     function renderEvents() {
       const filtered = eventsData.filter(ev => {
-        // Chip filter
+        // 多行標籤快篩
         if (currentFilter !== 'all') {
           const matchTag = ev.tags && ev.tags.some(t => t.includes(currentFilter));
           const matchTroupe = ev.troupe && ev.troupe.includes(currentFilter);
@@ -381,26 +371,14 @@
           if (!matchTag && !matchTroupe && !matchArtist && !matchGenre) return false;
         }
 
-        // Region filter
+        // 地區
         if (currentRegion !== 'all') {
           if (!ev.region || !ev.region.includes(currentRegion)) return false;
         }
 
-        // Type filter
+        // 形式
         if (currentType !== 'all') {
           if (ev.badgeType !== currentType) return false;
-        }
-
-        // Search text
-        if (currentSearch.trim() !== '') {
-          const q = currentSearch.trim().toLowerCase();
-          const matchAny = 
-            (ev.title && ev.title.toLowerCase().includes(q)) ||
-            (ev.troupe && ev.troupe.toLowerCase().includes(q)) ||
-            (ev.artist && ev.artist.toLowerCase().includes(q)) ||
-            (ev.location && ev.location.toLowerCase().includes(q)) ||
-            (ev.description && ev.description.toLowerCase().includes(q));
-          if (!matchAny) return false;
         }
 
         return true;
@@ -416,64 +394,64 @@
 
       emptyView.classList.add('hidden');
       eventsContainer.innerHTML = filtered.map(ev => `
-        <article class="bg-white rounded-2xl p-4 shadow-sm border border-stone-200/90 relative hover:border-theatreGold transition duration-200 flex flex-col justify-between">
+        <article class="opera-card rounded-2xl p-4 transition duration-200 flex flex-col justify-between">
           <div>
-            <!-- 上方：劇團、驗證標章與倒數 -->
-            <div class="flex items-center justify-between gap-2 mb-1.5">
+            <!-- 上方：劇團名、核實標籤與天數 -->
+            <div class="flex items-center justify-between gap-1.5 mb-1.5">
               <div class="flex items-center gap-1.5">
-                <span class="text-xs font-bold text-crimson bg-crimson/10 px-2.5 py-0.5 rounded-full border border-crimson/20">
+                <span class="text-xs font-bold text-[#8E162A] bg-[#8E162A]/10 px-2.5 py-0.5 rounded-full border border-[#8E162A]/20">
                   ${ev.troupe}
                 </span>
-                ${getVerifyBadge(ev)}
+                <span class="text-[10px] font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">
+                  ${ev.verifyLabel || '🛡️ 官方核實'}
+                </span>
               </div>
-              <div>${getDaysBadge(ev.date)}</div>
+              <div>${getDaysBadge(ev.daysAway)}</div>
             </div>
 
-            <!-- 劇目主標題 -->
-            <h2 class="text-base sm:text-lg font-bold serif-title text-stone-900 leading-snug mb-1">
+            <!-- 劇目標題 -->
+            <h2 class="text-base font-bold serif-title text-stone-900 leading-snug mb-1">
               ${ev.title}
             </h2>
 
             <!-- 主演卡司 -->
-            <div class="flex items-center gap-1 text-xs text-stone-700 font-medium mb-2.5 bg-parchment-100/70 px-2 py-1 rounded-lg">
-              <span class="text-theatreGold-dark shrink-0">🎭 卡司：</span>
+            <div class="text-xs text-stone-700 font-medium mb-2 bg-stone-50 px-2 py-1 rounded-lg">
+              <span class="text-amber-800 font-semibold">🎭 主演：</span>
               <span class="truncate">${ev.artist}</span>
             </div>
 
             <!-- 時間與地點 -->
-            <div class="space-y-1 text-xs text-stone-600 mb-3">
-              <div class="flex items-center gap-1.5">
-                <span class="text-crimson font-semibold shrink-0">🗓️ 日期時間：</span>
+            <div class="space-y-1 text-xs text-stone-600 mb-2.5">
+              <div class="flex items-center gap-1">
+                <span class="text-[#8E162A] font-semibold shrink-0">🗓️ 日期時間：</span>
                 <span class="font-medium text-stone-800">${ev.dateFormatted} ｜ ${ev.time}</span>
               </div>
-              <div class="flex items-start gap-1.5">
-                <span class="text-crimson font-semibold shrink-0">📍 演出地點：</span>
-                <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(ev.location)}" target="_blank" class="text-stone-700 underline decoration-stone-300 hover:text-crimson flex items-center gap-0.5">
-                  <span>${ev.location}</span>
-                  <svg class="w-3 h-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+              <div class="flex items-start gap-1">
+                <span class="text-[#8E162A] font-semibold shrink-0">📍 演出地點：</span>
+                <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(ev.location)}" target="_blank" class="text-stone-700 underline decoration-stone-300 hover:text-[#8E162A]">
+                  ${ev.location}
                 </a>
               </div>
             </div>
 
-            <!-- 演出看點描述 -->
+            <!-- 簡介看點 -->
             <p class="text-xs text-stone-500 leading-relaxed mb-3">
               ${ev.description}
             </p>
           </div>
 
-          <!-- 卡片底部動作按鈕 (大拇指友善) -->
-          <div class="pt-2.5 border-t border-stone-100 flex items-center justify-between gap-2 mt-auto">
-            <button onclick="openReportModal('${ev.title.replace(/'/g, "\\'")}')" class="text-[11px] text-stone-400 hover:text-crimson flex items-center gap-1 py-1">
-              <span>⚠️</span>
-              <span>回報資訊有誤</span>
+          <!-- 卡片底部動作 -->
+          <div class="pt-2 border-t border-stone-100 flex items-center justify-between gap-2 mt-auto">
+            <button onclick="openReportModal('${ev.title.replace(/'/g, "\\'")}')" class="text-[11px] text-stone-400 hover:text-[#8E162A] py-1">
+              ⚠️ 回報資訊有誤
             </button>
 
             <a 
               href="${ev.link}" 
               target="_blank" 
-              class="inline-flex items-center gap-1 text-xs font-bold px-3.5 py-1.5 rounded-xl bg-crimson hover:bg-crimson-light text-white shadow-sm transition active:scale-95"
+              class="inline-flex items-center gap-1 text-xs font-bold px-3.5 py-1.5 rounded-xl accent-btn shadow-sm transition active:scale-95"
             >
-              <span>${ev.linkLabel || '查看官方詳情'}</span>
+              <span>${ev.linkLabel || '官方購票 / 詳情'}</span>
               <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
             </a>
           </div>
@@ -481,14 +459,14 @@
       `).join('');
     }
 
-    // 標籤篩選切換
+    // 3 行多列標籤點擊
     chips.forEach(chip => {
       chip.addEventListener('click', () => {
         chips.forEach(c => {
-          c.classList.remove('active', 'bg-crimson', 'text-white', 'border-crimson');
+          c.classList.remove('chip-active');
           c.classList.add('bg-white', 'text-stone-700', 'border-stone-300');
         });
-        chip.classList.add('active', 'bg-crimson', 'text-white', 'border-crimson');
+        chip.classList.add('chip-active');
         chip.classList.remove('bg-white', 'text-stone-700', 'border-stone-300');
         
         currentFilter = chip.getAttribute('data-filter');
@@ -496,7 +474,6 @@
       });
     });
 
-    // 地區與形式下拉
     regionSelect.addEventListener('change', (e) => {
       currentRegion = e.target.value;
       renderEvents();
@@ -507,51 +484,21 @@
       renderEvents();
     });
 
-    // 關鍵字搜尋
-    mobileSearch.addEventListener('input', (e) => {
-      currentSearch = e.target.value;
-      if (currentSearch.trim() !== '') {
-        clearSearchBtn.classList.remove('hidden');
-      } else {
-        clearSearchBtn.classList.add('hidden');
-      }
-      renderEvents();
-    });
-
-    clearSearchBtn.addEventListener('click', () => {
-      mobileSearch.value = '';
-      currentSearch = '';
-      clearSearchBtn.classList.add('hidden');
-      renderEvents();
-    });
-
     function resetAllFilters() {
       currentFilter = 'all';
       currentRegion = 'all';
       currentType = 'all';
-      currentSearch = '';
-      mobileSearch.value = '';
-      clearSearchBtn.classList.add('hidden');
       regionSelect.value = 'all';
       typeSelect.value = 'all';
       chips.forEach(c => {
         if (c.getAttribute('data-filter') === 'all') {
-          c.classList.add('active', 'bg-crimson', 'text-white', 'border-crimson');
-          c.classList.remove('bg-white', 'text-stone-700', 'border-stone-300');
+          c.classList.add('chip-active');
         } else {
-          c.classList.remove('active', 'bg-crimson', 'text-white', 'border-crimson');
+          c.classList.remove('chip-active');
           c.classList.add('bg-white', 'text-stone-700', 'border-stone-300');
         }
       });
       renderEvents();
-    }
-
-    // Modal 控制
-    function openVerifyModal() {
-      document.getElementById('verifyModal').classList.remove('hidden');
-    }
-    function closeVerifyModal() {
-      document.getElementById('verifyModal').classList.add('hidden');
     }
 
     function openReportModal(showTitle) {
@@ -560,7 +507,6 @@
     }
     function closeReportModal() {
       document.getElementById('reportModal').classList.add('hidden');
-      document.getElementById('reportForm').reset();
     }
 
     function submitReport(e) {
@@ -569,35 +515,24 @@
       const detail = document.getElementById('reportDetail').value;
       const target = document.getElementById('reportTargetTitle').textContent;
       
-      // 導向 GitHub Issues 預填表單或提示已記錄
-      const issueTitle = encodeURIComponent(`[場次回報] ${target} - ${reason}`);
-      const issueBody = encodeURIComponent(`### 回報項目\n${target}\n\n### 類型\n${reason}\n\n### 詳細說明\n${detail}`);
+      const issueTitle = encodeURIComponent(`[演出回報] ${target} - ${reason}`);
+      const issueBody = encodeURIComponent(`### 回報目標\n${target}\n\n### 原因\n${reason}\n\n### 詳情與來源\n${detail}`);
       const githubUrl = `https://github.com/eric1810-tw/taiwan-opera-calendar/issues/new?title=${issueTitle}&body=${issueBody}`;
       
       window.open(githubUrl, '_blank');
       closeReportModal();
-      alert('感謝您的回報！已為您開啟 GitHub Issue 提報窗口，管理員將於 24 小時內核實更新。');
+      alert('已開啟 GitHub Issue 提報窗口，感謝您的熱心回報！');
     }
 
-    // 核心動態載入：fetch('./data/schedule.json')，徹底避免字串截斷重疊
+    // 動態載入 schedule.json
     fetch('./data/schedule.json')
-      .then(res => {
-        if (!res.ok) throw new Error('Network response was not ok');
-        return res.json();
-      })
+      .then(res => res.json())
       .then(data => {
         eventsData = data;
         renderEvents();
       })
       .catch(err => {
-        console.warn('Fetch failed, trying fallback...', err);
-        // 若在本地 file:// 協議開啟，顯示友善提示
-        eventsContainer.innerHTML = `
-          <div class="bg-amber-50 border border-amber-200 rounded-xl p-4 text-xs text-amber-900 text-center">
-            <p class="font-bold mb-1">正在連線至線上資料庫...</p>
-            <p class="text-[11px] text-amber-700">若以本機 file:// 瀏覽受瀏覽器安全限制，線上版請造訪 GitHub Pages 正常瀏覽！</p>
-          </div>
-        `;
+        console.error('Fetch error:', err);
       });
   </script>
 </body>
