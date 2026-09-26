@@ -376,7 +376,9 @@
     function changeTheme(themeName) {
       if (!['crimson-classic', 'purple-regal', 'literati-ink'].includes(themeName)) return;
       document.documentElement.setAttribute('data-theme', themeName);
-      try { localStorage.setItem('opera-theme', themeName); } catch (_) { /* Storage may be disabled. */ }
+      try {
+        if (typeof localStorage !== 'undefined') localStorage.setItem('opera-theme', themeName);
+      } catch (_) { /* Storage may be disabled. */ }
       
       // 更新按鈕樣式
       const b1 = document.getElementById('btn-theme-1');
@@ -448,7 +450,7 @@
             <div class="flex items-center justify-between gap-1.5 mb-1.5">
               <div class="flex items-center gap-1.5">
                 <span class="text-xs font-bold text-[#8E162A] bg-[#8E162A]/10 px-2.5 py-0.5 rounded-full border border-[#8E162A]/20">
-                  ${escapeHTML(ev.troupe)}
+                  ${escapeHTML(ev.troupe || '主辦單位待核實')}
                 </span>
                 <span class="text-[10px] font-semibold ${ev.verifyStatus === 'verified' && getVerificationLabel(ev).startsWith('🛡️') ? 'text-emerald-700 bg-emerald-50 border-emerald-200' : 'text-amber-800 bg-amber-50 border-amber-200'} px-2 py-0.5 rounded-full border">
                   ${getVerificationLabel(ev)}
@@ -461,6 +463,8 @@
             <h2 class="text-base font-bold serif-title text-stone-900 leading-snug mb-1">
               ${escapeHTML(ev.title)}
             </h2>
+
+            ${ev.verifyStatus === 'pending' ? '<p class="text-[11px] font-bold text-amber-900 bg-amber-100 border border-amber-200 rounded-lg px-2 py-1 mb-2">自動發現候選・尚未核實劇種與演出資訊</p>' : ''}
 
             <!-- 主演卡司 -->
             <div class="text-xs text-stone-700 font-medium mb-2 bg-stone-50 px-2 py-1 rounded-lg">
@@ -477,14 +481,14 @@
               <div class="flex items-start gap-1">
                 <span class="text-[#8E162A] font-semibold shrink-0">📍 演出地點：</span>
                 <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(ev.location || '')}" target="_blank" rel="noopener noreferrer" class="text-stone-700 underline decoration-stone-300 hover:text-[#8E162A]">
-                  ${escapeHTML(ev.location)}
+                  ${escapeHTML(ev.location || '演出地點待核實')}
                 </a>
               </div>
             </div>
 
             <!-- 簡介看點 -->
             <p class="text-xs text-stone-500 leading-relaxed mb-3">
-              ${escapeHTML(ev.description)}
+              ${escapeHTML(ev.description || '由文化部公開資料發現，詳細內容待人工核對官方公告。')}
             </p>
           </div>
 
@@ -500,7 +504,7 @@
               rel="noopener noreferrer"
               class="inline-flex items-center gap-1 text-xs font-bold px-3.5 py-1.5 rounded-xl accent-btn shadow-sm transition active:scale-95"
             >
-              <span>${escapeHTML(ev.linkLabel || '官方購票 / 詳情')}</span>
+              <span>${escapeHTML(ev.verifyStatus === 'pending' ? '查看來源線索' : (ev.linkLabel || '官方購票 / 詳情'))}</span>
               <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
             </a>
           </div>

@@ -33,11 +33,11 @@ jobs:
             git push
           fi
 
-      - name: 部署至 GitHub Pages
+      - name: 上傳 GitHub Pages artifact
         uses: actions/upload-pages-artifact@v5
         with:
           path: '.'
-          
+
   deploy:
     needs: update-schedule
     runs-on: ubuntu-24.04

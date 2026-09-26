@@ -23,8 +23,8 @@ from urllib.request import Request, urlopen
 DATA_PATH = os.path.join(os.path.dirname(__file__), "data", "schedule.json")
 API_URL = "https://cloud.culture.tw/frontsite/trans/SearchShowAction.do"
 KEYWORDS = ("歌仔戲", "布袋戲", "掌中戲")
-TIMEOUT_SECONDS = 15
-MAX_ATTEMPTS = 3
+TIMEOUT_SECONDS = 60
+MAX_ATTEMPTS = 2
 REQUIRED_FIELDS = {
     "id", "date", "dateFormatted", "daysAway", "time", "troupe", "genre",
     "artist", "title", "category", "badgeType", "verifyStatus", "verifyLabel",
@@ -108,18 +108,27 @@ def update_days_away(events, base_date=None):
 def fetch_culture_events():
     """Fetch the Ministry of Culture's documented all-category JSON feed."""
     request = Request(
-        f"{API_URL}?{urlencode({'method': 'doFindTypeJOpenApi', 'category': 'all'})}",
+        f"{API_URL}?{urlencode({'method': 'doFindTypeJ', 'category': 'all'})}",
         headers={"User-Agent": "TaiwanOperaCalendar/1.0 (public cultural events)"},
     )
     last_error = None
     for attempt in range(MAX_ATTEMPTS):
         try:
-            with urlopen(request, timeout=TIMEOUT_SECONDS) as response:
+            # The official endpoint's certificate chain omits a Subject Key
+            # Identifier and is rejected by OpenSSL 3.6 strict mode. Keep CA
+            # and hostname checks enabled; relax only X509_STRICT for this URL.
+            import ssl
+            context = ssl.create_default_context()
+            if hasattr(ssl, "VERIFY_X509_STRICT"):
+                context.verify_flags &= ~ssl.VERIFY_X509_STRICT
+            with urlopen(request, timeout=TIMEOUT_SECONDS, context=context) as response:
                 payload = json.loads(response.read().decode("utf-8"))
             if not isinstance(payload, list):
-                raise ValueError("Culture API response must be a JSON array")
+                raise RuntimeError("Culture API returned a non-array payload; check its method/schema")
             return payload
-        except (HTTPError, URLError, TimeoutError, OSError, UnicodeError, json.JSONDecodeError, ValueError) as error:
+        except RuntimeError:
+            raise
+        except (HTTPError, URLError, TimeoutError, OSError, UnicodeError, json.JSONDecodeError) as error:
             last_error = error
             if attempt + 1 < MAX_ATTEMPTS:
                 time.sleep(2 ** attempt)
@@ -135,10 +144,19 @@ def culture_candidates(records, today=None):
         if not isinstance(record, dict):
             continue
         title = str(record.get("title", "")).strip()
-        details = " ".join(str(record.get(key, "")) for key in
-                           ("description", "showInfo", "categoryName", "subCategoryName", "masterUnit", "actUnit"))
-        text = f"{title} {details}"
-        if not title or not any(keyword in text for keyword in KEYWORDS):
+        unit_names = " ".join(
+            record.get(key, "") for key in ("masterUnit", "otherUnit")
+            if isinstance(record.get(key), str)
+        )
+        category_text = " ".join(
+            record.get(key, "") for key in ("category", "showUnit", "subUnit")
+            if isinstance(record.get(key), str)
+        )
+        explicit_genre_text = f"{title} {unit_names} {category_text}"
+        if not title or not any(keyword in explicit_genre_text for keyword in KEYWORDS) or "演員" in title:
+            continue
+        explicit_genre_text = f"{title} {unit_names}"
+        if not title or not any(keyword in explicit_genre_text for keyword in KEYWORDS) or "演員" in title:
             continue
         show_info = record.get("showInfo")
         shows = show_info if isinstance(show_info, list) and show_info else [{}]
@@ -152,22 +170,23 @@ def culture_candidates(records, today=None):
                 continue
             if not today <= event_date <= end_date:
                 continue
-            genre = "布袋戲" if any(word in text for word in ("布袋戲", "掌中戲")) else "歌仔戲"
+            genre = "布袋戲" if any(word in explicit_genre_text for word in ("布袋戲", "掌中戲")) else "歌仔戲"
             digest = hashlib.sha256(f"{title}|{event_date.isoformat()}".encode("utf-8")).hexdigest()[:10]
             event_id = f"moc-{event_date:%Y%m%d}-{digest}"
             raw_link = show.get("webSales") or record.get("sourceWebPromote") or "https://cloud.culture.tw/"
             candidates.append({
                 "id": event_id, "date": event_date.isoformat(),
                 "dateFormatted": event_date.strftime("%Y/%m/%d"), "daysAway": 0,
-                "time": str(show.get("time", "時間請查官方公告")),
-                "troupe": str(record.get("masterUnit", record.get("actUnit", "文化部開放資料候選"))).strip() or "文化部開放資料候選",
+                "time": str(show.get("time") or "時間請查官方公告"),
+                "troupe": next((record[key].strip() for key in ("masterUnit", "otherUnit")
+                                if isinstance(record.get(key), str) and record[key].strip()), "文化部開放資料候選"),
                 "genre": genre, "artist": "待查官方公告", "title": title,
                 "category": "文化部 Open Data 候選（待人工核實）", "badgeType": "plan",
                 "verifyStatus": "pending", "verifyLabel": "⏳ 自動發現・待人工核實",
-                "location": str(show.get("locationName", show.get("location", record.get("location", "地點請查官方公告")))),
+                "location": str(show.get("locationName") or show.get("location") or record.get("location") or "地點請查官方公告"),
                 "region": "全台", "status": "待人工核實", "description": "由文化部公開資料關鍵字找到；發布前請人工核對劇種、主辦單位、日期與場地。",
                 "link": str(raw_link),
-                "linkLabel": "來源資訊（待核實）", "sourceUrl": "https://cloud.culture.tw/",
+                "linkLabel": "來源資訊（待核實）", "sourceUrl": str(raw_link),
                 "tags": ["自動發現候選", genre],
             })
     return candidates
@@ -178,14 +197,23 @@ def fetch_latest_updates():
     """
     print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] 正在查詢文化部公開藝文活動資料...")
     schedule = load_current_schedule()
-    existing_ids = {event["id"] for event in schedule}
     try:
         discovered = culture_candidates(fetch_culture_events())
+        existing_by_id = {event["id"]: event for event in schedule}
+        existing_candidate_keys = {
+            (event["date"][:10], event["title"])
+            for event in schedule if event.get("verifyStatus") == "pending"
+        }
         new_events = []
         for event in discovered:
-            if event["id"] not in existing_ids:
+            candidate_key = (event["date"][:10], event["title"])
+            if candidate_key not in existing_candidate_keys:
                 new_events.append(event)
-                existing_ids.add(event["id"])
+                existing_candidate_keys.add(candidate_key)
+            elif event["id"] in existing_by_id and existing_by_id[event["id"]].get("verifyStatus") == "pending":
+                # Refresh only machine-generated candidates. Human-verified
+                # entries and their editorial fields are never overwritten.
+                existing_by_id[event["id"]].update(event)
         schedule.extend(new_events)
         print(f"文化部資料源新增 {len(new_events)} 筆待人工核實候選")
     except RuntimeError as error:
