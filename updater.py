@@ -11,6 +11,7 @@
 import json
 import hashlib
 import os
+import re
 import sys
 import tempfile
 import time
@@ -105,6 +106,34 @@ def update_days_away(events, base_date=None):
     return events
 
 
+def opentix_program_id(event):
+    """Return the numeric OPENTIX event/program ID from either URL form."""
+    for key in ("link", "sourceUrl"):
+        value = event.get(key, "")
+        if isinstance(value, str):
+            match = re.search(r"opentix\.life/(?:event|program)/(\d+)", value)
+            if match:
+                return match.group(1)
+    return None
+
+
+def remove_duplicate_candidates(events):
+    """Drop machine candidates already represented by a curated OPENTIX card."""
+    curated_ids = {
+        program_id for event in events
+        if event.get("verifyStatus") != "pending"
+        for program_id in (opentix_program_id(event),)
+        if program_id
+    }
+    return [
+        event for event in events
+        if not (
+            event.get("verifyStatus") == "pending"
+            and opentix_program_id(event) in curated_ids
+        )
+    ]
+
+
 def fetch_culture_events():
     """Fetch the Ministry of Culture's documented all-category JSON feed."""
     request = Request(
@@ -197,6 +226,7 @@ def fetch_latest_updates():
     """
     print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] 正在查詢文化部公開藝文活動資料...")
     schedule = load_current_schedule()
+    schedule = remove_duplicate_candidates(schedule)
     try:
         discovered = culture_candidates(fetch_culture_events())
         existing_by_id = {event["id"]: event for event in schedule}
