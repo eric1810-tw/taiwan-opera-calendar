@@ -54,7 +54,7 @@
     .opera-card:hover { transform:translateY(-2px); box-shadow:7px 8px 0 var(--soft) !important; }
     .accent-btn { border-radius:3px !important; background:var(--pink) !important; color:#fff !important; }
     .accent-btn:hover { filter:brightness(.91); }
-    #loadError,#emptyView,main section,.mt-6.p-3 { border-radius:4px !important; background:var(--card) !important; border-color:var(--line) !important; }
+    #loadError,#emptyView,main section:not(.hero),.mt-6.p-3 { border-radius:4px !important; background:var(--card) !important; border-color:var(--line) !important; }
     footer { padding-bottom:calc(1.25rem + env(safe-area-inset-bottom,0px)); background:var(--ink) !important; border-color:var(--yellow) !important; }
     a:focus-visible,button:focus-visible,select:focus-visible { outline:3px solid var(--yellow); outline-offset:2px; }
     @media(max-width:700px) { main { padding:0 14px 48px !important; } .hero { min-height:230px; margin:14px 0 20px; padding:27px 20px; } .hero:before { right:2%; opacity:.75; } .hero:after { right:5%; top:54px; opacity:.45; } #eventsContainer { grid-template-columns:1fr; } }
