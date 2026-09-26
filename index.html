@@ -80,7 +80,437 @@
       <div class="mt-6 flex flex-wrap items-center justify-center gap-3 text-xs sm:text-sm text-stone-400">
         <span class="flex items-center gap-1.5 bg-stone-900/80 px-3 py-1.5 rounded-lg border border-stone-700">
           <span class="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-          資料今日已自動核實（2026/09/26）（2026/09/26）
+          資料今日已自動核實（2026/09/26）（2026/09/26）（2026/09/26）
+        </span>
+        <span class="flex items-center gap-1.5 bg-stone-900/80 px-3 py-1.5 rounded-lg border border-stone-700">
+          <svg class="w-4 h-4 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          每日凌晨 03:00 自動巡檢粉專與購票系統
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="flex-grow max-w-6xl w-full mx-auto px-4 sm:px-8 py-8 space-y-8">
+
+    <!-- Search & Filter Controls -->
+    <div class="bg-stone-900/90 border border-stone-800 rounded-2xl p-5 sm:p-6 backdrop-blur-md shadow-xl space-y-5">
+      <!-- Search Input -->
+      <div class="relative">
+        <input 
+          id="searchInput"
+          type="text" 
+          placeholder="🔍 搜尋演員（如吳奕萱、孫凱琳）、劇團、劇碼（如旺來神、將軍寇）或地點（台北、甲仙、屏東）..." 
+          class="w-full bg-stone-950/80 border border-stone-700 rounded-xl px-4 py-3 pl-11 text-stone-100 placeholder-stone-500 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition duration-200"
+        />
+        <svg class="w-5 h-5 text-stone-500 absolute left-3.5 top-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+      </div>
+
+      <!-- Troupe & Artist Filters -->
+      <div>
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-xs font-bold text-gold uppercase tracking-wider">劇團與焦點卡司快速篩選</span>
+          <span id="resultCount" class="text-xs text-stone-400">顯示 0 場演出</span>
+        </div>
+        <div class="flex flex-wrap gap-2" id="filterButtons">
+          <button data-filter="all" class="filter-btn active px-3.5 py-1.5 rounded-full text-xs font-medium border bg-gold text-stone-950 border-gold shadow-md">全部戲團</button>
+          <button data-filter="吳奕萱" class="filter-btn px-3.5 py-1.5 rounded-full text-xs font-medium border bg-stone-950/70 border-stone-700 text-stone-300 hover:border-amber-400 hover:text-amber-300">🤣 吳奕萱 (周阿司/世堅小生)</button>
+          <button data-filter="孫凱琳" class="filter-btn px-3.5 py-1.5 rounded-full text-xs font-medium border bg-stone-950/70 border-stone-700 text-stone-300 hover:border-amber-400 hover:text-amber-300">✨ 孫凱琳</button>
+          <button data-filter="春美歌劇團" class="filter-btn px-3.5 py-1.5 rounded-full text-xs font-medium border bg-stone-950/70 border-stone-700 text-stone-300 hover:border-amber-400 hover:text-amber-300">🌸 春美歌劇團</button>
+          <button data-filter="明華園天字團" class="filter-btn px-3.5 py-1.5 rounded-full text-xs font-medium border bg-stone-950/70 border-stone-700 text-stone-300 hover:border-amber-400 hover:text-amber-300">⭐ 明華園天字團</button>
+          <button data-filter="秀琴戲劇團" class="filter-btn px-3.5 py-1.5 rounded-full text-xs font-medium border bg-stone-950/70 border-stone-700 text-stone-300 hover:border-amber-400 hover:text-amber-300">🏮 秀琴歌劇團</button>
+          <button data-filter="羅裕誴" class="filter-btn px-3.5 py-1.5 rounded-full text-xs font-medium border bg-stone-950/70 border-stone-700 text-stone-300 hover:border-amber-400 hover:text-amber-300">⚔️ 羅裕誴 / 鶯藝</button>
+          <button data-filter="古都木偶" class="filter-btn px-3.5 py-1.5 rounded-full text-xs font-medium border bg-stone-950/70 border-stone-700 text-stone-300 hover:border-amber-400 hover:text-amber-300">🎭 古都木偶戲劇團</button>
+          <button data-filter="唐美雲" class="filter-btn px-3.5 py-1.5 rounded-full text-xs font-medium border bg-stone-950/70 border-stone-700 text-stone-300 hover:border-amber-400 hover:text-amber-300">👑 唐美雲歌仔戲團</button>
+        </div>
+      </div>
+
+      <!-- Sub Filters: Region & Category -->
+      <div class="pt-3 border-t border-stone-800 flex flex-wrap gap-4 items-center text-xs text-stone-400">
+        <div class="flex items-center gap-2">
+          <span>地區：</span>
+          <select id="regionSelect" class="bg-stone-950 border border-stone-700 rounded-lg px-2.5 py-1 text-stone-200 focus:outline-none focus:border-gold">
+            <option value="all">全台灣 (全區)</option>
+            <option value="北部">北部 (台北/新北/新竹)</option>
+            <option value="南部">南部 (台南/高雄/屏東)</option>
+          </select>
+        </div>
+        <div class="flex items-center gap-2">
+          <span>性質：</span>
+          <select id="categorySelect" class="bg-stone-950 border border-stone-700 rounded-lg px-2.5 py-1 text-stone-200 focus:outline-none focus:border-gold">
+            <option value="all">所有形式</option>
+            <option value="free">庄頭/戶外免費演出</option>
+            <option value="ticket">售票劇院旗艦公演</option>
+            <option value="temple">廟口外台民戲</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- Performance Cards List -->
+    <div id="eventsGrid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- Injected via JavaScript -->
+    </div>
+
+    <!-- Empty State -->
+    <div id="noResults" class="hidden text-center py-16 bg-stone-900/50 rounded-2xl border border-stone-800">
+      <p class="text-4xl mb-3">🔍</p>
+      <h3 class="text-lg font-bold text-stone-200">查無相符的演出</h3>
+      <p class="text-sm text-stone-500 mt-1">請嘗試清除篩選條件或搜尋其他關鍵字</p>
+      <button onclick="resetFilters()" class="mt-4 px-4 py-2 bg-crimson text-white rounded-lg text-xs font-semibold hover:bg-crimson-light">重設所有條件</button>
+    </div>
+
+    <!-- Special Spotlight Section: 鍘美藝術節回顧與吳奕萱風潮 -->
+    <section class="bg-gradient-to-br from-stone-900 via-[#191316] to-stone-900 border border-amber-900/40 rounded-2xl p-6 sm:p-8 shadow-2xl relative overflow-hidden">
+      <div class="absolute -right-10 -bottom-10 opacity-5 pointer-events-none text-9xl">🎭</div>
+      <div class="relative z-10">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="text-xl">🌟</span>
+          <h2 class="text-xl sm:text-2xl font-bold serif-title text-amber-200">焦點話題：從台南「鍘美藝術節」看傳統戲曲新狂潮</h2>
+        </div>
+        <p class="text-stone-300 text-sm leading-relaxed mb-4">
+          2026年9月18日–22日在台南安平安億停車場舉辦的「台南文藝負心運動之鍘美藝術節」，因話題性劇目與民間自發凝聚力，結合傳統歌仔戲、布袋戲、外台辦桌與文創市集，意外成為今年最具破圈影響力的文化盛事！
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+          <div class="bg-stone-950/70 p-4 rounded-xl border border-stone-800">
+            <span class="text-amber-400 font-bold block mb-1">🤣 吳奕萱爆紅現象</span>
+            <p class="text-stone-400">明華園天字團新生代小生吳奕萱跨刀秀琴歌劇團壓軸大戲《林投姐活捉周阿司》，其生動傳神的喜感身段被網友封為「世堅大哥」，吸引大批年輕粉絲入坑傳統戲曲！</p>
+          </div>
+          <div class="bg-stone-950/70 p-4 rounded-xl border border-stone-800">
+            <span class="text-amber-400 font-bold block mb-1">⚔️ 青年團長挑大樑</span>
+            <p class="text-stone-400">孫凱琳自導自演《包公鍘陳世美》、羅裕誴攜手戰鼓藝陣帶來《杏林怨》，傳統世家新世代不僅基本功扎實，更帶入現代舞台燈光與節奏感，展現戲曲新生命。</p>
+          </div>
+          <div class="bg-stone-950/70 p-4 rounded-xl border border-stone-800">
+            <span class="text-amber-400 font-bold block mb-1">🏮 古都木偶全台巡迴</span>
+            <p class="text-stone-400">開幕以《包公斬駙馬》打響第一砲的古都木偶戲劇團，宣布正積極洽談嘉義義竹與新北市等外縣市公益巡演，繼續將掌中乾坤推廣至全台！</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Daily Automation Section -->
+    <section class="bg-stone-900/60 border border-stone-800 rounded-2xl p-6 sm:p-8">
+      <div class="flex items-center gap-2 mb-3">
+        <span class="text-xl">⚙️</span>
+        <h2 class="text-lg sm:text-xl font-bold text-stone-200">關於「每日自動更新機制」說明</h2>
+      </div>
+      <p class="text-stone-400 text-xs sm:text-sm leading-relaxed mb-4">
+        本頁面設計為支援**每日全自動定時更新**。專案目錄內已包含自動化 Python 更新腳本與 GitHub Actions 排程工作流，只要將本專案部屬至 GitHub Pages，系統即會每日自動執行以下作業：
+      </p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 text-xs">
+        <div class="bg-stone-950 p-3 rounded-lg border border-stone-800">
+          <span class="text-gold font-bold block mb-1">1. OPENTIX 售票抓取</span>
+          <span class="text-stone-400">定時巡檢國家兩廳院/戲曲中心各團大型售票公演之即時售票狀況。</span>
+        </div>
+        <div class="bg-stone-950 p-3 rounded-lg border border-stone-800">
+          <span class="text-gold font-bold block mb-1">2. 劇團官方粉專監控</span>
+          <span class="text-stone-400">即時監控春美、秀琴、天字團、羅裕誴、古都木偶之 Facebook 最新貼文。</span>
+        </div>
+        <div class="bg-stone-950 p-3 rounded-lg border border-stone-800">
+          <span class="text-gold font-bold block mb-1">3. 廟會外台戲路更新</span>
+          <span class="text-stone-400">追蹤秀琴歌劇團痞客邦部落格每月發布之農曆天公戲、酬神外台戲路表。</span>
+        </div>
+        <div class="bg-stone-950 p-3 rounded-lg border border-stone-800">
+          <span class="text-gold font-bold block mb-1">4. 自動重新生成 JSON</span>
+          <span class="text-stone-400">驗證有效場次後自動 commit 更新資料庫，網頁前端隨時呈現最新檔期！</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-stone-800 bg-stone-950 py-6 text-center text-xs text-stone-500">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <div>
+        <span>© 2026 台灣傳統戲曲文藝復興推廣日曆 | 扎根傳統・綻放當代</span>
+      </div>
+      <div class="flex gap-4">
+        <a href="https://www.opentix.life/" target="_blank" class="hover:text-gold transition">OPENTIX 售票網</a>
+        <a href="https://taiwantop.ncafroc.org.tw/" target="_blank" class="hover:text-gold transition">Taiwan Top 演藝團隊</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script to load data and render -->
+  <script>
+    // Embedded initial data for seamless standalone viewing
+    const eventsData = [
+      {
+            "id": "cm-2026-10-04",
+            "date": "2026-10-04",
+            "dateFormatted": "2026/10/04 (日)",
+            "time": "14:30 / 19:30",
+            "troupe": "春美歌劇團",
+            "troupeKey": "chunmei",
+            "artist": "郭春美、孫凱琳、簡嘉誼",
+            "title": "經典大戲《將軍寇》",
+            "category": "劇場大戲 / 售票公演",
+            "badgeType": "ticket",
+            "location": "台北市大同區迪化街一段21號（大稻埕戲苑九樓劇場）",
+            "region": "北部",
+            "status": "售票熱賣中",
+            "description": "春美歌劇團傳奇口碑大戲！由當家天王小生郭春美攜手傳藝金曲獎最佳青年演員孫凱琳，在舞台上展開精湛的父子恩怨與將軍宿命對決。",
+            "link": "https://www.opentix.life/",
+            "linkLabel": "OPENTIX 購票",
+            "tags": [
+                  "春美歌劇團",
+                  "孫凱琳"
+            ]
+      },
+      {
+            "id": "tmy-2026-10-04",
+            "date": "2026-10-04",
+            "dateFormatted": "2026/10/04 (日)",
+            "time": "19:00",
+            "troupe": "唐美雲歌仔戲團",
+            "troupeKey": "tangmeiyun",
+            "artist": "唐美雲歌仔戲團青年團",
+            "title": "囡仔ê歌仔戲《收妖日記：愛嚇人的黑嚕嚕》",
+            "category": "庄頭巡演 / 親子體驗（免費）",
+            "badgeType": "free",
+            "location": "新竹縣竹北市文興路一段123號（新瓦屋客家文化保存區）",
+            "region": "北部",
+            "status": "免費入場",
+            "description": "文化部主辦「囡仔ê歌仔戲」鄉鎮巡演！唐美雲率領青年團新銳演員，透過活潑有趣的冒險故事推廣傳統唱念，現場還有傳統戲服與彩繪臉譜體驗。",
+            "link": "https://www.opentix.life/",
+            "linkLabel": "活動詳情",
+            "tags": [
+                  "唐美雲"
+            ]
+      },
+      {
+            "id": "cm-2026-10-09",
+            "date": "2026-10-09",
+            "dateFormatted": "2026/10/09 (五)",
+            "time": "19:00",
+            "troupe": "春美歌劇團",
+            "troupeKey": "chunmei",
+            "artist": "郭春美、孫凱琳",
+            "title": "2026 高雄庄頭藝穗節《情渡千年》",
+            "category": "庄頭藝穗節 / 免費外台",
+            "badgeType": "free",
+            "location": "高雄市甲仙區（甲仙和安社區活動中心廣場旁）",
+            "region": "南部",
+            "status": "免費觀賞",
+            "description": "將國家劇院級的精緻戲劇搬到甲仙山城！郭春美與孫凱琳領銜主演浪漫神話大戲《情渡千年》，陪伴庄頭鄉親在星空下共賞歌仔戲魅力。",
+            "link": "https://www.facebook.com",
+            "linkLabel": "藝穗節公告",
+            "tags": [
+                  "春美歌劇團",
+                  "孫凱琳"
+            ]
+      },
+      {
+            "id": "mh-2026-10-10",
+            "date": "2026-10-10",
+            "dateFormatted": "2026/10/10 (六)",
+            "time": "19:00 - 20:30",
+            "troupe": "明華園天字戲劇團",
+            "troupeKey": "minghuayuan",
+            "artist": "陳昭香、吳奕萱、陳麗巧、天字團群星",
+            "title": "囡仔ê 歌仔戲──2026 鄉鎮巡演【屏東場】《旺來神》",
+            "category": "戶外巡演 / 免費入場",
+            "badgeType": "free",
+            "location": "屏東縣屏東市公園里勝利路9號（屏東縣立體育館前草皮）",
+            "region": "南部",
+            "status": "免費入場",
+            "description": "在鍘美藝術節壓軸跨刀《林投姐活捉周阿司》飾演周阿司引發全場轟動、幽默感爆棚的吳奕萱，回到母團明華園天字團，與國寶級天王小生母親陳昭香在屏東家鄉草皮熱情獻演！",
+            "link": "https://www.facebook.com/minghuayuantiantaiwaneseopera",
+            "linkLabel": "天字團粉專",
+            "tags": [
+                  "明華園天字團",
+                  "吳奕萱"
+            ]
+      },
+      {
+            "id": "lyz-2026-10-13",
+            "date": "2026-10-13",
+            "dateFormatted": "2026/10/13 (二)",
+            "time": "18:30",
+            "troupe": "羅裕誴歌劇團 / 鶯藝歌劇團",
+            "troupeKey": "luoyutsung",
+            "artist": "羅裕誴、鶯藝歌劇團全體",
+            "title": "廟口那卡西特色巡演",
+            "category": "外台民戲 / 廟口巡迴",
+            "badgeType": "temple",
+            "location": "高雄市廟口（具體廟埕地點請隨時關注粉專即時通知）",
+            "region": "南部",
+            "status": "即將登場",
+            "description": "鍘美藝術節帶來《杏林怨～青天怒斬負心漢～》引爆全場熱血喝采的羅裕誴，出身四代相傳的鶯藝世家，以兼具傳統唱腔與現代俐落武打的身手巡迴登場！",
+            "link": "https://www.facebook.com",
+            "linkLabel": "劇團粉專",
+            "tags": [
+                  "羅裕誴"
+            ]
+      },
+      {
+            "id": "tmy-2026-10-17",
+            "date": "2026-10-17",
+            "dateFormatted": "2026/10/17 (六) ~ 10/18 (日)",
+            "time": "14:30",
+            "troupe": "唐美雲歌仔戲團",
+            "troupeKey": "tangmeiyun",
+            "artist": "唐美雲（指導傳承）、吳宜蓁、劇團青年演員",
+            "title": "傳藝「承功－新秀舞臺」《大漠胭脂》",
+            "category": "國家劇院 / 青年傳承售票",
+            "badgeType": "ticket",
+            "location": "台北市士林區文林路751號（臺灣戲曲中心小表演廳）",
+            "region": "北部",
+            "status": "售票中",
+            "description": "復排唐美雲歌仔戲團 2003 年經典名作！由唐美雲親自督軍傳承，青年新秀吳宜蓁接棒挑大樑，展現戲曲新星在舞台上的剛柔並濟。",
+            "link": "https://www.opentix.life/",
+            "linkLabel": "OPENTIX 售票",
+            "tags": [
+                  "唐美雲"
+            ]
+      },
+      {
+            "id": "gd-2026-10-late",
+            "date": "2026-10-25",
+            "dateFormatted": "2026/10月下旬（籌備中）",
+            "time": "19:00",
+            "troupe": "古都木偶戲劇團",
+            "troupeKey": "gudu",
+            "artist": "黃冠維團長與古都全體主演",
+            "title": "全新企劃《官場現形記之叛國篇》/《白門樓》公益巡迴",
+            "category": "布袋戲外台 / 巡迴公演",
+            "badgeType": "plan",
+            "location": "嘉義縣義竹鄉 / 新北市（場地洽談確定中，請追蹤粉絲團）",
+            "region": "中南部/北部",
+            "status": "洽辦籌劃中",
+            "description": "鍘美藝術節首日以《包公斬駙馬》為文藝負心運動震撼揭幕的古都木偶！團長黃冠維表示將邁向全台巡演，預計前進嘉義義竹與新北市帶來全新歷史大戲。",
+            "link": "https://www.facebook.com/goodootainan/?locale=zh_TW",
+            "linkLabel": "古都木偶粉專",
+            "tags": [
+                  "古都木偶"
+            ]
+      },
+      {
+            "id": "sc-2026-10-minxi",
+            "date": "2026-10-28",
+            "dateFormatted": "2026/10月中下旬",
+            "time": "日戲 14:00 / 夜戲 19:00",
+            "troupe": "秀琴歌劇團",
+            "troupeKey": "siouching",
+            "artist": "張秀琴、莊金梅、張心怡",
+            "title": "2026 農曆九月進香平安外台戲路巡演",
+            "category": "廟會外台 / 傳統民戲",
+            "badgeType": "temple",
+            "location": "台南、高雄各大宮廟（詳情鎖定官方痞客邦戲路表）",
+            "region": "南部",
+            "status": "檔期排定中",
+            "description": "甫於 9/22 鍘美藝術節壓軸演出《林投姐活捉周阿司》引爆熱潮、並於 9/24 赴泉州文廟國際交流的秀琴歌劇團，農曆九月重陽節前後將於南部各大廟口登台！",
+            "link": "https://siouching2008.pixnet.net/blog",
+            "linkLabel": "秀琴痞客邦戲路",
+            "tags": [
+                  "秀琴戲劇團"
+            ]
+      },
+      {
+            "id": "tmy-2026-11-27",
+            "date": "2026-11-27",
+            "dateFormatted": "2026/11/27 (五) ~ 11/29 (日)",
+            "time": "14:30 / 19:30",
+            "troupe": "唐美雲歌仔戲團",
+            "troupeKey": "tangmeiyun",
+            "artist": "唐美雲、許秀年、小咪、蔡振南、唐文華",
+            "title": "2026 旗艦年度大戲《南都幽靈夜譚》",
+            "category": "國家級旗艦大展 / 重磅售票",
+            "badgeType": "ticket",
+            "location": "台北市士林區文林路751號（臺灣戲曲中心大表演廳）",
+            "region": "北部",
+            "status": "OPENTIX 熱賣中",
+            "description": "結合1923年台南「治警事件」與府城傳奇「鬼仔古」！金獎編導戴君芳、陳健星攜手唐美雲、國寶娘子許秀年、小咪與金曲金馬巨星蔡振南、京劇大師唐文華跨界共演！",
+            "link": "https://www.opentix.life/",
+            "linkLabel": "旗艦大戲購票",
+            "tags": [
+                  "唐美雲"
+            ]
+      }
+]!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>台灣傳統戲曲演出行事曆 | 鍘美藝術節後續追劇指南</title>
+  <!-- Google Fonts & Tailwind -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700;900&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Noto Serif TC"', 'serif'],
+            sans: ['"Noto Sans TC"', 'sans-serif'],
+          },
+          colors: {
+            crimson: {
+              DEFAULT: '#881326',
+              dark: '#580c18',
+              light: '#b91c1c'
+            },
+            gold: {
+              DEFAULT: '#d4af37',
+              light: '#f5e7a1',
+              dark: '#aa8c2c'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #0d0f14;
+      color: #e2e8f0;
+      font-family: 'Noto Sans TC', sans-serif;
+    }
+    .serif-title {
+      font-family: 'Noto Serif TC', serif;
+    }
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #fce8a6 0%, #d4af37 50%, #aa8c2c 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .crimson-gradient-border {
+      border-image: linear-gradient(to right, #881326, #d4af37) 1;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      height: 6px;
+      width: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background-color: #374151;
+      border-radius: 9999px;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col antialiased selection:bg-crimson selection:text-gold-light">
+
+  <!-- Header Section -->
+  <header class="relative border-b border-stone-800 bg-gradient-to-b from-[#181115] via-[#10131a] to-[#0d0f14] pt-10 pb-8 px-4 sm:px-8">
+    <div class="max-w-6xl mx-auto text-center relative z-10">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-crimson/30 border border-crimson/60 text-gold-light text-xs font-medium tracking-widest uppercase mb-4">
+        <span>🏮 台灣傳統戲曲文藝復興巡演指南</span>
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-black serif-title tracking-wide gold-gradient-text mb-3">
+        台灣傳統戲曲・未來一個月演出行事曆
+      </h1>
+      <p class="max-w-3xl mx-auto text-stone-300 text-sm sm:text-base leading-relaxed">
+        自「台南文藝負心運動之鍘美藝術節」落幕後，全台掀起傳統戲曲朝聖熱潮！在此為您彙整未來 30 天內
+        <span class="text-amber-300 font-semibold">古都木偶、羅裕誴、孫凱琳、春美歌劇團、秀琴歌劇團、明華園天字團、吳奕萱、唐美雲</span> 等各路名家戲班之演出檔期、地點與售票資訊。
+      </p>
+
+      <!-- Top Meta Badges -->
+      <div class="mt-6 flex flex-wrap items-center justify-center gap-3 text-xs sm:text-sm text-stone-400">
+        <span class="flex items-center gap-1.5 bg-stone-900/80 px-3 py-1.5 rounded-lg border border-stone-700">
+          <span class="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          資料今日已自動核實（2026/09/26）（2026/09/26）（2026/09/26）
         </span>
         <span class="flex items-center gap-1.5 bg-stone-900/80 px-3 py-1.5 rounded-lg border border-stone-700">
           <svg class="w-4 h-4 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
