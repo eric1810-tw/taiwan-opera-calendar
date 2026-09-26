@@ -1,0 +1,194 @@
+[
+  {
+    "id": "cm-2026-10-04",
+    "date": "2026-10-04",
+    "dateFormatted": "2026/10/04 (日)",
+    "time": "14:30 / 19:30",
+    "troupe": "春美歌劇團",
+    "troupeKey": "chunmei",
+    "artist": "郭春美、孫凱琳、簡嘉誼",
+    "title": "經典大戲《將軍寇》",
+    "category": "劇場大戲 / 售票公演",
+    "badgeType": "ticket",
+    "location": "台北市大同區迪化街一段21號（大稻埕戲苑九樓劇場）",
+    "region": "北部",
+    "status": "售票熱賣中",
+    "description": "春美歌劇團傳奇口碑大戲！由當家天王小生郭春美攜手傳藝金曲獎最佳青年演員孫凱琳，在舞台上展開精湛的父子恩怨與將軍宿命對決。",
+    "link": "https://www.opentix.life/",
+    "linkLabel": "OPENTIX 購票",
+    "tags": [
+      "春美歌劇團",
+      "孫凱琳"
+    ]
+  },
+  {
+    "id": "tmy-2026-10-04",
+    "date": "2026-10-04",
+    "dateFormatted": "2026/10/04 (日)",
+    "time": "19:00",
+    "troupe": "唐美雲歌仔戲團",
+    "troupeKey": "tangmeiyun",
+    "artist": "唐美雲歌仔戲團青年團",
+    "title": "囡仔ê歌仔戲《收妖日記：愛嚇人的黑嚕嚕》",
+    "category": "庄頭巡演 / 親子體驗（免費）",
+    "badgeType": "free",
+    "location": "新竹縣竹北市文興路一段123號（新瓦屋客家文化保存區）",
+    "region": "北部",
+    "status": "免費入場",
+    "description": "文化部主辦「囡仔ê歌仔戲」鄉鎮巡演！唐美雲率領青年團新銳演員，透過活潑有趣的冒險故事推廣傳統唱念，現場還有傳統戲服與彩繪臉譜體驗。",
+    "link": "https://www.opentix.life/",
+    "linkLabel": "活動詳情",
+    "tags": [
+      "唐美雲"
+    ]
+  },
+  {
+    "id": "cm-2026-10-09",
+    "date": "2026-10-09",
+    "dateFormatted": "2026/10/09 (五)",
+    "time": "19:00",
+    "troupe": "春美歌劇團",
+    "troupeKey": "chunmei",
+    "artist": "郭春美、孫凱琳",
+    "title": "2026 高雄庄頭藝穗節《情渡千年》",
+    "category": "庄頭藝穗節 / 免費外台",
+    "badgeType": "free",
+    "location": "高雄市甲仙區（甲仙和安社區活動中心廣場旁）",
+    "region": "南部",
+    "status": "免費觀賞",
+    "description": "將國家劇院級的精緻戲劇搬到甲仙山城！郭春美與孫凱琳領銜主演浪漫神話大戲《情渡千年》，陪伴庄頭鄉親在星空下共賞歌仔戲魅力。",
+    "link": "https://www.facebook.com",
+    "linkLabel": "藝穗節公告",
+    "tags": [
+      "春美歌劇團",
+      "孫凱琳"
+    ]
+  },
+  {
+    "id": "mh-2026-10-10",
+    "date": "2026-10-10",
+    "dateFormatted": "2026/10/10 (六)",
+    "time": "19:00 - 20:30",
+    "troupe": "明華園天字戲劇團",
+    "troupeKey": "minghuayuan",
+    "artist": "陳昭香、吳奕萱、陳麗巧、天字團群星",
+    "title": "囡仔ê 歌仔戲──2026 鄉鎮巡演【屏東場】《旺來神》",
+    "category": "戶外巡演 / 免費入場",
+    "badgeType": "free",
+    "location": "屏東縣屏東市公園里勝利路9號（屏東縣立體育館前草皮）",
+    "region": "南部",
+    "status": "免費入場",
+    "description": "在鍘美藝術節壓軸跨刀《林投姐活捉周阿司》飾演周阿司引發全場轟動、幽默感爆棚的吳奕萱，回到母團明華園天字團，與國寶級天王小生母親陳昭香在屏東家鄉草皮熱情獻演！",
+    "link": "https://www.facebook.com/minghuayuantiantaiwaneseopera",
+    "linkLabel": "天字團粉專",
+    "tags": [
+      "明華園天字團",
+      "吳奕萱"
+    ]
+  },
+  {
+    "id": "lyz-2026-10-13",
+    "date": "2026-10-13",
+    "dateFormatted": "2026/10/13 (二)",
+    "time": "18:30",
+    "troupe": "羅裕誴歌劇團 / 鶯藝歌劇團",
+    "troupeKey": "luoyutsung",
+    "artist": "羅裕誴、鶯藝歌劇團全體",
+    "title": "廟口那卡西特色巡演",
+    "category": "外台民戲 / 廟口巡迴",
+    "badgeType": "temple",
+    "location": "高雄市廟口（具體廟埕地點請隨時關注粉專即時通知）",
+    "region": "南部",
+    "status": "即將登場",
+    "description": "鍘美藝術節帶來《杏林怨～青天怒斬負心漢～》引爆全場熱血喝采的羅裕誴，出身四代相傳的鶯藝世家，以兼具傳統唱腔與現代俐落武打的身手巡迴登場！",
+    "link": "https://www.facebook.com",
+    "linkLabel": "劇團粉專",
+    "tags": [
+      "羅裕誴"
+    ]
+  },
+  {
+    "id": "tmy-2026-10-17",
+    "date": "2026-10-17",
+    "dateFormatted": "2026/10/17 (六) ~ 10/18 (日)",
+    "time": "14:30",
+    "troupe": "唐美雲歌仔戲團",
+    "troupeKey": "tangmeiyun",
+    "artist": "唐美雲（指導傳承）、吳宜蓁、劇團青年演員",
+    "title": "傳藝「承功－新秀舞臺」《大漠胭脂》",
+    "category": "國家劇院 / 青年傳承售票",
+    "badgeType": "ticket",
+    "location": "台北市士林區文林路751號（臺灣戲曲中心小表演廳）",
+    "region": "北部",
+    "status": "售票中",
+    "description": "復排唐美雲歌仔戲團 2003 年經典名作！由唐美雲親自督軍傳承，青年新秀吳宜蓁接棒挑大樑，展現戲曲新星在舞台上的剛柔並濟。",
+    "link": "https://www.opentix.life/",
+    "linkLabel": "OPENTIX 售票",
+    "tags": [
+      "唐美雲"
+    ]
+  },
+  {
+    "id": "gd-2026-10-late",
+    "date": "2026-10-25",
+    "dateFormatted": "2026/10月下旬（籌備中）",
+    "time": "19:00",
+    "troupe": "古都木偶戲劇團",
+    "troupeKey": "gudu",
+    "artist": "黃冠維團長與古都全體主演",
+    "title": "全新企劃《官場現形記之叛國篇》/《白門樓》公益巡迴",
+    "category": "布袋戲外台 / 巡迴公演",
+    "badgeType": "plan",
+    "location": "嘉義縣義竹鄉 / 新北市（場地洽談確定中，請追蹤粉絲團）",
+    "region": "中南部/北部",
+    "status": "洽辦籌劃中",
+    "description": "鍘美藝術節首日以《包公斬駙馬》為文藝負心運動震撼揭幕的古都木偶！團長黃冠維表示將邁向全台巡演，預計前進嘉義義竹與新北市帶來全新歷史大戲。",
+    "link": "https://www.facebook.com/goodootainan/?locale=zh_TW",
+    "linkLabel": "古都木偶粉專",
+    "tags": [
+      "古都木偶"
+    ]
+  },
+  {
+    "id": "sc-2026-10-minxi",
+    "date": "2026-10-28",
+    "dateFormatted": "2026/10月中下旬",
+    "time": "日戲 14:00 / 夜戲 19:00",
+    "troupe": "秀琴歌劇團",
+    "troupeKey": "siouching",
+    "artist": "張秀琴、莊金梅、張心怡",
+    "title": "2026 農曆九月進香平安外台戲路巡演",
+    "category": "廟會外台 / 傳統民戲",
+    "badgeType": "temple",
+    "location": "台南、高雄各大宮廟（詳情鎖定官方痞客邦戲路表）",
+    "region": "南部",
+    "status": "檔期排定中",
+    "description": "甫於 9/22 鍘美藝術節壓軸演出《林投姐活捉周阿司》引爆熱潮、並於 9/24 赴泉州文廟國際交流的秀琴歌劇團，農曆九月重陽節前後將於南部各大廟口登台！",
+    "link": "https://siouching2008.pixnet.net/blog",
+    "linkLabel": "秀琴痞客邦戲路",
+    "tags": [
+      "秀琴戲劇團"
+    ]
+  },
+  {
+    "id": "tmy-2026-11-27",
+    "date": "2026-11-27",
+    "dateFormatted": "2026/11/27 (五) ~ 11/29 (日)",
+    "time": "14:30 / 19:30",
+    "troupe": "唐美雲歌仔戲團",
+    "troupeKey": "tangmeiyun",
+    "artist": "唐美雲、許秀年、小咪、蔡振南、唐文華",
+    "title": "2026 旗艦年度大戲《南都幽靈夜譚》",
+    "category": "國家級旗艦大展 / 重磅售票",
+    "badgeType": "ticket",
+    "location": "台北市士林區文林路751號（臺灣戲曲中心大表演廳）",
+    "region": "北部",
+    "status": "OPENTIX 熱賣中",
+    "description": "結合1923年台南「治警事件」與府城傳奇「鬼仔古」！金獎編導戴君芳、陳健星攜手唐美雲、國寶娘子許秀年、小咪與金曲金馬巨星蔡振南、京劇大師唐文華跨界共演！",
+    "link": "https://www.opentix.life/",
+    "linkLabel": "旗艦大戲購票",
+    "tags": [
+      "唐美雲"
+    ]
+  }
+]
