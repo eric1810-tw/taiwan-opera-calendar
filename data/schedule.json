@@ -896,5 +896,58 @@
       "其他歌仔戲",
       "風動歌劇團"
     ]
+  },
+  {
+    "id": "tmy-2026-10-03-chiayi",
+    "date": "2026-10-03",
+    "dateFormatted": "2026/10/03（六）",
+    "daysAway": 6,
+    "time": "19:00–20:30",
+    "troupe": "唐美雲歌仔戲團",
+    "genre": "歌仔戲",
+    "artist": "唐美雲歌仔戲團",
+    "title": "囡仔ê歌仔戲《收妖日記：愛嚇人的黑嚕嚕》",
+    "category": "兒童歌仔戲 / 戶外公演",
+    "badgeType": "free",
+    "verifyStatus": "verified",
+    "verifyLabel": "🛡️ 臺灣歌仔戲推廣基金會官方場次表",
+    "location": "嘉義市東區興中街（嘉義文化公園）",
+    "region": "南部",
+    "status": "基金會官方列出 10/3 嘉義場；活動流程列公演 19:00–20:30",
+    "description": "原 Threads 留言提供的演出線索；已與臺灣歌仔戲推廣基金會官方場次表核對日期、劇團、劇名、地點及戶外公演時段。",
+    "link": "https://twoperapf.org.tw/news/1/53",
+    "linkLabel": "基金會官方場次資訊",
+    "sourceUrl": "https://twoperapf.org.tw/news/1/53",
+    "tags": [
+      "唐美雲",
+      "唐美雲歌仔戲團",
+      "其他歌仔戲"
+    ]
+  },
+  {
+    "id": "tmy-youth-2026-11-20",
+    "date": "2026-11-20",
+    "dateFormatted": "2026/11/20（五）",
+    "daysAway": 54,
+    "time": "19:30–21:00",
+    "troupe": "唐美雲歌仔戲團青年團",
+    "genre": "歌仔戲",
+    "artist": "劉家熒、陳柏臻、陳馨蕙、陳韋翰",
+    "title": "《少年岳雲──銀錘破金兵》",
+    "category": "戲釀青春 / 駐團演訓育成聯合展演",
+    "badgeType": "ticket",
+    "verifyStatus": "verified",
+    "verifyLabel": "🛡️ 臺灣戲曲中心官方 OPENTIX 節目頁",
+    "location": "臺北市士林區文林路751號（臺灣戲曲中心小表演廳）",
+    "region": "北部",
+    "status": "臺灣戲曲中心官方節目頁列出 11/20 19:30 演出",
+    "description": "Threads 留言提供之漏列線索；日期、時間、劇團、劇名、場地及演出習藝生已與主辦單位 OPENTIX 節目頁核對。",
+    "link": "https://www.opentix.life/event/2090269380048343041",
+    "linkLabel": "OPENTIX 官方節目頁",
+    "sourceUrl": "https://www.opentix.life/event/2090269380048343041",
+    "tags": [
+      "唐美雲",
+      "其他歌仔戲"
+    ]
   }
 ]

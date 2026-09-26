@@ -26,124 +26,42 @@
   </script>
 
   <style>
-    /* ==============================================================
-       主題 1：經典戲台絳紅金殿 (仿鍘美紅色系・大氣劇院天鵝絨帷幔)
-       ============================================================== */
-    html[data-theme="crimson-classic"] body {
-      background-color: #F8F4EC;
-      color: #261B1C;
-    }
-    html[data-theme="crimson-classic"] .theater-curtain-left {
-      background: linear-gradient(to right, #610B1B 0%, #8E162A 60%, rgba(142, 22, 42, 0.7) 90%, transparent 100%);
-    }
-    html[data-theme="crimson-classic"] .theater-curtain-right {
-      background: linear-gradient(to left, #610B1B 0%, #8E162A 60%, rgba(142, 22, 42, 0.7) 90%, transparent 100%);
-    }
-    html[data-theme="crimson-classic"] .theater-top-drape {
-      background: radial-gradient(circle at 50% 0%, #A81B34 0%, #7A1022 65%, #520915 100%);
-      box-shadow: 0 4px 15px rgba(82, 9, 21, 0.35);
-    }
-    html[data-theme="crimson-classic"] .opera-card {
-      background: #FFFFFF;
-      border: 1px solid rgba(197, 155, 39, 0.4);
-      box-shadow: 0 4px 16px -2px rgba(97, 11, 27, 0.06);
-    }
-    html[data-theme="crimson-classic"] .accent-btn {
-      background: linear-gradient(135deg, #9E1930 0%, #7E1023 100%);
-      color: #FFFFFF;
-    }
-    html[data-theme="crimson-classic"] .chip-active {
-      background: #8E162A !important;
-      color: #FFFFFF !important;
-      border-color: #8E162A !important;
-      box-shadow: 0 2px 6px rgba(142, 22, 42, 0.25);
-    }
-    html[data-theme="crimson-classic"] .theme-gold-line {
-      border-color: #C59B27;
-    }
-
-    /* ==============================================================
-       主題 2：新古典宮廷絳紫金繡 (華貴深色夜宴模式)
-       ============================================================== */
-    html[data-theme="purple-regal"] body {
-      background-color: #16080E;
-      color: #F3EAE4;
-    }
-    html[data-theme="purple-regal"] .theater-curtain-left {
-      background: linear-gradient(to right, #2E0514 0%, #4D0A23 70%, transparent 100%);
-    }
-    html[data-theme="purple-regal"] .theater-curtain-right {
-      background: linear-gradient(to left, #2E0514 0%, #4D0A23 70%, transparent 100%);
-    }
-    html[data-theme="purple-regal"] .theater-top-drape {
-      background: radial-gradient(circle at 50% 0%, #5C0C2A 0%, #360618 70%, #1A030C 100%);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
-    }
-    html[data-theme="purple-regal"] .opera-card {
-      background: #220C16;
-      border: 1px solid rgba(212, 175, 55, 0.3);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-      color: #F5EBE1;
-    }
-    html[data-theme="purple-regal"] .accent-btn {
-      background: linear-gradient(135deg, #D4AF37 0%, #AA8C2C 100%);
-      color: #1E0711;
-    }
-    html[data-theme="purple-regal"] .chip-active {
-      background: #D4AF37 !important;
-      color: #1A040D !important;
-      border-color: #D4AF37 !important;
-    }
-    html[data-theme="purple-regal"] .text-stone-900 { color: #FAF2EB !important; }
-    html[data-theme="purple-regal"] .text-stone-700 { color: #E0D3C7 !important; }
-    html[data-theme="purple-regal"] .text-stone-600 { color: #C5B6A8 !important; }
-    html[data-theme="purple-regal"] .text-stone-500 { color: #A69688 !important; }
-    html[data-theme="purple-regal"] .bg-stone-50 { background-color: #2D101E !important; }
-    html[data-theme="purple-regal"] .bg-white { background-color: #220C16 !important; }
-
-    /* ==============================================================
-       主題 3：典雅文人宣紙墨金 (素雅文青雅集模式)
-       ============================================================== */
-    html[data-theme="literati-ink"] body {
-      background-color: #FAF7F2;
-      color: #1F1E1B;
-    }
-    html[data-theme="literati-ink"] .theater-curtain-left,
-    html[data-theme="literati-ink"] .theater-curtain-right {
-      display: none;
-    }
-    html[data-theme="literati-ink"] .theater-top-drape {
-      background: #2B2625;
-      box-shadow: none;
-    }
-    html[data-theme="literati-ink"] .opera-card {
-      background: #FFFFFF;
-      border: 1px solid #E5DFD5;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-    }
-    html[data-theme="literati-ink"] .accent-btn {
-      background: #2B2625;
-      color: #FAF7F2;
-    }
-    html[data-theme="literati-ink"] .chip-active {
-      background: #2B2625 !important;
-      color: #FAF7F2 !important;
-      border-color: #2B2625 !important;
-    }
-
-    /* 通用字體 */
-    .serif-title { font-family: 'Noto Serif TC', serif; }
-    .hidden { display: none !important; }
-    body {
-      padding-top: env(safe-area-inset-top, 0px);
-      padding-bottom: env(safe-area-inset-bottom, 0px);
-    }
-    footer { padding-bottom: calc(1.25rem + env(safe-area-inset-bottom, 0px)); }
-    .chip { min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    @media (max-width: 360px) { .chip { font-size: 10px; } }
+    :root { --paper:#f7f0e7; --ink:#28231f; --muted:#70665e; --pink:#d80b72; --yellow:#f6cb58; --ochre:#ad7b38; --card:#fffdf8; --line:#e8d9c8; --soft:#f4e7da; }
+    html[data-theme="purple-regal"] { --paper:#f1eaf1; --ink:#281c2d; --muted:#6f6073; --pink:#742c77; --yellow:#e8c96b; --ochre:#956b39; --card:#fffaff; --line:#e0d0e2; --soft:#eee2ef; }
+    html[data-theme="literati-ink"] { --paper:#f0eee5; --ink:#242822; --muted:#62665d; --pink:#3e6655; --yellow:#d2ad55; --ochre:#977848; --card:#fbfaf4; --line:#dcd9cb; --soft:#e7e8dd; }
+    html { scroll-behavior:smooth; }
+    body { padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px); background:var(--paper); color:var(--ink); font-family:'Noto Sans TC',sans-serif; }
+    .serif-title { font-family:'Noto Serif TC',serif; }
+    .hidden { display:none !important; }
+    .theater-curtain-left,.theater-curtain-right { display:none; }
+    header { background:var(--ink); }
+    .theater-top-drape { height:38px; background:var(--pink); box-shadow:0 3px 0 var(--yellow); }
+    main { max-width:1100px !important; padding:0 22px 64px !important; }
+    .hero { position:relative; isolation:isolate; overflow:hidden; margin:22px 0 26px; min-height:255px; padding:36px clamp(22px,5vw,64px); border-radius:4px; color:#fffaf2; background:var(--ink); }
+    .hero:before { content:""; position:absolute; z-index:-1; width:260px; height:340px; right:12%; top:-78px; border-radius:48% 48% 0 0; background:var(--pink); transform:rotate(8deg); box-shadow:28px 0 0 var(--yellow); opacity:.98; }
+    .hero:after { content:"戲"; position:absolute; z-index:-1; right:clamp(30px,9vw,120px); top:35px; color:#fff8ea; font:900 clamp(90px,16vw,176px)/1 'Noto Serif TC',serif; opacity:.92; }
+    .hero-kicker { display:inline-flex; align-items:center; gap:9px; padding:6px 10px; background:var(--yellow); color:var(--ink); font-size:11px; font-weight:900; letter-spacing:.12em; }
+    .hero h1 { max-width:680px; margin:17px 0 8px; font:900 clamp(30px,5vw,54px)/1.2 'Noto Serif TC',serif; letter-spacing:.04em; }
+    .hero p { max-width:530px; margin:0; color:#f5e8da; font-size:14px; line-height:1.8; }
+    .hero-note { display:inline-block; margin-top:18px; border-left:4px solid var(--yellow); padding-left:10px; font-size:12px; }
+    #multiRowChips { gap:8px !important; }
+    .chip { min-width:0; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; border-radius:3px !important; padding:10px 6px !important; background:var(--card) !important; border-color:var(--line) !important; color:var(--ink) !important; }
+    .chip:hover,.chip:focus-visible { border-color:var(--pink) !important; }
+    .chip-active { background:var(--pink) !important; color:white !important; border-color:var(--pink) !important; box-shadow:3px 3px 0 var(--yellow); }
+    select { min-height:42px; border-radius:3px !important; background:var(--card) !important; color:var(--ink) !important; }
+    #eventsContainer { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:15px; }
+    .opera-card { min-width:0; padding:18px !important; border:1px solid var(--line) !important; border-top:5px solid var(--pink) !important; border-radius:4px !important; background:var(--card) !important; box-shadow:5px 5px 0 var(--soft) !important; }
+    .opera-card:hover { transform:translateY(-2px); box-shadow:7px 8px 0 var(--soft) !important; }
+    .accent-btn { border-radius:3px !important; background:var(--pink) !important; color:#fff !important; }
+    .accent-btn:hover { filter:brightness(.91); }
+    #loadError,#emptyView,main section,.mt-6.p-3 { border-radius:4px !important; background:var(--card) !important; border-color:var(--line) !important; }
+    footer { padding-bottom:calc(1.25rem + env(safe-area-inset-bottom,0px)); background:var(--ink) !important; border-color:var(--yellow) !important; }
+    a:focus-visible,button:focus-visible,select:focus-visible { outline:3px solid var(--yellow); outline-offset:2px; }
+    @media(max-width:700px) { main { padding:0 14px 48px !important; } .hero { min-height:230px; margin:14px 0 20px; padding:27px 20px; } .hero:before { right:2%; opacity:.75; } .hero:after { right:5%; top:54px; opacity:.45; } #eventsContainer { grid-template-columns:1fr; } }
+    @media(max-width:380px) { .chip { font-size:10px !important; } }
   </style>
 </head>
-<body class="min-h-screen flex flex-col justify-between relative selection:bg-[#8E162A] selection:text-white transition-colors duration-300">
+<body class="min-h-screen flex flex-col justify-between relative selection:bg-[#d80b72] selection:text-white transition-colors duration-300">
 
   <!-- 仿鍘美劇場：兩側大氣紅色天鵝絨帷幔 (原創純CSS漸層繪製，無版權爭議) -->
   <div class="fixed top-0 bottom-0 left-0 w-3 sm:w-8 theater-curtain-left pointer-events-none z-30 transition-all duration-300"></div>
@@ -152,60 +70,57 @@
   <!-- 頂部戲台雙弧金色下擺帷幔裝飾 -->
   <header class="relative w-full z-20">
     <div class="theater-top-drape w-full h-8 sm:h-11 flex items-center justify-center transition-all duration-300">
-      <div class="flex items-center gap-2 text-[#EED896] text-xs font-serif tracking-widest opacity-95">
+      <div class="flex items-center gap-2 text-[#f6cb58] text-xs font-serif tracking-widest opacity-95">
         <span>❖</span>
         <span class="text-[11px] font-bold">全臺傳統戲曲公演行事曆</span>
         <span>❖</span>
       </div>
     </div>
     <!-- 金色下擺飾線 -->
-    <div class="w-full h-1 bg-gradient-to-r from-[#936F11] via-[#EED896] to-[#936F11] shadow-sm"></div>
+    <div class="w-full h-1 bg-gradient-to-r from-[#f6cb58] via-[#f6cb58] to-[#f6cb58] shadow-sm"></div>
   </header>
 
   <!-- 主內容容器 (Mobile-First 專注手機版寬度) -->
-  <main class="w-full max-w-md mx-auto px-4 pt-3 pb-16 relative z-10 flex-grow">
+  <main class="w-full max-w-5xl mx-auto relative z-10 flex-grow">
 
-    <!-- 標題與簡介 (清爽高雅，完全移除蹭熱度標籤) -->
-    <div class="text-center mb-4">
-      <h1 class="text-xl sm:text-2xl font-black serif-title tracking-wide text-stone-900 mb-1">
-        台灣傳統戲曲演出行事曆
-      </h1>
-      <p class="text-xs text-stone-600">
-        未來 90 天全台歌仔戲與布袋戲公演總覽（2026/10 ～ 2026/12）
-      </p>
-    </div>
+    <section class="hero" aria-labelledby="page-title">
+      <span class="hero-kicker">看戲去・全臺戲曲日曆</span>
+      <h1 id="page-title">好戲開鑼，<br>日子排開。</h1>
+      <p>從廟埕野台到正式劇場，把接下來的歌仔戲與布袋戲演出，整理成一張好查、好安排的戲單。</p>
+      <span class="hero-note">未來 90 天・全臺演出資訊</span>
+    </section>
 
     <!-- 快速切換名家／類別：嚴格 3 行完整排列 (完全免滑動、全部即時可見) -->
     <div class="mb-4">
       <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 text-[11px] font-bold text-stone-500 mb-2 px-1">
         <span>快速篩選</span>
-        <span id="filteredStats" class="text-[10px] sm:text-[11px] text-[#8E162A] font-bold">載入中...</span>
+        <span id="filteredStats" class="text-[10px] sm:text-[11px] text-[#d80b72] font-bold">載入中...</span>
       </div>
 
       <div class="grid grid-cols-4 gap-1.5 text-xs text-center" id="multiRowChips">
         <!-- 第 1 行：全部、古都木偶、羅裕誴、孫凱琳 -->
         <button data-filter="all" class="chip chip-active py-2 rounded-xl text-[11px] font-bold border transition">全部</button>
-        <button data-filter="古都木偶" class="chip py-2 rounded-xl text-[11px] font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#8E162A] transition">🎭 古都木偶</button>
-        <button data-filter="羅裕誴" class="chip py-2 rounded-xl text-[11px] font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#8E162A] transition">⚔️ 羅裕誴</button>
-        <button data-filter="孫凱琳" class="chip py-2 rounded-xl text-[11px] font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#8E162A] transition">✨ 孫凱琳</button>
+        <button data-filter="古都木偶" class="chip py-2 rounded-xl text-[11px] font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#d80b72] transition">🎭 古都木偶</button>
+        <button data-filter="羅裕誴" class="chip py-2 rounded-xl text-[11px] font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#d80b72] transition">⚔️ 羅裕誴</button>
+        <button data-filter="孫凱琳" class="chip py-2 rounded-xl text-[11px] font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#d80b72] transition">✨ 孫凱琳</button>
 
         <!-- 第 2 行：吳奕萱、呂雪鳳、春美、秀琴 -->
-        <button data-filter="吳奕萱" class="chip py-2 rounded-xl text-[11px] font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#8E162A] transition">🤣 吳奕萱</button>
-        <button data-filter="呂雪鳳" class="chip py-2 rounded-xl text-[11px] font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#8E162A] transition">👑 呂雪鳳</button>
-        <button data-filter="春美" class="chip py-2 rounded-xl text-[11px] font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#8E162A] transition">🌸 春美</button>
-        <button data-filter="秀琴" class="chip py-2 rounded-xl text-[11px] font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#8E162A] transition">🏮 秀琴</button>
+        <button data-filter="吳奕萱" class="chip py-2 rounded-xl text-[11px] font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#d80b72] transition">🤣 吳奕萱</button>
+        <button data-filter="呂雪鳳" class="chip py-2 rounded-xl text-[11px] font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#d80b72] transition">👑 呂雪鳳</button>
+        <button data-filter="春美" class="chip py-2 rounded-xl text-[11px] font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#d80b72] transition">🌸 春美</button>
+        <button data-filter="秀琴" class="chip py-2 rounded-xl text-[11px] font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#d80b72] transition">🏮 秀琴</button>
 
         <!-- 第 3 行：唐美雲、明華園、其他歌仔、其他布袋 -->
-        <button data-filter="唐美雲" class="chip py-2 rounded-xl text-[11px] font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#8E162A] transition">👑 唐美雲</button>
-        <button data-filter="明華園" class="chip py-2 rounded-xl text-[11px] font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#8E162A] transition">⭐ 明華園</button>
-        <button data-filter="其他歌仔" class="chip py-2 rounded-xl text-[11px] font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#8E162A] transition">🎪 其他歌仔</button>
-        <button data-filter="其他布袋" class="chip py-2 rounded-xl text-[11px] font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#8E162A] transition">🪵 其他布袋</button>
+        <button data-filter="唐美雲" class="chip py-2 rounded-xl text-[11px] font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#d80b72] transition">👑 唐美雲</button>
+        <button data-filter="明華園" class="chip py-2 rounded-xl text-[11px] font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#d80b72] transition">⭐ 明華園</button>
+        <button data-filter="其他歌仔" class="chip py-2 rounded-xl text-[11px] font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#d80b72] transition">🎪 其他歌仔</button>
+        <button data-filter="其他布袋" class="chip py-2 rounded-xl text-[11px] font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#d80b72] transition">🪵 其他布袋</button>
       </div>
     </div>
 
     <!-- 地區與形式二級下拉 (簡約緊湊) -->
     <div class="flex items-center gap-2 mb-4 text-xs">
-      <select id="regionSelect" class="flex-1 bg-white border border-stone-300 rounded-xl px-2.5 py-1.5 text-stone-700 focus:outline-none focus:border-[#8E162A]">
+      <select id="regionSelect" class="flex-1 bg-white border border-stone-300 rounded-xl px-2.5 py-1.5 text-stone-700 focus:outline-none focus:border-[#d80b72]">
         <option value="all">📍 全台各地 (所有縣市)</option>
         <option value="北部">北部（基隆／台北／新北／桃園／新竹／宜蘭）</option>
         <option value="中部">中部（苗栗／台中／彰化／南投／雲林）</option>
@@ -214,7 +129,7 @@
         <option value="未分類">地點待確認／跨區</option>
       </select>
 
-      <select id="typeSelect" class="flex-1 bg-white border border-stone-300 rounded-xl px-2.5 py-1.5 text-stone-700 focus:outline-none focus:border-[#8E162A]">
+      <select id="typeSelect" class="flex-1 bg-white border border-stone-300 rounded-xl px-2.5 py-1.5 text-stone-700 focus:outline-none focus:border-[#d80b72]">
         <option value="all">🎭 所有演出類型</option>
         <option value="ticket">售票劇院旗艦大戲</option>
         <option value="free">庄頭/戶外免費演出</option>
@@ -226,7 +141,7 @@
     <div id="eventsContainer" class="space-y-3">
       <!-- JS 動態加載 -->
       <div id="loadingView" class="text-center py-12 text-stone-400 text-xs">
-        <svg class="w-6 h-6 animate-spin mx-auto text-[#8E162A] mb-2" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path></svg>
+        <svg class="w-6 h-6 animate-spin mx-auto text-[#d80b72] mb-2" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path></svg>
         <span>正在載入演出資料...</span>
       </div>
     </div>
@@ -252,7 +167,7 @@
           <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
           <span>資料核實機制</span>
         </div>
-        <button onclick="openReportModal('一般演出提報')" class="text-[#8E162A] font-bold hover:underline">
+        <button onclick="openReportModal('一般演出提報')" class="text-[#d80b72] font-bold hover:underline">
           ⚠️ 回報或推薦場次
         </button>
       </div>
@@ -266,7 +181,7 @@
     <div class="mt-6 p-3 bg-white/90 border border-stone-300 rounded-2xl text-center shadow-sm">
       <span class="text-[11px] font-bold text-stone-600 block mb-2">🎨 選擇您喜愛的版面設計風格：</span>
       <div class="grid grid-cols-3 gap-1.5 text-[11px]">
-        <button onclick="changeTheme('crimson-classic')" id="btn-theme-1" class="py-1.5 px-2 rounded-xl font-bold bg-[#8E162A] text-white shadow-sm border border-[#8E162A]">
+        <button onclick="changeTheme('crimson-classic')" id="btn-theme-1" class="py-1.5 px-2 rounded-xl font-bold bg-[#d80b72] text-white shadow-sm border border-[#d80b72]">
           1. 經典絳紅
         </button>
         <button onclick="changeTheme('purple-regal')" id="btn-theme-2" class="py-1.5 px-2 rounded-xl font-bold bg-stone-100 text-stone-700 border border-stone-300">
@@ -281,18 +196,18 @@
   </main>
 
   <!-- 簡約底端 Footer -->
-  <footer class="w-full bg-[#181214] text-stone-400 py-5 px-4 text-center text-[11px] border-t border-[#936F11]/40 relative z-20">
-    <div class="max-w-md mx-auto space-y-1.5">
-      <div class="text-[#EED896] font-bold">
+  <footer class="w-full bg-[#28231f] text-stone-400 py-5 px-4 text-center text-[11px] border-t border-[#f6cb58]/40 relative z-20">
+    <div class="max-w-5xl mx-auto space-y-1.5">
+      <div class="text-[#f6cb58] font-bold">
         <span>© 2026 台灣傳統戲曲演出行事曆</span>
       </div>
       <p class="text-stone-500">每日清晨自動更新・資料以各大售票系統及劇團最新公告為準</p>
       <div class="flex justify-center gap-3 text-stone-400 pt-1 text-[10px]">
-        <a href="https://www.opentix.life/" target="_blank" class="hover:text-[#EED896] transition">OPENTIX 售票</a>
+        <a href="https://www.opentix.life/" target="_blank" class="hover:text-[#f6cb58] transition">OPENTIX 售票</a>
         <span>•</span>
-        <a href="https://kktix.com" target="_blank" class="hover:text-[#EED896] transition">KKTIX 售票</a>
+        <a href="https://kktix.com" target="_blank" class="hover:text-[#f6cb58] transition">KKTIX 售票</a>
         <span>•</span>
-        <a href="https://github.com/eric1810-tw/taiwan-opera-calendar" target="_blank" class="hover:text-[#EED896] transition">專案原始碼</a>
+        <a href="https://github.com/eric1810-tw/taiwan-opera-calendar" target="_blank" class="hover:text-[#f6cb58] transition">專案原始碼</a>
       </div>
     </div>
   </footer>
@@ -305,7 +220,7 @@
         <button onclick="closeReportModal()" class="text-stone-400 hover:text-stone-700 text-lg">&times;</button>
       </div>
       
-      <p id="reportTargetTitle" class="text-xs text-[#8E162A] font-bold mb-2.5 bg-red-50 p-2 rounded-lg"></p>
+      <p id="reportTargetTitle" class="text-xs text-[#d80b72] font-bold mb-2.5 bg-red-50 p-2 rounded-lg"></p>
 
       <form onsubmit="submitReport(event)" class="space-y-2.5 text-xs">
         <div>
@@ -319,7 +234,7 @@
         </div>
         <div>
           <label class="block text-stone-600 font-semibold mb-1">說明與官方連結：</label>
-          <textarea id="reportDetail" rows="3" placeholder="請填寫正確資訊或附上售票/粉專網址..." class="w-full border border-stone-300 rounded-lg p-2 text-stone-800 focus:outline-none focus:border-[#8E162A]" required></textarea>
+          <textarea id="reportDetail" rows="3" placeholder="請填寫正確資訊或附上售票/粉專網址..." class="w-full border border-stone-300 rounded-lg p-2 text-stone-800 focus:outline-none focus:border-[#d80b72]" required></textarea>
         </div>
         <div class="flex gap-2 pt-1">
           <button type="button" onclick="closeReportModal()" class="flex-1 py-2 bg-stone-100 text-stone-700 font-bold rounded-xl text-xs">取消</button>
@@ -364,11 +279,9 @@
       if (event.verifyStatus !== 'verified') return escapeHTML(event.verifyLabel || '⏳ 待核實');
       try {
         const source = new URL(event.sourceUrl || event.link);
-        const path = source.pathname;
-        const isEventPage = (source.hostname === 'www.opentix.life' || source.hostname === 'opentix.life') && /^\/event\//.test(path)
-          || (source.hostname === 'kktix.com' || source.hostname === 'www.kktix.com') && /^\/events?\//.test(path)
-          || source.hostname === 'www.facebook.com' && /\/(posts|events|permalink)\//.test(path);
-        return isEventPage ? escapeHTML(event.verifyLabel || '🛡️ 官方認證') : '⏳ 演出來源頁待補';
+        return source.protocol === 'https:' && event.verifyLabel
+          ? escapeHTML(event.verifyLabel)
+          : '⏳ 演出來源頁待補';
       } catch (_) {
         return '⏳ 演出來源頁待補';
       }
@@ -392,7 +305,7 @@
       });
 
       if (themeName === 'crimson-classic') {
-        b1.className = "py-1.5 px-2 rounded-xl font-bold bg-[#8E162A] text-white shadow-sm border border-[#8E162A]";
+        b1.className = "py-1.5 px-2 rounded-xl font-bold bg-[#d80b72] text-white shadow-sm border border-[#d80b72]";
       } else if (themeName === 'purple-regal') {
         b2.className = "py-1.5 px-2 rounded-xl font-bold bg-[#D4AF37] text-stone-950 shadow-sm border border-[#D4AF37]";
       } else if (themeName === 'literati-ink') {
@@ -404,7 +317,7 @@
     function getDaysBadge(daysAway) {
       daysAway = Number.isInteger(daysAway) && daysAway >= 0 ? daysAway : 0;
       if (daysAway <= 7) {
-        return `<span class="text-[10px] font-bold text-[#8E162A] bg-red-100/80 px-2 py-0.5 rounded border border-red-200">🔥 還有 ${daysAway} 天</span>`;
+        return `<span class="text-[10px] font-bold text-[#d80b72] bg-red-100/80 px-2 py-0.5 rounded border border-red-200">🔥 還有 ${daysAway} 天</span>`;
       } else if (daysAway <= 21) {
         return `<span class="text-[10px] font-bold text-amber-800 bg-amber-100/70 px-2 py-0.5 rounded border border-amber-200">倒數 ${daysAway} 天</span>`;
       } else {
@@ -454,7 +367,7 @@
             <!-- 上方：劇團名、核實標籤與天數 -->
             <div class="flex items-center justify-between gap-1.5 mb-1.5">
               <div class="flex items-center gap-1.5">
-                <span class="text-xs font-bold text-[#8E162A] bg-[#8E162A]/10 px-2.5 py-0.5 rounded-full border border-[#8E162A]/20">
+                <span class="text-xs font-bold text-[#d80b72] bg-[#d80b72]/10 px-2.5 py-0.5 rounded-full border border-[#d80b72]/20">
                   ${escapeHTML(ev.troupe || '主辦單位待核實')}
                 </span>
                 <span class="text-[10px] font-semibold ${ev.verifyStatus === 'verified' && getVerificationLabel(ev).startsWith('🛡️') ? 'text-emerald-700 bg-emerald-50 border-emerald-200' : 'text-amber-800 bg-amber-50 border-amber-200'} px-2 py-0.5 rounded-full border">
@@ -480,12 +393,12 @@
             <!-- 時間與地點 -->
             <div class="space-y-1 text-xs text-stone-600 mb-2.5">
               <div class="flex items-center gap-1">
-                <span class="text-[#8E162A] font-semibold shrink-0">🗓️ 日期時間：</span>
+                <span class="text-[#d80b72] font-semibold shrink-0">🗓️ 日期時間：</span>
                 <span class="font-medium text-stone-800">${escapeHTML(ev.dateFormatted)} ｜ ${escapeHTML(ev.time)}</span>
               </div>
               <div class="flex items-start gap-1">
-                <span class="text-[#8E162A] font-semibold shrink-0">📍 演出地點：</span>
-                <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(ev.location || '')}" target="_blank" rel="noopener noreferrer" class="text-stone-700 underline decoration-stone-300 hover:text-[#8E162A]">
+                <span class="text-[#d80b72] font-semibold shrink-0">📍 演出地點：</span>
+                <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(ev.location || '')}" target="_blank" rel="noopener noreferrer" class="text-stone-700 underline decoration-stone-300 hover:text-[#d80b72]">
                   ${escapeHTML(ev.location || '演出地點待核實')}
                 </a>
               </div>
@@ -499,7 +412,7 @@
 
           <!-- 卡片底部動作 -->
           <div class="pt-2 border-t border-stone-100 flex items-center justify-between gap-2 mt-auto">
-            <button data-report-title="${escapeHTML(ev.title)}" class="report-event text-[11px] text-stone-400 hover:text-[#8E162A] py-1">
+            <button data-report-title="${escapeHTML(ev.title)}" class="report-event text-[11px] text-stone-400 hover:text-[#d80b72] py-1">
               ⚠️ 回報資訊有誤
             </button>
 
