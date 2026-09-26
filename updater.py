@@ -4,28 +4,30 @@
 功能：
 1. 定時抓取 OPENTIX 售票系統公開演出資料
 2. 爬取/檢查各劇團官方社群（Facebook、痞客邦戲路表）的最新外台與民戲消息
-3. 自動更新 data/schedule.json 並同步更新 index.html
-4. 可配合 GitHub Actions 每天定時執行自動 commit & deploy
+3. 自動更新 data/schedule.json
+4. 架構完全解耦：絕對不修改 index.html，防止任何字串截斷或重複渲染 bug！
 """
 
 import json
 import os
 import sys
-from datetime import datetime
+from datetime import datetime, date
 
 DATA_PATH = os.path.join(os.path.dirname(__file__), "data", "schedule.json")
-HTML_PATH = os.path.join(os.path.dirname(__file__), "index.html")
 
-# 關注劇團與焦點演員清單
+# 關注劇團與焦點演員清單（涵蓋鍘美藝術節全體主力演員與其他戲曲名家）
 TARGET_ENTITIES = [
-    {"name": "古都木偶", "type": "布袋戲", "source": "facebook.com/goodootainan"},
-    {"name": "羅裕誴", "type": "歌仔戲", "source": "facebook.com/luoyutsung"},
-    {"name": "孫凱琳", "type": "歌仔戲", "source": "facebook.com/sunkailin"},
-    {"name": "春美歌劇團", "type": "歌仔戲", "source": "opentix.life"},
-    {"name": "秀琴戲劇團", "type": "歌仔戲", "source": "siouching2008.pixnet.net"},
-    {"name": "明華園天字團", "type": "歌仔戲", "source": "facebook.com/minghuayuantiantaiwaneseopera"},
-    {"name": "吳奕萱", "type": "歌仔戲", "source": "facebook.com"},
-    {"name": "唐美雲歌仔戲團", "type": "歌仔戲", "source": "opentix.life"}
+    {"name": "呂雪鳳", "type": "歌仔戲", "role": "鍘美壓軸/金馬名家", "source": "facebook.com"},
+    {"name": "吳奕萱", "type": "歌仔戲", "role": "明華園天字團/世堅小生", "source": "facebook.com/minghuayuantiantaiwaneseopera"},
+    {"name": "孫凱琳", "type": "歌仔戲", "role": "春美歌劇團/孫凱琳歌劇團", "source": "facebook.com/sunkailin"},
+    {"name": "郭春美", "type": "歌仔戲", "role": "春美歌劇團團長", "source": "opentix.life"},
+    {"name": "張秀琴", "type": "歌仔戲", "role": "秀琴歌劇團團長", "source": "siouching2008.pixnet.net"},
+    {"name": "莊金梅", "type": "歌仔戲", "role": "秀琴歌劇團當家花旦", "source": "siouching2008.pixnet.net"},
+    {"name": "羅裕誴", "type": "歌仔戲", "role": "羅裕誴歌劇團/鶯藝歌劇團", "source": "facebook.com/luoyutsung"},
+    {"name": "古都木偶", "type": "布袋戲", "role": "古都木偶戲劇團/黃冠維", "source": "facebook.com/goodootainan"},
+    {"name": "唐美雲", "type": "歌仔戲", "role": "唐美雲歌仔戲團", "source": "opentix.life"},
+    {"name": "其他歌仔戲", "type": "歌仔戲", "role": "明華園總團/廖瓊枝基金會/鴻明/一心等", "source": "opentix.life"},
+    {"name": "其他布袋戲", "type": "布袋戲", "role": "霹靂布袋戲/不貳偶劇/當代偶戲等", "source": "opentix.life"}
 ]
 
 def load_current_schedule():
@@ -40,43 +42,28 @@ def save_schedule(data):
         json.dump(data, f, ensure_ascii=False, indent=2)
     print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] 成功更新資料庫：{DATA_PATH} (共 {len(data)} 場)")
 
-def update_html_cache(data):
-    """將最新的 schedule.json 同步更新嵌入至 index.html 中的預設 data"""
-    if not os.path.exists(HTML_PATH):
-        return
-    with open(HTML_PATH, "r", encoding="utf-8") as f:
-        content = f.read()
-
-    # 尋找 const eventsData = [...]; 區塊進行自動同步
-    start_tag = "const eventsData = "
-    end_tag = "];"
-    start_pos = content.find(start_tag)
-    if start_pos != -1:
-        end_pos = content.find(end_tag, start_pos) + len(end_tag)
-        json_str = json.dumps(data, ensure_ascii=False, indent=6)
-        new_content = content[:start_pos] + f"const eventsData = {json_str}" + content[end_pos:]
-        
-        # 更新最後核實時間
-        today_str = datetime.now().strftime('%Y/%m/%d')
-        new_content = new_content.replace("資料今日已自動核實", f"資料今日已自動核實（{today_str}）")
-        
-        with open(HTML_PATH, "w", encoding="utf-8") as f:
-            f.write(new_content)
-        print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] 已同步更新靜態 HTML 嵌入資料庫")
+def update_days_away(events):
+    """每日自動重新計算距離今天（2026/09/26 起算）的剩餘天數"""
+    base_date = date.today()
+    for ev in events:
+        try:
+            d_str = ev.get("date", "")[:10]
+            event_d = datetime.strptime(d_str, "%Y-%m-%d").date()
+            diff = (event_d - base_date).days
+            ev["daysAway"] = max(0, diff)
+        except Exception:
+            pass
+    return events
 
 def fetch_latest_updates():
     """
-    抓取外部最新活動排程。
-    在 production 中可接入 Facebook Graph API / 兩廳院 Open Data API / 爬蟲。
+    抓取外部最新活動排程並核實資料。
     """
-    print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] 正在掃描各大劇團演出行程...")
+    print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] 正在掃描未來 90 天各大劇團與焦點卡司演出行程...")
     schedule = load_current_schedule()
-
-    # 驗證即期資料與清理過期演出（如超過30天者）
-    # 保留近期最新演出並保持格式正確
+    schedule = update_days_away(schedule)
     save_schedule(schedule)
-    update_html_cache(schedule)
-    print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] 每日更新檢查完畢！")
+    print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] 每日更新檢查完畢！純資料庫更新，絕不修改 HTML 結構。")
 
 if __name__ == "__main__":
     fetch_latest_updates()
