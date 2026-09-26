@@ -200,16 +200,16 @@ def fetch_latest_updates():
     try:
         discovered = culture_candidates(fetch_culture_events())
         existing_by_id = {event["id"]: event for event in schedule}
-        existing_candidate_keys = {
+        existing_event_keys = {
             (event["date"][:10], event["title"])
-            for event in schedule if event.get("verifyStatus") == "pending"
+            for event in schedule
         }
         new_events = []
         for event in discovered:
-            candidate_key = (event["date"][:10], event["title"])
-            if candidate_key not in existing_candidate_keys:
+            event_key = (event["date"][:10], event["title"])
+            if event_key not in existing_event_keys:
                 new_events.append(event)
-                existing_candidate_keys.add(candidate_key)
+                existing_event_keys.add(event_key)
             elif event["id"] in existing_by_id and existing_by_id[event["id"]].get("verifyStatus") == "pending":
                 # Refresh only machine-generated candidates. Human-verified
                 # entries and their editorial fields are never overwritten.
