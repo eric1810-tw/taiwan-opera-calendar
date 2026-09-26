@@ -2,18 +2,34 @@
 """
 台灣傳統戲曲演出日程 - 每日自動排程更新器 (Daily Schedule Updater)
 功能：
-1. 定時抓取 OPENTIX 售票系統公開演出資料
-2. 爬取/檢查各劇團官方社群（Facebook、痞客邦戲路表）的最新外台與民戲消息
-3. 自動更新 data/schedule.json
-4. 架構完全解耦：絕對不修改 index.html，防止任何字串截斷或重複渲染 bug！
+1. 讀取文化部公開藝文活動 JSON，產生待人工核實的戲曲候選
+2. 重新計算台灣時區日期與倒數天數
+3. 驗證結構後以原子方式更新 data/schedule.json
+4. 絕不修改 index.html
 """
 
 import json
+import hashlib
 import os
 import sys
-from datetime import datetime, date
+import tempfile
+import time
+from datetime import date, datetime, timedelta
+from zoneinfo import ZoneInfo
+from urllib.error import HTTPError, URLError
+from urllib.parse import urlencode
+from urllib.request import Request, urlopen
 
 DATA_PATH = os.path.join(os.path.dirname(__file__), "data", "schedule.json")
+API_URL = "https://cloud.culture.tw/frontsite/trans/SearchShowAction.do"
+KEYWORDS = ("歌仔戲", "布袋戲", "掌中戲")
+TIMEOUT_SECONDS = 15
+MAX_ATTEMPTS = 3
+REQUIRED_FIELDS = {
+    "id", "date", "dateFormatted", "daysAway", "time", "troupe", "genre",
+    "artist", "title", "category", "badgeType", "verifyStatus", "verifyLabel",
+    "location", "region", "status", "description", "link", "tags",
+}
 
 # 關注劇團與焦點演員清單（涵蓋鍘美藝術節全體主力演員與其他戲曲名家）
 TARGET_ENTITIES = [
@@ -30,40 +46,158 @@ TARGET_ENTITIES = [
     {"name": "其他布袋戲", "type": "布袋戲", "role": "霹靂布袋戲/不貳偶劇/當代偶戲等", "source": "opentix.life"}
 ]
 
+def validate_schedule(data):
+    if not isinstance(data, list):
+        raise ValueError("schedule root must be a JSON array")
+    seen = set()
+    for index, event in enumerate(data):
+        if not isinstance(event, dict):
+            raise ValueError(f"event {index} must be an object")
+        missing = REQUIRED_FIELDS - event.keys()
+        if missing:
+            raise ValueError(f"event {index} missing required fields: {sorted(missing)}")
+        if not all(isinstance(event[key], str) and event[key].strip() for key in
+                   ("id", "date", "title", "troupe", "genre", "location", "link")):
+            raise ValueError(f"event {index} has an empty or invalid required string")
+        if event["id"] in seen:
+            raise ValueError(f"duplicate event id: {event['id']}")
+        seen.add(event["id"])
+        datetime.strptime(event["date"][:10], "%Y-%m-%d")
+        if not isinstance(event["daysAway"], int) or event["daysAway"] < 0:
+            raise ValueError(f"event {index} daysAway must be a non-negative integer")
+        if not isinstance(event["tags"], list) or not all(isinstance(tag, str) for tag in event["tags"]):
+            raise ValueError(f"event {index} tags must be an array of strings")
+    return data
+
+
 def load_current_schedule():
-    if os.path.exists(DATA_PATH):
-        with open(DATA_PATH, "r", encoding="utf-8") as f:
-            return json.load(f)
-    return []
+    with open(DATA_PATH, "r", encoding="utf-8") as source:
+        return validate_schedule(json.load(source))
 
 def save_schedule(data):
-    os.makedirs(os.path.dirname(DATA_PATH), exist_ok=True)
-    with open(DATA_PATH, "w", encoding="utf-8") as f:
-        json.dump(data, f, ensure_ascii=False, indent=2)
+    validate_schedule(data)
+    directory = os.path.dirname(DATA_PATH)
+    original_mode = os.stat(DATA_PATH).st_mode & 0o777
+    fd, temporary_path = tempfile.mkstemp(prefix="schedule-", suffix=".json", dir=directory)
+    try:
+        os.fchmod(fd, original_mode)
+        with os.fdopen(fd, "w", encoding="utf-8") as output:
+            json.dump(data, output, ensure_ascii=False, indent=2)
+            output.write("\n")
+            output.flush()
+            os.fsync(output.fileno())
+        os.replace(temporary_path, DATA_PATH)
+    finally:
+        if os.path.exists(temporary_path):
+            os.unlink(temporary_path)
     print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] 成功更新資料庫：{DATA_PATH} (共 {len(data)} 場)")
 
-def update_days_away(events):
-    """每日自動重新計算距離今天（2026/09/26 起算）的剩餘天數"""
-    base_date = date.today()
+def taiwan_today():
+    return datetime.now(ZoneInfo("Asia/Taipei")).date()
+
+
+def update_days_away(events, base_date=None):
+    """Recalculate countdown values without silently hiding malformed dates."""
+    base_date = base_date or taiwan_today()
     for ev in events:
-        try:
-            d_str = ev.get("date", "")[:10]
-            event_d = datetime.strptime(d_str, "%Y-%m-%d").date()
-            diff = (event_d - base_date).days
-            ev["daysAway"] = max(0, diff)
-        except Exception:
-            pass
+        event_d = datetime.strptime(ev["date"][:10], "%Y-%m-%d").date()
+        ev["daysAway"] = max(0, (event_d - base_date).days)
     return events
+
+
+def fetch_culture_events():
+    """Fetch the Ministry of Culture's documented all-category JSON feed."""
+    request = Request(
+        f"{API_URL}?{urlencode({'method': 'doFindTypeJOpenApi', 'category': 'all'})}",
+        headers={"User-Agent": "TaiwanOperaCalendar/1.0 (public cultural events)"},
+    )
+    last_error = None
+    for attempt in range(MAX_ATTEMPTS):
+        try:
+            with urlopen(request, timeout=TIMEOUT_SECONDS) as response:
+                payload = json.loads(response.read().decode("utf-8"))
+            if not isinstance(payload, list):
+                raise ValueError("Culture API response must be a JSON array")
+            return payload
+        except (HTTPError, URLError, TimeoutError, OSError, UnicodeError, json.JSONDecodeError, ValueError) as error:
+            last_error = error
+            if attempt + 1 < MAX_ATTEMPTS:
+                time.sleep(2 ** attempt)
+    raise RuntimeError(f"Culture API unavailable after {MAX_ATTEMPTS} attempts: {last_error}")
+
+
+def culture_candidates(records, today=None):
+    """Create clearly unverified review candidates; never promote source data to verified."""
+    today = today or taiwan_today()
+    end_date = today + timedelta(days=90)
+    candidates = []
+    for record in records:
+        if not isinstance(record, dict):
+            continue
+        title = str(record.get("title", "")).strip()
+        details = " ".join(str(record.get(key, "")) for key in
+                           ("description", "showInfo", "categoryName", "subCategoryName", "masterUnit", "actUnit"))
+        text = f"{title} {details}"
+        if not title or not any(keyword in text for keyword in KEYWORDS):
+            continue
+        show_info = record.get("showInfo")
+        shows = show_info if isinstance(show_info, list) and show_info else [{}]
+        for show in shows:
+            if not isinstance(show, dict):
+                continue
+            raw_date = str(show.get("time", record.get("startDate", "")))[:10]
+            try:
+                event_date = datetime.strptime(raw_date, "%Y/%m/%d").date() if "/" in raw_date else datetime.strptime(raw_date, "%Y-%m-%d").date()
+            except ValueError:
+                continue
+            if not today <= event_date <= end_date:
+                continue
+            genre = "布袋戲" if any(word in text for word in ("布袋戲", "掌中戲")) else "歌仔戲"
+            digest = hashlib.sha256(f"{title}|{event_date.isoformat()}".encode("utf-8")).hexdigest()[:10]
+            event_id = f"moc-{event_date:%Y%m%d}-{digest}"
+            raw_link = show.get("webSales") or record.get("sourceWebPromote") or "https://cloud.culture.tw/"
+            candidates.append({
+                "id": event_id, "date": event_date.isoformat(),
+                "dateFormatted": event_date.strftime("%Y/%m/%d"), "daysAway": 0,
+                "time": str(show.get("time", "時間請查官方公告")),
+                "troupe": str(record.get("masterUnit", record.get("actUnit", "文化部開放資料候選"))).strip() or "文化部開放資料候選",
+                "genre": genre, "artist": "待查官方公告", "title": title,
+                "category": "文化部 Open Data 候選（待人工核實）", "badgeType": "plan",
+                "verifyStatus": "pending", "verifyLabel": "⏳ 自動發現・待人工核實",
+                "location": str(show.get("locationName", show.get("location", record.get("location", "地點請查官方公告")))),
+                "region": "全台", "status": "待人工核實", "description": "由文化部公開資料關鍵字找到；發布前請人工核對劇種、主辦單位、日期與場地。",
+                "link": str(raw_link),
+                "linkLabel": "來源資訊（待核實）", "sourceUrl": "https://cloud.culture.tw/",
+                "tags": ["自動發現候選", genre],
+            })
+    return candidates
 
 def fetch_latest_updates():
     """
     抓取外部最新活動排程並核實資料。
     """
-    print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] 正在掃描未來 90 天各大劇團與焦點卡司演出行程...")
+    print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] 正在查詢文化部公開藝文活動資料...")
     schedule = load_current_schedule()
+    existing_ids = {event["id"] for event in schedule}
+    try:
+        discovered = culture_candidates(fetch_culture_events())
+        new_events = []
+        for event in discovered:
+            if event["id"] not in existing_ids:
+                new_events.append(event)
+                existing_ids.add(event["id"])
+        schedule.extend(new_events)
+        print(f"文化部資料源新增 {len(new_events)} 筆待人工核實候選")
+    except RuntimeError as error:
+        # Keep existing checked-in data and still refresh countdowns on a source outage.
+        print(f"警告：{error}", file=sys.stderr)
     schedule = update_days_away(schedule)
     save_schedule(schedule)
     print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] 每日更新檢查完畢！純資料庫更新，絕不修改 HTML 結構。")
 
 if __name__ == "__main__":
-    fetch_latest_updates()
+    try:
+        fetch_latest_updates()
+    except (OSError, ValueError, json.JSONDecodeError) as error:
+        print(f"更新失敗，原資料未被覆寫：{error}", file=sys.stderr)
+        raise SystemExit(1)

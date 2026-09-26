@@ -2,7 +2,7 @@
 <html lang="zh-TW" data-theme="crimson-classic">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>台灣傳統戲曲演出行事曆 | 未來90天歌仔戲與布袋戲公演總覽</title>
   
   <!-- Google Fonts: 傳統楷書、古典宋明體與清晰無襯線 -->
@@ -133,6 +133,14 @@
 
     /* 通用字體 */
     .serif-title { font-family: 'Noto Serif TC', serif; }
+    .hidden { display: none !important; }
+    body {
+      padding-top: env(safe-area-inset-top, 0px);
+      padding-bottom: env(safe-area-inset-bottom, 0px);
+    }
+    footer { padding-bottom: calc(1.25rem + env(safe-area-inset-bottom, 0px)); }
+    .chip { min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    @media (max-width: 360px) { .chip { font-size: 10px; } }
   </style>
 </head>
 <body class="min-h-screen flex flex-col justify-between relative selection:bg-[#8E162A] selection:text-white transition-colors duration-300">
@@ -215,10 +223,16 @@
     <!-- 演出卡片串流容器 (Cards List) -->
     <div id="eventsContainer" class="space-y-3">
       <!-- JS 動態加載 -->
-      <div class="text-center py-12 text-stone-400 text-xs">
+      <div id="loadingView" class="text-center py-12 text-stone-400 text-xs">
         <svg class="w-6 h-6 animate-spin mx-auto text-[#8E162A] mb-2" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path></svg>
-        <span>正在載入已核實之 90 天演出資料...</span>
+        <span>正在載入演出資料...</span>
       </div>
+    </div>
+
+    <div id="loadError" class="hidden text-center py-8 px-4 text-stone-600 text-xs bg-white/80 rounded-2xl border border-stone-200" role="status" aria-live="polite">
+      <p id="loadErrorMessage">目前無法載入演出資料。</p>
+      <button id="retryLoad" class="mt-3 px-4 py-2 accent-btn rounded-xl font-bold">重新載入</button>
+      <p class="mt-2 text-stone-500">若以 file:// 開啟，請改用本機 HTTP 伺服器。</p>
     </div>
 
     <!-- 空白提示 -->
@@ -241,8 +255,8 @@
         </button>
       </div>
       <p class="text-[11px] text-stone-600 leading-relaxed">
-        本行事曆由系統定時交叉比對 OPENTIX、KKTIX、文化部 Open Data 及劇團官方公告。
-        標有 <span class="text-emerald-700 font-bold">🛡️ 官方認證</span> 之場次皆已確認售票與檔期無誤。
+        系統定時檢視文化部公開活動資料；自動發現線索仍須人工核實。
+        標示 <span class="text-emerald-700 font-bold">🛡️ 官方認證</span> 的場次附有可直接查閱的官方活動頁。
       </p>
     </section>
 
@@ -326,10 +340,43 @@
     const regionSelect = document.getElementById('regionSelect');
     const typeSelect = document.getElementById('typeSelect');
     const chips = document.querySelectorAll('.chip');
+    const loadingView = document.getElementById('loadingView');
+    const loadError = document.getElementById('loadError');
+
+    function escapeHTML(value) {
+      return String(value ?? '').replace(/[&<>"']/g, character => ({
+        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+      })[character]);
+    }
+
+    function safeExternalURL(value) {
+      try {
+        const url = new URL(String(value || ''), location.href);
+        return url.protocol === 'https:' ? url.href : '#';
+      } catch (_) {
+        return '#';
+      }
+    }
+
+    function getVerificationLabel(event) {
+      if (event.verifyStatus !== 'verified') return escapeHTML(event.verifyLabel || '⏳ 待核實');
+      try {
+        const source = new URL(event.sourceUrl || event.link);
+        const path = source.pathname;
+        const isEventPage = (source.hostname === 'www.opentix.life' || source.hostname === 'opentix.life') && /^\/event\//.test(path)
+          || (source.hostname === 'kktix.com' || source.hostname === 'www.kktix.com') && /^\/events?\//.test(path)
+          || source.hostname === 'www.facebook.com' && /\/(posts|events|permalink)\//.test(path);
+        return isEventPage ? escapeHTML(event.verifyLabel || '🛡️ 官方認證') : '⏳ 演出來源頁待補';
+      } catch (_) {
+        return '⏳ 演出來源頁待補';
+      }
+    }
 
     // 切換主題風格 (提供 3 種設計)
     function changeTheme(themeName) {
+      if (!['crimson-classic', 'purple-regal', 'literati-ink'].includes(themeName)) return;
       document.documentElement.setAttribute('data-theme', themeName);
+      try { localStorage.setItem('opera-theme', themeName); } catch (_) { /* Storage may be disabled. */ }
       
       // 更新按鈕樣式
       const b1 = document.getElementById('btn-theme-1');
@@ -351,6 +398,7 @@
 
     // 倒數天數
     function getDaysBadge(daysAway) {
+      daysAway = Number.isInteger(daysAway) && daysAway >= 0 ? daysAway : 0;
       if (daysAway <= 7) {
         return `<span class="text-[10px] font-bold text-[#8E162A] bg-red-100/80 px-2 py-0.5 rounded border border-red-200">🔥 還有 ${daysAway} 天</span>`;
       } else if (daysAway <= 21) {
@@ -400,10 +448,10 @@
             <div class="flex items-center justify-between gap-1.5 mb-1.5">
               <div class="flex items-center gap-1.5">
                 <span class="text-xs font-bold text-[#8E162A] bg-[#8E162A]/10 px-2.5 py-0.5 rounded-full border border-[#8E162A]/20">
-                  ${ev.troupe}
+                  ${escapeHTML(ev.troupe)}
                 </span>
-                <span class="text-[10px] font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">
-                  ${ev.verifyLabel || '🛡️ 官方核實'}
+                <span class="text-[10px] font-semibold ${ev.verifyStatus === 'verified' && getVerificationLabel(ev).startsWith('🛡️') ? 'text-emerald-700 bg-emerald-50 border-emerald-200' : 'text-amber-800 bg-amber-50 border-amber-200'} px-2 py-0.5 rounded-full border">
+                  ${getVerificationLabel(ev)}
                 </span>
               </div>
               <div>${getDaysBadge(ev.daysAway)}</div>
@@ -411,52 +459,56 @@
 
             <!-- 劇目標題 -->
             <h2 class="text-base font-bold serif-title text-stone-900 leading-snug mb-1">
-              ${ev.title}
+              ${escapeHTML(ev.title)}
             </h2>
 
             <!-- 主演卡司 -->
             <div class="text-xs text-stone-700 font-medium mb-2 bg-stone-50 px-2 py-1 rounded-lg">
               <span class="text-amber-800 font-semibold">🎭 主演：</span>
-              <span class="truncate">${ev.artist}</span>
+              <span class="truncate">${escapeHTML(ev.artist)}</span>
             </div>
 
             <!-- 時間與地點 -->
             <div class="space-y-1 text-xs text-stone-600 mb-2.5">
               <div class="flex items-center gap-1">
                 <span class="text-[#8E162A] font-semibold shrink-0">🗓️ 日期時間：</span>
-                <span class="font-medium text-stone-800">${ev.dateFormatted} ｜ ${ev.time}</span>
+                <span class="font-medium text-stone-800">${escapeHTML(ev.dateFormatted)} ｜ ${escapeHTML(ev.time)}</span>
               </div>
               <div class="flex items-start gap-1">
                 <span class="text-[#8E162A] font-semibold shrink-0">📍 演出地點：</span>
-                <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(ev.location)}" target="_blank" class="text-stone-700 underline decoration-stone-300 hover:text-[#8E162A]">
-                  ${ev.location}
+                <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(ev.location || '')}" target="_blank" rel="noopener noreferrer" class="text-stone-700 underline decoration-stone-300 hover:text-[#8E162A]">
+                  ${escapeHTML(ev.location)}
                 </a>
               </div>
             </div>
 
             <!-- 簡介看點 -->
             <p class="text-xs text-stone-500 leading-relaxed mb-3">
-              ${ev.description}
+              ${escapeHTML(ev.description)}
             </p>
           </div>
 
           <!-- 卡片底部動作 -->
           <div class="pt-2 border-t border-stone-100 flex items-center justify-between gap-2 mt-auto">
-            <button onclick="openReportModal('${ev.title.replace(/'/g, "\\'")}')" class="text-[11px] text-stone-400 hover:text-[#8E162A] py-1">
+            <button data-report-title="${escapeHTML(ev.title)}" class="report-event text-[11px] text-stone-400 hover:text-[#8E162A] py-1">
               ⚠️ 回報資訊有誤
             </button>
 
             <a 
-              href="${ev.link}" 
+              href="${escapeHTML(safeExternalURL(ev.link))}"
               target="_blank" 
+              rel="noopener noreferrer"
               class="inline-flex items-center gap-1 text-xs font-bold px-3.5 py-1.5 rounded-xl accent-btn shadow-sm transition active:scale-95"
             >
-              <span>${ev.linkLabel || '官方購票 / 詳情'}</span>
+              <span>${escapeHTML(ev.linkLabel || '官方購票 / 詳情')}</span>
               <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
             </a>
           </div>
         </article>
       `).join('');
+      eventsContainer.querySelectorAll('.report-event').forEach(button => {
+        button.addEventListener('click', () => openReportModal(button.dataset.reportTitle));
+      });
     }
 
     // 3 行多列標籤點擊
@@ -524,16 +576,40 @@
       alert('已開啟 GitHub Issue 提報窗口，感謝您的熱心回報！');
     }
 
-    // 動態載入 schedule.json
-    fetch('./data/schedule.json')
-      .then(res => res.json())
-      .then(data => {
+    async function loadSchedule() {
+      loadingView.classList.remove('hidden');
+      loadError.classList.add('hidden');
+      eventsContainer.classList.remove('hidden');
+      emptyView.classList.add('hidden');
+      try {
+        const response = await fetch('./data/schedule.json', { cache: 'no-cache' });
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const data = await response.json();
+        const requiredText = ['id', 'date', 'dateFormatted', 'time', 'troupe', 'genre', 'artist', 'title', 'location', 'description', 'link'];
+        if (!Array.isArray(data) || data.some(event => !event || typeof event !== 'object'
+          || requiredText.some(key => typeof event[key] !== 'string')
+          || !Number.isInteger(event.daysAway) || event.daysAway < 0
+          || !Array.isArray(event.tags) || event.tags.some(tag => typeof tag !== 'string'))) {
+          throw new Error('資料格式不正確');
+        }
         eventsData = data;
+        loadingView.classList.add('hidden');
+        eventsContainer.classList.remove('hidden');
         renderEvents();
-      })
-      .catch(err => {
-        console.error('Fetch error:', err);
-      });
+      } catch (error) {
+        console.error('Schedule load failed:', error);
+        loadingView.classList.add('hidden');
+        document.getElementById('loadErrorMessage').textContent =
+          location.protocol === 'file:' ? '直接以 file:// 開啟無法讀取 JSON。' : '網路暫時無法載入演出資料，請稍後重試。';
+        loadError.classList.remove('hidden');
+      }
+    }
+    document.getElementById('retryLoad').addEventListener('click', loadSchedule);
+    try {
+      const savedTheme = localStorage.getItem('opera-theme');
+      if (savedTheme) changeTheme(savedTheme);
+    } catch (_) { /* Use the default theme when storage is unavailable. */ }
+    loadSchedule();
   </script>
 </body>
 </html>

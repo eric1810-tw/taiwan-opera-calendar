@@ -1,5 +1,32 @@
 [
   {
+    "id": "mhy-fox-2026-10-04",
+    "date": "2026-10-04",
+    "dateFormatted": "2026/10/04（日）",
+    "daysAway": 8,
+    "time": "詳見 OPENTIX 場次選擇",
+    "troupe": "明華園戲劇總團",
+    "genre": "歌仔戲",
+    "artist": "吳米娜、李郁真、黃筱媛、曾玫萍",
+    "title": "NEXT劇場《狐說百妖》",
+    "category": "彰化劇場藝術節 / 售票公演",
+    "badgeType": "ticket",
+    "verifyStatus": "verified",
+    "verifyLabel": "🛡️ OPENTIX 官方活動頁",
+    "location": "彰化縣員林市員林大道二段99號（員林演藝廳表演廳）",
+    "region": "中部",
+    "status": "OPENTIX 官方活動頁列有 10/4 演出資訊",
+    "description": "明華園戲劇總團歌仔戲演出，屬 2026 彰化劇場藝術節 NEXT 劇場節目。實際場次時間及票務狀態請以 OPENTIX 活動頁為準。",
+    "link": "https://www.opentix.life/event/2066764933884280832",
+    "linkLabel": "OPENTIX 活動詳情",
+    "sourceUrl": "https://www.opentix.life/event/2066764933884280832",
+    "tags": [
+      "明華園",
+      "明華園總團",
+      "其他歌仔戲"
+    ]
+  },
+  {
     "id": "yx-2026-10-03",
     "date": "2026-10-03",
     "dateFormatted": "2026/10/03 (六)",
@@ -384,6 +411,32 @@
     "tags": [
       "其他歌仔戲",
       "薪傳歌仔戲劇團"
+    ]
+  },
+  {
+    "id": "yuanhe-2026-10-30",
+    "date": "2026-10-30",
+    "dateFormatted": "2026/10/30（五）～11/01（日）",
+    "daysAway": 34,
+    "time": "10/30 19:30、10/31 14:30、11/01 14:30",
+    "troupe": "元和劇子劇團",
+    "genre": "歌仔戲",
+    "artist": "鄒慈愛、李珞晴、曾玫萍、陳昕宇",
+    "title": "鼓震千秋《梁紅玉》",
+    "category": "大稻埕戲苑 / 售票公演",
+    "badgeType": "ticket",
+    "verifyStatus": "verified",
+    "verifyLabel": "🛡️ OPENTIX 官方活動頁",
+    "location": "臺北市大同區迪化街一段21號9樓（大稻埕戲苑）",
+    "region": "北部",
+    "status": "OPENTIX 列有 10/30 至 11/01 三場演出",
+    "description": "元和劇子劇團以傳統歌仔戲呈現梁紅玉故事。日期、場次與地點依 OPENTIX 官方活動頁。",
+    "link": "https://www.opentix.life/event/2063886748971831297",
+    "linkLabel": "OPENTIX 活動詳情",
+    "sourceUrl": "https://www.opentix.life/event/2063886748971831297",
+    "tags": [
+      "其他歌仔戲",
+      "元和劇子劇團"
     ]
   },
   {
