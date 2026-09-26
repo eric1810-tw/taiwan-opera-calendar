@@ -91,7 +91,7 @@ def save_schedule(data):
     finally:
         if os.path.exists(temporary_path):
             os.unlink(temporary_path)
-    print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] 成功更新資料庫：{DATA_PATH} (共 {len(data)} 場)")
+    print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] 成功更新資料庫：{DATA_PATH} (共 {len(data)} 筆節目卡片)")
 
 def taiwan_today():
     return datetime.now(ZoneInfo("Asia/Taipei")).date()
