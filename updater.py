@@ -23,6 +23,9 @@ from urllib.request import Request, urlopen
 
 DATA_PATH = os.path.join(os.path.dirname(__file__), "data", "schedule.json")
 METADATA_PATH = os.path.join(os.path.dirname(__file__), "data", "metadata.json")
+THREADS_ACCOUNTS_PATH = os.path.join(os.path.dirname(__file__), "data", "threads_accounts.json")
+THREADS_CANDIDATES_PATH = os.path.join(os.path.dirname(__file__), "data", "threads_candidates.json")
+THREADS_API_URL = "https://graph.threads.net/v1.0/profile_posts"
 API_URL = "https://cloud.culture.tw/frontsite/trans/SearchShowAction.do"
 KEYWORDS = ("歌仔戲", "布袋戲", "掌中戲")
 TIMEOUT_SECONDS = 60
@@ -114,6 +117,109 @@ def save_metadata():
         if os.path.exists(temporary_path):
             os.unlink(temporary_path)
     print(f"資料更新時間已寫入：{METADATA_PATH}")
+
+
+def atomic_write_json(path, data):
+    """Write JSON without leaving a partial file if the process is interrupted."""
+    directory = os.path.dirname(path)
+    fd, temporary_path = tempfile.mkstemp(prefix="threads-", suffix=".json", dir=directory)
+    try:
+        os.fchmod(fd, 0o644)
+        with os.fdopen(fd, "w", encoding="utf-8") as output:
+            json.dump(data, output, ensure_ascii=False, indent=2)
+            output.write("\n")
+            output.flush()
+            os.fsync(output.fileno())
+        os.replace(temporary_path, path)
+    finally:
+        if os.path.exists(temporary_path):
+            os.unlink(temporary_path)
+
+
+def fetch_threads_posts(username, access_token):
+    """Read a public profile's recent posts through Meta's official Threads API."""
+    params = urlencode({
+        "username": username,
+        "fields": "id,username,text,timestamp,permalink,media_type",
+        "limit": 25,
+    })
+    request = Request(THREADS_API_URL + "?" + params,
+                      headers={
+                          "User-Agent": "TaiwanOperaCalendar/1.0",
+                          "Authorization": f"Bearer {access_token}",
+                      })
+    with urlopen(request, timeout=30) as response:
+        payload = json.loads(response.read().decode("utf-8"))
+    if not isinstance(payload, dict) or not isinstance(payload.get("data", []), list):
+        raise RuntimeError(f"Threads API returned an unexpected response for @{username}")
+    return payload.get("data", [])
+
+
+THREADS_EVENT_TERMS = ("演出", "表演", "公演", "戲", "戲棚", "廟會", "場次", "開演", "演出時間")
+
+
+def discover_threads_candidates(access_token):
+    """Save event-related source posts for human review; never auto-publish them."""
+    with open(THREADS_ACCOUNTS_PATH, "r", encoding="utf-8") as source:
+        accounts = json.load(source)
+    if not isinstance(accounts, list):
+        raise ValueError("Threads account list must be a JSON array")
+
+    try:
+        with open(THREADS_CANDIDATES_PATH, "r", encoding="utf-8") as source:
+            existing = json.load(source)
+    except FileNotFoundError:
+        existing = []
+    if not isinstance(existing, list):
+        raise ValueError("Threads candidate store must be a JSON array")
+    by_id = {item.get("postId"): item for item in existing if isinstance(item, dict)}
+    failures = []
+    successful_accounts = 0
+    today = taiwan_today()
+
+    for account in accounts:
+        username = account.get("username") if isinstance(account, dict) else None
+        if not isinstance(username, str) or not re.fullmatch(r"[A-Za-z0-9._]+", username):
+            failures.append(f"invalid account entry: {account!r}")
+            continue
+        try:
+            posts = fetch_threads_posts(username, access_token)
+        except (HTTPError, URLError, TimeoutError, OSError, UnicodeError,
+                json.JSONDecodeError, RuntimeError) as error:
+            failures.append(f"@{username}: {error}")
+            continue
+        successful_accounts += 1
+        for post in posts:
+            if not isinstance(post, dict) or not isinstance(post.get("id"), str):
+                continue
+            text = str(post.get("text") or "").strip()
+            if not text or not any(term in text for term in THREADS_EVENT_TERMS):
+                continue
+            timestamp = str(post.get("timestamp") or "")
+            try:
+                posted_at = datetime.fromisoformat(timestamp.replace("Z", "+00:00"))
+                if posted_at.date() < today - timedelta(days=30):
+                    continue
+            except ValueError:
+                pass
+            by_id[post["id"]] = {
+                "postId": post["id"],
+                "username": username,
+                "postedAt": timestamp,
+                "permalink": str(post.get("permalink") or f"https://www.threads.com/@{username}"),
+                "text": text,
+                "reviewStatus": "pending",
+                "discoveredAt": datetime.now(ZoneInfo("Asia/Taipei")).isoformat(timespec="seconds"),
+            }
+
+    if accounts and not successful_accounts:
+        raise RuntimeError("Threads 巡檢全部失敗；候選資料未更新，請確認 API 授權與權限")
+    candidates = sorted(by_id.values(), key=lambda item: item.get("postedAt", ""), reverse=True)
+    atomic_write_json(THREADS_CANDIDATES_PATH, candidates)
+    print(f"Threads 即時巡檢完成：{successful_accounts}/{len(accounts)} 個帳號；候選貼文 {len(candidates)} 筆")
+    for failure in failures:
+        print(f"Threads 巡檢失敗：{failure}", file=sys.stderr)
+    return candidates
 
 def taiwan_today():
     return datetime.now(ZoneInfo("Asia/Taipei")).date()
@@ -304,11 +410,26 @@ def fetch_latest_updates():
     schedule = update_days_away(schedule)
     save_schedule(schedule)
     save_metadata()
+    token = os.environ.get("THREADS_ACCESS_TOKEN")
+    if token:
+        try:
+            discover_threads_candidates(token)
+        except (OSError, ValueError, RuntimeError, json.JSONDecodeError) as error:
+            # Optional social discovery must never block the published schedule.
+            print(f"警告：Threads 候選巡檢失敗，保留既有資料：{error}", file=sys.stderr)
+    else:
+        print("略過 Threads 貼文巡檢：未設定 THREADS_ACCESS_TOKEN", file=sys.stderr)
     print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] 每日更新檢查完畢！純資料庫更新，絕不修改 HTML 結構。")
 
 if __name__ == "__main__":
     try:
+        if "--threads-now" in sys.argv:
+            token = os.environ.get("THREADS_ACCESS_TOKEN")
+            if not token:
+                raise RuntimeError("缺少 THREADS_ACCESS_TOKEN；請先在 GitHub Actions secret 設定 Meta Threads API 授權 token")
+            discover_threads_candidates(token)
+            raise SystemExit(0)
         fetch_latest_updates()
-    except (OSError, ValueError, json.JSONDecodeError) as error:
+    except (OSError, ValueError, RuntimeError, json.JSONDecodeError) as error:
         print(f"更新失敗，原資料未被覆寫：{error}", file=sys.stderr)
         raise SystemExit(1)
