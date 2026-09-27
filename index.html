@@ -201,6 +201,7 @@
       <div class="text-[#f6cb58] font-bold">
         <span>© 2026 台灣傳統戲曲演出行事曆</span>
       </div>
+      <p id="lastUpdated" class="text-stone-300" aria-live="polite">資料最後更新時間：讀取中…</p>
       <p class="text-stone-500">每日清晨自動更新・資料以各大售票系統及劇團最新公告為準</p>
       <div class="flex justify-center gap-3 text-stone-400 pt-1 text-[10px]">
         <a href="https://www.opentix.life/" target="_blank" class="hover:text-[#f6cb58] transition">OPENTIX 售票</a>
@@ -504,6 +505,7 @@
       eventsContainer.classList.remove('hidden');
       emptyView.classList.add('hidden');
       try {
+        loadLastUpdated();
         const response = await fetch('./data/schedule.json', { cache: 'no-cache' });
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
         const data = await response.json();
@@ -526,6 +528,26 @@
         loadError.classList.remove('hidden');
       }
     }
+
+    async function loadLastUpdated() {
+      const label = document.getElementById('lastUpdated');
+      try {
+        const response = await fetch('./data/metadata.json', { cache: 'no-cache' });
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const metadata = await response.json();
+        const timestamp = new Date(metadata.lastUpdated);
+        if (!Number.isFinite(timestamp.getTime())) throw new Error('Invalid update timestamp');
+        const formatted = new Intl.DateTimeFormat('zh-TW', {
+          timeZone: 'Asia/Taipei', year: 'numeric', month: '2-digit', day: '2-digit',
+          hour: '2-digit', minute: '2-digit', hourCycle: 'h23'
+        }).format(timestamp);
+        label.textContent = `資料最後更新時間：${formatted}（台灣時間）`;
+      } catch (error) {
+        console.warn('Last-updated metadata unavailable:', error);
+        label.textContent = '資料最後更新時間：目前無法取得';
+      }
+    }
+
     document.getElementById('retryLoad').addEventListener('click', loadSchedule);
     try {
       const savedTheme = localStorage.getItem('opera-theme');

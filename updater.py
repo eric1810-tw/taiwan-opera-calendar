@@ -22,6 +22,7 @@ from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
 DATA_PATH = os.path.join(os.path.dirname(__file__), "data", "schedule.json")
+METADATA_PATH = os.path.join(os.path.dirname(__file__), "data", "metadata.json")
 API_URL = "https://cloud.culture.tw/frontsite/trans/SearchShowAction.do"
 KEYWORDS = ("歌仔戲", "布袋戲", "掌中戲")
 TIMEOUT_SECONDS = 60
@@ -92,6 +93,27 @@ def save_schedule(data):
         if os.path.exists(temporary_path):
             os.unlink(temporary_path)
     print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] 成功更新資料庫：{DATA_PATH} (共 {len(data)} 筆節目卡片)")
+
+
+def save_metadata():
+    """Atomically record when the schedule was most recently refreshed."""
+    directory = os.path.dirname(METADATA_PATH)
+    fd, temporary_path = tempfile.mkstemp(prefix="metadata-", suffix=".json", dir=directory)
+    try:
+        os.fchmod(fd, 0o644)
+        with os.fdopen(fd, "w", encoding="utf-8") as output:
+            json.dump({
+                "lastUpdated": datetime.now(ZoneInfo("Asia/Taipei")).isoformat(timespec="seconds"),
+                "timezone": "Asia/Taipei",
+            }, output, ensure_ascii=False, indent=2)
+            output.write("\n")
+            output.flush()
+            os.fsync(output.fileno())
+        os.replace(temporary_path, METADATA_PATH)
+    finally:
+        if os.path.exists(temporary_path):
+            os.unlink(temporary_path)
+    print(f"資料更新時間已寫入：{METADATA_PATH}")
 
 def taiwan_today():
     return datetime.now(ZoneInfo("Asia/Taipei")).date()
@@ -281,6 +303,7 @@ def fetch_latest_updates():
         print(f"警告：{error}", file=sys.stderr)
     schedule = update_days_away(schedule)
     save_schedule(schedule)
+    save_metadata()
     print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] 每日更新檢查完畢！純資料庫更新，絕不修改 HTML 結構。")
 
 if __name__ == "__main__":
