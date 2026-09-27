@@ -8,8 +8,8 @@
 ## 目前狀態摘要
 
 - 靜態網站由 `index.html` 顯示 `data/schedule.json`，頁尾讀取 `data/metadata.json` 顯示資料刷新時間。
-- 最近一次已保存的資料時間以 `data/metadata.json` 為準。本次 2026-09-28 更新後 schedule 有 **55 張日曆卡**：`verified` 38、`community` 17；區域北部 26、中部 4、南部 22、東部 2、未分類 1。卡片數不是唯一活動數或演出晚數。
-- 卡片來源網域計數（依 `link` 欄位）：文化部 `event.moc.gov.tw` 5、OPENTIX 24、Threads 9、Facebook 4、`siouching2008.pixnet.net` 4、`twoperapf.org.tw` 3，以及 `tw-yishin.com`、`event.culture.tw`、`pili.com.tw`、`shintrun.com`、`npac-ntt.org`、`klpas.klcg.gov.tw` 各 1。連結是卡片來源線索，不代表所有來源都已經有自動擷取器。
+- 最近一次已保存的資料時間以 `data/metadata.json` 為準。本次 2026-09-28 07:00 巡檢後 schedule 有 **63 張日曆卡**：`verified` 38、`community` 25；區域北部 27、中部 6、南部 27、東部 2、未分類 1。卡片數不是唯一活動數或演出晚數。
+- 卡片來源網域計數（依 `link` 欄位）：文化部 `event.moc.gov.tw` 5、OPENTIX 24、Threads 8、Facebook 4、`siouching2008.pixnet.net` 13、`twoperapf.org.tw` 3，以及 `tw-yishin.com`、`event.culture.tw`、`pili.com.tw`、`shintrun.com`、`npac-ntt.org`、`klpas.klcg.gov.tw` 各 1。連結是卡片來源線索，不代表所有來源都已經有自動擷取器。
 - 接手時務必以 `git status --short --branch`、`git log -1`、`git ls-remote origin HEAD` 查證本地／遠端版本；不要依本文件猜測已部署狀態。`CLOUDFLARE_HANDOVER.md` 是先前留下的未追蹤檔案，屬既有使用者工作，請保留。
 - 本機 GitHub CLI 曾回報登入 token 無效；但 Git `ls-remote` 在解除工具沙盒網路限制後已可連通。推送和網站部署仍須分別驗證。
 
@@ -35,8 +35,8 @@
 
 ### Threads 監控（瀏覽器已即時巡檢；API 路徑仍待授權）
 
-- Codex 已透過登入的內建瀏覽器讀取名單中 14 個公開帳號的近期可見貼文與圖片，不需 Meta API 授權。本次已從秀琴相關宣傳帳號新增兩場 `community` 卡片，另將未獨立查證的戲路圖與古都木偶團澄清記在 `THREADS_AUDIT_2026-09-28.md`。
-- Codex app 已建立有效 heartbeat 排程「臺灣戲曲 Threads 演出巡檢」，設定每日 07:00、19:00 按名單巡檢，僅在新增可發布場次、重要更正、失敗或需使用者處理時通知。排程設定存在 app 個人 automations 中，**不在 Git repo**；是否按台灣時間實際觸發、能否持續讀取登入頁面及寫入／推送，須等首次執行後驗收，不能把「建立成功」當成「長期監控已驗證」。
+- Codex 已透過登入的內建瀏覽器讀取名單中 14 個公開帳號的近期可見貼文與圖片，不需 Meta API 授權。先從秀琴相關宣傳帳號新增兩場 `community` 卡片；07:00 首次 heartbeat 再與秀琴歌劇團官方九月戲路表核對，新增 8 張戲路卡、更正先前圖片誤讀的廟名，見 `THREADS_AUDIT_2026-09-28.md`。
+- Codex app 已建立有效 heartbeat 排程「臺灣戲曲 Threads 演出巡檢」，設定每日 07:00、19:00 按名單巡檢，僅在新增可發布場次、重要更正、失敗或需使用者處理時通知。排程設定存在 app 個人 automations 中，**不在 Git repo**；首次觸發實測 2026-09-28 07:00:37（台灣時間），且可讀 14 個帳號。仍須觀察 19:00 與後續排程的持續性。
 - 下列官方 Threads API 擷取器是另一條**可選**路徑；缺 token 不會阻止上述瀏覽器巡檢。
 
 - 最近變更新增官方 Threads API 讀取 `/v1.0/profile_posts`，帳號從 `data/threads_accounts.json` 讀入，候選貼文寫入 `data/threads_candidates.json`，按 post ID 去重並保留貼文網址、日期、文字，狀態為待核實。
@@ -60,7 +60,7 @@
 ## 主要檔案索引
 
 - `index.html`：靜態網站介面與卡片呈現。
-- `data/schedule.json`：正式展示的 55 張卡片（以檔案即時計數為準）。
+- `data/schedule.json`：正式展示的 63 張卡片（以檔案即時計數為準）。
 - `data/metadata.json`：頁尾資料時間，Asia/Taipei。
 - `updater.py`：文化部候選、schema 驗證、去重、倒數更新、原子寫入，以及尚未實際授權驗收的 Threads 監控程式。
 - `.github/workflows/daily-update.yml`：每日／手動更新與 GitHub Pages 部署。
