@@ -34,6 +34,7 @@ jobs:
           git add data/schedule.json
           git add data/metadata.json
           git add data/threads_candidates.json
+          git add data/moc_candidates.json
           if ! git diff --cached --quiet; then
             git commit -m "chore(auto): 每日更新戲曲演出資料 [skip ci]"
             git push

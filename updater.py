@@ -2,7 +2,7 @@
 """
 台灣傳統戲曲演出日程 - 每日自動排程更新器 (Daily Schedule Updater)
 功能：
-1. 讀取文化部公開藝文活動 JSON，產生待人工核實的戲曲候選
+1. 讀取文化部公開藝文活動 JSON，將待核實戲曲線索存入獨立候選檔
 2. 重新計算台灣時區日期與倒數天數
 3. 驗證結構後以原子方式更新 data/schedule.json
 4. 絕不修改 index.html
@@ -25,6 +25,7 @@ DATA_PATH = os.path.join(os.path.dirname(__file__), "data", "schedule.json")
 METADATA_PATH = os.path.join(os.path.dirname(__file__), "data", "metadata.json")
 THREADS_ACCOUNTS_PATH = os.path.join(os.path.dirname(__file__), "data", "threads_accounts.json")
 THREADS_CANDIDATES_PATH = os.path.join(os.path.dirname(__file__), "data", "threads_candidates.json")
+MOC_CANDIDATES_PATH = os.path.join(os.path.dirname(__file__), "data", "moc_candidates.json")
 THREADS_API_URL = "https://graph.threads.net/v1.0/profile_posts"
 API_URL = "https://cloud.culture.tw/frontsite/trans/SearchShowAction.do"
 KEYWORDS = ("歌仔戲", "布袋戲", "掌中戲")
@@ -326,9 +327,6 @@ def culture_candidates(records, today=None):
         explicit_genre_text = f"{title} {unit_names} {category_text}"
         if not title or not any(keyword in explicit_genre_text for keyword in KEYWORDS) or "演員" in title:
             continue
-        explicit_genre_text = f"{title} {unit_names}"
-        if not title or not any(keyword in explicit_genre_text for keyword in KEYWORDS) or "演員" in title:
-            continue
         show_info = record.get("showInfo")
         shows = show_info if isinstance(show_info, list) and show_info else [{}]
         for show in shows:
@@ -368,15 +366,11 @@ def culture_candidates(records, today=None):
     return candidates
 
 def fetch_latest_updates():
-    """
-    抓取外部最新活動排程並核實資料。
-    """
+    """Refresh candidates and countdowns; never promote discoveries to the public schedule."""
     print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] 正在查詢文化部公開藝文活動資料...")
     schedule = load_current_schedule()
-    schedule = remove_duplicate_candidates(schedule)
     try:
         discovered = culture_candidates(fetch_culture_events())
-        existing_by_id = {event["id"]: event for event in schedule}
         existing_event_keys = {
             (event["date"][:10], event["title"])
             for event in schedule
@@ -387,23 +381,19 @@ def fetch_latest_updates():
             for program_id in (opentix_program_id(event),)
             if program_id
         }
-        new_events = []
+        candidates = []
+        candidate_ids = set()
         for event in discovered:
             program_id = opentix_program_id(event)
             if program_id and program_id in existing_program_ids:
                 continue
             event_key = (event["date"][:10], event["title"])
-            if event_key not in existing_event_keys:
-                new_events.append(event)
-                existing_event_keys.add(event_key)
-                if program_id:
-                    existing_program_ids.add(program_id)
-            elif event["id"] in existing_by_id and existing_by_id[event["id"]].get("verifyStatus") == "pending":
-                # Refresh only machine-generated candidates. Human-verified
-                # entries and their editorial fields are never overwritten.
-                existing_by_id[event["id"]].update(event)
-        schedule.extend(new_events)
-        print(f"文化部資料源新增 {len(new_events)} 筆待人工核實候選")
+            if event_key in existing_event_keys or event["id"] in candidate_ids:
+                continue
+            candidates.append(event)
+            candidate_ids.add(event["id"])
+        atomic_write_json(MOC_CANDIDATES_PATH, candidates)
+        print(f"文化部資料源取得 {len(candidates)} 筆未發布、待核實候選")
     except RuntimeError as error:
         # Keep existing checked-in data and still refresh countdowns on a source outage.
         print(f"警告：{error}", file=sys.stderr)
