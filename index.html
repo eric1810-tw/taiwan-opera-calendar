@@ -90,6 +90,13 @@
       <span class="hero-note">未來 90 天・全臺演出資訊</span>
     </section>
 
+    <div class="mb-4 px-1">
+      <label for="keywordSearch" class="block text-[11px] font-bold text-stone-500 mb-2">關鍵字搜尋</label>
+      <input id="keywordSearch" type="search" autocomplete="off" placeholder="搜尋劇目、劇團、演員、場地或日期"
+        class="w-full bg-white border border-stone-300 rounded-xl px-3 py-2.5 text-sm text-stone-800 placeholder:text-stone-400 focus:outline-none focus:border-[#d80b72] focus:ring-2 focus:ring-[#d80b72]/20"
+        aria-controls="eventsContainer">
+    </div>
+
     <!-- 快速切換名家／類別：嚴格 3 行完整排列 (完全免滑動、全部即時可見) -->
     <div class="mb-4">
       <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 text-[11px] font-bold text-stone-500 mb-2 px-1">
@@ -110,11 +117,11 @@
         <button data-filter="春美" class="chip py-2 rounded-xl text-[11px] font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#d80b72] transition">🌸 春美</button>
         <button data-filter="秀琴" class="chip py-2 rounded-xl text-[11px] font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#d80b72] transition">🏮 秀琴</button>
 
-        <!-- 第 3 行：唐美雲、明華園、其他歌仔、其他布袋 -->
+        <!-- 第 3 行：唐美雲、明華園、其他歌仔戲、其他布袋戲 -->
         <button data-filter="唐美雲" class="chip py-2 rounded-xl text-[11px] font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#d80b72] transition">👑 唐美雲</button>
         <button data-filter="明華園" class="chip py-2 rounded-xl text-[11px] font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#d80b72] transition">⭐ 明華園</button>
-        <button data-filter="其他歌仔" class="chip py-2 rounded-xl text-[11px] font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#d80b72] transition">🎪 其他歌仔</button>
-        <button data-filter="其他布袋" class="chip py-2 rounded-xl text-[11px] font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#d80b72] transition">🪵 其他布袋</button>
+        <button data-filter="其他歌仔戲" class="chip py-2 rounded-xl text-[11px] font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#d80b72] transition">其他歌仔戲</button>
+        <button data-filter="其他布袋戲" class="chip py-2 rounded-xl text-[11px] font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#d80b72] transition">其他布袋戲</button>
       </div>
     </div>
 
@@ -156,7 +163,7 @@
     <div id="emptyView" class="hidden text-center py-12 bg-white/70 rounded-2xl border border-stone-200 p-6">
       <div class="text-3xl mb-2">🎭</div>
       <h3 class="text-sm font-bold text-stone-800">查無相符的演出</h3>
-      <p class="text-xs text-stone-500 mt-1">此類別在未來 90 天暫無排定場次</p>
+      <p class="text-xs text-stone-500 mt-1">請調整搜尋關鍵字或篩選條件</p>
       <button onclick="resetAllFilters()" class="mt-3 px-4 py-1.5 accent-btn rounded-xl text-xs font-bold shadow-sm">顯示全部場次</button>
     </div>
 
@@ -202,13 +209,15 @@
         <span>© 2026 台灣傳統戲曲演出行事曆</span>
       </div>
       <p id="lastUpdated" class="text-stone-300" aria-live="polite">資料最後更新時間：讀取中…</p>
-      <p class="text-stone-500">每日清晨自動更新・資料以各大售票系統及劇團最新公告為準</p>
-      <div class="flex justify-center gap-3 text-stone-400 pt-1 text-[10px]">
-        <a href="https://www.opentix.life/" target="_blank" class="hover:text-[#f6cb58] transition">OPENTIX 售票</a>
+      <p class="text-stone-500">每日排程約台灣時間 07:00 刷新；更新時間不代表每場皆已重新核實。請以各場次來源公告為準。</p>
+      <div class="flex flex-wrap justify-center gap-x-3 gap-y-1 text-stone-400 pt-1 text-[10px]">
+        <a href="https://event.moc.gov.tw/" target="_blank" rel="noopener noreferrer" class="hover:text-[#f6cb58] transition">文化部藝文活動</a>
         <span>•</span>
-        <a href="https://kktix.com" target="_blank" class="hover:text-[#f6cb58] transition">KKTIX 售票</a>
+        <a href="https://www.opentix.life/" target="_blank" rel="noopener noreferrer" class="hover:text-[#f6cb58] transition">OPENTIX 售票</a>
         <span>•</span>
-        <a href="https://github.com/eric1810-tw/taiwan-opera-calendar" target="_blank" class="hover:text-[#f6cb58] transition">專案原始碼</a>
+        <span>劇團及社群來源見各場次卡片</span>
+        <span>•</span>
+        <a href="https://github.com/eric1810-tw/taiwan-opera-calendar" target="_blank" rel="noopener noreferrer" class="hover:text-[#f6cb58] transition">專案原始碼</a>
       </div>
     </div>
   </footer>
@@ -255,13 +264,17 @@
     let currentFilter = 'all';
     let currentRegion = 'all';
     let currentType = 'all';
+    let currentKeyword = '';
 
     const eventsContainer = document.getElementById('eventsContainer');
     const emptyView = document.getElementById('emptyView');
     const filteredStats = document.getElementById('filteredStats');
     const regionSelect = document.getElementById('regionSelect');
     const typeSelect = document.getElementById('typeSelect');
+    const keywordSearch = document.getElementById('keywordSearch');
     const chips = document.querySelectorAll('.chip');
+    const namedQuickFilters = Array.from(chips, chip => chip.dataset.filter)
+      .filter(filter => filter !== 'all' && !filter.startsWith('其他'));
     const loadingView = document.getElementById('loadingView');
     const loadError = document.getElementById('loadError');
 
@@ -330,16 +343,22 @@
       }
     }
 
+    function matchesQuickFilter(ev, filter) {
+      if (filter === 'all') return true;
+      const fields = [...(ev.tags || []), ev.troupe, ev.artist, ev.genre];
+      const matches = fields.some(value => typeof value === 'string' && value.includes(filter));
+      if (!matches) return false;
+      if (filter.startsWith('其他')) {
+        return !namedQuickFilters.some(name => fields.some(value =>
+          typeof value === 'string' && value.includes(name)));
+      }
+      return true;
+    }
+
     function renderEvents() {
       const filtered = eventsData.filter(ev => {
         // 多行標籤快篩
-        if (currentFilter !== 'all') {
-          const matchTag = ev.tags && ev.tags.some(t => t.includes(currentFilter));
-          const matchTroupe = ev.troupe && ev.troupe.includes(currentFilter);
-          const matchArtist = ev.artist && ev.artist.includes(currentFilter);
-          const matchGenre = ev.genre && ev.genre.includes(currentFilter);
-          if (!matchTag && !matchTroupe && !matchArtist && !matchGenre) return false;
-        }
+        if (!matchesQuickFilter(ev, currentFilter)) return false;
 
         // 地區
         if (currentRegion !== 'all') {
@@ -349,6 +368,13 @@
         // 形式
         if (currentType !== 'all') {
           if (ev.badgeType !== currentType) return false;
+        }
+
+        if (currentKeyword) {
+          const searchable = [ev.title, ev.troupe, ev.artist, ev.location, ev.date, ev.dateFormatted,
+            ev.time, ev.description, ev.genre, ev.region, ...(ev.tags || [])]
+            .map(value => String(value ?? '').toLocaleLowerCase('zh-TW')).join(' ');
+          if (!currentKeyword.split(/\s+/).every(term => searchable.includes(term))) return false;
         }
 
         return true;
@@ -463,12 +489,19 @@
       renderEvents();
     });
 
+    keywordSearch.addEventListener('input', (e) => {
+      currentKeyword = e.target.value.trim().toLocaleLowerCase('zh-TW');
+      renderEvents();
+    });
+
     function resetAllFilters() {
       currentFilter = 'all';
       currentRegion = 'all';
       currentType = 'all';
+      currentKeyword = '';
       regionSelect.value = 'all';
       typeSelect.value = 'all';
+      keywordSearch.value = '';
       chips.forEach(c => {
         if (c.getAttribute('data-filter') === 'all') {
           c.classList.add('chip-active');
