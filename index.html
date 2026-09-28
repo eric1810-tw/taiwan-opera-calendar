@@ -223,6 +223,10 @@
       
       <p id="reportTargetTitle" class="text-xs text-[#d80b72] font-bold mb-2.5 bg-red-50 p-2 rounded-lg"></p>
 
+      <p class="text-[11px] text-stone-600 leading-relaxed mb-3">
+        下一步會開啟 GitHub。請登入並在 GitHub 頁面按「Submit new issue」才算完成回報；本站不會直接送出。
+      </p>
+
       <form onsubmit="submitReport(event)" class="space-y-2.5 text-xs">
         <div>
           <label class="block text-stone-600 font-semibold mb-1">回報類型：</label>
@@ -239,7 +243,7 @@
         </div>
         <div class="flex gap-2 pt-1">
           <button type="button" onclick="closeReportModal()" class="flex-1 py-2 bg-stone-100 text-stone-700 font-bold rounded-xl text-xs">取消</button>
-          <button type="submit" class="flex-1 py-2 accent-btn font-bold rounded-xl text-xs">送出回報</button>
+          <button type="submit" class="flex-1 py-2 accent-btn font-bold rounded-xl text-xs">前往 GitHub 提交回報</button>
         </div>
       </form>
     </div>
@@ -494,9 +498,8 @@
       const issueBody = encodeURIComponent(`### 回報目標\n${target}\n\n### 原因\n${reason}\n\n### 詳情與來源\n${detail}`);
       const githubUrl = `https://github.com/eric1810-tw/taiwan-opera-calendar/issues/new?title=${issueTitle}&body=${issueBody}`;
       
-      window.open(githubUrl, '_blank');
-      closeReportModal();
-      alert('已開啟 GitHub Issue 提報窗口，感謝您的熱心回報！');
+      // 同頁導向可避免彈出視窗遭阻擋，且不會誤稱回報已提交。
+      window.location.assign(githubUrl);
     }
 
     async function loadSchedule() {
