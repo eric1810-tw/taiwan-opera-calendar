@@ -97,29 +97,29 @@
         aria-controls="eventsContainer">
     </div>
 
-    <!-- 快速切換名家／類別：嚴格 3 行完整排列 (完全免滑動、全部即時可見) -->
+    <!-- 快速切換名家／類別：純文字標籤，保持 3 行完整排列 -->
     <div class="mb-4">
       <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 text-[11px] font-bold text-stone-500 mb-2 px-1">
         <span>快速篩選</span>
         <span id="filteredStats" class="text-[10px] sm:text-[11px] text-[#d80b72] font-bold">載入中...</span>
       </div>
 
-      <div class="grid grid-cols-4 gap-1.5 text-xs text-center" id="multiRowChips">
+      <div class="grid grid-cols-4 gap-1.5 text-center" id="multiRowChips">
         <!-- 第 1 行：全部、古都木偶、羅裕誴、孫凱琳／春美 -->
-        <button data-filter="all" class="chip chip-active py-2 rounded-xl text-[11px] font-bold border transition">全部</button>
-        <button data-filter="古都木偶" class="chip py-2 rounded-xl text-[11px] font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#d80b72] transition">🎭 古都木偶</button>
-        <button data-filter="羅裕誴" class="chip py-2 rounded-xl text-[11px] font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#d80b72] transition">⚔️ 羅裕誴</button>
-        <button data-filter="孫凱琳*春美" class="chip py-2 rounded-xl text-[11px] font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#d80b72] transition">✨ 孫凱琳*春美</button>
+        <button data-filter="all" class="chip chip-active px-1 py-2.5 rounded-xl text-xs sm:text-sm leading-tight font-bold border transition">全部</button>
+        <button data-filter="古都木偶" class="chip px-1 py-2.5 rounded-xl text-xs sm:text-sm leading-tight font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#d80b72] transition">古都木偶</button>
+        <button data-filter="羅裕誴" class="chip px-1 py-2.5 rounded-xl text-xs sm:text-sm leading-tight font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#d80b72] transition">羅裕誴</button>
+        <button data-filter="孫凱琳*春美" class="chip px-1 py-2.5 rounded-xl text-xs sm:text-sm leading-tight font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#d80b72] transition">孫凱琳*春美</button>
 
         <!-- 第 2 行：吳奕萱／明華園、呂雪鳳、秀琴、唐美雲 -->
-        <button data-filter="吳奕萱*明華園" class="chip py-2 rounded-xl text-[11px] font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#d80b72] transition">🤣 吳奕萱*明華園</button>
-        <button data-filter="呂雪鳳" class="chip py-2 rounded-xl text-[11px] font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#d80b72] transition">👑 呂雪鳳</button>
-        <button data-filter="秀琴" class="chip py-2 rounded-xl text-[11px] font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#d80b72] transition">🏮 秀琴</button>
+        <button data-filter="吳奕萱*明華園" class="chip px-1 py-2.5 rounded-xl text-xs sm:text-sm leading-tight font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#d80b72] transition">吳奕萱*明華園</button>
+        <button data-filter="呂雪鳳" class="chip px-1 py-2.5 rounded-xl text-xs sm:text-sm leading-tight font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#d80b72] transition">呂雪鳳</button>
+        <button data-filter="秀琴" class="chip px-1 py-2.5 rounded-xl text-xs sm:text-sm leading-tight font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#d80b72] transition">秀琴</button>
 
         <!-- 第 3 行：其他歌仔戲、其他布袋戲 -->
-        <button data-filter="唐美雲" class="chip py-2 rounded-xl text-[11px] font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#d80b72] transition">👑 唐美雲</button>
-        <button data-filter="其他歌仔戲" class="chip py-2 rounded-xl text-[11px] font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#d80b72] transition">其他歌仔戲</button>
-        <button data-filter="其他布袋戲" class="chip py-2 rounded-xl text-[11px] font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#d80b72] transition">其他布袋戲</button>
+        <button data-filter="唐美雲" class="chip px-1 py-2.5 rounded-xl text-xs sm:text-sm leading-tight font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#d80b72] transition">唐美雲</button>
+        <button data-filter="其他歌仔戲" class="chip px-1 py-2.5 rounded-xl text-xs sm:text-sm leading-tight font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#d80b72] transition">其他歌仔戲</button>
+        <button data-filter="其他布袋戲" class="chip px-1 py-2.5 rounded-xl text-xs sm:text-sm leading-tight font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#d80b72] transition">其他布袋戲</button>
       </div>
     </div>
 
