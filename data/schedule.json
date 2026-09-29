@@ -288,7 +288,11 @@
     "link": "https://www.npac-weiwuying.org/programs/69ba003af0402e0007963d28?lang=zh",
     "linkLabel": "衛武營官方節目頁",
     "sourceUrl": "https://www.npac-weiwuying.org/programs/69ba003af0402e0007963d28?lang=zh",
-    "tags": ["吳奕萱", "音樂劇", "唱歌集"]
+    "tags": [
+      "吳奕萱",
+      "音樂劇",
+      "唱歌集"
+    ]
   },
   {
     "id": "moc-2026-10-03-04-lishui-chenjinggu",
@@ -311,7 +315,11 @@
     "link": "https://event.culture.tw/mocweb/reg/NCFTA/Detail.init.ctr?actId=65097",
     "linkLabel": "國立傳統藝術中心官方活動頁",
     "sourceUrl": "https://event.culture.tw/mocweb/reg/NCFTA/Detail.init.ctr?actId=65097",
-    "tags": ["李靜芳歌仔戲團", "歌仔戲", "亞太傳統藝術節"]
+    "tags": [
+      "李靜芳歌仔戲團",
+      "歌仔戲",
+      "亞太傳統藝術節"
+    ]
   },
   {
     "id": "pts-2026-10-11-li-jingfang-liulang",
@@ -334,7 +342,12 @@
     "link": "https://www.youtube.com/watch?v=6KlRR_DGhmI",
     "linkLabel": "公視台語台線上直播",
     "sourceUrl": "https://www.threads.com/@jing__1017/post/DdzMNyqE9s2",
-    "tags": ["李靜芳歌仔戲團", "公視台語台", "社群來源", "其他歌仔戲"]
+    "tags": [
+      "李靜芳歌仔戲團",
+      "公視台語台",
+      "社群來源",
+      "其他歌仔戲"
+    ]
   },
   {
     "id": "pts-2026-10-18-shih-hueijun-yangzongbao",
@@ -357,7 +370,12 @@
     "link": "https://www.youtube.com/watch?v=6KlRR_DGhmI",
     "linkLabel": "公視台語台線上直播",
     "sourceUrl": "https://www.threads.com/@jing__1017/post/DdzMNyqE9s2",
-    "tags": ["石惠君戲曲劇坊", "公視台語台", "社群來源", "其他歌仔戲"]
+    "tags": [
+      "石惠君戲曲劇坊",
+      "公視台語台",
+      "社群來源",
+      "其他歌仔戲"
+    ]
   },
   {
     "id": "yxg-2026-10-10-yingxiong-zhizao",
