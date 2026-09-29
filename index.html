@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>台灣傳統戲曲演出行事曆 | 未來90天歌仔戲與布袋戲公演總覽</title>
+  <title>台灣戲曲演出行事曆 | 歌仔戲、布袋戲與吳奕萱參演節目</title>
   
   <!-- Google Fonts: 傳統楷書、古典宋明體與清晰無襯線 -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -86,7 +86,7 @@
     <section class="hero" aria-labelledby="page-title">
       <span class="hero-kicker">看戲去・全臺戲曲日曆</span>
       <h1 id="page-title">好戲開鑼，<br>日子排開。</h1>
-      <p>從廟埕野台到正式劇場，把接下來的歌仔戲與布袋戲演出，整理成一張好查、好安排的戲單。</p>
+      <p>整理歌仔戲、布袋戲演出，也收錄吳奕萱參演的其他劇種節目；劇種與來源狀態逐場標示。</p>
       <span class="hero-note">未來 90 天・全臺演出資訊</span>
     </section>
 
@@ -105,21 +105,19 @@
       </div>
 
       <div class="grid grid-cols-4 gap-1.5 text-xs text-center" id="multiRowChips">
-        <!-- 第 1 行：全部、古都木偶、羅裕誴、孫凱琳 -->
+        <!-- 第 1 行：全部、古都木偶、羅裕誴、孫凱琳／春美 -->
         <button data-filter="all" class="chip chip-active py-2 rounded-xl text-[11px] font-bold border transition">全部</button>
         <button data-filter="古都木偶" class="chip py-2 rounded-xl text-[11px] font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#d80b72] transition">🎭 古都木偶</button>
         <button data-filter="羅裕誴" class="chip py-2 rounded-xl text-[11px] font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#d80b72] transition">⚔️ 羅裕誴</button>
-        <button data-filter="孫凱琳" class="chip py-2 rounded-xl text-[11px] font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#d80b72] transition">✨ 孫凱琳</button>
+        <button data-filter="孫凱琳*春美" class="chip py-2 rounded-xl text-[11px] font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#d80b72] transition">✨ 孫凱琳*春美</button>
 
-        <!-- 第 2 行：吳奕萱、呂雪鳳、春美、秀琴 -->
-        <button data-filter="吳奕萱" class="chip py-2 rounded-xl text-[11px] font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#d80b72] transition">🤣 吳奕萱</button>
+        <!-- 第 2 行：吳奕萱／明華園、呂雪鳳、秀琴、唐美雲 -->
+        <button data-filter="吳奕萱*明華園" class="chip py-2 rounded-xl text-[11px] font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#d80b72] transition">🤣 吳奕萱*明華園</button>
         <button data-filter="呂雪鳳" class="chip py-2 rounded-xl text-[11px] font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#d80b72] transition">👑 呂雪鳳</button>
-        <button data-filter="春美" class="chip py-2 rounded-xl text-[11px] font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#d80b72] transition">🌸 春美</button>
         <button data-filter="秀琴" class="chip py-2 rounded-xl text-[11px] font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#d80b72] transition">🏮 秀琴</button>
 
-        <!-- 第 3 行：唐美雲、明華園、其他歌仔戲、其他布袋戲 -->
+        <!-- 第 3 行：其他歌仔戲、其他布袋戲 -->
         <button data-filter="唐美雲" class="chip py-2 rounded-xl text-[11px] font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#d80b72] transition">👑 唐美雲</button>
-        <button data-filter="明華園" class="chip py-2 rounded-xl text-[11px] font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#d80b72] transition">⭐ 明華園</button>
         <button data-filter="其他歌仔戲" class="chip py-2 rounded-xl text-[11px] font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#d80b72] transition">其他歌仔戲</button>
         <button data-filter="其他布袋戲" class="chip py-2 rounded-xl text-[11px] font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#d80b72] transition">其他布袋戲</button>
       </div>
@@ -275,7 +273,8 @@
     const keywordSearch = document.getElementById('keywordSearch');
     const chips = document.querySelectorAll('.chip');
     const namedQuickFilters = Array.from(chips, chip => chip.dataset.filter)
-      .filter(filter => filter !== 'all' && !filter.startsWith('其他'));
+      .filter(filter => filter !== 'all' && !filter.startsWith('其他'))
+      .flatMap(filter => filter.split('*'));
     const loadingView = document.getElementById('loadingView');
     const loadError = document.getElementById('loadError');
 
@@ -353,7 +352,8 @@
         return !namedQuickFilters.some(name => fields.some(value =>
           typeof value === 'string' && value.includes(name)));
       }
-      const matches = fields.some(value => typeof value === 'string' && value.includes(filter));
+      const matches = filter.split('*').some(alias =>
+        fields.some(value => typeof value === 'string' && value.includes(alias)));
       if (!matches) return false;
       return true;
     }
@@ -549,7 +549,7 @@
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
         const data = await response.json();
         const requiredText = ['id', 'date', 'dateFormatted', 'time', 'troupe', 'genre', 'artist', 'title', 'location', 'description', 'link'];
-        const validGenres = new Set(['歌仔戲', '布袋戲', '其他歌仔戲', '其他布袋戲']);
+        const validGenres = new Set(['歌仔戲', '布袋戲', '音樂劇', '其他歌仔戲', '其他布袋戲', '其他音樂劇']);
         const validStatuses = new Set(['verified', 'community', 'pending']);
         const validBadges = new Set(['ticket', 'free', 'temple', 'plan']);
         const validRegions = new Set(['北部', '中部', '南部', '東部', '未分類']);

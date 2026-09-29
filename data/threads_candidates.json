@@ -1,5 +1,27 @@
 [
   {
+    "postId": "FB-100063868113954-2026-09-28-musical",
+    "username": "wu-yihsuan-facebook",
+    "postedAt": "2026-09-28",
+    "permalink": "https://www.facebook.com/p/%E5%90%B3%E5%A5%95%E8%90%B1-Wu-Yihsuan-100063868113954",
+    "text": "吳奕萱個人公開 Facebook 分享《爬上頂樓看月亮》音樂劇即將登場，海報/內文列衛武營戲劇院、2026/10/2–10/4。",
+    "reviewStatus": "verified",
+    "discoveredAt": "2026-09-29T19:00:00+08:00",
+    "verificationSourceUrl": "https://www.npac-weiwuying.org/programs/69ba003af0402e0007963d28?lang=zh",
+    "reviewNote": "依官方衛武營節目頁核實為音樂劇，演出時間10/2 19:30、10/3 14:30、10/4 14:30，場地衛武營戲劇院，演員名單含吳奕萱。依使用者要求跨劇種收錄，新增 schedule 卡 wwy-2026-10-02-04-pashang-dinglou。"
+  },
+  {
+    "postId": "DdhAISUCdYY",
+    "username": "jing__1017",
+    "postedAt": "2026-09-21",
+    "permalink": "https://www.threads.com/@jing__1017/post/DdhAISUCdYY",
+    "text": "分享李靜芳歌仔戲團《臨水平妖—陳靖姑》精粹版宣傳海報，海報列 2026/10/03 15:30、10/04 14:00，宜蘭傳藝園區曲藝館。貼文表示索票名額很快額滿。",
+    "reviewStatus": "verified",
+    "discoveredAt": "2026-09-29T18:00:00+08:00",
+    "verificationSourceUrl": "https://event.culture.tw/mocweb/reg/NCFTA/Detail.init.ctr?actId=65097",
+    "reviewNote": "帳號動態補巡發現此貼文。以國立傳統藝術中心官方活動頁逐場核實為10/3 15:30及10/4 14:00、宜蘭傳藝園區曲藝館；票券是否額滿以官方即時頁面為準，不採信社群轉述作票況依據。已新增一張涵蓋兩場的 verified 活動卡。"
+  },
+  {
     "postId": "Dd3IJT4iWk1",
     "username": "jing__1017",
     "postedAt": "2026-09-29",
@@ -8,6 +30,16 @@
     "reviewStatus": "community",
     "discoveredAt": "2026-09-29T16:00:40+08:00",
     "reviewNote": "依使用者提供資訊，帳號屬春美歌劇團相關從業人員，已加入 Threads 監控名單。與 data/schedule.json 比對未發現重複後，已將八組行程新增為公開社群來源卡（verifyStatus=community），保留貼文連結並明確標示尚未由官方交叉核實；不視為官方已核實場次。貼文未列劇目；10/17 海安宮另標示18:00。"
+  },
+  {
+    "postId": "DdzMNyqE9s2",
+    "username": "jing__1017",
+    "postedAt": "2026-09-28",
+    "permalink": "https://www.threads.com/@jing__1017/post/DdzMNyqE9s2",
+    "text": "公視台語台《寶島大舞台》：10/11（日）22:00 李靜芳歌仔戲團《六郎告御狀》；10/18（日）22:00 石惠君戲曲劇坊《楊宗保與穆桂英》。Threads 貼文另稱隔週六09:00重播，未給實際日期；附公視台語台 YouTube 線上直播連結 https://www.youtube.com/watch?v=6KlRR_DGhmI。",
+    "reviewStatus": "community",
+    "discoveredAt": "2026-09-29T17:35:15+08:00",
+    "reviewNote": "直接開啟使用者提供的貼文核對兩節目、劇團／劇坊、日期及22:00播出時間；這是電視／網路播映，不是現場演出。與現有 schedule 未見重複。因未取得公視官方節目表對應日期的獨立佐證，已作社群來源卡呈現，標明待官方核對；年份依貼文發表時間及2026日曆推定，重播確切日期不推定。"
   },
   {
     "postId": "Dd279DnkRc9",
