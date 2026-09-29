@@ -141,6 +141,7 @@
         <option value="ticket">售票劇院旗艦大戲</option>
         <option value="free">庄頭/戶外免費演出</option>
         <option value="temple">廟口外台民戲</option>
+        <option value="plan">來源待確認／候選資料</option>
       </select>
     </div>
 
@@ -346,17 +347,19 @@
     function matchesQuickFilter(ev, filter) {
       if (filter === 'all') return true;
       const fields = [...(ev.tags || []), ev.troupe, ev.artist, ev.genre];
-      const matches = fields.some(value => typeof value === 'string' && value.includes(filter));
-      if (!matches) return false;
       if (filter.startsWith('其他')) {
+        const genre = filter.replace('其他', '');
+        if (ev.genre !== genre && !fields.some(value => typeof value === 'string' && value.includes(filter))) return false;
         return !namedQuickFilters.some(name => fields.some(value =>
           typeof value === 'string' && value.includes(name)));
       }
+      const matches = fields.some(value => typeof value === 'string' && value.includes(filter));
+      if (!matches) return false;
       return true;
     }
 
     function renderEvents() {
-      const filtered = eventsData.filter(ev => {
+      const filtered = [...eventsData].sort((a, b) => a.date.localeCompare(b.date) || a.title.localeCompare(b.title, 'zh-Hant')).filter(ev => {
         // 多行標籤快篩
         if (!matchesQuickFilter(ev, currentFilter)) return false;
 
@@ -546,8 +549,14 @@
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
         const data = await response.json();
         const requiredText = ['id', 'date', 'dateFormatted', 'time', 'troupe', 'genre', 'artist', 'title', 'location', 'description', 'link'];
+        const validGenres = new Set(['歌仔戲', '布袋戲', '其他歌仔戲', '其他布袋戲']);
+        const validStatuses = new Set(['verified', 'community', 'pending']);
+        const validBadges = new Set(['ticket', 'free', 'temple', 'plan']);
+        const validRegions = new Set(['北部', '中部', '南部', '東部', '未分類']);
         if (!Array.isArray(data) || data.some(event => !event || typeof event !== 'object'
           || requiredText.some(key => typeof event[key] !== 'string')
+          || !validGenres.has(event.genre) || !validStatuses.has(event.verifyStatus)
+          || !validBadges.has(event.badgeType) || !validRegions.has(event.region)
           || !Number.isInteger(event.daysAway) || event.daysAway < 0
           || !Array.isArray(event.tags) || event.tags.some(tag => typeof tag !== 'string'))) {
           throw new Error('資料格式不正確');

@@ -36,6 +36,10 @@ REQUIRED_FIELDS = {
     "artist", "title", "category", "badgeType", "verifyStatus", "verifyLabel",
     "location", "region", "status", "description", "link", "tags",
 }
+ALLOWED_GENRES = {"歌仔戲", "布袋戲"}
+ALLOWED_VERIFY_STATUS = {"verified", "community", "pending"}
+ALLOWED_BADGE_TYPES = {"ticket", "free", "temple", "plan"}
+ALLOWED_REGIONS = {"北部", "中部", "南部", "東部", "未分類"}
 
 # 關注劇團與焦點演員清單（涵蓋鍘美藝術節全體主力演員與其他戲曲名家）
 TARGET_ENTITIES = [
@@ -68,7 +72,17 @@ def validate_schedule(data):
         if event["id"] in seen:
             raise ValueError(f"duplicate event id: {event['id']}")
         seen.add(event["id"])
-        datetime.strptime(event["date"][:10], "%Y-%m-%d")
+        if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", event["date"]):
+            raise ValueError(f"event {index} date must be YYYY-MM-DD")
+        datetime.strptime(event["date"], "%Y-%m-%d")
+        if event["genre"] not in ALLOWED_GENRES and event["genre"] not in {f"其他{x}" for x in ALLOWED_GENRES}:
+            raise ValueError(f"event {index} has invalid genre")
+        if event["verifyStatus"] not in ALLOWED_VERIFY_STATUS:
+            raise ValueError(f"event {index} has invalid verifyStatus")
+        if event["badgeType"] not in ALLOWED_BADGE_TYPES:
+            raise ValueError(f"event {index} has invalid badgeType")
+        if event["region"] not in ALLOWED_REGIONS:
+            raise ValueError(f"event {index} has invalid region")
         if not isinstance(event["daysAway"], int) or event["daysAway"] < 0:
             raise ValueError(f"event {index} daysAway must be a non-negative integer")
         if not isinstance(event["tags"], list) or not all(isinstance(tag, str) for tag in event["tags"]):
@@ -340,7 +354,8 @@ def culture_candidates(records, today=None):
             if not today <= event_date <= end_date:
                 continue
             genre = "布袋戲" if any(word in explicit_genre_text for word in ("布袋戲", "掌中戲")) else "歌仔戲"
-            digest = hashlib.sha256(f"{title}|{event_date.isoformat()}".encode("utf-8")).hexdigest()[:10]
+            location_key = str(show.get("locationName") or show.get("location") or record.get("location") or "").strip()
+            digest = hashlib.sha256(f"{title}|{event_date.isoformat()}|{location_key}".encode("utf-8")).hexdigest()[:10]
             event_id = f"moc-{event_date:%Y%m%d}-{digest}"
             raw_link = show.get("webSales") or record.get("sourceWebPromote") or "https://cloud.culture.tw/"
             candidates.append({
@@ -395,8 +410,7 @@ def fetch_latest_updates():
         atomic_write_json(MOC_CANDIDATES_PATH, candidates)
         print(f"文化部資料源取得 {len(candidates)} 筆未發布、待核實候選")
     except RuntimeError as error:
-        # Keep existing checked-in data and still refresh countdowns on a source outage.
-        print(f"警告：{error}", file=sys.stderr)
+        raise RuntimeError(f"文化部資料源巡檢失敗，停止發布以免誤更新時間：{error}") from error
     schedule = update_days_away(schedule)
     save_schedule(schedule)
     save_metadata()
