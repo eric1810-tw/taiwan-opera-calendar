@@ -60,13 +60,48 @@ function isISODate(value) {
   return date.getUTCFullYear() === year && date.getUTCMonth() === month - 1 && date.getUTCDate() === day;
 }
 
+const dateToken = /(?:(20\d{2})\s*[/年.-]\s*)?(\d{1,2})\s*[/月.-]\s*(\d{1,2})/g;
+
+function parseEventDates(event) {
+  const text = String(event.dateFormatted || '').split('(原公告', 1)[0].split('（原公告', 1)[0];
+  const matches = [...text.matchAll(dateToken)];
+  const dates = [];
+  let previous = null;
+  for (const match of matches) {
+    let year = Number(match[1] || (previous || event.date).slice(0, 4));
+    const month = Number(match[2]);
+    const day = Number(match[3]);
+    if (previous && !match[1] && (year * 100 + month) < (Number(previous.slice(0, 4)) * 100 + Number(previous.slice(5, 7)))) {
+      year += 1;
+    }
+    const current = `${year.toString().padStart(4, '0')}-${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
+    if (!isISODate(current) || (previous && current < previous)) return null;
+    dates.push(current);
+    previous = current;
+  }
+  if (dates.length < 2 || dates[0] !== event.date) return null;
+  const ranges = [];
+  for (let index = 1; index < matches.length; index += 1) {
+    const previousMatch = matches[index - 1];
+    const separator = text.slice(previousMatch.index + previousMatch[0].length, matches[index].index);
+    if (/[–—~～至到]/.test(separator)) ranges.push([dates[index - 1], dates[index]]);
+  }
+  return { dates, ranges };
+}
+
+function isScheduledToday(event, today) {
+  const parsed = parseEventDates(event);
+  if (!parsed) return today === event.date || today === (event.endDate || event.date);
+  if (parsed.dates.includes(today)) return true;
+  return parsed.ranges.some(([start, end]) => start <= today && today <= end);
+}
+
 function getDaysBadge(event) {
   const today = getTaiwanToday();
   const endDate = event.endDate || event.date;
   const daysAway = Math.max(0, dateDifference(event.date, today));
   if (event.date <= today && endDate >= today) {
-    const hasContinuousDateRange = /\d{1,2}日?(?:（[^）]*）|\([^)]*\))?\s*[–—~～至到]\s*(?:\d{1,2}[月/]\s*)?\d{1,2}/.test(event.dateFormatted || '');
-    const label = hasContinuousDateRange || event.date === today ? '演出中' : '期間內・詳見場次日期';
+    const label = isScheduledToday(event, today) ? '演出中' : '期間內・詳見場次日期';
     return `<span class="text-[10px] font-bold text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded border border-emerald-200">${label}</span>`;
   }
   if (daysAway <= 7) {
@@ -333,8 +368,10 @@ document.addEventListener('keydown', event => {
   }
 });
 
+let initialTheme = 'crimson-classic';
 try {
   const savedTheme = localStorage.getItem('opera-theme');
-  if (savedTheme) changeTheme(savedTheme);
+  if (['crimson-classic', 'purple-regal', 'literati-ink'].includes(savedTheme)) initialTheme = savedTheme;
 } catch (_) { /* 儲存空間停用時使用預設主題。 */ }
+changeTheme(initialTheme);
 loadSchedule();
