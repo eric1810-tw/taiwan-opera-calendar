@@ -75,6 +75,16 @@ def validate_schedule(data):
         if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", event["date"]):
             raise ValueError(f"event {index} date must be YYYY-MM-DD")
         datetime.strptime(event["date"], "%Y-%m-%d")
+        end_date = event.get("endDate")
+        if end_date is not None:
+            if not isinstance(end_date, str) or not re.fullmatch(r"\d{4}-\d{2}-\d{2}", end_date):
+                raise ValueError(f"event {index} endDate must be YYYY-MM-DD when present")
+            try:
+                parsed_end_date = datetime.strptime(end_date, "%Y-%m-%d").date()
+            except ValueError as error:
+                raise ValueError(f"event {index} endDate is not a valid calendar date") from error
+            if parsed_end_date < datetime.strptime(event["date"], "%Y-%m-%d").date():
+                raise ValueError(f"event {index} endDate must not precede date")
         if event["genre"] not in ALLOWED_GENRES and event["genre"] not in {f"其他{x}" for x in ALLOWED_GENRES}:
             raise ValueError(f"event {index} has invalid genre")
         if event["verifyStatus"] not in ALLOWED_VERIFY_STATUS:
@@ -243,10 +253,19 @@ def taiwan_today():
 def update_days_away(events, base_date=None):
     """Recalculate countdown values without silently hiding malformed dates."""
     base_date = base_date or taiwan_today()
+    retained = []
+    removed_ids = []
     for ev in events:
         event_d = datetime.strptime(ev["date"][:10], "%Y-%m-%d").date()
+        end_d = datetime.strptime(ev.get("endDate", ev["date"])[:10], "%Y-%m-%d").date()
+        if end_d < base_date:
+            removed_ids.append(ev["id"])
+            continue
         ev["daysAway"] = max(0, (event_d - base_date).days)
-    return events
+        retained.append(ev)
+    if removed_ids:
+        print(f"已剔除結束場次 {len(removed_ids)} 筆：{', '.join(removed_ids)}")
+    return retained
 
 
 def opentix_program_id(event):
