@@ -1,30 +1,44 @@
-# 台灣傳統戲曲演出行事曆（鍘美藝術節後續追劇指南）
+# 全臺戲曲演出行事曆
 
-> 追蹤古都木偶、羅裕誴、孫凱琳、春美歌劇團、秀琴歌劇團、明華園天字團、吳奕萱、唐美雲歌仔戲團未來一個月的精彩演出！
+彙整全臺歌仔戲、布袋戲及其他戲曲節目，逐場標示日期、地點與來源狀態。資料以官方公告、售票頁及劇團／主辦單位公開資訊為準；社群線索未經交叉核實時不標為官方核實。
 
-## 專案結構
-- `index.html`：現代化、響應式戲曲行事曆互動網頁（支援劇團/演員標籤篩選、區域過濾、關鍵字即時搜尋、官方售票與粉專連結）。
-- `data/schedule.json`：結構化演出資料庫。
-- `updater.py`：每日定時更新爬蟲與資料同步腳本。
-- `.github/workflows/daily-update.yml`：GitHub Actions 每日排程自動部署工作流。
+## 專案內容
 
-## 如何直接開啟預覽
-在 Mac 終端機執行：
+- `index.html`、`assets/app.js`、`assets/app.css`：靜態前端。卡片由瀏覽器載入 `data/schedule.json`，並在臺灣日期過濾已結束場次。
+- `data/schedule.json`：目前公開的場次資料；`endDate` 為多日活動結束日，單日活動可省略。
+- `data/metadata.json`：最近一次成功刷新排程資料的時間，不代表每場演出都在該時間重新核實。
+- `updater.py`：讀取文化部公開活動資料作候選、重新計算倒數並清除已結束場次；候選資料不會自動升格為已核實場次。
+- `data/threads_accounts.json`、候選資料檔：來源巡檢設定與待人工核對線索。候選內容不包含在 GitHub Pages 網站 artifact 中。
+- `tests/`：Python 標準函式庫 `unittest` 測試。
+
+目前資料與快速篩選涵蓋古都木偶、羅裕誴、孫凱琳／春美、吳奕萱／明華園、呂雪鳳、秀琴、唐美雲及其他歌仔戲／布袋戲；頁面以未來 90 天為主要資訊窗口。資料可能有公告延遲或異動，請以各場次來源公告為準。
+
+## 本機預覽與測試
+
+需使用 HTTP 伺服器才能讀取 JSON：
+
 ```bash
-open index.html
+python3 -m http.server 8000
 ```
-或使用任何靜態伺服器（例如 `python -m http.server 8000`）。
 
-## 如何啟用「每天自動更新」發布成免費公開網站
-1. 在 GitHub 上建立一個新的 Public 儲存庫（例如 `taiwan-opera-calendar`）。
-2. 將本資料夾推送到 GitHub：
-   ```bash
-   git init
-   git add .
-   git commit -m "feat: 初版台灣傳統戲曲行事曆"
-   git branch -M main
-   git remote add origin https://github.com/<你的帳號>/taiwan-opera-calendar.git
-   git push -u origin main
-   ```
-3. 到 GitHub 專案的 **Settings** -> **Pages**，將 Build and deployment 的 Source 設定為 **GitHub Actions**。
-4. 完成！系統每天台灣時間上午 7:00 會自動運行 `updater.py` 檢查更新、提交最新資料並重新發布網站。
+瀏覽器開啟 <http://localhost:8000/>。執行測試：
+
+```bash
+python3 -m unittest -v
+```
+
+## 重新編譯前端 CSS
+
+Tailwind CSS 3.4.17 CLI 用於開發時編譯；已編譯的 `assets/app.css` 提交至版本庫，Actions 不需建置 CSS。需要 Node.js/npm，於專案根目錄執行：
+
+```bash
+npm exec --yes --package=tailwindcss@3.4.17 -- tailwindcss -i assets/input.css -o assets/app.css --minify
+```
+
+編譯設定在 `tailwind.config.cjs`，掃描 `index.html` 與 `assets/app.js`（含卡片模板中的 utility classes）。
+
+## 自動更新與發布
+
+`.github/workflows/daily-update.yml` 每日依 GitHub Actions 排程嘗試更新資料，並支援手動觸發。排程執行時間以 workflow 的 UTC cron 為準；失敗、外部來源不可用或無資料異動時，不能視作已更新。workflow 先執行單元測試，再跑 updater，最後只將 `index.html`、`assets/` 前端必要檔案及 `data/schedule.json`、`data/metadata.json` 組成 `_site/` 發布至 GitHub Pages。
+
+GitHub Pages 請在 repository Settings → Pages 選擇 GitHub Actions 作為發布來源。若另以 Cloudflare Pages 直接連接 Git repository，需在 Cloudflare 設定正確 build/output 範圍；本 workflow 的 `_site/` 白名單不會限制 Cloudflare 對 repo 原始碼的存取，也不會替 Cloudflare 設定做任何變更。
