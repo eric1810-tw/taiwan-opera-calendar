@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { --paper:#f7f0e7; --ink:#28231f; --muted:#70665e; --pink:#d80b72; --yellow:#f6cb58; --ochre:#ad7b38; --card:#fffdf8; --line:#e8d9c8; --soft:#f4e7da; }
+html[data-theme="purple-regal"] { --paper:#f1eaf1; --ink:#281c2d; --muted:#6f6073; --pink:#742c77; --yellow:#e8c96b; --ochre:#956b39; --card:#fffaff; --line:#e0d0e2; --soft:#eee2ef; }
+html[data-theme="literati-ink"] { --paper:#f0eee5; --ink:#242822; --muted:#62665d; --pink:#3e6655; --yellow:#d2ad55; --ochre:#977848; --card:#fbfaf4; --line:#dcd9cb; --soft:#e7e8dd; }
+html { scroll-behavior:smooth; }
+body { padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px); background:var(--paper); color:var(--ink); font-family:'Noto Sans TC',sans-serif; }
+.serif-title { font-family:'Noto Serif TC',serif; }
+.hidden { display:none !important; }
+.theater-curtain-left,.theater-curtain-right { display:none; }
+header { background:var(--ink); }
+.theater-top-drape { height:38px; background:var(--pink); box-shadow:0 3px 0 var(--yellow); }
+main { max-width:1100px !important; padding:0 22px 64px !important; }
+.hero { position:relative; isolation:isolate; overflow:hidden; margin:22px 0 26px; min-height:255px; padding:36px clamp(22px,5vw,64px); border-radius:4px; color:#fffaf2; background:var(--ink); }
+.hero:before { content:""; position:absolute; z-index:-1; width:260px; height:340px; right:12%; top:-78px; border-radius:48% 48% 0 0; background:var(--pink); transform:rotate(8deg); box-shadow:28px 0 0 var(--yellow); opacity:.98; }
+.hero:after { content:"戲"; position:absolute; z-index:-1; right:clamp(30px,9vw,120px); top:35px; color:#fff8ea; font:900 clamp(90px,16vw,176px)/1 'Noto Serif TC',serif; opacity:.92; }
+.hero-kicker { display:inline-flex; align-items:center; gap:9px; padding:6px 10px; background:var(--yellow); color:var(--ink); font-size:11px; font-weight:900; letter-spacing:.12em; }
+.hero h1 { max-width:680px; margin:17px 0 8px; font:900 clamp(30px,5vw,54px)/1.2 'Noto Serif TC',serif; letter-spacing:.04em; }
+.hero p { max-width:530px; margin:0; color:#f5e8da; font-size:14px; line-height:1.8; }
+.hero-note { display:inline-block; margin-top:18px; border-left:4px solid var(--yellow); padding-left:10px; font-size:12px; }
+#multiRowChips { gap:8px !important; }
+.chip { min-width:0; white-space:normal; overflow-wrap:anywhere; border-radius:3px !important; padding:1.5mm 3px !important; font-size:clamp(14px,3.4vw,18px) !important; line-height:1.25 !important; background:var(--card) !important; border-color:var(--line) !important; color:var(--ink) !important; }
+.chip:hover,.chip:focus-visible { border-color:var(--pink) !important; }
+.chip-active { background:var(--pink) !important; color:white !important; border-color:var(--pink) !important; box-shadow:3px 3px 0 var(--yellow); }
+select { min-height:42px; border-radius:3px !important; background:var(--card) !important; color:var(--ink) !important; }
+#eventsContainer { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:15px; }
+.opera-card { min-width:0; padding:18px !important; border:1px solid var(--line) !important; border-top:5px solid var(--pink) !important; border-radius:4px !important; background:var(--card) !important; box-shadow:5px 5px 0 var(--soft) !important; }
+.opera-card:hover { transform:translateY(-2px); box-shadow:7px 8px 0 var(--soft) !important; }
+.accent-btn { border-radius:3px !important; background:var(--pink) !important; color:#fff !important; }
+.accent-btn:hover { filter:brightness(.91); }
+#loadError,#emptyView,main section:not(.hero),.mt-6.p-3 { border-radius:4px !important; background:var(--card) !important; border-color:var(--line) !important; }
+footer { padding-bottom:calc(1.25rem + env(safe-area-inset-bottom,0px)); background:var(--ink) !important; border-color:var(--yellow) !important; }
+a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,textarea:focus-visible { outline:3px solid var(--yellow); outline-offset:2px; }
+.theme-selected { box-shadow:0 0 0 2px var(--yellow); }
+@media(max-width:700px) { main { padding:0 14px 48px !important; } .hero { min-height:230px; margin:14px 0 20px; padding:27px 20px; } .hero:before { right:2%; opacity:.75; } .hero:after { right:5%; top:54px; opacity:.45; } #eventsContainer { grid-template-columns:1fr; } }

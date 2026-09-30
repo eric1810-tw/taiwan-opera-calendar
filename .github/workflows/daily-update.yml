@@ -28,6 +28,9 @@ jobs:
         with:
           python-version: '3.11'
 
+      - name: 執行更新器單元測試
+        run: python -m unittest -v
+
       - name: 執行每日排程更新腳本
         env:
           THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
@@ -53,6 +56,7 @@ jobs:
           install -m 0644 index.html _site/index.html
           install -m 0644 assets/app.css _site/assets/app.css
           install -m 0644 assets/app.js _site/assets/app.js
+          install -m 0644 assets/favicon.svg _site/assets/favicon.svg
           install -m 0644 data/schedule.json _site/data/schedule.json
           install -m 0644 data/metadata.json _site/data/metadata.json
           find _site -type f -print | sort

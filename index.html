@@ -3,63 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>台灣戲曲演出行事曆 | 歌仔戲、布袋戲與吳奕萱參演節目</title>
+  <meta name="description" content="全臺戲曲演出一站查，彙整歌仔戲、布袋戲與其他戲曲節目，逐場標示日期、地點及來源狀態。">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
+  <meta property="og:title" content="台灣戲曲演出行事曆">
+  <meta property="og:description" content="全臺戲曲演出一站查：歌仔戲、布袋戲，場次與消息持續更新。">
+  <meta property="og:url" content="https://eric1810-tw.github.io/taiwan-opera-calendar/">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <title>台灣戲曲演出行事曆｜歌仔戲、布袋戲與全臺戲曲節目</title>
   
   <!-- Google Fonts: 傳統楷書、古典宋明體與清晰無襯線 -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;700;900&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
   
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            serif: ['"Noto Serif TC"', 'serif'],
-            sans: ['"Noto Sans TC"', 'sans-serif'],
-          }
-        }
-      }
-    }
-  </script>
-
-  <style>
-    :root { --paper:#f7f0e7; --ink:#28231f; --muted:#70665e; --pink:#d80b72; --yellow:#f6cb58; --ochre:#ad7b38; --card:#fffdf8; --line:#e8d9c8; --soft:#f4e7da; }
-    html[data-theme="purple-regal"] { --paper:#f1eaf1; --ink:#281c2d; --muted:#6f6073; --pink:#742c77; --yellow:#e8c96b; --ochre:#956b39; --card:#fffaff; --line:#e0d0e2; --soft:#eee2ef; }
-    html[data-theme="literati-ink"] { --paper:#f0eee5; --ink:#242822; --muted:#62665d; --pink:#3e6655; --yellow:#d2ad55; --ochre:#977848; --card:#fbfaf4; --line:#dcd9cb; --soft:#e7e8dd; }
-    html { scroll-behavior:smooth; }
-    body { padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px); background:var(--paper); color:var(--ink); font-family:'Noto Sans TC',sans-serif; }
-    .serif-title { font-family:'Noto Serif TC',serif; }
-    .hidden { display:none !important; }
-    .theater-curtain-left,.theater-curtain-right { display:none; }
-    header { background:var(--ink); }
-    .theater-top-drape { height:38px; background:var(--pink); box-shadow:0 3px 0 var(--yellow); }
-    main { max-width:1100px !important; padding:0 22px 64px !important; }
-    .hero { position:relative; isolation:isolate; overflow:hidden; margin:22px 0 26px; min-height:255px; padding:36px clamp(22px,5vw,64px); border-radius:4px; color:#fffaf2; background:var(--ink); }
-    .hero:before { content:""; position:absolute; z-index:-1; width:260px; height:340px; right:12%; top:-78px; border-radius:48% 48% 0 0; background:var(--pink); transform:rotate(8deg); box-shadow:28px 0 0 var(--yellow); opacity:.98; }
-    .hero:after { content:"戲"; position:absolute; z-index:-1; right:clamp(30px,9vw,120px); top:35px; color:#fff8ea; font:900 clamp(90px,16vw,176px)/1 'Noto Serif TC',serif; opacity:.92; }
-    .hero-kicker { display:inline-flex; align-items:center; gap:9px; padding:6px 10px; background:var(--yellow); color:var(--ink); font-size:11px; font-weight:900; letter-spacing:.12em; }
-    .hero h1 { max-width:680px; margin:17px 0 8px; font:900 clamp(30px,5vw,54px)/1.2 'Noto Serif TC',serif; letter-spacing:.04em; }
-    .hero p { max-width:530px; margin:0; color:#f5e8da; font-size:14px; line-height:1.8; }
-    .hero-note { display:inline-block; margin-top:18px; border-left:4px solid var(--yellow); padding-left:10px; font-size:12px; }
-    #multiRowChips { gap:8px !important; }
-    .chip { min-width:0; white-space:normal; overflow-wrap:anywhere; border-radius:3px !important; padding:1.5mm 3px !important; font-size:clamp(14px, 3.4vw, 18px) !important; line-height:1.25 !important; background:var(--card) !important; border-color:var(--line) !important; color:var(--ink) !important; }
-    .chip:hover,.chip:focus-visible { border-color:var(--pink) !important; }
-    .chip-active { background:var(--pink) !important; color:white !important; border-color:var(--pink) !important; box-shadow:3px 3px 0 var(--yellow); }
-    select { min-height:42px; border-radius:3px !important; background:var(--card) !important; color:var(--ink) !important; }
-    #eventsContainer { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:15px; }
-    .opera-card { min-width:0; padding:18px !important; border:1px solid var(--line) !important; border-top:5px solid var(--pink) !important; border-radius:4px !important; background:var(--card) !important; box-shadow:5px 5px 0 var(--soft) !important; }
-    .opera-card:hover { transform:translateY(-2px); box-shadow:7px 8px 0 var(--soft) !important; }
-    .accent-btn { border-radius:3px !important; background:var(--pink) !important; color:#fff !important; }
-    .accent-btn:hover { filter:brightness(.91); }
-    #loadError,#emptyView,main section:not(.hero),.mt-6.p-3 { border-radius:4px !important; background:var(--card) !important; border-color:var(--line) !important; }
-    footer { padding-bottom:calc(1.25rem + env(safe-area-inset-bottom,0px)); background:var(--ink) !important; border-color:var(--yellow) !important; }
-    a:focus-visible,button:focus-visible,select:focus-visible { outline:3px solid var(--yellow); outline-offset:2px; }
-    @media(max-width:700px) { main { padding:0 14px 48px !important; } .hero { min-height:230px; margin:14px 0 20px; padding:27px 20px; } .hero:before { right:2%; opacity:.75; } .hero:after { right:5%; top:54px; opacity:.45; } #eventsContainer { grid-template-columns:1fr; } }
-    @media(max-width:380px) { .chip { font-size:10px !important; } }
-  </style>
+  <link rel="stylesheet" href="assets/app.css">
+  <script src="assets/app.js" defer></script>
 </head>
 <body class="min-h-screen flex flex-col justify-between relative selection:bg-[#d80b72] selection:text-white transition-colors duration-300">
 
@@ -97,7 +55,7 @@
         aria-controls="eventsContainer">
     </div>
 
-    <!-- 快速切換名家／類別：純文字標籤，保持 3 行完整排列 -->
+    <!-- 快速切換名家與類別 -->
     <div class="mb-4">
       <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 text-[11px] font-bold text-stone-500 mb-2 px-1">
         <span>快速篩選</span>
@@ -105,21 +63,18 @@
       </div>
 
       <div class="grid grid-cols-4 gap-1.5 text-center" id="multiRowChips">
-        <!-- 第 1 行：全部、古都木偶、羅裕誴、孫凱琳／春美 -->
-        <button data-filter="all" class="chip chip-active px-1 py-2.5 rounded-xl text-xs sm:text-sm leading-tight font-bold border transition">全部</button>
-        <button data-filter="古都木偶" class="chip px-1 py-2.5 rounded-xl text-xs sm:text-sm leading-tight font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#d80b72] transition">古都木偶</button>
-        <button data-filter="羅裕誴" class="chip px-1 py-2.5 rounded-xl text-xs sm:text-sm leading-tight font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#d80b72] transition">羅裕誴</button>
-        <button data-filter="孫凱琳*春美" class="chip px-1 py-2.5 rounded-xl text-xs sm:text-sm leading-tight font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#d80b72] transition">孫凱琳*春美</button>
+        <button data-filter="all" aria-pressed="true" class="chip chip-active px-1 py-2.5 rounded-xl text-xs sm:text-sm leading-tight font-bold border transition">全部</button>
+        <button data-filter="古都木偶" aria-pressed="false" class="chip px-1 py-2.5 rounded-xl text-xs sm:text-sm leading-tight font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#d80b72] transition">古都木偶</button>
+        <button data-filter="羅裕誴" aria-pressed="false" class="chip px-1 py-2.5 rounded-xl text-xs sm:text-sm leading-tight font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#d80b72] transition">羅裕誴</button>
+        <button data-filter="孫凱琳*春美" aria-pressed="false" class="chip px-1 py-2.5 rounded-xl text-xs sm:text-sm leading-tight font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#d80b72] transition">孫凱琳／春美</button>
 
-        <!-- 第 2 行：吳奕萱／明華園、呂雪鳳、秀琴、唐美雲 -->
-        <button data-filter="吳奕萱*明華園" class="chip px-1 py-2.5 rounded-xl text-xs sm:text-sm leading-tight font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#d80b72] transition">吳奕萱*明華園</button>
-        <button data-filter="呂雪鳳" class="chip px-1 py-2.5 rounded-xl text-xs sm:text-sm leading-tight font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#d80b72] transition">呂雪鳳</button>
-        <button data-filter="秀琴" class="chip px-1 py-2.5 rounded-xl text-xs sm:text-sm leading-tight font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#d80b72] transition">秀琴</button>
+        <button data-filter="吳奕萱*明華園" aria-pressed="false" class="chip px-1 py-2.5 rounded-xl text-xs sm:text-sm leading-tight font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#d80b72] transition">吳奕萱／明華園</button>
+        <button data-filter="呂雪鳳" aria-pressed="false" class="chip px-1 py-2.5 rounded-xl text-xs sm:text-sm leading-tight font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#d80b72] transition">呂雪鳳</button>
+        <button data-filter="秀琴" aria-pressed="false" class="chip px-1 py-2.5 rounded-xl text-xs sm:text-sm leading-tight font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#d80b72] transition">秀琴</button>
 
-        <!-- 第 3 行：其他歌仔戲、其他布袋戲 -->
-        <button data-filter="唐美雲" class="chip px-1 py-2.5 rounded-xl text-xs sm:text-sm leading-tight font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#d80b72] transition">唐美雲</button>
-        <button data-filter="其他歌仔戲" class="chip px-1 py-2.5 rounded-xl text-xs sm:text-sm leading-tight font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#d80b72] transition">其他歌仔戲</button>
-        <button data-filter="其他布袋戲" class="chip px-1 py-2.5 rounded-xl text-xs sm:text-sm leading-tight font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#d80b72] transition">其他布袋戲</button>
+        <button data-filter="唐美雲" aria-pressed="false" class="chip px-1 py-2.5 rounded-xl text-xs sm:text-sm leading-tight font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#d80b72] transition">唐美雲</button>
+        <button data-filter="其他歌仔戲" aria-pressed="false" class="chip px-1 py-2.5 rounded-xl text-xs sm:text-sm leading-tight font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#d80b72] transition">其他歌仔戲</button>
+        <button data-filter="其他布袋戲" aria-pressed="false" class="chip px-1 py-2.5 rounded-xl text-xs sm:text-sm leading-tight font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#d80b72] transition">其他布袋戲</button>
       </div>
     </div>
 
@@ -163,7 +118,7 @@
       <div class="text-3xl mb-2">🎭</div>
       <h3 class="text-sm font-bold text-stone-800">查無相符的演出</h3>
       <p class="text-xs text-stone-500 mt-1">請調整搜尋關鍵字或篩選條件</p>
-      <button onclick="resetAllFilters()" class="mt-3 px-4 py-1.5 accent-btn rounded-xl text-xs font-bold shadow-sm">顯示全部場次</button>
+      <button id="resetFilters" type="button" class="mt-3 px-4 py-1.5 accent-btn rounded-xl text-xs font-bold shadow-sm">顯示全部場次</button>
     </div>
 
     <!-- 底部審核機制說明 (原本在上方，依指示下移至此避免佔用寶貴頂端空間) -->
@@ -173,7 +128,7 @@
           <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
           <span>資料核實機制</span>
         </div>
-        <button onclick="openReportModal('一般演出提報')" class="text-[#d80b72] font-bold hover:underline">
+        <button id="openGeneralReport" type="button" class="text-[#d80b72] font-bold hover:underline">
           ⚠️ 回報或推薦場次
         </button>
       </div>
@@ -187,13 +142,13 @@
     <div class="mt-6 p-3 bg-white/90 border border-stone-300 rounded-2xl text-center shadow-sm">
       <span class="text-[11px] font-bold text-stone-600 block mb-2">🎨 選擇您喜愛的版面設計風格：</span>
       <div class="grid grid-cols-3 gap-1.5 text-[11px]">
-        <button onclick="changeTheme('crimson-classic')" id="btn-theme-1" class="py-1.5 px-2 rounded-xl font-bold bg-[#d80b72] text-white shadow-sm border border-[#d80b72]">
+        <button type="button" data-theme-choice="crimson-classic" id="btn-theme-1" aria-pressed="true" class="py-1.5 px-2 rounded-xl font-bold bg-[#d80b72] text-white shadow-sm border border-[#d80b72]">
           1. 經典絳紅
         </button>
-        <button onclick="changeTheme('purple-regal')" id="btn-theme-2" class="py-1.5 px-2 rounded-xl font-bold bg-stone-100 text-stone-700 border border-stone-300">
+        <button type="button" data-theme-choice="purple-regal" id="btn-theme-2" aria-pressed="false" class="py-1.5 px-2 rounded-xl font-bold bg-stone-100 text-stone-700 border border-stone-300">
           2. 宮廷絳紫
         </button>
-        <button onclick="changeTheme('literati-ink')" id="btn-theme-3" class="py-1.5 px-2 rounded-xl font-bold bg-stone-100 text-stone-700 border border-stone-300">
+        <button type="button" data-theme-choice="literati-ink" id="btn-theme-3" aria-pressed="false" class="py-1.5 px-2 rounded-xl font-bold bg-stone-100 text-stone-700 border border-stone-300">
           3. 宣紙墨金
         </button>
       </div>
@@ -222,11 +177,11 @@
   </footer>
 
   <!-- 回報錯誤 Modal -->
-  <div id="reportModal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
+  <div id="reportModal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4" role="dialog" aria-modal="true" aria-labelledby="reportDialogTitle" aria-hidden="true">
     <div class="bg-white rounded-2xl max-w-sm w-full p-5 shadow-2xl border border-stone-200">
       <div class="flex items-center justify-between pb-2 border-b border-stone-200 mb-3">
-        <h3 class="font-bold text-sm text-stone-900 flex items-center gap-1">⚠️ 演出資訊回報 / 新增推薦</h3>
-        <button onclick="closeReportModal()" class="text-stone-400 hover:text-stone-700 text-lg">&times;</button>
+        <h3 id="reportDialogTitle" class="font-bold text-sm text-stone-900 flex items-center gap-1">⚠️ 演出資訊回報 / 新增推薦</h3>
+        <button id="closeReportModal" type="button" class="text-stone-400 hover:text-stone-700 text-lg" aria-label="關閉回報視窗">&times;</button>
       </div>
       
       <p id="reportTargetTitle" class="text-xs text-[#d80b72] font-bold mb-2.5 bg-red-50 p-2 rounded-lg"></p>
@@ -235,9 +190,9 @@
         下一步會開啟 GitHub。請登入並在 GitHub 頁面按「Submit new issue」才算完成回報；本站不會直接送出。
       </p>
 
-      <form onsubmit="submitReport(event)" class="space-y-2.5 text-xs">
+      <form id="reportForm" class="space-y-2.5 text-xs">
         <div>
-          <label class="block text-stone-600 font-semibold mb-1">回報類型：</label>
+          <label for="reportReason" class="block text-stone-600 font-semibold mb-1">回報類型：</label>
           <select id="reportReason" class="w-full border border-stone-300 rounded-lg p-2 text-stone-800 bg-white">
             <option value="時間或地點異動">時間或地點異動</option>
             <option value="場次取消或延期">場次取消或延期</option>
@@ -246,389 +201,17 @@
           </select>
         </div>
         <div>
-          <label class="block text-stone-600 font-semibold mb-1">說明與官方連結：</label>
+          <label for="reportDetail" class="block text-stone-600 font-semibold mb-1">說明與官方連結：</label>
           <textarea id="reportDetail" rows="3" placeholder="請填寫正確資訊或附上售票/粉專網址..." class="w-full border border-stone-300 rounded-lg p-2 text-stone-800 focus:outline-none focus:border-[#d80b72]" required></textarea>
         </div>
         <div class="flex gap-2 pt-1">
-          <button type="button" onclick="closeReportModal()" class="flex-1 py-2 bg-stone-100 text-stone-700 font-bold rounded-xl text-xs">取消</button>
+          <button id="cancelReport" type="button" class="flex-1 py-2 bg-stone-100 text-stone-700 font-bold rounded-xl text-xs">取消</button>
           <button type="submit" class="flex-1 py-2 accent-btn font-bold rounded-xl text-xs">前往 GitHub 提交回報</button>
         </div>
       </form>
     </div>
   </div>
 
-  <!-- 純前端 JavaScript 邏輯 -->
-  <script>
-    let eventsData = [];
-    let currentFilter = 'all';
-    let currentRegion = 'all';
-    let currentType = 'all';
-    let currentKeyword = '';
-
-    const eventsContainer = document.getElementById('eventsContainer');
-    const emptyView = document.getElementById('emptyView');
-    const filteredStats = document.getElementById('filteredStats');
-    const regionSelect = document.getElementById('regionSelect');
-    const typeSelect = document.getElementById('typeSelect');
-    const keywordSearch = document.getElementById('keywordSearch');
-    const chips = document.querySelectorAll('.chip');
-    const namedQuickFilters = Array.from(chips, chip => chip.dataset.filter)
-      .filter(filter => filter !== 'all' && !filter.startsWith('其他'))
-      .flatMap(filter => filter.split('*'));
-    const loadingView = document.getElementById('loadingView');
-    const loadError = document.getElementById('loadError');
-
-    function escapeHTML(value) {
-      return String(value ?? '').replace(/[&<>"']/g, character => ({
-        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
-      })[character]);
-    }
-
-    function safeExternalURL(value) {
-      try {
-        const url = new URL(String(value || ''), location.href);
-        return url.protocol === 'https:' ? url.href : '#';
-      } catch (_) {
-        return '#';
-      }
-    }
-
-    function getVerificationLabel(event) {
-      if (event.verifyStatus !== 'verified') return escapeHTML(event.verifyLabel || '⏳ 待核實');
-      try {
-        const source = new URL(event.sourceUrl || event.link);
-        return source.protocol === 'https:' && event.verifyLabel
-          ? escapeHTML(event.verifyLabel)
-          : '⏳ 演出來源頁待補';
-      } catch (_) {
-        return '⏳ 演出來源頁待補';
-      }
-    }
-
-    // 切換主題風格 (提供 3 種設計)
-    function changeTheme(themeName) {
-      if (!['crimson-classic', 'purple-regal', 'literati-ink'].includes(themeName)) return;
-      document.documentElement.setAttribute('data-theme', themeName);
-      try {
-        if (typeof localStorage !== 'undefined') localStorage.setItem('opera-theme', themeName);
-      } catch (_) { /* Storage may be disabled. */ }
-      
-      // 更新按鈕樣式
-      const b1 = document.getElementById('btn-theme-1');
-      const b2 = document.getElementById('btn-theme-2');
-      const b3 = document.getElementById('btn-theme-3');
-
-      [b1, b2, b3].forEach(b => {
-        b.className = "py-1.5 px-2 rounded-xl font-bold bg-stone-100 text-stone-700 border border-stone-300";
-      });
-
-      if (themeName === 'crimson-classic') {
-        b1.className = "py-1.5 px-2 rounded-xl font-bold bg-[#d80b72] text-white shadow-sm border border-[#d80b72]";
-      } else if (themeName === 'purple-regal') {
-        b2.className = "py-1.5 px-2 rounded-xl font-bold bg-[#D4AF37] text-stone-950 shadow-sm border border-[#D4AF37]";
-      } else if (themeName === 'literati-ink') {
-        b3.className = "py-1.5 px-2 rounded-xl font-bold bg-[#2B2625] text-white shadow-sm border border-[#2B2625]";
-      }
-    }
-
-    function getTaiwanToday() {
-      const testDate = new URLSearchParams(location.search).get('today');
-      if (['localhost', '127.0.0.1'].includes(location.hostname) && /^\d{4}-\d{2}-\d{2}$/.test(testDate || '')) {
-        return testDate;
-      }
-      const parts = new Intl.DateTimeFormat('en-US', {
-        timeZone: 'Asia/Taipei', year: 'numeric', month: '2-digit', day: '2-digit'
-      }).formatToParts(new Date());
-      const part = type => parts.find(item => item.type === type).value;
-      return `${part('year')}-${part('month')}-${part('day')}`;
-    }
-
-    function dateDifference(later, earlier) {
-      const [ly, lm, ld] = later.split('-').map(Number);
-      const [ey, em, ed] = earlier.split('-').map(Number);
-      return (Date.UTC(ly, lm - 1, ld) - Date.UTC(ey, em - 1, ed)) / 86400000;
-    }
-
-    // 依台灣日期計算場次狀態；開始日以後、結束日以前顯示演出中。
-    function getDaysBadge(event) {
-      const today = getTaiwanToday();
-      const endDate = event.endDate || event.date;
-      const daysAway = Math.max(0, dateDifference(event.date, today));
-      if (event.date <= today && endDate >= today) {
-        return '<span class="text-[10px] font-bold text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded border border-emerald-200">演出中</span>';
-      }
-      if (daysAway <= 7) {
-        return `<span class="text-[10px] font-bold text-[#d80b72] bg-red-100/80 px-2 py-0.5 rounded border border-red-200">🔥 還有 ${daysAway} 天</span>`;
-      } else if (daysAway <= 21) {
-        return `<span class="text-[10px] font-bold text-amber-800 bg-amber-100/70 px-2 py-0.5 rounded border border-amber-200">倒數 ${daysAway} 天</span>`;
-      } else {
-        return `<span class="text-[10px] font-bold text-stone-500 bg-stone-100 px-2 py-0.5 rounded">${daysAway} 天後</span>`;
-      }
-    }
-
-    function matchesQuickFilter(ev, filter) {
-      if (filter === 'all') return true;
-      const fields = [...(ev.tags || []), ev.troupe, ev.artist, ev.genre];
-      if (filter.startsWith('其他')) {
-        const genre = filter.replace('其他', '');
-        if (ev.genre !== genre && !fields.some(value => typeof value === 'string' && value.includes(filter))) return false;
-        return !namedQuickFilters.some(name => fields.some(value =>
-          typeof value === 'string' && value.includes(name)));
-      }
-      const matches = filter.split('*').some(alias =>
-        fields.some(value => typeof value === 'string' && value.includes(alias)));
-      if (!matches) return false;
-      return true;
-    }
-
-    function renderEvents() {
-      const filtered = [...eventsData].sort((a, b) => a.date.localeCompare(b.date) || a.title.localeCompare(b.title, 'zh-Hant')).filter(ev => {
-        // 多行標籤快篩
-        if (!matchesQuickFilter(ev, currentFilter)) return false;
-
-        // 地區
-        if (currentRegion !== 'all') {
-          if (!ev.region || !ev.region.includes(currentRegion)) return false;
-        }
-
-        // 形式
-        if (currentType !== 'all') {
-          if (ev.badgeType !== currentType) return false;
-        }
-
-        if (currentKeyword) {
-          const searchable = [ev.title, ev.troupe, ev.artist, ev.location, ev.date, ev.dateFormatted,
-            ev.time, ev.description, ev.genre, ev.region, ...(ev.tags || [])]
-            .map(value => String(value ?? '').toLocaleLowerCase('zh-TW')).join(' ');
-          if (!currentKeyword.split(/\s+/).every(term => searchable.includes(term))) return false;
-        }
-
-        return true;
-      });
-
-      const verifiedCount = filtered.filter(ev => ev.verifyStatus === 'verified').length;
-      const pendingCount = filtered.filter(ev => ev.verifyStatus === 'pending').length;
-      const communityCount = filtered.filter(ev => ev.verifyStatus === 'community').length;
-      filteredStats.textContent = `共 ${filtered.length} 筆節目卡片：已核實 ${verifiedCount}・待確認 ${pendingCount}・社群來源 ${communityCount}`;
-
-      if (filtered.length === 0) {
-        eventsContainer.innerHTML = '';
-        emptyView.classList.remove('hidden');
-        return;
-      }
-
-      emptyView.classList.add('hidden');
-      eventsContainer.innerHTML = filtered.map(ev => `
-        <article class="opera-card rounded-2xl p-4 transition duration-200 flex flex-col justify-between">
-          <div>
-            <!-- 上方：劇團名、核實標籤與天數 -->
-            <div class="flex items-center justify-between gap-1.5 mb-1.5">
-              <div class="flex items-center gap-1.5">
-                <span class="text-xs font-bold text-[#d80b72] bg-[#d80b72]/10 px-2.5 py-0.5 rounded-full border border-[#d80b72]/20">
-                  ${escapeHTML(ev.troupe || '主辦單位待核實')}
-                </span>
-                <span class="text-[10px] font-semibold ${ev.verifyStatus === 'verified' && getVerificationLabel(ev).startsWith('🛡️') ? 'text-emerald-700 bg-emerald-50 border-emerald-200' : 'text-amber-800 bg-amber-50 border-amber-200'} px-2 py-0.5 rounded-full border">
-                  ${getVerificationLabel(ev)}
-                </span>
-              </div>
-              <div>${getDaysBadge(ev)}</div>
-            </div>
-
-            <!-- 劇目標題 -->
-            <h2 class="text-base font-bold serif-title text-stone-900 leading-snug mb-1">
-              ${escapeHTML(ev.title)}
-            </h2>
-
-            ${ev.verifyStatus === 'pending' ? '<p class="text-[11px] font-bold text-amber-900 bg-amber-100 border border-amber-200 rounded-lg px-2 py-1 mb-2">自動發現候選・尚未核實劇種與演出資訊</p>' : ''}
-
-            <!-- 主演卡司 -->
-            <div class="text-xs text-stone-700 font-medium mb-2 bg-stone-50 px-2 py-1 rounded-lg">
-              <span class="text-amber-800 font-semibold">🎭 主演：</span>
-              <span class="truncate">${escapeHTML(ev.artist)}</span>
-            </div>
-
-            <!-- 時間與地點 -->
-            <div class="space-y-1 text-xs text-stone-600 mb-2.5">
-              <div class="flex items-center gap-1">
-                <span class="text-[#d80b72] font-semibold shrink-0">🗓️ 日期時間：</span>
-                <span class="font-medium text-stone-800">${escapeHTML(ev.dateFormatted)} ｜ ${escapeHTML(ev.time)}</span>
-              </div>
-              <div class="flex items-start gap-1">
-                <span class="text-[#d80b72] font-semibold shrink-0">📍 演出地點：</span>
-                <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(ev.location || '')}" target="_blank" rel="noopener noreferrer" class="text-stone-700 underline decoration-stone-300 hover:text-[#d80b72]">
-                  ${escapeHTML(ev.location || '演出地點待核實')}
-                </a>
-              </div>
-            </div>
-
-            <!-- 簡介看點 -->
-            <p class="text-xs text-stone-500 leading-relaxed mb-3">
-              ${escapeHTML(ev.description || '由文化部公開資料發現，詳細內容待人工核對官方公告。')}
-            </p>
-          </div>
-
-          <!-- 卡片底部動作 -->
-          <div class="pt-2 border-t border-stone-100 flex items-center justify-between gap-2 mt-auto">
-            <button data-report-title="${escapeHTML(ev.title)}" class="report-event text-[11px] text-stone-400 hover:text-[#d80b72] py-1">
-              ⚠️ 回報資訊有誤
-            </button>
-
-            <a 
-              href="${escapeHTML(safeExternalURL(ev.link))}"
-              target="_blank" 
-              rel="noopener noreferrer"
-              class="inline-flex items-center gap-1 text-xs font-bold px-3.5 py-1.5 rounded-xl accent-btn shadow-sm transition active:scale-95"
-            >
-              <span>${escapeHTML(ev.verifyStatus === 'pending' ? '查看來源線索' : (ev.linkLabel || '官方購票 / 詳情'))}</span>
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-            </a>
-          </div>
-        </article>
-      `).join('');
-      eventsContainer.querySelectorAll('.report-event').forEach(button => {
-        button.addEventListener('click', () => openReportModal(button.dataset.reportTitle));
-      });
-    }
-
-    // 3 行多列標籤點擊
-    chips.forEach(chip => {
-      chip.addEventListener('click', () => {
-        chips.forEach(c => {
-          c.classList.remove('chip-active');
-          c.classList.add('bg-white', 'text-stone-700', 'border-stone-300');
-        });
-        chip.classList.add('chip-active');
-        chip.classList.remove('bg-white', 'text-stone-700', 'border-stone-300');
-        
-        currentFilter = chip.getAttribute('data-filter');
-        renderEvents();
-      });
-    });
-
-    regionSelect.addEventListener('change', (e) => {
-      currentRegion = e.target.value;
-      renderEvents();
-    });
-
-    typeSelect.addEventListener('change', (e) => {
-      currentType = e.target.value;
-      renderEvents();
-    });
-
-    keywordSearch.addEventListener('input', (e) => {
-      currentKeyword = e.target.value.trim().toLocaleLowerCase('zh-TW');
-      renderEvents();
-    });
-
-    function resetAllFilters() {
-      currentFilter = 'all';
-      currentRegion = 'all';
-      currentType = 'all';
-      currentKeyword = '';
-      regionSelect.value = 'all';
-      typeSelect.value = 'all';
-      keywordSearch.value = '';
-      chips.forEach(c => {
-        if (c.getAttribute('data-filter') === 'all') {
-          c.classList.add('chip-active');
-        } else {
-          c.classList.remove('chip-active');
-          c.classList.add('bg-white', 'text-stone-700', 'border-stone-300');
-        }
-      });
-      renderEvents();
-    }
-
-    function openReportModal(showTitle) {
-      document.getElementById('reportTargetTitle').textContent = `針對演出：${showTitle}`;
-      document.getElementById('reportModal').classList.remove('hidden');
-    }
-    function closeReportModal() {
-      document.getElementById('reportModal').classList.add('hidden');
-    }
-
-    function submitReport(e) {
-      e.preventDefault();
-      const reason = document.getElementById('reportReason').value;
-      const detail = document.getElementById('reportDetail').value;
-      const target = document.getElementById('reportTargetTitle').textContent;
-      
-      const issueTitle = encodeURIComponent(`[演出回報] ${target} - ${reason}`);
-      const issueBody = encodeURIComponent(`### 回報目標\n${target}\n\n### 原因\n${reason}\n\n### 詳情與來源\n${detail}`);
-      const githubUrl = `https://github.com/eric1810-tw/taiwan-opera-calendar/issues/new?title=${issueTitle}&body=${issueBody}`;
-      
-      // 同頁導向可避免彈出視窗遭阻擋，且不會誤稱回報已提交。
-      window.location.assign(githubUrl);
-    }
-
-    async function loadSchedule() {
-      loadingView.classList.remove('hidden');
-      loadError.classList.add('hidden');
-      eventsContainer.classList.remove('hidden');
-      emptyView.classList.add('hidden');
-      try {
-        loadLastUpdated();
-        const response = await fetch('./data/schedule.json', { cache: 'no-cache' });
-        if (!response.ok) throw new Error(`HTTP ${response.status}`);
-        const data = await response.json();
-        const requiredText = ['id', 'date', 'dateFormatted', 'time', 'troupe', 'genre', 'artist', 'title', 'location', 'description', 'link'];
-        const validGenres = new Set(['歌仔戲', '布袋戲', '音樂劇', '其他歌仔戲', '其他布袋戲', '其他音樂劇']);
-        const validStatuses = new Set(['verified', 'community', 'pending']);
-        const validBadges = new Set(['ticket', 'free', 'temple', 'plan']);
-        const validRegions = new Set(['北部', '中部', '南部', '東部', '未分類']);
-        if (!Array.isArray(data) || data.some(event => !event || typeof event !== 'object'
-          || requiredText.some(key => typeof event[key] !== 'string')
-          || !/^\d{4}-\d{2}-\d{2}$/.test(event.date)
-          || Number.isNaN(Date.parse(`${event.date}T00:00:00Z`))
-          || (event.endDate !== undefined && (typeof event.endDate !== 'string'
-            || !/^\d{4}-\d{2}-\d{2}$/.test(event.endDate)
-            || Number.isNaN(Date.parse(`${event.endDate}T00:00:00Z`)) || event.endDate < event.date))
-          || !validGenres.has(event.genre) || !validStatuses.has(event.verifyStatus)
-          || !validBadges.has(event.badgeType) || !validRegions.has(event.region)
-          || !Number.isInteger(event.daysAway) || event.daysAway < 0
-          || !Array.isArray(event.tags) || event.tags.some(tag => typeof tag !== 'string'))) {
-          throw new Error('資料格式不正確');
-        }
-        eventsData = data;
-        const today = getTaiwanToday();
-        eventsData = data.filter(event => (event.endDate || event.date) >= today);
-        loadingView.classList.add('hidden');
-        eventsContainer.classList.remove('hidden');
-        renderEvents();
-      } catch (error) {
-        console.error('Schedule load failed:', error);
-        loadingView.classList.add('hidden');
-        document.getElementById('loadErrorMessage').textContent =
-          location.protocol === 'file:' ? '直接以 file:// 開啟無法讀取 JSON。' : '網路暫時無法載入演出資料，請稍後重試。';
-        loadError.classList.remove('hidden');
-      }
-    }
-
-    async function loadLastUpdated() {
-      const label = document.getElementById('lastUpdated');
-      try {
-        const response = await fetch('./data/metadata.json', { cache: 'no-cache' });
-        if (!response.ok) throw new Error(`HTTP ${response.status}`);
-        const metadata = await response.json();
-        const timestamp = new Date(metadata.lastUpdated);
-        if (!Number.isFinite(timestamp.getTime())) throw new Error('Invalid update timestamp');
-        const formatted = new Intl.DateTimeFormat('zh-TW', {
-          timeZone: 'Asia/Taipei', year: 'numeric', month: '2-digit', day: '2-digit',
-          hour: '2-digit', minute: '2-digit', hourCycle: 'h23'
-        }).format(timestamp);
-        label.textContent = `資料最後更新時間：${formatted}（台灣時間）`;
-      } catch (error) {
-        console.warn('Last-updated metadata unavailable:', error);
-        label.textContent = '資料最後更新時間：目前無法取得';
-      }
-    }
-
-    document.getElementById('retryLoad').addEventListener('click', loadSchedule);
-    try {
-      const savedTheme = localStorage.getItem('opera-theme');
-      if (savedTheme) changeTheme(savedTheme);
-    } catch (_) { /* Use the default theme when storage is unavailable. */ }
-    loadSchedule();
-  </script>
+  <!-- JavaScript moved to assets/app.js for the Content Security Policy. -->
 </body>
 </html>
