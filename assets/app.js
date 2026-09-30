@@ -65,7 +65,9 @@ function getDaysBadge(event) {
   const endDate = event.endDate || event.date;
   const daysAway = Math.max(0, dateDifference(event.date, today));
   if (event.date <= today && endDate >= today) {
-    return '<span class="text-[10px] font-bold text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded border border-emerald-200">演出中</span>';
+    const hasContinuousDateRange = /\d{1,2}日?\s*[–—~～至到]\s*(?:\d{1,2}月?\s*)?\d{1,2}/.test(event.dateFormatted || '');
+    const label = hasContinuousDateRange || event.date === today ? '演出中' : '期間內・詳見場次日期';
+    return `<span class="text-[10px] font-bold text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded border border-emerald-200">${label}</span>`;
   }
   if (daysAway <= 7) {
     return `<span class="text-[10px] font-bold text-[#d80b72] bg-red-100/80 px-2 py-0.5 rounded border border-red-200">🔥 還有 ${daysAway} 天</span>`;

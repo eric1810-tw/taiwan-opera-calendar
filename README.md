@@ -5,7 +5,7 @@
 ## 專案內容
 
 - `index.html`、`assets/app.js`、`assets/app.css`：靜態前端。卡片由瀏覽器載入 `data/schedule.json`，並在臺灣日期過濾已結束場次。
-- `data/schedule.json`：目前公開的場次資料；`endDate` 為多日活動結束日，單日活動可省略。
+- `data/schedule.json`：目前公開的場次資料；`endDate` 是多日活動的最後一場日期（不表示起訖日之間每天都有演出），單日活動可省略。
 - `data/metadata.json`：最近一次成功刷新排程資料的時間，不代表每場演出都在該時間重新核實。
 - `updater.py`：讀取文化部公開活動資料作候選、重新計算倒數並清除已結束場次；候選資料不會自動升格為已核實場次。
 - `data/threads_accounts.json`、候選資料檔：來源巡檢設定與待人工核對線索。候選內容不包含在 GitHub Pages 網站 artifact 中。
