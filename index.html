@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="description" content="全臺戲曲演出一站查，彙整歌仔戲、布袋戲與其他戲曲節目，逐場標示日期、地點及來源狀態。">
+  <meta name="description" content="全國戲曲演出一站查，彙整歌仔戲、布袋戲與其他戲曲節目，逐場標示日期、地點及來源狀態。">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
   <meta property="og:title" content="台灣戲曲演出行事曆">
-  <meta property="og:description" content="全臺戲曲演出一站查：歌仔戲、布袋戲，場次與消息持續更新。">
+  <meta property="og:description" content="全國戲曲演出一站查：歌仔戲、布袋戲，場次與消息持續更新。">
   <meta property="og:url" content="https://eric1810-tw.github.io/taiwan-opera-calendar/">
   <meta property="og:type" content="website">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-  <title>台灣戲曲演出行事曆｜歌仔戲、布袋戲與全臺戲曲節目</title>
+  <title>台灣戲曲演出行事曆｜歌仔戲、布袋戲與全國戲曲節目</title>
   
   <!-- Google Fonts: 傳統楷書、古典宋明體與清晰無襯線 -->
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;700;900&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
@@ -30,7 +30,7 @@
     <div class="theater-top-drape w-full h-8 sm:h-11 flex items-center justify-center transition-all duration-300">
       <div class="flex items-center gap-2 text-[#f6cb58] text-xs font-serif tracking-widest opacity-95">
         <span>❖</span>
-        <span class="text-[11px] font-bold">全臺傳統戲曲公演行事曆</span>
+        <span class="text-[11px] font-bold">全國傳統戲曲公演行事曆</span>
         <span>❖</span>
       </div>
     </div>
@@ -42,10 +42,10 @@
   <main class="w-full max-w-5xl mx-auto relative z-10 flex-grow">
 
     <section class="hero" aria-labelledby="page-title">
-      <span class="hero-kicker">看戲去・全臺戲曲日曆</span>
+      <span class="hero-kicker">看戲去・全國戲曲日曆</span>
       <h1 id="page-title">好戲開鑼，<br>日子排開。</h1>
-      <p>全臺戲曲演出一站查：歌仔戲、布袋戲，場次與消息持續更新。</p>
-      <span class="hero-note">未來 90 天・全臺演出資訊</span>
+      <p>全國戲曲演出一站查：歌仔戲、布袋戲，場次與消息持續更新。</p>
+      <span class="hero-note">未來 90 天・全國演出資訊</span>
     </section>
 
     <div class="mb-4 px-1">
@@ -68,7 +68,7 @@
         <button data-filter="羅裕誴" aria-pressed="false" class="chip px-1 py-2.5 rounded-xl text-xs sm:text-sm leading-tight font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#d80b72] transition">羅裕誴</button>
         <button data-filter="孫凱琳*春美" aria-pressed="false" class="chip px-1 py-2.5 rounded-xl text-xs sm:text-sm leading-tight font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#d80b72] transition">孫凱琳/春美</button>
 
-        <button data-filter="吳奕萱*明華園" aria-pressed="false" class="chip px-1 py-2.5 rounded-xl text-xs sm:text-sm leading-tight font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#d80b72] transition">吳奕萱/明華園</button>
+        <button data-filter="吳奕萱*明華園" aria-pressed="false" class="chip px-1 py-2.5 rounded-xl text-xs sm:text-sm leading-tight font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#d80b72] transition">吳奕萱/明華</button>
         <button data-filter="呂雪鳳" aria-pressed="false" class="chip px-1 py-2.5 rounded-xl text-xs sm:text-sm leading-tight font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#d80b72] transition">呂雪鳳</button>
         <button data-filter="秀琴" aria-pressed="false" class="chip px-1 py-2.5 rounded-xl text-xs sm:text-sm leading-tight font-bold bg-white text-stone-700 border border-stone-300 hover:border-[#d80b72] transition">秀琴</button>
 
@@ -79,9 +79,9 @@
     </div>
 
     <!-- 地區與形式二級下拉 (簡約緊湊) -->
-    <div class="flex items-center gap-2 mb-4 text-xs">
-      <select id="regionSelect" class="flex-1 bg-white border border-stone-300 rounded-xl px-2.5 py-1.5 text-stone-700 focus:outline-none focus:border-[#d80b72]">
-        <option value="all">📍 全台各地 (所有縣市)</option>
+    <div class="grid grid-cols-2 gap-2 mb-4 text-xs">
+      <select id="regionSelect" class="w-full min-w-0 bg-white border border-stone-300 rounded-xl px-2.5 py-1.5 text-stone-700 focus:outline-none focus:border-[#d80b72]">
+        <option value="all">📍 全國各地 (所有縣市)</option>
         <option value="北部">北部（基隆／台北／新北／桃園／新竹／宜蘭）</option>
         <option value="中部">中部（苗栗／台中／彰化／南投／雲林）</option>
         <option value="南部">南部（嘉義／台南／高雄／屏東／澎湖）</option>
@@ -89,7 +89,7 @@
         <option value="未分類">地點待確認／跨區</option>
       </select>
 
-      <select id="typeSelect" class="flex-1 bg-white border border-stone-300 rounded-xl px-2.5 py-1.5 text-stone-700 focus:outline-none focus:border-[#d80b72]">
+      <select id="typeSelect" class="w-full min-w-0 bg-white border border-stone-300 rounded-xl px-2.5 py-1.5 text-stone-700 focus:outline-none focus:border-[#d80b72]">
         <option value="all">🎭 所有演出類型</option>
         <option value="ticket">售票劇院旗艦大戲</option>
         <option value="free">庄頭/戶外免費演出</option>
