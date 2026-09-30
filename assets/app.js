@@ -29,7 +29,7 @@ function escapeHTML(value) {
 function safeExternalURL(value) {
   try {
     const url = new URL(String(value || ''), location.href);
-    return ['https:', 'http:'].includes(url.protocol) ? url.href : '#';
+    return url.protocol === 'https:' ? url.href : '#';
   } catch (_) {
     return '#';
   }
