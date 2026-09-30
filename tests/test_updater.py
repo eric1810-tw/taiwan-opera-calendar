@@ -101,6 +101,25 @@ class UpdaterTests(unittest.TestCase):
                 self.assertEqual(written, [])
                 self.assertTrue(metadata_path.exists())
 
+    def test_fetch_latest_updates_retains_fixture_on_event_date(self):
+        today = date(2026, 10, 1)
+        with tempfile.TemporaryDirectory() as temp_dir:
+            schedule_path = Path(temp_dir) / "schedule.json"
+            metadata_path = Path(temp_dir) / "metadata.json"
+            schedule_path.write_text(json.dumps([copy.deepcopy(self.sample)], ensure_ascii=False), encoding="utf-8")
+            with patch.object(updater, "DATA_PATH", str(schedule_path)), \
+                    patch.object(updater, "METADATA_PATH", str(metadata_path)), \
+                    patch.object(updater, "MOC_CANDIDATES_PATH", str(Path(temp_dir) / "moc.json")), \
+                    patch.object(updater, "fetch_culture_events", return_value=[]), \
+                    patch.object(updater, "taiwan_today", return_value=today), \
+                    patch.dict("os.environ", {}, clear=True), \
+                    patch("builtins.print"):
+                updater.fetch_latest_updates()
+            written = json.loads(schedule_path.read_text(encoding="utf-8"))
+            self.assertEqual(len(written), 1)
+            self.assertEqual(written[0]["id"], self.sample["id"])
+            self.assertEqual(written[0]["daysAway"], 0)
+
 
 if __name__ == "__main__":
     unittest.main()
