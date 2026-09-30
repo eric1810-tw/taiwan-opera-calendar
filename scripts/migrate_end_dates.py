@@ -5,12 +5,35 @@ import json
 import re
 import sys
 import argparse
-from datetime import date
+import os
+import stat
+import tempfile
+from datetime import date, datetime
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).resolve().parents[1]
 SCHEDULE = ROOT / "data" / "schedule.json"
 TOKEN = re.compile(r"(?:(20\d{2})\s*[/年.-]\s*)?(\d{1,2})\s*[/月.-]\s*(\d{1,2})")
+
+
+def atomic_write_text(path, content):
+    path = Path(path)
+    mode = stat.S_IMODE(path.stat().st_mode) if path.exists() else 0o644
+    descriptor, temporary_path = tempfile.mkstemp(prefix=f".{path.name}.", suffix=".tmp", dir=path.parent)
+    try:
+        os.fchmod(descriptor, mode)
+        with os.fdopen(descriptor, "w", encoding="utf-8") as output:
+            output.write(content)
+            output.flush()
+            os.fsync(output.fileno())
+        os.replace(temporary_path, path)
+    except Exception:
+        try:
+            os.unlink(temporary_path)
+        except FileNotFoundError:
+            pass
+        raise
 
 
 def parsed_dates(event):
@@ -42,7 +65,8 @@ def parsed_dates(event):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--apply", action="store_true", help="寫入 schedule.json")
-    parser.add_argument("--base-date", default=date.today().isoformat(), help="清除已結束場次時使用的基準日期")
+    taiwan_today = datetime.now(ZoneInfo("Asia/Taipei")).date()
+    parser.add_argument("--base-date", default=taiwan_today.isoformat(), help="清除已結束場次時使用的基準日期（預設臺灣日期）")
     parser.add_argument("--report", help="將相同遷移清單另存為 Markdown")
     args = parser.parse_args()
     today = date.fromisoformat(args.base_date)
@@ -69,7 +93,7 @@ def main():
         lines.append(" | ".join(row))
     lines.append(f"\n依基準日 {today} 移除已結束場次：{', '.join(expired) if expired else '無'}")
     if args.apply:
-        SCHEDULE.write_text(json.dumps(retained, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        atomic_write_text(SCHEDULE, json.dumps(retained, ensure_ascii=False, indent=2) + "\n")
         lines.append(f"已寫入 {SCHEDULE.relative_to(ROOT)}；保留 {len(retained)} 筆")
     else:
         lines.append("預覽模式；加 --apply 才會寫入。")
@@ -77,7 +101,7 @@ def main():
     print(output)
     if args.report:
         report = ROOT / args.report
-        report.write_text("# 場次結束日遷移清單\n\n" + output + "\n", encoding="utf-8")
+        atomic_write_text(report, "# 場次結束日遷移清單\n\n" + output + "\n")
 
 
 if __name__ == "__main__":
