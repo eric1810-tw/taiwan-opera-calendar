@@ -81,5 +81,15 @@
     "reviewStatus": "community",
     "discoveredAt": "2026-10-01T00:23:10+08:00",
     "reviewNote": "使用者確認發文者為鍘美藝術節金主蘇先生，依使用者指示將此社群公告列入公開 schedule，verifyStatus=community，保留來源連結；不是劇團或寺方獨立核實。曾查得古都團長 @joe_huang_k_w 的公開說明 https://www.threads.com/@joe_huang_k_w/post/DdyAx1LCc9d 稱網傳相關演出非劇團公布，但未明確點名本場；此反證及來源層級已在公開卡描述中如實保留。"
+  },
+  {
+    "postId": "Dd76x9NkiJ-",
+    "username": "amichen007",
+    "postedAt": "2026-10-01",
+    "permalink": "https://www.threads.com/@amichen007/post/Dd76x9NkiJ-",
+    "text": "策劃／主辦單位 Threads 公告及海報：2026/10/30（五）苗栗竹南運動公園大草皮，台南古都掌中劇團演出《臺灣風雲錄－戰火波瀾》；17:00 進場、18:00 開場。票價與售票方式未載。",
+    "reviewStatus": "community",
+    "discoveredAt": "2026-10-01T18:00:00+08:00",
+    "reviewNote": "依使用者確認 @amichen007 為活動策劃／主辦單位帳號。海報可讀出演出日期、地點、團隊、劇目、進場與開場時間。與 data/schedule.json 比對未見同日期同地同劇團重複；新增一筆公開場次並標 verifyStatus=community（社群發布），不標為售票系統或其他平台核實。票價及售票方式未載，不推定免費。"
   }
 ]

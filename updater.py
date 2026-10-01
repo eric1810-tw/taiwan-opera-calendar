@@ -38,7 +38,7 @@ REQUIRED_FIELDS = {
 }
 ALLOWED_GENRES = {"歌仔戲", "布袋戲", "音樂劇"}
 ALLOWED_VERIFY_STATUS = {"verified", "community", "pending"}
-ALLOWED_BADGE_TYPES = {"ticket", "free", "temple", "plan"}
+ALLOWED_BADGE_TYPES = {"ticket", "free", "temple", "plan", "outdoor"}
 ALLOWED_REGIONS = {"北部", "中部", "南部", "東部", "未分類"}
 
 # 關注劇團與焦點演員清單（涵蓋鍘美藝術節全體主力演員與其他戲曲名家）

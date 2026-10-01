@@ -40,6 +40,11 @@ class UpdaterTests(unittest.TestCase):
         event["endDate"] = event["date"]
         self.assertEqual(updater.validate_schedule([event]), [event])
 
+    def test_validate_schedule_accepts_outdoor_badge(self):
+        event = copy.deepcopy(self.sample)
+        event["badgeType"] = "outdoor"
+        self.assertEqual(updater.validate_schedule([event]), [event])
+
     def test_validate_schedule_rejects_end_date_before_start(self):
         event = copy.deepcopy(self.sample)
         event["endDate"] = "2020-01-01"
