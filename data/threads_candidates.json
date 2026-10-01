@@ -87,9 +87,19 @@
     "username": "amichen007",
     "postedAt": "2026-10-01",
     "permalink": "https://www.threads.com/@amichen007/post/Dd76x9NkiJ-",
-    "text": "策劃／主辦單位 Threads 公告及海報：2026/10/30（五）苗栗竹南運動公園大草皮，台南古都掌中劇團演出《臺灣風雲錄－戰火波瀾》；17:00 進場、18:00 開場。票價與售票方式未載。",
+    "text": "策劃／主辦單位 Threads 主貼及海報：2026/10/30（五）苗栗竹南運動公園大草皮，台南古都掌中劇團演出《臺灣風雲錄－戰火波瀾》；時間與免費入場資訊見同串補充貼文 Dd76yrhEnrD。",
     "reviewStatus": "community",
     "discoveredAt": "2026-10-01T18:00:00+08:00",
-    "reviewNote": "依使用者確認 @amichen007 為活動策劃／主辦單位帳號。海報可讀出演出日期、地點、團隊、劇目、進場與開場時間。與 data/schedule.json 比對未見同日期同地同劇團重複；新增一筆公開場次並標 verifyStatus=community（社群發布），不標為售票系統或其他平台核實。票價及售票方式未載，不推定免費。"
+    "reviewNote": "依使用者確認 @amichen007 為活動策劃／主辦單位帳號。主貼海報與補充貼文共同列明日期、場地、團隊、劇目、進場及開演時間；補充貼文明示免費入場、自由入座。該活動已存在於 schedule.json，本次更新原卡並關聯兩個貼文連結，不另建重複場次；維持 verifyStatus=community（社群發布），不標成售票平台核實。"
+  },
+  {
+    "postId": "Dd76yrhEnrD",
+    "username": "amichen007",
+    "postedAt": "2026-10-01",
+    "permalink": "https://www.threads.com/@amichen007/post/Dd76yrhEnrD",
+    "text": "策劃／主辦單位同串補充公告：2026/10/30（五），竹南運動公園李科永紀念圖書館旁草地區域；17:00 開放進場、18:00 正式開演；台南古都掌中劇團演出《臺灣風雲錄－戰火波瀾》，免費入場、自由入座。",
+    "reviewStatus": "community",
+    "discoveredAt": "2026-10-01T18:05:40+08:00",
+    "reviewNote": "與主貼 Dd76x9NkiJ- 為同一活動的補充貼文，提供確切場地範圍、開放進場／開演時間及免費入場、自由入座資訊。與既有公開卡 amichen-2026-10-30-zhunan-taiwan-fengyunlu 合併來源，不另增活動卡。"
   }
 ]
