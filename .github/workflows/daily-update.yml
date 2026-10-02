@@ -32,11 +32,13 @@ jobs:
         run: python -m unittest -v
 
       - name: 執行每日排程更新腳本
+        if: github.event_name != 'push'
         env:
           THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
         run: python updater.py
 
       - name: 提交並推送更新資料
+        if: github.event_name != 'push'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"

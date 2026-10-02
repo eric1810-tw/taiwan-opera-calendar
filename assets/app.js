@@ -307,14 +307,22 @@ async function loadSchedule() {
   }
 }
 
+function parsePublishedTime(value) {
+  if (typeof value !== 'string' || !/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2})$/.test(value)) {
+    throw new Error('時間格式無效');
+  }
+  const timestamp = new Date(value);
+  if (!Number.isFinite(timestamp.getTime())) throw new Error('時間無效');
+  return timestamp;
+}
+
 async function loadLastUpdated() {
   const label = document.getElementById('lastUpdated');
   try {
     const response = await fetch('./data/metadata.json', { cache: 'no-cache' });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const metadata = await response.json();
-    const timestamp = new Date(metadata.lastUpdated);
-    if (!Number.isFinite(timestamp.getTime())) throw new Error('更新時間無效');
+    const timestamp = parsePublishedTime(metadata.lastUpdated);
     const formatted = new Intl.DateTimeFormat('zh-TW', {
       timeZone: 'Asia/Taipei', year: 'numeric', month: '2-digit', day: '2-digit',
       hour: '2-digit', minute: '2-digit', hourCycle: 'h23'
@@ -333,8 +341,7 @@ async function loadPatrolStatus() {
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const patrol = await response.json();
     if (!['complete', 'partial', 'failed'].includes(patrol.status)) throw new Error('巡檢狀態無效');
-    const timestamp = new Date(patrol.startedAt);
-    if (!Number.isFinite(timestamp.getTime())) throw new Error('巡檢時間無效');
+    const timestamp = parsePublishedTime(patrol.startedAt);
     const formatted = new Intl.DateTimeFormat('zh-TW', {
       timeZone: 'Asia/Taipei', year: 'numeric', month: '2-digit', day: '2-digit',
       hour: '2-digit', minute: '2-digit', hourCycle: 'h23'
