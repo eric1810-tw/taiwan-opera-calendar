@@ -59,6 +59,7 @@ jobs:
           install -m 0644 assets/favicon.svg _site/assets/favicon.svg
           install -m 0644 data/schedule.json _site/data/schedule.json
           install -m 0644 data/metadata.json _site/data/metadata.json
+          install -m 0644 data/patrol_status.json _site/data/patrol_status.json
           find _site -type f -print | sort
 
       - name: 上傳 GitHub Pages artifact

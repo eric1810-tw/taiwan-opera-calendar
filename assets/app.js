@@ -276,6 +276,7 @@ async function loadSchedule() {
   eventsContainer.classList.remove('hidden');
   emptyView.classList.add('hidden');
   loadLastUpdated();
+  loadPatrolStatus();
   try {
     const response = await fetch('./data/schedule.json', { cache: 'no-cache' });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
@@ -322,6 +323,31 @@ async function loadLastUpdated() {
   } catch (error) {
     console.warn('Last-updated metadata unavailable:', error);
     label.textContent = '資料最後更新時間：目前無法取得';
+  }
+}
+
+async function loadPatrolStatus() {
+  const label = document.getElementById('lastPatrol');
+  try {
+    const response = await fetch('./data/patrol_status.json', { cache: 'no-cache' });
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const patrol = await response.json();
+    if (!['complete', 'partial', 'failed'].includes(patrol.status)) throw new Error('巡檢狀態無效');
+    const timestamp = new Date(patrol.startedAt);
+    if (!Number.isFinite(timestamp.getTime())) throw new Error('巡檢時間無效');
+    const formatted = new Intl.DateTimeFormat('zh-TW', {
+      timeZone: 'Asia/Taipei', year: 'numeric', month: '2-digit', day: '2-digit',
+      hour: '2-digit', minute: '2-digit', hourCycle: 'h23'
+    }).format(timestamp);
+    const statusText = {
+      complete: '已完成公開來源巡檢',
+      partial: '部分公開內容未能完整讀取',
+      failed: '巡檢未完成'
+    }[patrol.status];
+    label.textContent = `社群資訊最近巡檢：${formatted}（台灣時間；${statusText}）`;
+  } catch (error) {
+    console.warn('Patrol-status metadata unavailable:', error);
+    label.textContent = '社群資訊最近巡檢：目前無法確認';
   }
 }
 
