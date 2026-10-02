@@ -94,11 +94,14 @@
     "verifyLabel": "📣 Threads 演出公告・社群來源",
     "location": "桃園市桃園區慈文路410號（蓮華寺）",
     "region": "北部",
-    "status": "來源為鍘美藝術節金主蘇先生的公開 Threads 公告（來源身分由使用者確認）；尚無劇團或寺方獨立公告交叉核實",
-    "description": "Threads 貼文列 2026/10/8 19:00 扮仙、19:30 正式演出《三俠五義之鍘龐昱》，地點桃園蓮華寺，並標記古都木偶戲劇團團長黃冠維。使用者確認貼文發布者為鍘美藝術節金主蘇先生，故依社群公告列入；目前未取得劇團或寺方獨立公告，出發前仍建議查看原貼文或向主辦確認。",
+    "status": "既有公告與古都木偶戲劇團團長公開 Threads 貼文相互印證；仍屬社群來源",
+    "description": "既有社群公告與古都木偶戲劇團團長黃冠維 2026/10/2 的公開 Threads 貼文均列 2026/10/8 桃園蓮華寺《三俠五義之鍘龐昱》，19:00 扮仙、19:30 正式演出。兩個來源相符，維持社群公告分類；出發前仍建議查看最新原貼文。",
     "link": "https://www.threads.com/@huei.kai.tech/post/Dd6vEPLk7ld",
     "linkLabel": "Threads 原始演出公告",
     "sourceUrl": "https://www.threads.com/@huei.kai.tech/post/Dd6vEPLk7ld",
+    "relatedSourceUrls": [
+      "https://www.threads.com/@joe_huang_k_w/post/Dd_K5CBCQ5G"
+    ],
     "tags": [
       "古都木偶戲劇團",
       "黃冠維",
