@@ -1,5 +1,31 @@
 [
   {
+    "id": "moc-20270101-e7a4fdae35",
+    "date": "2027-01-01",
+    "dateFormatted": "2027/01/01",
+    "daysAway": 0,
+    "time": "2027/01/01 10:00:00",
+    "troupe": "文化部開放資料候選",
+    "genre": "布袋戲",
+    "artist": "待查官方公告",
+    "title": "三昧堂精工布袋戲展",
+    "category": "文化部 Open Data 候選（待人工核實）",
+    "badgeType": "plan",
+    "verifyStatus": "pending",
+    "verifyLabel": "⏳ 自動發現・待人工核實",
+    "location": "嘉義縣表演藝術中心",
+    "region": "南部",
+    "status": "待人工核實",
+    "description": "由文化部公開資料關鍵字找到；發布前請人工核對劇種、主辦單位、日期與場地。",
+    "link": "https://cloud.culture.tw/",
+    "linkLabel": "來源資訊（待核實）",
+    "sourceUrl": "https://cloud.culture.tw/",
+    "tags": [
+      "自動發現候選",
+      "布袋戲"
+    ]
+  },
+  {
     "id": "moc-20261122-8aa4afdbb5",
     "date": "2026-11-22",
     "dateFormatted": "2026/11/22",
