@@ -13,3 +13,12 @@
 ## 驗收
 
 檢查日期與明天指涉、時間未知、團體未知、同場去重、社群分類、來源保留與提交範圍。實際10個unittest、node語法、schema及diff已通過；差異比對證明原90卡與原5帳號逐筆不變，只新增1卡及1帳號，patrol_status未改。對抗式反查未發現日期錯置、將主題標籤當劇團、填入虛構時間／劇碼、誤合併不同廟或升級社群分類。推送後仍須核對本次SHA的Actions及公開三份JSON和頁面。
+
+## 發布後實際驗收
+
+- 核對時間：2026-10-04T22:03:50+08:00。
+- 資料提交73a7b97e5826be9a3f5b6f3fc209317344d9ff67已推送，ls-remote main精確一致；提交僅含本次4檔（含6帳號清單）。
+- Actions https://github.com/eric1810-tw/taiwan-opera-calendar/actions/runs/37207777816 ，headSha與資料提交一致，update-schedule及deploy皆success。
+- 公開schedule、metadata及patrol_status逐檔JSON與git show資料提交完全相符：91卡，metadata22:01:42，patrol仍19:02:02／partial。
+- 公開頁搜尋「陳昭錦」實際呈現1張社群來源卡、10/5、天池壇大仁街29號、時間／劇團／劇目未公布；頁尾資料22:01與巡檢19:02分開。
+- 本節另以[skip ci]純日誌提交保留，網站資料無再變動，既有他人修改未納入。下一輪能讀新名單已由檔案與動態讀取流程確認，但尚未到下一輪實際執行，勿稱新增帳號已完成排程巡檢。
