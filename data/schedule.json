@@ -819,19 +819,19 @@
     "date": "2026-10-09",
     "dateFormatted": "2026/10/09（五）–10/11（日）",
     "daysAway": 5,
-    "time": "未公布；詳細演出地點待公布",
+    "time": "未公布；請洽劇團或主辦",
     "troupe": "羅文君歌劇團",
     "genre": "歌仔戲",
     "artist": "羅文君歌劇團",
     "title": "南投演出｜羅文君歌劇團",
-    "category": "劇團公告 / 演出地點待確認",
+    "category": "廟口演出 / 社群來源",
     "badgeType": "plan",
     "verifyStatus": "community",
     "verifyLabel": "📣 羅裕誴歌劇團 Threads 行程公告",
-    "location": "南投縣（詳細演出地點未列）",
+    "location": "南投光音寺（詳細地址未列）",
     "region": "中部",
-    "status": "劇團行程公告列 10/9–10/11 南投；場地及演出時間未列",
-    "description": "羅裕誴歌劇團 Threads 行程公告列農曆八月 29 日至九月 2 日（國曆 10/9–10/11）羅文君歌劇團於南投演出；未提供縣內詳細場地及演出時間。",
+    "status": "10/9–10/11 南投光音寺；劇目、演出時間及詳細地址未公布",
+    "description": "原行程公告列國曆10/9–10/11南投演出；羅裕誴2026/10/4公開 Threads 新貼文明列同三日支援文君歌劇團，地點為南投光音寺。補充同場地點並保留原卡劇團名稱及日期；原貼文未提供劇目、開演時間或詳細地址，仍屬社群來源，出發前請向劇團或主辦確認。",
     "link": "https://www.threads.com/@yuzhongluo/post/DdyLu8bicaJ",
     "linkLabel": "Threads 劇團行程公告",
     "sourceUrl": "https://www.threads.com/@yuzhongluo/post/DdyLu8bicaJ",
@@ -840,7 +840,10 @@
       "羅文君歌劇團",
       "其他歌仔戲"
     ],
-    "endDate": "2026-10-11"
+    "endDate": "2026-10-11",
+    "relatedSourceUrls": [
+      "https://www.threads.com/@yuzhongluo/post/DeERYS3CTAP"
+    ]
   },
   {
     "id": "luo-2026-10-11-daliao-shengwangtang",
