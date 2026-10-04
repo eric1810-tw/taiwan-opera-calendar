@@ -26,3 +26,5 @@
 僅調整上述3張卡與資料刷新時間；巡檢時間/完整度不變。所有社群卡保持community；來源差異在公開卡描述可見。提交前執行單元測試、JavaScript語法、schema、日期與去重、diff檢查及獨立fresh-context審核；部署後核對精確提交SHA的Actions與公開JSON。實際結果於部署後記錄。
 
 提交前結果：10項單元測試、JS語法、schema/日期/去重及diff檢查均通過；共90卡，新增1、修改2，其餘卡未變。獨立Astra Low審核PASS（讀查證紀錄及實際diff，未另讀外部原文）；另由未參與實作的Astra Low完成大灣原文、圖、留言及廟方查證。既有ISSUES_REVIEW.md、PROJECT_HANDOVER.md與3個未追蹤交接檔不納入提交。
+
+部署驗證：資料提交 `c657f2810cdfe987d80dbf0488e52eed7c621360` 已推送main；[Actions 37198972798](https://github.com/eric1810-tw/taiwan-opera-calendar/actions/runs/37198972798) 的update-schedule與deploy均success。公開schedule（90卡）、metadata（19:28:13）、patrol_status（19:02:02/partial）逐份JSON等於該提交。公開頁搜尋建安宮、大灣均顯示1張community卡，內容含上述日期、門牌與兩廟衝突；頁尾資料刷新19:28與巡檢19:02分開。此部署紀錄以文件專用提交保存，不修改已驗證網站資料。
