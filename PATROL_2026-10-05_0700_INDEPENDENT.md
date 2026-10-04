@@ -53,3 +53,5 @@
 - 提交前單元測試、JS語法、schema/日期/ID/語意去重、diff檢查及獨立審核結果，推送與部署實際結果由後續驗證記錄補充；此句不代表部署已成功。
 
 提交前實際結果：10項單元測試PASS、node語法PASS、updater.validate_schedule與日期/ID/語意去重/狀態時區PASS（91卡）、git diff --check PASS。fresh-context GPT-6 Astra / Low 未參與實作唯讀審核PASS，並獨立核對實際diff、正式卡與保留的工作區檔案；未重新執行全部測試或重讀全部網路來源，不能當作所有原始來源第二次核實。陳麗巧10/6天池壇線索仍待後续追查。
+
+部署驗證（2026-10-05 07:09:49+08:00 clock後）：本輪資料提交 `22f62ceb3c1ad3e9371aad3cdda7c5a3f0e845f6` 推送成功，ls-remote main精確相符。[Actions 37242682725](https://github.com/eric1810-tw/taiwan-opera-calendar/actions/runs/37242682725) event=push、headSha精確相符，update-schedule及deploy均success；Pages部署step完成2026-10-05T07:09:08+08:00。公開patrol_status、metadata、schedule逐份JSON完全等於該SHA（07:01:33/partial；資料刷新10/4 22:01:42；91卡）。公開頁reload完成載入後實讀頁尾：資料10/4 22:01、社群10/5 07:01「部分公開內容未能完整讀取」，兩時間分開。其餘5個既有工作區檔案SHA256前後相同；僅本輪2檔提交。此部署驗證以文件專用[skip ci]提交保存，不改已驗證公開資料。
