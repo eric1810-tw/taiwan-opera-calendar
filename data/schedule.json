@@ -7,24 +7,67 @@
     "time": "每日 18:40 扮仙；正戲隨後登場",
     "troupe": "明華園天字戲劇團",
     "genre": "歌仔戲",
-    "artist": "明華園天字戲劇團演出團隊",
+    "artist": "明華園天字戲劇團演出團隊；吳奕萱個人行程列 10/5–6",
     "title": "灣裡萬年殿王醮｜明華園天字戲劇團連演十天",
     "category": "王醮廟口外台 / 劇團公告",
     "badgeType": "temple",
-    "verifyStatus": "verified",
-    "verifyLabel": "🛡️ 明華園天字戲劇團官方 Facebook 公告",
+    "verifyStatus": "community",
+    "verifyLabel": "📣 天字團 Facebook 戲路與演員公告交叉比對",
     "location": "臺南市南區灣裡路64號（灣裡萬年殿）",
     "region": "南部",
     "status": "官方海報列 9/27–10/06 連續十天；本卡顯示 9/30 起剩餘日程",
-    "description": "明華園天字戲劇團官方 Facebook 貼文及海報列灣裡萬年殿丙午科王醮 2026/9/27–10/06 連演十天，每日 18:40 扮仙、正戲緊接登場；未公布各晚劇目或正戲準確開演分鐘。此卡只列 9/30 起的剩餘日程。與 10/10–11 春美歌劇團同廟的社群線索是不同劇團、不同日期，不合併。",
+    "description": "明華園天字戲劇團官方 Facebook 貼文及海報列灣裡萬年殿丙午科王醮 2026/9/27–10/06 連演十天，每日 18:40 扮仙、正戲緊接登場；未公布各晚劇目或正戲準確開演分鐘。此卡只列 9/30 起的剩餘日程。與 10/10–11 春美歌劇團同廟的社群線索是不同劇團、不同日期，不合併。 吳奕萱 10/3 Facebook 個人公告列萬年殿 10/5–6，與天字團農曆八月戲路圖一致；Threads 主文仍列 10/6–7，但同串有 10/5–6 的糾正及本人「立馬更改」回覆。此處採兩份一致的 Facebook 公告，不把她的個人行程延長至 10/7，也不代表她參演本卡全部日期。",
     "link": "https://www.facebook.com/photo/?fbid=1526135339558753&set=a.469769218528709",
     "linkLabel": "明華園天字戲劇團官方 Facebook 公告",
     "sourceUrl": "https://www.facebook.com/photo/?fbid=1526135339558753&set=a.469769218528709",
     "tags": [
       "明華園天字戲劇團",
-      "其他歌仔戲"
+      "其他歌仔戲",
+      "吳奕萱"
     ],
-    "endDate": "2026-10-06"
+    "endDate": "2026-10-06",
+    "relatedSourceUrls": [
+      "https://www.facebook.com/reel/1441537768083072/",
+      "https://www.facebook.com/photo/?fbid=1528865579285729&set=pb.100064869030748.-2207520000",
+      "https://www.threads.com/@wu.yi0722/post/DeB6PAvGOna",
+      "https://www.threads.com/@jing__1017/post/DeB6dP5iRMm",
+      "https://www.threads.com/@wu.yi0722/post/DeB6rBHGMof"
+    ]
+  },
+  {
+    "id": "mhy-tian-2026-10-07-wuqiao-jianangong",
+    "date": "2026-10-07",
+    "endDate": "2026-10-08",
+    "dateFormatted": "2026/10/07（三）–10/08（四）",
+    "daysAway": 3,
+    "time": "未公布；請洽劇團或廟方",
+    "troupe": "明華園天字戲劇團",
+    "genre": "歌仔戲",
+    "artist": "吳奕萱（個人公告列 10/7–8）及天字團演出團隊",
+    "title": "烏橋建安宮外台｜劇目未公布",
+    "category": "廟口外台 / 社群來源",
+    "badgeType": "temple",
+    "verifyStatus": "community",
+    "verifyLabel": "📣 天字團 Facebook 戲路與演員公告交叉比對",
+    "location": "臺南市中西區永華一街148巷（烏橋建安宮；門牌公告有差異）",
+    "region": "南部",
+    "status": "劇團戲路圖及吳奕萱 Facebook 同列 10/7–8；時間、劇目未公布",
+    "description": "明華園天字戲劇團農曆八月戲路圖列10/7–8於永華一街148巷43號建安宮；吳奕萱10/3 Facebook 公告亦列10/7–8烏橋建安宮，但門牌寫37號。兩份日期與廟名一致，門牌差異保留，不推定精確搭台位置。她的Threads主文仍列10/8–9；同串糾正留言列10/7–8及永華一街，本人回覆「立馬更改」。本卡採兩份一致Facebook日期；無演出時刻或劇目證據，未套用萬年殿的18:40。",
+    "link": "https://www.facebook.com/photo/?fbid=1528865579285729&set=pb.100064869030748.-2207520000",
+    "linkLabel": "天字團官方 Facebook 戲路圖",
+    "sourceUrl": "https://www.facebook.com/photo/?fbid=1528865579285729&set=pb.100064869030748.-2207520000",
+    "relatedSourceUrls": [
+      "https://www.facebook.com/reel/1441537768083072/",
+      "https://www.threads.com/@wu.yi0722/post/DeB6PAvGOna",
+      "https://www.threads.com/@jing__1017/post/DeB6dP5iRMm",
+      "https://www.threads.com/@wu.yi0722/post/DeB6rBHGMof"
+    ],
+    "tags": [
+      "明華園天字戲劇團",
+      "吳奕萱",
+      "社群來源",
+      "其他歌仔戲"
+    ]
   },
   {
     "id": "zx-2026-11-14-kuliniao",
@@ -915,10 +958,10 @@
     "badgeType": "temple",
     "verifyStatus": "community",
     "verifyLabel": "📣 羅裕誴歌劇團 Threads 行程公告",
-    "location": "大灣聖巡代天宮（縣市及詳細地址未列）",
-    "region": "未分類",
-    "status": "劇團行程公告列 10/27–10/28；縣市、地址與演出時間未列",
-    "description": "羅裕誴歌劇團 Threads 行程公告列農曆九月 18–19 日（國曆 10/27–10/28），文君歌劇團於大灣聖巡代天宮演出。公告未列縣市、詳細地址及演出時間，因此暫不推定區域。",
+    "location": "臺南市永康區大灣三街73巷36號（聖巡代天府；原公告稱聖巡代天宮）",
+    "region": "南部",
+    "status": "原公告列 10/27–28；10/4 新圖另列不同廟宇，未見明確更正或取消",
+    "description": "9/27 羅裕誴 Threads 原文確列農曆九月18–19日（國曆10/27–28）、文君歌劇團、大灣聖巡代天宮。中研院廟宇資料確認其現名聖巡代天府及地址；此為場地辨識，不是演出核實。10/4 同帳號新圖另列農曆9/18（10/27）於大灣南灣境聖巡北極殿、9/19（10/28）於新美街慈蔭亭，未列劇團或更正字樣。北極殿在立興街74巷2號，與本卡廟宇不同；兩份行程關係尚無主辦或劇團當期公告可定案，因此保留原公告兩天，不將新圖當成取消10/28或變更場地的證據。演出時間未公布，出發前須確認。",
     "link": "https://www.threads.com/@yuzhongluo/post/DdyLu8bicaJ",
     "linkLabel": "Threads 劇團行程公告",
     "sourceUrl": "https://www.threads.com/@yuzhongluo/post/DdyLu8bicaJ",
@@ -927,7 +970,12 @@
       "文君歌劇團",
       "其他歌仔戲"
     ],
-    "endDate": "2026-10-28"
+    "endDate": "2026-10-28",
+    "relatedSourceUrls": [
+      "https://www.threads.com/@yuzhongluo/post/DeEXAPLid1z",
+      "https://crgis.rchss.sinica.edu.tw/temples/TainanCity/yungkang/1131013-SXDTF",
+      "https://crgis.rchss.sinica.edu.tw/temples/TainanCity/yungkang/1131015-SXBJD"
+    ]
   },
   {
     "id": "luo-2026-10-28-ciyinting",
