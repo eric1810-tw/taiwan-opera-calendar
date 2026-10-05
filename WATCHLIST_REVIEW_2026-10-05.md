@@ -23,3 +23,7 @@
 - PATROL_OPERATIONS.md同步改每日03:00，保留其餘要求；GitHub Actions的07:00網站自動資料刷新是另一個工作，未修改。
 - 對抗式驗收：JSON解析及精確差集合PASS，確認只移除wu.yi0722且h.akito_1996保留；schedule/metadata/patrol_status未因本次設定更新而刷新，舊巡檢日誌維持歷史時間。僅提交清單、操作文件及本日誌，其他工作區修改保留。
 - 依目前Asia/Taipei日期時間，新設定的下一個時段為2026-10-06 03:00；尚未發生，不能稱新時間已實際觸發。
+
+## 新增戲籠出巡Facebook
+
+2026-10-05T14:32:38+08:00：使用者指定https://www.facebook.com/profile.php?id=61594936681482。本次瀏覽器實讀載入後首頁，頁名「戲籠出巡｜臺灣傳統戲曲巡演」，自介列巡演消息、劇目介紹、演出紀錄，並连至sites.google.com/view/hilang-re/及Instagram hilang.on.tour；近期可見官網上線貼文。確認帳號可讀及身份後加入清單，原6筆逐筆保留、handle唯一性與JSON檢查PASS。Threads仍9，Facebook6→7，共16。本次未全讀貼文／圖片，不新增場次、不刷新巡檢時間；下一輪每日03:00動態讀取，不改排程。僅提交清單及本日誌，其他修改保留。
