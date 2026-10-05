@@ -48,3 +48,11 @@
 - 未解線索：前輪羅裕誴大灣北極殿與現代天府（聖巡代天宮）仍不能合併；本輪未取得2026當期廟方更正，保留既有場次，不推定取消。
 - 本地驗證：10項unittest、node --check、git diff --check、updater.validate_schedule、必填欄位/日期/endDate/ID/語意去重全部PASS；80卡及ID集合不變，其他工作区五檔SHA256與巡檢前一致。
 - Fresh-context GPT-6 Astra / Low独立唯讀審核PASS：三卡修改、官方三場時間、學校限制、community、partial及80卡ID保留無重大問題。首輪質疑DeGTX3SE10d只涉官網；補全文場次證據並另附Dd-e4j4E8y4後，審核撤回該疑點。審核未獨立重讀所有社群/海報，部署仍待後續實證。
+
+## 已驗證發布結果
+
+- 資料提交1e55067faa9b2037c3771663daf3debd1b138ee3僅本輪四檔，push成功；git ls-remote main精確相符。
+- GitHub Actions [37387825609](https://github.com/eric1810-tw/taiwan-opera-calendar/actions/runs/37387825609)為push，headSha精確相符；update-schedule與deploy均success，deploy完成2026-10-06T07:20:21+08:00。
+- Cache-busted公開patrol_status.json、metadata.json、schedule.json逐檔與git show資料SHA JSON完全相同：startedAt=2026-10-06T07:12:10+08:00/status=partial；metadata=2026-10-06T07:16:29+08:00；80卡。
+- 公開頁reload後搜尋「武松」實際只有一張community卡，10/6–7/三場時間/音樂廳/學校媒合限制正確。頁尾實讀資料刷新07:16、社群巡檢07:12及部分內容未完整讀取，分開顯示。
+- 未確認03:00到實際07:12的派發延遲原因，不能以本輪成功部署證明排程準時。其餘來源後段/影音/部分圖片與廟方待查仍是未驗範圍，partial不等於無新演出。
