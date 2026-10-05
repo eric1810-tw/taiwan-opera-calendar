@@ -143,7 +143,10 @@
     "linkLabel": "Threads 原始演出公告",
     "sourceUrl": "https://www.threads.com/@huei.kai.tech/post/Dd6vEPLk7ld",
     "relatedSourceUrls": [
-      "https://www.threads.com/@joe_huang_k_w/post/Dd_K5CBCQ5G"
+      "https://www.threads.com/@joe_huang_k_w/post/Dd_K5CBCQ5G",
+      "https://www.threads.com/@hilang.on.tour/post/DeGTX3SE10d",
+      "https://www.facebook.com/permalink.php?story_fbid=pfbid032EBGhpHfeSDTExcafmZdVKwj1MfnxQWiZHLLSsCuyKbYPJWzrLmyamqZWN9sNDcnl&id=61594936681482",
+      "https://www.threads.com/@hilang.on.tour/post/Dd-e4j4E8y4"
     ],
     "tags": [
       "古都木偶戲劇團",
@@ -775,31 +778,37 @@
   },
   {
     "id": "luo-2026-10-05-weiwuying",
-    "date": "2026-10-05",
-    "dateFormatted": "2026/10/05（一）–10/06（二）",
+    "date": "2026-10-06",
+    "dateFormatted": "2026/10/06（二）–10/07（三）",
     "daysAway": 0,
-    "time": "未公布；請洽劇團或場館",
-    "troupe": "陳昭瑋歌劇團（羅裕誴歌劇團支援）",
+    "time": "10/6 10:30、14:00；10/7 10:30（藝企學官方場次時間）",
+    "troupe": "陳昭瑋歌劇團 ft. 高雄市國樂團",
     "genre": "歌仔戲",
-    "artist": "陳昭瑋歌劇團、羅裕誴歌劇團支援",
-    "title": "《武松打虎》｜衛武營歌劇院",
-    "category": "劇場演出 / 劇團公告",
+    "artist": "陳昭瑋歌劇團、高雄市國樂團；羅裕誴參與演出",
+    "title": "《武松打「唬」》｜衛武營藝企學（學校媒合場）",
+    "category": "藝術教育 / 學校媒合場",
     "badgeType": "plan",
     "verifyStatus": "community",
-    "verifyLabel": "📣 羅裕誴歌劇團 Threads 行程公告",
-    "location": "高雄市鳳山區三多一路1號（衛武營國家藝術文化中心歌劇院）",
+    "verifyLabel": "📣 演員新公告；藝企學官方日期時間交叉核對",
+    "location": "高雄市鳳山區三多一路1號（衛武營國家藝術文化中心音樂廳）",
     "region": "南部",
-    "status": "劇團行程公告列 10/5–10/6；場館及時間仍建議向主辦方確認",
-    "description": "羅裕誴歌劇團 Threads 行程公告列 10/5–10/6 於衛武營歌劇院支援陳昭瑋歌劇團演出《武松打虎》。公告未列演出時間；場館正式節目頁尚未在本次資料中獨立確認。",
-    "link": "https://www.threads.com/@yuzhongluo/post/DdyLu8bicaJ",
-    "linkLabel": "Threads 劇團行程公告",
-    "sourceUrl": "https://www.threads.com/@yuzhongluo/post/DdyLu8bicaJ",
+    "status": "10/6–7 共三場；學校媒合參與，非一般散客售票場",
+    "description": "羅裕誴10/5新Threads串文明列10/6–7《武松打「唬」》，陳昭瑋歌劇團ft.高雄市國樂團，場地為衛武營音樂廳；本人同串回覆說明為企業包場給孩子參與。衛武營藝企學官方頁列10/6 10:30、14:00及10/7 10:30，採學校申請與媒合。以新公告修訂既有卡片的10/5–6、歌劇院及《武松打虎》寫法，保留原行程來源，不另建同場卡。劇目、團隊、廳別仍據社群公告，維持community；官方總頁只列音樂類，未逐場列劇目及團隊。請勿視為一般觀眾可現場索票入場。",
+    "link": "https://www.threads.com/@yuzhongluo/post/DeHUSPQiQJX",
+    "linkLabel": "羅裕誴最新演出公告",
+    "sourceUrl": "https://www.threads.com/@yuzhongluo/post/DeHUSPQiQJX",
     "tags": [
       "羅裕誴歌劇團",
       "陳昭瑋歌劇團",
       "其他歌仔戲"
     ],
-    "endDate": "2026-10-06"
+    "endDate": "2026-10-07",
+    "relatedSourceUrls": [
+      "https://www.threads.com/@yuzhongluo/post/DdyLu8bicaJ",
+      "https://www.threads.com/@yuzhongluo/post/DeHVWVoiUV9",
+      "https://www.threads.com/@yuzhongluo/post/DeHY2NXiSnt",
+      "https://npac-weiwuying.org/programs/69e0939d083b77000852411f?lang=zh"
+    ]
   },
   {
     "id": "luo-2026-10-09-luowenjun",
@@ -1953,8 +1962,8 @@
     "title": "115年農曆九月戲路｜西港慶安宮",
     "category": "廟會外台 / 傳統民戲",
     "badgeType": "temple",
-    "verifyStatus": "verified",
-    "verifyLabel": "🛡️ 秀琴歌劇團官方 Facebook 新公告",
+    "verifyStatus": "community",
+    "verifyLabel": "📣 秀琴歌劇團官方 Facebook 公告・社群來源",
     "location": "臺南市西港區慶安路32號（慶安宮）",
     "region": "南部",
     "status": "秀琴歌劇團新公告列 10/30–10/31 每日 17:30 扮仙、19:00 正戲開演",
