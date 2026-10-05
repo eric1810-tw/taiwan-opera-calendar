@@ -7,3 +7,7 @@
 - 不能從近期回顧推論「從未發表演出資訊」。1013.yr_近期也多回顧，但原為演員工作帳號；xuefeng_lu_及taiwaneseopera168近期多媒體／文化／觀後感，外連未全部讀，不宣稱沒有資訊。
 - 高直接資訊價值的保留來源：joe_huang_k_w、hilang.on.tour有巡演日期與時間；the_rin.lpm有未來戲路；wu.yi0722、yuzhongluo有個人行程／異動但需判讀；jing__1017有密集場次線索及原來源連結。
 - 對抗式驗收：JSON解析、帳號唯一性、差集合及數量檢查PASS，證明只移除指定4個且只增加1個。既有schedule、metadata及patrol_status均未改，不冒充完整巡檢。僅提交本清單與日誌；既有2 modified／3 untracked他人檔案保留。不改排程，下一輪依PATROL_OPERATIONS.md動態讀清單。
+
+## 推送驗收
+
+首次push因遠端每日資料提交14fbe3af2af974494674987eff08717d47c722a5而拒絕；唯讀檢視確認只改schedule／metadata，合併後逐位元確認兩檔與origin/main一致，未回推舊資料。監看調整提交297cae4c4ded99fc30d054447a15e9104dd1c973、整合提交de01fcf2c30bcecab11c118203a0d0f28cd3d830已推送，ls-remote與本地SHA一致；JSON再次確認13帳號及精確指定增刪。均為[skip ci]，清單不在公開站發布白名單，本次不觸發無關網站部署；下一輪實際執行尚未發生。
