@@ -15,3 +15,11 @@
 ## 使用者第二次精簡
 
 2026-10-05T09:42:08+08:00：使用者明確保留h.akito_1996，移除whidu1124、su._1023、c910303。本次只調整巡檢清單，未操作Threads平台追蹤按鈕。JSON解析、唯一性、精確差集合及保留帳號驗收PASS；13→10 Threads，Facebook仍6，共16。演出資料及巡檢狀態不改；其他工作區修改保留。
+
+## 移除吳奕萱及改為每日03:00
+
+- 設定核對時間：2026-10-05T09:45:11+08:00。使用者要求移除wu.yi0722及每日巡檢改03:00一次；清單10→9，Facebook仍6，共15。此為監看清單移除，未操作Threads平台追蹤。
+- 使用排程管理工具更新既有id=07-00-19-00，保留cron、ACTIVE、project/local、gpt-6.1-sol/medium、原巡檢要求及舊heartbeat不重啟條款，名稱改「臺灣戲曲獨立巡檢（每日03:00）」，每日03:00，prompt明列Asia/Taipei且每日一次。工具回傳Updated且ACTIVE；重新讀automation.toml，name/prompt/rrule及保留欄位均與要求一致。
+- PATROL_OPERATIONS.md同步改每日03:00，保留其餘要求；GitHub Actions的07:00網站自動資料刷新是另一個工作，未修改。
+- 對抗式驗收：JSON解析及精確差集合PASS，確認只移除wu.yi0722且h.akito_1996保留；schedule/metadata/patrol_status未因本次設定更新而刷新，舊巡檢日誌維持歷史時間。僅提交清單、操作文件及本日誌，其他工作區修改保留。
+- 依目前Asia/Taipei日期時間，新設定的下一個時段為2026-10-06 03:00；尚未發生，不能稱新時間已實際觸發。

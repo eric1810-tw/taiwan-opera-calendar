@@ -4,7 +4,7 @@
 
 ## 工作分界
 
-- 獨立 Codex 排程每日 07:00、19:00 巡檢公開 Threads、Facebook、文化部候選及 GitHub Issues，經來源核對才編修正式場次。每輪留下巡檢紀錄與 `data/patrol_status.json`，並嘗試推送、驗證公開站。
+- 獨立 Codex 排程每日 03:00（Asia/Taipei，每天一次） 巡檢公開 Threads、Facebook、文化部候選及 GitHub Issues，經來源核對才編修正式場次。每輪留下巡檢紀錄與 `data/patrol_status.json`，並嘗試推送、驗證公開站。
 - GitHub Actions `.github/workflows/daily-update.yml` 呼叫 `updater.py`，處理候選、倒數、metadata、過期場次及部署。它不是社群貼文語意審核員；不得將自動候選當成已核實演出。
 - `data/schedule.json` 是公開場次；`data/metadata.json` 是網站資料刷新時間；`data/patrol_status.json` 是社群巡檢開始時間及完成程度。三者不可混稱。
 
