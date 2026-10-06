@@ -101,7 +101,9 @@ function getDaysBadge(event) {
   const endDate = event.endDate || event.date;
   const daysAway = Math.max(0, dateDifference(event.date, today));
   if (event.date <= today && endDate >= today) {
-    const label = isScheduledToday(event, today) ? '演出中' : '期間內・詳見場次日期';
+    const label = event.badgeType === 'broadcast'
+      ? '限時觀看中'
+      : (isScheduledToday(event, today) ? '演出中' : '期間內・詳見場次日期');
     return `<span class="text-[10px] font-bold text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded border border-emerald-200">${label}</span>`;
   }
   if (daysAway <= 7) {
@@ -257,7 +259,7 @@ function validateEvent(event) {
   const requiredText = ['id', 'date', 'dateFormatted', 'time', 'troupe', 'genre', 'artist', 'title', 'location', 'description', 'link'];
   const validGenres = new Set(['歌仔戲', '布袋戲', '音樂劇', '其他歌仔戲', '其他布袋戲', '其他音樂劇']);
   const validStatuses = new Set(['verified', 'community', 'pending']);
-  const validBadges = new Set(['ticket', 'free', 'temple', 'plan']);
+  const validBadges = new Set(['ticket', 'free', 'temple', 'plan', 'outdoor', 'broadcast']);
   const validRegions = new Set(['北部', '中部', '南部', '東部', '未分類']);
   if (!event || typeof event !== 'object' || Array.isArray(event)) return '不是物件';
   if (requiredText.some(key => typeof event[key] !== 'string')) return '必要文字欄位缺漏或型態錯誤';

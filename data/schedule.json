@@ -1,5 +1,35 @@
 [
   {
+    "id": "pts-2026-10-07-maoduan-wenwu-tianxiang",
+    "date": "2026-10-07",
+    "endDate": "2026-10-14",
+    "dateFormatted": "2026/10/07（三）首播；限時觀看至10/14（三）",
+    "daysAway": 1,
+    "time": "15:00（DAY DAY 台語台 YouTube 首播）",
+    "troupe": "毛斷計畫",
+    "genre": "歌仔戲",
+    "artist": "古翊汎、鄭紫雲、吳承恩、詹佳穎、禤宇夏",
+    "title": "公視台語台《寶島大舞台》｜《文武天香》",
+    "category": "電視／網路播映・官方頻道限時上架（非現場演出）",
+    "badgeType": "broadcast",
+    "verifyStatus": "verified",
+    "verifyLabel": "🛡️ DAY DAY 台語台官方 YouTube 頁",
+    "location": "DAY DAY 台語台 YouTube 頻道（線上播映）",
+    "region": "未分類",
+    "status": "官方影片頁顯示 2026/10/7 15:00 首播；封面標示 10/7–10/14 限時觀看。未見公視台語台 CH14 的電視播出時間。",
+    "description": "DAY DAY 台語台官方 YouTube 影片頁列《文武天香》首播日期為 2026/10/7，首播倒數介面顯示下午 15:00；影片封面標示 10/7–10/14 限時觀看。演出團隊為毛斷計畫，演員古翊汎、鄭紫雲、吳承恩、詹佳穎、禤宇夏。影片介紹稱本作獲第34屆傳藝金曲獎年度最佳作品；這是電視／網路播映節目，非現場演出。",
+    "link": "https://www.youtube.com/watch?v=uf2JjYOq_FE",
+    "linkLabel": "DAY DAY 台語台官方 YouTube 節目頁",
+    "sourceUrl": "https://www.youtube.com/watch?v=uf2JjYOq_FE",
+    "tags": [
+      "毛斷計畫",
+      "歌仔戲",
+      "公視台語台",
+      "寶島大舞台",
+      "線上播映"
+    ]
+  },
+  {
     "id": "mhy-tian-2026-09-30-wanli-wanniandian",
     "date": "2026-09-30",
     "dateFormatted": "2026/09/30（三）–10/06（二）（原公告 9/27 起）",
