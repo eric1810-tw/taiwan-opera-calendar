@@ -1,4 +1,4 @@
-/* 台灣戲曲演出行事曆前端邏輯。 */
+/* 臺灣戲曲情報站前端邏輯。 */
 let eventsData = [];
 let currentFilter = 'all';
 let currentRegion = 'all';
