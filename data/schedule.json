@@ -2117,5 +2117,35 @@
       "拉縴人男聲合唱團",
       "跨界演出"
     ]
+  },
+  {
+    "id": "lanyang-2026-10-26-guishan-cuoxie-yinyuan",
+    "date": "2026-10-26",
+    "dateFormatted": "2026/10/26（一）",
+    "daysAway": 20,
+    "time": "19:00",
+    "troupe": "蘭陽戲劇團",
+    "genre": "歌仔戲",
+    "artist": "蘭陽戲劇團演出團隊",
+    "title": "《錯配姻緣》",
+    "category": "廟會外台 / 免費公演 / 劇團社群公告",
+    "badgeType": "free",
+    "verifyStatus": "community",
+    "verifyLabel": "📣 蘭陽戲劇團官方 Facebook 公告",
+    "location": "桃園市龜山區樂善里顯安巖顯應祖師廟（樂安街1號）",
+    "region": "北部",
+    "status": "劇團公開貼文列 10/26（一）19:00、《錯配姻緣》及免費觀賞；貼文註明無直播。",
+    "description": "蘭陽戲劇團官方 Facebook 公開貼文公告 2026/10/26（一）晚上7:00演出《錯配姻緣》，地點為桃園顯安巖顯應祖師廟（桃園市龜山區樂善里樂安街1號），免費觀賞。來源為劇團社群公告，尚未另以廟方或其他主辦公告交叉核實，故標記 community。",
+    "link": "https://www.facebook.com/lanyang.opera/posts/pfbid06xxEDQe48PckyuFjYWKxERAAgUcPPm5yUabiHEjABPTDzfQw9h6mzyXva3tVhayel",
+    "linkLabel": "蘭陽戲劇團 Facebook 原始公告",
+    "sourceUrl": "https://www.facebook.com/lanyang.opera/posts/pfbid06xxEDQe48PckyuFjYWKxERAAgUcPPm5yUabiHEjABPTDzfQw9h6mzyXva3tVhayel",
+    "relatedSourceUrls": [
+      "https://www.facebook.com/lanyang.opera/posts/pfbid06xxEDQe48PckyuFjYWKxERAAgUcPPm5yUabiHEjABPTDzfQw9h6mzyXva3tVhayel"
+    ],
+    "tags": [
+      "蘭陽戲劇團",
+      "歌仔戲",
+      "社群來源"
+    ]
   }
 ]
