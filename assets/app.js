@@ -10,6 +10,7 @@ const eventsContainer = document.getElementById('eventsContainer');
 const emptyView = document.getElementById('emptyView');
 const filteredStats = document.getElementById('filteredStats');
 const regionSelect = document.getElementById('regionSelect');
+const regionHint = document.getElementById('regionHint');
 const typeSelect = document.getElementById('typeSelect');
 const keywordSearch = document.getElementById('keywordSearch');
 const chips = [...document.querySelectorAll('#multiRowChips .chip')];
@@ -33,6 +34,18 @@ function safeExternalURL(value) {
   } catch (_) {
     return '#';
   }
+}
+
+function updateRegionHint(region = currentRegion) {
+  const hints = {
+    all: '選取區域後顯示包含縣市',
+    北部: '北部：基隆、臺北、新北、桃園、新竹、宜蘭',
+    中部: '中部：苗栗、臺中、彰化、南投、雲林',
+    南部: '南部：嘉義、臺南、高雄、屏東、澎湖',
+    東部: '東部：花蓮、臺東',
+    未分類: '地點待確認或跨區演出'
+  };
+  regionHint.textContent = hints[region] || hints.all;
 }
 
 function getTaiwanToday() {
@@ -226,6 +239,7 @@ function resetAllFilters() {
   currentType = 'all';
   currentKeyword = '';
   regionSelect.value = 'all';
+  updateRegionHint();
   typeSelect.value = 'all';
   keywordSearch.value = '';
   selectFilter(chips.find(chip => chip.dataset.filter === 'all'));
@@ -361,7 +375,11 @@ async function loadPatrolStatus() {
 }
 
 chips.forEach(chip => chip.addEventListener('click', () => selectFilter(chip)));
-regionSelect.addEventListener('change', event => { currentRegion = event.target.value; renderEvents(); });
+regionSelect.addEventListener('change', event => {
+  currentRegion = event.target.value;
+  updateRegionHint();
+  renderEvents();
+});
 typeSelect.addEventListener('change', event => { currentType = event.target.value; renderEvents(); });
 keywordSearch.addEventListener('input', event => {
   currentKeyword = event.target.value.trim().toLocaleLowerCase('zh-TW');

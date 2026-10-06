@@ -17,7 +17,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;700;900&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="assets/app.css?v=20261001-equal-filters">
-  <script src="assets/app.js" defer></script>
+  <script src="assets/app.js?v=20261006-region-picker" defer></script>
 </head>
 <body class="min-h-screen flex flex-col justify-between relative selection:bg-[#d80b72] selection:text-white transition-colors duration-300">
 
@@ -78,26 +78,29 @@
       </div>
     </div>
 
-    <!-- 地區與形式二級下拉 (簡約緊湊) -->
-    <div class="flex flex-nowrap items-center gap-2 mb-4 text-xs">
-      <select id="regionSelect" class="min-w-0 flex-1 bg-white border border-stone-300 rounded-xl px-2.5 py-1.5 text-stone-700 focus:outline-none focus:border-[#d80b72]">
-        <option value="all">📍 全國各地 (所有縣市)</option>
-        <option value="北部">北部（基隆／台北／新北／桃園／新竹／宜蘭）</option>
-        <option value="中部">中部（苗栗／台中／彰化／南投／雲林）</option>
-        <option value="南部">南部（嘉義／台南／高雄／屏東／澎湖）</option>
-        <option value="東部">東部（花蓮／台東）</option>
-        <option value="未分類">地點待確認／跨區</option>
-      </select>
+    <!-- 地區與形式二級下拉 -->
+    <div class="mb-4">
+      <div class="flex flex-nowrap items-center gap-2 text-xs">
+        <select id="regionSelect" aria-label="依演出區域篩選" class="min-w-0 flex-1 bg-white border border-stone-300 rounded-xl px-2.5 py-1.5 text-stone-700 focus:outline-none focus:border-[#d80b72]">
+          <option value="all">📍 全台</option>
+          <option value="北部">北部</option>
+          <option value="中部">中部</option>
+          <option value="南部">南部</option>
+          <option value="東部">東部</option>
+          <option value="未分類">待確認／跨區</option>
+        </select>
 
-      <select id="typeSelect" class="min-w-0 flex-1 bg-white border border-stone-300 rounded-xl px-2.5 py-1.5 text-stone-700 focus:outline-none focus:border-[#d80b72]">
-        <option value="all">🎭 所有演出類型</option>
-        <option value="ticket">售票劇院旗艦大戲</option>
-        <option value="free">庄頭/戶外免費演出</option>
-        <option value="temple">廟口外台民戲</option>
-        <option value="plan">來源待確認／候選資料</option>
-        <option value="outdoor">戶外公演（票務未載）</option>
-        <option value="broadcast">電視／網路播映</option>
-      </select>
+        <select id="typeSelect" aria-label="依演出類型篩選" class="min-w-0 flex-1 bg-white border border-stone-300 rounded-xl px-2.5 py-1.5 text-stone-700 focus:outline-none focus:border-[#d80b72]">
+          <option value="all">🎭 所有演出類型</option>
+          <option value="ticket">售票劇院旗艦大戲</option>
+          <option value="free">庄頭/戶外免費演出</option>
+          <option value="temple">廟口外台民戲</option>
+          <option value="plan">來源待確認／候選資料</option>
+          <option value="outdoor">戶外公演（票務未載）</option>
+          <option value="broadcast">電視／網路播映</option>
+        </select>
+      </div>
+      <p id="regionHint" class="mt-1 px-1 text-[10px] leading-relaxed text-stone-500" role="status" aria-live="polite">選取區域後顯示包含縣市</p>
     </div>
 
     <!-- 演出卡片串流容器 (Cards List) -->
