@@ -101,5 +101,25 @@
     "reviewStatus": "community",
     "discoveredAt": "2026-10-01T18:05:40+08:00",
     "reviewNote": "與主貼 Dd76x9NkiJ- 為同一活動的補充貼文，提供確切場地範圍、開放進場／開演時間及免費入場、自由入座資訊。與既有公開卡 amichen-2026-10-30-zhunan-taiwan-fengyunlu 合併來源，不另增活動卡。"
+  },
+  {
+    "postId": "DeJmy9QGkbz",
+    "username": "yolin1991",
+    "postedAt": "2026-10-06",
+    "permalink": "https://www.threads.com/@yolin1991/post/DeJmy9QGkbz",
+    "text": "演出資訊：新吉歌劇團，2026/10/10（六，農曆9/1）在台南東山廟口演出。海報同列10/10（六）及「in 台南東山」。未列確切廟名、演出時間或劇目。留言有人猜測碧軒寺，作者按讚但未明確確認。",
+    "reviewStatus": "pending",
+    "discoveredAt": "2026-10-06T20:35:00+08:00",
+    "reviewNote": "與現有 schedule 比對未見新吉歌劇團或東山同場資料。場次日期及團名有貼文和海報支持；詳細廟名、時間及劇目缺漏。留言猜測碧軒寺不作為確認，暫存候選待取得明確公告或場地確認，不新增公開場次。"
+  },
+  {
+    "postId": "DeJaXlnmiV0",
+    "username": "yolin1991",
+    "postedAt": "2026-10-06",
+    "permalink": "https://www.threads.com/@yolin1991/post/DeJaXlnmiV0",
+    "text": "新吉義林歌劇團演出行程：2026/10/17–10/18（農曆9/8–9/9），雲林四湖；10/24（農曆9/15），雲林四湖；11/7（農曆9/29），高雄左營謝家濟公禪師，貼文相鄰列「戲齣：五福大帝法鬥索命狀」；11/8–11/11（農曆9/30–10/3）共四天，雲林四湖。貼文未列開演時間、完整地址；四湖各場未列具體廟名，劇目與11/7場次的對應範圍需核對。",
+    "reviewStatus": "pending",
+    "discoveredAt": "2026-10-06T20:35:00+08:00",
+    "reviewNote": "與現有 schedule 比對未找到上述劇團／地點場次。保留貼文列出的日期、團名與地點線索；因缺少精確場址及演出時間，且劇目對應場次仍有歧義，暫存待核，不新增正式場次。"
   }
 ]
