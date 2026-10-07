@@ -199,16 +199,16 @@ function renderEvents() {
           </div>
           <div class="shrink-0">${getDaysBadge(event)}</div>
         </div>
-        <h2 class="text-base font-bold serif-title text-stone-900 leading-snug mb-1">${escapeHTML(event.title)}</h2>
+        <h2 class="event-title text-base font-bold serif-title text-stone-900 leading-snug mb-1">${escapeHTML(event.title)}</h2>
         ${event.verifyStatus === 'pending' ? '<p class="text-[11px] font-bold text-amber-900 bg-amber-100 border border-amber-200 rounded-lg px-2 py-1 mb-2">自動發現候選・尚未核實劇種與演出資訊</p>' : ''}
-        <div class="text-xs text-stone-700 font-medium mb-2 bg-stone-50 px-2 py-1 rounded-lg"><span class="text-amber-800 font-semibold">🎭 主演：</span><span>${escapeHTML(event.artist)}</span></div>
-        <div class="space-y-1 text-xs text-stone-600 mb-2.5">
+        <div class="event-artist text-xs text-stone-700 font-medium mb-2 bg-stone-50 px-2 py-1 rounded-lg"><span class="text-amber-800 font-semibold">🎭 主演：</span><span>${escapeHTML(event.artist)}</span></div>
+        <div class="event-facts space-y-1 text-xs text-stone-600 mb-2.5">
           <div class="flex items-start gap-1"><span class="text-[#d80b72] font-semibold shrink-0">🗓️ 日期時間：</span><span class="font-medium text-stone-800">${escapeHTML(event.dateFormatted)} ｜ ${escapeHTML(event.time)}</span></div>
           <div class="flex items-start gap-1"><span class="text-[#d80b72] font-semibold shrink-0">📍 演出地點：</span><a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(event.location || '')}" target="_blank" rel="noopener noreferrer" class="text-stone-700 underline decoration-stone-300 hover:text-[#d80b72]">${escapeHTML(event.location || '演出地點待核實')}</a></div>
         </div>
-        <p class="text-xs text-stone-500 leading-relaxed mb-3">${escapeHTML(event.description || '由文化部公開資料發現，詳細內容待人工核對官方公告。')}</p>
+        <p class="event-description text-xs text-stone-500 leading-relaxed mb-3">${escapeHTML(event.description || '由文化部公開資料發現，詳細內容待人工核對官方公告。')}</p>
       </div>
-      <div class="pt-2 border-t border-stone-100 flex items-center justify-between gap-2 mt-auto">
+      <div class="event-actions pt-2 border-t border-stone-100 flex items-center justify-between gap-2 mt-auto">
         <button type="button" data-report-title="${escapeHTML(event.title)}" class="report-event text-[11px] text-stone-400 hover:text-[#d80b72] py-1">⚠️ 回報資訊有誤</button>
         <a href="${escapeHTML(safeExternalURL(event.link))}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-bold px-3.5 py-1.5 rounded-xl accent-btn shadow-sm transition active:scale-95">
           <span>${escapeHTML(event.verifyStatus === 'pending' ? '查看來源線索' : (event.linkLabel || '官方購票 / 詳情'))}</span>
@@ -428,3 +428,22 @@ try {
 } catch (_) { /* 儲存空間停用時使用預設主題。 */ }
 changeTheme(initialTheme);
 loadSchedule();
+
+// 字級選擇與主題獨立保存；無法存取儲存空間時仍可即時切換。
+function applyReadingSize(size) {
+  const selected = ['small', 'medium', 'large'].includes(size) ? size : 'medium';
+  document.documentElement.dataset.readingSize = selected;
+  document.querySelectorAll('button[data-reading-size]').forEach(button => {
+    button.setAttribute('aria-pressed', String(button.dataset.readingSize === selected));
+  });
+  return selected;
+}
+let initialReadingSize = 'medium';
+try { initialReadingSize = localStorage.getItem('opera-reading-size') || 'medium'; } catch (_) {}
+applyReadingSize(initialReadingSize);
+document.querySelectorAll('button[data-reading-size]').forEach(button => {
+  button.addEventListener('click', () => {
+    const selected = applyReadingSize(button.dataset.readingSize);
+    try { localStorage.setItem('opera-reading-size', selected); } catch (_) {}
+  });
+});

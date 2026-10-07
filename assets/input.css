@@ -36,4 +36,36 @@ a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,te
 .theme-choice { background:var(--card); color:var(--ink); border-color:var(--line); }
 .theme-selected { background:var(--pink); color:#fff; border-color:var(--pink); box-shadow:0 0 0 2px var(--yellow); }
 @media(max-width:700px) { main { padding:0 14px 48px !important; } .hero { min-height:230px; margin:14px 0 20px; padding:27px 20px; } .hero:before { right:2%; opacity:.75; } .hero:after { right:5%; top:54px; opacity:.45; } #eventsContainer { grid-template-columns:1fr; } }
-@media(max-width:380px) { .chip { font-size:10px !important; } }
+
+
+/* 閱讀字級：中為預設，使用者可選小／大；不縮放整個頁面。 */
+:root { --reading-body:16px; --reading-title:21px; --reading-label:14px; }
+html[data-reading-size="small"] { --reading-body:14px; --reading-title:19px; --reading-label:13px; }
+html[data-reading-size="large"] { --reading-body:18px; --reading-title:23px; --reading-label:16px; }
+.reading-size { display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:0 4px 20px; font-size:16px; }
+.reading-size span { margin-right:4px; font-weight:700; }
+.reading-size button { min-width:48px; min-height:44px; border:1px solid var(--line); border-radius:6px; background:var(--card); color:var(--ink); font-size:16px; font-weight:700; }
+.reading-size button[aria-pressed="true"] { background:var(--pink); color:#fff; border-color:var(--pink); }
+.opera-card { font-size:var(--reading-body); line-height:1.8; overflow-wrap:anywhere; }
+.opera-card .event-title { font-size:var(--reading-title); line-height:1.5; margin:16px 0; }
+.opera-card .event-artist,.opera-card .event-facts,.opera-card .event-description { font-size:var(--reading-body); line-height:1.8; }
+.opera-card .event-artist { padding:8px 10px; margin-bottom:16px; }
+.opera-card .event-facts > div { margin-bottom:12px; }
+.opera-card .event-description { color:var(--muted); line-height:1.85; margin:18px 0; }
+.opera-card > div:first-child > div:first-child span,.opera-card > div:first-child > div:first-child .shrink-0 span { font-size:var(--reading-label); line-height:1.6; }
+.opera-card .event-actions { padding-top:16px; }
+.opera-card .accent-btn { font-size:var(--reading-body); line-height:1.6; min-height:48px; padding:12px 14px; white-space:normal; }
+.opera-card .report-event { font-size:var(--reading-label); line-height:1.6; min-height:44px; color:var(--muted); }
+#keywordSearch,select { font-size:var(--reading-body); min-height:44px; }
+.chip { font-size:var(--reading-body) !important; min-height:44px; }
+label[for="keywordSearch"],#filteredStats,#regionHint { font-size:var(--reading-label); line-height:1.7; }
+@media(max-width:700px) {
+  #multiRowChips { grid-template-columns:repeat(3,minmax(0,1fr)); }
+  .opera-card { padding:22px 18px !important; }
+  .opera-card .event-facts > div { display:block; }
+  .opera-card .event-facts > div > span,.opera-card .event-facts > div > a { display:block; }
+  .opera-card .event-facts > div > span:first-child { margin-bottom:4px; }
+  .opera-card .event-actions { flex-direction:column; align-items:stretch; }
+  .opera-card .event-actions .accent-btn { justify-content:center; text-align:center; order:-1; }
+  .opera-card .report-event { text-align:left; }
+}
