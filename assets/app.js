@@ -171,7 +171,7 @@ function renderEvents() {
       if (currentType !== 'all' && event.badgeType !== currentType) return false;
       if (currentKeyword) {
         const searchable = [event.title, event.troupe, event.artist, event.location, event.date, event.dateFormatted,
-          event.time, event.description, event.genre, event.region, ...(event.tags || [])]
+          event.time, event.lunarDate, event.description, event.genre, event.region, ...(event.tags || [])]
           .map(value => String(value ?? '').toLocaleLowerCase('zh-TW')).join(' ');
         if (!currentKeyword.split(/\s+/).every(term => searchable.includes(term))) return false;
       }
@@ -203,7 +203,7 @@ function renderEvents() {
         ${event.verifyStatus === 'pending' ? '<p class="text-[11px] font-bold text-amber-900 bg-amber-100 border border-amber-200 rounded-lg px-2 py-1 mb-2">自動發現候選・尚未核實劇種與演出資訊</p>' : ''}
         <div class="event-artist text-xs text-stone-700 font-medium mb-2 bg-stone-50 px-2 py-1 rounded-lg"><span class="text-amber-800 font-semibold">🎭 主演：</span><span>${escapeHTML(event.artist)}</span></div>
         <div class="event-facts space-y-1 text-xs text-stone-600 mb-2.5">
-          <div class="flex items-start gap-1"><span class="text-[#d80b72] font-semibold shrink-0">🗓️ 日期時間：</span><span class="font-medium text-stone-800">${escapeHTML(event.dateFormatted)} ｜ ${escapeHTML(event.time)}</span></div>
+          <div class="flex items-start gap-1"><span class="text-[#d80b72] font-semibold shrink-0">🗓️ 日期時間：</span><span class="font-medium text-stone-800">${escapeHTML(event.dateFormatted)}${event.lunarDate ? `<span class="block">${escapeHTML(event.lunarDate)}</span><span class="block">${escapeHTML(event.time)}</span>` : ` ｜ ${escapeHTML(event.time)}`}</span></div>
           <div class="flex items-start gap-1"><span class="text-[#d80b72] font-semibold shrink-0">📍 演出地點：</span><a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(event.location || '')}" target="_blank" rel="noopener noreferrer" class="text-stone-700 underline decoration-stone-300 hover:text-[#d80b72]">${escapeHTML(event.location || '演出地點待核實')}</a></div>
         </div>
         <p class="event-description text-xs text-stone-500 leading-relaxed mb-3">${escapeHTML(event.description || '由文化部公開資料發現，詳細內容待人工核對官方公告。')}</p>
