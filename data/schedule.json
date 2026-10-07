@@ -67,6 +67,108 @@
     ]
   },
   {
+    "id": "mhy-huang-2026-11-01-guanyin",
+    "date": "2026-11-01",
+    "dateFormatted": "2026/11/01（日）",
+    "daysAway": 25,
+    "time": "19:00",
+    "troupe": "明華園黃字戲劇團",
+    "genre": "歌仔戲",
+    "artist": "個別演員未公布",
+    "title": "《觀音渡龍王》",
+    "category": "2026臺南藝術進區／戶外公演",
+    "badgeType": "free",
+    "verifyStatus": "verified",
+    "verifyLabel": "🛡️ 臺南市文化局活動資料與原海報",
+    "location": "臺南市後壁區下茄苳泰安宮",
+    "region": "南部",
+    "status": "官方場次資料與原海報一致；出發前請查看主辦最新公告",
+    "description": "文化局活動資料及2026藝術進區原海報均列11/1 19:00，由明華園黃字戲劇團演出《觀音渡龍王》，地點為臺南市後壁區下茄苳泰安宮。活動為免費戶外公演；個別演員未公布。",
+    "link": "https://culture.tainan.gov.tw/act_month/Details?Parser=99,5,44,,,,25427",
+    "linkLabel": "文化局官方場次詳情",
+    "sourceUrl": "https://culture.tainan.gov.tw/act_month/Details?Parser=99,5,44,,,,25427",
+    "relatedSourceUrls": [
+      "https://culture.tainan.gov.tw/df_ufiles/044/s_785780116_1072361338483482_3259516164451784233_n.jpg",
+      "https://data.tainan.gov.tw/Resource/d6fc3d1b-4b5b-4205-9014-5118e37f0971?handler=GoJson",
+      "https://seo.tainanoutlook.com/event/artstodistrict"
+    ],
+    "tags": [
+      "明華園黃字戲劇團",
+      "歌仔戲",
+      "藝術進區",
+      "免費公演",
+      "其他歌仔戲"
+    ]
+  },
+  {
+    "id": "qinghuage-2026-11-06-juedai-jianwang",
+    "date": "2026-11-06",
+    "dateFormatted": "2026/11/06（五）",
+    "daysAway": 30,
+    "time": "19:00",
+    "troupe": "清華閣周祐名掌中劇團",
+    "genre": "布袋戲",
+    "artist": "個別演員未公布",
+    "title": "《絕代劍王》",
+    "category": "2026臺南藝術進區／戶外公演",
+    "badgeType": "free",
+    "verifyStatus": "verified",
+    "verifyLabel": "🛡️ 臺南市文化局活動資料與原海報",
+    "location": "臺南市南區喜樹萬皇宮",
+    "region": "南部",
+    "status": "官方場次資料與原海報一致；出發前請查看主辦最新公告；轉載頁列灣裡萬年殿，與文化局文字資料及原海報不同，本卡採兩份一致官方公告的喜樹萬皇宮",
+    "description": "文化局活動資料及2026藝術進區原海報均列11/6 19:00，由清華閣周祐名掌中劇團演出《絕代劍王》，地點為臺南市南區喜樹萬皇宮。活動為免費戶外公演；個別演員未公布。轉載頁列灣裡萬年殿，與文化局文字資料及原海報不同，本卡採兩份一致官方公告的喜樹萬皇宮。",
+    "link": "https://culture.tainan.gov.tw/act_month/Details?Parser=99,5,44,,,,25428",
+    "linkLabel": "文化局官方場次詳情",
+    "sourceUrl": "https://culture.tainan.gov.tw/act_month/Details?Parser=99,5,44,,,,25428",
+    "relatedSourceUrls": [
+      "https://culture.tainan.gov.tw/df_ufiles/044/s_787997044_1072361431816806_2888446870344724392_n.jpg",
+      "https://data.tainan.gov.tw/Resource/d6fc3d1b-4b5b-4205-9014-5118e37f0971?handler=GoJson",
+      "https://seo.tainanoutlook.com/event/artstodistrict"
+    ],
+    "tags": [
+      "清華閣周祐名掌中劇團",
+      "布袋戲",
+      "藝術進區",
+      "免費公演",
+      "其他布袋戲"
+    ]
+  },
+  {
+    "id": "guodu-2026-11-07-taiwan-fengyunlu",
+    "date": "2026-11-07",
+    "dateFormatted": "2026/11/07（六）",
+    "daysAway": 31,
+    "time": "19:00",
+    "troupe": "古都木偶戲劇團",
+    "genre": "布袋戲",
+    "artist": "個別演員未公布",
+    "title": "《臺灣風雲錄－戰火波瀾》",
+    "category": "2026臺南藝術進區／戶外公演",
+    "badgeType": "free",
+    "verifyStatus": "verified",
+    "verifyLabel": "🛡️ 臺南市文化局活動資料與原海報",
+    "location": "臺南市大內區大內國小",
+    "region": "南部",
+    "status": "官方場次資料與原海報一致；出發前請查看主辦最新公告",
+    "description": "文化局活動資料及2026藝術進區原海報均列11/7 19:00，由古都木偶戲劇團演出《臺灣風雲錄－戰火波瀾》，地點為臺南市大內區大內國小。活動為免費戶外公演；個別演員未公布。",
+    "link": "https://culture.tainan.gov.tw/act_month/Details?Parser=99,5,44,,,,25429",
+    "linkLabel": "文化局官方場次詳情",
+    "sourceUrl": "https://culture.tainan.gov.tw/act_month/Details?Parser=99,5,44,,,,25429",
+    "relatedSourceUrls": [
+      "https://culture.tainan.gov.tw/df_ufiles/044/s_787890276_1072361478483468_4380733450804764272_n.jpg",
+      "https://data.tainan.gov.tw/Resource/d6fc3d1b-4b5b-4205-9014-5118e37f0971?handler=GoJson",
+      "https://seo.tainanoutlook.com/event/artstodistrict"
+    ],
+    "tags": [
+      "古都木偶戲劇團",
+      "布袋戲",
+      "藝術進區",
+      "免費公演",
+      "其他布袋戲"
+    ]
+  },
+  {
     "id": "zx-2026-11-14-kuliniao",
     "date": "2026-11-14",
     "dateFormatted": "2026/11/14（六）",
@@ -134,17 +236,20 @@
     "verifyLabel": "📣 Threads 演出公告・社群來源",
     "location": "桃園市桃園區慈文路410號（蓮華寺）",
     "region": "北部",
-    "status": "既有公告與古都木偶戲劇團團長公開 Threads 貼文相互印證；仍屬社群來源",
-    "description": "既有社群公告與古都木偶戲劇團團長黃冠維 2026/10/2 的公開 Threads 貼文均列 2026/10/8 桃園蓮華寺《三俠五義之鍘龐昱》，19:00 扮仙、19:30 正式演出。兩個來源相符，維持社群公告分類；出發前仍建議查看最新原貼文。",
-    "link": "https://www.threads.com/@huei.kai.tech/post/Dd6vEPLk7ld",
-    "linkLabel": "Threads 原始演出公告",
+    "status": "劇團團長公告與戲籠官方場次頁一致；免費入場",
+    "description": "古都木偶戲劇團團長公告與戲籠出巡官方場次頁同列2026/10/8桃園蓮華寺《三俠五義之鍘龐昱》，19:00扮仙、19:30正式開演。戲籠10/7官網新公告連到場次頁，補充免費入場、現場文武場、交通停車及鏡電視直播，卡片詳情改連此頁；原社群證據保留，維持社群來源分類。",
+    "link": "https://sites.google.com/view/hilang-re/巡演專區/巡演場次/10-08-桃園站-三俠五義之鍘龐昱",
+    "linkLabel": "戲籠最新場次詳情・交通與直播",
     "sourceUrl": "https://www.threads.com/@huei.kai.tech/post/Dd6vEPLk7ld",
     "relatedSourceUrls": [
+      "https://www.threads.com/@huei.kai.tech/post/Dd6vEPLk7ld",
       "https://www.threads.com/@joe_huang_k_w/post/Dd_K5CBCQ5G",
       "https://www.threads.com/@hilang.on.tour/post/DeGTX3SE10d",
       "https://www.facebook.com/permalink.php?story_fbid=pfbid032EBGhpHfeSDTExcafmZdVKwj1MfnxQWiZHLLSsCuyKbYPJWzrLmyamqZWN9sNDcnl&id=61594936681482",
       "https://www.threads.com/@hilang.on.tour/post/Dd-e4j4E8y4",
-      "https://www.threads.com/@joe_huang_k_w/post/DeJqv8KCbvx"
+      "https://www.threads.com/@joe_huang_k_w/post/DeJqv8KCbvx",
+      "https://sites.google.com/view/hilang-re/巡演專區/巡演場次/10-08-桃園站-三俠五義之鍘龐昱",
+      "https://www.youtube.com/live/LCqGLl8zS-E"
     ],
     "tags": [
       "古都木偶戲劇團",
@@ -1695,18 +1800,24 @@
     "title": "《金沙灘》",
     "category": "2026 臺南藝術進區／戶外公演",
     "badgeType": "free",
-    "verifyStatus": "community",
-    "verifyLabel": "📣 宣傳貼文與活動總表相符・待官方場次頁確認",
-    "location": "臺南市西港區慶安宮",
+    "verifyStatus": "verified",
+    "verifyLabel": "🛡️ 臺南市文化局活動資料與原海報",
+    "location": "臺南市西港區慶安宮前廣場",
     "region": "南部",
-    "status": "宣傳貼文與臺南藝術進區活動總表同列 11/15 19:00；出發前請核對主辦公告",
-    "description": "秀琴歌劇團相關宣傳帳號及 2026 臺南藝術進區活動總表均列 11/15 19:00 西港慶安宮《金沙灘》。臺南市政府公告確認秀琴歌劇團參與今年藝術進區，但公告本文未列本場完整細節，因此暫不標成官方已核實。",
-    "link": "https://www.threads.com/@the_rin.lpm/post/DdvZekJE9Mm",
-    "linkLabel": "Threads 宣傳貼文（非官方）",
-    "sourceUrl": "https://www.threads.com/@the_rin.lpm/post/DdvZekJE9Mm",
+    "status": "官方場次資料與原海報同列11/15 19:00；免費戶外公演",
+    "description": "文化局活動資料與2026藝術進區原海報均列11/15（日）19:00，秀琴歌劇團於臺南市西港區慶安宮前廣場演出《金沙灘》。由官方場次證據確認，更新為已核實；不同於10/30–31慶安宮廟會外台。",
+    "link": "https://culture.tainan.gov.tw/act_month/Details?Parser=99,5,44,,,,25431",
+    "linkLabel": "文化局官方場次詳情",
+    "sourceUrl": "https://culture.tainan.gov.tw/act_month/Details?Parser=99,5,44,,,,25431",
     "tags": [
       "秀琴歌劇團",
       "其他歌仔戲"
+    ],
+    "relatedSourceUrls": [
+      "https://www.threads.com/@the_rin.lpm/post/DdvZekJE9Mm",
+      "https://culture.tainan.gov.tw/df_ufiles/044/s_785602906_1072361555150127_7885296047940962844_n.jpg",
+      "https://data.tainan.gov.tw/Resource/d6fc3d1b-4b5b-4205-9014-5118e37f0971?handler=GoJson",
+      "https://seo.tainanoutlook.com/event/artstodistrict"
     ]
   },
   {
@@ -2117,6 +2228,38 @@
       "明華園天字戲劇團",
       "歌仔戲",
       "社群來源"
+    ]
+  },
+  {
+    "id": "taiwan-bangzi-2026-12-05-qianyaobanjia",
+    "date": "2026-12-05",
+    "dateFormatted": "2026/12/05（六）",
+    "daysAway": 59,
+    "time": "19:00",
+    "troupe": "臺灣豫劇團",
+    "genre": "豫劇",
+    "artist": "個別演員未公布",
+    "title": "《錢要搬家啦！？》",
+    "category": "2026臺南藝術進區／戶外公演",
+    "badgeType": "free",
+    "verifyStatus": "community",
+    "verifyLabel": "📣 藝術進區主辦官方 Facebook 節目總表",
+    "location": "臺南市柳營區代天院",
+    "region": "南部",
+    "status": "主辦官方2026節目總表列12/5 19:00；免費戶外演出",
+    "description": "藝術進區主辦官方Facebook「藝術進區2026－節目資訊」總表明列12/5（六）19:00，臺灣豫劇團於柳營代天院演出《錢要搬家啦！？》。資料由主辦原始社群公告確認，依社群來源分類；個別演員未公布，出發前請查最新主辦或劇團公告。",
+    "link": "https://www.facebook.com/artstodistrict/posts/pfbid02hS9ooTZKGd712WeBGbhKWDxD7SDKPuvLT9ECMRGyvRTuJUsXJoFYvirTUgLVUHAnl",
+    "linkLabel": "藝術進區官方節目總表",
+    "sourceUrl": "https://www.facebook.com/artstodistrict/posts/pfbid02hS9ooTZKGd712WeBGbhKWDxD7SDKPuvLT9ECMRGyvRTuJUsXJoFYvirTUgLVUHAnl",
+    "relatedSourceUrls": [
+      "https://seo.tainanoutlook.com/event/artstodistrict",
+      "https://www.tainan.gov.tw/News_Content.aspx?n=13370&s=8837453"
+    ],
+    "tags": [
+      "臺灣豫劇團",
+      "豫劇",
+      "藝術進區",
+      "免費公演"
     ]
   }
 ]

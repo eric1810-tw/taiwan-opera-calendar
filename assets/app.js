@@ -271,7 +271,7 @@ function submitReport(event) {
 
 function validateEvent(event) {
   const requiredText = ['id', 'date', 'dateFormatted', 'time', 'troupe', 'genre', 'artist', 'title', 'location', 'description', 'link'];
-  const validGenres = new Set(['歌仔戲', '布袋戲', '音樂劇', '其他歌仔戲', '其他布袋戲', '其他音樂劇']);
+  const validGenres = new Set(['歌仔戲', '布袋戲', '音樂劇', '豫劇', '其他豫劇', '其他歌仔戲', '其他布袋戲', '其他音樂劇']);
   const validStatuses = new Set(['verified', 'community', 'pending']);
   const validBadges = new Set(['ticket', 'free', 'temple', 'plan', 'outdoor', 'broadcast']);
   const validRegions = new Set(['北部', '中部', '南部', '東部', '未分類']);

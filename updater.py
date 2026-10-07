@@ -36,7 +36,7 @@ REQUIRED_FIELDS = {
     "artist", "title", "category", "badgeType", "verifyStatus", "verifyLabel",
     "location", "region", "status", "description", "link", "tags",
 }
-ALLOWED_GENRES = {"歌仔戲", "布袋戲", "音樂劇"}
+ALLOWED_GENRES = {"歌仔戲", "布袋戲", "音樂劇", "豫劇"}
 ALLOWED_VERIFY_STATUS = {"verified", "community", "pending"}
 ALLOWED_BADGE_TYPES = {"ticket", "free", "temple", "plan", "outdoor", "broadcast"}
 ALLOWED_REGIONS = {"北部", "中部", "南部", "東部", "未分類"}
