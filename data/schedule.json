@@ -2604,6 +2604,33 @@
     "endDate": "2026-10-11"
   },
   {
+    "id": "xj-2026-10-10-dongshan",
+    "date": "2026-10-10",
+    "dateFormatted": "2026/10/10（六）",
+    "daysAway": 2,
+    "time": "未公布",
+    "troupe": "新吉歌劇團",
+    "genre": "歌仔戲",
+    "artist": "未公布",
+    "title": "新吉歌劇團演出｜劇目未公布",
+    "category": "廟口外台 / 社群來源",
+    "badgeType": "temple",
+    "verifyStatus": "community",
+    "verifyLabel": "📣 Threads 演出公告・社群來源",
+    "location": "臺南市東山區（廟口；詳細場地未公布）",
+    "region": "南部",
+    "status": "時間、廟名及劇目未公布",
+    "description": "公開 Threads 貼文與海報明列新吉歌劇團於 2026/10/10 在臺南東山廟口演出；未載正戲時間、廟名、劇目或主辦資訊。公告來自自述劇團幫手的個人帳號，維持社群來源分類，詳細內容請向演出方或廟方確認。",
+    "link": "https://www.threads.com/@yolin1991/post/DeJmy9QGkbz",
+    "linkLabel": "Threads 演出資訊與海報",
+    "sourceUrl": "https://www.threads.com/@yolin1991/post/DeJmy9QGkbz",
+    "tags": [
+      "新吉歌劇團",
+      "社群來源",
+      "歌仔戲"
+    ]
+  },
+  {
     "id": "mhy-tian-2026-10-12-wanlimingji",
     "date": "2026-10-12",
     "dateFormatted": "國曆：2026/10/12（一）–2026/10/16（五）",
