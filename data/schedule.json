@@ -817,14 +817,17 @@
     "verifyLabel": "🛡️ 文化部活動頁",
     "location": "高雄市茄萣區港東街111號（金鑾宮前廟埕）",
     "region": "南部",
-    "status": "文化部活動頁列 10/11 19:00 演出；不售票",
-    "description": "文化部全國藝文活動資訊系統列為 2026 高雄庄頭藝穗節節目：尚和歌仔戲劇團《正庒．千波之神2.0》，10/11 19:00–21:00，地點為茄萣金鑾宮前廟埕；不售票。劇名依官方頁原文保留。",
-    "link": "https://event.moc.gov.tw/search-2879892.html",
-    "linkLabel": "文化部官方活動頁",
+    "status": "文化部活動頁列10/11 19:00演出；劇團最新公告確認金鑾宮前廟埕及劇名；不售票",
+    "description": "文化部全國藝文活動資訊系統列為2026高雄庄頭藝穗節節目：尚和歌仔戲劇團《正庒．千波之神2.0》，10/11 19:00–21:00，地點為茄萣金鑾宮前廟埕；劇團最新公告再次確認演出日期、時間、地點與劇名。文化部頁列不售票，劇名依官方頁原文保留。",
+    "link": "https://www.facebook.com/photo/?fbid=1736104558521253&set=a.459498692848519",
+    "linkLabel": "尚和歌仔戲官方 Facebook 最新公告",
     "sourceUrl": "https://event.moc.gov.tw/search-2879892.html",
     "tags": [
       "尚和歌仔戲劇團",
       "其他歌仔戲"
+    ],
+    "relatedSourceUrls": [
+      "https://event.moc.gov.tw/search-2879892.html"
     ]
   },
   {
@@ -867,13 +870,13 @@
     "badgeType": "plan",
     "verifyStatus": "community",
     "verifyLabel": "📣 羅裕誴歌劇團 Threads 行程公告",
-    "location": "南投光音寺（詳細地址未列）",
+    "location": "南投縣中寮鄉光音寺（詳細地址未公布）",
     "region": "中部",
-    "status": "10/9–10/11 南投光音寺；劇目、演出時間及詳細地址未公布",
-    "description": "原行程公告列國曆10/9–10/11南投演出；羅裕誴2026/10/4公開 Threads 新貼文明列同三日支援文君歌劇團，地點為南投光音寺。補充同場地點並保留原卡劇團名稱及日期；原貼文未提供劇目、開演時間或詳細地址，仍屬社群來源，出發前請向劇團或主辦確認。",
-    "link": "https://www.threads.com/@yuzhongluo/post/DdyLu8bicaJ",
-    "linkLabel": "Threads 劇團行程公告",
-    "sourceUrl": "https://www.threads.com/@yuzhongluo/post/DdyLu8bicaJ",
+    "status": "10/9–10/11南投中寮光音寺；劇目、演出時間及詳細地址未公布",
+    "description": "原行程公告列國曆10/9–10/11南投演出；羅裕誴2026/10/4貼文列明支援文君歌劇團、南投光音寺，10/8新貼文再稱「明日起三天，南投中寮光音寺」。更新廟址縣市鄉鎮；劇目、開演時間及詳細地址仍未公布，維持社群來源。",
+    "link": "https://www.threads.com/@yuzhongluo/post/DePavkNCZFZ",
+    "linkLabel": "羅裕誴較新Threads場地確認",
+    "sourceUrl": "https://www.threads.com/@yuzhongluo/post/DePavkNCZFZ",
     "tags": [
       "羅裕誴歌劇團",
       "羅文君歌劇團",
@@ -881,7 +884,8 @@
     ],
     "endDate": "2026-10-11",
     "relatedSourceUrls": [
-      "https://www.threads.com/@yuzhongluo/post/DeERYS3CTAP"
+      "https://www.threads.com/@yuzhongluo/post/DeERYS3CTAP",
+      "https://www.threads.com/@yuzhongluo/post/DdyLu8bicaJ"
     ]
   },
   {
@@ -1069,10 +1073,10 @@
     "verifyLabel": "🛡️ 臺灣歌仔戲推廣基金會場次公告",
     "location": "屏東縣屏東市公園里勝利路9號（屏東縣立體育館前草皮）",
     "region": "南部",
-    "status": "草地野餐席地免費；本輪劇團官方九月戲路亦列10/10 19:00，未列結束時間，原來源20:30保留",
-    "description": "新生代人氣小生吳奕萱回到母團明華園天字團，攜手天王小生母親陳昭香在家鄉屏東熱情呈獻經典《旺來神》！",
-    "link": "https://www.facebook.com/MingHuaYuanTianTaiwaneseOpera/posts/pfbid02nbH9JZn25DN81QQgDQnwwBwnPeDmraGQQyTapD33rujkA3WYaUjGEwskEGKfuhrkl?locale=zh_TW",
-    "linkLabel": "天字團官方 Facebook 最新戲路表",
+    "status": "基金會列10/10 19:00–20:30；劇團最新公告確認16:00免費藝文活動及19:00演出",
+    "description": "基金會公告列明華園天字團《旺來神》10/10 19:00–20:30於屏東縣立體育館前草皮；劇團最新貼文確認當日16:00免費藝文活動、19:00演出及同一場地。演出卡的結束時間沿用基金會公告。",
+    "link": "https://www.facebook.com/photo/?fbid=1534522768720010&set=a=469769218528709",
+    "linkLabel": "明華園天字團官方 Facebook 最新公告",
     "sourceUrl": "https://twoperapf.org.tw/news/1/51",
     "tags": [
       "明華園天字團",
@@ -2250,12 +2254,13 @@
     "location": "高雄市鳳山天公廟（詳細地址未列）",
     "region": "南部",
     "status": "日期依2026年農曆換算；仍待劇團或主辦原公告交叉核實",
-    "description": "@jing__1017公開貼文列「繡花園戲劇團x明華園地字戲劇團」農曆九月行程，九月初一～初十於鳳山天公廟演出。依當期2026年、貼文所列星期與香港天文台對照表換算國曆；貼文未明分各場由哪一團或哪一組演出，不推定單一團隊。原文僅鳳山場列09:00–12:00、14:00–17:00，不套用其他場。來源為社群轉述，出發前請核對最新劇團或廟方公告。",
-    "link": "https://www.threads.com/@jing__1017/post/DeMqr2siRoe",
-    "linkLabel": "Threads 農曆九月完整行程",
-    "sourceUrl": "https://www.threads.com/@jing__1017/post/DeMqr2siRoe",
+    "description": "@jing__1017公開貼文列「繡花園戲劇團x明華園地字戲劇團」農曆九月行程，九月初一～初十於鳳山天公廟演出。依當期2026年、貼文所列星期與香港天文台對照表換算國曆；貼文未明分各場由哪一團或哪一組演出，不推定單一團隊。原文僅鳳山場列09:00–12:00、14:00–17:00，不套用其他場。來源為社群轉述，出發前請核對最新劇團或廟方公告。 官方Facebook農曆九月行程補充鳳山場日間演出，官方留言說明該廟晚上沒有演出。",
+    "link": "https://www.facebook.com/permalink.php?story_fbid=pfbid02bRzSrb6uU5S7TWpCCbMnwpy5bDRy37GNLhbXVTQDVouNQzupCRnLcCS1Gif6USE3l&id=61574134933376",
+    "linkLabel": "繡花園／明華園地字官方 Facebook 農曆九月戲路",
+    "sourceUrl": "https://www.facebook.com/permalink.php?story_fbid=pfbid02bRzSrb6uU5S7TWpCCbMnwpy5bDRy37GNLhbXVTQDVouNQzupCRnLcCS1Gif6USE3l&id=61574134933376",
     "relatedSourceUrls": [
-      "https://www.hko.gov.hk/tc/gts/time/calendar/pdf/files/2026.pdf"
+      "https://www.hko.gov.hk/tc/gts/time/calendar/pdf/files/2026.pdf",
+      "https://www.threads.com/@jing__1017/post/DeMqr2siRoe"
     ],
     "tags": [
       "繡花園",
@@ -2284,12 +2289,13 @@
     "location": "高雄市旗津龍漢府（詳細地址未列）",
     "region": "南部",
     "status": "日期依2026年農曆換算；仍待劇團或主辦原公告交叉核實",
-    "description": "@jing__1017公開貼文列「繡花園戲劇團x明華園地字戲劇團」農曆九月行程，九月初七～初九於旗津龍漢府演出。依當期2026年、貼文所列星期與香港天文台對照表換算國曆；貼文未明分各場由哪一團或哪一組演出，不推定單一團隊。本場劇目、時刻與個別演員未公布。來源為社群轉述，出發前請核對最新劇團或廟方公告。",
-    "link": "https://www.threads.com/@jing__1017/post/DeMqr2siRoe",
-    "linkLabel": "Threads 農曆九月完整行程",
-    "sourceUrl": "https://www.threads.com/@jing__1017/post/DeMqr2siRoe",
+    "description": "@jing__1017公開貼文列「繡花園戲劇團x明華園地字戲劇團」農曆九月行程，九月初七～初九於旗津龍漢府演出。依當期2026年、貼文所列星期與香港天文台對照表換算國曆；貼文未明分各場由哪一團或哪一組演出，不推定單一團隊。本場劇目、時刻與個別演員未公布。來源為社群轉述，出發前請核對最新劇團或廟方公告。 官方Facebook農曆九月行程再次列出本場日期與地點；農曆日期換算依相關來源日曆。",
+    "link": "https://www.facebook.com/permalink.php?story_fbid=pfbid02bRzSrb6uU5S7TWpCCbMnwpy5bDRy37GNLhbXVTQDVouNQzupCRnLcCS1Gif6USE3l&id=61574134933376",
+    "linkLabel": "繡花園／明華園地字官方 Facebook 農曆九月戲路",
+    "sourceUrl": "https://www.facebook.com/permalink.php?story_fbid=pfbid02bRzSrb6uU5S7TWpCCbMnwpy5bDRy37GNLhbXVTQDVouNQzupCRnLcCS1Gif6USE3l&id=61574134933376",
     "relatedSourceUrls": [
-      "https://www.hko.gov.hk/tc/gts/time/calendar/pdf/files/2026.pdf"
+      "https://www.hko.gov.hk/tc/gts/time/calendar/pdf/files/2026.pdf",
+      "https://www.threads.com/@jing__1017/post/DeMqr2siRoe"
     ],
     "tags": [
       "繡花園",
@@ -2318,12 +2324,13 @@
     "location": "臺南市佳里應元宮（詳細地址未列）",
     "region": "南部",
     "status": "日期依2026年農曆換算；仍待劇團或主辦原公告交叉核實",
-    "description": "@jing__1017公開貼文列「繡花園戲劇團x明華園地字戲劇團」農曆九月行程，九月十一、十二於佳里應元宮演出。依當期2026年、貼文所列星期與香港天文台對照表換算國曆；貼文未明分各場由哪一團或哪一組演出，不推定單一團隊。本場劇目、時刻與個別演員未公布。來源為社群轉述，出發前請核對最新劇團或廟方公告。",
-    "link": "https://www.threads.com/@jing__1017/post/DeMqr2siRoe",
-    "linkLabel": "Threads 農曆九月完整行程",
-    "sourceUrl": "https://www.threads.com/@jing__1017/post/DeMqr2siRoe",
+    "description": "@jing__1017公開貼文列「繡花園戲劇團x明華園地字戲劇團」農曆九月行程，九月十一、十二於佳里應元宮演出。依當期2026年、貼文所列星期與香港天文台對照表換算國曆；貼文未明分各場由哪一團或哪一組演出，不推定單一團隊。本場劇目、時刻與個別演員未公布。來源為社群轉述，出發前請核對最新劇團或廟方公告。 官方Facebook農曆九月行程再次列出本場日期與地點；農曆日期換算依相關來源日曆。",
+    "link": "https://www.facebook.com/permalink.php?story_fbid=pfbid02bRzSrb6uU5S7TWpCCbMnwpy5bDRy37GNLhbXVTQDVouNQzupCRnLcCS1Gif6USE3l&id=61574134933376",
+    "linkLabel": "繡花園／明華園地字官方 Facebook 農曆九月戲路",
+    "sourceUrl": "https://www.facebook.com/permalink.php?story_fbid=pfbid02bRzSrb6uU5S7TWpCCbMnwpy5bDRy37GNLhbXVTQDVouNQzupCRnLcCS1Gif6USE3l&id=61574134933376",
     "relatedSourceUrls": [
-      "https://www.hko.gov.hk/tc/gts/time/calendar/pdf/files/2026.pdf"
+      "https://www.hko.gov.hk/tc/gts/time/calendar/pdf/files/2026.pdf",
+      "https://www.threads.com/@jing__1017/post/DeMqr2siRoe"
     ],
     "tags": [
       "繡花園",
@@ -2352,12 +2359,13 @@
     "location": "高雄市燕巢區鳳雄里中路巷5號（中安宮）",
     "region": "南部",
     "status": "日期依2026年農曆換算；仍待劇團或主辦原公告交叉核實",
-    "description": "@jing__1017公開貼文列「繡花園戲劇團x明華園地字戲劇團」農曆九月行程，九月十四～十六於燕巢中安宮演出。依當期2026年、貼文所列星期與香港天文台對照表換算國曆；貼文未明分各場由哪一團或哪一組演出，不推定單一團隊。本場劇目、時刻與個別演員未公布。來源為社群轉述，出發前請核對最新劇團或廟方公告。",
-    "link": "https://www.threads.com/@jing__1017/post/DeMqr2siRoe",
-    "linkLabel": "Threads 農曆九月完整行程",
-    "sourceUrl": "https://www.threads.com/@jing__1017/post/DeMqr2siRoe",
+    "description": "@jing__1017公開貼文列「繡花園戲劇團x明華園地字戲劇團」農曆九月行程，九月十四～十六於燕巢中安宮演出。依當期2026年、貼文所列星期與香港天文台對照表換算國曆；貼文未明分各場由哪一團或哪一組演出，不推定單一團隊。本場劇目、時刻與個別演員未公布。來源為社群轉述，出發前請核對最新劇團或廟方公告。 官方Facebook農曆九月行程再次列出本場日期與地點；農曆日期換算依相關來源日曆。",
+    "link": "https://www.facebook.com/permalink.php?story_fbid=pfbid02bRzSrb6uU5S7TWpCCbMnwpy5bDRy37GNLhbXVTQDVouNQzupCRnLcCS1Gif6USE3l&id=61574134933376",
+    "linkLabel": "繡花園／明華園地字官方 Facebook 農曆九月戲路",
+    "sourceUrl": "https://www.facebook.com/permalink.php?story_fbid=pfbid02bRzSrb6uU5S7TWpCCbMnwpy5bDRy37GNLhbXVTQDVouNQzupCRnLcCS1Gif6USE3l&id=61574134933376",
     "relatedSourceUrls": [
-      "https://www.hko.gov.hk/tc/gts/time/calendar/pdf/files/2026.pdf"
+      "https://www.hko.gov.hk/tc/gts/time/calendar/pdf/files/2026.pdf",
+      "https://www.threads.com/@jing__1017/post/DeMqr2siRoe"
     ],
     "tags": [
       "繡花園",
@@ -2386,12 +2394,13 @@
     "location": "臺南市安南區安和路一段285巷67號（溪頂寮代天宮）",
     "region": "南部",
     "status": "日期依2026年農曆換算；仍待劇團或主辦原公告交叉核實",
-    "description": "@jing__1017公開貼文列「繡花園戲劇團x明華園地字戲劇團」農曆九月行程，九月十五於溪頂寮代天宮演出。依當期2026年、貼文所列星期與香港天文台對照表換算國曆；貼文未明分各場由哪一團或哪一組演出，不推定單一團隊。本場劇目、時刻與個別演員未公布。來源為社群轉述，出發前請核對最新劇團或廟方公告。",
-    "link": "https://www.threads.com/@jing__1017/post/DeMqr2siRoe",
-    "linkLabel": "Threads 農曆九月完整行程",
-    "sourceUrl": "https://www.threads.com/@jing__1017/post/DeMqr2siRoe",
+    "description": "@jing__1017公開貼文列「繡花園戲劇團x明華園地字戲劇團」農曆九月行程，九月十五於溪頂寮代天宮演出。依當期2026年、貼文所列星期與香港天文台對照表換算國曆；貼文未明分各場由哪一團或哪一組演出，不推定單一團隊。本場劇目、時刻與個別演員未公布。來源為社群轉述，出發前請核對最新劇團或廟方公告。 官方Facebook農曆九月行程再次列出本場日期與地點；農曆日期換算依相關來源日曆。",
+    "link": "https://www.facebook.com/permalink.php?story_fbid=pfbid02bRzSrb6uU5S7TWpCCbMnwpy5bDRy37GNLhbXVTQDVouNQzupCRnLcCS1Gif6USE3l&id=61574134933376",
+    "linkLabel": "繡花園／明華園地字官方 Facebook 農曆九月戲路",
+    "sourceUrl": "https://www.facebook.com/permalink.php?story_fbid=pfbid02bRzSrb6uU5S7TWpCCbMnwpy5bDRy37GNLhbXVTQDVouNQzupCRnLcCS1Gif6USE3l&id=61574134933376",
     "relatedSourceUrls": [
-      "https://www.hko.gov.hk/tc/gts/time/calendar/pdf/files/2026.pdf"
+      "https://www.hko.gov.hk/tc/gts/time/calendar/pdf/files/2026.pdf",
+      "https://www.threads.com/@jing__1017/post/DeMqr2siRoe"
     ],
     "tags": [
       "繡花園",
@@ -2419,12 +2428,13 @@
     "location": "高雄市內門區內東里茄苳崙3-2號（清德堂）",
     "region": "南部",
     "status": "日期依2026年農曆換算；仍待劇團或主辦原公告交叉核實",
-    "description": "@jing__1017公開貼文列「繡花園戲劇團x明華園地字戲劇團」農曆九月行程，九月十五於內門清德堂演出。依當期2026年、貼文所列星期與香港天文台對照表換算國曆；貼文未明分各場由哪一團或哪一組演出，不推定單一團隊。本場劇目、時刻與個別演員未公布。來源為社群轉述，出發前請核對最新劇團或廟方公告。",
-    "link": "https://www.threads.com/@jing__1017/post/DeMqr2siRoe",
-    "linkLabel": "Threads 農曆九月完整行程",
-    "sourceUrl": "https://www.threads.com/@jing__1017/post/DeMqr2siRoe",
+    "description": "@jing__1017公開貼文列「繡花園戲劇團x明華園地字戲劇團」農曆九月行程，九月十五於內門清德堂演出。依當期2026年、貼文所列星期與香港天文台對照表換算國曆；貼文未明分各場由哪一團或哪一組演出，不推定單一團隊。本場劇目、時刻與個別演員未公布。來源為社群轉述，出發前請核對最新劇團或廟方公告。 官方Facebook農曆九月行程再次列出本場日期與地點；農曆日期換算依相關來源日曆。",
+    "link": "https://www.facebook.com/permalink.php?story_fbid=pfbid02bRzSrb6uU5S7TWpCCbMnwpy5bDRy37GNLhbXVTQDVouNQzupCRnLcCS1Gif6USE3l&id=61574134933376",
+    "linkLabel": "繡花園／明華園地字官方 Facebook 農曆九月戲路",
+    "sourceUrl": "https://www.facebook.com/permalink.php?story_fbid=pfbid02bRzSrb6uU5S7TWpCCbMnwpy5bDRy37GNLhbXVTQDVouNQzupCRnLcCS1Gif6USE3l&id=61574134933376",
     "relatedSourceUrls": [
-      "https://www.hko.gov.hk/tc/gts/time/calendar/pdf/files/2026.pdf"
+      "https://www.hko.gov.hk/tc/gts/time/calendar/pdf/files/2026.pdf",
+      "https://www.threads.com/@jing__1017/post/DeMqr2siRoe"
     ],
     "tags": [
       "繡花園",
@@ -2452,12 +2462,13 @@
     "location": "臺南市下營區大吉里大屯寮89～10號（紫雲寺；門牌依貼文）",
     "region": "南部",
     "status": "日期依2026年農曆換算；仍待劇團或主辦原公告交叉核實",
-    "description": "@jing__1017公開貼文列「繡花園戲劇團x明華園地字戲劇團」農曆九月行程，九月十八、十九於下營紫雲寺演出。依當期2026年、貼文所列星期與香港天文台對照表換算國曆；貼文未明分各場由哪一團或哪一組演出，不推定單一團隊。本場劇目、時刻與個別演員未公布。來源為社群轉述，出發前請核對最新劇團或廟方公告。",
-    "link": "https://www.threads.com/@jing__1017/post/DeMqr2siRoe",
-    "linkLabel": "Threads 農曆九月完整行程",
-    "sourceUrl": "https://www.threads.com/@jing__1017/post/DeMqr2siRoe",
+    "description": "@jing__1017公開貼文列「繡花園戲劇團x明華園地字戲劇團」農曆九月行程，九月十八、十九於下營紫雲寺演出。依當期2026年、貼文所列星期與香港天文台對照表換算國曆；貼文未明分各場由哪一團或哪一組演出，不推定單一團隊。本場劇目、時刻與個別演員未公布。來源為社群轉述，出發前請核對最新劇團或廟方公告。 官方Facebook農曆九月行程再次列出本場日期與地點；農曆日期換算依相關來源日曆。",
+    "link": "https://www.facebook.com/permalink.php?story_fbid=pfbid02bRzSrb6uU5S7TWpCCbMnwpy5bDRy37GNLhbXVTQDVouNQzupCRnLcCS1Gif6USE3l&id=61574134933376",
+    "linkLabel": "繡花園／明華園地字官方 Facebook 農曆九月戲路",
+    "sourceUrl": "https://www.facebook.com/permalink.php?story_fbid=pfbid02bRzSrb6uU5S7TWpCCbMnwpy5bDRy37GNLhbXVTQDVouNQzupCRnLcCS1Gif6USE3l&id=61574134933376",
     "relatedSourceUrls": [
-      "https://www.hko.gov.hk/tc/gts/time/calendar/pdf/files/2026.pdf"
+      "https://www.hko.gov.hk/tc/gts/time/calendar/pdf/files/2026.pdf",
+      "https://www.threads.com/@jing__1017/post/DeMqr2siRoe"
     ],
     "tags": [
       "繡花園",
@@ -2486,12 +2497,13 @@
     "location": "苗栗縣卓蘭鎮坪林里雙連106號（雙鳳宮）",
     "region": "中部",
     "status": "日期依2026年農曆換算；仍待劇團或主辦原公告交叉核實",
-    "description": "@jing__1017公開貼文列「繡花園戲劇團x明華園地字戲劇團」農曆九月行程，九月廿二於卓蘭雙鳳宮演出。依當期2026年、貼文所列星期與香港天文台對照表換算國曆；貼文未明分各場由哪一團或哪一組演出，不推定單一團隊。本場明列特邀陳昭香，夜戲《周公法鬥桃花女》；未列夜戲開演時刻。來源為社群轉述，出發前請核對最新劇團或廟方公告。",
-    "link": "https://www.threads.com/@jing__1017/post/DeMqr2siRoe",
-    "linkLabel": "Threads 農曆九月完整行程",
-    "sourceUrl": "https://www.threads.com/@jing__1017/post/DeMqr2siRoe",
+    "description": "@jing__1017公開貼文列「繡花園戲劇團x明華園地字戲劇團」農曆九月行程，九月廿二於卓蘭雙鳳宮演出。依當期2026年、貼文所列星期與香港天文台對照表換算國曆；貼文未明分各場由哪一團或哪一組演出，不推定單一團隊。本場明列特邀陳昭香，夜戲《周公法鬥桃花女》；未列夜戲開演時刻。來源為社群轉述，出發前請核對最新劇團或廟方公告。 官方Facebook農曆九月行程再次列出本場日期與地點；農曆日期換算依相關來源日曆。",
+    "link": "https://www.facebook.com/permalink.php?story_fbid=pfbid02bRzSrb6uU5S7TWpCCbMnwpy5bDRy37GNLhbXVTQDVouNQzupCRnLcCS1Gif6USE3l&id=61574134933376",
+    "linkLabel": "繡花園／明華園地字官方 Facebook 農曆九月戲路",
+    "sourceUrl": "https://www.facebook.com/permalink.php?story_fbid=pfbid02bRzSrb6uU5S7TWpCCbMnwpy5bDRy37GNLhbXVTQDVouNQzupCRnLcCS1Gif6USE3l&id=61574134933376",
     "relatedSourceUrls": [
-      "https://www.hko.gov.hk/tc/gts/time/calendar/pdf/files/2026.pdf"
+      "https://www.hko.gov.hk/tc/gts/time/calendar/pdf/files/2026.pdf",
+      "https://www.threads.com/@jing__1017/post/DeMqr2siRoe"
     ],
     "tags": [
       "繡花園",
@@ -2573,7 +2585,7 @@
     "date": "2026-10-10",
     "dateFormatted": "2026/10/10（六）",
     "daysAway": 2,
-    "time": "未公布",
+    "time": "14:30 酬神扮仙；扮仙後午戲；19:00 晚戲（依當日公告為準）",
     "troupe": "新吉歌劇團",
     "genre": "歌仔戲",
     "artist": "未公布",
@@ -2582,17 +2594,20 @@
     "badgeType": "temple",
     "verifyStatus": "community",
     "verifyLabel": "📣 Threads 演出公告・社群來源",
-    "location": "臺南市東山區（廟口；詳細場地未公布）",
+    "location": "臺南市東山區東河宮",
     "region": "南部",
-    "status": "時間、廟名及劇目未公布",
-    "description": "公開 Threads 貼文與海報明列新吉歌劇團於 2026/10/10 在臺南東山廟口演出；未載正戲時間、廟名、劇目或主辦資訊。公告來自自述劇團幫手的個人帳號，維持社群來源分類，詳細內容請向演出方或廟方確認。",
-    "link": "https://www.threads.com/@yolin1991/post/DeJmy9QGkbz",
-    "linkLabel": "Threads 演出資訊與海報",
-    "sourceUrl": "https://www.threads.com/@yolin1991/post/DeJmy9QGkbz",
+    "status": "10/8新貼文與海報補充14:30扮仙、扮仙後午戲及19:00晚戲；劇目未公布，晚戲依當日公告為準",
+    "description": "自述劇團幫手的公開Threads貼文與10/8海報列明新吉歌劇團2026/10/10於臺南市東山區東河宮酬神演出：14:30扮仙、扮仙後午戲，19:00晚戲（依當日公告為準）。未列劇目及主辦資訊，維持社群來源分類。",
+    "link": "https://www.threads.com/@yolin1991/post/DeOW8WNmuMi",
+    "linkLabel": "較新Threads演出資訊與海報",
+    "sourceUrl": "https://www.threads.com/@yolin1991/post/DeOW8WNmuMi",
     "tags": [
       "新吉歌劇團",
       "社群來源",
       "歌仔戲"
+    ],
+    "relatedSourceUrls": [
+      "https://www.threads.com/@yolin1991/post/DeJmy9QGkbz"
     ]
   },
   {
