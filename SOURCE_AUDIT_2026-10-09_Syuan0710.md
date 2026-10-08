@@ -22,3 +22,11 @@
 ## 驗收與發布
 
 - 執行單元測試、排程 schema、卡片 ID 去重、原資料保留、`node --check assets/app.js` 及 `git diff --check`；發布後記錄 Actions 與公開卡片核對結果。
+
+## 發布驗收收據
+
+- 驗收時間：2026-10-09T00:04:49+08:00。
+- 資料提交：`ddd8780009a02a53228daad746bc9cc15d6a6b16`。
+- [Actions 37805591650](https://github.com/eric1810-tw/taiwan-opera-calendar/actions/runs/37805591650) 第一次 Pages 建置回傳 HTTP 500，第二次 attempt completed/success。
+- 公開 schedule.json 已出現四張本次卡片，均為 `community`，地區與本地資料相符。
+- 公開 patrol_status.json 與本地一致；此單則貼文核查不改完整巡檢狀態。
