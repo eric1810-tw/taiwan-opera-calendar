@@ -32,7 +32,9 @@
 - `git diff --check`：通過。
 - 另以 `updater.validate_schedule` 驗證 113 張卡；日期可解析、ID 無重複、必填欄位及 URL 有效格式檢查通過；確認 `index.html` 載入 `assets/app.js` 且前端讀取 `./data/schedule.json`；社群來源驗證等級未提升；巡檢狀態與來源覆蓋計算均為 `failed`。
 - 最終資料 SHA256：`data/schedule.json` `76711b28dd9279f296dd15e38d635a728ddeef62f53dc7715463f61995663d0a`；`data/metadata.json` `c0dd13f63e010d0d11e85353e3a44b75d90fa18b1ae362eb0e677f34e71c6e3e`（未變）；`data/patrol_status.json` `a2c783f1a087420ad8bff0a91673af3052a7bb8e54dccd9a00aeddc41e0883e3`。
-- 推送、對應 Actions `completed/success`、公開網站狀態檔比對：待資料提交後驗證；在核對完成前不宣稱已上線。
+- 推送：資料提交 `ffb104a1cc23aa446776a454a3aa169a07450d4a` 已推送至 `main`。
+- GitHub Actions：`.github/workflows/daily-update.yml` run `37830259024` 對應同一 SHA，狀態 `completed/success`。
+- 公開網站：`patrol_progress.py verify` 於 2026-10-09T03:13:52+08:00 核對成功，公開 `data/patrol_status.json` 為 `startedAt=2026-10-09T03:01:24+08:00`、`status=failed`，與本輪狀態一致。此處的 failed 是真實覆蓋結果；部署本身成功。詳見獨立收據 `PATROL_2026-10-09_0300_RECEIPT.md`。
 
 ## 接續事項
 
