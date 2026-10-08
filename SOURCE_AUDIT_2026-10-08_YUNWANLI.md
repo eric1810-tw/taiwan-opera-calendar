@@ -21,3 +21,11 @@
 
 - 提交前17項單元測試、JavaScript 語法、schema、去重及 diff 檢查通過；移除新增卡後資料與遠端整合後的原表完全相同。僅本來源紀錄和 schedule.json 屬此次提交範圍。
 - 部署完成與公開 JSON 核對結果於發布後留下驗收收據；未核對前不宣稱已上線。
+
+## 發布驗收收據
+
+- 驗收時間：2026-10-08T22:53:52+08:00。
+- 資料提交：`3e4e442affcf7fff929ddc538648b0516ab4fa5f`。
+- [Actions 37796129958](https://github.com/eric1810-tw/taiwan-opera-calendar/actions/runs/37796129958) 已 completed/success。
+- 公開 schedule.json 中只有一張本場卡，所有欄位與本地核對一致。
+- 公開 patrol_status.json 仍為2026-10-08T07:44:15+08:00、failed，與本地一致；沒有把此定點查核誤當整輪巡檢成功。
