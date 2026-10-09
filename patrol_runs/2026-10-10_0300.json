@@ -1,7 +1,9 @@
 {
   "version": 1,
   "startedAt": "2026-10-10T02:56:34+08:00",
-  "resumedAt": [],
+  "resumedAt": [
+    "2026-10-10T07:34:05+08:00"
+  ],
   "sources": {
     "threads:joe_huang_k_w": {
       "url": "https://www.threads.com/@joe_huang_k_w",
@@ -276,6 +278,15 @@
           "scope": "讀到母貼文文字與7小時前時間，但圖片頁仍全為載入骨架；畫面呈Threads載入標誌，無可辨文字/圖像",
           "media": "unread",
           "detail": "媒體URL在單獨頁面重試後仍不可讀，未能核對貼文是否有演出日期/地點；此為第三次嘗試，後續須換已確認可用路徑或保留未讀。"
+        },
+        {
+          "at": "2026-10-10T07:36:36+08:00",
+          "method": "reopen in-app Threads profile after session refresh, then scroll one viewport group and open direct media page",
+          "url": "https://www.threads.com/@yolin1991",
+          "state": "partial",
+          "scope": "reloaded profile and read four visible posts at about 11h, 17h, 1 day and 3 days; scrolled to expose the 3-day post; direct post media page opened but image remained a Threads loading-logo screen; feed still showed loading indicator and did not reach full 7-day coverage",
+          "media": "partial",
+          "detail": "11h post says “有預告很很趕” but its image is a costume portrait, no event information visible; 17h is general opera commentary; 1-day pinned post lists 新吉歌劇團 10/10 台南東山東河宮, 14:30 酬神扮仙 followed by 午戲, 19:00 evening performance subject to same-day notice, matching existing xj-2026-10-10-dongshan; 3-day post repeats the 10/10 東山廟口 event without exact time, but its poster media URL https://www.threads.com/@yolin1991/post/DeJmy9QGkbz/media did not finish loading. New observation adds no event card or fields."
         }
       ]
     },
@@ -533,7 +544,7 @@
     },
     "culture": {
       "url": "data/moc_candidates.json",
-      "state": "failed",
+      "state": "complete",
       "attempts": [
         {
           "at": "2026-10-10T03:11:49+08:00",
@@ -561,6 +572,15 @@
           "scope": "web open direct URL access tried; no payload acquired",
           "media": "not_applicable",
           "detail": "03:02附近web open指出該URL不可由此工具存取。三條獨立路徑都不可用；舊本地候選並非今日讀取結果。"
+        },
+        {
+          "at": "2026-10-10T07:35:55+08:00",
+          "method": "curl official Culture API via network-enabled retry; parse complete JSON; compare candidate program IDs/date ranges against existing schedule; open nine OPENTIX program pages",
+          "url": "https://cloud.culture.tw/frontsite/trans/SearchShowAction.do?method=doFindTypeJ&category=all",
+          "state": "complete",
+          "scope": "HTTP 200 full JSON response (3,687,270 bytes, 1,622 records); updater candidate filter found 34 records in the next 90 days; checked imageUrl fields (none among candidates); verified nine candidate OPENTIX pages and matched all current eligible performances to existing schedule cards by official program ID and date/endDate range",
+          "media": "not_applicable",
+          "detail": "Retry succeeded after prior DNS/ERR_BLOCKED_BY_CLIENT failures using network-enabled curl. No new schedule entry: current cards already cover the nine initially unmatched program links when de-duplicated by official program ID and date range (including yuanhe-2026-10-30, yr-2026-10-17, hm-2026-10-17, wz-2026-10-31, lqc-2026-10-10, child-puppets-2026-10-31, mhy-flagship-2026-11-20, tmy-tc-2026-12-26, tmc-2026-11-22). Existing 2027 三昧堂展覽候選 remains in data/moc_candidates.json. No poster image URLs among extracted candidates; no visual-media review applicable."
         }
       ]
     },
@@ -580,18 +600,9 @@
       ]
     }
   },
-  "finalizedAt": "2026-10-10T03:18:47+08:00",
+  "finalizedAt": "2026-10-10T07:36:45+08:00",
   "publication": {
-    "state": "verified",
-    "sha": "5b290c871128207bd161bae882ea449afebf699c",
-    "actionsRun": "37979681070",
-    "actionsUrl": "https://github.com/eric1810-tw/taiwan-opera-calendar/actions/runs/37979681070",
-    "publicUrl": "https://eric1810-tw.github.io/taiwan-opera-calendar/data/patrol_status.json",
-    "verifiedAt": "2026-10-10T03:23:43+08:00",
-    "publicStatus": {
-      "startedAt": "2026-10-10T02:56:34+08:00",
-      "status": "failed"
-    }
+    "state": "pending"
   },
   "activeTargets": [
     "threads:joe_huang_k_w",
