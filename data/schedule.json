@@ -1763,6 +1763,34 @@
     ]
   },
   {
+    "id": "tcpt-2026-11-07-shengjianfengyun-3",
+    "date": "2026-11-07",
+    "dateFormatted": "2026/11/07（六）",
+    "daysAway": 29,
+    "time": "14:30",
+    "troupe": "台中木偶劇團",
+    "genre": "布袋戲",
+    "artist": "未公布",
+    "title": "科技布袋戲《聖劍風雲三–龍虎兄弟》",
+    "category": "售票演出 / 社群來源",
+    "badgeType": "ticket",
+    "verifyStatus": "community",
+    "verifyLabel": "📣 台中木偶劇團 Facebook 公告；OPENTIX 短連結目前失效",
+    "location": "臺中市屯區藝文中心實驗劇場",
+    "region": "中部",
+    "status": "劇團公開貼文列 11/7 14:30、票價 300 元；貼文售票短連結目前導向不存在頁面，請向劇團或場館確認售票狀態",
+    "description": "台中木偶劇團公開 Facebook 貼文列出 2026/11/7（六）14:30，於臺中市屯區藝文中心實驗劇場演出科技布袋戲《聖劍風雲三–龍虎兄弟》，票價 300 元。貼文附 OPENTIX 售票短連結，但目前開啟後顯示該頁不存在；本卡依劇團公告列為社群來源，售票狀態待確認。貼文稱早鳥 7 折期限為 9/15–10/15，贈品為主角白陽生限定鑰匙圈。",
+    "link": "https://www.facebook.com/Taichungpuppettheater/posts/pfbid02VPKQ74HgK5XP7RHJhiNiEsR6Brn1RtixsrgBPHApXqGP5Mf4t6joqBezUNMjH3xSl",
+    "linkLabel": "台中木偶劇團 Facebook 原始公告",
+    "sourceUrl": "https://www.facebook.com/Taichungpuppettheater/posts/pfbid02VPKQ74HgK5XP7RHJhiNiEsR6Brn1RtixsrgBPHApXqGP5Mf4t6joqBezUNMjH3xSl",
+    "tags": [
+      "台中木偶劇團",
+      "科技布袋戲",
+      "社群來源",
+      "其他布袋戲"
+    ]
+  },
+  {
     "id": "sc-2026-11-15-jinshatan",
     "date": "2026-11-15",
     "dateFormatted": "2026/11/15（日）",
