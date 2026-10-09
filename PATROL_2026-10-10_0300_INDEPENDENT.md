@@ -411,5 +411,5 @@
 
 - 規程要求的 `python3 -m unittest -v`（17/17 PASS）、`node --check assets/app.js`（PASS）、`git diff --check`（PASS）與排程 schema/日期/ID/重複檢查（111 筆、ID 唯一、目標卡連結存在；PASS）已在本輪最終資料上執行。
 - 最終 finalize 為 `failed`，因文化部來源不可讀；19 個社群來源讀取不完整並保持 partial。此為來源覆蓋狀態，不等同發布狀態。
-- 發布與 SHA、Actions workflow、公開 `patrol_status.json` 核驗及收據將在推送後另行記錄；在該核驗完成前不得稱已上線。
+- 本輪資料提交 SHA `5b290c871128207bd161bae882ea449afebf699c` 已推送；對應 `.github/workflows/daily-update.yml` Actions run `37979681070` 為 `completed/success`，`patrol_progress.py verify` 核對公開狀態 `{startedAt: 2026-10-10T02:56:34+08:00, status: failed}` 一致。公開 schedule JSON 為 111 筆，與本地檔案位元組相同；明華園新連結及蘭陽修正連結均已出現在公開 JSON。SHA-256 與驗收時間見 `PATROL_2026-10-10_0300_RECEIPT.md`。
 - 若後續要補讀：以 `python3 scripts/patrol_progress.py resume --run patrol_runs/2026-10-10_0300.json` 恢復本輪，先處理 Culture 及 partial 來源；隔日另建新輪。
