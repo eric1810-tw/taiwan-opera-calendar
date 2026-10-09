@@ -11,3 +11,12 @@
 - 網站資料刷新時間：`data/metadata.json` 的 `lastUpdated` 為 `2026-10-09T10:41:36+08:00`；與本輪巡檢開始時間分開保存。
 - 本地測試：17/17 unittest PASS；`node --check assets/app.js` PASS；`git diff --check` PASS；排程 schema/日期/唯一 ID/目標來源檢查 PASS。
 - 覆蓋限制：文化部當期端點三次讀取失敗；19 個 Threads/Facebook 來源因近 7 日內容或媒體範圍未完整讀取而維持 partial。詳見 [PATROL_2026-10-10_0300_INDEPENDENT.md](PATROL_2026-10-10_0300_INDEPENDENT.md)。
+
+## 重試後覆蓋狀態驗收
+
+- 重試：恢復 `patrol_runs/2026-10-10_0300.json`；Culture API 以 curl 成功讀取完整 1,622 筆，候選篩選 34 筆、核對 9 個 OPENTIX 頁面，演出均已由現有卡片覆蓋；另重讀新吉 Threads 及繡花園／明華園地字 Facebook 近期貼文。Culture 由 failed 恢復為 complete，社群仍 partial，因此總狀態由 failed 改為 partial。
+- 新狀態資料 SHA：`16adf82328be58dc3456bd3c9a079ea6cdde74b4`，已推送至 `origin/main`。排程 JSON 未變更；SHA 是包含本輪 run JSON、報告及 `data/patrol_status.json=partial` 的資料提交。
+- 對應 [Actions run 38005309417](https://github.com/eric1810-tw/taiwan-opera-calendar/actions/runs/38005309417)：head SHA 相同，`.github/workflows/daily-update.yml` `completed/success`。
+- 07:39:20+08:00 再次執行 `patrol_progress.py verify` 成功；公開狀態 `{"startedAt":"2026-10-10T02:56:34+08:00","status":"partial"}` 與 finalize 一致。
+- 公開 schedule 仍為 111 筆並與本地位元組相同，SHA-256 `06ba5d68c95f1c3030744bf27f0aa64ea19ddca67196b827f7faa33470f471d1`；公開及本地 `data/patrol_status.json` SHA-256 均為 `5703c039335d2bfacc690d9140c25bd3cd0f6c1983dfbb7e376582d0b0f98303`。metadata lastUpdated 仍為 `2026-10-09T10:41:36+08:00`，未與巡檢時間混用。
+- 本輪測試仍為 17/17 unittest、JS syntax、diff check 與 111 筆排程檢查全部 PASS。來源覆蓋 partial 代表社群讀取不完整，不是無新資訊或發布失敗。

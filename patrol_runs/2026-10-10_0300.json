@@ -434,6 +434,15 @@
           "scope": "讀到團名、聯絡資訊及精選內容115年農曆九月戲路文本；沒有讀到完整近7日貼文串，戲路月份日期需轉換並對照",
           "media": "unread",
           "detail": "精選內容列鳳山天公廟、旗津龍漢府、佳里應元宮、燕巢中安宮、溪頂寮代天宮、內門清德堂、下營紫雲寺、卓蘭雙鳳宮等農曆戲路；未逐場核日曆及近期貼文。"
+        },
+        {
+          "at": "2026-10-10T07:39:12+08:00",
+          "method": "in-app Facebook profile after hydration; scroll to feed; expand post and open attached photo viewer",
+          "url": "https://www.facebook.com/profile.php?id=61574134933376",
+          "state": "partial",
+          "scope": "read 2-day official lunar September itinerary, its 2 comments, and expanded 6-day post; opened the itinerary post image but it was a group photo, not a schedule graphic; feed loaded through 6 days with no proof of full 7-day coverage, other image(s) and later pagination not fully reviewed",
+          "media": "partial",
+          "detail": "Official recent post states lunar 9/1–10 at 鳳山天公廟 with 09:00–12:00 and 14:00–17:00; 9/7–9 at 旗津龍漢府; 9/11–12 佳里應元宮; 9/14–16 燕巢中安宮; 9/15 溪頂寮代天宮 and 內門清德堂; 9/18–19 下營紫雲寺; 9/22 卓蘭雙鳳宮 with 陳昭香 and night performance 周公法鬥桃花女; 9/26–30 appears without a venue in the readable post. Comment asks Fengshan Tian Gong Temple evening time; official page reply says no evening performance, consistent with existing daytime 09:00–12:00/14:00–17:00 card siouhuayuan-2026-10-10-fengshan. Expanded 6-day post is an already-past 2026/10/04 潮州國小旁《孫臏兵法》 show, 18:30 五路財神 and 19:00 show; no future card needed. Route items match existing schedule cards where venue/date are stated; no new or corrected card. Image viewer showed only a troupe group photo and could not verify remaining media."
         }
       ]
     },
@@ -600,9 +609,18 @@
       ]
     }
   },
-  "finalizedAt": "2026-10-10T07:36:45+08:00",
+  "finalizedAt": "2026-10-10T07:39:12+08:00",
   "publication": {
-    "state": "pending"
+    "state": "verified",
+    "sha": "16adf82328be58dc3456bd3c9a079ea6cdde74b4",
+    "actionsRun": "38005309417",
+    "actionsUrl": "https://github.com/eric1810-tw/taiwan-opera-calendar/actions/runs/38005309417",
+    "publicUrl": "https://eric1810-tw.github.io/taiwan-opera-calendar/data/patrol_status.json",
+    "verifiedAt": "2026-10-10T07:39:20+08:00",
+    "publicStatus": {
+      "startedAt": "2026-10-10T02:56:34+08:00",
+      "status": "partial"
+    }
   },
   "activeTargets": [
     "threads:joe_huang_k_w",

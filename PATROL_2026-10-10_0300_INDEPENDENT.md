@@ -1,7 +1,7 @@
 # 2026-10-10 03:00 獨立巡檢紀錄
 
 - 巡檢開始：2026-10-10T02:56:34+08:00（Asia/Taipei）；資料刷新時間另見 `data/metadata.json` `lastUpdated=2026-10-09T10:41:36+08:00`，兩者分開記錄。
-- 恢復後最終覆蓋：**partial**；目標 21 項、嘗試紀錄 52 筆；Threads／Facebook 19 項 partial、文化部 complete、GitHub Issues complete。
+- 恢復後最終覆蓋：**partial**；目標 21 項、嘗試紀錄 53 筆；Threads／Facebook 19 項 partial、文化部 complete、GitHub Issues complete。
 - 部分帳號的近 7 日貼文或媒體未完整讀取；不可把 partial 解讀成「無新資訊」。逐來源、逐次嘗試的時間、方法、公開 URL、正文／媒體範圍、結果與失敗原因如下。
 
 ## Threads @joe_huang_k_w — partial
@@ -284,7 +284,7 @@
 - 讀取範圍：expanded the current approximately 6-hour official post and opened its lead image in Facebook photo viewer; did not verify every current-week feed item or all carousel/media
 - 結果／失敗原因：Full visible text states Oct 9 彰化溪州《王老虎搶親》 and Oct 10 屏東《旺來神》, 16:00 art activity and 19:00 performance, free, screen location at 屏東縣立體育館前草皮 (勝利路9號); both match existing cards. Lead image viewer did not yield a complete read of all media. Existing mh-2026-10-10 link now points to this official post; sourceUrl remains foundation announcement, verifyStatus unchanged.
 
-## Facebook page 61574134933376 — partial
+## Facebook 繡花園戲劇團x明華園地字戲劇團 — partial
 
 ### 嘗試 1 — 2026-10-10T03:00:27+08:00
 - 方法：in-app-public-profile
@@ -299,6 +299,13 @@
 - 狀態：partial；媒體：unread
 - 讀取範圍：讀到團名、聯絡資訊及精選內容115年農曆九月戲路文本；沒有讀到完整近7日貼文串，戲路月份日期需轉換並對照
 - 結果／失敗原因：精選內容列鳳山天公廟、旗津龍漢府、佳里應元宮、燕巢中安宮、溪頂寮代天宮、內門清德堂、下營紫雲寺、卓蘭雙鳳宮等農曆戲路；未逐場核日曆及近期貼文。
+
+### 嘗試 3 — 2026-10-10T07:39:12+08:00
+- 方法：in-app Facebook profile after hydration; scroll to feed; expand post and open attached photo viewer
+- 公開網址：https://www.facebook.com/profile.php?id=61574134933376
+- 狀態：partial；媒體：partial
+- 讀取範圍：read 2-day official lunar September itinerary, its 2 comments, and expanded 6-day post; opened the itinerary post image but it was a group photo, not a schedule graphic; feed loaded through 6 days with no proof of full 7-day coverage, other image(s) and later pagination not fully reviewed
+- 結果／失敗原因：Official recent post states lunar 9/1–10 at 鳳山天公廟 with 09:00–12:00 and 14:00–17:00; 9/7–9 at 旗津龍漢府; 9/11–12 佳里應元宮; 9/14–16 燕巢中安宮; 9/15 溪頂寮代天宮 and 內門清德堂; 9/18–19 下營紫雲寺; 9/22 卓蘭雙鳳宮 with 陳昭香 and night performance 周公法鬥桃花女; 9/26–30 appears without a venue in the readable post. Comment asks Fengshan Tian Gong Temple evening time; official page reply says no evening performance, consistent with existing daytime 09:00–12:00/14:00–17:00 card siouhuayuan-2026-10-10-fengshan. Expanded 6-day post is an already-past 2026/10/04 潮州國小旁《孫臏兵法》 show, 18:30 五路財神 and 19:00 show; no future card needed. Route items match existing schedule cards where venue/date are stated; no new or corrected card. Image viewer showed only a troupe group photo and could not verify remaining media.
 
 ## Facebook mhysun — partial
 
@@ -412,17 +419,18 @@
 
 ## 核對結果與資料異動
 
-- Threads 可見的 10/30 竹南演出、秀琴 11/7《玉石變》及 11/15《金沙灘》、近期電視播出候選與新吉 10/10 東山場均已有卡片；無重複新增。新吉 Yolin 帳號重試讀到 11 小時、17 小時、1 日及 3 日前貼文；3 日前貼文媒體頁仍停在 Threads 載入畫面，1 日前的 10/10 場次與既有 `xj-2026-10-10-dongshan` 相符。
+- Threads 可見的 10/30 竹南演出、秀琴 11/7《玉石變》及 11/15《金沙灘》、近期電視播出候選與新吉 10/10 東山場均已有卡片；無重複新增。新吉 Yolin 帳號重試讀到 11 小時、17 小時、1 日及 3 日前貼文；1 日前 10/10 場次與既有 `xj-2026-10-10-dongshan` 相符；3 日前貼文的圖片頁持續載入，未讀到海報內容。
+- 繡花園／明華園地字官方 Facebook 重試讀到農曆九月戲路；鳳山天公廟 9/1–10 的既有卡列 09:00–12:00、14:00–17:00，團方留言回覆晚上沒有演出，兩者一致。其餘有明確日期地點的行程卡均已存在；9/26–30 的可讀貼文未列地點，不補造卡。另讀到 10/4 潮州《孫臏兵法》完整演出資料，日期已過，不新增卡。
 - Threads @jing__1017 的《六郎告御狀》播出時刻與第三方 EPG 的 09:00／22:00 有衝突；本輪無法找到可完整核對的公視官方時刻表。保留候選，不調整卡片。
 - 明華園天字 10/10 屏東《旺來神》及 10/9 溪州場與既有卡片相符。`mh-2026-10-10` 的詳情 link 改到團方最新官方公告；基金會 sourceUrl 與 verified 狀態保留。
 - 蘭陽 10/26《錯配姻緣》舊 link 實際導向無關回顧，已改成正確團方行程公告；維持 community。
-- 文化部來源恢復：本輪再次以網路啟用的 curl 成功讀取官方全類別 JSON，HTTP 200、1,622 筆；候選篩選得 34 筆，並核對 9 個 OPENTIX 官方節目頁。以 OPENTIX program ID 與日期／endDate 去重後，演出均已在排程卡覆蓋；合唱團《英雄路－布袋戲聲音行旅》屬音樂類、不新增戲曲卡；2027 三昧堂展覽維持待核候選。無新增卡。
+- 文化部來源恢復：官方全類別 JSON HTTP 200、1,622 筆；候選篩選得 34 筆，並核對 9 個 OPENTIX 官方節目頁。以 OPENTIX program ID 與日期／endDate 去重後，演出均已在排程卡覆蓋；合唱團《英雄路－布袋戲聲音行旅》屬音樂類，不新增戲曲卡；2027 三昧堂展覽維持待核候選。無新增卡。
 - 文化部候選中的相關 imageUrl 欄位皆空；此次以 JSON 演出欄位和 OPENTIX 頁面核對，無媒體素材可另讀。
 - GitHub `state=all` 全部 2 件 Issue 均已打開核對，沒有本輪新留言或異動。
 - 本輪公開資料異動只有明華園及蘭陽既有卡的詳情連結更正；未知欄位未臆填。
 
 ## 驗證、發布與接續
 
-- 最初資料 SHA `5b290c871128207bd161bae882ea449afebf699c` 的 Actions `37979681070` 曾成功部署 `failed` 狀態。此次恢復使覆蓋從 failed 變為 partial，`finalize` 已將 `data/patrol_status.json` 改為 partial；恢復後新狀態的發布驗收待完成。
-- 最近一次本輪驗證：17/17 unittest、`node --check assets/app.js`、`git diff --check` 及排程 schema／日期／ID 檢查通過；本次恢復沒有排程資料變更。狀態改為 partial 後會再次執行必要檢查。
-- 以 `python3 scripts/patrol_progress.py resume --run patrol_runs/2026-10-10_0300.json` 接續本輪。文化部來源已讀完；仍需補讀 19 個 Threads／Facebook 帳號近 7 日未涵蓋部分及未讀媒體。
+- 恢復後資料提交 SHA `16adf82328be58dc3456bd3c9a079ea6cdde74b4` 已推送；對應 Actions run `38005309417`（`.github/workflows/daily-update.yml`）completed/success。`patrol_progress.py verify` 再次確認公開狀態 `{startedAt: 2026-10-10T02:56:34+08:00, status: partial}` 一致。
+- 本輪重新執行 17/17 unittest、`node --check assets/app.js`、`git diff --check` 及 111 筆排程 schema／日期／唯一 ID 檢查，均通過。
+- 巡檢與發布收據見 `PATROL_2026-10-10_0300_RECEIPT.md`。仍需補讀 19 個 Threads／Facebook 帳號近 7 日未涵蓋部分及未讀媒體；如需續補，使用 `python3 scripts/patrol_progress.py resume --run patrol_runs/2026-10-10_0300.json`。
