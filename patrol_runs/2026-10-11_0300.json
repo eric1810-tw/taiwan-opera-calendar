@@ -1,0 +1,574 @@
+{
+  "version": 1,
+  "startedAt": "2026-10-11T02:57:55+08:00",
+  "resumedAt": [],
+  "sources": {
+    "threads:joe_huang_k_w": {
+      "url": "https://www.threads.com/@joe_huang_k_w",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-11T02:58:43+08:00",
+          "method": "profile-browser",
+          "url": "https://www.threads.com/@joe_huang_k_w",
+          "state": "partial",
+          "scope": "2026-10-04至10-11可见近期主页，读到10/9三场廟會貼文正文、10/8苗栗竹南10/30預告正文；其餘動態與串文未載完",
+          "media": "unread",
+          "detail": "平台正常、近期文字局部可讀；三場演出照片雖有縮圖但未開圖讀戲路表，另有載入中骨架，不能視為帳號讀完。"
+        }
+      ]
+    },
+    "threads:h.akito_1996": {
+      "url": "https://www.threads.com/@h.akito_1996",
+      "state": "failed",
+      "attempts": [
+        {
+          "at": "2026-10-11T02:58:43+08:00",
+          "method": "profile-browser",
+          "url": "https://www.threads.com/@h.akito_1996",
+          "state": "failed",
+          "scope": "初次頁面導航後僅讀到帳號名稱／簡介，貼文欄全為載入中骨架",
+          "media": "unread",
+          "detail": "正文、近期日期及媒體均未讀；原因：Threads feed未載入，先保留失敗並診斷共同頁面狀態。"
+        },
+        {
+          "at": "2026-10-11T03:01:37+08:00",
+          "method": "anonymous-public-http",
+          "url": "https://www.threads.com/@h.akito_1996",
+          "state": "failed",
+          "scope": "直接公開頁 GET（HTTP 200 277386，277386 bytes）；正文／媒體仍不可核讀",
+          "media": "unread",
+          "detail": "替代路徑匿名 HTTPS GET：HTTP 200 277386；277386 bytes。未取得可逐篇核讀的近期正文／媒體；只含頁面殼層或未能確認近期貼文範圍。"
+        },
+        {
+          "at": "2026-10-11T03:01:59+08:00",
+          "method": "profile-browser-recheck",
+          "url": "https://www.threads.com/@h.akito_1996",
+          "state": "failed",
+          "scope": "重開公開帳號後帳號框架顯示，貼文區仍為載入中骨架；近期正文／媒體不可讀",
+          "media": "unread",
+          "detail": "診斷同平台其他帳號時重檢，結果與初次一致；匿名HTTPS替代路徑另見本輪下一筆嘗試，未把回應200當成貼文可讀。"
+        },
+        {
+          "at": "2026-10-11T03:02:05+08:00",
+          "method": "profile-browser-recheck",
+          "url": "https://www.threads.com/@h.akito_1996",
+          "state": "failed",
+          "scope": "重開公開帳號後帳號框架顯示，貼文區仍為載入中骨架；近期正文／媒體不可讀",
+          "media": "unread",
+          "detail": "診斷同平台其他帳號時重檢，結果與初次一致；匿名 HTTPS 替代路徑另有後續紀錄，未把回應 200 當成貼文可讀。"
+        }
+      ]
+    },
+    "threads:the_rin.lpm": {
+      "url": "https://www.threads.com/@the_rin.lpm",
+      "state": "failed",
+      "attempts": [
+        {
+          "at": "2026-10-11T02:58:43+08:00",
+          "method": "profile-browser",
+          "url": "https://www.threads.com/@the_rin.lpm",
+          "state": "failed",
+          "scope": "初次頁面導航後檔頭可見，貼文欄仍為載入中骨架",
+          "media": "unread",
+          "detail": "正文、日期與媒體未讀；原因：feed未載入，沒有判斷為無新資訊。"
+        },
+        {
+          "at": "2026-10-11T03:01:37+08:00",
+          "method": "anonymous-public-http",
+          "url": "https://www.threads.com/@the_rin.lpm",
+          "state": "failed",
+          "scope": "直接公開頁 GET（HTTP 200 277373，277373 bytes）；正文／媒體仍不可核讀",
+          "media": "unread",
+          "detail": "替代路徑匿名 HTTPS GET：HTTP 200 277373；277373 bytes。未取得可逐篇核讀的近期正文／媒體；只含頁面殼層或未能確認近期貼文範圍。"
+        },
+        {
+          "at": "2026-10-11T03:01:59+08:00",
+          "method": "profile-browser-recheck",
+          "url": "https://www.threads.com/@the_rin.lpm",
+          "state": "failed",
+          "scope": "重開公開帳號後貼文欄仍全為載入中骨架，無近期正文或媒體資訊",
+          "media": "unread",
+          "detail": "連續兩次瀏覽器同樣顯示 skeleton；已轉匿名 HTTPS 替代路徑，該方法紀錄在本輪後續。"
+        },
+        {
+          "at": "2026-10-11T03:02:07+08:00",
+          "method": "profile-browser-recheck",
+          "url": "https://www.threads.com/@the_rin.lpm",
+          "state": "failed",
+          "scope": "重開公開帳號後貼文欄仍全為載入中骨架，無近期正文或媒體資訊",
+          "media": "unread",
+          "detail": "連續兩次瀏覽器同樣顯示 skeleton；已轉匿名 HTTPS 替代路徑，該方法紀錄於本輪下一筆。"
+        }
+      ]
+    },
+    "threads:1013.yr_": {
+      "url": "https://www.threads.com/@1013.yr_",
+      "state": "failed",
+      "attempts": [
+        {
+          "at": "2026-10-11T02:58:43+08:00",
+          "method": "profile-browser",
+          "url": "https://www.threads.com/@1013.yr_",
+          "state": "failed",
+          "scope": "初次頁面導航後只見帳號外框，未取得可讀貼文正文",
+          "media": "unread",
+          "detail": "近期日期、正文與媒體未讀；原因：feed未載入／可讀狀態未知。"
+        },
+        {
+          "at": "2026-10-11T03:01:38+08:00",
+          "method": "anonymous-public-http",
+          "url": "https://www.threads.com/@1013.yr_",
+          "state": "failed",
+          "scope": "直接公開頁 GET（HTTP 200 277376，277376 bytes）；正文／媒體仍不可核讀",
+          "media": "unread",
+          "detail": "替代路徑匿名 HTTPS GET：HTTP 200 277376；277376 bytes。未取得可逐篇核讀的近期正文／媒體；只含頁面殼層或未能確認近期貼文範圍。"
+        }
+      ]
+    },
+    "threads:xuefeng_lu_": {
+      "url": "https://www.threads.com/@xuefeng_lu_",
+      "state": "failed",
+      "attempts": [
+        {
+          "at": "2026-10-11T02:58:43+08:00",
+          "method": "profile-browser",
+          "url": "https://www.threads.com/@xuefeng_lu_",
+          "state": "failed",
+          "scope": "初次頁面導航後帳號頁可見，貼文欄持續載入中",
+          "media": "unread",
+          "detail": "近期日期、正文與媒體未讀；原因：feed未載入。"
+        },
+        {
+          "at": "2026-10-11T03:01:38+08:00",
+          "method": "anonymous-public-http",
+          "url": "https://www.threads.com/@xuefeng_lu_",
+          "state": "failed",
+          "scope": "直接公開頁 GET（HTTP 200 279266，279266 bytes）；正文／媒體仍不可核讀",
+          "media": "unread",
+          "detail": "替代路徑匿名 HTTPS GET：HTTP 200 279266；279266 bytes。未取得可逐篇核讀的近期正文／媒體；只含頁面殼層或未能確認近期貼文範圍。"
+        }
+      ]
+    },
+    "threads:yuzhongluo": {
+      "url": "https://www.threads.com/@yuzhongluo",
+      "state": "failed",
+      "attempts": [
+        {
+          "at": "2026-10-11T02:58:43+08:00",
+          "method": "profile-browser",
+          "url": "https://www.threads.com/@yuzhongluo",
+          "state": "failed",
+          "scope": "初次頁面導航後帳號頁可見，貼文欄持續載入中",
+          "media": "unread",
+          "detail": "近期日期、正文與媒體未讀；原因：feed未載入。"
+        },
+        {
+          "at": "2026-10-11T03:01:39+08:00",
+          "method": "anonymous-public-http",
+          "url": "https://www.threads.com/@yuzhongluo",
+          "state": "failed",
+          "scope": "直接公開頁 GET（HTTP 200 277363，277363 bytes）；正文／媒體仍不可核讀",
+          "media": "unread",
+          "detail": "替代路徑匿名 HTTPS GET：HTTP 200 277363；277363 bytes。未取得可逐篇核讀的近期正文／媒體；只含頁面殼層或未能確認近期貼文範圍。"
+        }
+      ]
+    },
+    "threads:taiwaneseopera168": {
+      "url": "https://www.threads.com/@taiwaneseopera168",
+      "state": "failed",
+      "attempts": [
+        {
+          "at": "2026-10-11T02:58:43+08:00",
+          "method": "profile-browser",
+          "url": "https://www.threads.com/@taiwaneseopera168",
+          "state": "failed",
+          "scope": "初次頁面導航後帳號頁可見，貼文欄持續載入中",
+          "media": "unread",
+          "detail": "近期日期、正文與媒體未讀；原因：feed未載入。"
+        },
+        {
+          "at": "2026-10-11T03:01:39+08:00",
+          "method": "anonymous-public-http",
+          "url": "https://www.threads.com/@taiwaneseopera168",
+          "state": "failed",
+          "scope": "直接公開頁 GET（HTTP 200 277366，277366 bytes）；正文／媒體仍不可核讀",
+          "media": "unread",
+          "detail": "替代路徑匿名 HTTPS GET：HTTP 200 277366；277366 bytes。未取得可逐篇核讀的近期正文／媒體；只含頁面殼層或未能確認近期貼文範圍。"
+        }
+      ]
+    },
+    "threads:jing__1017": {
+      "url": "https://www.threads.com/@jing__1017",
+      "state": "failed",
+      "attempts": [
+        {
+          "at": "2026-10-11T02:58:43+08:00",
+          "method": "profile-browser",
+          "url": "https://www.threads.com/@jing__1017",
+          "state": "failed",
+          "scope": "初次頁面導航後帳號頁可見，貼文欄持續載入中",
+          "media": "unread",
+          "detail": "近期日期、正文與媒體未讀；原因：feed未載入。"
+        },
+        {
+          "at": "2026-10-11T03:01:39+08:00",
+          "method": "anonymous-public-http",
+          "url": "https://www.threads.com/@jing__1017",
+          "state": "failed",
+          "scope": "直接公開頁 GET（HTTP 200 277373，277373 bytes）；正文／媒體仍不可核讀",
+          "media": "unread",
+          "detail": "替代路徑匿名 HTTPS GET：HTTP 200 277373；277373 bytes。未取得可逐篇核讀的近期正文／媒體；只含頁面殼層或未能確認近期貼文範圍。"
+        }
+      ]
+    },
+    "threads:hilang.on.tour": {
+      "url": "https://www.threads.com/@hilang.on.tour",
+      "state": "failed",
+      "attempts": [
+        {
+          "at": "2026-10-11T02:58:43+08:00",
+          "method": "profile-browser",
+          "url": "https://www.threads.com/@hilang.on.tour",
+          "state": "failed",
+          "scope": "初次頁面導航後帳號頁可見，貼文欄持續載入中",
+          "media": "unread",
+          "detail": "近期日期、正文與媒體未讀；原因：feed未載入。"
+        },
+        {
+          "at": "2026-10-11T03:01:40+08:00",
+          "method": "anonymous-public-http",
+          "url": "https://www.threads.com/@hilang.on.tour",
+          "state": "failed",
+          "scope": "直接公開頁 GET（HTTP 200 277366，277366 bytes）；正文／媒體仍不可核讀",
+          "media": "unread",
+          "detail": "替代路徑匿名 HTTPS GET：HTTP 200 277366；277366 bytes。未取得可逐篇核讀的近期正文／媒體；只含頁面殼層或未能確認近期貼文範圍。"
+        }
+      ]
+    },
+    "threads:yolin1991": {
+      "url": "https://www.threads.com/@yolin1991",
+      "state": "failed",
+      "attempts": [
+        {
+          "at": "2026-10-11T02:58:44+08:00",
+          "method": "profile-browser",
+          "url": "https://www.threads.com/@yolin1991",
+          "state": "failed",
+          "scope": "初次頁面導航後帳號頁可見，貼文欄持續載入中",
+          "media": "unread",
+          "detail": "近期日期、正文與媒體未讀；原因：feed未載入。"
+        },
+        {
+          "at": "2026-10-11T03:01:40+08:00",
+          "method": "anonymous-public-http",
+          "url": "https://www.threads.com/@yolin1991",
+          "state": "failed",
+          "scope": "直接公開頁 GET（HTTP 200 277378，277378 bytes）；正文／媒體仍不可核讀",
+          "media": "unread",
+          "detail": "替代路徑匿名 HTTPS GET：HTTP 200 277378；277378 bytes。未取得可逐篇核讀的近期正文／媒體；只含頁面殼層或未能確認近期貼文範圍。"
+        }
+      ]
+    },
+    "facebook:sunhope.fans": {
+      "url": "https://www.facebook.com/sunhope.fans",
+      "state": "failed",
+      "attempts": [
+        {
+          "at": "2026-10-11T02:59:30+08:00",
+          "method": "profile-browser",
+          "url": "https://www.facebook.com/sunhope.fans",
+          "state": "failed",
+          "scope": "已導航官方粉專並取得讀取狀態，但未收到可辨認貼文正文／日期",
+          "media": "unread",
+          "detail": "初次頁面檢查未取得可核查的貼文文字，無法判斷近7日或置頂戲路。"
+        },
+        {
+          "at": "2026-10-11T03:01:41+08:00",
+          "method": "anonymous-public-http",
+          "url": "https://www.facebook.com/sunhope.fans",
+          "state": "failed",
+          "scope": "直接公開頁 GET（HTTP 400 1542，1542 bytes）；正文／媒體仍不可核讀",
+          "media": "unread",
+          "detail": "替代路徑匿名 HTTPS GET：HTTP 400 1542；1542 bytes。未取得可逐篇核讀的近期正文／媒體；只含頁面殼層或未能確認近期貼文範圍。"
+        },
+        {
+          "at": "2026-10-11T03:01:59+08:00",
+          "method": "profile-browser-recheck",
+          "url": "https://www.facebook.com/sunhope.fans",
+          "state": "failed",
+          "scope": "重新開啟後頁面部分框架及貼文欄 skeleton 可見，未取得近期貼文正文與日期",
+          "media": "unread",
+          "detail": "尚和粉專重試仍無正文；匿名 HTTPS 回應 HTTP 400，詳本輪後續替代路徑紀錄。"
+        },
+        {
+          "at": "2026-10-11T03:02:10+08:00",
+          "method": "profile-browser-recheck",
+          "url": "https://www.facebook.com/sunhope.fans",
+          "state": "failed",
+          "scope": "重新開啟後頁面部分框架及貼文欄 skeleton 可見，未取得近期貼文正文與日期",
+          "media": "unread",
+          "detail": "尚和粉專重試仍無正文；匿名 HTTPS 回應 HTTP 400，詳本輪替代路徑紀錄。"
+        }
+      ]
+    },
+    "facebook:HsiaoHsiYuan1913": {
+      "url": "https://www.facebook.com/HsiaoHsiYuan1913/",
+      "state": "failed",
+      "attempts": [
+        {
+          "at": "2026-10-11T02:59:30+08:00",
+          "method": "profile-browser",
+          "url": "https://www.facebook.com/HsiaoHsiYuan1913/",
+          "state": "failed",
+          "scope": "已導航官方粉專並取得讀取狀態，但未收到可辨認貼文正文／日期",
+          "media": "unread",
+          "detail": "初次頁面檢查未取得可核查的貼文文字，無法判斷近7日或置頂戲路。"
+        },
+        {
+          "at": "2026-10-11T03:01:41+08:00",
+          "method": "anonymous-public-http",
+          "url": "https://www.facebook.com/HsiaoHsiYuan1913/",
+          "state": "failed",
+          "scope": "直接公開頁 GET（HTTP 400 1542，1542 bytes）；正文／媒體仍不可核讀",
+          "media": "unread",
+          "detail": "替代路徑匿名 HTTPS GET：HTTP 400 1542；1542 bytes。未取得可逐篇核讀的近期正文／媒體；只含頁面殼層或未能確認近期貼文範圍。"
+        }
+      ]
+    },
+    "facebook:100063868113954": {
+      "url": "https://www.facebook.com/p/%E5%90%B3%E5%A5%95%E8%90%B1-Wu-Yihsuan-100063868113954",
+      "state": "failed",
+      "attempts": [
+        {
+          "at": "2026-10-11T02:59:30+08:00",
+          "method": "profile-browser",
+          "url": "https://www.facebook.com/p/%E5%90%B3%E5%A5%95%E8%90%B1-Wu-Yihsuan-100063868113954",
+          "state": "failed",
+          "scope": "已導航公開個人專頁並取得讀取狀態，但未收到可辨認貼文正文／日期",
+          "media": "unread",
+          "detail": "初次檢查未取得貼文文字，不能確認演出或無新資訊。"
+        },
+        {
+          "at": "2026-10-11T03:01:41+08:00",
+          "method": "anonymous-public-http",
+          "url": "https://www.facebook.com/p/%E5%90%B3%E5%A5%95%E8%90%B1-Wu-Yihsuan-100063868113954",
+          "state": "failed",
+          "scope": "直接公開頁 GET（HTTP 400 1542，1542 bytes）；正文／媒體仍不可核讀",
+          "media": "unread",
+          "detail": "替代路徑匿名 HTTPS GET：HTTP 400 1542；1542 bytes。未取得可逐篇核讀的近期正文／媒體；只含頁面殼層或未能確認近期貼文範圍。"
+        }
+      ]
+    },
+    "facebook:MingHuaYuanTianTaiwaneseOpera": {
+      "url": "https://www.facebook.com/MingHuaYuanTianTaiwaneseOpera",
+      "state": "failed",
+      "attempts": [
+        {
+          "at": "2026-10-11T02:59:31+08:00",
+          "method": "profile-browser",
+          "url": "https://www.facebook.com/MingHuaYuanTianTaiwaneseOpera",
+          "state": "failed",
+          "scope": "已導航劇團官方粉專並取得讀取狀態，但未收到可辨認貼文正文／日期",
+          "media": "unread",
+          "detail": "初次檢查未取得貼文文字，不能確認近7日或置頂公告。"
+        },
+        {
+          "at": "2026-10-11T03:01:42+08:00",
+          "method": "anonymous-public-http",
+          "url": "https://www.facebook.com/MingHuaYuanTianTaiwaneseOpera",
+          "state": "failed",
+          "scope": "直接公開頁 GET（HTTP 400 1542，1542 bytes）；正文／媒體仍不可核讀",
+          "media": "unread",
+          "detail": "替代路徑匿名 HTTPS GET：HTTP 400 1542；1542 bytes。未取得可逐篇核讀的近期正文／媒體；只含頁面殼層或未能確認近期貼文範圍。"
+        }
+      ]
+    },
+    "facebook:61574134933376": {
+      "url": "https://www.facebook.com/profile.php?id=61574134933376",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-11T02:59:31+08:00",
+          "method": "profile-browser",
+          "url": "https://www.facebook.com/profile.php?id=61574134933376",
+          "state": "partial",
+          "scope": "可讀到官方頁精選的農曆九月戲路公告及《孫臏兵法》片段；未瀏覽完整近期貼文與相片",
+          "media": "unread",
+          "detail": "精選農曆公告提及多廟戲路但日期採農曆且公告整體媒體未核全；僅文字片段可讀，需比對民國115日期前不能新增。"
+        }
+      ]
+    },
+    "facebook:mhysun": {
+      "url": "https://www.facebook.com/mhysun",
+      "state": "failed",
+      "attempts": [
+        {
+          "at": "2026-10-11T02:59:31+08:00",
+          "method": "profile-browser",
+          "url": "https://www.facebook.com/mhysun",
+          "state": "failed",
+          "scope": "已導航孫翠鳳公開專頁並取得讀取狀態，但未收到可辨認近期貼文正文／日期",
+          "media": "unread",
+          "detail": "個人演出預告與媒體範圍未讀，不能推論近期無演出。"
+        },
+        {
+          "at": "2026-10-11T03:01:42+08:00",
+          "method": "anonymous-public-http",
+          "url": "https://www.facebook.com/mhysun",
+          "state": "failed",
+          "scope": "直接公開頁 GET（HTTP 400 1542，1542 bytes）；正文／媒體仍不可核讀",
+          "media": "unread",
+          "detail": "替代路徑匿名 HTTPS GET：HTTP 400 1542；1542 bytes。未取得可逐篇核讀的近期正文／媒體；只含頁面殼層或未能確認近期貼文範圍。"
+        }
+      ]
+    },
+    "facebook:61594936681482": {
+      "url": "https://www.facebook.com/profile.php?id=61594936681482",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-11T02:59:31+08:00",
+          "method": "profile-browser",
+          "url": "https://www.facebook.com/profile.php?id=61594936681482",
+          "state": "partial",
+          "scope": "可讀官方精選貼文之10/8桃園蓮華寺演出全文及2天前門樓圖說；未讀其他近期貼文與相片",
+          "media": "unread",
+          "detail": "已見官網上線公告並包含10/8既有卡資訊，日期已過；近期內容與嵌入圖片未全讀。"
+        }
+      ]
+    },
+    "facebook:lanyang.opera": {
+      "url": "https://www.facebook.com/lanyang.opera/",
+      "state": "failed",
+      "attempts": [
+        {
+          "at": "2026-10-11T02:59:31+08:00",
+          "method": "profile-browser",
+          "url": "https://www.facebook.com/lanyang.opera/",
+          "state": "failed",
+          "scope": "已導航蘭陽戲劇團官方頁並取得讀取狀態，但未收到可辨認貼文正文／日期",
+          "media": "unread",
+          "detail": "近7日貼文與戲路媒體未能核對。"
+        },
+        {
+          "at": "2026-10-11T03:01:42+08:00",
+          "method": "anonymous-public-http",
+          "url": "https://www.facebook.com/lanyang.opera/",
+          "state": "failed",
+          "scope": "直接公開頁 GET（HTTP 400 1542，1542 bytes）；正文／媒體仍不可核讀",
+          "media": "unread",
+          "detail": "替代路徑匿名 HTTPS GET：HTTP 400 1542；1542 bytes。未取得可逐篇核讀的近期正文／媒體；只含頁面殼層或未能確認近期貼文範圍。"
+        }
+      ]
+    },
+    "facebook:Taichungpuppettheater": {
+      "url": "https://www.facebook.com/Taichungpuppettheater/",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-11T02:59:31+08:00",
+          "method": "profile-browser",
+          "url": "https://www.facebook.com/Taichungpuppettheater/",
+          "state": "partial",
+          "scope": "初始頁讀到置頂/精選《偶遇科技》11/1講座10:00及工作坊14:00資訊；最新9小時前宣傳短片，另讀到11/7《聖劍風雲三-龍虎兄弟》14:30屯區藝文中心售票摘要；摘要未逐項查售票頁且短片未觀看",
+          "media": "unread",
+          "detail": "已讀頁面可見正文片段及兩張宣傳卡，照片、影片和完整近期貼文流未讀，不能視為全帳號完成。"
+        }
+      ]
+    },
+    "culture": {
+      "url": "data/moc_candidates.json",
+      "state": "complete",
+      "attempts": [
+        {
+          "at": "2026-10-11T03:00:29+08:00",
+          "method": "python-urllib-sandbox",
+          "url": "https://cloud.culture.tw/frontsite/trans/SearchShowAction.do?method=doFindTypeJ&category=all",
+          "state": "failed",
+          "scope": "僅送出 category=all 請求，未取得 JSON",
+          "media": "unread",
+          "detail": "初次 Python HTTPS 請求 TLS 驗證拒絕：憑證缺少 Subject Key Identifier；未停用憑證檢查。"
+        },
+        {
+          "at": "2026-10-11T03:00:29+08:00",
+          "method": "browser",
+          "url": "https://cloud.culture.tw/frontsite/trans/SearchShowAction.do?method=doFindTypeJ&category=all",
+          "state": "failed",
+          "scope": "瀏覽器直接導航 API",
+          "media": "unread",
+          "detail": "瀏覽器回報 net::ERR_BLOCKED_BY_CLIENT，未取到資料。"
+        },
+        {
+          "at": "2026-10-11T03:00:29+08:00",
+          "method": "web-open",
+          "url": "https://cloud.culture.tw/frontsite/trans/SearchShowAction.do?method=doFindTypeJ&category=all",
+          "state": "failed",
+          "scope": "官方 API 原始網址開啟嘗試",
+          "media": "unread",
+          "detail": "Web 擷取器兩次拒絕存取該 API URL；未依賴搜尋摘要。"
+        },
+        {
+          "at": "2026-10-11T03:00:29+08:00",
+          "method": "curl-default-sandbox",
+          "url": "https://cloud.culture.tw/frontsite/trans/SearchShowAction.do?method=doFindTypeJ&category=all",
+          "state": "failed",
+          "scope": "受限 shell 的專案 fetch 重試",
+          "media": "unread",
+          "detail": "updater.fetch_culture_events 在此網路沙箱內兩次 DNS nodename resolution failure；另用已授權外網的 curl 普通 TLS HTTP 200 取得 1,058,182 bytes / 485 records。"
+        },
+        {
+          "at": "2026-10-11T03:00:29+08:00",
+          "method": "updater-python-authorized-network",
+          "url": "https://cloud.culture.tw/frontsite/trans/SearchShowAction.do?method=doFindTypeJ&category=all",
+          "state": "complete",
+          "scope": "category=all 取得485筆，套用專案updater.culture_candidates、以2026-10-11至未來90日篩選為1筆，逐欄與data/moc_candidates.json既有1筆比對一致",
+          "media": "not_applicable",
+          "detail": "唯一候選三昧堂精工布袋戲展為category 6展覽，2027-01-01 嘉義縣表演藝術中心；仍是pending候選，不是演出，不改公開排程。"
+        }
+      ]
+    },
+    "issues": {
+      "url": "https://github.com/eric1810-tw/taiwan-opera-calendar/issues?q=is%3Aissue+sort%3Aupdated-desc",
+      "state": "complete",
+      "attempts": [
+        {
+          "at": "2026-10-11T03:00:29+08:00",
+          "method": "gh-cli-api-state-all",
+          "url": "https://github.com/eric1810-tw/taiwan-opera-calendar/issues?q=is%3Aissue+sort%3Aupdated-desc",
+          "state": "complete",
+          "scope": "gh issue list --state all --limit 100；全部2筆Issues（排除PR），逐項核對state、updatedAt、留言及兩份body",
+          "media": "not_applicable",
+          "detail": "Issue #1/#2均open、comments空、updatedAt分別2026-09-28T19:54:09Z及19:57:36Z；兩者均為一般演出提報並含OPENTIX來源網址，未見本輪新留言／狀態異動。"
+        }
+      ]
+    }
+  },
+  "finalizedAt": "2026-10-11T03:02:22+08:00",
+  "publication": {
+    "state": "pending"
+  },
+  "activeTargets": [
+    "threads:joe_huang_k_w",
+    "threads:h.akito_1996",
+    "threads:the_rin.lpm",
+    "threads:1013.yr_",
+    "threads:xuefeng_lu_",
+    "threads:yuzhongluo",
+    "threads:taiwaneseopera168",
+    "threads:jing__1017",
+    "threads:hilang.on.tour",
+    "threads:yolin1991",
+    "facebook:sunhope.fans",
+    "facebook:HsiaoHsiYuan1913",
+    "facebook:100063868113954",
+    "facebook:MingHuaYuanTianTaiwaneseOpera",
+    "facebook:61574134933376",
+    "facebook:mhysun",
+    "facebook:61594936681482",
+    "facebook:lanyang.opera",
+    "facebook:Taichungpuppettheater",
+    "culture",
+    "issues"
+  ]
+}
