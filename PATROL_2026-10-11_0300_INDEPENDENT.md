@@ -3,7 +3,7 @@
 ## 本輪結果
 
 - 實際開始：`2026-10-11T02:57:55+08:00`；時區 `Asia/Taipei`。
-- 執行追蹤：[`patrol_runs/2026-10-11_0300.json`](patrol_runs/2026-10-11_0300.json)。21 個動態目標均已嘗試並保存每次時間、方法、公開網址、正文／媒體範圍及失敗原因；初讀後再處理失敗來源。沒有 pending 目標。
+- 執行追蹤：[`patrol_runs/2026-10-11_0300.json`](patrol_runs/2026-10-11_0300.json)。21 個動態目標均已嘗試，初讀後再處理失敗來源，沒有 pending 目標。JSON 保存了方法、公開網址、正文／媒體範圍及結果，但需揭露一項紀錄程序偏差：首輪社群頁面導航及文化部多路徑診斷先批次操作、再批次呼叫 `record`；這些列的 `at` 是紀錄寫入時間，不是每一個頁面操作的精確時間，Web API 兩次拒絕也合併成一筆。故「每次嘗試立即 record」本輪未完全達成，逐次時間證據有缺口。
 - 最終來源覆蓋：`failed`。9 個 Threads 帳號正文未讀，6 個 Facebook 帳號正文未讀；其餘 4 個社群來源只有局部可讀。這不代表沒有新資訊。
 - `data/patrol_status.json` 已由 `patrol_progress.py finalize` 按來源狀態產生 `2026-10-11T02:57:55+08:00 / failed`。
 
@@ -14,6 +14,7 @@
 - Facebook `sunhope.fans`、`HsiaoHsiYuan1913`、吳奕萱、`MingHuaYuanTianTaiwaneseOpera`、`mhysun`、`lanyang.opera`：瀏覽器未取得可核查近期貼文正文；匿名 HTTPS 六頁均回 HTTP 400（每頁 1,542 bytes），改道後仍無正文或媒體，標記 `failed`。
 - Facebook 繡花園／明華園地字、戲籠出巡、台中木偶劇團：可讀部分精選與貼文文字，未完整瀏覽近 7 日內容或媒體，均 `partial`。繡花園精選有農曆九月戲路及《孫臏兵法》片段，未轉換農曆或據此建卡；戲籠出巡可讀的 10/8 桃園貼文已過期；台中木偶劇團讀到既有 11/7《聖劍風雲三–龍虎兄弟》14:30 卡及最新祈福宣傳短片文字，影片未播放，未發現有足夠證據的新增／異動。
 - 共同環境診斷：多個 Threads 帳號同為骨架；跨帳號對照發現 Joe 可讀，匿名請求僅取到通用外殼。Facebook 多頁同為正文不可讀／HTTP 400，但台中木偶劇團等頁可讀部分內容，故僅記錄本輪帳號範圍限制，不泛化成平台整體無內容。
+- 紀錄限制不改變上述來源覆蓋判定，但降低了批次初讀／文化部路徑嘗試的逐次時間精度；下一輪須在每次瀏覽或請求之後立即記錄，再操作下一個來源。
 
 ## 文化部與 GitHub Issues
 
@@ -24,4 +25,4 @@
 
 - 沒有充分證據因社群巡檢新增或修訂演出；文化部候選也未變。推送前發現並 fast-forward 遠端自動更新提交 `f1a1f2e`，該更新依排程清除／重算場次倒數及更新 metadata；已保留，不是本輪來源核實造成的資料修訂。合併後網站資料刷新時間為 `2026-10-10T10:01:32+08:00`，與本輪社群巡檢開始時間分開。
 - 本輪已完成 `python3 -m unittest -v`（17 tests PASS）、`node --check assets/app.js`、`git diff --check`；fast-forward 後專案 `validate_schedule` 核對 108 筆必填欄位、日期／endDate、唯一 ID 均 PASS；巡檢狀態與本輪 JSON 一致。頁面程式仍分開載入 metadata 與 patrol status，並顯示巡檢失敗狀態。
-- 發布驗收待完成：資料提交 SHA、對應 Actions completed/success、公開狀態 JSON 與驗收收據另補於 [`PATROL_2026-10-11_0300_RECEIPT.md`](PATROL_2026-10-11_0300_RECEIPT.md)。在驗收完成前不宣稱已上線。
+- 發布驗收已完成，詳見 [`PATROL_2026-10-11_0300_RECEIPT.md`](PATROL_2026-10-11_0300_RECEIPT.md)：資料提交 `4e86509fc9cb1474b6289f4ec053359042fa0c3a` 對應 Actions `38078301761` completed/success，`patrol_progress.py verify` 與三份公開 JSON（status、108 筆 schedule、metadata）本地比對均通過。Pages 首頁顯示資料刷新 `2026/10/10 10:01`，巡檢開始 `2026/10/11 02:57` 並標示「巡檢未完成」。這代表失敗狀態已成功發布，不代表來源巡檢完整。
