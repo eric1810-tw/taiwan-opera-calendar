@@ -18,12 +18,12 @@
 ## 資料變更
 
 - 未新增或修改演出卡；社群來源未讀、文化部候選未取回，沒有足夠證據核實演出、異動或取消。避免以個別官方公告／連結冒充帳號已完整巡檢。
-- `data/schedule.json`、`data/moc_candidates.json` 均未修改。`data/metadata.json` 保持 `2026-10-10T10:01:32+08:00`；這是網站資料刷新時間，與本輪巡檢開始時間分開。
+- 本輪未新增／編修演出卡或候選。推送前 fetch 發現遠端自動更新 `718b898`，正常 merge 保留倒數刷新及到期資料清理；最新 `data/metadata.json` 為 `2026-10-11T09:28:30+08:00`，`data/schedule.json` 為 105 筆。這是網站資料刷新時間，與本輪巡檢開始時間分開。
 
 ## 驗收與接續
 
-- 本地程序／規程測試及資料檢查待執行，結果將追加於本報告。
 - 狀態檔已 finalize 為 `2026-10-12T02:58:14+08:00 / failed`。資料 SHA、push、Actions、公開網站及驗收收據尚待另行確認；目前不能稱已上線。
 - 後續恢復請用 `python3 scripts/patrol_progress.py resume --run patrol_runs/2026-10-12_0300.json`，保留原開始時間並逐項重試未能讀取來源。若社群流仍不可讀，先用其他可用公開路徑，記錄每次嘗試；不可把部分可讀寫成無新資訊。
-- 驗證：`python3 -m unittest -v`（17 tests PASS）、`node --check assets/app.js`、`git diff --check`、108 筆 schedule required-fields/schema、日期/endDate、unique ID 與三個本輪 JSON parse 均 PASS。`schedule.json`、`metadata.json`、MOC candidates 未改。
-- SHA256（推送前）：schedule `8d5acc7d6a9e3f4ffeedd835ee3baf8dc20b1f7127afe06e3ea18e18fdebb05e`；metadata `a02bfeb53ca4e83c1942797446e01e3f48c4bf17c8692315b604f01d400b63ae`；patrol status `1cf98e34678f7b8a076608c6b9578640379b758c7f166039c527d35242726b65`；本輪 JSON `ce4c4599ea1877de14eba2d0cce0ebf29dae36dcfc657ab2aed72b005b389678`。
+- 驗證：`python3 -m unittest -v`（17 tests PASS）、`node --check assets/app.js`、`git diff --check`、105 筆 schedule required-fields/schema、日期/endDate、unique ID 與三個本輪 JSON parse 均 PASS。遠端自動刷新後重新驗證；patrol status、metadata、候選均不受本輪場次編輯影響。
+- SHA256（整合遠端更新後）：schedule `35d0adb1218e6ba1c43cd3ac500433cd6d08dc1b7354336c1f2fd2e6dcc61355`；metadata `b7b88e788be28d9580dde364f8a0bc321b3f3638773f69f3078b3e64380d5b50`；patrol status `1cf98e34678f7b8a076608c6b9578640379b758c7f166039c527d35242726b65`；本輪 JSON `ce4c4599ea1877de14eba2d0cce0ebf29dae36dcfc657ab2aed72b005b389678`。
+- GitHub Actions／公開 JSON／驗收收據仍待這個資料提交推送後核對；不能以遠端自動更新的部署代替本輪 status 部署驗收。
