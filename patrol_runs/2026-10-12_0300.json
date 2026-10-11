@@ -1,0 +1,394 @@
+{
+  "version": 1,
+  "startedAt": "2026-10-12T02:58:14+08:00",
+  "resumedAt": [],
+  "sources": {
+    "threads:joe_huang_k_w": {
+      "url": "https://www.threads.com/@joe_huang_k_w",
+      "state": "failed",
+      "attempts": [
+        {
+          "at": "2026-10-12T02:58:32+08:00",
+          "method": "codex-iab-profile-browser",
+          "url": "https://www.threads.com/@joe_huang_k_w",
+          "state": "failed",
+          "scope": "Profile identity visible (黃冠維, 古都木偶戲劇團／團長); recent feed entries remain loading skeletons; no post text, pagination or media read.",
+          "media": "unread",
+          "detail": "At 2026-10-12T02:58:14+08:00 initial direct profile navigation. In-app browser exposed account shell and repeated 載入中…… containers; no usable recent feed."
+        },
+        {
+          "at": "2026-10-12T03:00:34+08:00",
+          "method": "web-open-alternate-reader",
+          "url": "https://www.threads.com/@joe_huang_k_w",
+          "state": "failed",
+          "scope": "Attempted alternative web reader after IAB profile shell; endpoint not accessible to reader; no post text/media retrieved.",
+          "media": "unread",
+          "detail": "Retry 1 at 2026-10-12T03:00:34:z via web reader failed with URL not accessible; IAB had already shown loading skeleton."
+        }
+      ]
+    },
+    "threads:h.akito_1996": {
+      "url": "https://www.threads.com/@h.akito_1996",
+      "state": "failed",
+      "attempts": [
+        {
+          "at": "2026-10-12T02:58:42+08:00",
+          "method": "codex-iab-profile-browser",
+          "url": "https://www.threads.com/@h.akito_1996",
+          "state": "failed",
+          "scope": "Profile header partially loaded; recent feed and profile detail are repeated loading skeletons; no post text or media read.",
+          "media": "unread",
+          "detail": "Initial direct profile navigation at approximately 2026-10-12T02:58:xx+08:00 reproduced same Threads feed skeleton as joe_huang_k_w."
+        }
+      ]
+    },
+    "threads:the_rin.lpm": {
+      "url": "https://www.threads.com/@the_rin.lpm",
+      "state": "failed",
+      "attempts": [
+        {
+          "at": "2026-10-12T02:58:48+08:00",
+          "method": "codex-iab-profile-browser",
+          "url": "https://www.threads.com/@the_rin.lpm",
+          "state": "failed",
+          "scope": "Recent feed and profile detail show repeated loading skeletons; no post text or media read.",
+          "media": "unread",
+          "detail": "Direct profile navigation at 2026-10-12T02:58:48:z reproduced same loading-skeleton failure on third Threads account."
+        }
+      ]
+    },
+    "threads:1013.yr_": {
+      "url": "https://www.threads.com/@1013.yr_",
+      "state": "failed",
+      "attempts": [
+        {
+          "at": "2026-10-12T02:58:59+08:00",
+          "method": "codex-iab-profile-browser",
+          "url": "https://www.threads.com/@1013.yr_",
+          "state": "failed",
+          "scope": "Profile identity loads; recent post text and media remain loading skeletons.",
+          "media": "unread",
+          "detail": "Initial profile read at 2026-10-12T02:58:59:z; same shared Threads content-loading symptom persisted after unrelated @threads profile test."
+        }
+      ]
+    },
+    "threads:xuefeng_lu_": {
+      "url": "https://www.threads.com/@xuefeng_lu_",
+      "state": "failed",
+      "attempts": [
+        {
+          "at": "2026-10-12T02:59:27+08:00",
+          "method": "codex-iab-profile-browser",
+          "url": "https://www.threads.com/@xuefeng_lu_",
+          "state": "failed",
+          "scope": "Profile identity loads; recent feed remains repeated loading skeletons; no post text or media read.",
+          "media": "unread",
+          "detail": "Initial profile read at 2026-10-12T02:59:27:z; Threads feed unavailable in shared browser session."
+        }
+      ]
+    },
+    "threads:yuzhongluo": {
+      "url": "https://www.threads.com/@yuzhongluo",
+      "state": "failed",
+      "attempts": [
+        {
+          "at": "2026-10-12T02:59:33+08:00",
+          "method": "codex-iab-profile-browser",
+          "url": "https://www.threads.com/@yuzhongluo",
+          "state": "failed",
+          "scope": "Profile identity loads; feed entries are loading skeletons; text and media unread.",
+          "media": "unread",
+          "detail": "Initial profile read at 2026-10-12T02:59:32:z; same Threads content-loading failure."
+        }
+      ]
+    },
+    "threads:taiwaneseopera168": {
+      "url": "https://www.threads.com/@taiwaneseopera168",
+      "state": "failed",
+      "attempts": [
+        {
+          "at": "2026-10-12T02:59:38+08:00",
+          "method": "codex-iab-profile-browser",
+          "url": "https://www.threads.com/@taiwaneseopera168",
+          "state": "failed",
+          "scope": "Profile identity loads; recent feed entries stay as skeletons; no post text/media read.",
+          "media": "unread",
+          "detail": "Initial profile read at 2026-10-12T02:59:38:z; repeated loading placeholders."
+        }
+      ]
+    },
+    "threads:jing__1017": {
+      "url": "https://www.threads.com/@jing__1017",
+      "state": "failed",
+      "attempts": [
+        {
+          "at": "2026-10-12T02:59:42+08:00",
+          "method": "codex-iab-profile-browser",
+          "url": "https://www.threads.com/@jing__1017",
+          "state": "failed",
+          "scope": "Profile identity visible; feed remains repeated loading skeleton; no text/media read.",
+          "media": "unread",
+          "detail": "Initial profile read at 2026-10-12T02:59:42:z reproduced Threads feed loading failure."
+        }
+      ]
+    },
+    "threads:hilang.on.tour": {
+      "url": "https://www.threads.com/@hilang.on.tour",
+      "state": "failed",
+      "attempts": [
+        {
+          "at": "2026-10-12T02:59:46+08:00",
+          "method": "codex-iab-profile-browser",
+          "url": "https://www.threads.com/@hilang.on.tour",
+          "state": "failed",
+          "scope": "Profile name/identity visible; feed remains skeletons, post text and media unread.",
+          "media": "unread",
+          "detail": "Initial profile read at 2026-10-12T02:59:46:z reproduced Threads content-loading failure."
+        }
+      ]
+    },
+    "threads:yolin1991": {
+      "url": "https://www.threads.com/@yolin1991",
+      "state": "failed",
+      "attempts": [
+        {
+          "at": "2026-10-12T02:59:50+08:00",
+          "method": "codex-iab-profile-browser",
+          "url": "https://www.threads.com/@yolin1991",
+          "state": "failed",
+          "scope": "Profile identity visible; feed content remains loading skeletons; no posts/media read.",
+          "media": "unread",
+          "detail": "Initial profile read at 2026-10-12T02:59:50:z; same Threads feed-loading issue."
+        }
+      ]
+    },
+    "facebook:sunhope.fans": {
+      "url": "https://www.facebook.com/sunhope.fans",
+      "state": "failed",
+      "attempts": [
+        {
+          "at": "2026-10-12T02:59:07+08:00",
+          "method": "codex-iab-profile-browser",
+          "url": "https://www.facebook.com/sunhope.fans",
+          "state": "failed",
+          "scope": "Facebook global navigation visible; no page identity, recent posts, text or media appeared.",
+          "media": "unread",
+          "detail": "Initial direct navigation at 2026-10-12T02:59:07:z yielded only the Facebook shell; feed/content unavailable in rendered page."
+        },
+        {
+          "at": "2026-10-12T03:01:34+08:00",
+          "method": "web-open-alternate-reader",
+          "url": "https://www.facebook.com/sunhope.fans",
+          "state": "failed",
+          "scope": "Alternative web reader fallback was throttled before page content; no posts/media retrieved.",
+          "media": "unread",
+          "detail": "Retry 1 at 2026-10-12T03:01:34:z after blank IAB profile; web fetch failed as Online fetch throttled."
+        }
+      ]
+    },
+    "facebook:HsiaoHsiYuan1913": {
+      "url": "https://www.facebook.com/HsiaoHsiYuan1913/",
+      "state": "failed",
+      "attempts": [
+        {
+          "at": "2026-10-12T02:59:14+08:00",
+          "method": "codex-iab-profile-browser",
+          "url": "https://www.facebook.com/HsiaoHsiYuan1913/",
+          "state": "failed",
+          "scope": "Only generic Facebook document title; no profile identity, posts, text or media rendered.",
+          "media": "unread",
+          "detail": "Initial direct page read at 2026-10-12T02:59:14:z returned blank Facebook content shell."
+        }
+      ]
+    },
+    "facebook:100063868113954": {
+      "url": "https://www.facebook.com/p/%E5%90%B3%E5%A5%95%E8%90%B1-Wu-Yihsuan-100063868113954",
+      "state": "failed",
+      "attempts": [
+        {
+          "at": "2026-10-12T02:59:19+08:00",
+          "method": "codex-iab-profile-browser",
+          "url": "https://www.facebook.com/p/%E5%90%B3%E5%A5%95%E8%90%B1-Wu-Yihsuan-100063868113954",
+          "state": "failed",
+          "scope": "Only Facebook page shell; no identity, recent post text, image or media rendered.",
+          "media": "unread",
+          "detail": "Initial direct page read at 2026-10-12T02:59:19:z returned generic blank Facebook shell; no recent public posts were readable."
+        }
+      ]
+    },
+    "facebook:MingHuaYuanTianTaiwaneseOpera": {
+      "url": "https://www.facebook.com/MingHuaYuanTianTaiwaneseOpera",
+      "state": "failed",
+      "attempts": [
+        {
+          "at": "2026-10-12T02:59:57+08:00",
+          "method": "codex-iab-profile-browser",
+          "url": "https://www.facebook.com/MingHuaYuanTianTaiwaneseOpera",
+          "state": "failed",
+          "scope": "Profile identity/link visible; current Posts and Featured areas are loading skeletons; no recent post text or media read.",
+          "media": "unread",
+          "detail": "Initial direct page read at 2026-10-12T02:59:57:z exposes a little profile shell but current posts never load; account coverage unavailable."
+        }
+      ]
+    },
+    "facebook:61574134933376": {
+      "url": "https://www.facebook.com/profile.php?id=61574134933376",
+      "state": "failed",
+      "attempts": [
+        {
+          "at": "2026-10-12T03:00:02+08:00",
+          "method": "codex-iab-profile-browser",
+          "url": "https://www.facebook.com/profile.php?id=61574134933376",
+          "state": "failed",
+          "scope": "Generic blank Facebook shell; no page identity, recent posts, text or media visible.",
+          "media": "unread",
+          "detail": "Initial direct profile request at 2026-10-12T03:00:02:z returned no readable account content."
+        }
+      ]
+    },
+    "facebook:mhysun": {
+      "url": "https://www.facebook.com/mhysun",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-12T03:00:08+08:00",
+          "method": "codex-iab-profile-browser",
+          "url": "https://www.facebook.com/mhysun",
+          "state": "partial",
+          "scope": "Profile structure, tabs, follower/following links and several photo/post links rendered; post body text and image contents not accessible in AX read, no recent range established.",
+          "media": "unread",
+          "detail": "Initial direct profile read at 2026-10-12T03:00:08:z produced a structured shell and photo permalinks but no readable post body; not enough to inspect recent activity."
+        }
+      ]
+    },
+    "facebook:61594936681482": {
+      "url": "https://www.facebook.com/profile.php?id=61594936681482",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-12T03:00:15+08:00",
+          "method": "codex-iab-profile-browser",
+          "url": "https://www.facebook.com/profile.php?id=61594936681482",
+          "state": "partial",
+          "scope": "Profile structure and external links to hilang-re and Instagram visible; one recent permalink and photo links rendered, but post text and image contents not readable.",
+          "media": "unread",
+          "detail": "Initial profile read at 2026-10-12T03:00:15:z produced profile/links and a permalink only; recent activity cannot be evaluated."
+        }
+      ]
+    },
+    "facebook:lanyang.opera": {
+      "url": "https://www.facebook.com/lanyang.opera/",
+      "state": "failed",
+      "attempts": [
+        {
+          "at": "2026-10-12T03:00:20+08:00",
+          "method": "codex-iab-profile-browser",
+          "url": "https://www.facebook.com/lanyang.opera/",
+          "state": "failed",
+          "scope": "Generic Facebook blank shell; no profile or recent post content rendered.",
+          "media": "unread",
+          "detail": "Initial page read at 2026-10-12T03:00:20:z yielded no account or feed content."
+        }
+      ]
+    },
+    "facebook:Taichungpuppettheater": {
+      "url": "https://www.facebook.com/Taichungpuppettheater/",
+      "state": "failed",
+      "attempts": [
+        {
+          "at": "2026-10-12T03:00:25+08:00",
+          "method": "codex-iab-profile-browser",
+          "url": "https://www.facebook.com/Taichungpuppettheater/",
+          "state": "failed",
+          "scope": "Generic Facebook blank shell only; no profile identity, recent post body or media.",
+          "media": "unread",
+          "detail": "Initial direct page read at 2026-10-12T03:00:25:z yielded no readable account/feed content."
+        }
+      ]
+    },
+    "culture": {
+      "url": "data/moc_candidates.json",
+      "state": "failed",
+      "attempts": [
+        {
+          "at": "2026-10-12T03:01:08+08:00",
+          "method": "updater.fetch_culture_events-project-native-tls",
+          "url": "https://cloud.culture.tw/frontsite/trans/SearchShowAction.do?method=doFindTypeJ&category=all",
+          "state": "failed",
+          "scope": "Project-native all-category API; two configured attempts failed before receiving payload, so no candidate extraction/dedup performed.",
+          "media": "not_applicable",
+          "detail": "Initial documented fallback at 2026-10-12T03:01:08:z failed both configured attempts with DNS resolution error: nodename nor servname provided, or not known. TLS validation was not weakened."
+        },
+        {
+          "at": "2026-10-12T03:01:15+08:00",
+          "method": "codex-iab-direct-official-api",
+          "url": "https://cloud.culture.tw/frontsite/trans/SearchShowAction.do?method=doFindTypeJ&category=all",
+          "state": "failed",
+          "scope": "Direct official all-category API fallback; browser refused request before payload; no data read.",
+          "media": "not_applicable",
+          "detail": "Alternative browser route at 2026-10-12T03:01:15:z failed with net::ERR_BLOCKED_BY_CLIENT after project-native DNS failure."
+        },
+        {
+          "at": "2026-10-12T03:01:21+08:00",
+          "method": "web-open-alternate-reader",
+          "url": "https://cloud.culture.tw/frontsite/trans/SearchShowAction.do?method=doFindTypeJ&category=all",
+          "state": "failed",
+          "scope": "Alternative web reader rejected official API URL; no API payload or candidate records retrieved.",
+          "media": "not_applicable",
+          "detail": "Second alternative route at 2026-10-12T03:01:21:z reported URL not accessible; API coverage remains failed."
+        }
+      ]
+    },
+    "issues": {
+      "url": "https://github.com/eric1810-tw/taiwan-opera-calendar/issues?q=is%3Aissue+sort%3Aupdated-desc",
+      "state": "complete",
+      "attempts": [
+        {
+          "at": "2026-10-12T03:00:41+08:00",
+          "method": "gh-cli-api-state-all-paginate",
+          "url": "https://github.com/eric1810-tw/taiwan-opera-calendar/issues?q=is%3Aissue+sort%3Aupdated-desc",
+          "state": "failed",
+          "scope": "Initial API listing attempted all issue states with limit 100 and fields number/title/state/updatedAt/comments/url; GitHub API connection failed before any issue records loaded.",
+          "media": "not_applicable",
+          "detail": "Initial full-list API attempt at 2026-10-12T03:00:41:z: gh reports error connecting to api.github.com; no issue content read."
+        },
+        {
+          "at": "2026-10-12T03:01:00+08:00",
+          "method": "github-public-browser-fallback",
+          "url": "https://github.com/eric1810-tw/taiwan-opera-calendar/issues?q=is%3Aissue+sort%3Aupdated-desc",
+          "state": "complete",
+          "scope": "Public list all issue states sorted updated-desc yielded 2 results (#2 then #1); opened both threads and read body/source links, open state, activity/comments (no comments shown), labels/assignees/metadata; no next page exposed.",
+          "media": "not_applicable",
+          "detail": "After gh API connection failure, browser fallback completed at 2026-10-12T03:01:00:z. Issues #2 and #1 both open, updated 2026-09-29 03:57 and 03:54 +08:00 respectively; body recommends adding omitted general performances and links to OPENTIX. No comments/activity entries beyond opener were visible; no issue changed since prior patrol."
+        }
+      ]
+    }
+  },
+  "finalizedAt": "2026-10-12T03:01:39+08:00",
+  "publication": {
+    "state": "pending"
+  },
+  "activeTargets": [
+    "threads:joe_huang_k_w",
+    "threads:h.akito_1996",
+    "threads:the_rin.lpm",
+    "threads:1013.yr_",
+    "threads:xuefeng_lu_",
+    "threads:yuzhongluo",
+    "threads:taiwaneseopera168",
+    "threads:jing__1017",
+    "threads:hilang.on.tour",
+    "threads:yolin1991",
+    "facebook:sunhope.fans",
+    "facebook:HsiaoHsiYuan1913",
+    "facebook:100063868113954",
+    "facebook:MingHuaYuanTianTaiwaneseOpera",
+    "facebook:61574134933376",
+    "facebook:mhysun",
+    "facebook:61594936681482",
+    "facebook:lanyang.opera",
+    "facebook:Taichungpuppettheater",
+    "culture",
+    "issues"
+  ]
+}
