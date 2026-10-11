@@ -16,4 +16,4 @@
 
 ## 恢復
 
-重試時段 06:41–06:44 Asia/Taipei：Threads 10 帳號均重試後仍是載入骨架；Facebook 尚和、蘭陽讀到一則精選公告但近期動態流／媒體不完整，其餘原 failed 頁仍無可讀正文。尚和《寒窯之外》11/7–8已由 OPENTIX 卡涵蓋，蘭陽《錯配姻緣》10/26已在排程，未因局部讀取修改卡片。其餘 15 個 failed 的正文未讀不代表無新資訊。續跑時用 `python3 scripts/patrol_progress.py resume --run patrol_runs/2026-10-12_0300.json`，先切換可用公開讀取路徑，再逐項記錄每次結果。舊 heartbeat `threads` 維持停用。
+重試時段 06:41–06:45 Asia/Taipei：Threads 10 帳號均重試後仍是載入骨架；Facebook 尚和、蘭陽讀到一則精選公告但近期動態流／媒體不完整，其餘原 failed 頁仍無可讀正文。尚和《寒窯之外》11/7–8已由 OPENTIX 卡涵蓋，蘭陽《錯配姻緣》10/26已在排程，未因局部讀取修改卡片。其餘 15 個 failed 的正文未讀不代表無新資訊。續跑時用 `python3 scripts/patrol_progress.py resume --run patrol_runs/2026-10-12_0300.json`，先切換可用公開讀取路徑，再逐項記錄每次結果。舊 heartbeat `threads` 維持停用。

@@ -4,7 +4,7 @@
 
 - 本輪識別：`patrol_runs/2026-10-12_0300.json`；實際開始 `2026-10-12T02:58:14+08:00`（Asia/Taipei）。
 - 動態監看清單共 21 項：Threads 10、Facebook 9、文化部 1、GitHub Issues 1。`summary` 無 pending；`finalize` 依工具規則產生 `data/patrol_status.json` 的 `failed`。
-- 初次巡檢覆蓋：2 complete（文化部、Issues）、2 partial（孫翠鳳與戲籠出巡 Facebook）、17 failed（其餘 Threads／Facebook）。使用者要求重試後，於 06:41–06:44 Asia/Taipei 恢復同一輪並逐頁重試原失敗目標；最新覆蓋為 2 complete、4 partial、15 failed、0 pending。`failed` 表示仍有關鍵社群來源正文不可讀；不是「沒有新資訊」。
+- 初次巡檢覆蓋：2 complete（文化部、Issues）、2 partial（孫翠鳳與戲籠出巡 Facebook）、17 failed（其餘 Threads／Facebook）。使用者要求重試後，於 06:41–06:45 Asia/Taipei 恢復同一輪並逐頁重試原失敗目標；最新覆蓋為 2 complete、4 partial、15 failed、0 pending。`failed` 表示仍有關鍵社群來源正文不可讀；不是「沒有新資訊」。
 
 ## 來源讀取與故障
 
