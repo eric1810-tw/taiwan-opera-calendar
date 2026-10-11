@@ -24,6 +24,15 @@
           "scope": "Attempted alternative web reader after IAB profile shell; endpoint not accessible to reader; no post text/media retrieved.",
           "media": "unread",
           "detail": "Retry 1 at 2026-10-12T03:00:34:z via web reader failed with URL not accessible; IAB had already shown loading skeleton."
+        },
+        {
+          "at": "2026-10-12T03:07:23+08:00",
+          "method": "codex-iab-threads-common-profile-diagnostic",
+          "url": "https://www.threads.com/@threads",
+          "state": "failed",
+          "scope": "Shared-environment diagnostic only, not @joe_huang_k_w evidence: unrelated @threads control profile shows the same post-feed loading skeletons; no target text/media read.",
+          "media": "unread",
+          "detail": "After three monitored Threads profiles reproduced skeletons, the diagnostic control profile was checked at 2026-10-12T03:07:22:z and failed identically. Logged here as environment evidence; does not count as reading the monitored account."
         }
       ]
     },
@@ -183,6 +192,15 @@
           "scope": "Alternative web reader fallback was throttled before page content; no posts/media retrieved.",
           "media": "unread",
           "detail": "Retry 1 at 2026-10-12T03:01:34:z after blank IAB profile; web fetch failed as Online fetch throttled."
+        },
+        {
+          "at": "2026-10-12T03:07:19+08:00",
+          "method": "codex-iab-facebook-home-feed-environment-check",
+          "url": "https://www.facebook.com/",
+          "state": "failed",
+          "scope": "Shared-environment diagnostic only: Facebook homepage shows navigation and personal feed loading skeletons, with no feed body. This is not a read of the monitored sunhope.fans page.",
+          "media": "unread",
+          "detail": "After multiple monitored Facebook profiles showed blank shells, common feed environment check at 2026-10-12T03:07:19:z found homepage feed also loading indefinitely; supports shared content-rendering failure."
         }
       ]
     },
@@ -308,7 +326,7 @@
     },
     "culture": {
       "url": "data/moc_candidates.json",
-      "state": "failed",
+      "state": "complete",
       "attempts": [
         {
           "at": "2026-10-12T03:01:08+08:00",
@@ -336,6 +354,15 @@
           "scope": "Alternative web reader rejected official API URL; no API payload or candidate records retrieved.",
           "media": "not_applicable",
           "detail": "Second alternative route at 2026-10-12T03:01:21:z reported URL not accessible; API coverage remains failed."
+        },
+        {
+          "at": "2026-10-12T03:06:28+08:00",
+          "method": "updater.fetch_culture_events-project-native-tls-authorized-network",
+          "url": "https://cloud.culture.tw/frontsite/trans/SearchShowAction.do?method=doFindTypeJ&category=all",
+          "state": "complete",
+          "scope": "Official all-category JSON read returned 98 records. Applied local culture_candidates 90-day/date/keyword rules and inspected returned future event fields plus matching text; zero opera/theatre candidates generated; existing moc_candidates/schedule left untouched. This does not validate social accounts.",
+          "media": "not_applicable",
+          "detail": "Network-enabled project-native route succeeded at 2026-10-12T03:06:28:z after prior DNS and browser-blocked attempts; 98 records parsed; 0 candidates from the documented filter. Existing pending 2027-01-01 三昧堂 entry was not in this payload, so retained unchanged rather than inferred deleted."
         }
       ]
     },
@@ -360,13 +387,31 @@
           "scope": "Public list all issue states sorted updated-desc yielded 2 results (#2 then #1); opened both threads and read body/source links, open state, activity/comments (no comments shown), labels/assignees/metadata; no next page exposed.",
           "media": "not_applicable",
           "detail": "After gh API connection failure, browser fallback completed at 2026-10-12T03:01:00:z. Issues #2 and #1 both open, updated 2026-09-29 03:57 and 03:54 +08:00 respectively; body recommends adding omitted general performances and links to OPENTIX. No comments/activity entries beyond opener were visible; no issue changed since prior patrol."
+        },
+        {
+          "at": "2026-10-12T03:06:09+08:00",
+          "method": "gh-cli-api-state-all-limit-100",
+          "url": "https://github.com/eric1810-tw/taiwan-opera-calendar/issues?q=is%3Aissue+sort%3Aupdated-desc",
+          "state": "complete",
+          "scope": "Read all states with limit 100 and fields number/title/state/updatedAt/comments/url; returned 2 issues (#2 then #1), both open, both comments arrays empty; no additional page beyond 2 results.",
+          "media": "not_applicable",
+          "detail": "Read-only GitHub CLI API recovery at 2026-10-12T03:06:09:z after network access became available. #2/#1 remain open; updated 2026-09-28 19:57:36Z and 19:54:09Z; no new comments. Confirms browser fallback listing and all-state coverage."
         }
       ]
     }
   },
-  "finalizedAt": "2026-10-12T03:01:39+08:00",
+  "finalizedAt": "2026-10-12T03:07:23+08:00",
   "publication": {
-    "state": "pending"
+    "state": "verified",
+    "sha": "cd6bd23073c94141bbc97a4a30ce1c4db8dabd36",
+    "actionsRun": "38166376833",
+    "actionsUrl": "https://github.com/eric1810-tw/taiwan-opera-calendar/actions/runs/38166376833",
+    "publicUrl": "https://eric1810-tw.github.io/taiwan-opera-calendar/data/patrol_status.json",
+    "verifiedAt": "2026-10-12T03:07:29+08:00",
+    "publicStatus": {
+      "startedAt": "2026-10-12T02:58:14+08:00",
+      "status": "failed"
+    }
   },
   "activeTargets": [
     "threads:joe_huang_k_w",
