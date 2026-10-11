@@ -1,7 +1,9 @@
 {
   "version": 1,
   "startedAt": "2026-10-12T02:58:14+08:00",
-  "resumedAt": [],
+  "resumedAt": [
+    "2026-10-12T06:40:22+08:00"
+  ],
   "sources": {
     "threads:joe_huang_k_w": {
       "url": "https://www.threads.com/@joe_huang_k_w",
@@ -33,6 +35,15 @@
           "scope": "Shared-environment diagnostic only, not @joe_huang_k_w evidence: unrelated @threads control profile shows the same post-feed loading skeletons; no target text/media read.",
           "media": "unread",
           "detail": "After three monitored Threads profiles reproduced skeletons, the diagnostic control profile was checked at 2026-10-12T03:07:22:z and failed identically. Logged here as environment evidence; does not count as reading the monitored account."
+        },
+        {
+          "at": "2026-10-12T06:41:05+08:00",
+          "method": "codex-iab-retry",
+          "url": "https://www.threads.com/@joe_huang_k_w",
+          "state": "failed",
+          "scope": "本次重試讀到個人檔案標頭及串文/回覆/影音/轉發分頁；載入後最新串文仍全部顯示載入中，未讀到正文、分頁內容或圖片媒體",
+          "media": "unread",
+          "detail": "第四次總嘗試；Codex 內建瀏覽器明確呈現大量載入中骨架，無法驗讀帳號近期內容；其他瀏覽器綁定不可用且 Edge app 擷取逾時"
         }
       ]
     },
@@ -48,6 +59,15 @@
           "scope": "Profile header partially loaded; recent feed and profile detail are repeated loading skeletons; no post text or media read.",
           "media": "unread",
           "detail": "Initial direct profile navigation at approximately 2026-10-12T02:58:xx+08:00 reproduced same Threads feed skeleton as joe_huang_k_w."
+        },
+        {
+          "at": "2026-10-12T06:41:14+08:00",
+          "method": "codex-iab-retry",
+          "url": "https://www.threads.com/@h.akito_1996",
+          "state": "failed",
+          "scope": "重讀個人檔案後，主檔與近期串文區仍為載入中骨架；正文、分頁及圖像皆未讀",
+          "media": "unread",
+          "detail": "重試仍未能取得近期公開貼文正文"
         }
       ]
     },
@@ -63,6 +83,15 @@
           "scope": "Recent feed and profile detail show repeated loading skeletons; no post text or media read.",
           "media": "unread",
           "detail": "Direct profile navigation at 2026-10-12T02:58:48:z reproduced same loading-skeleton failure on third Threads account."
+        },
+        {
+          "at": "2026-10-12T06:41:32+08:00",
+          "method": "codex-iab-retry",
+          "url": "https://www.threads.com/@the_rin.lpm",
+          "state": "failed",
+          "scope": "個人頁可開啟但近期串文列表維持載入中；正文、媒體與延伸頁未讀",
+          "media": "unread",
+          "detail": "本次重試仍只有帳號外殼及載入骨架，不能判定帳號無新貼文"
         }
       ]
     },
@@ -78,6 +107,15 @@
           "scope": "Profile identity loads; recent post text and media remain loading skeletons.",
           "media": "unread",
           "detail": "Initial profile read at 2026-10-12T02:58:59:z; same shared Threads content-loading symptom persisted after unrelated @threads profile test."
+        },
+        {
+          "at": "2026-10-12T06:41:39+08:00",
+          "method": "codex-iab-retry",
+          "url": "https://www.threads.com/@1013.yr_",
+          "state": "failed",
+          "scope": "個人頁可開啟；串文列表仍全為載入中，未讀正文、圖片或媒體",
+          "media": "unread",
+          "detail": "本次重試仍只有帳號外殼及載入骨架"
         }
       ]
     },
@@ -93,6 +131,15 @@
           "scope": "Profile identity loads; recent feed remains repeated loading skeletons; no post text or media read.",
           "media": "unread",
           "detail": "Initial profile read at 2026-10-12T02:59:27:z; Threads feed unavailable in shared browser session."
+        },
+        {
+          "at": "2026-10-12T06:41:46+08:00",
+          "method": "codex-iab-retry",
+          "url": "https://www.threads.com/@xuefeng_lu_",
+          "state": "failed",
+          "scope": "個人頁可開啟；串文列表仍為載入中，正文和媒體未讀",
+          "media": "unread",
+          "detail": "本次重試仍只有載入骨架"
         }
       ]
     },
@@ -108,6 +155,15 @@
           "scope": "Profile identity loads; feed entries are loading skeletons; text and media unread.",
           "media": "unread",
           "detail": "Initial profile read at 2026-10-12T02:59:32:z; same Threads content-loading failure."
+        },
+        {
+          "at": "2026-10-12T06:41:54+08:00",
+          "method": "codex-iab-retry",
+          "url": "https://www.threads.com/@yuzhongluo",
+          "state": "failed",
+          "scope": "帳號頁可開，近期串文列表載入骨架未解除；未讀正文、海報、媒體",
+          "media": "unread",
+          "detail": "本次重試未取得公開貼文內容"
         }
       ]
     },
@@ -123,6 +179,15 @@
           "scope": "Profile identity loads; recent feed entries stay as skeletons; no post text/media read.",
           "media": "unread",
           "detail": "Initial profile read at 2026-10-12T02:59:38:z; repeated loading placeholders."
+        },
+        {
+          "at": "2026-10-12T06:42:02+08:00",
+          "method": "codex-iab-retry",
+          "url": "https://www.threads.com/@taiwaneseopera168",
+          "state": "failed",
+          "scope": "帳號頁可開，串文內容載入中；未讀正文、海報或媒體",
+          "media": "unread",
+          "detail": "本次重試仍為載入骨架"
         }
       ]
     },
@@ -138,6 +203,15 @@
           "scope": "Profile identity visible; feed remains repeated loading skeleton; no text/media read.",
           "media": "unread",
           "detail": "Initial profile read at 2026-10-12T02:59:42:z reproduced Threads feed loading failure."
+        },
+        {
+          "at": "2026-10-12T06:42:13+08:00",
+          "method": "codex-iab-retry",
+          "url": "https://www.threads.com/@jing__1017",
+          "state": "failed",
+          "scope": "帳號頁可開；近期串文載入中，未讀正文、圖像媒體及後續分頁",
+          "media": "unread",
+          "detail": "本次重試仍未載入貼文內容"
         }
       ]
     },
@@ -153,6 +227,15 @@
           "scope": "Profile name/identity visible; feed remains skeletons, post text and media unread.",
           "media": "unread",
           "detail": "Initial profile read at 2026-10-12T02:59:46:z reproduced Threads content-loading failure."
+        },
+        {
+          "at": "2026-10-12T06:42:20+08:00",
+          "method": "codex-iab-retry",
+          "url": "https://www.threads.com/@hilang.on.tour",
+          "state": "failed",
+          "scope": "帳號頁可開；串文載入中，正文和媒體未讀",
+          "media": "unread",
+          "detail": "本次重試仍只有載入骨架；不能將同帳號Facebook局部可讀視作此Threads覆蓋"
         }
       ]
     },
@@ -168,12 +251,21 @@
           "scope": "Profile identity visible; feed content remains loading skeletons; no posts/media read.",
           "media": "unread",
           "detail": "Initial profile read at 2026-10-12T02:59:50:z; same Threads feed-loading issue."
+        },
+        {
+          "at": "2026-10-12T06:42:27+08:00",
+          "method": "codex-iab-retry",
+          "url": "https://www.threads.com/@yolin1991",
+          "state": "failed",
+          "scope": "帳號頁可開；串文列表仍為載入骨架，未讀正文及媒體",
+          "media": "unread",
+          "detail": "本次重試未取得近期串文"
         }
       ]
     },
     "facebook:sunhope.fans": {
       "url": "https://www.facebook.com/sunhope.fans",
-      "state": "failed",
+      "state": "partial",
       "attempts": [
         {
           "at": "2026-10-12T02:59:07+08:00",
@@ -201,6 +293,15 @@
           "scope": "Shared-environment diagnostic only: Facebook homepage shows navigation and personal feed loading skeletons, with no feed body. This is not a read of the monitored sunhope.fans page.",
           "media": "unread",
           "detail": "After multiple monitored Facebook profiles showed blank shells, common feed environment check at 2026-10-12T03:07:19:z found homepage feed also loading indefinitely; supports shared content-rendering failure."
+        },
+        {
+          "at": "2026-10-12T06:42:53+08:00",
+          "method": "codex-iab-retry",
+          "url": "https://www.facebook.com/sunhope.fans",
+          "state": "partial",
+          "scope": "讀到帳號標頭與一則精選貼文文字，稱11/7–8《寒窯之外》於田和越茶劇場兩天四場13:30/16:30；近期貼文列表仍顯示載入中，貼文日期、其他貼文與海報/媒體尚未核讀",
+          "media": "unread",
+          "detail": "本次重試已恢復部分可讀，不能視為整個帳號完成；需核對精選貼文原始日期、售票頁及既有場次"
         }
       ]
     },
@@ -216,6 +317,15 @@
           "scope": "Only generic Facebook document title; no profile identity, posts, text or media rendered.",
           "media": "unread",
           "detail": "Initial direct page read at 2026-10-12T02:59:14:z returned blank Facebook content shell."
+        },
+        {
+          "at": "2026-10-12T06:43:02+08:00",
+          "method": "codex-iab-retry",
+          "url": "https://www.facebook.com/HsiaoHsiYuan1913/",
+          "state": "failed",
+          "scope": "僅能讀到部分無標籤的個人頁元素及相片連結；近期貼文正文無可讀內容，海報／圖片內容未讀",
+          "media": "unread",
+          "detail": "此頁不再回HTTP殼，但畫面文字不足以讀取任何貼文；本次重試仍失敗"
         }
       ]
     },
@@ -231,6 +341,15 @@
           "scope": "Only Facebook page shell; no identity, recent post text, image or media rendered.",
           "media": "unread",
           "detail": "Initial direct page read at 2026-10-12T02:59:19:z returned generic blank Facebook shell; no recent public posts were readable."
+        },
+        {
+          "at": "2026-10-12T06:43:12+08:00",
+          "method": "codex-iab-retry",
+          "url": "https://www.facebook.com/p/%E5%90%B3%E5%A5%95%E8%90%B1-Wu-Yihsuan-100063868113954",
+          "state": "failed",
+          "scope": "個人頁框架和無文字內容的貼文控制項可見，未取得任何貼文正文；相關圖片媒體未讀",
+          "media": "unread",
+          "detail": "本次重試未能讀出近期貼文內容"
         }
       ]
     },
@@ -246,6 +365,15 @@
           "scope": "Profile identity/link visible; current Posts and Featured areas are loading skeletons; no recent post text or media read.",
           "media": "unread",
           "detail": "Initial direct page read at 2026-10-12T02:59:57:z exposes a little profile shell but current posts never load; account coverage unavailable."
+        },
+        {
+          "at": "2026-10-12T06:43:23+08:00",
+          "method": "codex-iab-retry",
+          "url": "https://www.facebook.com/MingHuaYuanTianTaiwaneseOpera",
+          "state": "failed",
+          "scope": "僅出現 Facebook 頁首與導覽控制項，沒有帳號貼文內容或圖片",
+          "media": "unread",
+          "detail": "本次重試只取得空白個人頁框架，近期正文未讀"
         }
       ]
     },
@@ -261,6 +389,15 @@
           "scope": "Generic blank Facebook shell; no page identity, recent posts, text or media visible.",
           "media": "unread",
           "detail": "Initial direct profile request at 2026-10-12T03:00:02:z returned no readable account content."
+        },
+        {
+          "at": "2026-10-12T06:43:32+08:00",
+          "method": "codex-iab-retry",
+          "url": "https://www.facebook.com/profile.php?id=61574134933376",
+          "state": "failed",
+          "scope": "專頁殼和相片/分頁控制項可見，未載入貼文正文，圖片未讀",
+          "media": "unread",
+          "detail": "本次重試未取得任何公開貼文文本"
         }
       ]
     },
@@ -296,7 +433,7 @@
     },
     "facebook:lanyang.opera": {
       "url": "https://www.facebook.com/lanyang.opera/",
-      "state": "failed",
+      "state": "partial",
       "attempts": [
         {
           "at": "2026-10-12T03:00:20+08:00",
@@ -306,6 +443,24 @@
           "scope": "Generic Facebook blank shell; no profile or recent post content rendered.",
           "media": "unread",
           "detail": "Initial page read at 2026-10-12T03:00:20:z yielded no account or feed content."
+        },
+        {
+          "at": "2026-10-12T06:43:42+08:00",
+          "method": "codex-iab-retry",
+          "url": "https://www.facebook.com/lanyang.opera/",
+          "state": "partial",
+          "scope": "讀到帳號簡介及一則精選海報文字：《錯配姻緣》10/26 19:00桃園顯安巖顯應祖師廟、免費、無直播；近期貼文列表仍載入中，圖片媒體未開啟",
+          "media": "unread",
+          "detail": "本次重試恢復一則貼文文字，近期列表仍未讀完；此場次可能與既有卡相符，需保留既有來源核對"
+        },
+        {
+          "at": "2026-10-12T06:45:08+08:00",
+          "method": "codex-iab-post-permalink-retry",
+          "url": "https://www.facebook.com/lanyang.opera/posts/pfbid02N1DTpJeScvVzoirn4RfKvcCyVGuwD2HeTSTyUpQYXRCXBzUkiy5YqGQidKLxsgQXl",
+          "state": "partial",
+          "scope": "原頁標題/snippet吻合10/26 19:00《錯配姻緣》與顯安巖地址，但貼文彈層仍是載入中；未看到發布日期、完整正文、留言或海報圖",
+          "media": "unread",
+          "detail": "個別貼文直連可補核場次但不能作帳號完整覆蓋證據；未取得比既有卡更完整的新資料，不修改排程"
         }
       ]
     },
@@ -321,6 +476,15 @@
           "scope": "Generic Facebook blank shell only; no profile identity, recent post body or media.",
           "media": "unread",
           "detail": "Initial direct page read at 2026-10-12T03:00:25:z yielded no readable account/feed content."
+        },
+        {
+          "at": "2026-10-12T06:43:52+08:00",
+          "method": "codex-iab-retry",
+          "url": "https://www.facebook.com/Taichungpuppettheater/",
+          "state": "failed",
+          "scope": "帳號框架、外部連結及一則貼文／Reel直連可見，但頁面未提供正文；影片、圖片及貼文內容未讀",
+          "media": "unread",
+          "detail": "不能把貼文容器與原始貼文連結視為讀到正文；本次重試仍失敗"
         }
       ]
     },
@@ -400,14 +564,14 @@
       ]
     }
   },
-  "finalizedAt": "2026-10-12T03:07:23+08:00",
+  "finalizedAt": "2026-10-12T06:46:46+08:00",
   "publication": {
     "state": "verified",
     "sha": "cd6bd23073c94141bbc97a4a30ce1c4db8dabd36",
     "actionsRun": "38166376833",
     "actionsUrl": "https://github.com/eric1810-tw/taiwan-opera-calendar/actions/runs/38166376833",
     "publicUrl": "https://eric1810-tw.github.io/taiwan-opera-calendar/data/patrol_status.json",
-    "verifiedAt": "2026-10-12T03:07:29+08:00",
+    "verifiedAt": "2026-10-12T06:47:08+08:00",
     "publicStatus": {
       "startedAt": "2026-10-12T02:58:14+08:00",
       "status": "failed"
