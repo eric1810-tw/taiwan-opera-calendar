@@ -74,7 +74,7 @@
     },
     "threads:the_rin.lpm": {
       "url": "https://www.threads.com/@the_rin.lpm",
-      "state": "failed",
+      "state": "partial",
       "attempts": [
         {
           "at": "2026-10-12T02:58:48+08:00",
@@ -93,6 +93,15 @@
           "scope": "個人頁可開啟但近期串文列表維持載入中；正文、媒體與延伸頁未讀",
           "media": "unread",
           "detail": "本次重試仍只有帳號外殼及載入骨架，不能判定帳號無新貼文"
+        },
+        {
+          "at": "2026-10-12T10:02:13+08:00",
+          "method": "codex-iab-delayed-accessibility-snapshot",
+          "url": "https://www.threads.com/@the_rin.lpm",
+          "state": "partial",
+          "scope": "延後再次檢查同一公開帳號頁；讀到個人簡介及 2026-09-26、2026-09-27 兩則貼文正文；其餘動態仍顯示載入中，未能確認帳號完整動態與日期範圍",
+          "media": "partial",
+          "detail": "首次觀察時動態骨架顯示載入中；延後取得無障礙樹後出現兩則歌仔戲公告正文與貼文媒體描述，動態底部仍有載入中，未打開/核對全部媒體。證明即時快照會早於前端載入完成；本次為診斷性延後讀取，不代表帳號讀完。"
         }
       ]
     },
@@ -628,14 +637,14 @@
       ]
     }
   },
-  "finalizedAt": "2026-10-12T09:56:47+08:00",
+  "finalizedAt": "2026-10-12T10:02:17+08:00",
   "publication": {
     "state": "verified",
     "sha": "cd6bd23073c94141bbc97a4a30ce1c4db8dabd36",
     "actionsRun": "38166376833",
     "actionsUrl": "https://github.com/eric1810-tw/taiwan-opera-calendar/actions/runs/38166376833",
     "publicUrl": "https://eric1810-tw.github.io/taiwan-opera-calendar/data/patrol_status.json",
-    "verifiedAt": "2026-10-12T09:56:56+08:00",
+    "verifiedAt": "2026-10-12T10:02:34+08:00",
     "publicStatus": {
       "startedAt": "2026-10-12T02:58:14+08:00",
       "status": "failed"
