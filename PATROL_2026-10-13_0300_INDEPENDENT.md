@@ -40,4 +40,6 @@
 ## 接續與發布
 
 - 文化部全量候選和 19 個社群帳號近期正文／圖片尚未完整核對；如需續跑，使用 `python3 scripts/patrol_progress.py resume --run patrol_runs/2026-10-13_0300.json` 接續同一輪。隔日另開新輪。
-- 巡檢資料 SHA、對應 Actions 狀態、公開狀態檔驗證及驗收收據將在資料提交後另行記錄；未完成前不宣稱已上線。
+- 已推送的巡檢資料提交 SHA：`c5b66e437661ecc54450fd08d5fbb1a3fd8b8e39`。GitHub Actions [38297227559](https://github.com/eric1810-tw/taiwan-opera-calendar/actions/runs/38297227559) 對應同一 SHA，狀態 `completed/success`，Pages deploy job 成功；`patrol_progress.py verify` 於 `2026-10-13T03:23:16+08:00` 驗證公開狀態 URL 回傳本輪 `2026-10-13T03:02:41+08:00 / failed`。
+- 本輪 JSON SHA256：`d16922225b84ca1426cf1f56ee2e589f27214c6395e6ec479539eac55f1521af`。`data/schedule.json` 97 筆 SHA256 `f2029bc1eff74e7e3c29e3987fc905bcbfa248432eb6678bdbafc2921b911647`；`data/metadata.json` SHA256 `6e3b182fe2b8bfe7083fd4f18d3f6502e26ea08cbbce3268eda2b5e306ab3e0b`；`data/patrol_status.json` SHA256 `6c03b175ce68012e570d303c092304576dbbb452a476023698c8376c4f9ee72c`。
+- 完整 Actions／公開狀態與 SHA256 驗收收據見 [`PATROL_2026-10-13_0300_RECEIPT.md`](PATROL_2026-10-13_0300_RECEIPT.md)。
