@@ -2,7 +2,8 @@
   "version": 1,
   "startedAt": "2026-10-12T02:58:14+08:00",
   "resumedAt": [
-    "2026-10-12T06:40:22+08:00"
+    "2026-10-12T06:40:22+08:00",
+    "2026-10-12T09:55:05+08:00"
   ],
   "sources": {
     "threads:joe_huang_k_w": {
@@ -164,6 +165,24 @@
           "scope": "帳號頁可開，近期串文列表載入骨架未解除；未讀正文、海報、媒體",
           "media": "unread",
           "detail": "本次重試未取得公開貼文內容"
+        },
+        {
+          "at": "2026-10-12T09:55:16+08:00",
+          "method": "web-search-public-index",
+          "url": "https://www.threads.com/@yuzhongluo",
+          "state": "failed",
+          "scope": "以公開搜尋索引搜尋此帳號近7天戲曲／演出貼文；搜尋無結果，未取得任何貼文正文或媒體，帳號時間序列及分頁未讀",
+          "media": "unread",
+          "detail": "替代索引路徑回傳 Empty search results；不能當作帳號無新貼文，亦不提升覆蓋狀態"
+        },
+        {
+          "at": "2026-10-12T09:56:16+08:00",
+          "method": "anonymous-https-profile-shell",
+          "url": "https://www.threads.com/@yuzhongluo",
+          "state": "failed",
+          "scope": "TLS驗證正常、HTTP 200、HTML 278881 bytes，但title為Threads、無description，頁面載入骨架字樣仍在；未取得帳號近期正文、分頁或媒體",
+          "media": "unread",
+          "detail": "匿名HTTPS只取得通用前端殼；HTTP 200不代表 feed 可讀，保留failed"
         }
       ]
     },
@@ -260,6 +279,15 @@
           "scope": "帳號頁可開；串文列表仍為載入骨架，未讀正文及媒體",
           "media": "unread",
           "detail": "本次重試未取得近期串文"
+        },
+        {
+          "at": "2026-10-12T09:55:42+08:00",
+          "method": "web-search-public-index",
+          "url": "https://www.threads.com/@yolin1991",
+          "state": "failed",
+          "scope": "查詢公開索引是否提供近期Threads正文；無索引結果，沒有取得貼文或媒體，完整帳號時間序列仍未讀",
+          "media": "unread",
+          "detail": "搜索空結果；不當作無新資訊"
         }
       ]
     },
@@ -326,6 +354,24 @@
           "scope": "僅能讀到部分無標籤的個人頁元素及相片連結；近期貼文正文無可讀內容，海報／圖片內容未讀",
           "media": "unread",
           "detail": "此頁不再回HTTP殼，但畫面文字不足以讀取任何貼文；本次重試仍失敗"
+        },
+        {
+          "at": "2026-10-12T09:55:25+08:00",
+          "method": "web-search-public-index",
+          "url": "https://www.facebook.com/HsiaoHsiYuan1913/",
+          "state": "failed",
+          "scope": "搜尋官方頁 ID 與 2026 戲曲貼文；索引只回傳無關／舊頁面，沒有近期目標帳號正文或媒體",
+          "media": "unread",
+          "detail": "公開搜尋索引未提供目標帳號貼文，不能推斷無新內容"
+        },
+        {
+          "at": "2026-10-12T09:55:53+08:00",
+          "method": "web-open-profile-alternate",
+          "url": "https://www.facebook.com/HsiaoHsiYuan1913/",
+          "state": "failed",
+          "scope": "替代web reader載入 Facebook 通用登入頁；頁面明確顯示 temporary block，未提供目標專頁任何貼文正文／媒體",
+          "media": "unread",
+          "detail": "替代讀取路徑被Facebook功能限制訊息阻擋，不能判作無新資訊"
         }
       ]
     },
@@ -350,6 +396,15 @@
           "scope": "個人頁框架和無文字內容的貼文控制項可見，未取得任何貼文正文；相關圖片媒體未讀",
           "media": "unread",
           "detail": "本次重試未能讀出近期貼文內容"
+        },
+        {
+          "at": "2026-10-12T09:55:34+08:00",
+          "method": "web-search-public-index",
+          "url": "https://www.facebook.com/p/%E5%90%B3%E5%A5%95%E8%90%B1-Wu-Yihsuan-100063868113954",
+          "state": "failed",
+          "scope": "搜尋專頁 URL 與吳奕萱歌仔戲相關詞，結果為通用 Facebook 說明頁與姓名相似但非目標帳號舊貼文，未取得近7天目標正文或媒體",
+          "media": "unread",
+          "detail": "索引命中不符目標，不能冒充目標帳號閱讀或推斷無新資訊"
         }
       ]
     },
@@ -398,6 +453,15 @@
           "scope": "專頁殼和相片/分頁控制項可見，未載入貼文正文，圖片未讀",
           "media": "unread",
           "detail": "本次重試未取得任何公開貼文文本"
+        },
+        {
+          "at": "2026-10-12T09:56:36+08:00",
+          "method": "anonymous-https-profile-retry",
+          "url": "https://www.facebook.com/profile.php?id=61574134933376",
+          "state": "failed",
+          "scope": "匿名 HTTPS 請求未取得頁面，Facebook回 HTTP 400 Bad Request；貼文正文與媒體均未讀",
+          "media": "unread",
+          "detail": "直接網路路徑仍不提供內容；不以HTTP錯誤推斷無新貼文"
         }
       ]
     },
@@ -564,14 +628,14 @@
       ]
     }
   },
-  "finalizedAt": "2026-10-12T06:46:46+08:00",
+  "finalizedAt": "2026-10-12T09:56:47+08:00",
   "publication": {
     "state": "verified",
     "sha": "cd6bd23073c94141bbc97a4a30ce1c4db8dabd36",
     "actionsRun": "38166376833",
     "actionsUrl": "https://github.com/eric1810-tw/taiwan-opera-calendar/actions/runs/38166376833",
     "publicUrl": "https://eric1810-tw.github.io/taiwan-opera-calendar/data/patrol_status.json",
-    "verifiedAt": "2026-10-12T06:47:08+08:00",
+    "verifiedAt": "2026-10-12T09:56:56+08:00",
     "publicStatus": {
       "startedAt": "2026-10-12T02:58:14+08:00",
       "status": "failed"
