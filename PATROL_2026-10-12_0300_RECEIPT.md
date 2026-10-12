@@ -4,7 +4,7 @@
 - 資料提交 SHA：`cd6bd23073c94141bbc97a4a30ce1c4db8dabd36`；已推送，`origin/main` 指向同一 SHA。此提交正常整合遠端 auto-update `718b898`，未 force-push。
 - Workflow：`.github/workflows/daily-update.yml`，Actions run [38166376833](https://github.com/eric1810-tw/taiwan-opera-calendar/actions/runs/38166376833)，head SHA 完全相同，狀態 `completed/success`。workflow push 路徑執行 17 項測試、組合 Pages 檔案並部署。
 - 初次 `patrol_progress.py verify` 通過時間：`2026-10-12T03:07:29+08:00`。重試後 06:47:08、09:56:56 及本次延後載入診斷後 `2026-10-12T10:02:34+08:00`，均對相同資料 SHA 與 Actions run 執行 verify 成功；公開狀態仍是 `2026-10-12T02:58:14+08:00 / failed`，schedule、metadata 與原資料 SHA 的內容一致。重試只改變本輪 JSON 的來源證據，不改網站資料檔。
-- 公開 JSON 對照該資料 SHA 的 `git show`：`patrol_status.json` HTTP 200、完全相同；`schedule.json` HTTP 200、105 筆、完全相同；`metadata.json` HTTP 200、完全相同，刷新時間 `2026-10-11T09:28:30+08:00`。
+- 巡檢 SHA `cd6bd23073c94141bbc97a4a30ce1c4db8dabd36` 的驗收當時，公開三 JSON 與該 SHA 相同：status failed、schedule 105 筆、metadata 更新時間 `2026-10-11T09:28:30+08:00`。本次收尾期間遠端另有自動刷新 `aa82f06`（`[skip ci]`，沒有對應 Actions run）；正常 merge 後，於 10:05 對目前網站三 JSON 重新 GET，皆 HTTP 200 且逐位元組 SHA 與最新本地檔一致：patrol_status `1cf98e34678f7b8a076608c6b9578640379b758c7f166039c527d35242726b65`，schedule 97 筆／`f2029bc1eff74e7e3c29e3987fc905bcbfa248432eb6678bdbafc2921b911647`，metadata `6e3b182fe2b8bfe7083fd4f18d3f6502e26ea08cbbce3268eda2b5e306ab3e0b`（更新時間 `2026-10-12T09:59:30+08:00`）。因此公開網站目前狀態已核對，但不把缺少 Actions 的 auto-refresh 說成 Actions 驗收成功。
 - 本地驗證：`python3 -m unittest -v` 17 tests PASS；`node --check assets/app.js` PASS；`git diff --check` PASS；schedule schema、日期/endDate、105 筆唯一 ID 與 JSON parse PASS。
 
 ## SHA256
