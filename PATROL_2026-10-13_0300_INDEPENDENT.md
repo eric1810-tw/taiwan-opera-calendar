@@ -23,8 +23,8 @@
 ### 文化部候選
 
 - 初次官方 `category=all` API 兩次 DNS 失敗，公開 web 路徑也不可讀；恢復時改以專案 `fetch_culture_events()` 所用 TLS 設定讀取官方 JSON（保留 CA 與 hostname 驗證，僅為憑證缺少 Subject Key Identifier 放寬 X509 strict）。HTTP 200，完整讀到 1,578 筆。
-- 依專案分類函式，以 2026-10-13 至 2027-01-11 的 90 日範圍篩出 32 筆戲曲場次；用 OPENTIX 活動 ID 與日期區間，對照 97 張正式卡及候選檔。31 筆已有對應正式卡；另 1 筆三昧堂精工布袋戲展（2027-01-01）是原有待核候選，未找到獨立原公告，繼續保留 pending。9 個新候選所連 OPENTIX 節目頁均抽核名稱、場次、場地及劇團，均已在正式表且無需改動。
-- 本輪沒有新增或改期依據，`data/moc_candidates.json`、`data/schedule.json` 均未修改；文化部來源恢復為 `complete`，未把待核候選算作已驗證演出。
+- 依專案分類函式，以 2026-10-13 至 2027-01-11 的 90 日範圍篩出 32 筆戲曲場次；用 OPENTIX 活動 ID 與日期區間，對照 97 張正式卡及候選檔。31 筆已有對應正式卡（當時正式表 97 張）；另 1 筆三昧堂精工布袋戲展（2027-01-01）是原有待核候選，未找到獨立原公告，繼續保留 pending。9 個新候選所連 OPENTIX 節目頁均抽核名稱、場次、場地及劇團，均已在正式表且無需改動。
+- 本輪沒有新增或改期依據，巡檢過程未自行寫入候選或排程；文化部來源恢復為 `complete`，未把待核候選算作已驗證演出。
 ### GitHub Issues
 
 - `gh issue list --state all` 因無法連線 GitHub API；切換到公開 Issues 頁面，分別查 `is:open`、`is:closed`，排序 Updated descending。讀到 #2、#1 均 open，updated 分別為 2026-09-29 03:57、03:54（台北時間）；closed 0。逐頁看完兩筆 Issue 內文及 Activity，均無留言；排除 PR，覆蓋 complete。
@@ -32,14 +32,14 @@
 
 ## 資料變更與驗證
 
-- `data/schedule.json`、`data/metadata.json` 均未修改。社群能讀到的活動已過期或與既有場次相符；大寮 10/11–13 與新海報 10/12–13 的差異未見明確取消公告，保留既有卡，不改開始日、劇目、時間或來源可信度。
-- `data/patrol_status.json` 經恢復後 `finalize` 更新為本輪 `startedAt=2026-10-13T03:02:41+08:00`、`status=partial`。網站資料刷新時間仍維持原值，與巡檢時間分開。
-- 驗證：`python3 -m unittest -v` 17 tests PASS；`node --check assets/app.js` PASS；`git diff --check` PASS；97 筆場次 schema、唯一 ID、日期與 endDate 檢查 PASS。
+- 本輪巡檢未新增場次或自行改排程。恢復期間整合了先到的遠端每日自動更新提交 `6c914d2`：已過期的 2026-10-10「九天堂」卡被移除、倒數天數重算，場次由 97 張變 96 張；網站資料刷新時間更新為 `2026-10-13T11:18:52+08:00`，與巡檢開始 `03:02:41+08:00` 分開。大寮 10/11–13 與新海報 10/12–13 的差異未見明確取消公告，保留既有卡，不改開始日、劇目、時間或來源可信度。
+- `data/patrol_status.json` 經恢復後 `finalize` 更新為本輪 `startedAt=2026-10-13T03:02:41+08:00`、`status=partial`。
+- 恢復後驗證：`python3 -m unittest -v` 17 tests PASS；`node --check assets/app.js` PASS；`git diff --check` PASS；96 張場次 schema、唯一 ID、日期與 endDate 檢查 PASS。
 - 執行模型未從排程工作階段確認，不宣稱已切換 Luna。現有工作樹原有 `ISSUES_REVIEW.md`、`PROJECT_HANDOVER.md` 修改及三個未追蹤稽核檔全數保留，未加入本輪提交。
 
 ## 接續與發布
 
 - 恢復於 `2026-10-13T22:27:35+08:00` 開始；新增 Threads `the_rin.lpm`、`joe_huang_k_w`、`1013.yr_` 與 Facebook `HsiaoHsiYuan1913` 的逐筆記錄。19 個社群帳號仍全為 partial：上述4個已做恢復嘗試，另外15個沿用先前讀取證據；feed 分頁尾端或媒體仍不可完整讀取。需要繼續時，用 `python3 scripts/patrol_progress.py resume --run patrol_runs/2026-10-13_0300.json` 接續同一輪，僅在取得實際可讀範圍時更新狀態。隔日另開新輪。
-- 初次資料部署 SHA `c5b66e437661ecc54450fd08d5fbb1a3fd8b8e39`／Actions [38297227559](https://github.com/eric1810-tw/taiwan-opera-calendar/actions/runs/38297227559) 已在 03:23 `completed/success` 並驗證當時公開 `failed` 狀態。恢復後的新 `partial` 狀態仍待推送及重新驗證；未完成前不宣稱恢復狀態已上線。
-- 本輪 JSON SHA256：`d16922225b84ca1426cf1f56ee2e589f27214c6395e6ec479539eac55f1521af`。`data/schedule.json` 97 筆 SHA256 `f2029bc1eff74e7e3c29e3987fc905bcbfa248432eb6678bdbafc2921b911647`；`data/metadata.json` SHA256 `6e3b182fe2b8bfe7083fd4f18d3f6502e26ea08cbbce3268eda2b5e306ab3e0b`；`data/patrol_status.json` SHA256 `6c03b175ce68012e570d303c092304576dbbb452a476023698c8376c4f9ee72c`。
-- 恢復後完整 Actions／公開狀態與 SHA256 驗收收據將追加至 [`PATROL_2026-10-13_0300_RECEIPT.md`](PATROL_2026-10-13_0300_RECEIPT.md)。
+- 恢復資料部署 SHA `a76492999fe17e5871baa3156092a2df3cb00d34` 對應 Actions [38415095773](https://github.com/eric1810-tw/taiwan-opera-calendar/actions/runs/38415095773)，`completed/success`，update-schedule 測試及 Pages deploy 均成功。`patrol_progress.py verify` 於 `2026-10-13T22:39:15+08:00` 核對公開狀態 URL 回傳本輪 `2026-10-13T03:02:41+08:00 / partial`。
+- 恢復後本輪 JSON SHA256：`c0e65e255a7091723a8e25f33efbca94098a317b6042f8166e92ca40c5f28c9d`。目前 `data/schedule.json` 96 張 SHA256：`6640702ab0f9500327dd923a9d19ccbee6367936be140f0d4d3cbfada1cf6371`；`data/metadata.json` SHA256：`1557c7f2c058e52e1e7ed6242c4e828032428f5b5146f976fb89d9f43357e1f2`；`data/patrol_status.json` SHA256：`1f31c0305e14451823be92db14c165389f2109a55e8501c07cd62725d567a1e1`。
+- 恢復後完整 Actions／公開狀態與 SHA256 驗收收據見 [`PATROL_2026-10-13_0300_RECEIPT.md`](PATROL_2026-10-13_0300_RECEIPT.md)。
