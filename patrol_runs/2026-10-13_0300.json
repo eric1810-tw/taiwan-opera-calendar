@@ -1,7 +1,9 @@
 {
   "version": 1,
   "startedAt": "2026-10-13T03:02:41+08:00",
-  "resumedAt": [],
+  "resumedAt": [
+    "2026-10-13T22:27:35+08:00"
+  ],
   "sources": {
     "threads:joe_huang_k_w": {
       "url": "https://www.threads.com/@joe_huang_k_w",
@@ -15,6 +17,15 @@
           "scope": "最近7日已水合可讀3篇（10/11-10/12），帳號貼文流尚有載入中骨架，未能確認全量；其中2篇非演出內容，1篇戲曲相關但為回顧",
           "media": "unread",
           "detail": "Threads登入瀏覽器原帳號頁；水合後讀到3篇正文及時間，其中戲籠出巡劇目回顧照片有1/2輪播，但未開圖全核且下方仍載入中，故僅partial。"
+        },
+        {
+          "at": "2026-10-13T22:33:42+08:00",
+          "method": "profile-browser-delayed-hydration-resume",
+          "url": "https://www.threads.com/@joe_huang_k_w",
+          "state": "partial",
+          "scope": "恢復後原頁等候6秒，讀到3則最近貼文（7小時前、23小時前、1日前），範圍為本頁目前顯示內容；頁尾仍載入中，未到達近7日feed邊界。兩則貼文帶媒體連結，未逐張檢讀；3則內容未見戲曲演出線索",
+          "media": "partial",
+          "detail": "等待水合後正文可讀但頁面仍有載入骨架，向下請求未帶來新AX內容；依既有規則維持partial，不能推斷全帳號無新演出。"
         }
       ]
     },
@@ -54,6 +65,15 @@
           "scope": "等候6秒後讀到兩篇2026-09-26/27貼文（距今逾7日）及完整第一篇正文：秀琴歌劇團11/7 19:00新莊保元宮《玉石變》、11/15 19:00西港慶安宮《金沙灘》；第二篇只見戲路表短文；兩篇海報圖未讀且底部仍載入中",
           "media": "partial",
           "detail": "Threads水合後讀到仍有效的11月未來場次線索，但發布者為非官方追戲帳號、戲路圖未核。與schedule去重並查原始團方公告後再決定，不宣稱帳號近期feed complete。"
+        },
+        {
+          "at": "2026-10-13T22:29:56+08:00",
+          "method": "profile-browser-delayed-hydration",
+          "url": "https://www.threads.com/@the_rin.lpm",
+          "state": "partial",
+          "scope": "恢復後等候頁面水合，讀到 2026-09-26 公告正文（11/7 19:00《玉石變》新莊保元宮、11/15 19:00《金沙灘》西港慶安宮）及 9/27戲路表貼文；日期皆超過近7天，底部仍有載入中，兩篇圖片內容未檢讀，帳號近期範圍仍未完整",
+          "media": "partial",
+          "detail": "延遲快照使兩篇貼文正文可讀，新增近期完整性仍不足；9/26公告未核官方原始公告和圖片，沿用原候選不改場次。"
         }
       ]
     },
@@ -78,6 +98,15 @@
           "scope": "延遲6秒水合後讀到10/12兩篇個人生日/姓名貼文及3天前《情渡千年》公演結束回顧；沒有未來場次明文；置頂多媒體1/2與回顧影片未完整核對，貼文流下方仍載入中",
           "media": "unread",
           "detail": "正文日期/內容可讀；圖卡及影片未全讀，不能稱近期feed完整。"
+        },
+        {
+          "at": "2026-10-13T22:34:10+08:00",
+          "method": "profile-browser-delayed-hydration-resume",
+          "url": "https://www.threads.com/@1013.yr_",
+          "state": "partial",
+          "scope": "恢復後等候6秒讀到1日前、23小時前、3天前、5天前共4則；3天前提「一個月七齣公演終於出頭天」並附影片，內容稱演出結束；5天前有2張未核圖片；profile底部仍載入中，未完成近7日feed邊界或媒體閱讀",
+          "media": "unread",
+          "detail": "已取得貼文正文及日期，但演出影片與圖片內容未核，feed仍載入中。現有線索偏向已結束演出，未足以形成新未來場次。"
         }
       ]
     },
@@ -270,6 +299,15 @@
           "scope": "補充讀取單篇半年戲路公告完整文字：2026下半年好康優質布袋戲、一人一票索票；未列出日程的圖片相簿點開僅灰色無圖，故無法讀海報日期/場地/劇目；其餘近期貼文仍loading",
           "media": "unread",
           "detail": "展開公告確認主文及索票條款，但戲路表嵌在圖片中，Facebook photo viewer灰屏，未讀；不將圖片不可讀寫成沒有新演出。"
+        },
+        {
+          "at": "2026-10-13T22:34:37+08:00",
+          "method": "facebook-profile-browser-delayed-resume",
+          "url": "https://www.facebook.com/HsiaoHsiYuan1913/",
+          "state": "partial",
+          "scope": "恢復後等候6秒僅讀到1則無日期的公開「藝文訊息 歡迎轉貼轉寄」貼文；附圖無描述且未開啟，頁尾仍顯示載入中，無法界定近7日範圍",
+          "media": "unread",
+          "detail": "延遲後正文／日期範圍仍不可完整取得，圖片未讀；保留partial，不以單篇摘要推斷帳號無新演出。"
         }
       ]
     },
@@ -398,7 +436,7 @@
     },
     "culture": {
       "url": "data/moc_candidates.json",
-      "state": "failed",
+      "state": "complete",
       "attempts": [
         {
           "at": "2026-10-13T03:13:52+08:00",
@@ -426,6 +464,15 @@
           "scope": "文化部官方iCulture活動列表可讀，keyword=布袋戲頁顯示一頁一般活動列表及「逐家逗陣來看歌仔戲」2026/09/05-10/16、花蓮縣老人會/慶豐活動中心/吉豐老人養護所；未能確認結果是全量戲曲資料或分類/去重，詳情頁錯誤URL無法開",
           "media": "not_applicable",
           "detail": "category=all JSON API兩次DNS失敗、web open不可達、瀏覽器直連endpoint被ERR_BLOCKED_BY_CLIENT。官方列表search keyword只給通用一頁摘要且卡片連結打開錯誤URL，不能當成完整文化候選讀完；候選0/1不作推斷，仍failed。"
+        },
+        {
+          "at": "2026-10-13T22:33:07+08:00",
+          "method": "official-culture-json-opentix-crosscheck",
+          "url": "https://cloud.culture.tw/frontsite/trans/SearchShowAction.do?method=doFindTypeJ&category=all",
+          "state": "complete",
+          "scope": "恢復後以專案 API 的 TLS 設定讀取完整 JSON（HTTP 200，1,578 筆）；依 culture_candidates 在 2026-10-13 至 2027-01-11 篩選 32 筆戲曲場次，與既有候選及 97 張正式卡以標準化 OPENTIX 活動 ID、日期區間交叉比對；31 筆皆對應既有正式場次，另1筆既有三昧堂 2027-01-01 候選仍待其官方來源核實，沒有新增或改期依據",
+          "media": "not_applicable",
+          "detail": "使用專案 fetch 函式保留 CA／hostname 驗證，僅對文化部憑證缺少 Subject Key Identifier 放寬 X509_STRICT。OpenTix 原始節目頁另抽核五洲、亦宛然、鴻明、元和、唐美雲兩檔、明華園、山宛然共8節目頁；場次/日期/場地與候選吻合且正式表已有相同活動 ID 日期範圍，未重複加入。未能找到三昧堂候選的獨立原公告，維持pending。"
         }
       ]
     },
@@ -463,18 +510,9 @@
       ]
     }
   },
-  "finalizedAt": "2026-10-13T03:19:52+08:00",
+  "finalizedAt": "2026-10-13T22:34:54+08:00",
   "publication": {
-    "state": "verified",
-    "sha": "c5b66e437661ecc54450fd08d5fbb1a3fd8b8e39",
-    "actionsRun": "38297227559",
-    "actionsUrl": "https://github.com/eric1810-tw/taiwan-opera-calendar/actions/runs/38297227559",
-    "publicUrl": "https://eric1810-tw.github.io/taiwan-opera-calendar/data/patrol_status.json",
-    "verifiedAt": "2026-10-13T03:23:16+08:00",
-    "publicStatus": {
-      "startedAt": "2026-10-13T03:02:41+08:00",
-      "status": "failed"
-    }
+    "state": "pending"
   },
   "activeTargets": [
     "threads:joe_huang_k_w",
