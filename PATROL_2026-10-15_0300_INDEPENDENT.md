@@ -2,8 +2,9 @@
 
 - Run JSON：`patrol_runs/2026-10-15_0300.json`；Asia/Taipei 實際開始：`2026-10-15T07:15:39+08:00`，不是排程時間。
 - 動態目標：21 項（Threads 10、Facebook 9、文化部候選 1、GitHub Issues 1）。結果：19 partial、1 failed、1 complete、0 pending；`data/patrol_status.json` 由工具 finalize 為 `failed`。
-- 初始工作區觀察：`main...origin/main [ahead 2]`；既有 `ISSUES_REVIEW.md`、`PROJECT_HANDOVER.md` 修改及三個 untracked 稽核／交接檔保留。本輪只提交本輪 run/report/status，未改 `schedule.json` 或 `metadata.json`。
-- 網站資料刷新時間：`data/metadata.json` 記錄 `2026-10-13T11:18:52+08:00`，與本輪巡檢開始時間分開；本輪未呼叫 updater 或刷新網站資料。
+- 初始工作區觀察：`main...origin/main [ahead 2]`；既有 `ISSUES_REVIEW.md`、`PROJECT_HANDOVER.md` 修改及三個 untracked 稽核／交接檔保留。本輪資料提交只含 run/report/status，未改 `schedule.json` 或 `metadata.json`。推送前 fetch 發現遠端自動刷新提交 `b9384fd`，以 merge commit `d8f9695` 正常整合；這筆刷新不是巡檢資料修訂。
+- 執行模型名稱／實際推理強度無法從排程執行環境驗證；不宣稱已切換為 Luna High。
+- 巡檢開始時本地資料刷新時間 `2026-10-13T11:18:52+08:00`；整合遠端自動刷新後，推送狀態的 `data/metadata.json` 為 `2026-10-14T09:31:49+08:00`。兩者均與巡檢開始時間 `2026-10-15T07:15:39+08:00` 分開。本輪未呼叫 updater；遠端更新後 schedule 為95張卡。
 
 ## 逐來源讀取範圍與結果
 
@@ -237,7 +238,7 @@
 - `sunhope.fans` 的 11/7–8《寒窯之外》與既有卡相符；10/14《哪吒伏龍》公告明示不對外開放。
 - `lanyang.opera` 官方貼文列 10/26 19:00《錯配姻緣》、龜山顯安巖顯應祖師廟、免費且無直播；既有 `lanyang-2026-10-26-guishan-cuoxie-yinyuan` 已涵蓋相同場次，保持 `community`，本輪不重複新增。
 - `Taichungpuppettheater` 讀到 10/12《聖劍風雲》已過期；其較新 6:15 影片和其他貼文媒體未播放／讀圖。其他可讀社群公告也未形成足以改動公開表的新資料。
-- 全輪未新增或修訂演出卡／候選。96 張 `schedule.json` 依 ID 及「日期、場地、劇團、劇目」完全相同鍵均無重複；未做模糊相似場次保證。
+- 全輪未新增或修訂演出卡／候選。巡檢場次比對時（遠端更新合併前）96 張 `schedule.json` 依 ID 及「日期、場地、劇團、劇目」完全相同鍵均無重複；未做模糊相似場次保證。
 
 ## 文化部與 GitHub Issues
 
@@ -249,8 +250,8 @@
 - `python3 -m unittest -v`：17 tests OK。
 - `node --check assets/app.js`：通過。
 - `git diff --check`：通過。
-- schedule 檢查：96 張卡必填欄位、ISO 日期、`endDate` 不早於開始日、ID 唯一；日期＋場地＋劇團＋劇目完全相同鍵無重複：通過。
-- 推送、同 SHA Actions、公開狀態檔及 `patrol_progress.py verify` 尚待資料提交後逐項確認；完成前不得稱已上線。
+- 合併遠端更新後 schedule 檢查：95 張卡必填欄位、ISO 日期、`endDate` 不早於開始日、ID 唯一；日期＋場地＋劇團＋劇目完全相同鍵無重複：通過。
+- 推送成功：`main` 推至資料 SHA `d8f9695580da32c3f6249d613c52cc9f72d73d0a`。同 SHA `.github/workflows/daily-update.yml` Actions `38654981372` 為 `completed/success`；`patrol_progress.py verify` 於 `2026-10-15T07:36:12+08:00` 核對公開狀態檔等於本輪 `startedAt=2026-10-15T07:15:39+08:00`、`status=failed`。網站狀態已發布；來源覆蓋仍 failed。詳見 `PATROL_2026-10-15_0300_RECEIPT.md`。
 
 ## 未完成與接續
 
