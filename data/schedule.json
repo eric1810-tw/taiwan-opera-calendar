@@ -2764,5 +2764,38 @@
       "社群來源",
       "歌仔戲"
     ]
+  },
+  {
+    "id": "lecture-2026-10-24-xipeng-xinglu",
+    "date": "2026-10-24",
+    "dateFormatted": "2026/10/24（六）",
+    "daysAway": 9,
+    "time": "19:00–20:30",
+    "troupe": "主辦單位待確認",
+    "genre": "歌仔戲",
+    "artist": "張秀琴、林佳欣",
+    "title": "《戲棚下 逐星路——歌仔戲天王遇見新秀 張秀琴、林佳欣共談歌仔戲的學與傳》",
+    "category": "戲曲講座與推廣（非完整戲曲演出）",
+    "badgeType": "lecture",
+    "verifyStatus": "community",
+    "verifyLabel": "📣 Threads 社群公告・未獲主辦方交叉核實",
+    "location": "嘉義市文化公園",
+    "region": "南部",
+    "status": "貼文與海報列出日期、時間及地點；主辦單位、報名方式與入場條件尚未獲獨立公告核實",
+    "description": "以「張秀琴、林佳欣共談歌仔戲的學與傳」為題的講座；貼文表示現場會穿插示範和演出片段，並邀請民眾攜椅參加。這是戲曲推廣講座，不是完整戲曲演出；貼文及海報未列票價、報名方式或完整地址。",
+    "link": "https://www.threads.com/@olamolly76/post/DegzwmZidfY",
+    "linkLabel": "查看 Threads 原貼文",
+    "sourceUrl": "https://www.threads.com/@olamolly76/post/DegzwmZidfY",
+    "tags": [
+      "歌仔戲",
+      "講座",
+      "戲曲推廣",
+      "張秀琴",
+      "林佳欣",
+      "社群來源",
+      "號外"
+    ],
+    "pinned": true,
+    "noticeLabel": "號外"
   }
 ]

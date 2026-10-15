@@ -16,8 +16,8 @@
   <!-- Google Fonts: 傳統楷書、古典宋明體與清晰無襯線 -->
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;700;900&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="assets/app.css?v=20261001-equal-filters">
-  <script src="assets/app.js?v=20261006-region-picker" defer></script>
+  <link rel="stylesheet" href="assets/app.css?v=20261015-breaking-pinned">
+  <script src="assets/app.js?v=20261015-breaking-pinned" defer></script>
 </head>
 <body class="min-h-screen flex flex-col justify-between relative selection:bg-[#d80b72] selection:text-white transition-colors duration-300">
 
@@ -105,6 +105,7 @@
           <option value="plan">來源待確認／候選資料</option>
           <option value="outdoor">戶外公演（票務未載）</option>
           <option value="broadcast">電視／網路播映</option>
+          <option value="lecture">戲曲講座／推廣活動</option>
         </select>
       </div>
       <p id="regionHint" class="mt-1 px-1 text-[10px] leading-relaxed text-stone-500" role="status" aria-live="polite">選取區域後顯示包含縣市</p>
@@ -193,7 +194,7 @@
   <div id="reportModal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4" role="dialog" aria-modal="true" aria-labelledby="reportDialogTitle" aria-hidden="true">
     <div class="bg-white rounded-2xl max-w-sm w-full p-5 shadow-2xl border border-stone-200">
       <div class="flex items-center justify-between pb-2 border-b border-stone-200 mb-3">
-        <h3 id="reportDialogTitle" class="font-bold text-sm text-stone-900 flex items-center gap-1">⚠️ 演出資訊回報 / 新增推薦</h3>
+        <h3 id="reportDialogTitle" class="font-bold text-sm text-stone-900 flex items-center gap-1">⚠️ 節目／活動資訊回報 / 新增推薦</h3>
         <button id="closeReportModal" type="button" class="text-stone-400 hover:text-stone-700 text-lg" aria-label="關閉回報視窗">&times;</button>
       </div>
       
@@ -209,7 +210,7 @@
           <select id="reportReason" class="w-full border border-stone-300 rounded-lg p-2 text-stone-800 bg-white">
             <option value="時間或地點異動">時間或地點異動</option>
             <option value="場次取消或延期">場次取消或延期</option>
-            <option value="推薦新增未列出演出（如亦宛然等）">推薦新增未列出之演出</option>
+            <option value="推薦新增未列出演出或活動（如亦宛然等）">推薦新增未列出之節目或活動</option>
             <option value="其他建議">其他回報</option>
           </select>
         </div>

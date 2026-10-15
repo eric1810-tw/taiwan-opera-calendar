@@ -27,6 +27,11 @@ main { max-width:1100px !important; padding:0 22px 64px !important; }
 select { min-height:42px; border-radius:3px !important; background:var(--card) !important; color:var(--ink) !important; }
 #eventsContainer { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:15px; }
 .opera-card { min-width:0; padding:18px !important; border:1px solid var(--line) !important; border-top:5px solid var(--pink) !important; border-radius:4px !important; background:var(--card) !important; box-shadow:5px 5px 0 var(--soft) !important; }
+.opera-card.is-pinned { border-top-color:var(--yellow) !important; box-shadow:6px 6px 0 var(--yellow) !important; }
+.pinned-badge,.breaking-badge,.event-kind-badge { display:inline-flex; align-items:center; border-radius:999px; padding:2px 8px; font-size:11px; line-height:1.5; font-weight:800; }
+.pinned-badge { background:var(--ink); color:#fffaf2; }
+.breaking-badge { background:var(--pink); color:#fff; }
+.event-kind-badge { background:var(--yellow); color:var(--ink); }
 .opera-card:hover { transform:translateY(-2px); box-shadow:7px 8px 0 var(--soft) !important; }
 .accent-btn { border-radius:3px !important; background:var(--pink) !important; color:#fff !important; }
 .accent-btn:hover { filter:brightness(.91); }

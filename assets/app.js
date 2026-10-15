@@ -116,7 +116,9 @@ function getDaysBadge(event) {
   if (event.date <= today && endDate >= today) {
     const label = event.badgeType === 'broadcast'
       ? '限時觀看中'
-      : (isScheduledToday(event, today) ? '演出中' : '期間內・詳見場次日期');
+      : (event.badgeType === 'lecture'
+        ? (isScheduledToday(event, today) ? '活動中' : '活動期間・詳見日期')
+        : (isScheduledToday(event, today) ? '演出中' : '期間內・詳見場次日期'));
     return `<span class="text-[10px] font-bold text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded border border-emerald-200">${label}</span>`;
   }
   if (daysAway <= 7) {
@@ -164,7 +166,8 @@ function matchesQuickFilter(event, filter) {
 
 function renderEvents() {
   const filtered = [...eventsData]
-    .sort((a, b) => a.date.localeCompare(b.date) || a.title.localeCompare(b.title, 'zh-Hant'))
+    .sort((a, b) => Number(b.pinned === true) - Number(a.pinned === true)
+      || a.date.localeCompare(b.date) || a.title.localeCompare(b.title, 'zh-Hant'))
     .filter(event => {
       if (!matchesQuickFilter(event, currentFilter)) return false;
       if (currentRegion !== 'all' && (!event.region || !event.region.includes(currentRegion))) return false;
@@ -190,10 +193,13 @@ function renderEvents() {
 
   emptyView.classList.add('hidden');
   eventsContainer.innerHTML = filtered.map(event => `
-    <article class="opera-card rounded-2xl p-4 transition duration-200 flex flex-col justify-between">
+    <article class="opera-card rounded-2xl p-4 transition duration-200 flex flex-col justify-between${event.pinned === true ? ' is-pinned' : ''}">
       <div>
         <div class="flex items-center justify-between gap-1.5 mb-1.5">
           <div class="flex items-center gap-1.5 flex-wrap">
+            ${event.pinned === true ? '<span class="pinned-badge">📌 置頂</span>' : ''}
+            ${event.noticeLabel ? `<span class="breaking-badge">📣 ${escapeHTML(event.noticeLabel)}</span>` : ''}
+            ${event.badgeType === 'lecture' ? '<span class="event-kind-badge">🎤 講座／推廣</span>' : ''}
             <span class="text-xs font-bold text-[#d80b72] bg-[#d80b72]/10 px-2.5 py-0.5 rounded-full border border-[#d80b72]/20">${escapeHTML(event.troupe || '主辦單位待核實')}</span>
             <span class="text-[10px] font-semibold ${event.verifyStatus === 'verified' && getVerificationLabel(event).startsWith('🛡️') ? 'text-emerald-700 bg-emerald-50 border-emerald-200' : 'text-amber-800 bg-amber-50 border-amber-200'} px-2 py-0.5 rounded-full border">${getVerificationLabel(event)}</span>
           </div>
@@ -201,10 +207,10 @@ function renderEvents() {
         </div>
         <h2 class="event-title text-base font-bold serif-title text-stone-900 leading-snug mb-1">${escapeHTML(event.title)}</h2>
         ${event.verifyStatus === 'pending' ? '<p class="text-[11px] font-bold text-amber-900 bg-amber-100 border border-amber-200 rounded-lg px-2 py-1 mb-2">自動發現候選・尚未核實劇種與演出資訊</p>' : ''}
-        <div class="event-artist text-xs text-stone-700 font-medium mb-2 bg-stone-50 px-2 py-1 rounded-lg"><span class="text-amber-800 font-semibold">🎭 主演：</span><span>${escapeHTML(event.artist)}</span></div>
+        <div class="event-artist text-xs text-stone-700 font-medium mb-2 bg-stone-50 px-2 py-1 rounded-lg"><span class="text-amber-800 font-semibold">${event.badgeType === 'lecture' ? '🎤 分享來賓：' : '🎭 主演：'}</span><span>${escapeHTML(event.artist)}</span></div>
         <div class="event-facts space-y-1 text-xs text-stone-600 mb-2.5">
           <div class="flex items-start gap-1"><span class="text-[#d80b72] font-semibold shrink-0">🗓️ 日期時間：</span><span class="font-medium text-stone-800">${escapeHTML(event.dateFormatted)}${event.lunarDate ? `<span class="block">${escapeHTML(event.lunarDate)}</span><span class="block">${escapeHTML(event.time)}</span>` : ` ｜ ${escapeHTML(event.time)}`}</span></div>
-          <div class="flex items-start gap-1"><span class="text-[#d80b72] font-semibold shrink-0">📍 演出地點：</span><a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(event.location || '')}" target="_blank" rel="noopener noreferrer" class="text-stone-700 underline decoration-stone-300 hover:text-[#d80b72]">${escapeHTML(event.location || '演出地點待核實')}</a></div>
+          <div class="flex items-start gap-1"><span class="text-[#d80b72] font-semibold shrink-0">${event.badgeType === 'lecture' ? '📍 活動地點：' : '📍 演出地點：'}</span><a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(event.location || '')}" target="_blank" rel="noopener noreferrer" class="text-stone-700 underline decoration-stone-300 hover:text-[#d80b72]">${escapeHTML(event.location || (event.badgeType === 'lecture' ? '活動地點待核實' : '演出地點待核實'))}</a></div>
         </div>
         <p class="event-description text-xs text-stone-500 leading-relaxed mb-3">${escapeHTML(event.description || '由文化部公開資料發現，詳細內容待人工核對官方公告。')}</p>
       </div>
@@ -247,7 +253,7 @@ function resetAllFilters() {
 
 function openReportModal(showTitle, trigger = document.activeElement) {
   reportReturnFocus = trigger;
-  document.getElementById('reportTargetTitle').textContent = `針對演出：${showTitle}`;
+  document.getElementById('reportTargetTitle').textContent = `針對節目／活動：${showTitle}`;
   reportModal.classList.remove('hidden');
   reportModal.setAttribute('aria-hidden', 'false');
   document.getElementById('reportReason').focus();
@@ -264,7 +270,7 @@ function submitReport(event) {
   const reason = document.getElementById('reportReason').value;
   const detail = document.getElementById('reportDetail').value;
   const target = document.getElementById('reportTargetTitle').textContent;
-  const issueTitle = encodeURIComponent(`[演出回報] ${target} - ${reason}`);
+  const issueTitle = encodeURIComponent(`[節目回報] ${target} - ${reason}`);
   const issueBody = encodeURIComponent(`### 回報目標\n${target}\n\n### 原因\n${reason}\n\n### 詳情與來源\n${detail}`);
   window.location.assign(`https://github.com/eric1810-tw/taiwan-opera-calendar/issues/new?title=${issueTitle}&body=${issueBody}`);
 }
@@ -273,7 +279,7 @@ function validateEvent(event) {
   const requiredText = ['id', 'date', 'dateFormatted', 'time', 'troupe', 'genre', 'artist', 'title', 'location', 'description', 'link'];
   const validGenres = new Set(['歌仔戲', '布袋戲', '音樂劇', '豫劇', '其他豫劇', '其他歌仔戲', '其他布袋戲', '其他音樂劇']);
   const validStatuses = new Set(['verified', 'community', 'pending']);
-  const validBadges = new Set(['ticket', 'free', 'temple', 'plan', 'outdoor', 'broadcast']);
+  const validBadges = new Set(['ticket', 'free', 'temple', 'plan', 'outdoor', 'broadcast', 'lecture']);
   const validRegions = new Set(['北部', '中部', '南部', '東部', '未分類']);
   if (!event || typeof event !== 'object' || Array.isArray(event)) return '不是物件';
   if (requiredText.some(key => typeof event[key] !== 'string')) return '必要文字欄位缺漏或型態錯誤';
