@@ -232,7 +232,7 @@
         {
           "at": "2026-10-16T03:10:25+08:00",
           "method": "page-browser-wait-7s-expand-full-text",
-          "url": "https://www.facebook.com/MingHuaYuanTianwaneseOpera",
+          "url": "https://www.facebook.com/MingHuaYuanTianTaiwaneseOpera",
           "state": "partial",
           "scope": "等7秒後讀到天字團官方1天前置頂農曆戲路表，及15小時前「永康慈后宮演出時間異動」更正文全文。新文列日期2026/10/16–10/18、永康區永平街475號，並提分赴灣裡明吉宮、永康慈后宮、屏東鹽埔慈靈宮；未見更正後鐘點，配圖文字尚未讀；4天前另見10/10慶功回顧，其他feed載入中",
           "media": "partial",
@@ -366,7 +366,15 @@
   },
   "finalizedAt": "2026-10-16T03:17:44+08:00",
   "publication": {
-    "state": "pending"
+    "state": "blocked",
+    "sha": "553041c61a0e6cdb38153017683f62f4bf88f279",
+    "at": "2026-10-16T03:19:48+08:00",
+    "reason": "git fetch and git push both failed: Could not resolve host: github.com; no matching Actions run exists, so SHA-specific public verify could not run.",
+    "publicUrl": "https://eric1810-tw.github.io/taiwan-opera-calendar/data/patrol_status.json",
+    "publicStatus": {
+      "startedAt": "2026-10-15T07:15:39+08:00",
+      "status": "failed"
+    }
   },
   "activeTargets": [
     "threads:joe_huang_k_w",

@@ -35,7 +35,7 @@
 - Threads：@1013.yr_ 初次個人頁顯示失效，另試作者搜尋、全站查詢及一次公開索引搜尋；共 4 次（初次＋3 次重試），仍無可讀貼文或媒體。其他 Threads 帳號可局部讀到正文，但動態仍載入或媒體未逐項核對。其他 Threads 頁面可讀，故未見瀏覽器整體斷線證據。
 - Facebook：9 個來源均有部分正文；有些未讀圖片、影片或後續貼文。另展開孫翠鳳已驗證個人帳號 10/15 原貼文，完整讀到 10/16–18 三縣市行程，照片海報仍未逐張讀取。
 - 新增三張 community 個人行程卡：孫翠鳳《薛丁山傳奇》（10/16 西螺，19:30；19:00 扮仙）、《周公法門桃花女》（10/17 壯圍，同時段）、《真命天子》（10/18 中壢 19:00–21:30）。原貼文明列三場免費。troupe 保持未公布，不以 hashtag 推定劇團。原貼文：https://www.facebook.com/mhysun/posts/pfbid032w2aXfsgmcgKEXbuCcZQJSvjY5XYM3Vs536EBVDcfcDAR4gaqNQaP9VEbbqEyu5Pl
-- 一張官方日期修正：天字團永康慈后宮公告「演出時間異動」海報列 10/16–18；既有卡原列 10/17–19，已改為 10/16–18，刪除由舊日期推得的農曆日期，保留原戲路來源為 related source。海報沒有正戲時間或劇目，未補填：https://www.facebook.com/photo/?fbid=1541293428042944&set=a.469769218528709。verifyStatus 保持 community。
+- 一張官方日期修正：天字團永康慈后宮公告「演出時間異動」海報列 10/16–18；既有卡原列 10/17–19，已改為 10/16–18，依海報明載補入農曆九月初七至初九，保留原戲路來源為 related source。海報沒有正戲時間或劇目，未補填：https://www.facebook.com/photo/?fbid=1541293428042944&set=a.469769218528709。verifyStatus 保持 community。
 - schedule 從 95 張增為 98 張；data/metadata.json 未修改，網站資料刷新時間未被本輪巡檢時間覆蓋。
 - 文化部：官方 category=all 完整回傳 120 筆，依 UID 去重 90 筆，讀取 10/16–2027/1/14 活動並檢查既有候選與 schedule。掌藝工作坊、楊麗花特展不是新演出卡；另見利澤偶戲村 10/17–18（資料列 4 場演出＋展覽＋座談，但未列各演出內容）與波蘭木偶劇團 10/30–31（場次／時間空白）。因關鍵圖片未讀、節目細節不足，留在本輪候查，不新增或升格正式卡；文化部來源為 partial。
 - GitHub Issues：公開列表按更新時間讀完整，2 open（#2、#1；分別更新於 9/29 03:57、03:54 GMT+8）、0 closed；兩篇正文及 Activity 均已查看，無留言，無第二頁或 PR 混入。gh CLI 的已存 Token 無效，改用公開瀏覽器完成讀取。
@@ -47,5 +47,5 @@
 - node --check assets/app.js、git diff --check：passed。
 - schedule JSON/schema、有效日期、endDate、唯一 ID、verifyStatus 及完全相同事件鍵：passed（98 張；0 重複鍵）。
 - 實際排程執行模型未驗證；不聲稱使用 Luna High。
-- 推送前 git fetch origin 失敗：Could not resolve host: github.com。gh auth status 另顯示儲存的 GitHub Token 無效。無法建立本輪 SHA 對應的 Actions run，未能執行公開 verify；本輪沒有上線證據。保留本地提交待網路恢復後 push、等待 matching Actions completed/success，再執行 patrol_progress.py verify。
+- 本地資料提交 SHA 為 553041c61a0e6cdb38153017683f62f4bf88f279。git fetch origin 與 git push origin main 均因 Could not resolve host: github.com 失敗；gh auth status 另顯示儲存的 GitHub Token 無效。未產生本輪 Actions run，無法 SHA-specific verify。直接讀取公開狀態檔仍是 2026-10-15T07:15:39+08:00 / failed，證明本輪 status 尚未發布；不得稱已上線。publication 已標 blocked。
 - 本機原有 ISSUES_REVIEW.md、PROJECT_HANDOVER.md 修改與三個未追蹤文件保留，未暫存；不使用 git add .。
