@@ -2212,11 +2212,10 @@
     "endDate": "2026-10-21"
   },
   {
-    "id": "mhy-tian-2026-10-17-shuikang",
-    "date": "2026-10-17",
-    "dateFormatted": "國曆：2026/10/17（六）–2026/10/19（一）",
-    "lunarDate": "農曆：九月初八至初十",
-    "daysAway": 2,
+    "id": "mhy-tian-2026-10-16-shuikang",
+    "date": "2026-10-16",
+    "dateFormatted": "國曆：2026/10/16（五）–2026/10/18（日）",
+    "daysAway": 0,
     "time": "未公布；請洽劇團或廟方",
     "troupe": "明華園天字戲劇團",
     "genre": "歌仔戲",
@@ -2225,16 +2224,17 @@
     "category": "廟口外台 / 社群來源",
     "badgeType": "temple",
     "verifyStatus": "community",
-    "verifyLabel": "📣 天字團官方 Facebook 農曆九月戲路",
+    "verifyLabel": "📣 天字團官方 Facebook 演出時間異動公告",
     "location": "臺南市永康區永平街475號（水康慈后宮）",
     "region": "南部",
-    "status": "劇團官方戲路圖列日期及場地；未列時間與劇目",
-    "description": "明華園天字戲劇團115年農曆九月（國曆10–11月）戲路表列此行程，保留國曆與農曆日期。未列開演時間、劇目與各場演員；同日多地為總表所列，不推定同一組演員跨場。出發前請確認劇團或廟方最新公告。",
-    "link": "https://www.facebook.com/MingHuaYuanTianTaiwaneseOpera/posts/pfbid02nbH9JZn25DN81QQgDQnwwBwnPeDmraGQQyTapD33rujkA3WYaUjGEwskEGKfuhrkl?locale=zh_TW",
-    "linkLabel": "天字團官方 Facebook 最新戲路表",
-    "sourceUrl": "https://www.facebook.com/MingHuaYuanTianTaiwaneseOpera/posts/pfbid02nbH9JZn25DN81QQgDQnwwBwnPeDmraGQQyTapD33rujkA3WYaUjGEwskEGKfuhrkl?locale=zh_TW",
+    "status": "天字團官方「演出時間異動」公告將日期更正為 10/16–10/18；未列正戲時間與劇目",
+    "description": "明華園天字戲劇團官方 Facebook 2026/10/15「永康慈后宮演出時間異動」海報更正日期為國曆10/16–10/18，地點永康區永平街475號。海報未列開演時間與劇目；農曆日期未公布，出發前請確認劇團或廟方最新公告。",
+    "link": "https://www.facebook.com/photo/?fbid=1541293428042944&set=a.469769218528709",
+    "linkLabel": "天字團官方 Facebook 演出時間異動海報",
+    "sourceUrl": "https://www.facebook.com/photo/?fbid=1541293428042944&set=a.469769218528709",
     "relatedSourceUrls": [
-      "https://www.facebook.com/photo/?fbid=1534005115438442&set=a.469769225195375"
+      "https://www.facebook.com/photo/?fbid=1534005115438442&set=a.469769225195375",
+      "https://www.facebook.com/MingHuaYuanTianTaiwaneseOpera/posts/pfbid02nbH9JZn25DN81QQgDQnwwBwnPeDmraGQQyTapD33rujkA3WYaUjGEwskEGKfuhrkl?locale=zh_TW"
     ],
     "tags": [
       "明華園天字戲劇團",
@@ -2242,7 +2242,7 @@
       "農曆九月",
       "社群來源"
     ],
-    "endDate": "2026-10-19"
+    "endDate": "2026-10-18"
   },
   {
     "id": "mhy-tian-2026-10-20-tianbao",
@@ -2767,5 +2767,92 @@
     ],
     "pinned": true,
     "noticeLabel": "號外"
+  },
+  {
+    "id": "sc-2026-10-16-sun-cui-feng-xiluo",
+    "date": "2026-10-16",
+    "dateFormatted": "2026/10/16（五）",
+    "daysAway": 0,
+    "time": "19:00 扮仙慶賀；19:30 大戲開鑼",
+    "troupe": "未公布（個人演出行程）",
+    "genre": "歌仔戲",
+    "artist": "孫翠鳳",
+    "title": "《薛丁山傳奇》",
+    "category": "社群來源 / 個人演出行程",
+    "badgeType": "temple",
+    "verifyStatus": "community",
+    "verifyLabel": "📣 孫翠鳳官方個人帳號行程・未經劇團交叉核實",
+    "location": "雲林縣西螺鎮延平路與公正路口",
+    "region": "中部",
+    "status": "本人公開行程列明日期、節目、地點及時間；出發前請確認主辦單位",
+    "description": "孫翠鳳官方個人行程列明西螺演出；免費入場。劇團未由本公告確認。",
+    "link": "https://www.facebook.com/mhysun/posts/pfbid032w2aXfsgmcgKEXbuCcZQJSvjY5XYM3Vs536EBVDcfcDAR4gaqNQaP9VEbbqEyu5Pl",
+    "linkLabel": "孫翠鳳官方 Facebook 原貼文",
+    "sourceUrl": "https://www.facebook.com/mhysun/posts/pfbid032w2aXfsgmcgKEXbuCcZQJSvjY5XYM3Vs536EBVDcfcDAR4gaqNQaP9VEbbqEyu5Pl",
+    "tags": [
+      "孫翠鳳",
+      "歌仔戲",
+      "個人行程",
+      "社群來源"
+    ],
+    "endDate": "2026-10-16"
+  },
+  {
+    "id": "sc-2026-10-17-sun-cui-feng-zhuangwei",
+    "date": "2026-10-17",
+    "dateFormatted": "2026/10/17（六）",
+    "daysAway": 1,
+    "time": "19:00 扮仙慶賀；19:30 大戲開鑼",
+    "troupe": "未公布（個人演出行程）",
+    "genre": "歌仔戲",
+    "artist": "孫翠鳳",
+    "title": "《周公法門桃花女》",
+    "category": "社群來源 / 個人演出行程",
+    "badgeType": "temple",
+    "verifyStatus": "community",
+    "verifyLabel": "📣 孫翠鳳官方個人帳號行程・未經劇團交叉核實",
+    "location": "宜蘭縣壯圍鄉吉祥村中央路二段311號前（7-11對面空地廣場）",
+    "region": "北部",
+    "status": "本人公開行程列明日期、節目、地點及時間；出發前請確認主辦單位",
+    "description": "孫翠鳳官方個人行程列明壯圍演出；免費入場。劇團未由本公告確認。",
+    "link": "https://www.facebook.com/mhysun/posts/pfbid032w2aXfsgmcgKEXbuCcZQJSvjY5XYM3Vs536EBVDcfcDAR4gaqNQaP9VEbbqEyu5Pl",
+    "linkLabel": "孫翠鳳官方 Facebook 原貼文",
+    "sourceUrl": "https://www.facebook.com/mhysun/posts/pfbid032w2aXfsgmcgKEXbuCcZQJSvjY5XYM3Vs536EBVDcfcDAR4gaqNQaP9VEbbqEyu5Pl",
+    "tags": [
+      "孫翠鳳",
+      "歌仔戲",
+      "個人行程",
+      "社群來源"
+    ],
+    "endDate": "2026-10-17"
+  },
+  {
+    "id": "sc-2026-10-18-sun-cui-feng-zhongli",
+    "date": "2026-10-18",
+    "dateFormatted": "2026/10/18（日）",
+    "daysAway": 2,
+    "time": "19:00–21:30",
+    "troupe": "未公布（個人演出行程）",
+    "genre": "歌仔戲",
+    "artist": "孫翠鳳",
+    "title": "《真命天子》",
+    "category": "社群來源 / 個人演出行程",
+    "badgeType": "temple",
+    "verifyStatus": "community",
+    "verifyLabel": "📣 孫翠鳳官方個人帳號行程・未經劇團交叉核實",
+    "location": "桃園市中壢區仁海宮前廣場（中壢區新街里延平路198號）",
+    "region": "北部",
+    "status": "本人公開行程列明日期、節目、地點及時間；出發前請確認主辦單位",
+    "description": "孫翠鳳官方個人行程列明中壢演出；免費入場。劇團未由本公告確認。",
+    "link": "https://www.facebook.com/mhysun/posts/pfbid032w2aXfsgmcgKEXbuCcZQJSvjY5XYM3Vs536EBVDcfcDAR4gaqNQaP9VEbbqEyu5Pl",
+    "linkLabel": "孫翠鳳官方 Facebook 原貼文",
+    "sourceUrl": "https://www.facebook.com/mhysun/posts/pfbid032w2aXfsgmcgKEXbuCcZQJSvjY5XYM3Vs536EBVDcfcDAR4gaqNQaP9VEbbqEyu5Pl",
+    "tags": [
+      "孫翠鳳",
+      "歌仔戲",
+      "個人行程",
+      "社群來源"
+    ],
+    "endDate": "2026-10-18"
   }
 ]

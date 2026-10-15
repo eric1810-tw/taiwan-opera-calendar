@@ -1,7 +1,9 @@
 {
   "version": 1,
   "startedAt": "2026-10-15T07:15:39+08:00",
-  "resumedAt": [],
+  "resumedAt": [
+    "2026-10-16T03:04:48+08:00"
+  ],
   "sources": {
     "threads:joe_huang_k_w": {
       "url": "https://www.threads.com/@joe_huang_k_w",
@@ -320,7 +322,7 @@
     },
     "facebook:100063868113954": {
       "url": "https://www.facebook.com/p/%E5%90%B3%E5%A5%95%E8%90%B1-Wu-Yihsuan-100063868113954",
-      "state": "failed",
+      "state": "partial",
       "attempts": [
         {
           "at": "2026-10-15T07:18:01+08:00",
@@ -339,6 +341,15 @@
           "scope": "第二次等待7秒後取得吳奕萱個人簡介及12小時前貼文日期；該貼文明示「目前無法查看此內容」，其餘貼文仍在載入中；未取得近期貼文正文或媒體",
           "media": "unread",
           "detail": "第二次個人頁重讀後，最新12小時貼文顯示目前無法查看此內容，頁面說明可能因分享對象或刪除；未見可讀演出正文/海報，底部feed載入中。因此來源正文不可讀，狀態failed；不可推論無新演出。"
+        },
+        {
+          "at": "2026-10-16T03:05:10+08:00",
+          "method": "profile-browser-resume",
+          "url": "https://www.facebook.com/p/%E5%90%B3%E5%A5%95%E8%90%B1-Wu-Yihsuan-100063868113954",
+          "state": "partial",
+          "scope": "2026-10-16恢復讀取時個人頁已水合，僅讀到1天前「昨晚被融化の請舉手」及一張舞蹈相關縮圖，正文摺疊且其後貼文區仍載入中；無法回溯/展開昨日原先顯示不可查看的12小時前貼文，最近7天feed與演出海報未完整",
+          "media": "unread",
+          "detail": "本次至少取得一則可讀近期內容，顯示非整頁不可讀；內容暫無戲曲場次資訊，但該帳號來源覆蓋仍不完整，無法據此排除新公告。"
         }
       ]
     },
@@ -526,18 +537,9 @@
       ]
     }
   },
-  "finalizedAt": "2026-10-15T07:34:38+08:00",
+  "finalizedAt": "2026-10-16T03:17:44+08:00",
   "publication": {
-    "state": "verified",
-    "sha": "d8f9695580da32c3f6249d613c52cc9f72d73d0a",
-    "actionsRun": "38654981372",
-    "actionsUrl": "https://github.com/eric1810-tw/taiwan-opera-calendar/actions/runs/38654981372",
-    "publicUrl": "https://eric1810-tw.github.io/taiwan-opera-calendar/data/patrol_status.json",
-    "verifiedAt": "2026-10-15T07:36:12+08:00",
-    "publicStatus": {
-      "startedAt": "2026-10-15T07:15:39+08:00",
-      "status": "failed"
-    }
+    "state": "pending"
   },
   "activeTargets": [
     "threads:joe_huang_k_w",
