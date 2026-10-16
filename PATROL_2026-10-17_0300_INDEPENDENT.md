@@ -18,6 +18,6 @@
 
 - `python3 -m unittest -v`：18 tests passed；`node --check assets/app.js`、`git diff --check`：passed。schedule JSON/schema、日期、`endDate`、唯一 ID 與重複事件鍵檢查通過。
 - schedule 由98增為99張，僅新增上述官方戲曲推廣講座卡；`data/metadata.json` 未修改，未改寫網站資料刷新時間。
-- 最終資料 commit `f03b44dcd6bf0c4984b6f890cfd29e2ba77dbe45`（schedule 98→99）及後續巡檢收尾提交尚未推送；03:17:49 對當時最新 `main` 的 push 因 `Could not resolve host: github.com` 失敗。收尾提交含 `[skip ci]`，該次推送前 HEAD 為 `df258e4f445f740871afec1868d7e01161ac632a`，當時 ahead 7。網路恢復後須 fetch/比較/安全整合；若 skip 指令略過 push workflow，對最新 main SHA 用 `workflow_dispatch` 觸發 `.github/workflows/daily-update.yml`，只在該 SHA 的 run completed/success 後執行 `verify`。若建立新部署提交，以實際部署 SHA 更新 publication 紀錄。公開狀態仍是 `2026-10-15T07:15:39+08:00 / failed`，目前沒有本輪 matching Actions 或真實 run ID。**本輪未上線**。
+- 最終資料 commit `f03b44dcd6bf0c4984b6f890cfd29e2ba77dbe45`（schedule 98→99）及後續巡檢收尾提交尚未推送；03:17:49 對當時最新 `main` 的 push 因 `Could not resolve host: github.com` 失敗。收尾提交含 `[skip ci]`，該次推送前 HEAD 為 `df258e4f445f740871afec1868d7e01161ac632a`，當時 ahead 7。網路恢復後須 fetch/比較/安全整合；若 skip 指令略過 push workflow，對最新 main SHA 用 `workflow_dispatch` 觸發 `.github/workflows/daily-update.yml`；該工作流程會執行 updater，可能另改schedule/metadata並產生自動提交，須核對實際工作樹/自動提交與公開JSON雜湊。使用 workflow 的實際 `head_sha` 及 matching run id 執行 `verify`，只在 completed/success 且公開status一致時記 verified；若資料另有自動提交，另記資料SHA與公開schedule/metadata結果。公開狀態仍是 `2026-10-15T07:15:39+08:00 / failed`，目前沒有本輪 matching Actions 或真實 run ID。**本輪未上線**。
 - 實際排程執行模型未驗證，不聲稱已切換 Luna High。
 - 本機原有 `ISSUES_REVIEW.md`、`PROJECT_HANDOVER.md` 修改及3個未追蹤文件均保留；本輪提交只包含本輪明列檔案。
