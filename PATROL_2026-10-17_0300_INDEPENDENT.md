@@ -21,4 +21,4 @@
 - schedule JSON檢查：98筆、ID唯一、日期有效、`endDate >= date`。沒有修改演出表或網站資料刷新時間。
 - 本機保留原有 `ISSUES_REVIEW.md`、`PROJECT_HANDOVER.md` 修改及3個未追蹤文件；本輪只會暫存明列的巡檢檔案。
 - 實際執行模型未驗證；不聲稱已切換 Luna High。
-- 發布驗收待補：需以本輪資料 SHA 對應 Actions completed/success，並執行 `patrol_progress.py verify` 核對公開狀態。未完成前不得稱已上線。
+- 本輪資料 commit SHA：`57a8c36711e155bc2e913d03b226a1dd5a0049ca`；`git fetch origin main` 與 `git push origin main` 均因 DNS `Could not resolve host: github.com` 失敗，分支本地 ahead 3（含兩個前輪未發布提交）。公開瀏覽器讀到狀態仍為 `2026-10-15T07:15:39+08:00 / failed`。本輪無 matching Actions run，未能以真實 Actions run ID 執行 `verify`；publication=blocked，**本輪未上線**。待 DNS 恢復後先 fetch/比較並整合遠端，再推送，找到本輪 SHA 的 completed/success Actions 並執行 verify。

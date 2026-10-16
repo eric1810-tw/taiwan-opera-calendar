@@ -402,7 +402,15 @@
   },
   "finalizedAt": "2026-10-17T03:10:47+08:00",
   "publication": {
-    "state": "pending"
+    "state": "blocked",
+    "sha": "57a8c36711e155bc2e913d03b226a1dd5a0049ca",
+    "at": "2026-10-17T03:11:42+08:00",
+    "reason": "git fetch origin main 與 git push origin main 均因 Could not resolve host: github.com 失敗；本輪 SHA 未送達 GitHub，沒有 matching Actions run；patrol_progress.py verify 無法以真實 run id 執行。瀏覽器核對公開狀態仍為 2026-10-15T07:15:39+08:00 / failed。",
+    "publicUrl": "https://eric1810-tw.github.io/taiwan-opera-calendar/data/patrol_status.json",
+    "publicStatus": {
+      "startedAt": "2026-10-15T07:15:39+08:00",
+      "status": "failed"
+    }
   },
   "activeTargets": [
     "threads:joe_huang_k_w",
