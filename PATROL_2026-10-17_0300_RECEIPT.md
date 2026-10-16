@@ -2,7 +2,7 @@
 
 - 巡檢開始：2026-10-17T03:02:16+08:00（Asia/Taipei）
 - coverage：failed（17 partial、3 failed、1 complete）；動態目標21項。
-- 最終資料 commit：`f03b44dcd6bf0c4984b6f890cfd29e2ba77dbe45`（Add verified 2026-11-01 opera lecture）。推送嘗試時分支 `main` 相對 `origin/main` ahead 5；`git fetch origin main` 與 `git push origin main` 因 `Could not resolve host: github.com` 失敗。
+- 最終資料 commit：`f03b44dcd6bf0c4984b6f890cfd29e2ba77dbe45`（Add verified 2026-11-01 opera lecture）。推送資料 commit 時分支 `main` 相對 `origin/main` ahead 5；之後將巡檢報告、收據與JSON收尾提交為 `3d5a2ff`，03:17:49 對最新 `main` 再次 `git push origin main` 仍因 `Could not resolve host: github.com` 失敗。此前 `git fetch origin main` 亦同因 DNS 失敗。
 - schedule SHA-256：`a847f1ac24883c4e458e0531e59a847bcaa6cd21091647376b8272f1b6f4ddfa`（98→99，新增1張官方核實講座卡）
 - metadata SHA-256：`9ea3e07f20a1a6f3e31f52a572d2d34d16f0ee95f2427a1dbd640f80ad2efd35`（未修改）
 - patrol_status SHA-256：`2514309cb1e51b361d134bc2ddf62bc539ee418936fbfd845975b18a99a8bd5e`
