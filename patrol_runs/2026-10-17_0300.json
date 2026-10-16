@@ -366,6 +366,15 @@
           "scope": "官方活動頁逐行核對11/1 10:00-12:00戲曲推廣講座、B1藝享空間、50名及報名方式；日曆新增一張lecture卡。14:00-16:00手作坊為同日另一活動，僅官方首頁公告列時間，未單獨建卡。",
           "media": "partial",
           "detail": "官方場館來源明確更正講座時間；台中木偶劇團為駐館團隊，對談內容為布袋戲與影視科技，足以建立非完整演出的lecture卡。手作坊沒有單獨詳情頁或費用核實，作為候選保留未新增。其餘社群feed/影片未讀，來源仍partial。"
+        },
+        {
+          "at": "2026-10-17T03:19:51+08:00",
+          "method": "official-venue-correction-notice-review",
+          "url": "https://www.ttdac.taichung.gov.tw/n35224866818529593950/n3ArticleContent",
+          "state": "partial",
+          "scope": "場館官方10/9更正公告明列11/1上午講座10:00–12:00、下午布袋戲手作工作坊14:00–16:00，並各附報名連結；工作坊為獨立教育活動候選。",
+          "media": "partial",
+          "detail": "fresh-context審核後直接開啟並讀取更正公告；公告未列工作坊費用/名額細節，不建卡、候選資訊保留；社群帳號其餘feed與媒體範圍仍不完整，來源維持partial。"
         }
       ]
     },
@@ -454,12 +463,12 @@
       ]
     }
   },
-  "finalizedAt": "2026-10-17T03:16:16+08:00",
+  "finalizedAt": "2026-10-17T03:19:51+08:00",
   "publication": {
     "state": "blocked",
     "sha": "f03b44dcd6bf0c4984b6f890cfd29e2ba77dbe45",
-    "at": "2026-10-17T03:17:36+08:00",
-    "reason": "對最終資料 commit 執行 git push origin main 失敗：Could not resolve host: github.com；沒有本輪 matching Actions，未能以真實 run id 執行 verify。",
+    "at": "2026-10-17T03:17:49+08:00",
+    "reason": "git push origin main 對最新本地 main（當時 HEAD 3d5a2ff）仍失敗：Could not resolve host: github.com；無本輪 matching Actions，未能以真實 run id 執行 verify。",
     "publicUrl": "https://eric1810-tw.github.io/taiwan-opera-calendar/data/patrol_status.json",
     "publicStatus": {
       "startedAt": "2026-10-15T07:15:39+08:00",

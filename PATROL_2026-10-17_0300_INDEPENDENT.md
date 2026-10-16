@@ -11,13 +11,13 @@
 - 文化部官方全類別 API：命令列、專案原生 `fetch_culture_events()` 均 DNS 失敗；瀏覽器替代路徑成功載入官方 JSON，但規模過大，本輪未逐筆完成動態候選去重/篩查，保持 partial。本地 [`data/moc_candidates.json`](data/moc_candidates.json) 另行核對只有1筆待核候選「三昧堂精工布袋戲展」，標示2027/1/1、屬展覽，不升格為演出。羅裕誴Threads稱南瀛藝術節10/24內容為八方藝團「八家將＋聖王再現」；[官方藝術節場表](https://nanyingfest.tnc.gov.tw/)同時段列八方藝團及大灣國小客家獅隊，描述不一致，保留待核。
 - GitHub Issues 公開頁分別檢查開啟與關閉狀態，讀完#1、#2正文與Activity：2 open、0 closed、無PR混入，無新異動；標 complete。
 - 已知古都竹南10/30、尚和11/7–8、秀琴11/7/11/15、小西園10/30/11/1、嘉義10/24講座與其他已讀場次均與既有卡相符。重看小西園官方海報確認11/1主演是「邱鉦富」，更正本輪轉錄字形；正式場次卡原字已正確。
-- 台中木偶劇團近期資訊經屯區藝文中心官方活動頁交叉核對：2026/11/1「傳統表演藝術與影視科技的表現形式」講座，時間更新為10:00–12:00，B1藝享空間，名額50，免費報名需100元保證金並於報到後退還；已新增1張 `lecture`、`verified` 推廣講座卡。[官方活動頁](https://www.ttdac.taichung.gov.tw/nc5747528526064455651/ncArticleContent)同日14:00–16:00另有布袋戲手作坊公告，但缺獨立活動頁的完整費用/報名資訊，本輪僅列候選不另建卡。11/7售票演出卡既有，無重複新增。
+- 台中木偶劇團近期資訊經屯區藝文中心官方活動頁交叉核對：2026/11/1「傳統表演藝術與影視科技的表現形式」講座，時間更新為10:00–12:00，B1藝享空間，名額50，免費報名需100元保證金並於報到後退還；已新增1張 `lecture`、`verified` 推廣講座卡。[官方活動頁](https://www.ttdac.taichung.gov.tw/nc5747528526064455651/ncArticleContent)核實講座細節；[場館更正公告](https://www.ttdac.taichung.gov.tw/n35224866818529593950/n3ArticleContent)另明列同日14:00–16:00布袋戲手作工作坊及報名連結。工作坊費用/名額未核實，僅保留候選不另建卡。11/7售票演出卡既有，無重複新增。
 - `yolin1991` 提及新吉義林歌劇團10/17–18雲林四湖演出，時間未公布，公開查詢未找到可靠同期劇團/廟方佐證；不新增、不猜時間。其他內容不足或有衝突的線索均保留待核。
 
 ## 對抗式驗收與發布
 
 - `python3 -m unittest -v`：18 tests passed；`node --check assets/app.js`、`git diff --check`：passed。schedule JSON/schema、日期、`endDate`、唯一 ID 與重複事件鍵檢查通過。
 - schedule 由98增為99張，僅新增上述官方戲曲推廣講座卡；`data/metadata.json` 未修改，未改寫網站資料刷新時間。
-- 最終資料 commit `f03b44dcd6bf0c4984b6f890cfd29e2ba77dbe45`（schedule 98→99）推送仍因 `Could not resolve host: github.com` 失敗；推送嘗試時本地 `main` ahead 5。公開狀態仍是 `2026-10-15T07:15:39+08:00 / failed`，沒有本輪 matching Actions，也沒有真實 run ID 可執行 `verify`。**本輪未上線**；網路恢復後須 fetch/比較/整合、推送資料 SHA、確認對應 Actions completed/success，再核對公開 JSON。
+- 最終資料 commit `f03b44dcd6bf0c4984b6f890cfd29e2ba77dbe45`（schedule 98→99）及後續巡檢收尾提交尚未推送；03:17:49 對當時最新 `main` 的 push 因 `Could not resolve host: github.com` 失敗。收尾提交含 `[skip ci]`，該次推送前 HEAD 為 `df258e4f445f740871afec1868d7e01161ac632a`，當時 ahead 7。網路恢復後須 fetch/比較/安全整合；若 skip 指令略過 push workflow，對最新 main SHA 用 `workflow_dispatch` 觸發 `.github/workflows/daily-update.yml`，只在該 SHA 的 run completed/success 後執行 `verify`。若建立新部署提交，以實際部署 SHA 更新 publication 紀錄。公開狀態仍是 `2026-10-15T07:15:39+08:00 / failed`，目前沒有本輪 matching Actions 或真實 run ID。**本輪未上線**。
 - 實際排程執行模型未驗證，不聲稱已切換 Luna High。
 - 本機原有 `ISSUES_REVIEW.md`、`PROJECT_HANDOVER.md` 修改及3個未追蹤文件均保留；本輪提交只包含本輪明列檔案。
