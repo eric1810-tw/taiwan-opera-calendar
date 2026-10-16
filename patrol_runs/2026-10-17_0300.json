@@ -1,0 +1,430 @@
+{
+  "version": 1,
+  "startedAt": "2026-10-17T03:02:16+08:00",
+  "resumedAt": [],
+  "sources": {
+    "threads:joe_huang_k_w": {
+      "url": "https://www.threads.com/@joe_huang_k_w",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-17T03:02:48+08:00",
+          "method": "profile-browser-hydrated",
+          "url": "https://www.threads.com/@joe_huang_k_w",
+          "state": "partial",
+          "scope": "最近7天可讀兩則：1天前生活貼文；2天前完整可讀《台灣風雲錄・戰火波瀾》公告，列苗栗竹南運動公園草地、2026-10-30、17:00進場／18:00開演；另有更早貼文摘要/連結但未逐篇讀完",
+          "media": "unread",
+          "detail": "等待約7秒後正文與日期水合；公告媒體只有alt文字、未實際讀圖，仍見載入中項目，近期feed及置頂/月份公告未全讀，partial。演出候選待與日曆/官方來源比對。"
+        }
+      ]
+    },
+    "threads:h.akito_1996": {
+      "url": "https://www.threads.com/@h.akito_1996",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-17T03:03:00+08:00",
+          "method": "profile-browser-hydrated",
+          "url": "https://www.threads.com/@h.akito_1996",
+          "state": "partial",
+          "scope": "讀到置頂2026-09-26四段長文，第1/4與第2/4正文；標示2026-09-27，內容回顧鍘美藝術節。最近7天未見貼文但feed仍載入中，未能證明沒有新文。",
+          "media": "partial",
+          "detail": "等待後主體已水合；置頂影片第3/4、4/4未讀，未查完整近期貼文、留言/轉發及其他圖媒；來源部分可讀。"
+        }
+      ]
+    },
+    "threads:the_rin.lpm": {
+      "url": "https://www.threads.com/@the_rin.lpm",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-17T03:03:10+08:00",
+          "method": "profile-browser-hydrated",
+          "url": "https://www.threads.com/@the_rin.lpm",
+          "state": "partial",
+          "scope": "置頂2026-09-26正文預告秀琴《玉石變》11/7 19:00新莊保元宮、《金沙灘》11/15 19:00西港慶安宮；9/27補充戲路圖貼文，近期7日未見但feed仍載入中。",
+          "media": "partial",
+          "detail": "正文已讀兩則，日期超過7日；第一則附2張圖中只有第1/2海報描述，第二則單張戲路表有文字描述但圖未實際打開，未讀後續feed/媒體。候選須核對是否已列日曆與官方公告，來源partial。"
+        }
+      ]
+    },
+    "threads:1013.yr_": {
+      "url": "https://www.threads.com/@1013.yr_",
+      "state": "failed",
+      "attempts": [
+        {
+          "at": "2026-10-17T03:03:19+08:00",
+          "method": "profile-browser",
+          "url": "https://www.threads.com/@1013.yr_",
+          "state": "failed",
+          "scope": "個人頁載入後只有「連結失效或頁面不存在」，無正文與日期。",
+          "media": "unread",
+          "detail": "來源帳號本輪初次讀取失敗；改用作者搜尋作第二路徑。"
+        },
+        {
+          "at": "2026-10-17T03:03:28+08:00",
+          "method": "threads-author-search",
+          "url": "https://www.threads.com/search?from_author=1013.yr_",
+          "state": "failed",
+          "scope": "作者搜尋頁只顯示導覽列，等待後未出現結果、正文或日期。",
+          "media": "unread",
+          "detail": "作者搜尋路徑亦不可讀；接續以一般公開索引查詢，不重複相同個人頁。"
+        },
+        {
+          "at": "2026-10-17T03:03:36+08:00",
+          "method": "public-web-index-search",
+          "url": "https://www.google.com/search?q=site%3Athreads.net%2F%401013.yr_+2026",
+          "state": "failed",
+          "scope": "一般搜尋引擎對 site:threads.net/@1013.yr_ 與 site:threads.com/@1013.yr_ 戲曲/2026 查無結果。",
+          "media": "unread",
+          "detail": "三種路徑均無正文：個人頁明示失效、作者搜尋僅導覽列、公開索引無結果。此為本帳號讀取失敗，不推定沒有新貼文。"
+        }
+      ]
+    },
+    "threads:xuefeng_lu_": {
+      "url": "https://www.threads.com/@xuefeng_lu_",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-17T03:03:50+08:00",
+          "method": "profile-browser-hydrated",
+          "url": "https://www.threads.com/@xuefeng_lu_",
+          "state": "partial",
+          "scope": "讀最近4天正文：10/13起私人互動/轉貼，10/9與10/8短文；未見戲曲演出公告。日期與正文範圍依可見feed，尚未全讀。",
+          "media": "partial",
+          "detail": "約待頁面水合後可讀；首則含轉貼圖片/貼文，但媒體未逐張開啟。部分貼文含非本巡檢範圍個人/政治內容，未作演出推論；feed尚未完全載入，標partial。"
+        }
+      ]
+    },
+    "threads:yuzhongluo": {
+      "url": "https://www.threads.com/@yuzhongluo",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-17T03:04:00+08:00",
+          "method": "profile-browser-hydrated",
+          "url": "https://www.threads.com/@yuzhongluo",
+          "state": "partial",
+          "scope": "近2天讀到10/24 15:00 南瀛藝術節「薪瀛舞台展演」新營文化中心演藝廳前：八方傳統藝陣創新藝團「八家將+聖王再現」；另1則10/13海外交流貼文。",
+          "media": "partial",
+          "detail": "頁面水合需額外等待，首則海報僅alt描述未開圖；近期feed後續仍載入中。新候選需看活動海報/官方節目表並與schedule比對後才可更動，當前partial。"
+        }
+      ]
+    },
+    "threads:taiwaneseopera168": {
+      "url": "https://www.threads.com/@taiwaneseopera168",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-17T03:04:17+08:00",
+          "method": "profile-browser-hydrated",
+          "url": "https://www.threads.com/@taiwaneseopera168",
+          "state": "partial",
+          "scope": "置頂2026-08-16文化宣傳；最新貼文約49分鐘前談《桂花巷》台語修復版影展預告，另有影像分享；未讀完餘下feed/圖媒。",
+          "media": "partial",
+          "detail": "約等待7秒正文水合。最新內容非演出公告；標註孫翠鳳但為電影回顧/預告，未據此新增場次。圖片及完整近期貼文尚未全讀，partial。"
+        }
+      ]
+    },
+    "threads:jing__1017": {
+      "url": "https://www.threads.com/@jing__1017",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-17T03:04:29+08:00",
+          "method": "profile-browser-hydrated",
+          "url": "https://www.threads.com/@jing__1017",
+          "state": "partial",
+          "scope": "讀到2天前貼文：10/24 19:00–20:30「戲棚下逐星路」講座，嘉義市文化公園；另1篇連至秀藝琴韻Facebook來源。近期還有4–5小時前兩則YouTube分享，較早feed及2張圖未全讀。",
+          "media": "partial",
+          "detail": "首張海報alt描述未實際讀圖；第二篇外連目標未進入核對。講座非演出，待查是否已作日曆活動處理；來源partial。"
+        }
+      ]
+    },
+    "threads:hilang.on.tour": {
+      "url": "https://www.threads.com/@hilang.on.tour",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-17T03:04:42+08:00",
+          "method": "profile-browser-hydrated",
+          "url": "https://www.threads.com/@hilang.on.tour",
+          "state": "partial",
+          "scope": "2天前完整讀10/30 竹南運動公園大草坪《台灣風雲錄・戰火波瀾》17:00進場、18:00開演，主演台南古都掌中劇團；10/8回顧蓮華寺《鍘龐昱》。",
+          "media": "partial",
+          "detail": "社群正文與個人頁連結已讀，海報alt僅描述未開圖，feed後續未全讀；與joe_huang_k_w同場公告，不新增重複卡。未核查官方主辦原帖/時段異動，保留partial。"
+        }
+      ]
+    },
+    "threads:yolin1991": {
+      "url": "https://www.threads.com/@yolin1991",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-17T03:04:54+08:00",
+          "method": "profile-browser-hydrated",
+          "url": "https://www.threads.com/@yolin1991",
+          "state": "partial",
+          "scope": "最新3天內三篇：10/17–18新吉義林歌劇團於雲林四湖丁家九龍元帥（四湖鄉新庄村砂崙腳31之29號），時間待公布；10/14前輩照片、10/15生日貼文。",
+          "media": "partial",
+          "detail": "演出為關注者貼文，海報未打開，團名/日期/地址僅正文可讀，演出時間未知；須核劇團官方與既有卡後方可修訂。其餘feed仍載入中，partial。"
+        }
+      ]
+    },
+    "facebook:sunhope.fans": {
+      "url": "https://www.facebook.com/sunhope.fans",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-17T03:05:05+08:00",
+          "method": "facebook-profile-browser",
+          "url": "https://www.facebook.com/sunhope.fans",
+          "state": "partial",
+          "scope": "讀個人頁及精選內容：田和越《寒窯之外》11/7、11/8四場13:30/16:30，OPENTIX 2056288538199531521；最新貼文約3小時前為年度創作募資，未讀完整本文。",
+          "media": "unread",
+          "detail": "精選演出連結/正文可讀，海報未讀；只顯示首篇貼文，未全覆蓋近7日feed、留言與圖媒，標partial。需比對日曆重複及11月票券異動。"
+        }
+      ]
+    },
+    "facebook:HsiaoHsiYuan1913": {
+      "url": "https://www.facebook.com/HsiaoHsiYuan1913/",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-17T03:05:11+08:00",
+          "method": "facebook-profile-browser",
+          "url": "https://www.facebook.com/HsiaoHsiYuan1913/",
+          "state": "failed",
+          "scope": "只见个人页骨架和一条既有照片连结，没有近期正文、日期或时间。",
+          "media": "unread",
+          "detail": "本账号初次读不到正文，首轮失败；下一次尝试换公开帖子/图片直接入口。"
+        },
+        {
+          "at": "2026-10-17T03:07:51+08:00",
+          "method": "facebook-direct-photo-viewer",
+          "url": "https://www.facebook.com/photo/?fbid=1569176911875511&set=a.470934128366467",
+          "state": "partial",
+          "scope": "官方5/7貼文照片實讀：大稻埕戲苑曲藝場；10/30週五15:00/19:00《三才陣》《三教評議會》主演黃明隆，11/1週日15:00《虹霓關》主演邱鈺富，均索票入場。",
+          "media": "complete",
+          "detail": "相片檢視器直接路徑成功，展開正文與海報讀完；明示2026下半年，但個人頁及其他近7日貼文仍不可讀。待查場館公告、與日曆比對，不把單張公告當作帳號讀完，仍partial。"
+        }
+      ]
+    },
+    "facebook:100063868113954": {
+      "url": "https://www.facebook.com/p/%E5%90%B3%E5%A5%95%E8%90%B1-Wu-Yihsuan-100063868113954",
+      "state": "failed",
+      "attempts": [
+        {
+          "at": "2026-10-17T03:05:20+08:00",
+          "method": "facebook-profile-browser",
+          "url": "https://www.facebook.com/p/%E5%90%B3%E5%A5%95%E8%90%B1-Wu-Yihsuan-100063868113954",
+          "state": "failed",
+          "scope": "頁面載入後僅Facebook外殼，無帳號資訊或貼文正文、日期、媒體。",
+          "media": "unread",
+          "detail": "第二個FB帳號本次同樣無正文；先記錄，繼續初次讀取其他帳號，留待共同環境診斷。"
+        },
+        {
+          "at": "2026-10-17T03:08:01+08:00",
+          "method": "public-web-index-search",
+          "url": "https://www.google.com/search?q=site%3Afacebook.com+%E5%90%B3%E5%A5%95%E8%90%B1+Wu-Yihsuan+2026+%E6%BC%94%E5%87%BA",
+          "state": "failed",
+          "scope": "以姓名+公開Facebook頁+戲曲演出查詢，搜尋引擎無結果；無正文或候選資料。",
+          "media": "unread",
+          "detail": "本人專頁首試僅空白Facebook殼層，公開索引亦查無當期可讀貼文。無法推定沒有新演出，來源failed；網路可用但個別帳號路徑受限。"
+        }
+      ]
+    },
+    "facebook:MingHuaYuanTianTaiwaneseOpera": {
+      "url": "https://www.facebook.com/MingHuaYuanTianTaiwaneseOpera",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-17T03:05:27+08:00",
+          "method": "facebook-profile-browser",
+          "url": "https://www.facebook.com/MingHuaYuanTianwaneseOpera",
+          "state": "failed",
+          "scope": "頁面僅Facebook空殼，無近期正文、日期或媒體；與前兩個Facebook帳號相同現象。",
+          "media": "unread",
+          "detail": "第三個連續FB帳號同樣無正文，觸發共同環境診斷：本瀏覽器同時可讀尚和個人頁及其精選內容，故不是所有Facebook公共頁皆不可讀；改查另一FB頁與已知原始貼文直連，並繼續餘下來源。"
+        },
+        {
+          "at": "2026-10-17T03:08:20+08:00",
+          "method": "facebook-mobile-profile-browser",
+          "url": "https://www.facebook.com/MingHuaYuanTianwaneseOpera?_rdr",
+          "state": "partial",
+          "scope": "行動版配置成功讀到官方1天前時間更正公告：永康慈后宮2026/10/16–18（農曆9/7–9），地址永康區永平街475號；並列灣裡明吉宮、屏東鹽埔慈靈宮另兩線；5天前國慶回顧。",
+          "media": "partial",
+          "detail": "行動版路徑成功；展開最新正文，但海報尚未實讀，留言/後續feed未全讀。已見活動日期為過去至今日，無未來時間/劇目。原日曆卡已有10/16–18更正，需確認海報細節；此單篇不可代替帳號近期feed覆蓋，partial。"
+        }
+      ]
+    },
+    "facebook:61574134933376": {
+      "url": "https://www.facebook.com/profile.php?id=61574134933376",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-17T03:05:44+08:00",
+          "method": "facebook-profile-browser-hydrated",
+          "url": "https://www.facebook.com/profile.php?id=61574134933376",
+          "state": "partial",
+          "scope": "最近2天最新貼文為潮州《孫臏兵法》演出照片31張相簿；精選近月戲路為農曆九月，最晚至9/26–30。正文只展開首段，照片與其他貼文未讀。",
+          "media": "partial",
+          "detail": "等待約5秒後頁面水合；可讀最新貼文標題/相簿，但未逐張核照片，後續feed未全讀。沒有新未來場次可據此核定，partial。"
+        }
+      ]
+    },
+    "facebook:mhysun": {
+      "url": "https://www.facebook.com/mhysun",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-17T03:05:56+08:00",
+          "method": "facebook-profile-browser-hydrated",
+          "url": "https://www.facebook.com/mhysun",
+          "state": "partial",
+          "scope": "近期僅讀一則15小時前貼文片段「高雄的朋友！等等中午12點，準備搶票啦！」及精選影片/書籍消息；未展開影片正文及留言。",
+          "media": "partial",
+          "detail": "約等待5秒後頁面水合；活動/票務對象不明，影片未播放、海報未讀，feed不完整，不能判斷為無新演出，partial。"
+        }
+      ]
+    },
+    "facebook:61594936681482": {
+      "url": "https://www.facebook.com/profile.php?id=61594936681482",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-17T03:06:07+08:00",
+          "method": "facebook-profile-browser-hydrated",
+          "url": "https://www.facebook.com/profile.php?id=61594936681482",
+          "state": "partial",
+          "scope": "官方精選含過期10/8蓮華寺場；最新2天前貼文宣傳10/30竹南古都《台灣風雲錄・戰火波瀾》，正文被截只見開頭。",
+          "media": "partial",
+          "detail": "貼文海報只露出媒體連結未讀圖，需補正文，10/30時間/地點與Threads同一場；不另新增重複卡。feed其餘範圍未讀，partial。"
+        }
+      ]
+    },
+    "facebook:lanyang.opera": {
+      "url": "https://www.facebook.com/lanyang.opera/",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-17T03:06:18+08:00",
+          "method": "facebook-profile-browser-hydrated",
+          "url": "https://www.facebook.com/lanyang.opera/",
+          "state": "partial",
+          "scope": "置頂/精選讀到10/26 19:00《錯配姻緣》桃園顯安巖顯應祖師廟，桃園市龜山區樂善里樂安街1號，免費、無直播；近期feed其餘貼文未讀。",
+          "media": "partial",
+          "detail": "公告正文可讀，海報只看見影像連結未開圖；場次後續公告仍需查。其餘近7日feed及媒體不完整，partial。"
+        }
+      ]
+    },
+    "facebook:Taichungpuppettheater": {
+      "url": "https://www.facebook.com/Taichungpuppettheater/",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-17T03:06:30+08:00",
+          "method": "facebook-profile-browser-hydrated",
+          "url": "https://www.facebook.com/Taichungpuppettheater/",
+          "state": "partial",
+          "scope": "官方精選卡讀到11/7 14:30《聖劍風雲三》屯區藝文中心實驗劇場、OPENTIX；另11/1 10:00布袋戲講座、14:00手作坊。近4天最新貼文是6:15直播，未播放。",
+          "media": "partial",
+          "detail": "新場次與活動來源正文可讀；精選影片未逐段播放，最新直播未讀，後續feed不完整，partial。須與日曆去重並核公告異動。"
+        }
+      ]
+    },
+    "culture": {
+      "url": "data/moc_candidates.json",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-17T03:06:44+08:00",
+          "method": "official-culture-api-python-urllib",
+          "url": "https://cloud.culture.tw/frontsite/trans/SearchShowAction.do?method=doFindTypeJ&category=all",
+          "state": "failed",
+          "scope": "以官方category=all完整端點首試；DNS解析失敗，未取得資料筆數、分類或候選比對。",
+          "media": "not_applicable",
+          "detail": "失敗原因 Errno 8 nodename nor servname provided。需另用公開網站/可用官方瀏覽器路徑嘗試一次；本資料不得視為沒有候選。"
+        },
+        {
+          "at": "2026-10-17T03:08:42+08:00",
+          "method": "official-culture-api-browser",
+          "url": "https://cloud.culture.tw/frontsite/trans/SearchShowAction.do?method=doFindTypeJ&category=all",
+          "state": "partial",
+          "scope": "Python端點首試DNS失敗；改官方瀏覽器直接開category=all，API回傳JSON長文本，已確認多個類別及日期資料可載入。回應過長未能完整抽取全部戲曲候選、去重與schedule比對。",
+          "media": "unread",
+          "detail": "官方來源替代路徑成功連線，沒有自行限制category；但本輪沒有取得完整筆數及全部候選清單，圖片/公告亦未全核對，故partial，不能推論無新候選。"
+        },
+        {
+          "at": "2026-10-17T03:10:29+08:00",
+          "method": "in-app-browser-official-json-after-api-dns-failure",
+          "url": "https://cloud.culture.tw/frontsite/trans/SearchShowAction.do?method=doFindTypeJ&category=all",
+          "state": "partial",
+          "scope": "官方 category=all JSON 在瀏覽器完整載入，但內容規模巨大；可見資料涵蓋多類別且有戲曲/偶戲相關線索，尚未逐筆篩選、去重與交叉核對全部候選，故保留 partial。",
+          "media": "partial",
+          "detail": "Python urllib API 初次嘗試 DNS 失敗後改用瀏覽器讀取成功；正文可載入，回應超長且無法在本輪完成全部候選逐項篩查，不能據此宣稱無新文化部候選。"
+        }
+      ]
+    },
+    "issues": {
+      "url": "https://github.com/eric1810-tw/taiwan-opera-calendar/issues?q=is%3Aissue+sort%3Aupdated-desc",
+      "state": "complete",
+      "attempts": [
+        {
+          "at": "2026-10-17T03:06:54+08:00",
+          "method": "github-public-browser",
+          "url": "https://github.com/eric1810-tw/taiwan-opera-calendar/issues?q=is%3Aissue+sort%3Aupdated-desc",
+          "state": "partial",
+          "scope": "初次頁面只列2筆Open issues（#1/#2，更新9/29）；此查詢未含closed狀態，故尚未完成全部Issues覆蓋。",
+          "media": "not_applicable",
+          "detail": "瀏覽器公開頁可讀，未見留言/更新變動；立即改用state:all查詢並逐筆讀正文、活動與分頁。"
+        },
+        {
+          "at": "2026-10-17T03:07:01+08:00",
+          "method": "github-public-browser-state-all",
+          "url": "https://github.com/eric1810-tw/taiwan-opera-calendar/issues?q=is%3Aissue+state%3Aall+sort%3Aupdated-desc",
+          "state": "partial",
+          "scope": "GitHub搜尋頁對is:issue state:all回傳0結果，與前一頁2 open矛盾；疑為filter不支援，不能推論無Issues。",
+          "media": "not_applicable",
+          "detail": "切換分別查open與closed，再將列表去重並開啟各Issue正文。"
+        },
+        {
+          "at": "2026-10-17T03:07:20+08:00",
+          "method": "github-public-browser-open-closed-queries",
+          "url": "https://github.com/eric1810-tw/taiwan-opera-calendar/issues?q=is%3Aissue+sort%3Aupdated-desc",
+          "state": "complete",
+          "scope": "open查詢2筆：#2 updated 2026-09-29 03:57 +08、#1 2026-09-29 03:54 +08；closed查詢0筆；排除PR。逐開#2（OPENTIX event/2082042280907173889）及#1（event/2079784321891332096），正文與Activity皆讀，無留言/更新；無分頁。",
+          "media": "not_applicable",
+          "detail": "GitHub公開瀏覽器無登入仍可讀。state:all語法回傳0結果，已用open/closed分查交叉核對，最終2 open/0 closed。兩Issue皆為推薦新增未列出演出，需依ISSUES_REVIEW查來源；本輪無新Activity。"
+        }
+      ]
+    }
+  },
+  "finalizedAt": "2026-10-17T03:10:47+08:00",
+  "publication": {
+    "state": "pending"
+  },
+  "activeTargets": [
+    "threads:joe_huang_k_w",
+    "threads:h.akito_1996",
+    "threads:the_rin.lpm",
+    "threads:1013.yr_",
+    "threads:xuefeng_lu_",
+    "threads:yuzhongluo",
+    "threads:taiwaneseopera168",
+    "threads:jing__1017",
+    "threads:hilang.on.tour",
+    "threads:yolin1991",
+    "facebook:sunhope.fans",
+    "facebook:HsiaoHsiYuan1913",
+    "facebook:100063868113954",
+    "facebook:MingHuaYuanTianTaiwaneseOpera",
+    "facebook:61574134933376",
+    "facebook:mhysun",
+    "facebook:61594936681482",
+    "facebook:lanyang.opera",
+    "facebook:Taichungpuppettheater",
+    "culture",
+    "issues"
+  ]
+}
