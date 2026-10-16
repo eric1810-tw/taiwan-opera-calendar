@@ -456,7 +456,15 @@
   },
   "finalizedAt": "2026-10-17T03:16:16+08:00",
   "publication": {
-    "state": "pending"
+    "state": "blocked",
+    "sha": "f03b44dcd6bf0c4984b6f890cfd29e2ba77dbe45",
+    "at": "2026-10-17T03:17:36+08:00",
+    "reason": "對最終資料 commit 執行 git push origin main 失敗：Could not resolve host: github.com；沒有本輪 matching Actions，未能以真實 run id 執行 verify。",
+    "publicUrl": "https://eric1810-tw.github.io/taiwan-opera-calendar/data/patrol_status.json",
+    "publicStatus": {
+      "startedAt": "2026-10-15T07:15:39+08:00",
+      "status": "failed"
+    }
   },
   "activeTargets": [
     "threads:joe_huang_k_w",

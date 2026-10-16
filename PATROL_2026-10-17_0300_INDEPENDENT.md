@@ -18,6 +18,6 @@
 
 - `python3 -m unittest -v`：18 tests passed；`node --check assets/app.js`、`git diff --check`：passed。schedule JSON/schema、日期、`endDate`、唯一 ID 與重複事件鍵檢查通過。
 - schedule 由98增為99張，僅新增上述官方戲曲推廣講座卡；`data/metadata.json` 未修改，未改寫網站資料刷新時間。
-- 此前 commit `57a8c36711e155bc2e913d03b226a1dd5a0049ca` 的推送因 DNS 失敗；本次對抗式驗收修正來源字形並新增官方講座卡，最終資料 SHA 以本節後續發布收據為準。公開瀏覽器讀取的狀態仍是 `2026-10-15T07:15:39+08:00 / failed`；目前沒有本輪 matching Actions，尚不能執行真實 run ID 的 `verify`。**本輪未上線**；網路恢復後須 fetch/比較/整合、推送最終 SHA、確認對應 Actions completed/success，再核對公開 JSON。
+- 最終資料 commit `f03b44dcd6bf0c4984b6f890cfd29e2ba77dbe45`（schedule 98→99）推送仍因 `Could not resolve host: github.com` 失敗；推送嘗試時本地 `main` ahead 5。公開狀態仍是 `2026-10-15T07:15:39+08:00 / failed`，沒有本輪 matching Actions，也沒有真實 run ID 可執行 `verify`。**本輪未上線**；網路恢復後須 fetch/比較/整合、推送資料 SHA、確認對應 Actions completed/success，再核對公開 JSON。
 - 實際排程執行模型未驗證，不聲稱已切換 Luna High。
 - 本機原有 `ISSUES_REVIEW.md`、`PROJECT_HANDOVER.md` 修改及3個未追蹤文件均保留；本輪提交只包含本輪明列檔案。
