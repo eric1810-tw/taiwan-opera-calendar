@@ -2770,6 +2770,36 @@
     "noticeLabel": "號外"
   },
   {
+    "id": "lecture-2026-11-01-tcpt-tech-visual-magic",
+    "date": "2026-11-01",
+    "dateFormatted": "2026/11/01（日）",
+    "daysAway": 15,
+    "time": "10:00–12:00",
+    "troupe": "台中木偶劇團",
+    "genre": "布袋戲",
+    "artist": "王英潔、邱一峰",
+    "title": "傳統表演藝術與影視科技的表現形式｜解密螢幕背後的視覺魔法",
+    "category": "戲曲講座與推廣（非完整戲曲演出）",
+    "badgeType": "lecture",
+    "verifyStatus": "verified",
+    "verifyLabel": "🏛 屯區藝文中心官方活動頁",
+    "location": "臺中市屯區藝文中心 B1 藝享空間（臺中市太平區大興路201號）",
+    "region": "中部",
+    "status": "免費報名，需繳交100元保證金；完成報到後退還。報名至2026/10/31，名額50名。",
+    "description": "屯區藝文中心官方活動頁公告「台中木偶劇團」布袋戲講座，主題為傳統表演藝術與影視科技的表現形式，由團長王英潔與邱一峰與談。官方更新後時間為10:00–12:00，9:30報到入場。免費報名，需繳交100元保證金，完成報到後現金退還；名額50名，報名至10/31。此為戲曲推廣講座，不是完整戲曲演出。",
+    "link": "https://www.ttdac.taichung.gov.tw/nc5747528526064455651/ncArticleContent",
+    "linkLabel": "屯區藝文中心官方活動頁",
+    "sourceUrl": "https://www.ttdac.taichung.gov.tw/nc5747528526064455651/ncArticleContent",
+    "tags": [
+      "台中木偶劇團",
+      "布袋戲",
+      "講座",
+      "戲曲推廣",
+      "傳統表演藝術",
+      "影視科技"
+    ]
+  },
+  {
     "id": "sc-2026-10-16-sun-cui-feng-xiluo",
     "date": "2026-10-16",
     "dateFormatted": "2026/10/16（五）",

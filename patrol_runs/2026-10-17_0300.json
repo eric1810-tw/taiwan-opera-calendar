@@ -207,6 +207,15 @@
           "scope": "官方5/7貼文照片實讀：大稻埕戲苑曲藝場；10/30週五15:00/19:00《三才陣》《三教評議會》主演黃明隆，11/1週日15:00《虹霓關》主演邱鈺富，均索票入場。",
           "media": "complete",
           "detail": "相片檢視器直接路徑成功，展開正文與海報讀完；明示2026下半年，但個人頁及其他近7日貼文仍不可讀。待查場館公告、與日曆比對，不把單張公告當作帳號讀完，仍partial。"
+        },
+        {
+          "at": "2026-10-17T03:15:02+08:00",
+          "method": "facebook-original-photo-visual-reread",
+          "url": "https://www.facebook.com/photo/?fbid=1569176911875511&set=a.470934128366467",
+          "state": "partial",
+          "scope": "重新讀原始海報照片：2026/10/30兩場《三才陣》《三教評議會》主演黃明隆；2026/11/1 15:00《虹霓關》主演字樣為邱鉦富（一人一票索票）。與既有schedule相同。",
+          "media": "complete",
+          "detail": "fresh-context覆核指出字形矛盾，重新直接開官方Facebook海報並視覺讀圖，確認是「邱鉦富」，非前次OCR/轉錄「邱鈺富」。更正本輪來源紀錄，正式schedule已用正字，不改卡。"
         }
       ]
     },
@@ -236,7 +245,7 @@
     },
     "facebook:MingHuaYuanTianTaiwaneseOpera": {
       "url": "https://www.facebook.com/MingHuaYuanTianTaiwaneseOpera",
-      "state": "partial",
+      "state": "failed",
       "attempts": [
         {
           "at": "2026-10-17T03:05:27+08:00",
@@ -255,6 +264,15 @@
           "scope": "行動版配置成功讀到官方1天前時間更正公告：永康慈后宮2026/10/16–18（農曆9/7–9），地址永康區永平街475號；並列灣裡明吉宮、屏東鹽埔慈靈宮另兩線；5天前國慶回顧。",
           "media": "partial",
           "detail": "行動版路徑成功；展開最新正文，但海報尚未實讀，留言/後續feed未全讀。已見活動日期為過去至今日，無未來時間/劇目。原日曆卡已有10/16–18更正，需確認海報細節；此單篇不可代替帳號近期feed覆蓋，partial。"
+        },
+        {
+          "at": "2026-10-17T03:15:02+08:00",
+          "method": "facebook-profile-browser-correct-target-url",
+          "url": "https://www.facebook.com/MingHuaYuanTianTaiwaneseOpera",
+          "state": "failed",
+          "scope": "依動態名單正確 URL 導航，頁面顯示「目前無法查看此內容」，沒有正文、貼文日期或媒體。前兩次記錄使用拼字不同的路徑，不能視為目標帳號讀取。",
+          "media": "unread",
+          "detail": "獨立審核發現前次嘗試 URL 少字，已重開目標清單的正確網址；仍不可讀。此前別名頁面的個別貼文不歸入本目標來源覆蓋，故本來源以正確目標頁最後結果標 failed。"
         }
       ]
     },
@@ -330,6 +348,24 @@
           "scope": "官方精選卡讀到11/7 14:30《聖劍風雲三》屯區藝文中心實驗劇場、OPENTIX；另11/1 10:00布袋戲講座、14:00手作坊。近4天最新貼文是6:15直播，未播放。",
           "media": "partial",
           "detail": "新場次與活動來源正文可讀；精選影片未逐段播放，最新直播未讀，後續feed不完整，partial。須與日曆去重並核公告異動。"
+        },
+        {
+          "at": "2026-10-17T03:15:02+08:00",
+          "method": "official-venue-calendar-cross-check",
+          "url": "https://www.ttdac.taichung.gov.tw/nc5747528526064455651/ncArticleContent",
+          "state": "partial",
+          "scope": "屯區藝文中心官方頁核對台中木偶劇團11/1講座10:00-12:00（更正前時間14:00-16:00），B1藝享空間，50名、免費報名需100元保證金、完成報到退還；同日14:00-16:00另列布袋戲手作坊。另核官方活動總覽列11/7演出。",
+          "media": "partial",
+          "detail": "場館官方活動頁明列更新後講座時間/報名條件；總覽明列活動與日期，官方頁亦列手作坊時間。講座為戲曲推廣、非完整演出；手作坊為教育體驗。尚未寫入schedule，本輪將評估加入既有lecture類別；社群來源的feed/直播仍未讀完。"
+        },
+        {
+          "at": "2026-10-17T03:15:21+08:00",
+          "method": "official-venue-event-page-cross-check",
+          "url": "https://www.ttdac.taichung.gov.tw/nc5747528526064455651/ncArticleContent",
+          "state": "partial",
+          "scope": "官方活動頁逐行核對11/1 10:00-12:00戲曲推廣講座、B1藝享空間、50名及報名方式；日曆新增一張lecture卡。14:00-16:00手作坊為同日另一活動，僅官方首頁公告列時間，未單獨建卡。",
+          "media": "partial",
+          "detail": "官方場館來源明確更正講座時間；台中木偶劇團為駐館團隊，對談內容為布袋戲與影視科技，足以建立非完整演出的lecture卡。手作坊沒有單獨詳情頁或費用核實，作為候選保留未新增。其餘社群feed/影片未讀，來源仍partial。"
         }
       ]
     },
@@ -363,6 +399,24 @@
           "scope": "官方 category=all JSON 在瀏覽器完整載入，但內容規模巨大；可見資料涵蓋多類別且有戲曲/偶戲相關線索，尚未逐筆篩選、去重與交叉核對全部候選，故保留 partial。",
           "media": "partial",
           "detail": "Python urllib API 初次嘗試 DNS 失敗後改用瀏覽器讀取成功；正文可載入，回應超長且無法在本輪完成全部候選逐項篩查，不能據此宣稱無新文化部候選。"
+        },
+        {
+          "at": "2026-10-17T03:15:02+08:00",
+          "method": "project-native-updater.fetch_culture_events",
+          "url": "https://cloud.culture.tw/frontsite/trans/SearchShowAction.do?method=doFindTypeJ&category=all",
+          "state": "partial",
+          "scope": "專案原生 fetch_culture_events 嘗試官方全類別 API；兩次請求均 DNS 失敗。瀏覽器替代路徑前已載入官方 JSON，但尚未逐筆讀完。",
+          "media": "partial",
+          "detail": "RuntimeError: Culture API unavailable after 2 attempts: <urlopen error [Errno 8] nodename nor servname provided, or not known>。按照規程記錄原生路徑故障，coverage 維持 partial。"
+        },
+        {
+          "at": "2026-10-17T03:15:02+08:00",
+          "method": "local-moc-candidates-read-and-schedule-dedup",
+          "url": "data/moc_candidates.json",
+          "state": "partial",
+          "scope": "本地候選檔只有1筆：moc-20270101-e7a4fdae35「三昧堂精工布袋戲展」，genre布袋戲但為2027/1/1展覽且verifyStatus=pending；不是本輪已核實演出。與公開schedule對照，未升格/複製。API動態候選仍未全讀。",
+          "media": "not_applicable",
+          "detail": "已讀本地 data/moc_candidates.json 並與 data/schedule.json 核對；保留候選、無清除或覆寫。此檔資料不是本輪 API 拉取結果。"
         }
       ]
     },
@@ -400,17 +454,9 @@
       ]
     }
   },
-  "finalizedAt": "2026-10-17T03:10:47+08:00",
+  "finalizedAt": "2026-10-17T03:16:16+08:00",
   "publication": {
-    "state": "blocked",
-    "sha": "57a8c36711e155bc2e913d03b226a1dd5a0049ca",
-    "at": "2026-10-17T03:11:42+08:00",
-    "reason": "git fetch origin main 與 git push origin main 均因 Could not resolve host: github.com 失敗；本輪 SHA 未送達 GitHub，沒有 matching Actions run；patrol_progress.py verify 無法以真實 run id 執行。瀏覽器核對公開狀態仍為 2026-10-15T07:15:39+08:00 / failed。",
-    "publicUrl": "https://eric1810-tw.github.io/taiwan-opera-calendar/data/patrol_status.json",
-    "publicStatus": {
-      "startedAt": "2026-10-15T07:15:39+08:00",
-      "status": "failed"
-    }
+    "state": "pending"
   },
   "activeTargets": [
     "threads:joe_huang_k_w",
