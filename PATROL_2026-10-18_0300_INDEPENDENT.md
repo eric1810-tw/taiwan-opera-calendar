@@ -29,9 +29,9 @@
   - `mhysun`（孫翠鳳）：首讀僅見開賣短影音，恢復後展開1天前已驗證帳號Reel及OPENTIX頁，讀到《烏龍天下》11/20–22臺灣戲曲中心、12/5–6臺中國家歌劇院、12/19–20衛武營三場及售票連結。臺北卡已存在；新增臺中與高雄兩卡，依官方個人帳號公告保留 `community`，時間未公布。Reel未播放，粉專feed仍未全讀，標 partial。
   - 同帳號另讀3天前週末演出原貼文及8張相片連結，全文列10/16西螺《薛丁山傳奇》19:00扮仙、19:30開鑼，10/17壯圍《周公法門桃花女》及10/18中壢《真命天子》，均免費。原文支持現有西螺卡；留言稱總團臉書列《劉全進瓜》只是留言轉述，未找到總團原公告前不據此改卡。照片未逐張開啟。
 
-  - `61594936681482`（戲籠出巡｜臺灣傳統戲曲巡演）：無頭Edge水合約10秒載入粉專頁首與3天前竹南草地演出宣傳貼文（「旅行時...留一個晚上給臺灣的故事」，與現有卡及同品牌Threads相符）；海報圖片未開啟，後續貼文受登入對話框阻擋，標 partial。
-  - `lanyang.opera`（蘭陽戲劇團）：無頭Edge水合約10秒載入粉專頁首與9/30演出貼文（10/26 19:00《錯配姻緣》，與現有卡相符）；海報圖片未開啟，後續貼文受登入對話框阻擋，未全讀近7日feed與戲路表，標 partial。
-  - `Taichungpuppettheater`（台中木偶劇團）：無頭Edge水合約10秒載入粉專頁首與5天前直播影片，無新演出公告文字；影片未播放，後續貼文受登入對話框阻擋，未全讀近7日feed與戲路表，標 partial。
+  - `61594936681482`（戲籠出巡｜臺灣傳統戲曲巡演）：恢復讀取官方置頂官網公告及10/8蓮華寺回顧，明列10/30竹南運動公園大草坪《臺灣風雲錄・戰火波瀾》17:00進場、18:00開演，與現有卡相符。照片及完整近7日feed未全讀，標 partial。
+  - `lanyang.opera`（蘭陽戲劇團）：恢復讀取粉專精選原文，核實10/26 19:00《錯配姻緣》於桃園龜山顯安巖顯應祖師廟、樂善里樂安街1號、免費且無直播，與現有卡相符；圖片及其餘feed未核完，標 partial。
+  - `Taichungpuppettheater`（台中木偶劇團）：恢復讀取粉專精選，11/7《聖劍風雲三》14:30及11/1 10:00布袋戲科技講座均與既有卡相符。另讀到11/1 14:00偶戲手作工作坊：屯區B1藝享空間、20組、300元、報名連結 `https://reurl.cc/0klz6o`。因目前卡片類型只有演出/講座，未將工作坊誤標為完整戲曲演出或講座，先留候選；5天前直播未播放，圖片與feed未全核，標 partial。
 
 - 文化部官方全類別 API：
   - 初讀透過官方端點（`SearchShowAction.do?method=doFindTypeJ&category=all`）載入 1,527 筆 JSON；依關鍵字篩出 30 筆戲曲/偶戲候選。恢復時同端點兩次 DNS 名稱解析失敗，直接瀏覽器替代路徑亦回 `ERR_HTTP_RESPONSE_CODE_FAILURE`。
@@ -44,7 +44,7 @@
 ## 本輪資料變更
 
 - 新增 `mhy-oolong-tc-2026-12-05` 與 `mhy-oolong-wv-2026-12-19`，分別連至臺中國家歌劇院及衛武營的 OPENTIX 活動頁；日期與場館由孫翠鳳已驗證帳號公告，逐場時間尚未顯示，標 `community` 並記「未公布」。原臺北場既有卡未改動。
-- 沒有依留言傳述修改10/16西螺卡；查到孫翠鳳原貼文完整文字明列《薛丁山傳奇》，留言提及的總團公告尚未取得。
+- 沒有依留言傳述修改10/16西螺卡；查到孫翠鳳原貼文完整文字明列《薛丁山傳奇》，留言提及的總團公告尚未取得。另記錄台中木偶劇團11/1手作工作坊候選（14:00、20組、300元、屯區B1），因網站無工作坊卡片類型而未錯誤分類入表。
 - 社群巡檢開始時間與網站資料刷新時間分開；metadata 未因本輪狀態發布而改寫。
 
 ## 對抗式驗收與發布
@@ -58,6 +58,6 @@
 
 ## 發布阻塞與接續
 
-- 本輪資料 commit：`6b61371957343c0110a6e9d63040876638fbf293`。`git fetch origin main` 及 `git push origin main` 均回 `Could not resolve host: github.com`；未推送，沒有此 SHA 的 Actions run，未執行成功的 `patrol_progress.py verify`。
+- 本輪資料 commit：`6b61371957343c0110a6e9d63040876638fbf293`；其後又恢復三個部分可讀 Facebook 來源並記錄在本輪 JSON，補讀結果留在後續本機稽核提交，來源狀態仍 partial。`git fetch origin main` 及 `git push origin main` 均回 `Could not resolve host: github.com`；`gh auth status` 另顯示預設 token invalid。未推送，沒有此 SHA 的 Actions run，未執行成功的 `patrol_progress.py verify`。
 - 公開瀏覽器的 cache-busted 狀態檔仍讀到 `2026-10-18T00:21:53+08:00 / failed`；但這兩欄與上次發布相同。公開 `schedule.json` 顯示96張且不含本輪兩張新卡；本機為98張，因此本輪場次更新尚未上線。
-- 恢復步驟：GitHub DNS/連線恢復後先 `git fetch origin main` 並檢查分歧，再推送本輪 SHA；確認該 SHA 的 `daily-update.yml` Actions 為 completed/success 後，執行 `python3 scripts/patrol_progress.py verify --run patrol_runs/2026-10-18_0300.json --sha 6b61371957343c0110a6e9d63040876638fbf293 --actions-run <該次run-id>`，再更新並推送驗收收據。`threads:1013.yr_` 仍 failed；文化部恢復時 API DNS 與瀏覽器路徑失敗。
+- 恢復步驟：GitHub DNS/連線恢復後先確認 GitHub CLI 授權，再 `git fetch origin main` 並檢查分歧、正常整合，推送本輪資料 SHA及稽核提交；若 `[skip ci]` 使最新HEAD未觸發workflow，對最新資料HEAD執行 workflow_dispatch。確認該 SHA 的 `daily-update.yml` Actions 為 completed/success 後，執行 `python3 scripts/patrol_progress.py verify --run patrol_runs/2026-10-18_0300.json --sha 6b61371957343c0110a6e9d63040876638fbf293 --actions-run <該次run-id>`，再更新並推送驗收收據。`threads:1013.yr_` 仍 failed；文化部恢復時 API DNS 與瀏覽器路徑失敗。

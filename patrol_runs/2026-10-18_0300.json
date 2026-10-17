@@ -420,6 +420,15 @@
           "scope": "讀取粉專簡介與3天前貼文（旅行時...留一個晚上給臺灣的故事，與Threads 10/30竹南場同內容）；附圖未展開，後續feed未載入",
           "media": "partial",
           "detail": "無頭Edge水合約10秒載入粉專頁首與3天前竹南宣傳貼文，與現有卡及Threads相符；海報圖片未展開，後續貼文受登入對話框阻擋，標 partial"
+        },
+        {
+          "at": "2026-10-18T03:10:03+08:00",
+          "method": "in-app-browser-profile-expanded-posts",
+          "url": "https://www.facebook.com/profile.php?id=61594936681482",
+          "state": "partial",
+          "scope": "resume再讀官方粉專可見3天前竹南宣傳貼文（全文僅讀到開頭）、置頂官網公告及10/8蓮華寺回顧全文；置頂列10/30竹南運動公園大草坪《臺灣風雲錄・戰火波瀾》17:00進場、18:00開演，與現有卡相符；貼文照片/後段feed未全讀",
+          "media": "partial",
+          "detail": "粉專可讀資料增補既有竹南community卡，無卡片異動。近期Feed其餘內容仍載入中，照片未逐張開啟，不能視為帳號完整覆蓋。"
         }
       ]
     },
@@ -435,6 +444,15 @@
           "scope": "讀取專頁簡介與9/30貼文（10/26 19:00《錯配姻緣》，與現有卡相符）；海報未展開，後續feed未載入",
           "media": "partial",
           "detail": "無頭Edge水合約10秒載入粉專頁首與9/30演出貼文，與現有卡相符；海報圖片未開啟，後續貼文受登入對話框阻擋，未全讀近7日feed與戲路表，標 partial"
+        },
+        {
+          "at": "2026-10-18T03:10:10+08:00",
+          "method": "in-app-browser-profile-expanded-featured-post",
+          "url": "https://www.facebook.com/lanyang.opera/",
+          "state": "partial",
+          "scope": "resume重新讀取粉專置頂/精選2026/10/26 19:00《錯配姻緣》桃園龜山顯安巖顯應祖師廟，地址樂善里樂安街1號、免費、無直播；貼文圖片未開啟，後續feed仍載入中",
+          "media": "unread",
+          "detail": "官方貼文資訊與現有10/26卡相符；圖片與近7日其餘feed未核完，僅補強單一場次證據，帳號維持partial。"
         }
       ]
     },
@@ -450,6 +468,15 @@
           "scope": "讀取專頁簡介與5天前直播貼文；未見新演出公告文字，後續feed未載入",
           "media": "unread",
           "detail": "無頭Edge水合約10秒載入粉專頁首與5天前直播影片；影片未播放，後續貼文受登入對話框阻擋，未全讀近7日feed與戲路表，標 partial"
+        },
+        {
+          "at": "2026-10-18T03:10:43+08:00",
+          "method": "in-app-browser-profile-expanded-featured-post",
+          "url": "https://www.facebook.com/Taichungpuppettheater/",
+          "state": "partial",
+          "scope": "resume再次讀官方精選貼文：11/7《聖劍風雲三》14:30屯區實驗劇場（既有卡）；11/1 10:00王英潔×邱一峰布袋戲科技講座（既有verified卡），同日14:00偶戲手作工作坊20組、300元、屯區B1藝享空間，報名short link https://reurl.cc/0klz6o；5天前直播未播放，圖片及完整feed未核",
+          "media": "partial",
+          "detail": "講座資料與現有卡相符。新見手作工作坊的時間、地點、名額、費用均已由劇團官方精選貼文明列，但網站目前badgeType無workshop類型，先記為可核實候選，不誤標講座或完整演出；待有一致呈現類型再入表。直播未播，近期feed未全讀，帳號維持partial。"
         }
       ]
     },
@@ -502,21 +529,21 @@
       ]
     }
   },
-  "finalizedAt": "2026-10-18T03:07:10+08:00",
+  "finalizedAt": "2026-10-18T03:11:15+08:00",
   "publication": {
     "state": "blocked",
     "sha": "6b61371957343c0110a6e9d63040876638fbf293",
     "actionsRun": null,
     "publicUrl": "https://eric1810-tw.github.io/taiwan-opera-calendar/data/patrol_status.json",
     "attemptedAt": "2026-10-18T03:08:30+08:00",
-    "reason": "git fetch origin main 與 git push origin main 均因 Could not resolve host: github.com 失敗，無法推送本輪資料，故沒有此 SHA 對應的 Actions run。以公開瀏覽器檢查：patrol_status.json 仍為本輪 startedAt/failed（該狀態已存在於舊發布）；公開 schedule.json 仍96張，不含本輪新增臺中與高雄兩卡。",
+    "reason": "git fetch origin main 與 git push origin main 均因 Could not resolve host: github.com 失敗，無法推送本輪資料，故無此 SHA 對應 Actions。gh auth status 另顯示預設 GitHub token invalid。以公開瀏覽器檢查：patrol_status.json 仍為本輪 startedAt/failed（該狀態已存在於舊發布）；公開 schedule.json 仍96張，不含本輪新增臺中與高雄兩卡。",
     "publicStatus": {
       "startedAt": "2026-10-18T00:21:53+08:00",
       "status": "failed"
     },
     "publicScheduleCards": 96,
     "publicContainsNewEvents": false,
-    "nextStep": "網路可解析 github.com 後先 fetch origin main、確認無遠端分歧，再 push 6b61371957343c0110a6e9d63040876638fbf293；取得該 SHA 的 daily-update.yml Actions completed/success 後，執行 patrol_progress.py verify。"
+    "nextStep": "github.com DNS 恢復後先驗證 GitHub CLI 授權；再 fetch origin main 並比較/整合遠端，push資料SHA及後續本輪稽核提交。若 [skip ci] 收尾提交未觸發 workflow，對最後資料HEAD workflow_dispatch；核同一SHA daily-update.yml completed/success後，執行 patrol_progress.py verify。"
   },
   "activeTargets": [
     "threads:joe_huang_k_w",
