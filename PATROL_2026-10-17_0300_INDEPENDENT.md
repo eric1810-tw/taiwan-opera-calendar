@@ -22,3 +22,12 @@
 - 2026-10-17 20:49（Asia/Taipei）resume 發布追蹤：`git fetch origin main` 仍 DNS 失敗。GitHub 網頁顯示遠端 `main` 已從共同基底 `58a989b` 前進至自動提交 `ae0a92b`、`e063c0b`；自動更新觸及 schedule/metadata，且本地尚未取得遠端物件，故本地分支已與遠端分歧，不能直接推送。遠端 Actions [#106](https://github.com/eric1810-tw/taiwan-opera-calendar/actions/runs/38988749015) completed/success 的 head 是排程觸發 `ae0a92b`，後續 updater 產生 `e063c0b`，並非本輪 SHA；公開 patrol_status 實讀仍為 10/15 failed。此次只確認遠端狀態，未改動其資料。恢復 DNS 後須 fetch、比較自動更新差異，再安全整合本輪資料並重新驗收。
 - 實際排程執行模型未驗證，不聲稱已切換 Luna High。
 - 本機原有 `ISSUES_REVIEW.md`、`PROJECT_HANDOVER.md` 修改及3個未追蹤文件均保留；本輪提交只包含本輪明列檔案。
+
+
+## 續跑：網路環境診斷與發布驗收（2026-10-17 21:15 Asia/Taipei）
+
+- 根因已定位：一般命令沙箱沒有可用 DNS 設定（`scutil --dns` 回 `No DNS configuration available`）；Python 對 `github.com`、`api.github.com`、`eric1810-tw.github.io` 均 `getaddrinfo` 失敗，`route -n get default` 遭 `Operation not permitted`。透過獲准提升權限的唯讀路徑重試時，兩個 GitHub 網域均解析成功、GitHub 頁面及公開 Pages 回 HTTP 200，`git ls-remote` 與 `git fetch origin main` 成功。故障屬命令沙箱的網路/DNS 隔離；「電腦 DNS 壞掉」並非正確結論。前次只依沙箱錯誤歸因 DNS，判斷不完整。
+- fetch 取得遠端 `ae0a92b`、`e063c0b` 兩筆 updater 提交。比對後保留遠端的最新 `data/metadata.json` 刷新時間 `2026-10-17T08:57:55+08:00` 及倒數值，移除遠端 updater 已剔除的3筆過期場次，保留本輪講座與官方日期更正。整合提交 `b33144e129c91a6aec5c6baaac78d33113519f0a`，未 force push。合併後 96 筆；18項 unittest、`node --check assets/app.js`、`git diff --check`、日期/endDate/ID/事件鍵與逐卡事實差異核對皆通過。
+- `git push origin main` 成功（遠端 `e063c0b..b33144e`）。Actions [run 39035784418](https://github.com/eric1810-tw/taiwan-opera-calendar/actions/runs/39035784418) 為同一 SHA 的 push，`completed/success`。規程 `patrol_progress.py verify` 通過；公開 status 為本輪 `2026-10-17T03:02:16+08:00 / failed`，與本輪來源覆蓋一致。
+- 公開檔逐位元 SHA-256 對照：`schedule.json` `bcecb6bae0840985a50514f3caa57578c6be36c3097b4d0371657ed5f3a78ffc`；`metadata.json` `997d55acc5e86468c7d5b0b6f2f15c13ac7762e6e2af3f8084b602e1974a47cd`；`patrol_status.json` `2514309cb1e51b361d134bc2ddf62bc539ee418936fbfd845975b18a99a8bd5e`（見下方收據為準）。metadata 顯示網站資料刷新 10/17 08:57；巡檢開始時間仍獨立為 10/17 03:02。發布驗收已 verified，但來源覆蓋仍 failed（17 partial、3 failed、1 complete），不可表述成巡檢 complete。
+- 本機原有 `ISSUES_REVIEW.md`、`PROJECT_HANDOVER.md` 修改、`patrol_runs/2026-10-16_0300.json` 修改及三個未追蹤文件均未加入提交，仍留在工作區。
