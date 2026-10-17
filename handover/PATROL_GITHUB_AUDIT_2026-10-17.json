@@ -1,0 +1,292 @@
+{
+  "checkedAt": "2026-10-17T21:57:50.570330+08:00",
+  "remoteMain": "d115a052095ed4bcdc0a32a1deada7671fb36796",
+  "runs": [
+    {
+      "file": "2026-10-09_0300.json",
+      "remotePublication": "verified",
+      "sha": "ffb104a1cc23aa446776a454a3aa169a07450d4a",
+      "actionsRun": "37830259024",
+      "liveActions": {
+        "head_sha": "ffb104a1cc23aa446776a454a3aa169a07450d4a",
+        "status": "completed",
+        "conclusion": "success",
+        "path": ".github/workflows/daily-update.yml",
+        "html_url": "https://github.com/eric1810-tw/taiwan-opera-calendar/actions/runs/37830259024"
+      },
+      "shaAncestorOfRemoteMain": true,
+      "remoteFiles": {
+        "patrol_runs/2026-10-09_0300.json": {
+          "sha256": "4d917256fb2f9e7666a3e0c9e78e5ca05e78cfb87d33a5e29c97943369ff1a98",
+          "bytes": 27362
+        },
+        "PATROL_2026-10-09_0300_INDEPENDENT.md": {
+          "sha256": "94d2c96fa243e1cd72ce1a315af52ca51ad7be8ff9fa7e1775d039a1bdf6c01b",
+          "bytes": 5433
+        },
+        "PATROL_2026-10-09_0300_RECEIPT.md": {
+          "sha256": "d14889471edb9d20a33da74bc6207f2c03599aa672153c57d593a6b0d4e44053",
+          "bytes": 1574
+        }
+      }
+    },
+    {
+      "file": "2026-10-10_0300.json",
+      "remotePublication": "verified",
+      "sha": "16adf82328be58dc3456bd3c9a079ea6cdde74b4",
+      "actionsRun": "38005309417",
+      "liveActions": {
+        "head_sha": "16adf82328be58dc3456bd3c9a079ea6cdde74b4",
+        "status": "completed",
+        "conclusion": "success",
+        "path": ".github/workflows/daily-update.yml",
+        "html_url": "https://github.com/eric1810-tw/taiwan-opera-calendar/actions/runs/38005309417"
+      },
+      "shaAncestorOfRemoteMain": true,
+      "remoteFiles": {
+        "patrol_runs/2026-10-10_0300.json": {
+          "sha256": "9dbf1b63ce0ee5474cd15b369ea04084b7997debd006a164383a410ffc28af5d",
+          "bytes": 37445
+        },
+        "PATROL_2026-10-10_0300_INDEPENDENT.md": {
+          "sha256": "2577cb2e2c980131f8dc0c2a0d0b5d5de84992827f51199140ae87ce877ce11c",
+          "bytes": 34064
+        },
+        "PATROL_2026-10-10_0300_RECEIPT.md": {
+          "sha256": "a1cdcb7a0117608f0e7e2c30f1b48bd36e56e2eae44ce0d76bf6ca54ac2a11d4",
+          "bytes": 3841
+        }
+      }
+    },
+    {
+      "file": "2026-10-11_0300.json",
+      "remotePublication": "verified",
+      "sha": "4e86509fc9cb1474b6289f4ec053359042fa0c3a",
+      "actionsRun": "38078301761",
+      "liveActions": {
+        "head_sha": "4e86509fc9cb1474b6289f4ec053359042fa0c3a",
+        "status": "completed",
+        "conclusion": "success",
+        "path": ".github/workflows/daily-update.yml",
+        "html_url": "https://github.com/eric1810-tw/taiwan-opera-calendar/actions/runs/38078301761"
+      },
+      "shaAncestorOfRemoteMain": true,
+      "remoteFiles": {
+        "patrol_runs/2026-10-11_0300.json": {
+          "sha256": "70813613b2034f57a1361ca72c52ff5d2a25aa97d5425279358430ebcf28ad88",
+          "bytes": 27106
+        },
+        "PATROL_2026-10-11_0300_INDEPENDENT.md": {
+          "sha256": "fa3821edcbca5466a83f924921f3cc50a1441d05fad2c706511adf607fef0b2d",
+          "bytes": 5334
+        },
+        "PATROL_2026-10-11_0300_RECEIPT.md": {
+          "sha256": "fd75fbcf656159e6040142e2c7a2b917ad18fc8e9e15a5f2234b2744bd97ebdd",
+          "bytes": 3385
+        }
+      }
+    },
+    {
+      "file": "2026-10-12_0300.json",
+      "remotePublication": "verified",
+      "sha": "cd6bd23073c94141bbc97a4a30ce1c4db8dabd36",
+      "actionsRun": "38166376833",
+      "liveActions": {
+        "head_sha": "cd6bd23073c94141bbc97a4a30ce1c4db8dabd36",
+        "status": "completed",
+        "conclusion": "success",
+        "path": ".github/workflows/daily-update.yml",
+        "html_url": "https://github.com/eric1810-tw/taiwan-opera-calendar/actions/runs/38166376833"
+      },
+      "shaAncestorOfRemoteMain": true,
+      "remoteFiles": {
+        "patrol_runs/2026-10-12_0300.json": {
+          "sha256": "a5377bce70149d36d19af9bf413badf52a7867d0b4fac7fb91a59154cb516202",
+          "bytes": 33937
+        },
+        "PATROL_2026-10-12_0300_INDEPENDENT.md": {
+          "sha256": "2605a8158dfb7f46b27680c6076662bc5cda0ff9d70dc150001e663ed1526ed3",
+          "bytes": 8050
+        },
+        "PATROL_2026-10-12_0300_RECEIPT.md": {
+          "sha256": "effde9527aaa96bbf152de45e2f55b83986d10dacd0911aab5b976fc5beed9e7",
+          "bytes": 3855
+        }
+      }
+    },
+    {
+      "file": "2026-10-13_0300.json",
+      "remotePublication": "verified",
+      "sha": "a76492999fe17e5871baa3156092a2df3cb00d34",
+      "actionsRun": "38415095773",
+      "liveActions": {
+        "head_sha": "a76492999fe17e5871baa3156092a2df3cb00d34",
+        "status": "completed",
+        "conclusion": "success",
+        "path": ".github/workflows/daily-update.yml",
+        "html_url": "https://github.com/eric1810-tw/taiwan-opera-calendar/actions/runs/38415095773"
+      },
+      "shaAncestorOfRemoteMain": true,
+      "remoteFiles": {
+        "patrol_runs/2026-10-13_0300.json": {
+          "sha256": "c0e65e255a7091723a8e25f33efbca94098a317b6042f8166e92ca40c5f28c9d",
+          "bytes": 31338
+        },
+        "PATROL_2026-10-13_0300_INDEPENDENT.md": {
+          "sha256": "6c211be537271fbc3c7ab1c411b1394a3aa99094af74cb3c0ff7c6b27b34f6eb",
+          "bytes": 7235
+        },
+        "PATROL_2026-10-13_0300_RECEIPT.md": {
+          "sha256": "b84f78f41616666e424d070150b20029fd3d1ccc7d9a3fc287a7bf9555eac244",
+          "bytes": 3439
+        }
+      }
+    },
+    {
+      "file": "2026-10-14_0300.json",
+      "remotePublication": "blocked",
+      "sha": "9c9efc9195f55e29d18ebf564c89024b03e98c66",
+      "actionsRun": null,
+      "shaAncestorOfRemoteMain": true,
+      "remoteFiles": {
+        "patrol_runs/2026-10-14_0300.json": {
+          "sha256": "2d1cff9623bcecbff23dc1169e9788badfbd8efe15d867c71efa6663922d774c",
+          "bytes": 29366
+        },
+        "PATROL_2026-10-14_0300_INDEPENDENT.md": {
+          "sha256": "edfbd96c2b02487c5cf7a912fbf8648ca926f4ce6bdc788408ebf1847ee6da2d",
+          "bytes": 5102
+        },
+        "PATROL_2026-10-14_0300_RECEIPT.md": {
+          "sha256": "60452226dda68e073d285652e46c2e06171791186c08fb7718a528a5873ab640",
+          "bytes": 2868
+        }
+      }
+    },
+    {
+      "file": "2026-10-15_0300.json",
+      "remotePublication": "pending",
+      "sha": null,
+      "actionsRun": null,
+      "remoteFiles": {
+        "patrol_runs/2026-10-15_0300.json": {
+          "sha256": "e89773cad61616d34bd865fddf2a4542a43fc7b7b37f91597fcfc1a0b0a72f3f",
+          "bytes": 32083
+        },
+        "PATROL_2026-10-15_0300_INDEPENDENT.md": {
+          "sha256": "89341b7121176f9963587097bd4880ec31cf76efa1407c86feb4cec248be1207",
+          "bytes": 30252
+        },
+        "PATROL_2026-10-15_0300_RECEIPT.md": {
+          "sha256": "2b4e520700e832101d8178a4d9b2412ad6ca5de027de030108a92f3059bfbd16",
+          "bytes": 2367
+        }
+      }
+    },
+    {
+      "file": "2026-10-16_0300.json",
+      "remotePublication": "blocked",
+      "sha": "553041c61a0e6cdb38153017683f62f4bf88f279",
+      "actionsRun": null,
+      "shaAncestorOfRemoteMain": true,
+      "remoteFiles": {
+        "patrol_runs/2026-10-16_0300.json": {
+          "sha256": "283dfeaa9d72f90571da7f601645b2576501ad3d2dd293200f1a1d0e138f5224",
+          "bytes": 23116
+        },
+        "PATROL_2026-10-16_0300_INDEPENDENT.md": {
+          "sha256": "9a1ab41d4f50ac33fa0e157348d0dc8a28bb923109458a5060dbe2646371049d",
+          "bytes": 14453
+        },
+        "PATROL_2026-10-16_0300_RECEIPT.md": {
+          "sha256": "e719c167830108b045c19ca75556db6bdf21d8bb4f38f8d08e29c2d648015262",
+          "bytes": 1738
+        }
+      }
+    },
+    {
+      "file": "2026-10-17_0300.json",
+      "remotePublication": "verified",
+      "sha": "b33144e129c91a6aec5c6baaac78d33113519f0a",
+      "actionsRun": "39035784418",
+      "liveActions": {
+        "head_sha": "b33144e129c91a6aec5c6baaac78d33113519f0a",
+        "status": "completed",
+        "conclusion": "success",
+        "path": ".github/workflows/daily-update.yml",
+        "html_url": "https://github.com/eric1810-tw/taiwan-opera-calendar/actions/runs/39035784418"
+      },
+      "shaAncestorOfRemoteMain": true,
+      "remoteFiles": {
+        "patrol_runs/2026-10-17_0300.json": {
+          "sha256": "f0974d805eabac470d4fe497b50d56c4b2dca64479c985c229aaa0ac8ff2e5af",
+          "bytes": 29909
+        },
+        "PATROL_2026-10-17_0300_INDEPENDENT.md": {
+          "sha256": "b37b0aaea69ae8bc8deee329979da29c6b5bbf3ff8906e590146938fcce0d92d",
+          "bytes": 8531
+        },
+        "PATROL_2026-10-17_0300_RECEIPT.md": {
+          "sha256": "99214b3201c6f00707b9cca9a4596d9d32327d253667593ee1f34d1b8473faae",
+          "bytes": 4526
+        }
+      }
+    }
+  ],
+  "public": {
+    "data/schedule.json": {
+      "sha256": "bcecb6bae0840985a50514f3caa57578c6be36c3097b4d0371657ed5f3a78ffc",
+      "matchesLocal": true
+    },
+    "data/metadata.json": {
+      "sha256": "997d55acc5e86468c7d5b0b6f2f15c13ac7762e6e2af3f8084b602e1974a47cd",
+      "matchesLocal": true,
+      "value": {
+        "lastUpdated": "2026-10-17T08:57:55+08:00",
+        "timezone": "Asia/Taipei"
+      }
+    },
+    "data/patrol_status.json": {
+      "sha256": "2514309cb1e51b361d134bc2ddf62bc539ee418936fbfd845975b18a99a8bd5e",
+      "matchesLocal": true,
+      "value": {
+        "startedAt": "2026-10-17T03:02:16+08:00",
+        "status": "failed"
+      }
+    }
+  },
+  "2026-10-14ExactShaActions": {
+    "total": 0,
+    "runs": []
+  },
+  "2026-10-16ExactShaActions": {
+    "total": 0,
+    "runs": []
+  },
+  "2026-10-15ReceiptActions": {
+    "id": 38654981372,
+    "head_sha": "d8f9695580da32c3f6249d613c52cc9f72d73d0a",
+    "status": "completed",
+    "conclusion": "success",
+    "path": ".github/workflows/daily-update.yml",
+    "html_url": "https://github.com/eric1810-tw/taiwan-opera-calendar/actions/runs/38654981372"
+  },
+  "historical20261015": {
+    "verifiedVersionCommit": "a127580",
+    "publication": {
+      "state": "verified",
+      "sha": "d8f9695580da32c3f6249d613c52cc9f72d73d0a",
+      "actionsRun": "38654981372",
+      "actionsUrl": "https://github.com/eric1810-tw/taiwan-opera-calendar/actions/runs/38654981372",
+      "publicUrl": "https://eric1810-tw.github.io/taiwan-opera-calendar/data/patrol_status.json",
+      "verifiedAt": "2026-10-15T07:36:12+08:00",
+      "publicStatus": {
+        "startedAt": "2026-10-15T07:15:39+08:00",
+        "status": "failed"
+      }
+    },
+    "replacedByCommit": "553041c",
+    "evidenceCommand": "git show 553041c -- patrol_runs/2026-10-15_0300.json",
+    "meaning": "subsequent cross-day resume/finalize cleared verified state; historical success is preserved in Git, not valid for the modified current run"
+  }
+}

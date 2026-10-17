@@ -1,0 +1,443 @@
+{
+  "capturedAt": "2026-10-17T21:31:10+08:00",
+  "repository": {
+    "path": "/Users/eric/aiwork/taiwan-opera-calendar",
+    "head": "d115a052095ed4bcdc0a32a1deada7671fb36796",
+    "upstreamTracking": "d115a052095ed4bcdc0a32a1deada7671fb36796",
+    "remote": "https://github.com/eric1810-tw/taiwan-opera-calendar.git",
+    "statusBeforeHandover": "## main...origin/main\n M ISSUES_REVIEW.md\n M PROJECT_HANDOVER.md\n M patrol_runs/2026-10-16_0300.json\n?? CLAUDE_AUDIT_2026-09-30.md\n?? CLOUDFLARE_HANDOVER.md\n?? CODEX_TASK_REVIEW_FIXES_2026-09-30.md"
+  },
+  "data": {
+    "cards": 96,
+    "verification": {
+      "verified": 41,
+      "community": 55
+    },
+    "region": {
+      "南部": 52,
+      "北部": 32,
+      "未分類": 1,
+      "中部": 10,
+      "東部": 1
+    },
+    "withEndDate": 52,
+    "metadata": {
+      "lastUpdated": "2026-10-17T08:57:55+08:00",
+      "timezone": "Asia/Taipei"
+    },
+    "patrolStatus": {
+      "startedAt": "2026-10-17T03:02:16+08:00",
+      "status": "failed"
+    },
+    "hashes": {
+      "data/schedule.json": "bcecb6bae0840985a50514f3caa57578c6be36c3097b4d0371657ed5f3a78ffc",
+      "data/metadata.json": "997d55acc5e86468c7d5b0b6f2f15c13ac7762e6e2af3f8084b602e1974a47cd",
+      "data/patrol_status.json": "2514309cb1e51b361d134bc2ddf62bc539ee418936fbfd845975b18a99a8bd5e",
+      "patrol_runs/2026-10-17_0300.json": "f0974d805eabac470d4fe497b50d56c4b2dca64479c985c229aaa0ac8ff2e5af"
+    }
+  },
+  "watchlists": {
+    "threads": [
+      {
+        "username": "joe_huang_k_w"
+      },
+      {
+        "username": "h.akito_1996"
+      },
+      {
+        "username": "the_rin.lpm"
+      },
+      {
+        "username": "1013.yr_"
+      },
+      {
+        "username": "xuefeng_lu_"
+      },
+      {
+        "username": "yuzhongluo"
+      },
+      {
+        "username": "taiwaneseopera168"
+      },
+      {
+        "username": "jing__1017"
+      },
+      {
+        "username": "hilang.on.tour"
+      },
+      {
+        "username": "yolin1991"
+      }
+    ],
+    "facebook": [
+      {
+        "name": "尚和歌仔戲劇團",
+        "url": "https://www.facebook.com/sunhope.fans",
+        "handle": "sunhope.fans",
+        "identitySource": "https://www.opentix.life/event/2056288538199531521",
+        "note": "OPENTIX 尚和歌仔戲劇團主辦節目頁直接列出此粉絲專頁；巡檢公開貼文及圖片戲路表，無法讀取時須回報，不得推定沒有新場次。"
+      },
+      {
+        "name": "小西園掌中劇團",
+        "url": "https://www.facebook.com/HsiaoHsiYuan1913/",
+        "handle": "HsiaoHsiYuan1913",
+        "identitySource": "https://www.facebook.com/photo/?fbid=1569176911875511&set=a.470934128366467",
+        "note": "官方粉絲專頁；巡檢公開演出公告及圖片戲路表，圖片中的日期、劇目、場地與場次需逐項登錄並核對。"
+      },
+      {
+        "name": "吳奕萱 Wu-Yihsuan",
+        "url": "https://www.facebook.com/p/%E5%90%B3%E5%A5%95%E8%90%B1-Wu-Yihsuan-100063868113954",
+        "handle": "100063868113954",
+        "identitySource": "https://www.facebook.com/p/%E5%90%B3%E5%A5%95%E8%90%B1-Wu-Yihsuan-100063868113954",
+        "note": "使用者提供的公開個人專頁；持續巡檢公開貼文、演出預告及圖片戲路表。個人演出與歌仔戲場次須區分；圖片文字不清或僅有回顧時保留來源，不推測未來日期。"
+      },
+      {
+        "name": "明華園天字戲劇團",
+        "url": "https://www.facebook.com/MingHuaYuanTianTaiwaneseOpera",
+        "handle": "MingHuaYuanTianTaiwaneseOpera",
+        "identitySource": "https://www.facebook.com/MingHuaYuanTianTaiwaneseOpera",
+        "note": "使用者提供的公開劇團專頁；巡檢公告與圖片戲路表，逐項核對演出日期、劇目、場地及場次。"
+      },
+      {
+        "name": "繡花園戲劇團x明華園地字戲劇團",
+        "url": "https://www.facebook.com/profile.php?id=61574134933376",
+        "handle": "61574134933376",
+        "identitySource": "https://freshweekly.tw/?id=ir6x42kq5l55&pn=vw",
+        "note": "劇團官方 Facebook 專頁；本輪 10/4 潮州《孫臏兵法》由劇團官方 Instagram 原帖核實。巡檢公開貼文與海報，若只見載入不全，不能推定沒有新場次。"
+      },
+      {
+        "name": "孫翠鳳",
+        "url": "https://www.facebook.com/mhysun",
+        "handle": "mhysun",
+        "identitySource": "https://www.facebook.com/mhysun",
+        "note": "使用者指定的孫翠鳳公開已驗證帳號；巡檢公開演出預告、貼文與圖片戲路表。區分個人行程與明華園總團或其他團體場次；時間、劇目或團體未載時明示未知，不以回顧推算未來演出。讀取不全須記錄 partial。"
+      },
+      {
+        "name": "戲籠出巡｜臺灣傳統戲曲巡演",
+        "url": "https://www.facebook.com/profile.php?id=61594936681482",
+        "handle": "61594936681482",
+        "identitySource": "https://www.facebook.com/profile.php?id=61594936681482",
+        "note": "使用者指定的公開粉絲頁；已確認頁名及自介為戲籠出巡，頁面連至sites.google.com/view/hilang-re/與Instagram hilang.on.tour。巡檢巡演消息、演出預告及圖片，與同品牌Threads來源核對去重並保留連結；只見回顧或內容不全時不得推定沒有新資訊。"
+      },
+      {
+        "name": "蘭陽戲劇團",
+        "url": "https://www.facebook.com/lanyang.opera/",
+        "handle": "lanyang.opera",
+        "identitySource": "https://www.ilccb.gov.tw/cp.aspx?n=10221",
+        "note": "宜蘭縣政府文化局列示的蘭陽戲劇團官方 Facebook 專頁；巡檢公開貼文與圖片戲路表，逐項記錄場次；若圖片或貼文內容不全，須標記部分可讀，不推定沒有新場次。"
+      },
+      {
+        "name": "台中木偶劇團",
+        "url": "https://www.facebook.com/Taichungpuppettheater/",
+        "handle": "Taichungpuppettheater",
+        "identitySource": "https://www.facebook.com/Taichungpuppettheater/posts/pfbid02VPKQ74HgK5XP7RHJhiNiEsR6Brn1RtixsrgBPHApXqGP5Mf4t6joqBezUNMjH3xSl",
+        "note": "使用者指定的公開劇團專頁；巡檢近期演出公告與海報，逐項核對日期、時間、劇目、場地及售票連結。貼文或圖片未完整讀取時須記錄 partial，不得推定沒有新資訊。"
+      }
+    ]
+  },
+  "candidates": {
+    "threadsCount": 12,
+    "cultureCount": 1
+  },
+  "latestPatrol": {
+    "path": "patrol_runs/2026-10-17_0300.json",
+    "startedAt": "2026-10-17T03:02:16+08:00",
+    "finalizedAt": "2026-10-17T03:19:51+08:00",
+    "counts": {
+      "partial": 17,
+      "failed": 3,
+      "complete": 1
+    },
+    "sources": {
+      "threads:joe_huang_k_w": {
+        "state": "partial",
+        "attempts": 1,
+        "url": "https://www.threads.com/@joe_huang_k_w",
+        "lastDetail": "等待約7秒後正文與日期水合；公告媒體只有alt文字、未實際讀圖，仍見載入中項目，近期feed及置頂/月份公告未全讀，partial。演出候選待與日曆/官方來源比對。"
+      },
+      "threads:h.akito_1996": {
+        "state": "partial",
+        "attempts": 1,
+        "url": "https://www.threads.com/@h.akito_1996",
+        "lastDetail": "等待後主體已水合；置頂影片第3/4、4/4未讀，未查完整近期貼文、留言/轉發及其他圖媒；來源部分可讀。"
+      },
+      "threads:the_rin.lpm": {
+        "state": "partial",
+        "attempts": 1,
+        "url": "https://www.threads.com/@the_rin.lpm",
+        "lastDetail": "正文已讀兩則，日期超過7日；第一則附2張圖中只有第1/2海報描述，第二則單張戲路表有文字描述但圖未實際打開，未讀後續feed/媒體。候選須核對是否已列日曆與官方公告，來源partial。"
+      },
+      "threads:1013.yr_": {
+        "state": "failed",
+        "attempts": 3,
+        "url": "https://www.threads.com/@1013.yr_",
+        "lastDetail": "三種路徑均無正文：個人頁明示失效、作者搜尋僅導覽列、公開索引無結果。此為本帳號讀取失敗，不推定沒有新貼文。"
+      },
+      "threads:xuefeng_lu_": {
+        "state": "partial",
+        "attempts": 1,
+        "url": "https://www.threads.com/@xuefeng_lu_",
+        "lastDetail": "約待頁面水合後可讀；首則含轉貼圖片/貼文，但媒體未逐張開啟。部分貼文含非本巡檢範圍個人/政治內容，未作演出推論；feed尚未完全載入，標partial。"
+      },
+      "threads:yuzhongluo": {
+        "state": "partial",
+        "attempts": 1,
+        "url": "https://www.threads.com/@yuzhongluo",
+        "lastDetail": "頁面水合需額外等待，首則海報僅alt描述未開圖；近期feed後續仍載入中。新候選需看活動海報/官方節目表並與schedule比對後才可更動，當前partial。"
+      },
+      "threads:taiwaneseopera168": {
+        "state": "partial",
+        "attempts": 1,
+        "url": "https://www.threads.com/@taiwaneseopera168",
+        "lastDetail": "約等待7秒正文水合。最新內容非演出公告；標註孫翠鳳但為電影回顧/預告，未據此新增場次。圖片及完整近期貼文尚未全讀，partial。"
+      },
+      "threads:jing__1017": {
+        "state": "partial",
+        "attempts": 1,
+        "url": "https://www.threads.com/@jing__1017",
+        "lastDetail": "首張海報alt描述未實際讀圖；第二篇外連目標未進入核對。講座非演出，待查是否已作日曆活動處理；來源partial。"
+      },
+      "threads:hilang.on.tour": {
+        "state": "partial",
+        "attempts": 1,
+        "url": "https://www.threads.com/@hilang.on.tour",
+        "lastDetail": "社群正文與個人頁連結已讀，海報alt僅描述未開圖，feed後續未全讀；與joe_huang_k_w同場公告，不新增重複卡。未核查官方主辦原帖/時段異動，保留partial。"
+      },
+      "threads:yolin1991": {
+        "state": "partial",
+        "attempts": 1,
+        "url": "https://www.threads.com/@yolin1991",
+        "lastDetail": "演出為關注者貼文，海報未打開，團名/日期/地址僅正文可讀，演出時間未知；須核劇團官方與既有卡後方可修訂。其餘feed仍載入中，partial。"
+      },
+      "facebook:sunhope.fans": {
+        "state": "partial",
+        "attempts": 1,
+        "url": "https://www.facebook.com/sunhope.fans",
+        "lastDetail": "精選演出連結/正文可讀，海報未讀；只顯示首篇貼文，未全覆蓋近7日feed、留言與圖媒，標partial。需比對日曆重複及11月票券異動。"
+      },
+      "facebook:HsiaoHsiYuan1913": {
+        "state": "partial",
+        "attempts": 3,
+        "url": "https://www.facebook.com/HsiaoHsiYuan1913/",
+        "lastDetail": "fresh-context覆核指出字形矛盾，重新直接開官方Facebook海報並視覺讀圖，確認是「邱鉦富」，非前次OCR/轉錄「邱鈺富」。更正本輪來源紀錄，正式schedule已用正字，不改卡。"
+      },
+      "facebook:100063868113954": {
+        "state": "failed",
+        "attempts": 2,
+        "url": "https://www.facebook.com/p/%E5%90%B3%E5%A5%95%E8%90%B1-Wu-Yihsuan-100063868113954",
+        "lastDetail": "本人專頁首試僅空白Facebook殼層，公開索引亦查無當期可讀貼文。無法推定沒有新演出，來源failed；網路可用但個別帳號路徑受限。"
+      },
+      "facebook:MingHuaYuanTianTaiwaneseOpera": {
+        "state": "failed",
+        "attempts": 3,
+        "url": "https://www.facebook.com/MingHuaYuanTianTaiwaneseOpera",
+        "lastDetail": "獨立審核發現前次嘗試 URL 少字，已重開目標清單的正確網址；仍不可讀。此前別名頁面的個別貼文不歸入本目標來源覆蓋，故本來源以正確目標頁最後結果標 failed。"
+      },
+      "facebook:61574134933376": {
+        "state": "partial",
+        "attempts": 1,
+        "url": "https://www.facebook.com/profile.php?id=61574134933376",
+        "lastDetail": "等待約5秒後頁面水合；可讀最新貼文標題/相簿，但未逐張核照片，後續feed未全讀。沒有新未來場次可據此核定，partial。"
+      },
+      "facebook:mhysun": {
+        "state": "partial",
+        "attempts": 1,
+        "url": "https://www.facebook.com/mhysun",
+        "lastDetail": "約等待5秒後頁面水合；活動/票務對象不明，影片未播放、海報未讀，feed不完整，不能判斷為無新演出，partial。"
+      },
+      "facebook:61594936681482": {
+        "state": "partial",
+        "attempts": 1,
+        "url": "https://www.facebook.com/profile.php?id=61594936681482",
+        "lastDetail": "貼文海報只露出媒體連結未讀圖，需補正文，10/30時間/地點與Threads同一場；不另新增重複卡。feed其餘範圍未讀，partial。"
+      },
+      "facebook:lanyang.opera": {
+        "state": "partial",
+        "attempts": 1,
+        "url": "https://www.facebook.com/lanyang.opera/",
+        "lastDetail": "公告正文可讀，海報只看見影像連結未開圖；場次後續公告仍需查。其餘近7日feed及媒體不完整，partial。"
+      },
+      "facebook:Taichungpuppettheater": {
+        "state": "partial",
+        "attempts": 4,
+        "url": "https://www.facebook.com/Taichungpuppettheater/",
+        "lastDetail": "fresh-context審核後直接開啟並讀取更正公告；公告未列工作坊費用/名額細節，不建卡、候選資訊保留；社群帳號其餘feed與媒體範圍仍不完整，來源維持partial。"
+      },
+      "culture": {
+        "state": "partial",
+        "attempts": 5,
+        "url": "data/moc_candidates.json",
+        "lastDetail": "已讀本地 data/moc_candidates.json 並與 data/schedule.json 核對；保留候選、無清除或覆寫。此檔資料不是本輪 API 拉取結果。"
+      },
+      "issues": {
+        "state": "complete",
+        "attempts": 3,
+        "url": "https://github.com/eric1810-tw/taiwan-opera-calendar/issues?q=is%3Aissue+sort%3Aupdated-desc",
+        "lastDetail": "GitHub公開瀏覽器無登入仍可讀。state:all語法回傳0結果，已用open/closed分查交叉核對，最終2 open/0 closed。兩Issue皆為推薦新增未列出演出，需依ISSUES_REVIEW查來源；本輪無新Activity。"
+      }
+    },
+    "publication": {
+      "state": "verified",
+      "sha": "b33144e129c91a6aec5c6baaac78d33113519f0a",
+      "actionsRun": "39035784418",
+      "actionsUrl": "https://github.com/eric1810-tw/taiwan-opera-calendar/actions/runs/39035784418",
+      "publicUrl": "https://eric1810-tw.github.io/taiwan-opera-calendar/data/patrol_status.json",
+      "verifiedAt": "2026-10-17T21:15:54+08:00",
+      "publicStatus": {
+        "startedAt": "2026-10-17T03:02:16+08:00",
+        "status": "failed"
+      },
+      "resumeDiagnostics": [
+        {
+          "recordedAt": "2026-10-17T21:15:54+08:00",
+          "finding": "受限命令沙箱的一般執行無 DNS 設定（scutil --dns 回報 No DNS configuration available；socket.getaddrinfo 對 github.com、api.github.com、eric1810-tw.github.io 均失敗；route 查詢遭 Operation not permitted）。在獲准提升權限的唯讀路徑下，兩個 GitHub 網域均成功解析、GitHub 與 Pages 回 HTTP 200，git ls-remote 及 git fetch 均成功。根因是命令執行沙箱的網路/DNS 隔離，非桌面瀏覽器或電腦整體斷網。",
+          "recovery": "fetch origin/main 後發現遠端兩筆 updater 提交；保留遠端資料刷新時間與 daysAway、移除三筆過期場次、保留本輪已核實新增／更正。以 merge commit b33144e129c91a6aec5c6baaac78d33113519f0a 整合，無 force push。",
+          "publication": "推送成功；Actions 39035784418 對應本輪資料 SHA，push/completed/success。verify 通過；公開 patrol_status、schedule、metadata 的原始 SHA-256 均與本地相符。"
+        }
+      ]
+    }
+  },
+  "preservedWorkingFiles": {
+    "ISSUES_REVIEW.md": {
+      "sha256": "7e551b66ec48c95de9e550fb94cac3481ff384fcb45cb9301dfbdec2d2201581",
+      "bytes": 2806,
+      "tracked": true,
+      "unstagedDiffSha256": "db38035bd4e976780a21a84d289ff46c0bc56f1e32d97241a518ebd583b096f3"
+    },
+    "PROJECT_HANDOVER.md": {
+      "sha256": "f1b2002cdefa74b9fff66c2673993cc84d50e83783f7588b1db2863d50fca585",
+      "bytes": 11639,
+      "tracked": true,
+      "unstagedDiffSha256": "40820dba8ac88d87d66fb03d39e5b45af0f88b7182cd5da1048b5e2fcc3b887a"
+    },
+    "patrol_runs/2026-10-16_0300.json": {
+      "sha256": "80874b418154dc56c3c91961f27e589ddfd1da12f48e72558f131e71bf8e5777",
+      "bytes": 23133,
+      "tracked": true,
+      "unstagedDiffSha256": "65231d21fde2ef34bd7a0c0584c97f5f15789018ce8918a59c403d0df661da54"
+    },
+    "CLAUDE_AUDIT_2026-09-30.md": {
+      "sha256": "59259a428dcaffcd1200ab307668a8c1061cfd10ea3b6cd866aecd2afd9090c4",
+      "bytes": 30390,
+      "tracked": false
+    },
+    "CLOUDFLARE_HANDOVER.md": {
+      "sha256": "c2e67dcc180939fddacf8612e95a65001ac2b40db85158afeef07337cb5e171b",
+      "bytes": 12801,
+      "tracked": false
+    },
+    "CODEX_TASK_REVIEW_FIXES_2026-09-30.md": {
+      "sha256": "459810f13753aa41dd7433484c61193c63151213fd5073cb1025c338445a4a0c",
+      "bytes": 19127,
+      "tracked": false
+    }
+  },
+  "codexAutomations": {
+    "07-00-19-00": {
+      "id": "07-00-19-00",
+      "name": "臺灣戲曲獨立巡檢（每日03:00）",
+      "kind": "cron",
+      "status": "ACTIVE",
+      "rrule": "FREQ=DAILY;BYHOUR=3;BYMINUTE=0",
+      "model": "gpt-6-luna",
+      "reasoning_effort": "high",
+      "execution_environment": "local",
+      "cwds": [
+        "/Users/eric/aiwork"
+      ],
+      "prompt": "這是每日一次的獨立臺灣戲曲資訊巡檢。到 /Users/eric/aiwork/taiwan-opera-calendar，完整閱讀 PATROL_OPERATIONS.md，依「執行與恢復規則」執行。Asia/Taipei 每天03:00動態讀取最新 Threads／Facebook 名單、文化部候選及 GitHub 全部 Issues。先以 scripts/patrol_progress.py init 建立本輪 patrol_runs JSON，逐項完成初次讀取後處理未完成項目，每次嘗試即 record，寫明時間、方法、公開網址、正文與媒體範圍、失敗原因；不能只交代『最多重試三次』。初次失敗最多再試三次，連續兩次相同故障先診斷、換可用路徑；單一來源失敗繼續其餘來源，三個同平台帳號相同失敗先檢查共同環境。補跑 resume 原輪進度，隔日建立新輪；不將原始貼文直連或其他官方公告冒充整個帳號已讀完。以 summary 檢查漏项、finalize 產生真實 complete／partial／failed；未嘗試與關鍵來源不可讀屬 failed，部分可讀不是無新資訊。核對原始公告、去重及異動，只有證據足夠才修訂公開演出表，未知欄位保留未公布。完成規程測試，只 stage 本輪明列檔案，保留所有既有工作區修改；每輪推送巡檢紀錄、本輪 JSON 與 data/patrol_status.json。保存資料 SHA，確認其對應 Actions completed/success，使用 verify 核對公開網站狀態檔，另留驗收收據；受阻時保存錯誤、進度及接續方法，明確通知，不能稱已上線。網站資料刷新時間與社群巡檢開始時間分開。日常以 Luna High 試行前5輪，檢查漏項、恢復及發布品質；來源衝突保留候選，不宣稱已自動切換模型。原舊 heartbeat id=threads 已停用，不要重啟；本獨立排程為唯一日常社群巡檢。"
+    }
+  },
+  "antigravity": {
+    "appVersion": "2.23.1",
+    "cliVersion": "1.3.2",
+    "cliPath": "/Users/eric/.local/bin/agy",
+    "modelsQuery": "success outside Codex sandbox",
+    "availableModels": [
+      "gemini-3.8-flash-high",
+      "gemini-3.8-flash-medium",
+      "gemini-3.8-flash-low",
+      "claude-sonnet-4-6",
+      "claude-opus-4-6-thinking",
+      "gpt-oss-120b-medium"
+    ],
+    "projectAgentTrial": "not executed; auto-review rejected local-project-content transfer to external Gemini model",
+    "oldScratchRepo": "/Users/eric/.gemini/antigravity/scratch/taiwan-opera-calendar",
+    "oldScratchHead": "5ca7fc71fe134a16cbe03d354529096e9ef5f845",
+    "oldScratchTrackingStatus": "ahead 1 relative to its stale tracking ref; not proof ahead of current remote"
+  },
+  "livePublicVerification": {
+    "at": "2026-10-17T21:31:27+08:00",
+    "checks": {
+      "remoteCommit": {
+        "state": "success",
+        "url": "https://api.github.com/repos/eric1810-tw/taiwan-opera-calendar/commits/main",
+        "result": {
+          "sha": "d115a052095ed4bcdc0a32a1deada7671fb36796",
+          "message": "Record resumed patrol diagnostics and verified receipt [skip ci]"
+        }
+      },
+      "matchingActions": {
+        "state": "success",
+        "url": "https://api.github.com/repos/eric1810-tw/taiwan-opera-calendar/actions/runs/39035784418",
+        "result": {
+          "id": 39035784418,
+          "head_sha": "b33144e129c91a6aec5c6baaac78d33113519f0a",
+          "status": "completed",
+          "conclusion": "success",
+          "event": "push",
+          "path": ".github/workflows/daily-update.yml",
+          "html_url": "https://github.com/eric1810-tw/taiwan-opera-calendar/actions/runs/39035784418"
+        }
+      },
+      "issues": {
+        "state": "success",
+        "url": "https://api.github.com/repos/eric1810-tw/taiwan-opera-calendar/issues?state=all&sort=updated&per_page=100",
+        "result": {
+          "returned": 2,
+          "issues": [
+            {
+              "number": 2,
+              "state": "open",
+              "updated_at": "2026-09-28T19:57:36Z",
+              "comments": 0,
+              "html_url": "https://github.com/eric1810-tw/taiwan-opera-calendar/issues/2"
+            },
+            {
+              "number": 1,
+              "state": "open",
+              "updated_at": "2026-09-28T19:54:09Z",
+              "comments": 0,
+              "html_url": "https://github.com/eric1810-tw/taiwan-opera-calendar/issues/1"
+            }
+          ],
+          "note": "list-only health check, not a new complete patrol of comments"
+        }
+      },
+      "data/schedule.json": {
+        "state": "success",
+        "url": "https://eric1810-tw.github.io/taiwan-opera-calendar/data/schedule.json?handover=20261017",
+        "sha256": "bcecb6bae0840985a50514f3caa57578c6be36c3097b4d0371657ed5f3a78ffc",
+        "matchesLocal": true
+      },
+      "data/metadata.json": {
+        "state": "success",
+        "url": "https://eric1810-tw.github.io/taiwan-opera-calendar/data/metadata.json?handover=20261017",
+        "sha256": "997d55acc5e86468c7d5b0b6f2f15c13ac7762e6e2af3f8084b602e1974a47cd",
+        "matchesLocal": true
+      },
+      "data/patrol_status.json": {
+        "state": "success",
+        "url": "https://eric1810-tw.github.io/taiwan-opera-calendar/data/patrol_status.json?handover=20261017",
+        "sha256": "2514309cb1e51b361d134bc2ddf62bc539ee418936fbfd845975b18a99a8bd5e",
+        "matchesLocal": true
+      }
+    },
+    "githubCliAuth": {
+      "exitCode": 0,
+      "loggedInReported": true,
+      "failureReported": false,
+      "note": "token contents were not printed or stored"
+    }
+  }
+}
