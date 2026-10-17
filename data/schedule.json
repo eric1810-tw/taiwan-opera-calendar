@@ -937,6 +937,70 @@
     "endDate": "2026-11-22"
   },
   {
+    "id": "mhy-oolong-tc-2026-12-05",
+    "date": "2026-12-05",
+    "dateFormatted": "2026/12/05（六）–12/06（日）",
+    "daysAway": 48,
+    "time": "未公布",
+    "troupe": "明華園戲劇總團",
+    "genre": "歌仔戲",
+    "artist": "孫翠鳳",
+    "title": "《烏龍天下》（臺中場）",
+    "category": "社群來源 / OPENTIX售票公演",
+    "badgeType": "ticket",
+    "verifyStatus": "community",
+    "verifyLabel": "📣 孫翠鳳已驗證帳號公告＋OPENTIX活動頁；時間未公布",
+    "location": "臺中市西屯區惠來路二段101號（臺中國家歌劇院大劇院）",
+    "region": "中部",
+    "status": "官方個人帳號列12/5–6臺中國家歌劇院；演出時間未公布，請查主辦最新公告",
+    "description": "孫翠鳳已驗證 Facebook 帳號列明《烏龍天下》12/5–6於臺中國家歌劇院演出，並連至 OPENTIX 活動頁；售票頁未顯示逐場演出時間，故保留未公布。",
+    "link": "https://www.opentix.life/event/2079821135483363329",
+    "linkLabel": "OPENTIX 臺中國家歌劇院活動頁",
+    "sourceUrl": "https://www.facebook.com/reel/1836919060822921",
+    "relatedSourceUrls": [
+      "https://www.facebook.com/mhysun"
+    ],
+    "tags": [
+      "明華園總團",
+      "烏龍天下",
+      "歌仔戲",
+      "社群來源"
+    ],
+    "endDate": "2026-12-06"
+  },
+  {
+    "id": "mhy-oolong-wv-2026-12-19",
+    "date": "2026-12-19",
+    "dateFormatted": "2026/12/19（六）–12/20（日）",
+    "daysAway": 62,
+    "time": "未公布",
+    "troupe": "明華園戲劇總團",
+    "genre": "歌仔戲",
+    "artist": "孫翠鳳",
+    "title": "《烏龍天下》（高雄場）",
+    "category": "社群來源 / OPENTIX售票公演",
+    "badgeType": "ticket",
+    "verifyStatus": "community",
+    "verifyLabel": "📣 孫翠鳳已驗證帳號公告＋OPENTIX活動頁；時間未公布",
+    "location": "衛武營國家藝術文化中心",
+    "region": "南部",
+    "status": "官方個人帳號列12/19–20衛武營；演出時間未公布，請查主辦最新公告",
+    "description": "孫翠鳳已驗證 Facebook 帳號列明《烏龍天下》12/19–20於衛武營演出，並連至 OPENTIX 活動頁；售票頁未顯示逐場演出時間，故保留未公布。",
+    "link": "https://www.opentix.life/event/2105624453117001729",
+    "linkLabel": "OPENTIX 衛武營活動頁",
+    "sourceUrl": "https://www.facebook.com/reel/1836919060822921",
+    "relatedSourceUrls": [
+      "https://www.facebook.com/mhysun"
+    ],
+    "tags": [
+      "明華園總團",
+      "烏龍天下",
+      "歌仔戲",
+      "社群來源"
+    ],
+    "endDate": "2026-12-20"
+  },
+  {
     "id": "tmy-flagship-2026-11-27",
     "date": "2026-11-27",
     "dateFormatted": "2026/11/27 (五) ~ 11/29 (日)",

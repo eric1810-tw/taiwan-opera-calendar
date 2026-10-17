@@ -2,7 +2,8 @@
   "version": 1,
   "startedAt": "2026-10-18T00:21:53+08:00",
   "resumedAt": [
-    "2026-10-18T00:37:36+08:00"
+    "2026-10-18T00:37:36+08:00",
+    "2026-10-18T02:57:49+08:00"
   ],
   "sources": {
     "threads:joe_huang_k_w": {
@@ -17,6 +18,15 @@
           "scope": "最近24小時可讀4則短文（女兒探班、台灣大賽出門工作、請支援收贏、小黑蚊普渡眾生），未見新演出公告；更早貼文未完整載入",
           "media": "unread",
           "detail": "無頭Edge水合等待約10秒讀取可見首批4則貼文；後續貼文受未登入提示阻擋，近7天完整feed與置頂圖媒未全讀，記 partial"
+        },
+        {
+          "at": "2026-10-18T02:58:27+08:00",
+          "method": "in-app-browser-profile-hydration",
+          "url": "https://www.threads.com/@joe_huang_k_w",
+          "state": "partial",
+          "scope": "2026-10-18 02:58 Asia/Taipei resume: after about 7 seconds, read four posts dated October 17, from 6 to 11 hours ago; latest text includes family/work, baseball, “請支援收贏”, and mosquito reflection. Remaining feed is still loading and not fully reviewed.",
+          "media": "unread",
+          "detail": "Profile body hydrated; public profile is accessible, ruling out a blanket Threads outage. Profile shows古都木偶戲劇團/團長, but post media and remaining recent feed were not fully inspected; retain partial."
         }
       ]
     },
@@ -47,6 +57,15 @@
           "scope": "置頂2026-09-26預告秀琴《玉石變》11/7新莊保元宮、《金沙灘》11/15西港慶安宮（皆已在表）；9/27補戲路表，近7天貼文未顯現",
           "media": "unread",
           "detail": "無頭Edge水合約10秒讀取置頂與9/27貼文；戲路圖未開啟，後續feed受未登入截斷，近7天未全讀，標 partial"
+        },
+        {
+          "at": "2026-10-18T02:59:58+08:00",
+          "method": "in-app-browser-profile-and-post-media",
+          "url": "https://www.threads.com/@the_rin.lpm/post/Ddy9Vv8k7IV/media",
+          "state": "partial",
+          "scope": "2026-10-18 03:03 Asia/Taipei resume: read the pinned 2026-09-26 body for 11/7 19:00 《玉石變》新莊保元宮 and 11/15 19:00 《金沙灘》西港慶安宮; opened the 9/27 attached route-table image and visually read visible rows through 11/7, including a separate 10/30–31 西港慶安宮 entry. Remaining feed is still loading; the full account is not covered.",
+          "media": "partial",
+          "detail": "Both 11/7 and 11/15 announcements match existing schedule entries. The 9/27 image is an older lunar-month route table and adds a 10/30–31 West Port Temple row; it does not establish a change to the separate 11/15 notice. Keep candidates separate and retain partial pending full feed and full image review."
         }
       ]
     },
@@ -80,6 +99,15 @@
           "scope": "搜尋引擎與公開索引對 site:threads.net/@1013.yr_ 2026 查無公開結果，無可讀正文",
           "media": "unread",
           "detail": "個人頁導向登入、作者搜尋逾時、公開索引查無結果；三種路徑均無法取得正文，依規程記錄3次嘗試後保留 failed，不推定無新資訊"
+        },
+        {
+          "at": "2026-10-18T02:58:06+08:00",
+          "method": "in-app-browser-profile",
+          "url": "https://www.threads.com/@1013.yr_",
+          "state": "failed",
+          "scope": "2026-10-18 02:57 Asia/Taipei resume retry: direct profile still displays “連結失效或頁面不存在”; no profile, post body, date, or feed could be read.",
+          "media": "unread",
+          "detail": "Current retry reproduces the profile-unavailable page. Earlier same-round attempts had profile redirect to login, author-search timeout, and public search with no result. No new evidence supports changing failed to no-update."
         }
       ]
     },
@@ -110,6 +138,15 @@
           "scope": "讀取最近4天貼文：19小時前鍘美回播、3天前南瀛藝術節10/24八方藝團八家將、海外交流等；後續未完",
           "media": "partial",
           "detail": "無頭Edge水合等待約10秒載入可見feed；10/24南瀛藝術節屬藝陣且官方節目表描述不一維持候選；影片與圖媒未全開，後續feed受未登入截斷，標 partial"
+        },
+        {
+          "at": "2026-10-18T03:01:30+08:00",
+          "method": "in-app-browser-profile-hydration",
+          "url": "https://www.threads.com/@yuzhongluo",
+          "state": "partial",
+          "scope": "2026-10-18 03:12 Asia/Taipei resume: after 6 seconds, read posts from 2 hours ago (杏林怨 memory), 22 hours ago (link to 9/19 live recording), and 3 days ago (10/24 15:00 南瀛藝術節／新營文化中心前「八方傳統藝陣創新藝團」八家將+聖王再現). Poster media and remaining feed not reviewed.",
+          "media": "unread",
+          "detail": "The 10/24 post repeats the previously conflicting event candidate; leave it unpromoted pending official schedule reconciliation. Other visible posts are retrospective/live-recording links. Remaining profile feed still loading, so keep partial."
         }
       ]
     },
@@ -125,6 +162,15 @@
           "scope": "讀取最近14小時貼文：4小時前明華園天字團10/17臨水夫人廟夜戲魏徵斬龍王、12小時前台南新站、14小時前歌仔上青入圍；其餘未載入",
           "media": "partial",
           "detail": "無頭Edge水合等待約10秒載入可見feed；10/17夜戲魏徵斬龍王已過，10/18今夜劇目仍未公布，天字團臨水夫人卡包含今明兩日；未開啟全部圖媒，後續feed受未登入截斷，標 partial"
+        },
+        {
+          "at": "2026-10-18T03:01:48+08:00",
+          "method": "in-app-browser-profile-hydration",
+          "url": "https://www.threads.com/@taiwaneseopera168",
+          "state": "partial",
+          "scope": "2026-10-18 03:14 Asia/Taipei resume: after about 6 seconds, read pinned 8/16 post and recent posts at 6 hours ago (10/17 night show《魏徵斬龍王》at 臨水夫人媽廟, livestream link), 14 hours ago (10/17 Tainan rail opening), and 19 hours ago (rail video). Latest feed remains loading; linked live video and full media not all opened.",
+          "media": "partial",
+          "detail": "The night-show reference is retrospective for 10/17; the 10/18 card already exists with unknown show/time. No evidence supports changing future schedule. Full account coverage remains partial."
         }
       ]
     },
@@ -140,6 +186,15 @@
           "scope": "讀取最近2天貼文：置頂10/24嘉義市文化公園戲棚下逐星路講座（與現有卡相符）、轉貼秀藝琴韻、台南地下化影片；後續未載入",
           "media": "partial",
           "detail": "無頭Edge水合等待約10秒載入可見feed；10/24文化公園講座已在表，圖媒未逐一開啟，後續feed受未登入截斷，標 partial"
+        },
+        {
+          "at": "2026-10-18T03:02:08+08:00",
+          "method": "in-app-browser-profile-and-post-media",
+          "url": "https://www.threads.com/@jing__1017/post/Dee3-Skk1ul/media",
+          "state": "partial",
+          "scope": "2026-10-18 03:18 Asia/Taipei resume: profile hydration showed three-day-old pinned 10/24 19:00–20:30 嘉義市文化公園《戲棚下逐星路》講座, plus a repost and two older media links; opened poster and verified title, performers 張秀琴、林佳欣, date/time/location. Remaining feed still loading.",
+          "media": "complete",
+          "detail": "Existing verified lecture card matches the poster and post. No change. Full account coverage remains partial."
         }
       ]
     },
@@ -155,6 +210,15 @@
           "scope": "讀取最近3天貼文：10/30竹南運動公園古都掌中劇團《台灣風雲錄・戰火波瀾》（與現有卡相符）、10/8桃園蓮華寺回顧；其餘未載入",
           "media": "unread",
           "detail": "無頭Edge水合等待約10秒載入可見feed；10/30竹南演出資訊與現有卡一致，圖片未開啟，後續feed受未登入截斷，標 partial"
+        },
+        {
+          "at": "2026-10-18T03:02:34+08:00",
+          "method": "in-app-browser-profile-hydration",
+          "url": "https://www.threads.com/@hilang.on.tour/post/DedaYXykx0c",
+          "state": "partial",
+          "scope": "2026-10-18 03:22 Asia/Taipei resume: after about 6 seconds, read three-day-old 10/30 17:00 arrival, 18:00 start, 古都掌中劇團《臺灣風雲錄・戰火波瀾》 at 竹南運動公園 post; also read 10/8 桃園蓮華寺 retrospective. Event image/poster not opened, remaining feed loading.",
+          "media": "unread",
+          "detail": "The 10/30 details match existing community card amichen-2026-10-30-zhunan-taiwan-fengyunlu. Source provides no evidence of a changed event; no formal verification level change. Account coverage remains partial."
         }
       ]
     },
@@ -170,6 +234,15 @@
           "scope": "讀取最近3天貼文：2天前生日趴貼文、3天前分享前輩老師照；無演出公告；更早貼文未載入",
           "media": "unread",
           "detail": "無頭Edge水合等待約10秒載入可見feed，均為生活短文無新戲曲演出檔期；照片未開啟，後續feed受未登入截斷，標 partial"
+        },
+        {
+          "at": "2026-10-18T03:03:09+08:00",
+          "method": "in-app-browser-profile-and-post-media-plus-web-search",
+          "url": "https://www.threads.com/@yolin1991/post/Deb5M7zmtd-/media",
+          "state": "partial",
+          "scope": "2026-10-18 03:25 Asia/Taipei resume: profile hydration showed posts 2 days ago (birthday), 3 days ago (senior artist photo), and 4 days ago for 新吉義林歌劇團 at 雲林四湖丁家九龍元帥 on 10/17–18; opened the poster. Poster confirms venue/address but explicitly says show time 待公布. Targeted public web search found no independent official troupe/temple announcement.",
+          "media": "complete",
+          "detail": "The poster is a personal helper account’s promotion, and official time/performer/title remain unconfirmed. Keep as an unverified audit candidate; do not add a schedule card. Full account feed remains loading."
         }
       ]
     },
@@ -185,6 +258,15 @@
           "scope": "讀取專頁簡介與最近貼文：7小時前更換了頭像貼文；未見新演出公告；後續feed未載入",
           "media": "unread",
           "detail": "無頭Edge水合等待約10秒載入粉絲頁頂部與最新更換頭像貼文，無演出資訊；後續貼文受Facebook未登入對話框阻擋，未全讀近7日feed與戲路表，標 partial"
+        },
+        {
+          "at": "2026-10-18T03:01:08+08:00",
+          "method": "in-app-browser-profile",
+          "url": "https://www.facebook.com/sunhope.fans",
+          "state": "partial",
+          "scope": "2026-10-18 03:10 Asia/Taipei resume: read official pinned posts for 11/7–8 田和越《寒窯之外》 (13:30/16:30, four shows, tea theater in 高雄) and 10-hour-old profile-photo update; normal recent feed remains loading, no 7-day pagination.",
+          "media": "partial",
+          "detail": "Pinned production details match existing verified OpenTix-backed sh-2026-11-07-hanyao-zhiwai card. Profile/featured art media not all opened and feed coverage incomplete; no schedule change."
         }
       ]
     },
@@ -200,6 +282,15 @@
           "scope": "讀取粉專簡介與置頂藝文訊息貼文（藝文訊息歡迎轉貼轉寄小西園感謝您）；附圖無描述，後續feed未載入",
           "media": "unread",
           "detail": "無頭Edge水合約10秒載入粉專首則藝文訊息貼文；附圖未展開，後續貼文受登入對話框阻擋，未全讀近7日feed與戲路表，標 partial"
+        },
+        {
+          "at": "2026-10-18T03:00:35+08:00",
+          "method": "in-app-browser-profile-and-photo",
+          "url": "https://www.facebook.com/photo/?fbid=1569176911875511&set=a.470934128366467",
+          "state": "partial",
+          "scope": "2026-10-18 03:05 Asia/Taipei resume: official Facebook photo post dated May 7 fully opened; inspected full poster showing 10/30 15:00 and 19:00, titles 《三才陣》/《三教評議會》 with 黃明隆, and 11/1 15:00 《虹霓關》 with 邱鉦富; limited feed still loading, no complete recent-7-day/account pagination.",
+          "media": "complete",
+          "detail": "Both upcoming event cards already match the visible official poster; the poster still does not assign each 10/30 play to a specific time. Retain that uncertainty and do not alter the schedule. Full account coverage remains partial."
         }
       ]
     },
@@ -215,6 +306,15 @@
           "scope": "讀取專頁簡介與3天前短文（昨晚被融化...）；附圖提示跳舞和文字未展開，後續feed未載入",
           "media": "partial",
           "detail": "無頭Edge水合等待約10秒成功載入粉專頁首與3天前個人短文，無正式演出表；附圖僅見摘要文字未完整開啟，後續貼文受登入對話框阻擋，標 partial"
+        },
+        {
+          "at": "2026-10-18T02:59:10+08:00",
+          "method": "in-app-browser-profile",
+          "url": "https://www.facebook.com/p/%E5%90%B3%E5%A5%95%E8%90%B1-Wu-Yihsuan-100063868113954",
+          "state": "partial",
+          "scope": "2026-10-18 03:01 Asia/Taipei resume: profile hydrated and shows one 3-day-old public post “昨晚被融化の請舉手”; remaining feed below is still loading, so recent 7-day coverage is incomplete.",
+          "media": "unread",
+          "detail": "Direct official page route works in the fresh in-app tab, unlike the earlier failed navigation from the Culture network-error tab. The single attached photo was not opened and no event facts were inferred."
         }
       ]
     },
@@ -230,6 +330,15 @@
           "scope": "讀取專頁簡介與2天前【演出時間異動】貼文（永康慈后宮時間異動，與現有卡相符）；附圖未展開，後續feed未載入",
           "media": "partial",
           "detail": "無頭Edge水合約10秒載入粉專頁首與2天前慈后宮異動貼文；海報圖片未展開，後續貼文受登入對話框阻擋，未全讀近7日feed與戲路表，標 partial"
+        },
+        {
+          "at": "2026-10-18T03:00:52+08:00",
+          "method": "in-app-browser-profile-and-photo",
+          "url": "https://www.facebook.com/photo/?fbid=1541293428042944&set=a.469769218528709",
+          "state": "partial",
+          "scope": "2026-10-18 03:08 Asia/Taipei resume: official 10/15 11:30 correction fully read; image and body give 10/16–18 (lunar 9/7–9/9), 永康慈后宮外台, 永康區永平街475號; profile feed still loading and recent coverage incomplete.",
+          "media": "complete",
+          "detail": "Current schedule card mhy-tian-2026-10-16-shuikang already matches dates, venue, address, and unknown title/time. No change. Keep account partial because this single announcement does not prove full feed coverage."
         }
       ]
     },
@@ -245,6 +354,15 @@
           "scope": "讀取專頁簡介與3天前《孫臏兵法》潮州首演精彩落幕回顧相簿（31張照片）；未見未來新檔期；後續feed未載入",
           "media": "unread",
           "detail": "無頭Edge水合約10秒載入粉專頁首與3天前《孫臏兵法》落幕相簿，無未來新演出公告；31張照片未開啟，後續貼文受登入對話框阻擋，標 partial"
+        },
+        {
+          "at": "2026-10-18T03:04:08+08:00",
+          "method": "in-app-browser-profile-post-and-photo",
+          "url": "https://www.facebook.com/permalink.php?story_fbid=pfbid0XfgmKVxoAGRP7xVNXGupRPRvGwH4zVAR6KYmXuRvNuccphG4DCCzu5KQ8HBAVov2l&id=61574134933376",
+          "state": "partial",
+          "scope": "2026-10-18 03:32 Asia/Taipei resume: reopened official profile and its 10/7 featured lunar-September itinerary post; read all listed dates/temples and visible time fields, and opened its group photo. Covered dates 9/1–10, 9/7–9, 9/11–12, 9/14–16, 9/15, 9/18–19, 9/22, and 9/26–30; remaining feed still loading.",
+          "media": "complete",
+          "detail": "The official itinerary aligns with existing schedule cards from 10/10–11/8, including two 10/24 venues, 10/31 卓蘭雙鳳宮, and 11/4–8 嘉義王靈宮. The attached image is a troupe group photo, not an additional itinerary poster. No data change; account coverage remains partial."
         }
       ]
     },
@@ -260,6 +378,33 @@
           "scope": "讀取專頁簡介與1天前短影音貼文（高雄的朋友！等等中午12點，準備搶票啦！）；未見完整劇目、日期與售票連結，後續feed未載入",
           "media": "unread",
           "detail": "無頭Edge水合約10秒載入粉專頁首與1天前開賣宣傳短影音，劇目/日期/場地未展開；短影音未播放，後續貼文受登入對話框阻擋，標 partial"
+        },
+        {
+          "at": "2026-10-18T03:05:15+08:00",
+          "method": "in-app-browser-expanded-official-post",
+          "url": "https://www.facebook.com/mhysun",
+          "state": "partial",
+          "scope": "再讀取1天前貼文並展開全文；核到《烏龍天下》2026/11/20–22臺灣戲曲中心、12/5–6臺中國家歌劇院、12/19–20衛武營，高雄貼文於10/16中午啟售，三個OpenTix連結均展開可見；另見3天前週末演出貼文與留言詢問10/16西螺場，待檢查原始公告",
+          "media": "partial",
+          "detail": "貼文全文與售票連結已讀，影片未播放、照片未開啟，粉專其餘動態仍未全部載入。新提及的三場與清單待精確比對；先保留原始演出場次，留言中的西螺日期疑問需核明華園總團公告。"
+        },
+        {
+          "at": "2026-10-18T03:06:10+08:00",
+          "method": "in-app-browser-reel-expanded-and-official-ticket-pages",
+          "url": "https://www.facebook.com/reel/1836919060822921",
+          "state": "partial",
+          "scope": "再讀取孫翠鳳已驗證帳號1天前Reel全文，並以三個OPENTIX活動頁交叉核場名及場館；臺北11/20–22已在表內，臺中12/5–6及高雄12/19–20尚無卡，售票頁未顯示逐場時間；視頻未播放",
+          "media": "unread",
+          "detail": "FB全文列臺灣戲曲中心、臺中國家歌劇院及衛武營三地《烏龍天下》，各附OPENTIX連結；來源屬已驗證官方個人帳號，日期及售票地點已讀，但演出時間未知，新增卡應標 community 並保留未公布。另3天前貼文留言指10/16西螺場劇目可能與現卡不同，需對照原貼與總團公告。"
+        },
+        {
+          "at": "2026-10-18T03:06:23+08:00",
+          "method": "in-app-browser-public-permalink-expanded-post",
+          "url": "https://www.facebook.com/mhysun/posts/pfbid032ksaEXbwx8grV5YKF16Fy4YcLE42ge32mG7uLm28eiQ65vSMMgAWtsi75SxUVv5Ql",
+          "state": "partial",
+          "scope": "再讀取並展開3天前公開貼文全文及8張相片連結；明列10/16西螺《薛丁山傳奇》19:00扮仙、19:30開鑼、延平路與公正路口，10/17壯圍《周公法門桃花女》、10/18中壢《真命天子》，三場免費；照片連結有載入但未逐張開啟",
+          "media": "partial",
+          "detail": "孫翠鳳已驗證帳號原貼文逐日列明日期、劇目、地點、時間；此原貼文支持現有西螺卡《薛丁山傳奇》。貼文下陳佳峰留言稱總團臉書寫《劉全進瓜》，是留言轉述而非總團公告；仍須查官方總團原公告。該日已過，未依留言改卡。"
         }
       ]
     },
@@ -320,6 +465,24 @@
           "scope": "以官方category=all端點（1527筆資料）篩出30筆戲曲/偶戲候選；核對《戰神花雲》、《烏龍天下》、《南都幽靈夜譚》等已在表，其餘未逐一核實海報",
           "media": "partial",
           "detail": "成功讀取官方文化部全類別API 1527筆，篩出30筆候選並與schedule比對，重合項目已登錄，其餘未逐一核對售票海報維持候選，本地moc_candidates亦核對，標 partial"
+        },
+        {
+          "at": "2026-10-18T02:58:42+08:00",
+          "method": "official-culture-api-python-urllib",
+          "url": "https://cloud.culture.tw/frontsite/trans/SearchShowAction.do?method=doFindTypeJ&category=all",
+          "state": "partial",
+          "scope": "2026-10-18 03:00 Asia/Taipei resume attempt: API lookup failed before returning records; prior round attempt loaded 1,527 records and narrowed to 30 candidates, but did not finish poster/official-announcement comparisons.",
+          "media": "unread",
+          "detail": "Current API call exhausted its two internal requests with DNS nodename resolution error. Prior candidate scan is retained as partial; this failure does not mean no new events."
+        },
+        {
+          "at": "2026-10-18T02:59:14+08:00",
+          "method": "in-app-browser-official-api",
+          "url": "https://cloud.culture.tw/frontsite/trans/SearchShowAction.do?method=doFindTypeJ&category=all",
+          "state": "partial",
+          "scope": "2026-10-18 03:00 Asia/Taipei resume: direct browser access to the official category=all endpoint returned ERR_HTTP_RESPONSE_CODE_FAILURE; no candidate list loaded in the browser.",
+          "media": "unread",
+          "detail": "Alternate browser route also could not load cloud.culture.tw. This is an access failure; prior 1,527-record/30-candidate snapshot remains partial and was not treated as current complete coverage."
         }
       ]
     },
@@ -339,18 +502,9 @@
       ]
     }
   },
-  "finalizedAt": "2026-10-18T00:48:22+08:00",
+  "finalizedAt": "2026-10-18T03:07:10+08:00",
   "publication": {
-    "state": "verified",
-    "sha": "44e17fa5c4f2189a357cd94b00e90abd5ccf3e04",
-    "actionsRun": "39051108728",
-    "actionsUrl": "https://github.com/eric1810-tw/taiwan-opera-calendar/actions/runs/39051108728",
-    "publicUrl": "https://eric1810-tw.github.io/taiwan-opera-calendar/data/patrol_status.json",
-    "verifiedAt": "2026-10-18T00:50:30+08:00",
-    "publicStatus": {
-      "startedAt": "2026-10-18T00:21:53+08:00",
-      "status": "failed"
-    }
+    "state": "pending"
   },
   "activeTargets": [
     "threads:joe_huang_k_w",
