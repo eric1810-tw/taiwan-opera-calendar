@@ -504,7 +504,19 @@
   },
   "finalizedAt": "2026-10-18T03:07:10+08:00",
   "publication": {
-    "state": "pending"
+    "state": "blocked",
+    "sha": "6b61371957343c0110a6e9d63040876638fbf293",
+    "actionsRun": null,
+    "publicUrl": "https://eric1810-tw.github.io/taiwan-opera-calendar/data/patrol_status.json",
+    "attemptedAt": "2026-10-18T03:08:30+08:00",
+    "reason": "git fetch origin main 與 git push origin main 均因 Could not resolve host: github.com 失敗，無法推送本輪資料，故沒有此 SHA 對應的 Actions run。以公開瀏覽器檢查：patrol_status.json 仍為本輪 startedAt/failed（該狀態已存在於舊發布）；公開 schedule.json 仍96張，不含本輪新增臺中與高雄兩卡。",
+    "publicStatus": {
+      "startedAt": "2026-10-18T00:21:53+08:00",
+      "status": "failed"
+    },
+    "publicScheduleCards": 96,
+    "publicContainsNewEvents": false,
+    "nextStep": "網路可解析 github.com 後先 fetch origin main、確認無遠端分歧，再 push 6b61371957343c0110a6e9d63040876638fbf293；取得該 SHA 的 daily-update.yml Actions completed/success 後，執行 patrol_progress.py verify。"
   },
   "activeTargets": [
     "threads:joe_huang_k_w",

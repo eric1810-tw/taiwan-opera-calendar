@@ -6,6 +6,8 @@
 
 ## 來源覆蓋與處置
 
+- 本輪於 2026-10-18T02:57:49+08:00 恢復原 JSON 繼續執行，保留 00:21:53+08:00 原開始時間；前次恢復時間為 00:37:36+08:00。沒有另建同日重複輪次。
+
 - Threads 10帳號均已初讀：
   - `joe_huang_k_w`：無頭Edge水合等待約10秒載入首批4則24小時內貼文（女兒探班、台灣大賽、請支援收贏、小黑蚊普渡眾生），均為生活/工作短文，未見演出資訊；其餘貼文因未登入提示截斷，置頂/月份戲路未全讀，標 partial。
   - `h.akito_1996`：無頭Edge水合等待約10秒成功載入置頂2026-09-27長文4段（鍘美藝術節心得、30歲對話、回顧與李國修引言），無未來新檔期；後續feed受未登入截斷，近7天未全讀，標 partial。
@@ -24,23 +26,38 @@
   - `100063868113954`（吳奕萱 Wu-Yihsuan）：無頭Edge水合等待約10秒成功載入粉專頁首與3天前個人短文（「昨晚被融化...」），無正式演出表；附圖僅見摘要文字未完整開啟，後續貼文受登入對話框阻擋，標 partial。
   - `MingHuaYuanTianTaiwaneseOpera`（明華園天字戲劇團）：無頭Edge水合約10秒載入粉專頁首與2天前【演出時間異動】貼文（永康慈后宮時間異動，與現有卡相符）；海報圖片未展開，後續貼文受登入對話框阻擋，未全讀近7日feed與戲路表，標 partial。
   - `61574134933376`（繡花園戲劇團x明華園地字戲劇團）：無頭Edge水合約10秒載入粉專頁首與3天前《孫臏兵法》潮州首演落幕相簿（31張照片），無未來新演出公告；照片未開啟，後續貼文受登入對話框阻擋，標 partial。
-  - `mhysun`（孫翠鳳）：無頭Edge水合約10秒載入粉專頁首與1天前開賣宣傳短影音（「高雄的朋友！等等中午12點，準備搶票啦！」），劇目/日期/場地未展開；短影音未播放，後續貼文受登入對話框阻擋，標 partial。
+  - `mhysun`（孫翠鳳）：首讀僅見開賣短影音，恢復後展開1天前已驗證帳號Reel及OPENTIX頁，讀到《烏龍天下》11/20–22臺灣戲曲中心、12/5–6臺中國家歌劇院、12/19–20衛武營三場及售票連結。臺北卡已存在；新增臺中與高雄兩卡，依官方個人帳號公告保留 `community`，時間未公布。Reel未播放，粉專feed仍未全讀，標 partial。
+  - 同帳號另讀3天前週末演出原貼文及8張相片連結，全文列10/16西螺《薛丁山傳奇》19:00扮仙、19:30開鑼，10/17壯圍《周公法門桃花女》及10/18中壢《真命天子》，均免費。原文支持現有西螺卡；留言稱總團臉書列《劉全進瓜》只是留言轉述，未找到總團原公告前不據此改卡。照片未逐張開啟。
+
   - `61594936681482`（戲籠出巡｜臺灣傳統戲曲巡演）：無頭Edge水合約10秒載入粉專頁首與3天前竹南草地演出宣傳貼文（「旅行時...留一個晚上給臺灣的故事」，與現有卡及同品牌Threads相符）；海報圖片未開啟，後續貼文受登入對話框阻擋，標 partial。
   - `lanyang.opera`（蘭陽戲劇團）：無頭Edge水合約10秒載入粉專頁首與9/30演出貼文（10/26 19:00《錯配姻緣》，與現有卡相符）；海報圖片未開啟，後續貼文受登入對話框阻擋，未全讀近7日feed與戲路表，標 partial。
   - `Taichungpuppettheater`（台中木偶劇團）：無頭Edge水合約10秒載入粉專頁首與5天前直播影片，無新演出公告文字；影片未播放，後續貼文受登入對話框阻擋，未全讀近7日feed與戲路表，標 partial。
 
 - 文化部官方全類別 API：
-  - 透過放寬 OpenSSL strict flags 成功連線官方端點（`SearchShowAction.do?method=doFindTypeJ&category=all`）載入 1,527 筆 JSON；依關鍵字篩出 30 筆戲曲/偶戲候選。
-  - 核對既有卡：鴻明歌劇團《戰神花雲》（10/18大稻埕戲苑）、明華園總團《烏龍天下》、唐美雲歌仔戲團《南都幽靈夜譚》等均已在表。其餘新西園、不貳偶劇、五洲勝義閣等候選尚未逐項比對售票海報與正式公告，未獲證實之線索維持候選，不升格。本地 `data/moc_candidates.json` 亦讀取核對，標 partial。
+  - 初讀透過官方端點（`SearchShowAction.do?method=doFindTypeJ&category=all`）載入 1,527 筆 JSON；依關鍵字篩出 30 筆戲曲/偶戲候選。恢復時同端點兩次 DNS 名稱解析失敗，直接瀏覽器替代路徑亦回 `ERR_HTTP_RESPONSE_CODE_FAILURE`。
+  - 核對既有卡：鴻明歌劇團《戰神花雲》（10/18大稻埕戲苑）、明華園總團《烏龍天下》、唐美雲歌仔戲團《南都幽靈夜譚》等均已在表。其餘新西園、不貳偶劇、五洲勝義閣等候選尚未逐項比對售票海報與正式公告，未獲證實之線索維持候選，不升格。本地 `data/moc_candidates.json` 亦讀取核對，標 partial；恢復時無法重新取得目前候選快照，故不把前次資料視為當次完整覆蓋。
 
 - GitHub Issues：
   - 以 GitHub API `state=all` 唯讀審視全部 Issues 正文與留言，排除 Pull Requests。
   - 目前共 2 筆 open、0 筆 closed、0 筆留言：#1、#2 之走戲人節目均已於 `data/schedule.json` 對應（`zx-2026-11-14-kuliniao`、`zx-2026-11-15-longnu`），無新未處理回報；標 complete。
 
+## 本輪資料變更
+
+- 新增 `mhy-oolong-tc-2026-12-05` 與 `mhy-oolong-wv-2026-12-19`，分別連至臺中國家歌劇院及衛武營的 OPENTIX 活動頁；日期與場館由孫翠鳳已驗證帳號公告，逐場時間尚未顯示，標 `community` 並記「未公布」。原臺北場既有卡未改動。
+- 沒有依留言傳述修改10/16西螺卡；查到孫翠鳳原貼文完整文字明列《薛丁山傳奇》，留言提及的總團公告尚未取得。
+- 社群巡檢開始時間與網站資料刷新時間分開；metadata 未因本輪狀態發布而改寫。
+
 ## 對抗式驗收與發布
 
 - `python3 -m unittest -v`：18 tests passed；`node --check assets/app.js`、`git diff --check`：passed。
-- schedule schema、日期、`endDate`、唯一 ID 與重複事件鍵檢查通過，卡片維持 96 張。
+- schedule schema、日期、`endDate`、唯一 ID 與重複事件鍵檢查通過；本輪新增《烏龍天下》臺中與高雄兩張社群來源卡，演出時間明確保留「未公布」，卡片共98張。
 - `data/metadata.json` 網站刷新時間維持 `2026-10-17T08:57:55+08:00`，未隨巡檢狀態改寫。
-- `data/patrol_status.json` 正確更新為本輪開始時間 `2026-10-18T00:21:53+08:00` 及覆蓋狀態 `failed`。
+- `data/patrol_status.json` 依 finalize 寫入原開始時間 `2026-10-18T00:21:53+08:00` 及覆蓋狀態 `failed`。
 - 本機原有未暫存修改（`ISSUES_REVIEW.md`、`PROJECT_HANDOVER.md`、`patrol_runs/2026-10-16_0300.json`）及未追蹤檔案均完好保留，僅暫存本輪明列檔案。
+
+
+## 發布阻塞與接續
+
+- 本輪資料 commit：`6b61371957343c0110a6e9d63040876638fbf293`。`git fetch origin main` 及 `git push origin main` 均回 `Could not resolve host: github.com`；未推送，沒有此 SHA 的 Actions run，未執行成功的 `patrol_progress.py verify`。
+- 公開瀏覽器的 cache-busted 狀態檔仍讀到 `2026-10-18T00:21:53+08:00 / failed`；但這兩欄與上次發布相同。公開 `schedule.json` 顯示96張且不含本輪兩張新卡；本機為98張，因此本輪場次更新尚未上線。
+- 恢復步驟：GitHub DNS/連線恢復後先 `git fetch origin main` 並檢查分歧，再推送本輪 SHA；確認該 SHA 的 `daily-update.yml` Actions 為 completed/success 後，執行 `python3 scripts/patrol_progress.py verify --run patrol_runs/2026-10-18_0300.json --sha 6b61371957343c0110a6e9d63040876638fbf293 --actions-run <該次run-id>`，再更新並推送驗收收據。`threads:1013.yr_` 仍 failed；文化部恢復時 API DNS 與瀏覽器路徑失敗。
