@@ -467,13 +467,16 @@
   "publication": {
     "state": "blocked",
     "sha": "f03b44dcd6bf0c4984b6f890cfd29e2ba77dbe45",
-    "at": "2026-10-17T03:17:49+08:00",
-    "reason": "git push origin main 對最新本地 main（當時 HEAD 3d5a2ff）仍失敗：Could not resolve host: github.com；無本輪 matching Actions，未能以真實 run id 執行 verify。",
+    "at": "2026-10-17T20:49:21+08:00",
+    "reason": "恢復處理時 git fetch origin main 仍因 Could not resolve host: github.com 失敗，故本地origin/main未更新。GitHub網頁觀察main已前進：e063c0b（父ae0a92b；父提交58a989b），與本地巡檢提交分歧；未安全fetch/整合，未推送。遠端Actions #106 (38988749015) 雖completed/success，但屬scheduled event且head_sha=ae0a92b，不是本輪SHA；該workflow產生e063c0b自動更新提交。公開patrol_status仍為2026-10-15T07:15:39+08:00/failed，本輪沒有matching Actions或真實run id可verify。",
     "publicUrl": "https://eric1810-tw.github.io/taiwan-opera-calendar/data/patrol_status.json",
     "publicStatus": {
       "startedAt": "2026-10-15T07:15:39+08:00",
       "status": "failed"
-    }
+    },
+    "observedRemoteHead": "e063c0b0c9fe39d67e8ae3c699fd8865ecde66a9",
+    "observedRemoteParent": "ae0a92b5647f63c2a07fe96ac7fa894f7e6ce55e",
+    "nonMatchingActionsRun": "38988749015 (head ae0a92b; scheduled; completed/success)"
   },
   "activeTargets": [
     "threads:joe_huang_k_w",
