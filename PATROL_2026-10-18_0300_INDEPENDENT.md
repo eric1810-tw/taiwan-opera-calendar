@@ -1,6 +1,6 @@
 # 2026-10-18 03:00 臺灣戲曲獨立巡檢
 
-- 實際開始：2026-10-18T00:21:53+08:00（Asia/Taipei；排程標稱03:00）。本輪動態目標21項：Threads 10、Facebook 9、文化部候選1、GitHub Issues 1。
+- 實際開始：2026-10-18T00:21:53+08:00（Asia/Taipei；排程標稱03:00）。本輪動態目標21項：Threads 10、Facebook 9、文化部候選1、GitHub Issues 1。實際執行模型/推理強度未由本環境驗證，因此不宣稱本輪使用 Luna High。
 - 最終覆蓋：**failed**（1 complete、19 partial、1 failed）。完整逐次時間、方法、網址、正文/媒體範圍、故障原因及候選處置見 [`patrol_runs/2026-10-18_0300.json`](patrol_runs/2026-10-18_0300.json)。Threads `1013.yr_` 三種路徑（個人頁導向登入、作者搜尋逾時、公開搜尋無結果）均無法讀取，保留 failed；Issues complete；其餘 19 個目標（Threads 9、Facebook 9、文化部 1）均有部分可讀但受限於未登入對話框或未完成逐筆海報核查，照實記錄 partial。未將部分可讀推論成無新資訊。
 - 工作區既有未暫存與未追蹤檔案（`ISSUES_REVIEW.md`、`PROJECT_HANDOVER.md`、`patrol_runs/2026-10-16_0300.json`、`CLAUDE_AUDIT_2026-09-30.md`、`CLOUDFLARE_HANDOVER.md`、`CODEX_TASK_REVIEW_FIXES_2026-09-30.md`）全程保留，嚴格禁止 `git add .`。
 

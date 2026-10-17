@@ -1,5 +1,6 @@
 # 2026-10-18 巡檢發布驗收收據
 
+- 模型：實際執行模型/推理強度未能驗證，不宣稱本輪使用 Luna High。
 - 巡檢開始：`2026-10-18T00:21:53+08:00`（Asia/Taipei）；恢復時間：`00:37:36+08:00`、`02:57:49+08:00`。
 - 覆蓋：`failed`（1 complete、19 partial、1 failed）；目標21項。`threads:1013.yr_` 個人頁/搜尋路徑不可讀；文化部初讀曾讀取1,527筆並篩出30候選，但恢復時 API DNS 與瀏覽器替代路徑皆失敗。完整逐次證據見本輪 JSON。
 - 本輪資料 commit：`6b61371957343c0110a6e9d63040876638fbf293`（`chore(patrol): 2026-10-18 community coverage update`）。本輪只 stage `data/schedule.json` 與 `patrol_runs/2026-10-18_0300.json`；`data/patrol_status.json` 內容與前次已推送狀態相同：`2026-10-18T00:21:53+08:00 / failed`。
