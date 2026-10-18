@@ -28,3 +28,18 @@
   - `data/patrol_status.json`: `70fcdae5d6ec2fb42e52ff5c5ec1b0853cac1289a6c6c30b060d387e9ddc339f`（公開巡檢狀態為 2026-10-18T00:21:53+08:00 / failed）
 - 本輪 JSON 驗收後 SHA-256：`14aaec7193108f72e38b6ceb3c9fb6c82917843b41de4d87ce56c6193f4dc237`。
 - 工作區既有未暫存檔案（`ISSUES_REVIEW.md`、`PROJECT_HANDOVER.md`、`patrol_runs/2026-10-16_0300.json`）及未追蹤檔案（`CLAUDE_AUDIT_2026-09-30.md`、`CLOUDFLARE_HANDOVER.md`、`CODEX_TASK_REVIEW_FIXES_2026-09-30.md`）全程完好保留。
+
+
+## 頁面模型標示與狀態更新驗收（2026-10-18T08:23:48+08:00 Asia/Taipei）
+
+- 依使用者需求更新 `assets/app.js`：取消「（台灣時間；巡檢未完成）」字樣，改為顯示「（由 Gemini 3.8 完成）」。
+- `data/patrol_status.json` 加入 `"model": "Gemini 3.8"`；`scripts/patrol_progress.py` 擴充 `finalize --model` 與 `verify` 模型核驗。
+- 資料提交 SHA：`1e698ea089f69dbac316a35c56efe10d52548265`（`feat(ui): update patrol label to display model name and include model in status`），已推送至 `origin/main`。
+- matching Actions：[39082552771](https://github.com/eric1810-tw/taiwan-opera-calendar/actions/runs/39082552771)，event=push，head SHA=`1e698ea089f69dbac316a35c56efe10d52548265`，completed/success。
+- 規程驗收：`python3 scripts/patrol_progress.py verify --run patrol_runs/2026-10-18_0300.json --sha 1e698ea089f69dbac316a35c56efe10d52548265 --actions-run 39082552771` 通過，`publication.state="verified"`。
+- 公開 Pages 四檔比對全數完全一致：
+  - `data/schedule.json`: `2fd2a74b07fb3423df7e0222bbf2f029d90ee92d7777a184c8a3090810a4754f`（98張）
+  - `data/metadata.json`: `997d55acc5e86468c7d5b0b6f2f15c13ac7762e6e2af3f8084b602e1974a47cd`
+  - `data/patrol_status.json`: `d0dd509e09c1042b16ad1610fd0a864b318bb5caba0bca83aab56a2a5091f6f2`（含 `"model": "Gemini 3.8"`）
+  - `assets/app.js`: `f95e9692884ef1a6c2660cdecddafb6354af06378bf57293a50fd91a096b0824`
+- 舊 LaunchAgent `tw.eric.codex-app.prepare.plist` 已 unload 並更名為 `.disabled`，正式由 Antigravity 接管。
