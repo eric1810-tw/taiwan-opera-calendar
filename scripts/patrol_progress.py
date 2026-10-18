@@ -83,6 +83,10 @@ def fetch(url):
 def verify(run, sha, actions_run, status_path, fetcher=fetch):
     expected = {"startedAt": run["startedAt"], "status": coverage(run, targets())}
     current_status = read(status_path)
+    if "completedAt" in current_status:
+        expected["completedAt"] = current_status["completedAt"]
+    elif "completedAt" in run:
+        expected["completedAt"] = run["completedAt"]
     if "model" in current_status:
         expected["model"] = current_status["model"]
     elif "model" in run:
@@ -140,13 +144,16 @@ def main():
     if args.command == "record":
         record(run, args.source, args.state, args.method, args.url, args.scope, args.media, args.detail)
     if args.command == "finalize":
-        status_data = {"startedAt": run["startedAt"], "status": coverage(run, targets())}
+        finish_time = now()
+        run["finalizedAt"] = finish_time
+        run["completedAt"] = finish_time
+        status_data = {"startedAt": run["startedAt"], "status": coverage(run, targets()),
+                       "completedAt": finish_time}
         model = getattr(args, "model", None) or run.get("model") or "Gemini 3.8"
         if model:
             status_data["model"] = model
             run["model"] = model
         write(ROOT / "data/patrol_status.json", status_data)
-        run["finalizedAt"] = now()
         run["publication"] = {"state": "pending"}
     if args.command == "verify":
         try:

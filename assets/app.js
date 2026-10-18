@@ -349,7 +349,7 @@ async function loadLastUpdated() {
       timeZone: 'Asia/Taipei', year: 'numeric', month: '2-digit', day: '2-digit',
       hour: '2-digit', minute: '2-digit', hourCycle: 'h23'
     }).format(timestamp);
-    label.textContent = `資料最後更新時間：${formatted}（台灣時間）`;
+    label.textContent = `資料最後更新時間：${formatted}`;
   } catch (error) {
     console.warn('Last-updated metadata unavailable:', error);
     label.textContent = '資料最後更新時間：目前無法取得';
@@ -363,7 +363,7 @@ async function loadPatrolStatus() {
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const patrol = await response.json();
     if (!['complete', 'partial', 'failed'].includes(patrol.status)) throw new Error('巡檢狀態無效');
-    const timestamp = parsePublishedTime(patrol.startedAt);
+    const timestamp = parsePublishedTime(patrol.completedAt || patrol.startedAt);
     const formatted = new Intl.DateTimeFormat('zh-TW', {
       timeZone: 'Asia/Taipei', year: 'numeric', month: '2-digit', day: '2-digit',
       hour: '2-digit', minute: '2-digit', hourCycle: 'h23'
