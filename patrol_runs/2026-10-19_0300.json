@@ -1,0 +1,351 @@
+{
+  "version": 1,
+  "startedAt": "2026-10-19T03:18:40+08:00",
+  "resumedAt": [],
+  "sources": {
+    "threads:joe_huang_k_w": {
+      "url": "https://www.threads.com/@joe_huang_k_w",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-19T03:23:25+08:00",
+          "method": "headless-edge-profile",
+          "url": "https://www.threads.net/@joe_huang_k_w",
+          "state": "partial",
+          "scope": "讀取頁面正文約 3716 字元（Title: 黃冠維（@joe_huang_k_w）• Threads，畅所欲言）；讀到 3 小時前收工短文（23:18到家、生活感言、雲端行事曆談場次細節），未見未來新公開演出檔期；後續 feed 未全讀",
+          "media": "partial",
+          "detail": "以無人值守無頭 Edge 載入；讀到個人檔案簡介（古都木偶戲劇團／團長）與近 24 小時貼文，部分照片及後續歷史貼文受未登入截斷，未逐一開啟所有相簿海報，記 partial"
+        }
+      ]
+    },
+    "threads:h.akito_1996": {
+      "url": "https://www.threads.com/@h.akito_1996",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-19T03:23:25+08:00",
+          "method": "headless-edge-profile",
+          "url": "https://www.threads.net/@h.akito_1996",
+          "state": "partial",
+          "scope": "讀取頁面正文約 2739 字元（Title: 尉綸/凱琳（@h.akito_1996）• Threads，畅所欲言）；載入置頂 2026-09-26 鍘美藝術節心得長文，無未來新檔期；近 7 天動態未顯現",
+          "media": "partial",
+          "detail": "以無人值守無頭 Edge 載入；成功載入置頂心得長文，後續貼文受登入牆阻擋截斷，未全讀近 7 天內容，記 partial"
+        }
+      ]
+    },
+    "threads:the_rin.lpm": {
+      "url": "https://www.threads.com/@the_rin.lpm",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-19T03:23:25+08:00",
+          "method": "headless-edge-profile",
+          "url": "https://www.threads.net/@the_rin.lpm",
+          "state": "partial",
+          "scope": "讀取頁面正文約 2303 字元（Title: 阿凜的追戲角色圖鑑🦋（@the_rin.lpm）• Threads，畅所欲言）；置頂 2026-09-25 預告秀琴《玉石變》11/7新莊保元宮與《金沙灘》11/15西港慶安宮（均已在表）；更早戲路表及後續 feed 未全讀",
+          "media": "partial",
+          "detail": "以無人值守無頭 Edge 載入；置頂貼文兩場演出已建檔，戲路表照片未全部展開比對，後續 feed 受阻截斷，記 partial"
+        }
+      ]
+    },
+    "threads:1013.yr_": {
+      "url": "https://www.threads.com/@1013.yr_",
+      "state": "failed",
+      "attempts": [
+        {
+          "at": "2026-10-19T03:23:25+08:00",
+          "method": "headless-edge-profile",
+          "url": "https://www.threads.net/@1013.yr_",
+          "state": "failed",
+          "scope": "頁面重定向至「Threads • 登录」，無法取得個人檔案正文或動態（長度僅 92 字元）",
+          "media": "not_applicable",
+          "detail": "訪問直接重定向至登入畫面，未讀取到帳號首頁或貼文內容，記 failed"
+        }
+      ]
+    },
+    "threads:xuefeng_lu_": {
+      "url": "https://www.threads.com/@xuefeng_lu_",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-19T03:23:25+08:00",
+          "method": "headless-edge-profile",
+          "url": "https://www.threads.net/@xuefeng_lu_",
+          "state": "partial",
+          "scope": "讀取頁面正文約 1216 字元（Title: 呂雪鳳（@xuefeng_lu_）• Threads，畅所欲言）；讀到 1 天前時事與 6 天前慈善公益轉貼，無未來戲曲演出公告；影音與照片未逐一開啟",
+          "media": "partial",
+          "detail": "以無人值守無頭 Edge 載入；近期多為時事與公益，未見演出檔期，後續動態受限未全讀，記 partial"
+        }
+      ]
+    },
+    "threads:yuzhongluo": {
+      "url": "https://www.threads.com/@yuzhongluo",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-19T03:23:25+08:00",
+          "method": "headless-edge-profile",
+          "url": "https://www.threads.net/@yuzhongluo",
+          "state": "partial",
+          "scope": "讀取頁面正文約 860 字元（Title: 羅裕誴歌劇團（@yuzhongluo）• Threads，畅所欲言）；讀到 7 小時前馬來西亞檳城斗母宮九皇大帝演繹圓滿回顧及 1 天前杏林怨回顧，無未來新檔期；圖媒未全開",
+          "media": "partial",
+          "detail": "以無人值守無頭 Edge 載入；最新貼文為海外演繹圓滿總結與劇照回顧，非未來公開場次，記 partial"
+        }
+      ]
+    },
+    "threads:taiwaneseopera168": {
+      "url": "https://www.threads.com/@taiwaneseopera168",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-19T03:23:26+08:00",
+          "method": "headless-edge-profile",
+          "url": "https://www.threads.net/@taiwaneseopera168",
+          "state": "partial",
+          "scope": "讀取頁面正文約 2281 字元（Title: 歌仔出少年（@taiwaneseopera168）• Threads，畅所欲言）；自介與置頂 2026-08-15 文化預算貼文正常載入，未見未來新演出公告",
+          "media": "partial",
+          "detail": "以無人值守無頭 Edge 載入；簡介與置頂文可讀，後續捲動未見新演出戲路表，未展開所有相簿海報，記 partial"
+        }
+      ]
+    },
+    "threads:jing__1017": {
+      "url": "https://www.threads.com/@jing__1017",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-19T03:23:26+08:00",
+          "method": "headless-edge-profile",
+          "url": "https://www.threads.net/@jing__1017",
+          "state": "partial",
+          "scope": "讀取頁面正文約 692 字元（Title: 靜（@jing__1017）• Threads，畅所欲言）；置頂 4 天前【戲棚下逐星路】10/24 嘉義市文化公園講座（已在表）；2 小時前轉貼陳昭香影片，無未來新檔期",
+          "media": "partial",
+          "detail": "以無人值守無頭 Edge 載入；置頂講座已在表，近期轉貼影片未附新場次，部分圖媒未展開，記 partial"
+        }
+      ]
+    },
+    "threads:hilang.on.tour": {
+      "url": "https://www.threads.com/@hilang.on.tour",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-19T03:23:26+08:00",
+          "method": "headless-edge-profile",
+          "url": "https://www.threads.net/@hilang.on.tour",
+          "state": "partial",
+          "scope": "讀取頁面正文約 1656 字元（Title: 戲籠出巡｜臺灣傳統戲曲巡演（@hilang.on.tour）• Threads，畅所欲言）；讀到 4 天前 10/30 竹南運動公園《台灣風雲錄・戰火波瀾》公告（已在表）",
+          "media": "partial",
+          "detail": "以無人值守無頭 Edge 載入；10/30 演出公告與現有卡片一致，後續宣傳海報及留言未全讀，記 partial"
+        }
+      ]
+    },
+    "threads:yolin1991": {
+      "url": "https://www.threads.com/@yolin1991",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-19T03:23:26+08:00",
+          "method": "headless-edge-profile",
+          "url": "https://www.threads.net/@yolin1991",
+          "state": "partial",
+          "scope": "讀取頁面正文約 718 字元（Title: 梵羽（@yolin1991）• Threads，畅所欲言）；讀到 3 天前生日貼文、4 天前劇團前輩照、5 天前新吉義林 10/17-10/18 雲林四湖演出（已過期）；無未來新檔期",
+          "media": "partial",
+          "detail": "以無人值守無頭 Edge 載入；5 天前演出已結束，未見未來新檔期，圖媒未逐一展開，記 partial"
+        }
+      ]
+    },
+    "facebook:sunhope.fans": {
+      "url": "https://www.facebook.com/sunhope.fans",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-19T03:23:26+08:00",
+          "method": "headless-edge-profile",
+          "url": "https://www.facebook.com/sunhope.fans",
+          "state": "partial",
+          "scope": "讀取頁面正文約 512 字元（Title: 尚和歌仔戲劇團 | Kaohsiung | Facebook）；專頁頁首、簡介、聯絡資訊及 1 天前更換頭像貼文正常載入，未見未來新檔期",
+          "media": "partial",
+          "detail": "以無人值守無頭 Edge 載入；粉專頁首與最新動態可讀，但後續近 7 日 feed 與相簿戲路表受登入框截斷，未全讀，記 partial"
+        }
+      ]
+    },
+    "facebook:HsiaoHsiYuan1913": {
+      "url": "https://www.facebook.com/HsiaoHsiYuan1913/",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-19T03:23:26+08:00",
+          "method": "headless-edge-profile",
+          "url": "https://www.facebook.com/HsiaoHsiYuan1913/",
+          "state": "partial",
+          "scope": "讀取頁面正文約 257 字元（Title: 小西園掌中劇團 | Facebook）；專頁自介與 5/7 藝文訊息正常載入，現有 10/30 及 11/1 演出已在表",
+          "media": "partial",
+          "detail": "以無人值守無頭 Edge 載入；首頁可讀，但後續貼文受登入對話框阻擋未全顯，相簿海報未逐一展開，記 partial"
+        }
+      ]
+    },
+    "facebook:100063868113954": {
+      "url": "https://www.facebook.com/p/%E5%90%B3%E5%A5%95%E8%90%B1-Wu-Yihsuan-100063868113954",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-19T03:23:26+08:00",
+          "method": "headless-edge-profile",
+          "url": "https://www.facebook.com/p/%E5%90%B3%E5%A5%95%E8%90%B1-Wu-Yihsuan-100063868113954",
+          "state": "partial",
+          "scope": "讀取頁面正文約 456 字元（Title: 吳奕萱 Wu-Yihsuan | Facebook）；專頁自介詩句與 7 小時前動態（內容暫時無法顯示）正常載入，無未來正式演出檔期",
+          "media": "partial",
+          "detail": "以無人值守無頭 Edge 載入；自介可讀，7 小時前狀態內容暫無法顯示，未見公開演出戲路表，記 partial"
+        }
+      ]
+    },
+    "facebook:MingHuaYuanTianTaiwaneseOpera": {
+      "url": "https://www.facebook.com/MingHuaYuanTianTaiwaneseOpera",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-19T03:23:26+08:00",
+          "method": "headless-edge-profile",
+          "url": "https://www.facebook.com/MingHuaYuanTianTaiwaneseOpera",
+          "state": "partial",
+          "scope": "讀取頁面正文約 441 字元（Title: 明華園天字戲劇團 | Facebook）；專頁自介及 3 天前永康慈后宮演出時間異動公告正常載入（該場次 10/16-10/18 已在表且已結束）",
+          "media": "partial",
+          "detail": "以無人值守無頭 Edge 載入；異動公告已於日前核對入表，後續貼文與海報受登入截斷未全讀，記 partial"
+        }
+      ]
+    },
+    "facebook:61574134933376": {
+      "url": "https://www.facebook.com/profile.php?id=61574134933376",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-19T03:23:26+08:00",
+          "method": "headless-edge-profile",
+          "url": "https://www.facebook.com/profile.php?id=61574134933376",
+          "state": "partial",
+          "scope": "讀取頁面正文約 467 字元（Title: 繡花園戲劇團x明華園地字戲劇團 | Pingtung | Facebook）；專頁自介及 4 天前《孫臏兵法》潮州首演落幕相簿（31張照片）正常載入，無未來新演出公告",
+          "media": "partial",
+          "detail": "以無人值守無頭 Edge 載入；最新相簿為已落幕演出回顧，未見未來新戲碼，後續 feed 受阻未全讀，記 partial"
+        }
+      ]
+    },
+    "facebook:mhysun": {
+      "url": "https://www.facebook.com/mhysun",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-19T03:23:26+08:00",
+          "method": "headless-edge-profile",
+          "url": "https://www.facebook.com/mhysun",
+          "state": "partial",
+          "scope": "讀取頁面正文約 270 字元（Title: 孫翠鳳 | Facebook）；專頁頁首與 2 天前高雄大東搶票提醒貼文正常載入（演出已在表）",
+          "media": "partial",
+          "detail": "以無人值守無頭 Edge 載入；大東演出已建檔，更早貼文與圖片戲路表未全展開，記 partial"
+        }
+      ]
+    },
+    "facebook:61594936681482": {
+      "url": "https://www.facebook.com/profile.php?id=61594936681482",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-19T03:23:26+08:00",
+          "method": "headless-edge-profile",
+          "url": "https://www.facebook.com/profile.php?id=61594936681482",
+          "state": "partial",
+          "scope": "讀取頁面正文約 424 字元（Title: 戲籠出巡｜臺灣傳統戲曲巡演 | Facebook）；自介及 4 天前竹南大草坪《台灣風雲錄・戰火波瀾》公演公告正常載入（已在表）",
+          "media": "partial",
+          "detail": "以無人值守無頭 Edge 載入；與 Threads 來源一致，演出已在表，後續海報及留言未全讀，記 partial"
+        }
+      ]
+    },
+    "facebook:lanyang.opera": {
+      "url": "https://www.facebook.com/lanyang.opera/",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-19T03:23:26+08:00",
+          "method": "headless-edge-profile",
+          "url": "https://www.facebook.com/lanyang.opera/",
+          "state": "partial",
+          "scope": "讀取頁面正文約 329 字元（Title: 蘭陽戲劇團 | Facebook）；自介與 9/30 龜山顯安巖 10/26《錯配姻緣》演出公告正常載入（已在表）",
+          "media": "partial",
+          "detail": "以無人值守無頭 Edge 載入；精選 10/26 演出已建檔，但相簿高清海報與近 7 日 feed 受登入框截斷未全讀，記 partial"
+        }
+      ]
+    },
+    "facebook:Taichungpuppettheater": {
+      "url": "https://www.facebook.com/Taichungpuppettheater/",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-19T03:23:26+08:00",
+          "method": "headless-edge-profile",
+          "url": "https://www.facebook.com/Taichungpuppettheater/",
+          "state": "partial",
+          "scope": "讀取頁面正文約 414 字元（Title: 台中木偶劇團 | Facebook）；自介及 15 小時前創建活動「11月7日周六 14:30 CST 《聖劍風雲三》 台中市」正常載入（已在表）",
+          "media": "partial",
+          "detail": "以無人值守無頭 Edge 載入；11/7 《聖劍風雲三》已在表，其他活動細節與相簿海報未全讀，記 partial"
+        }
+      ]
+    },
+    "culture": {
+      "url": "data/moc_candidates.json",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-19T03:23:27+08:00",
+          "method": "moc-open-data-api-and-candidates",
+          "url": "data/moc_candidates.json",
+          "state": "partial",
+          "scope": "檢視 data/moc_candidates.json 現有 1 筆候選（三昧堂精工布袋戲展 2027/01/01）；連線文化部 Open Data API（SearchShowAction.do?method=doFindTypeJ&category=all）取得 107 筆活動，依歌仔戲/布袋戲/掌中戲關鍵字篩選未來 90 天候選 0 筆",
+          "media": "not_applicable",
+          "detail": "文化部 API 正常回傳 107 筆活動，近 90 天無新戲曲候選；現有候選仍待人工核對官方公告，未轉為確定場次，記 partial"
+        }
+      ]
+    },
+    "issues": {
+      "url": "https://github.com/eric1810-tw/taiwan-opera-calendar/issues?q=is%3Aissue+sort%3Aupdated-desc",
+      "state": "complete",
+      "attempts": [
+        {
+          "at": "2026-10-19T03:23:27+08:00",
+          "method": "gh-issue-list-all",
+          "url": "https://github.com/eric1810-tw/taiwan-opera-calendar/issues?q=is%3Aissue+sort%3Aupdated-desc",
+          "state": "complete",
+          "scope": "透過 gh issue list --state all 查詢全庫全部 Issues（排除 Pull Requests），更新時間排序，共 2 筆 open（#1、#2），0 筆 closed，最近更新均約 19 天前，已全部核閱",
+          "media": "complete",
+          "detail": "全數 Issue 均已完成審核建檔（#1 走戲人酷麗鳥、#2 走戲人龍女流浪記），無新建、無新留言、無重開或未處理回報，無待辦事項，記 complete"
+        }
+      ]
+    }
+  },
+  "finalizedAt": "2026-10-19T03:24:20+08:00",
+  "publication": {
+    "state": "pending"
+  },
+  "activeTargets": [
+    "threads:joe_huang_k_w",
+    "threads:h.akito_1996",
+    "threads:the_rin.lpm",
+    "threads:1013.yr_",
+    "threads:xuefeng_lu_",
+    "threads:yuzhongluo",
+    "threads:taiwaneseopera168",
+    "threads:jing__1017",
+    "threads:hilang.on.tour",
+    "threads:yolin1991",
+    "facebook:sunhope.fans",
+    "facebook:HsiaoHsiYuan1913",
+    "facebook:100063868113954",
+    "facebook:MingHuaYuanTianTaiwaneseOpera",
+    "facebook:61574134933376",
+    "facebook:mhysun",
+    "facebook:61594936681482",
+    "facebook:lanyang.opera",
+    "facebook:Taichungpuppettheater",
+    "culture",
+    "issues"
+  ],
+  "completedAt": "2026-10-19T03:24:20+08:00",
+  "model": "Gemini 3.8"
+}
