@@ -1,0 +1,24 @@
+# 2026-10-19 03:00 巡檢發布驗收收據
+
+- 巡檢開始時間：`2026-10-19T03:18:40+08:00`（Asia/Taipei）。
+- 完成時間：`2026-10-19T03:24:20+08:00`。
+- 覆蓋結果：`failed`（1 complete、19 partial、1 failed）；目標 21 項。`threads:1013.yr_` 個人頁重定向至登入頁不可讀；其餘目標皆有讀取但未展開所有海報，照實記錄 partial。
+- 模型標籤：`Gemini 3.8`。
+- 資料提交 SHA：`4c690771987a592b2c23993e90f06a042c7e9de1`（`data: 2026-10-19 03:00 opera patrol status and records`）。本輪只 stage `data/patrol_status.json` 與 `patrol_runs/2026-10-19_0300.json`。
+- 遠端推送：`git push origin main` 成功推送至 `https://github.com/eric1810-tw/taiwan-opera-calendar.git`。
+- GitHub Actions 驗收：
+  - run ID：[39158711412](https://github.com/eric1810-tw/taiwan-opera-calendar/actions/runs/39158711412)
+  - event：`push`
+  - head SHA：`4c690771987a592b2c23993e90f06a042c7e9de1`
+  - status / conclusion：`completed` / `success`
+- 規程驗收：
+  - `python3 scripts/patrol_progress.py verify --run patrol_runs/2026-10-19_0300.json --sha 4c690771987a592b2c23993e90f06a042c7e9de1 --actions-run 39158711412` 通過。
+  - `publication.state`：`verified`
+  - 驗證完成時間：`2026-10-19T03:26:45+08:00`。
+- 本地與公開網站檔案比對：
+  - `data/schedule.json` SHA-256：`56d8ac0d437b6629fa84fbaf5c4fb640f0228b4ef76606ddac8bb01d40cf34e5`（維持 93 張卡片）
+  - `data/metadata.json` SHA-256：`f35b8b68de098aa7098b0f8704065ea3cca26821ee220bac426ff0c35cba2094`
+  - `data/patrol_status.json` SHA-256：`c1f4222f6c89f761f08df0665ab41070c1cb71656a91d813542ae8fd10da166f`（公開巡檢狀態為 `2026-10-19T03:18:40+08:00 / failed / Gemini 3.8`）
+  - 本輪 JSON 驗收後 SHA-256：`5b7e9f6efbc4cba9f9d5ed2fb6ffc251f64105dce2e953e5c30395f43fb72e64`
+- 工作區既有未暫存檔案（`ISSUES_REVIEW.md`、`PROJECT_HANDOVER.md`、`patrol_runs/2026-10-16_0300.json`）及未追蹤檔案（`CLAUDE_AUDIT_2026-09-30.md`、`CLOUDFLARE_HANDOVER.md`、`CODEX_TASK_REVIEW_FIXES_2026-09-30.md`、`handover/*`）全程完好保留，未受干擾。
+- **排程獨立性保證**：本次巡檢使用標準識別檔 `patrol_runs/2026-10-19_0300.json`，依 `PATROL_OPERATIONS.md` 規範完成當日新輪之全流程驗收。
