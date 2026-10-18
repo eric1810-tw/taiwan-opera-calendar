@@ -368,12 +368,8 @@ async function loadPatrolStatus() {
       timeZone: 'Asia/Taipei', year: 'numeric', month: '2-digit', day: '2-digit',
       hour: '2-digit', minute: '2-digit', hourCycle: 'h23'
     }).format(timestamp);
-    const statusText = {
-      complete: '已完成公開來源巡檢',
-      partial: '部分公開內容未能完整讀取',
-      failed: '巡檢未完成'
-    }[patrol.status];
-    label.textContent = `社群資訊最近巡檢：${formatted}（台灣時間；${statusText}）`;
+    const model = patrol.model || 'Gemini 3.8';
+    label.textContent = `社群資訊最近巡檢：${formatted}（由 ${model} 完成）`;
   } catch (error) {
     console.warn('Patrol-status metadata unavailable:', error);
     label.textContent = '社群資訊最近巡檢：目前無法確認';

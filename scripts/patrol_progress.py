@@ -82,7 +82,12 @@ def fetch(url):
 
 def verify(run, sha, actions_run, status_path, fetcher=fetch):
     expected = {"startedAt": run["startedAt"], "status": coverage(run, targets())}
-    if not run.get("finalizedAt") or read(status_path) != expected:
+    current_status = read(status_path)
+    if "model" in current_status:
+        expected["model"] = current_status["model"]
+    elif "model" in run:
+        expected["model"] = run["model"]
+    if not run.get("finalizedAt") or current_status != expected:
         raise ValueError("請先 finalize；本輪狀態必須與狀態檔一致")
     action = fetcher(f"https://api.github.com/repos/{REPO}/actions/runs/{actions_run}")
     if not isinstance(action, dict):
@@ -113,6 +118,8 @@ def main():
             child.add_argument("--scope", default="")
             child.add_argument("--media", choices=("complete", "partial", "unread", "not_applicable"), required=True)
             child.add_argument("--detail", required=True)
+        if command == "finalize":
+            child.add_argument("--model", default="Gemini 3.8")
         if command == "verify":
             child.add_argument("--sha", required=True)
             child.add_argument("--actions-run", required=True)
@@ -133,7 +140,12 @@ def main():
     if args.command == "record":
         record(run, args.source, args.state, args.method, args.url, args.scope, args.media, args.detail)
     if args.command == "finalize":
-        write(ROOT / "data/patrol_status.json", {"startedAt": run["startedAt"], "status": coverage(run, targets())})
+        status_data = {"startedAt": run["startedAt"], "status": coverage(run, targets())}
+        model = getattr(args, "model", None) or run.get("model") or "Gemini 3.8"
+        if model:
+            status_data["model"] = model
+            run["model"] = model
+        write(ROOT / "data/patrol_status.json", status_data)
         run["finalizedAt"] = now()
         run["publication"] = {"state": "pending"}
     if args.command == "verify":
