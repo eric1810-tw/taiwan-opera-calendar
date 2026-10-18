@@ -1,6 +1,8 @@
 """Persist patrol coverage; never fetch social posts or infer event facts."""
 import argparse
 import json
+import subprocess
+import sys
 import tempfile
 import urllib.request
 from datetime import datetime
@@ -49,12 +51,38 @@ def sync(run, current):
         run["sources"].setdefault(key, {"url": url, "state": "pending", "attempts": []})
 
 
-def coverage(run, current):
-    # A new account added after init cannot silently disappear from coverage.
-    states = [run["sources"].get(key, {}).get("state", "pending") for key in current]
-    if not states or any(state not in ("complete", "partial") for state in states):
+def get_last_attempt_at(run):
+    ats = []
+    for source in run.get("sources", {}).values():
+        for attempt in source.get("attempts", []):
+            if "at" in attempt and attempt["at"]:
+                ats.append(attempt["at"])
+    return max(ats) if ats else run.get("startedAt")
+
+
+def get_counts(run, current=None):
+    if current is None:
+        current = targets()
+    targets_list = list(current)
+    counts = {"complete": 0, "partial": 0, "failed": 0, "pending": 0, "total": len(targets_list)}
+    for key in targets_list:
+        state = run.get("sources", {}).get(key, {}).get("state", "pending")
+        if state in ("complete", "partial", "failed"):
+            counts[state] += 1
+        else:
+            counts["pending"] += 1
+    return counts
+
+
+def coverage(run, current=None):
+    counts = get_counts(run, current)
+    if counts["total"] == 0:
         return "failed"
-    return "partial" if "partial" in states else "complete"
+    if counts["pending"] > 0 or counts["failed"] > 0:
+        return "failed"
+    if counts["partial"] > 0:
+        return "partial"
+    return "complete"
 
 
 def record(run, key, state, method, url, scope, media, detail):
@@ -80,19 +108,88 @@ def fetch(url):
         return json.load(response)
 
 
-def verify(run, sha, actions_run, status_path, fetcher=fetch):
-    expected = {"startedAt": run["startedAt"], "status": coverage(run, targets())}
-    current_status = read(status_path)
-    if "completedAt" in current_status:
-        expected["completedAt"] = current_status["completedAt"]
-    elif "completedAt" in run:
-        expected["completedAt"] = run["completedAt"]
-    if "model" in current_status:
-        expected["model"] = current_status["model"]
-    elif "model" in run:
+def read_git_file(sha, relative_path, root=ROOT):
+    cmd = ["git", "show", f"{sha}:{relative_path}"]
+    res = subprocess.run(cmd, cwd=root, capture_output=True, text=True, check=True)
+    return json.loads(res.stdout)
+
+
+def finalize(run, status_path=None, model=None, model_evidence=None, refinalize_reason=None, current=None):
+    if status_path is None:
+        status_path = ROOT / "data/patrol_status.json"
+    if current is None:
+        current = targets()
+
+    if run.get("publication", {}).get("state") == "verified":
+        if not refinalize_reason or not str(refinalize_reason).strip():
+            raise ValueError("本輪已通過發布驗證；再次 finalize 必須提供 --refinalize-reason 說明原因")
+        run.setdefault("publicationHistory", []).append({
+            "publication": run["publication"],
+            "reason": str(refinalize_reason).strip(),
+            "at": now()
+        })
+        run["publication"] = {"state": "pending"}
+
+    last_attempt = get_last_attempt_at(run)
+    counts = get_counts(run, current)
+    status = coverage(run, current)
+
+    status_data = {
+        "startedAt": run["startedAt"],
+        "lastAttemptAt": last_attempt,
+        "status": status,
+        "counts": counts
+    }
+
+    if model and model_evidence and str(model_evidence).strip():
+        model_str = str(model).strip()
+        evidence_str = str(model_evidence).strip()
+        status_data["model"] = model_str
+        status_data["modelEvidence"] = evidence_str
+        run["model"] = model_str
+        run["modelEvidence"] = evidence_str
+    elif model:
+        run["modelClaimed"] = str(model).strip()
+        sys.stderr.write(f"警告：提供 --model '{model}' 但未提供 --model-evidence，模型標示未經驗證，不寫入狀態檔。\n")
+        run.pop("model", None)
+        run.pop("modelEvidence", None)
+    else:
+        run.pop("model", None)
+        run.pop("modelEvidence", None)
+
+    run["finalizedAt"] = now()
+    run.pop("completedAt", None)
+
+    write(status_path, status_data)
+    run["publication"] = {"state": "pending"}
+    return status_data
+
+
+def verify(run, sha, actions_run, status_path, fetcher=fetch, git_reader=read_git_file, current=None):
+    if current is None:
+        current = targets()
+
+    expected = {
+        "startedAt": run["startedAt"],
+        "lastAttemptAt": get_last_attempt_at(run),
+        "status": coverage(run, current),
+        "counts": get_counts(run, current)
+    }
+    if "model" in run and "modelEvidence" in run:
         expected["model"] = run["model"]
+        expected["modelEvidence"] = run["modelEvidence"]
+
+    current_status = read(status_path)
     if not run.get("finalizedAt") or current_status != expected:
         raise ValueError("請先 finalize；本輪狀態必須與狀態檔一致")
+
+    try:
+        git_status = git_reader(sha, "data/patrol_status.json")
+    except Exception as e:
+        raise ValueError(f"無法從提交 {sha} 讀取 data/patrol_status.json: {e}")
+    if git_status != expected:
+        raise ValueError(f"提交 {sha} 內的 data/patrol_status.json 與本輪期望值不符")
+
     action = fetcher(f"https://api.github.com/repos/{REPO}/actions/runs/{actions_run}")
     if not isinstance(action, dict):
         raise ValueError("Actions 回應格式無法核對")
@@ -123,7 +220,9 @@ def main():
             child.add_argument("--media", choices=("complete", "partial", "unread", "not_applicable"), required=True)
             child.add_argument("--detail", required=True)
         if command == "finalize":
-            child.add_argument("--model", default="Gemini 3.8")
+            child.add_argument("--model", default=None)
+            child.add_argument("--model-evidence", default=None)
+            child.add_argument("--refinalize-reason", default=None)
         if command == "verify":
             child.add_argument("--sha", required=True)
             child.add_argument("--actions-run", required=True)
@@ -144,17 +243,13 @@ def main():
     if args.command == "record":
         record(run, args.source, args.state, args.method, args.url, args.scope, args.media, args.detail)
     if args.command == "finalize":
-        finish_time = now()
-        run["finalizedAt"] = finish_time
-        run["completedAt"] = finish_time
-        status_data = {"startedAt": run["startedAt"], "status": coverage(run, targets()),
-                       "completedAt": finish_time}
-        model = getattr(args, "model", None) or run.get("model") or "Gemini 3.8"
-        if model:
-            status_data["model"] = model
-            run["model"] = model
-        write(ROOT / "data/patrol_status.json", status_data)
-        run["publication"] = {"state": "pending"}
+        try:
+            finalize(run, ROOT / "data/patrol_status.json",
+                     model=args.model,
+                     model_evidence=args.model_evidence,
+                     refinalize_reason=args.refinalize_reason)
+        except ValueError as error:
+            parser.error(str(error))
     if args.command == "verify":
         try:
             verify(run, args.sha, args.actions_run, ROOT / "data/patrol_status.json")

@@ -363,13 +363,33 @@ async function loadPatrolStatus() {
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const patrol = await response.json();
     if (!['complete', 'partial', 'failed'].includes(patrol.status)) throw new Error('巡檢狀態無效');
-    const timestamp = parsePublishedTime(patrol.completedAt || patrol.startedAt);
+    const timeValue = patrol.lastAttemptAt || patrol.completedAt || patrol.startedAt;
+    const timestamp = parsePublishedTime(timeValue);
     const formatted = new Intl.DateTimeFormat('zh-TW', {
       timeZone: 'Asia/Taipei', year: 'numeric', month: '2-digit', day: '2-digit',
       hour: '2-digit', minute: '2-digit', hourCycle: 'h23'
     }).format(timestamp);
-    const model = patrol.model || 'Gemini 3.8';
-    label.textContent = `社群資訊最近巡檢：${formatted}（由 ${model} 完成）`;
+
+    const modelSuffix = (patrol.model && patrol.modelEvidence) ? `・模型 ${patrol.model}` : '';
+
+    if (patrol.counts && typeof patrol.counts === 'object') {
+      const c = patrol.counts;
+      const total = c.total ?? 0;
+      const complete = c.complete ?? 0;
+      const partial = c.partial ?? 0;
+      const failed = c.failed ?? 0;
+      const pending = c.pending ?? 0;
+      const pendingPart = pending > 0 ? `・${pending} 未嘗試` : '';
+      label.textContent = `社群資訊最近巡檢：${formatted}（${total} 個來源：${complete} 完整・${partial} 部分・${failed} 失敗${pendingPart}${modelSuffix}）`;
+    } else {
+      let statusText = '巡檢未完成';
+      if (patrol.status === 'complete') {
+        statusText = '已完成公開來源巡檢';
+      } else if (patrol.status === 'partial') {
+        statusText = '部分公開內容未能完整讀取';
+      }
+      label.textContent = `社群資訊最近巡檢：${formatted}（${statusText}${modelSuffix}）`;
+    }
   } catch (error) {
     console.warn('Patrol-status metadata unavailable:', error);
     label.textContent = '社群資訊最近巡檢：目前無法確認';
