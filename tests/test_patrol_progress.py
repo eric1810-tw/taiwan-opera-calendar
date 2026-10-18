@@ -1,5 +1,7 @@
 """Failure cases that must never produce a false patrol/publication success."""
 import copy
+import subprocess
+import sys
 import tempfile
 import unittest
 from pathlib import Path
@@ -250,6 +252,99 @@ class PatrolProgressTests(unittest.TestCase):
         run_complete = {"sources": {"t1": {"state": "complete"}, "t2": {"state": "complete"}}}
         self.assertEqual(patrol.coverage(run_complete, ["t1", "t2"]), "complete")
 
+    # --- 002 指令新增：resume 防護與 publicationHistory 測試 ---
+
+    def test_resume_verified_run_without_reason_rejected_and_file_not_modified(self):
+        """verified 的 run 不帶 --reason 就 resume → 拒絕，且 run 檔未被改動。"""
+        import hashlib
+        with tempfile.TemporaryDirectory() as tmp:
+            run_file = Path(tmp) / "fake_run.json"
+            data = {
+                "version": 1,
+                "startedAt": "2026-10-18T03:00:00+08:00",
+                "resumedAt": [],
+                "sources": {"threads:test": {"state": "complete"}},
+                "finalizedAt": "2026-10-18T03:30:00+08:00",
+                "publication": {
+                    "state": "verified",
+                    "sha": "abc1234",
+                    "actionsRun": "999",
+                    "verifiedAt": "2026-10-18T03:35:00+08:00"
+                }
+            }
+            patrol.write(run_file, data)
+            sha_before = hashlib.sha256(run_file.read_bytes()).hexdigest()
+
+            # Python API test
+            with self.assertRaises(ValueError):
+                patrol.resume(data, current={"threads:test": "url"})
+            with self.assertRaises(ValueError):
+                patrol.resume(data, reason="   ", current={"threads:test": "url"})
+
+            # CLI test: should exit with code 2 and not modify file
+            res = subprocess.run(
+                [sys.executable, str(patrol.ROOT / "scripts/patrol_progress.py"), "resume", "--run", str(run_file)],
+                capture_output=True,
+                text=True
+            )
+            self.assertEqual(res.returncode, 2)
+            self.assertIn("必須提供 --reason", res.stderr)
+
+            sha_after = hashlib.sha256(run_file.read_bytes()).hexdigest()
+            self.assertEqual(sha_before, sha_after)
+
+    def test_resume_verified_run_with_reason_preserves_publication_history(self):
+        """帶 --reason → 歷史中保存舊 publication。"""
+        targets_dict = {"threads:test": "url"}
+        self.run["publication"] = {
+            "state": "verified",
+            "sha": "commit-verified-777",
+            "actionsRun": "888",
+            "verifiedAt": "2026-10-18T03:35:00+08:00"
+        }
+        self.run["finalizedAt"] = "2026-10-18T03:30:00+08:00"
+
+        patrol.resume(self.run, reason="Adding late discovered opera troupe", current=targets_dict)
+
+        self.assertIn("publicationHistory", self.run)
+        self.assertEqual(len(self.run["publicationHistory"]), 1)
+        history_entry = self.run["publicationHistory"][0]
+        self.assertEqual(history_entry["publication"]["sha"], "commit-verified-777")
+        self.assertEqual(history_entry["reason"], "Adding late discovered opera troupe")
+        self.assertIn("at", history_entry)
+        self.assertEqual(self.run["publication"], {"state": "pending"})
+        self.assertIsNone(self.run["finalizedAt"])
+        self.assertEqual(len(self.run["resumedAt"]), 1)
+
+    def test_resume_non_verified_run_with_content_archives_to_history(self):
+        """非 verified 但 publication 有內容（如 blocked）的 resume → 保存進 publicationHistory。"""
+        targets_dict = {"threads:test": "url"}
+        self.run["publication"] = {
+            "state": "blocked",
+            "sha": "bad-sha-000",
+            "actionsRun": "111",
+            "reason": "Actions run failed"
+        }
+        patrol.resume(self.run, reason=None, current=targets_dict)
+
+        self.assertIn("publicationHistory", self.run)
+        self.assertEqual(len(self.run["publicationHistory"]), 1)
+        self.assertEqual(self.run["publicationHistory"][0]["publication"]["state"], "blocked")
+        self.assertEqual(self.run["publication"], {"state": "pending"})
+
+    def test_resume_non_verified_run_bare_pending_executes_normally(self):
+        """非 verified 的 resume（初始 pending 狀態）→ 照常執行，不產生多餘歷史。"""
+        targets_dict = {"threads:test": "url"}
+        self.run["publication"] = {"state": "pending"}
+        self.run["finalizedAt"] = None
+
+        patrol.resume(self.run, current=targets_dict)
+
+        self.assertNotIn("publicationHistory", self.run)
+        self.assertEqual(self.run["publication"], {"state": "pending"})
+        self.assertEqual(len(self.run["resumedAt"]), 1)
+
 
 if __name__ == "__main__":
     unittest.main()
+

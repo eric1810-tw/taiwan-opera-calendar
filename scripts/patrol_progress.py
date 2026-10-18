@@ -1,5 +1,6 @@
 """Persist patrol coverage; never fetch social posts or infer event facts."""
 import argparse
+import copy
 import json
 import subprocess
 import sys
@@ -100,6 +101,39 @@ def record(run, key, state, method, url, scope, media, detail):
     # Any new reading invalidates the previously published coverage receipt.
     run["finalizedAt"] = None
     run["publication"] = {"state": "pending"}
+
+
+def resume(run, reason=None, current=None):
+    if current is None:
+        current = targets()
+    sync(run, current)
+
+    pub = run.get("publication")
+    is_verified = isinstance(pub, dict) and pub.get("state") == "verified"
+    if is_verified:
+        if not reason or not str(reason).strip():
+            raise ValueError("已 verified 之巡檢輪若要 resume，必須提供 --reason，不得直接重設 publication")
+        entry = {
+            "publication": copy.deepcopy(pub),
+            "reason": str(reason).strip(),
+            "at": now()
+        }
+        run.setdefault("publicationHistory", []).append(entry)
+    else:
+        has_content = isinstance(pub, dict) and bool(pub) and pub != {"state": "pending"}
+        if has_content or (reason and str(reason).strip()):
+            entry = {
+                "publication": copy.deepcopy(pub) if pub else {"state": "pending"},
+                "at": now()
+            }
+            if reason and str(reason).strip():
+                entry["reason"] = str(reason).strip()
+            run.setdefault("publicationHistory", []).append(entry)
+
+    run.setdefault("resumedAt", []).append(now())
+    run["finalizedAt"] = None
+    run["publication"] = {"state": "pending"}
+    return run
 
 
 def fetch(url):
@@ -211,6 +245,8 @@ def main():
     for command in ("init", "resume", "record", "summary", "finalize", "verify"):
         child = sub.add_parser(command)
         child.add_argument("--run", type=Path, required=True)
+        if command == "resume":
+            child.add_argument("--reason", default=None)
         if command == "record":
             child.add_argument("--source", required=True)
             child.add_argument("--state", choices=("complete", "partial", "failed"), required=True)
@@ -236,10 +272,10 @@ def main():
     else:
         run = read(args.run)
     if args.command == "resume":
-        sync(run, targets())
-        run["resumedAt"].append(now())
-        run["finalizedAt"] = None
-        run["publication"] = {"state": "pending"}
+        try:
+            resume(run, reason=args.reason, current=targets())
+        except ValueError as error:
+            parser.error(str(error))
     if args.command == "record":
         record(run, args.source, args.state, args.method, args.url, args.scope, args.media, args.detail)
     if args.command == "finalize":
