@@ -61,3 +61,15 @@
 - 本輪資料 commit：`6b61371957343c0110a6e9d63040876638fbf293`；其後又恢復三個部分可讀 Facebook 來源並記錄在本輪 JSON，補讀結果留在後續本機稽核提交，來源狀態仍 partial。`git fetch origin main` 及 `git push origin main` 均回 `Could not resolve host: github.com`；`gh auth status` 另顯示預設 token invalid。未推送，沒有此 SHA 的 Actions run，未執行成功的 `patrol_progress.py verify`。
 - 公開瀏覽器的 cache-busted 狀態檔仍讀到 `2026-10-18T00:21:53+08:00 / failed`；但這兩欄與上次發布相同。公開 `schedule.json` 顯示96張且不含本輪兩張新卡；本機為98張，因此本輪場次更新尚未上線。
 - 恢復步驟：GitHub DNS/連線恢復後先確認 GitHub CLI 授權，再 `git fetch origin main` 並檢查分歧、正常整合，推送本輪資料 SHA及稽核提交；若 `[skip ci]` 使最新HEAD未觸發workflow，對最新資料HEAD執行 workflow_dispatch。確認該 SHA 的 `daily-update.yml` Actions 為 completed/success 後，執行 `python3 scripts/patrol_progress.py verify --run patrol_runs/2026-10-18_0300.json --sha 6b61371957343c0110a6e9d63040876638fbf293 --actions-run <該次run-id>`，再更新並推送驗收收據。`threads:1013.yr_` 仍 failed；文化部恢復時 API DNS 與瀏覽器路徑失敗。
+
+
+## 續跑：發布解除阻塞與公開驗收（2026-10-18T08:12:09+08:00 Asia/Taipei）
+
+- 網路連線與授權正常：`git push origin 6b61371:main` 成功推送資料提交（`6b61371957343c0110a6e9d63040876638fbf293`）。
+- matching Actions：[39081843910](https://github.com/eric1810-tw/taiwan-opera-calendar/actions/runs/39081843910)，event=push，head SHA=`6b61371957343c0110a6e9d63040876638fbf293`，completed/success（`update-schedule` 8s、`deploy` 12s）。
+- 公開 Pages 三檔比對：
+  - `data/schedule.json`：`2fd2a74b07fb3423df7e0222bbf2f029d90ee92d7777a184c8a3090810a4754f`，卡片數已更新為 98 張（含本輪明華園《烏龍天下》臺中與高雄兩張新卡）。
+  - `data/metadata.json`：`997d55acc5e86468c7d5b0b6f2f15c13ac7762e6e2af3f8084b602e1974a47cd`，維持 `2026-10-17T08:57:55+08:00`。
+  - `data/patrol_status.json`：`70fcdae5d6ec2fb42e52ff5c5ec1b0853cac1289a6c6c30b060d387e9ddc339f`，公開狀態 `2026-10-18T00:21:53+08:00 / failed`。
+- 規程驗收：`python3 scripts/patrol_progress.py verify --run patrol_runs/2026-10-18_0300.json --sha 6b61371957343c0110a6e9d63040876638fbf293 --actions-run 39081843910` 通過，`publication.state="verified"`。
+- 本輪 JSON 驗收後 SHA-256：`14aaec7193108f72e38b6ceb3c9fb6c82917843b41de4d87ce56c6193f4dc237`。

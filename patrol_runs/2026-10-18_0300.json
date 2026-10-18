@@ -531,19 +531,16 @@
   },
   "finalizedAt": "2026-10-18T03:11:15+08:00",
   "publication": {
-    "state": "blocked",
+    "state": "verified",
     "sha": "6b61371957343c0110a6e9d63040876638fbf293",
-    "actionsRun": null,
+    "actionsRun": "39081843910",
+    "actionsUrl": "https://github.com/eric1810-tw/taiwan-opera-calendar/actions/runs/39081843910",
     "publicUrl": "https://eric1810-tw.github.io/taiwan-opera-calendar/data/patrol_status.json",
-    "attemptedAt": "2026-10-18T03:08:30+08:00",
-    "reason": "git fetch origin main 與 git push origin main 均因 Could not resolve host: github.com 失敗，無法推送本輪資料，故無此 SHA 對應 Actions。gh auth status 另顯示預設 GitHub token invalid。以公開瀏覽器檢查：patrol_status.json 仍為本輪 startedAt/failed（該狀態已存在於舊發布）；公開 schedule.json 仍96張，不含本輪新增臺中與高雄兩卡。",
+    "verifiedAt": "2026-10-18T08:12:09+08:00",
     "publicStatus": {
       "startedAt": "2026-10-18T00:21:53+08:00",
       "status": "failed"
-    },
-    "publicScheduleCards": 96,
-    "publicContainsNewEvents": false,
-    "nextStep": "github.com DNS 恢復後先驗證 GitHub CLI 授權；再 fetch origin main 並比較/整合遠端，push資料SHA及後續本輪稽核提交。若 [skip ci] 收尾提交未觸發 workflow，對最後資料HEAD workflow_dispatch；核同一SHA daily-update.yml completed/success後，執行 patrol_progress.py verify。"
+    }
   },
   "activeTargets": [
     "threads:joe_huang_k_w",

@@ -15,3 +15,16 @@
 - 其後三個補讀嘗試使巡檢 JSON 的出版狀態重新待更新；finalize 後仍沿用本輪資料 SHA 6b61371 的 blocked 結果。補讀與收尾僅作本機 [skip ci] 稽核更新，推送後須以資料 SHA 檢查 matching Actions，並確保稽核 commit 也已推送。
 - 工作區其他既有修改未 stage：`ISSUES_REVIEW.md`、`PROJECT_HANDOVER.md`、`patrol_runs/2026-10-16_0300.json`，及三個原有未追蹤檔案均保留。
 - 收據更新：`2026-10-18T03:08:30+08:00`（Asia/Taipei）；因尚未推送，本收據為本機接續紀錄，未上線。
+
+
+## 最終續跑驗收（2026-10-18T08:12:09+08:00 Asia/Taipei）
+
+- 發布解除阻塞：本機網路連線正常，`git push origin 6b61371:main` 成功推送資料提交（`6b61371957343c0110a6e9d63040876638fbf293`）。
+- matching Actions：[39081843910](https://github.com/eric1810-tw/taiwan-opera-calendar/actions/runs/39081843910)，event=push，head SHA=`6b61371957343c0110a6e9d63040876638fbf293`，completed/success。
+- 規程驗收：`python3 scripts/patrol_progress.py verify --run patrol_runs/2026-10-18_0300.json --sha 6b61371957343c0110a6e9d63040876638fbf293 --actions-run 39081843910` 成功，`publication.state="verified"`，驗證時間 `2026-10-18T08:12:09+08:00`。
+- 本地與公開網站（GitHub Pages）三檔 SHA-256 逐位元完全一致：
+  - `data/schedule.json`: `2fd2a74b07fb3423df7e0222bbf2f029d90ee92d7777a184c8a3090810a4754f`（卡片數更新為 98 張，已包含明華園《烏龍天下》臺中場與高雄場）
+  - `data/metadata.json`: `997d55acc5e86468c7d5b0b6f2f15c13ac7762e6e2af3f8084b602e1974a47cd`（網站資料刷新時間維持 2026-10-17T08:57:55+08:00）
+  - `data/patrol_status.json`: `70fcdae5d6ec2fb42e52ff5c5ec1b0853cac1289a6c6c30b060d387e9ddc339f`（公開巡檢狀態為 2026-10-18T00:21:53+08:00 / failed）
+- 本輪 JSON 驗收後 SHA-256：`14aaec7193108f72e38b6ceb3c9fb6c82917843b41de4d87ce56c6193f4dc237`。
+- 工作區既有未暫存檔案（`ISSUES_REVIEW.md`、`PROJECT_HANDOVER.md`、`patrol_runs/2026-10-16_0300.json`）及未追蹤檔案（`CLAUDE_AUDIT_2026-09-30.md`、`CLOUDFLARE_HANDOVER.md`、`CODEX_TASK_REVIEW_FIXES_2026-09-30.md`）全程完好保留。
