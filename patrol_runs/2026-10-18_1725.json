@@ -1,0 +1,351 @@
+{
+  "version": 1,
+  "startedAt": "2026-10-18T17:38:53+08:00",
+  "resumedAt": [],
+  "sources": {
+    "threads:joe_huang_k_w": {
+      "url": "https://www.threads.com/@joe_huang_k_w",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-18T17:43:51+08:00",
+          "method": "headless-edge-profile",
+          "url": "https://www.threads.net/@joe_huang_k_w",
+          "state": "partial",
+          "scope": "讀取頁面正文約 3361 字元（Title: 黃冠維（@joe_huang_k_w）• Threads，畅所欲言）；讀取片段：登录 joe_huang_k_w 黃冠維 joe_huang_k_w 古都木偶戲劇團／團長 3,783位粉丝 关注 提及 串文 回复 影音内容 转发 joe_huang_k_w 4小时 今天總算讓我遇...",
+          "media": "partial",
+          "detail": "以無人值守無頭 Edge 載入；部分照片及後續捲動 feed 仍載入中，未逐一開啟所有相簿海報。摘要：登录 joe_huang_k_w 黃冠維 joe_huang_k_w 古都木偶戲劇團／團長 3,783位粉丝 关注 提及 串文 回复 影音内容 转发 joe_huang_k_w 4小时 今天總算讓我遇到導航導到盡頭的感覺了，前不著村後不著店 翻译 3 1 joe_huang_k_w 21小时 寶貝女..."
+        }
+      ]
+    },
+    "threads:h.akito_1996": {
+      "url": "https://www.threads.com/@h.akito_1996",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-18T17:43:51+08:00",
+          "method": "headless-edge-profile",
+          "url": "https://www.threads.net/@h.akito_1996",
+          "state": "partial",
+          "scope": "讀取頁面正文約 2686 字元（Title: 尉綸/凱琳（@h.akito_1996）• Threads，畅所欲言）；讀取片段：登录 h.akito_1996 尉綸/凱琳 h.akito_1996 4,610位粉丝 关注 提及 串文 回复 影音内容 转发 已置顶 h.akito_1996 2026-9-26 2026/9/26...",
+          "media": "partial",
+          "detail": "以無人值守無頭 Edge 載入；部分照片及後續捲動 feed 仍載入中，未逐一開啟所有相簿海報。摘要：登录 h.akito_1996 尉綸/凱琳 h.akito_1996 4,610位粉丝 关注 提及 串文 回复 影音内容 转发 已置顶 h.akito_1996 2026-9-26 2026/9/26 鍘美藝術節最開心的事，大概就是五天大戲雖然結束，但大家的熱情依然持續。 脆現在每天都會有人說：我要..."
+        }
+      ]
+    },
+    "threads:the_rin.lpm": {
+      "url": "https://www.threads.com/@the_rin.lpm",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-18T17:43:51+08:00",
+          "method": "headless-edge-profile",
+          "url": "https://www.threads.net/@the_rin.lpm",
+          "state": "partial",
+          "scope": "讀取頁面正文約 2250 字元（Title: 阿凜的追戲角色圖鑑🦋（@the_rin.lpm）• Threads，畅所欲言）；讀取片段：登录 the_rin.lpm 阿凜的追戲角色圖鑑🦋 the_rin.lpm ｜看戲攝影分享 aka🐮🐮團的宣傳手｜非官方 - 👇秀琴歌劇團粉專✨️（追蹤起來‼️ facebook.com/sh...",
+          "media": "partial",
+          "detail": "以無人值守無頭 Edge 載入；部分照片及後續捲動 feed 仍載入中，未逐一開啟所有相簿海報。摘要：登录 the_rin.lpm 阿凜的追戲角色圖鑑🦋 the_rin.lpm ｜看戲攝影分享 aka🐮🐮團的宣傳手｜非官方 - 👇秀琴歌劇團粉專✨️（追蹤起來‼️ facebook.com/share/1DRYEHmXUg 歌仔戲 業餘攝影 秀琴歌劇團 906位粉丝 关注 提及 串文 回复 影..."
+        }
+      ]
+    },
+    "threads:1013.yr_": {
+      "url": "https://www.threads.com/@1013.yr_",
+      "state": "failed",
+      "attempts": [
+        {
+          "at": "2026-10-18T17:43:51+08:00",
+          "method": "headless-edge-profile",
+          "url": "https://www.threads.net/@1013.yr_",
+          "state": "failed",
+          "scope": "頁面顯示「Threads • 登入」或連結失效，無法取得任何個人檔案正文或動態",
+          "media": "not_applicable",
+          "detail": "訪問直接重定向至登入畫面，未讀取到帳號首頁或貼文內容。"
+        }
+      ]
+    },
+    "threads:xuefeng_lu_": {
+      "url": "https://www.threads.com/@xuefeng_lu_",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-18T17:43:51+08:00",
+          "method": "headless-edge-profile",
+          "url": "https://www.threads.net/@xuefeng_lu_",
+          "state": "partial",
+          "scope": "讀取頁面正文約 1163 字元（Title: 呂雪鳳（@xuefeng_lu_）• Threads，畅所欲言）；讀取片段：登录 xuefeng_lu_ 呂雪鳳 xuefeng_lu_ 4,115位粉丝 关注 提及 串文 回复 影音内容 转发 xuefeng_lu_ 1天 支持院長不附屬 翻译 t.ai_good 1天 青...",
+          "media": "partial",
+          "detail": "以無人值守無頭 Edge 載入；部分照片及後續捲動 feed 仍載入中，未逐一開啟所有相簿海報。摘要：登录 xuefeng_lu_ 呂雪鳳 xuefeng_lu_ 4,115位粉丝 关注 提及 串文 回复 影音内容 转发 xuefeng_lu_ 1天 支持院長不附屬 翻译 t.ai_good 1天 青壯世代不應被犧牲，公共政策不應被排擠，立院違憲硬闖《老人福利法》，政院表達最大遺憾！ 翻译 3.1 ..."
+        }
+      ]
+    },
+    "threads:yuzhongluo": {
+      "url": "https://www.threads.com/@yuzhongluo",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-18T17:43:51+08:00",
+          "method": "headless-edge-profile",
+          "url": "https://www.threads.net/@yuzhongluo",
+          "state": "partial",
+          "scope": "讀取頁面正文約 586 字元（Title: 羅裕誴歌劇團（@yuzhongluo）• Threads，畅所欲言）；讀取片段：登录 yuzhongluo 羅裕誴歌劇團 yuzhongluo 台南人~` 巨蟹座好男人 羅裕誴歌劇團~團長 台南鶯藝歌劇團~當家小生+執行長 電視劇 勇氣家族~~陳應龍 嘉慶君遊臺灣~~劉邦昌 台南...",
+          "media": "partial",
+          "detail": "以無人值守無頭 Edge 載入；部分照片及後續捲動 feed 仍載入中，未逐一開啟所有相簿海報。摘要：登录 yuzhongluo 羅裕誴歌劇團 yuzhongluo 台南人~` 巨蟹座好男人 羅裕誴歌劇團~團長 台南鶯藝歌劇團~當家小生+執行長 電視劇 勇氣家族~~陳應龍 嘉慶君遊臺灣~~劉邦昌 台南 1,542位粉丝 关注 提及 串文 回复 影音内容 转发 yuzhongluo 鍘美藝術節 16小..."
+        }
+      ]
+    },
+    "threads:taiwaneseopera168": {
+      "url": "https://www.threads.com/@taiwaneseopera168",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-18T17:43:51+08:00",
+          "method": "headless-edge-profile",
+          "url": "https://www.threads.net/@taiwaneseopera168",
+          "state": "partial",
+          "scope": "讀取頁面正文約 2497 字元（Title: 歌仔出少年（@taiwaneseopera168）• Threads，畅所欲言）；讀取片段：登录 taiwaneseopera168 歌仔出少年 taiwaneseopera168 【少年歌仔▪︎青春傳承】台灣戲曲-歌仔戲 戲路表×賞戲體驗筆記×劇照影音×藝文活動 ── 疫情期間，從單車追民...",
+          "media": "partial",
+          "detail": "以無人值守無頭 Edge 載入；部分照片及後續捲動 feed 仍載入中，未逐一開啟所有相簿海報。摘要：登录 taiwaneseopera168 歌仔出少年 taiwaneseopera168 【少年歌仔▪︎青春傳承】台灣戲曲-歌仔戲 戲路表×賞戲體驗筆記×劇照影音×藝文活動 ── 疫情期間，從單車追民戲開始入坑明華園，關注青年新秀的成長發展。自酬神野台戲、文化場戶外公演，追到踏進內台售票劇場，醉心歌..."
+        }
+      ]
+    },
+    "threads:jing__1017": {
+      "url": "https://www.threads.com/@jing__1017",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-18T17:43:52+08:00",
+          "method": "headless-edge-profile",
+          "url": "https://www.threads.net/@jing__1017",
+          "state": "partial",
+          "scope": "讀取頁面正文約 921 字元（Title: 靜（@jing__1017）• Threads，畅所欲言）；讀取片段：登录 jing__1017 靜 jing__1017 喜歡歌仔戲的台南人😊 台南 歌仔戲 台南人 台南美食 Food Threads + 12 277位粉丝 关注 提及 串文 回复 影音内容 转发 ...",
+          "media": "partial",
+          "detail": "以無人值守無頭 Edge 載入；部分照片及後續捲動 feed 仍載入中，未逐一開啟所有相簿海報。摘要：登录 jing__1017 靜 jing__1017 喜歡歌仔戲的台南人😊 台南 歌仔戲 台南人 台南美食 Food Threads + 12 277位粉丝 关注 提及 串文 回复 影音内容 转发 已置顶 jing__1017 歌仔戲 3天 【 戲棚下逐星路 】講座 歌仔戲天王張秀琴遇見新秀林佳欣..."
+        }
+      ]
+    },
+    "threads:hilang.on.tour": {
+      "url": "https://www.threads.com/@hilang.on.tour",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-18T17:43:52+08:00",
+          "method": "headless-edge-profile",
+          "url": "https://www.threads.net/@hilang.on.tour",
+          "state": "partial",
+          "scope": "讀取頁面正文約 1603 字元（Title: 戲籠出巡｜臺灣傳統戲曲巡演（@hilang.on.tour）• Threads，畅所欲言）；讀取片段：登录 hilang.on.tour 戲籠出巡｜臺灣傳統戲曲巡演 hilang.on.tour 帶著戲籠走各地，用臺灣傳統戲曲說世間事。 官場的權與責，人間的是與非，都能入戲。 戲裡見公義，戲外有人情。...",
+          "media": "partial",
+          "detail": "以無人值守無頭 Edge 載入；部分照片及後續捲動 feed 仍載入中，未逐一開啟所有相簿海報。摘要：登录 hilang.on.tour 戲籠出巡｜臺灣傳統戲曲巡演 hilang.on.tour 帶著戲籠走各地，用臺灣傳統戲曲說世間事。 官場的權與責，人間的是與非，都能入戲。 戲裡見公義，戲外有人情。 一起看戲，也聊聊戲裡戲外。 sites.google.com/view/hilang-re +1 ..."
+        }
+      ]
+    },
+    "threads:yolin1991": {
+      "url": "https://www.threads.com/@yolin1991",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-18T17:43:52+08:00",
+          "method": "headless-edge-profile",
+          "url": "https://www.threads.net/@yolin1991",
+          "state": "partial",
+          "scope": "讀取頁面正文約 665 字元（Title: 梵羽（@yolin1991）• Threads，畅所欲言）；讀取片段：登录 yolin1991 梵羽 yolin1991 梵羽 (忺鴽) ​企劃新手 ｜ 劇團幫手 ｜ 熊貓騎士 ​📔 正在學習如何把創意變成企劃。 ⛩️ 偶爾出沒廟口，那是我的戲曲印記。 🐼 穿梭街頭...",
+          "media": "partial",
+          "detail": "以無人值守無頭 Edge 載入；部分照片及後續捲動 feed 仍載入中，未逐一開啟所有相簿海報。摘要：登录 yolin1991 梵羽 yolin1991 梵羽 (忺鴽) ​企劃新手 ｜ 劇團幫手 ｜ 熊貓騎士 ​📔 正在學習如何把創意變成企劃。 ⛩️ 偶爾出沒廟口，那是我的戲曲印記。 🐼 穿梭街頭跑單，補齊生活的缺口。 🚶🏻‍♀️ 我，也只是個努力生活的普通人。 ​「能演就接，能學就練，努力..."
+        }
+      ]
+    },
+    "facebook:sunhope.fans": {
+      "url": "https://www.facebook.com/sunhope.fans",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-18T17:43:52+08:00",
+          "method": "headless-edge-profile",
+          "url": "https://www.facebook.com/sunhope.fans",
+          "state": "partial",
+          "scope": "讀取頁面正文約 505 字元（Title: 尚和歌仔戲劇團 | Kaohsiung | Facebook）；讀取片段：登录 尚和歌仔戲劇團 1.6 万位粉丝 • 关注 16 人 展开 帖子 简介 Reels 照片 个人资料 洽詢電話： (07) 555-9522 團址：高雄市鼓山區美術南一街192號 官方網站：htt...",
+          "media": "partial",
+          "detail": "以無人值守無頭 Edge 載入；部分照片及後續捲動 feed 仍載入中，未逐一開啟所有相簿海報。摘要：登录 尚和歌仔戲劇團 1.6 万位粉丝 • 关注 16 人 展开 帖子 简介 Reels 照片 个人资料 洽詢電話： (07) 555-9522 團址：高雄市鼓山區美術南一街192號 官方網站：http://sunhopeecho.com.tw/ 官方Line加入好友：https://lin.ee/..."
+        }
+      ]
+    },
+    "facebook:HsiaoHsiYuan1913": {
+      "url": "https://www.facebook.com/HsiaoHsiYuan1913/",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-18T17:43:52+08:00",
+          "method": "headless-edge-profile",
+          "url": "https://www.facebook.com/HsiaoHsiYuan1913/",
+          "state": "partial",
+          "scope": "讀取頁面正文約 250 字元（Title: 小西園掌中劇團 | Facebook）；讀取片段：登录 小西園掌中劇團 1,674 位粉丝 • 关注 0 人 展开 帖子 简介 照片 个人资料 小西園掌中劇團 公共主页 · 艺术家 02 2832 4132 照片 查看所有照片 隐私政策 · 服务条款...",
+          "media": "partial",
+          "detail": "以無人值守無頭 Edge 載入；部分照片及後續捲動 feed 仍載入中，未逐一開啟所有相簿海報。摘要：登录 小西園掌中劇團 1,674 位粉丝 • 关注 0 人 展开 帖子 简介 照片 个人资料 小西園掌中劇團 公共主页 · 艺术家 02 2832 4132 照片 查看所有照片 隐私政策 · 服务条款 · 广告 · Ad Choices · Cookie · 更多 小西園掌中劇團 5月7日 · 藝文..."
+        }
+      ]
+    },
+    "facebook:100063868113954": {
+      "url": "https://www.facebook.com/p/%E5%90%B3%E5%A5%95%E8%90%B1-Wu-Yihsuan-100063868113954",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-18T17:43:52+08:00",
+          "method": "headless-edge-profile",
+          "url": "https://www.facebook.com/p/%E5%90%B3%E5%A5%95%E8%90%B1-Wu-Yihsuan-100063868113954",
+          "state": "partial",
+          "scope": "讀取頁面正文約 404 字元（Title: 吳奕萱 Wu-Yihsuan | Facebook）；讀取片段：登录 吳奕萱 Wu-Yihsuan 1.2 万位粉丝 • 关注 1 人 展开 帖子 简介 Reels 照片 个人资料 奕萱近幾年一路解鎖不同劇種、挑戰各種角色 在一次次舞台歷練裡，發掘自己不同面向 用...",
+          "media": "partial",
+          "detail": "以無人值守無頭 Edge 載入；部分照片及後續捲動 feed 仍載入中，未逐一開啟所有相簿海報。摘要：登录 吳奕萱 Wu-Yihsuan 1.2 万位粉丝 • 关注 1 人 展开 帖子 简介 Reels 照片 个人资料 奕萱近幾年一路解鎖不同劇種、挑戰各種角色 在一次次舞台歷練裡，發掘自己不同面向 用演技、武藝與滿滿熱情，把每個角色演出自己的味道💫 「奕曲絕倫滿堂彩，戲劇武藝技稱王 萱揚文化展大氣..."
+        }
+      ]
+    },
+    "facebook:MingHuaYuanTianTaiwaneseOpera": {
+      "url": "https://www.facebook.com/MingHuaYuanTianTaiwaneseOpera",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-18T17:43:52+08:00",
+          "method": "headless-edge-profile",
+          "url": "https://www.facebook.com/MingHuaYuanTianTaiwaneseOpera",
+          "state": "partial",
+          "scope": "讀取頁面正文約 434 字元（Title: 明華園天字戲劇團 | Facebook）；讀取片段：登录 明華園天字戲劇團 3.1 万位粉丝 • 关注 36 人 展开 帖子 简介 Reels 照片 个人资料 部落格網址： http://minghuayuantiantaiwaneseopera.bl...",
+          "media": "partial",
+          "detail": "以無人值守無頭 Edge 載入；部分照片及後續捲動 feed 仍載入中，未逐一開啟所有相簿海報。摘要：登录 明華園天字戲劇團 3.1 万位粉丝 • 关注 36 人 展开 帖子 简介 Reels 照片 个人资料 部落格網址： http://minghuayuantiantaiwaneseopera.blogspot.tw/ Youtube頻道網址： https://www.youtube.com/ch..."
+        }
+      ]
+    },
+    "facebook:61574134933376": {
+      "url": "https://www.facebook.com/profile.php?id=61574134933376",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-18T17:43:52+08:00",
+          "method": "headless-edge-profile",
+          "url": "https://www.facebook.com/profile.php?id=61574134933376",
+          "state": "partial",
+          "scope": "讀取頁面正文約 460 字元（Title: 繡花園戲劇團x明華園地字戲劇團 | Pingtung | Facebook）；讀取片段：登录 繡花園戲劇團x明華園地字戲劇團 1,081 位粉丝 • 关注 11 人 展开 帖子 简介 Reels 照片 个人资料 嶄新[繡花園戲劇團]X[明華園地字戲劇團］粉絲專頁，一群熱愛歌仔戲，深愛歌仔...",
+          "media": "partial",
+          "detail": "以無人值守無頭 Edge 載入；部分照片及後續捲動 feed 仍載入中，未逐一開啟所有相簿海報。摘要：登录 繡花園戲劇團x明華園地字戲劇團 1,081 位粉丝 • 关注 11 人 展开 帖子 简介 Reels 照片 个人资料 嶄新[繡花園戲劇團]X[明華園地字戲劇團］粉絲專頁，一群熱愛歌仔戲，深愛歌仔戲的熱血演員，爆發滿滿熱血歌仔魂，等你一起來探索歌仔戲之美 公共主页 · 表演艺术 · 戏剧作品 ·..."
+        }
+      ]
+    },
+    "facebook:mhysun": {
+      "url": "https://www.facebook.com/mhysun",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-18T17:43:52+08:00",
+          "method": "headless-edge-profile",
+          "url": "https://www.facebook.com/mhysun",
+          "state": "partial",
+          "scope": "讀取頁面正文約 263 字元（Title: 孫翠鳳 | Facebook）；讀取片段：登录 孫翠鳳 21 万位粉丝 • 关注 85 人 展开 帖子 简介 Reels 照片 已关注 个人资料 公共主页 · 艺术家 twopera.com 照片 查看所有照片 隐私政策 · 服务条款 · 广...",
+          "media": "partial",
+          "detail": "以無人值守無頭 Edge 載入；部分照片及後續捲動 feed 仍載入中，未逐一開啟所有相簿海報。摘要：登录 孫翠鳳 21 万位粉丝 • 关注 85 人 展开 帖子 简介 Reels 照片 已关注 个人资料 公共主页 · 艺术家 twopera.com 照片 查看所有照片 隐私政策 · 服务条款 · 广告 · Ad Choices · Cookie · 更多 孫翠鳳 2天前 2天 · 高雄的朋友！等等..."
+        }
+      ]
+    },
+    "facebook:61594936681482": {
+      "url": "https://www.facebook.com/profile.php?id=61594936681482",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-18T17:43:52+08:00",
+          "method": "headless-edge-profile",
+          "url": "https://www.facebook.com/profile.php?id=61594936681482",
+          "state": "partial",
+          "scope": "讀取頁面正文約 417 字元（Title: 戲籠出巡｜臺灣傳統戲曲巡演 | Facebook）；讀取片段：登录 戲籠出巡｜臺灣傳統戲曲巡演 523 位粉丝 • 关注 1 人 展开 帖子 简介 照片 个人资料 戲籠一開，故事上場。 以臺灣傳統戲曲演繹官場與警世故事，借古諷今，把戲帶到各地，把世間事搬上戲臺。...",
+          "media": "partial",
+          "detail": "以無人值守無頭 Edge 載入；部分照片及後續捲動 feed 仍載入中，未逐一開啟所有相簿海報。摘要：登录 戲籠出巡｜臺灣傳統戲曲巡演 523 位粉丝 • 关注 1 人 展开 帖子 简介 照片 个人资料 戲籠一開，故事上場。 以臺灣傳統戲曲演繹官場與警世故事，借古諷今，把戲帶到各地，把世間事搬上戲臺。 一跤戲籠，踅台灣 戲裡見公義，戲外有人情。 巡演消息｜劇目介紹｜演出紀錄 公共主页 · 艺术家 h..."
+        }
+      ]
+    },
+    "facebook:lanyang.opera": {
+      "url": "https://www.facebook.com/lanyang.opera/",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-18T17:43:52+08:00",
+          "method": "headless-edge-profile",
+          "url": "https://www.facebook.com/lanyang.opera/",
+          "state": "partial",
+          "scope": "讀取頁面正文約 322 字元（Title: 蘭陽戲劇團 | Facebook）；讀取片段：登录 蘭陽戲劇團 1 万位粉丝 • 关注 68 人 展开 帖子 简介 Reels 照片 个人资料 國內唯一具公立屬性的歌仔戲劇團。 公共主页 · 兴趣 lanyangoperacompany@gmai...",
+          "media": "partial",
+          "detail": "以無人值守無頭 Edge 載入；部分照片及後續捲動 feed 仍載入中，未逐一開啟所有相簿海報。摘要：登录 蘭陽戲劇團 1 万位粉丝 • 关注 68 人 展开 帖子 简介 Reels 照片 个人资料 國內唯一具公立屬性的歌仔戲劇團。 公共主页 · 兴趣 lanyangoperacompany@gmail.com linktr.ee/lanyangoperacompany 休息中 照片 查看所有照片 ..."
+        }
+      ]
+    },
+    "facebook:Taichungpuppettheater": {
+      "url": "https://www.facebook.com/Taichungpuppettheater/",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-18T17:43:52+08:00",
+          "method": "headless-edge-profile",
+          "url": "https://www.facebook.com/Taichungpuppettheater/",
+          "state": "partial",
+          "scope": "讀取頁面正文約 405 字元（Title: 台中木偶劇團 | Facebook）；讀取片段：登录 台中木偶劇團 3,338 位粉丝 • 关注 25 人 展开 帖子 简介 Reels 照片 个人资料 2012雲林國際偶戲金掌獎-最佳操偶技術獎 2015-2024臺中市傑出演藝團隊 2020雲林...",
+          "media": "partial",
+          "detail": "以無人值守無頭 Edge 載入；部分照片及後續捲動 feed 仍載入中，未逐一開啟所有相簿海報。摘要：登录 台中木偶劇團 3,338 位粉丝 • 关注 25 人 展开 帖子 简介 Reels 照片 个人资料 2012雲林國際偶戲金掌獎-最佳操偶技術獎 2015-2024臺中市傑出演藝團隊 2020雲林國際偶戲節掌中優選 2021-2026臺中市屯區藝文中心駐館團隊 公共主页 · 艺术与娱乐 0923..."
+        }
+      ]
+    },
+    "culture": {
+      "url": "data/moc_candidates.json",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-18T17:43:53+08:00",
+          "method": "official-api-searchshow",
+          "url": "https://cloud.culture.tw/frontsite/trans/SearchShowAction.do?method=doFindTypeJ&category=all",
+          "state": "partial",
+          "scope": "文化部開放資料 API 取得 1,480 筆活動，篩選未來 90 天戲曲候選共 29 筆，因未逐筆人工核對官方海報與公告，記為 partial",
+          "media": "partial",
+          "detail": "API 正常連線回傳 1,480 筆紀錄；候選 29 筆保留於 moc_candidates，未直接提升至正式場次。"
+        }
+      ]
+    },
+    "issues": {
+      "url": "https://github.com/eric1810-tw/taiwan-opera-calendar/issues?q=is%3Aissue+sort%3Aupdated-desc",
+      "state": "complete",
+      "attempts": [
+        {
+          "at": "2026-10-18T17:43:53+08:00",
+          "method": "github-cli-and-api",
+          "url": "https://github.com/eric1810-tw/taiwan-opera-calendar/issues?q=is%3Aissue+sort%3Aupdated-desc",
+          "state": "complete",
+          "scope": "檢核儲存庫全部 Issues（state=all，排序 updated-desc，排除 PR）：共 2 open、0 closed，#1 與 #2 均已審核建檔，無新回報",
+          "media": "not_applicable",
+          "detail": "以 gh issue list 唯讀取得全部回報清單，最新更新為 19 天前，確認無未處理之回報與留言。"
+        }
+      ]
+    }
+  },
+  "finalizedAt": "2026-10-18T17:44:05+08:00",
+  "publication": {
+    "state": "pending"
+  },
+  "activeTargets": [
+    "threads:joe_huang_k_w",
+    "threads:h.akito_1996",
+    "threads:the_rin.lpm",
+    "threads:1013.yr_",
+    "threads:xuefeng_lu_",
+    "threads:yuzhongluo",
+    "threads:taiwaneseopera168",
+    "threads:jing__1017",
+    "threads:hilang.on.tour",
+    "threads:yolin1991",
+    "facebook:sunhope.fans",
+    "facebook:HsiaoHsiYuan1913",
+    "facebook:100063868113954",
+    "facebook:MingHuaYuanTianTaiwaneseOpera",
+    "facebook:61574134933376",
+    "facebook:mhysun",
+    "facebook:61594936681482",
+    "facebook:lanyang.opera",
+    "facebook:Taichungpuppettheater",
+    "culture",
+    "issues"
+  ],
+  "completedAt": "2026-10-18T17:44:05+08:00",
+  "model": "Gemini 3.8"
+}
