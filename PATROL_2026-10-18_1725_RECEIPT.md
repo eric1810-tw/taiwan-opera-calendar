@@ -1,0 +1,23 @@
+# 2026-10-18 17:25 巡檢發布驗收收據
+
+- 巡檢開始時間：`2026-10-18T17:38:53+08:00`（Asia/Taipei）。
+- 完成時間：`2026-10-18T17:44:05+08:00`。
+- 覆蓋結果：`failed`（1 complete、19 partial、1 failed）；目標 21 項。`threads:1013.yr_` 個人頁重定向至登入頁不可讀；其餘目標皆有讀取但未展開所有海報，照實記錄 partial。
+- 資料提交 SHA：`597da80276e9780bcc954f36a139552b89695574`（`data: 2026-10-18 17:25 opera patrol status and records`）。本輪只 stage `data/patrol_status.json` 與 `patrol_runs/2026-10-18_1725.json`。
+- 遠端推送：`git push origin main` 成功推送至 `https://github.com/eric1810-tw/taiwan-opera-calendar.git`。
+- GitHub Actions 驗收：
+  - run ID：[39116572530](https://github.com/eric1810-tw/taiwan-opera-calendar/actions/runs/39116572530)
+  - event：`push`
+  - head SHA：`597da80276e9780bcc954f36a139552b89695574`
+  - status / conclusion：`completed` / `success`
+- 規程驗收：
+  - `python3 scripts/patrol_progress.py verify --run patrol_runs/2026-10-18_1725.json --sha 597da80276e9780bcc954f36a139552b89695574 --actions-run 39116572530` 通過。
+  - `publication.state`：`verified`
+  - 驗證完成時間：`2026-10-18T17:45:42+08:00`。
+- 本地與公開網站檔案比對：
+  - `data/schedule.json` SHA-256：`56d8ac0d437b6629fa84fbaf5c4fb640f0228b4ef76606ddac8bb01d40cf34e5`（維持 98 張卡片）
+  - `data/metadata.json` SHA-256：`f35b8b68de098aa7098b0f8704065ea3cca26821ee220bac426ff0c35cba2094`
+  - `data/patrol_status.json` SHA-256：`e34303e670ce2b73f381e02b655035d9620f4c20ed4c11fdd60ac6cf88ad0dd8`（公開巡檢狀態為 `2026-10-18T17:38:53+08:00 / failed`）
+  - 本輪 JSON 驗收後 SHA-256：`d8eff1fbadbefdfcbbcd5d272457515b2862c1e3e6f8b4864a71e30bc174bf29`
+- 工作區既有未暫存檔案（`ISSUES_REVIEW.md`、`PROJECT_HANDOVER.md`、`patrol_runs/2026-10-16_0300.json`）及未追蹤檔案（`CLAUDE_AUDIT_2026-09-30.md`、`CLOUDFLARE_HANDOVER.md`、`CODEX_TASK_REVIEW_FIXES_2026-09-30.md`）全程完好保留，未受干擾。
+- **排程獨立性保證**：本次巡檢使用獨立識別檔 `patrol_runs/2026-10-18_1725.json`，未占用 `2026-10-19_0300.json`；明日凌晨 03:00 的 sidecar 排程巡檢將能如期執行全新的 `init`，不受本次執行影響。
