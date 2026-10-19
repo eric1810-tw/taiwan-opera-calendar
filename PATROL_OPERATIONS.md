@@ -40,7 +40,12 @@ python3 scripts/patrol_progress.py record --run <原檔> \
 ```
 
 - `--source` 的鍵以 `summary --run <原檔>` 列出的完整清單為準。讀不到正文用 `failed`；正文或媒體局部可讀用 `partial`；全部範圍讀完才用 `complete`。
-- **巡檢專用瀏覽器設定檔**：Threads 與 Facebook 巡檢一律使用獨立設定檔目錄 `--user-data-dir=/Users/eric/.patrol-browser-profile`（權限 700，隔離日常個人設定檔，已登入次要帳號）。等待正文出現最多 15 秒，捲動讀取。不得讀取或輸出 cookie、密碼；遇到登入或驗證碼記 failed，不嘗試繞過。
+- **巡檢專用瀏覽器設定檔與社群讀取（CDP）**：
+  - 獨立設定檔目錄一律為 `--user-data-dir=/Users/eric/.patrol-edge`（舊目錄 `~/.patrol-browser-profile` 保留不動不刪除）。
+  - 嚴禁使用 `puppeteer.launch()`、`playwright`，只能用 `child_process.spawn` 直接啟動 Edge，啟動參數固定為：`--headless=new`、`--remote-debugging-port=<port>`、`--user-data-dir=/Users/eric/.patrol-edge`、`--lang=zh-TW`、`--no-first-run`、`--no-default-browser-check`、`--window-size=1280,2000`、`about:blank`。
+  - 嚴禁使用 `--use-mock-keychain`、`--password-store=basic`、`--no-sandbox`、`--disable-setuid-sandbox`，禁止修改 User-Agent。
+  - 執行 `node scripts/social_reader.mjs --run <原檔> --out patrol_evidence/<本輪>/` 逐來源擷取貼文並即時 `record`，狀態由純函式判定（永遠不判 `complete`，有貼文記 `partial`，0 篇記 `failed`）。嚴禁讀取或輸出 cookie、密碼、資料檔；登入態以頁面實際有無登入牆為準。
+
 - **文化部開放資料原生函式**：使用 `python3 -c "import updater; ..."` 匯入 `updater.fetch_culture_events()` 與 `updater.culture_candidates()` 唯讀執行，不執行 updater 主流程、不覆寫檔案。若回傳筆數小於 500 筆門檻（`MIN_CULTURE_RECORDS`），記為 `partial`，並註明「讀取不完整，不可判定無新場次」。候選須與 `data/schedule.json` 比對，列出不在表內者。
 - **GitHub Issues**：使用 `gh api` 讀取 `state=all` 的全部 issues 與留言（排除 PR）。
 
