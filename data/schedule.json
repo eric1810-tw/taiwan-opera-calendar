@@ -2391,5 +2391,65 @@
       "傳統表演藝術",
       "影視科技"
     ]
+  },
+  {
+    "id": "cyg-2026-12-05-nezha",
+    "date": "2026-12-05",
+    "dateFormatted": "2026/12/05（六）–12/06（日）",
+    "daysAway": 47,
+    "time": "15:00",
+    "troupe": "長義閣掌中劇團",
+    "genre": "布袋戲",
+    "artist": "長義閣掌中劇團",
+    "title": "長義閣掌中劇團「銳劇場」系列《我,哪吒》",
+    "category": "當代布袋戲 / 售票劇場",
+    "badgeType": "ticket",
+    "verifyStatus": "verified",
+    "verifyLabel": "🛡️ OPENTIX 節目頁",
+    "location": "臺北市中正區八德路一段1號（華山1914文創園區東3B館 烏梅劇院）",
+    "region": "北部",
+    "status": "OPENTIX 列 12/05、12/06 15:00 兩場",
+    "description": "經文化部開放資料發現，已核對 OPENTIX 官方節目頁的日期、時間、場館與票價。本劇為嘉義老字號長義閣掌中劇團「銳劇場」當代布袋戲作品，由高鳴緯主演，探討哪吒自我認同與親子課題。全票 400 元。",
+    "link": "https://www.opentix.life/program/2054095506013016065",
+    "linkLabel": "OPENTIX 節目頁",
+    "sourceUrl": "https://www.opentix.life/program/2054095506013016065",
+    "tags": [
+      "長義閣掌中劇團",
+      "布袋戲",
+      "售票演出"
+    ],
+    "endDate": "2026-12-06"
+  },
+  {
+    "id": "tnaf-2026-11-14-baoyu",
+    "date": "2026-11-14",
+    "dateFormatted": "2026/11/14（六）–11/15（日）",
+    "daysAway": 26,
+    "time": "15:00",
+    "troupe": "李淸照私人劇團感傷動作派",
+    "genre": "其他歌仔戲",
+    "artist": "陳禹安、微笑唸歌團",
+    "title": "2026臺南藝術節：李淸照私人劇團感傷動作派《歌仔寶玉講唱》",
+    "category": "歌仔戲講唱跨界 / 售票演出",
+    "badgeType": "ticket",
+    "verifyStatus": "verified",
+    "verifyLabel": "🛡️ OPENTIX 節目頁",
+    "location": "臺南市中西區永福路一段185號（臺南刑務所）",
+    "region": "南部",
+    "status": "OPENTIX 列 11/14、11/15 15:00 兩場",
+    "description": "經文化部開放資料發現，已核對 OPENTIX 官方節目頁的日期、時間、場館與票價。節目性質為臺灣傳統唸歌與歌仔曲調之跨界講唱，由歌仔戲名角陳禹安領銜、微笑唸歌團演出，劉亮延編導、柯智豪音樂製作，非整齣歌仔戲演出。票價 800 元。",
+    "link": "https://www.opentix.life/program/2059826841548611585",
+    "linkLabel": "OPENTIX 節目頁",
+    "sourceUrl": "https://www.opentix.life/program/2059826841548611585",
+    "relatedSourceUrls": [
+      "https://tnaf.tainan.gov.tw/"
+    ],
+    "tags": [
+      "李淸照私人劇團感傷動作派",
+      "陳禹安",
+      "其他歌仔戲",
+      "臺南藝術節"
+    ],
+    "endDate": "2026-11-15"
   }
 ]
