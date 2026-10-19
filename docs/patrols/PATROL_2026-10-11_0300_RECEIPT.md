@@ -4,7 +4,7 @@
 
 ## 覆蓋結果
 
-本輪實際開始 `2026-10-11T02:57:55+08:00`，共 21 個來源：2 complete（文化部、GitHub Issues）、4 partial（1 Threads、3 Facebook）、15 failed（9 Threads、6 Facebook）、0 pending。總狀態由 `patrol_progress.py finalize` 正確算為 `failed`；未讀帳號均未被當成沒有新資訊。細節與每次嘗試見 [`PATROL_2026-10-11_0300_INDEPENDENT.md`](PATROL_2026-10-11_0300_INDEPENDENT.md) 及 [`patrol_runs/2026-10-11_0300.json`](patrol_runs/2026-10-11_0300.json)。
+本輪實際開始 `2026-10-11T02:57:55+08:00`，共 21 個來源：2 complete（文化部、GitHub Issues）、4 partial（1 Threads、3 Facebook）、15 failed（9 Threads、6 Facebook）、0 pending。總狀態由 `patrol_progress.py finalize` 正確算為 `failed`；未讀帳號均未被當成沒有新資訊。細節與每次嘗試見 [`PATROL_2026-10-11_0300_INDEPENDENT.md`](./PATROL_2026-10-11_0300_INDEPENDENT.md) 及 [`patrol_runs/2026-10-11_0300.json`](patrol_runs/2026-10-11_0300.json)。
 
 本輪沒有因來源新增或修訂場次；遠端 `f1a1f2e` 的自動倒數／過期更新已 fast-forward 保留。網站刷新時間 `2026-10-10T10:01:32+08:00`，巡檢開始 `2026-10-11T02:57:55+08:00`。
 

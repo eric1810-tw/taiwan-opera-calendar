@@ -41,5 +41,5 @@
 
 ## 發布與恢復
 
-- 本地資料提交為 `9c9efc9195f55e29d18ebf564c89024b03e98c66`；`git fetch origin main` 與 `git push origin main` 均因 `Could not resolve host: github.com` 失敗，origin/main 未更新。沒有此 SHA 的 Actions run，也未執行可成功的公開狀態 verify；本輪 `publication=blocked`，明確尚未上線。完整 SHA256、錯誤、限制及網路恢復後的接續步驟記於本輪 [`PATROL_2026-10-14_0300_RECEIPT.md`](PATROL_2026-10-14_0300_RECEIPT.md)。
+- 本地資料提交為 `9c9efc9195f55e29d18ebf564c89024b03e98c66`；`git fetch origin main` 與 `git push origin main` 均因 `Could not resolve host: github.com` 失敗，origin/main 未更新。沒有此 SHA 的 Actions run，也未執行可成功的公開狀態 verify；本輪 `publication=blocked`，明確尚未上線。完整 SHA256、錯誤、限制及網路恢復後的接續步驟記於本輪 [`PATROL_2026-10-14_0300_RECEIPT.md`](./PATROL_2026-10-14_0300_RECEIPT.md)。
 - 接續時使用 `python3 scripts/patrol_progress.py resume --run patrol_runs/2026-10-14_0300.json`，保留原開始時間，優先以可用方式恢復 Threads 個人頁、吳怡萱 Facebook、其餘帳號時間線／媒體及文化部完整候選；不得新開同日巡檢輪。

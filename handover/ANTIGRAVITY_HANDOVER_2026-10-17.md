@@ -11,7 +11,7 @@
 
 1. 在 Antigravity 開啟 **`/Users/eric/aiwork/taiwan-opera-calendar`**，使用現有資料夾。不要開舊 scratch 儲存庫，也不要直接重建網站。
 2. 貼上 [首次接手提示詞](ANTIGRAVITY_TAKEOVER_PROMPT_2026-10-17.md) 的第一階段，先做唯讀核對。
-3. 依序讀本文件、[PATROL_OPERATIONS.md](../PATROL_OPERATIONS.md)、最新 [巡檢報告](../PATROL_2026-10-17_0300_INDEPENDENT.md)、[發布收據](../PATROL_2026-10-17_0300_RECEIPT.md)、[本輪 JSON](../patrol_runs/2026-10-17_0300.json)。
+3. 依序讀本文件、[PATROL_OPERATIONS.md](../PATROL_OPERATIONS.md)、最新 [巡檢報告](../docs/patrols/PATROL_2026-10-17_0300_INDEPENDENT.md)、[發布收據](../docs/patrols/PATROL_2026-10-17_0300_RECEIPT.md)、[本輪 JSON](../patrol_runs/2026-10-17_0300.json)。
 4. 先保護現有未提交檔案，再核對 HEAD、遠端及公開資料。不以舊文件數字決定現況。
 5. 維持 GitHub Pages 和 GitHub Actions。需要搬到 Antigravity 的主要是每日 **03:00 社群代理巡檢**；GitHub 的 **07:00 資料更新器**是另一套流程。
 6. 先完成一次受控巡檢及真實發布驗收，再建立新平台的持續排程。新舊每日巡檢不能同時寫同一份狀態檔。

@@ -10,7 +10,7 @@
 - 驗收時間：2026-10-10T03:23:43+08:00 執行 `verify` 成功；隨後公開 schedule 與 status 檔位元組比對相同。
 - 網站資料刷新時間：`data/metadata.json` 的 `lastUpdated` 為 `2026-10-09T10:41:36+08:00`；與本輪巡檢開始時間分開保存。
 - 本地測試：17/17 unittest PASS；`node --check assets/app.js` PASS；`git diff --check` PASS；排程 schema/日期/唯一 ID/目標來源檢查 PASS。
-- 覆蓋限制：文化部當期端點三次讀取失敗；19 個 Threads/Facebook 來源因近 7 日內容或媒體範圍未完整讀取而維持 partial。詳見 [PATROL_2026-10-10_0300_INDEPENDENT.md](PATROL_2026-10-10_0300_INDEPENDENT.md)。
+- 覆蓋限制：文化部當期端點三次讀取失敗；19 個 Threads/Facebook 來源因近 7 日內容或媒體範圍未完整讀取而維持 partial。詳見 [PATROL_2026-10-10_0300_INDEPENDENT.md](./PATROL_2026-10-10_0300_INDEPENDENT.md)。
 
 ## 重試後覆蓋狀態驗收
 

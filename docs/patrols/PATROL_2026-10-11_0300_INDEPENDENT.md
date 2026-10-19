@@ -25,4 +25,4 @@
 
 - 沒有充分證據因社群巡檢新增或修訂演出；文化部候選也未變。推送前發現並 fast-forward 遠端自動更新提交 `f1a1f2e`，該更新依排程清除／重算場次倒數及更新 metadata；已保留，不是本輪來源核實造成的資料修訂。合併後網站資料刷新時間為 `2026-10-10T10:01:32+08:00`，與本輪社群巡檢開始時間分開。
 - 本輪已完成 `python3 -m unittest -v`（17 tests PASS）、`node --check assets/app.js`、`git diff --check`；fast-forward 後專案 `validate_schedule` 核對 108 筆必填欄位、日期／endDate、唯一 ID 均 PASS；巡檢狀態與本輪 JSON 一致。頁面程式仍分開載入 metadata 與 patrol status，並顯示巡檢失敗狀態。
-- 發布驗收已完成，詳見 [`PATROL_2026-10-11_0300_RECEIPT.md`](PATROL_2026-10-11_0300_RECEIPT.md)：資料提交 `4e86509fc9cb1474b6289f4ec053359042fa0c3a` 對應 Actions `38078301761` completed/success，`patrol_progress.py verify` 與三份公開 JSON（status、108 筆 schedule、metadata）本地比對均通過。Pages 首頁顯示資料刷新 `2026/10/10 10:01`，巡檢開始 `2026/10/11 02:57` 並標示「巡檢未完成」。這代表失敗狀態已成功發布，不代表來源巡檢完整。
+- 發布驗收已完成，詳見 [`PATROL_2026-10-11_0300_RECEIPT.md`](./PATROL_2026-10-11_0300_RECEIPT.md)：資料提交 `4e86509fc9cb1474b6289f4ec053359042fa0c3a` 對應 Actions `38078301761` completed/success，`patrol_progress.py verify` 與三份公開 JSON（status、108 筆 schedule、metadata）本地比對均通過。Pages 首頁顯示資料刷新 `2026/10/10 10:01`，巡檢開始 `2026/10/11 02:57` 並標示「巡檢未完成」。這代表失敗狀態已成功發布，不代表來源巡檢完整。
