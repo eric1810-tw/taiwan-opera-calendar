@@ -373,6 +373,56 @@ class PatrolProgressTests(unittest.TestCase):
         self.assertEqual(self.run["publication"], {"state": "pending"})
         self.assertEqual(len(self.run["resumedAt"]), 1)
 
+    def test_compare_public_all_match(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            tmp_root = Path(tmp)
+            data_dir = tmp_root / "data"
+            data_dir.mkdir(parents=True, exist_ok=True)
+            files = {
+                "data/schedule.json": b'[{"id": "1"}]',
+                "data/patrol_status.json": b'{"status": "complete"}',
+                "data/metadata.json": b'{"lastUpdated": "2026-10-19"}'
+            }
+            for rel, content in files.items():
+                (tmp_root / rel).write_bytes(content)
+
+            def mock_fetcher(url):
+                for rel, content in files.items():
+                    if rel in url:
+                        return content
+                raise ValueError("URL not found")
+
+            result = patrol.compare_public(root=tmp_root, fetcher=mock_fetcher)
+            self.assertTrue(result["allMatch"])
+            for rel in files:
+                self.assertTrue(result["files"][rel]["match"])
+
+    def test_compare_public_mismatch(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            tmp_root = Path(tmp)
+            data_dir = tmp_root / "data"
+            data_dir.mkdir(parents=True, exist_ok=True)
+            files = {
+                "data/schedule.json": b'[{"id": "1"}]',
+                "data/patrol_status.json": b'{"status": "complete"}',
+                "data/metadata.json": b'{"lastUpdated": "2026-10-19"}'
+            }
+            for rel, content in files.items():
+                (tmp_root / rel).write_bytes(content)
+
+            def mock_fetcher(url):
+                for rel, content in files.items():
+                    if rel in url:
+                        if rel == "data/schedule.json":
+                            return b'[{"id": "diff"}]'
+                        return content
+                raise ValueError("URL not found")
+
+            result = patrol.compare_public(root=tmp_root, fetcher=mock_fetcher)
+            self.assertFalse(result["allMatch"])
+            self.assertFalse(result["files"]["data/schedule.json"]["match"])
+            self.assertTrue(result["files"]["data/patrol_status.json"]["match"])
+
 
 if __name__ == "__main__":
     unittest.main()

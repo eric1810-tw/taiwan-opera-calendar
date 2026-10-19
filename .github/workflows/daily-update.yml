@@ -82,3 +82,52 @@ jobs:
       - name: 部署到 GitHub Pages
         id: deployment
         uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1
+
+  patrol-health:
+    needs: deploy
+    if: github.event_name == 'schedule'
+    runs-on: ubuntu-24.04
+    permissions: {}
+    steps:
+      - name: 檢出程式碼
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: 設定 Python 環境
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.11'
+
+      - name: 檢查巡檢健康狀態
+        run: |
+          python3 -c "
+          import json, sys
+          from datetime import datetime, timezone, timedelta
+
+          with open('data/patrol_status.json', 'r', encoding='utf-8') as f:
+              status = json.load(f)
+
+          time_str = status.get('lastAttemptAt') or status.get('startedAt')
+          if not time_str:
+              print('錯誤：patrol_status.json 內無 lastAttemptAt 或 startedAt', file=sys.stderr)
+              sys.exit(1)
+
+          last_attempt = datetime.fromisoformat(time_str)
+          now_dt = datetime.now(timezone.utc)
+          age = now_dt - last_attempt
+
+          counts = status.get('counts', {})
+          failed_count = counts.get('failed', 0)
+
+          errors = []
+          if age > timedelta(hours=30):
+              errors.append(f'巡檢時間異常：距今已超過 30 小時（{age}）')
+          if failed_count >= 10:
+              errors.append(f'巡檢失敗來源過多：failed = {failed_count}（>= 10）')
+
+          if errors:
+              for err in errors:
+                  print(f'PATROL HEALTH ERROR: {err}', file=sys.stderr)
+              sys.exit(1)
+
+          print(f'巡檢健康檢查通過：距今 {age}，failed={failed_count}')
+          "

@@ -1,6 +1,7 @@
 """Persist patrol coverage; never fetch social posts or infer event facts."""
 import argparse
 import copy
+import hashlib
 import json
 import subprocess
 import sys
@@ -13,6 +14,8 @@ from zoneinfo import ZoneInfo
 ROOT = Path(__file__).resolve().parents[1]
 REPO = "eric1810-tw/taiwan-opera-calendar"
 PUBLIC = f"https://eric1810-tw.github.io/taiwan-opera-calendar/data/patrol_status.json"
+PUBLIC_BASE = "https://eric1810-tw.github.io/taiwan-opera-calendar"
+PUBLIC_FILES = ("data/schedule.json", "data/patrol_status.json", "data/metadata.json")
 
 
 def now():
@@ -151,6 +154,49 @@ def fetch(url):
         return json.load(response)
 
 
+def fetch_bytes(url):
+    request = urllib.request.Request(url, headers={"User-Agent": "opera-patrol-verifier"})
+    with urllib.request.urlopen(request, timeout=20) as response:
+        return response.read()
+
+
+def compare_public(root=ROOT, fetcher=fetch_bytes, public_base=PUBLIC_BASE):
+    file_results = {}
+    for rel_path in PUBLIC_FILES:
+        local_path = root / rel_path
+        if not local_path.exists():
+            file_results[rel_path] = {
+                "match": False,
+                "error": f"本地檔案不存在: {local_path}"
+            }
+            continue
+        local_bytes = local_path.read_bytes()
+        local_sha = hashlib.sha256(local_bytes).hexdigest()
+
+        url = f"{public_base}/{rel_path}?t={datetime.now().timestamp()}"
+        try:
+            remote_bytes = fetcher(url)
+            remote_sha = hashlib.sha256(remote_bytes).hexdigest()
+            matched = (local_sha == remote_sha)
+            file_results[rel_path] = {
+                "match": matched,
+                "localSha": local_sha,
+                "remoteSha": remote_sha
+            }
+        except Exception as e:
+            file_results[rel_path] = {
+                "match": False,
+                "error": str(e),
+                "localSha": local_sha
+            }
+
+    all_match = all(res.get("match", False) for res in file_results.values())
+    return {
+        "allMatch": all_match,
+        "files": file_results
+    }
+
+
 def read_git_file(sha, relative_path, root=ROOT):
     cmd = ["git", "show", f"{sha}:{relative_path}"]
     res = subprocess.run(cmd, cwd=root, capture_output=True, text=True, check=True)
@@ -271,7 +317,15 @@ def main():
         if command == "verify":
             child.add_argument("--sha", required=True)
             child.add_argument("--actions-run", required=True)
+    cp_child = sub.add_parser("compare-public")
+    cp_child.add_argument("--root", type=Path, default=ROOT)
     args = parser.parse_args()
+
+    if args.command == "compare-public":
+        res = compare_public(root=args.root)
+        print(json.dumps(res, ensure_ascii=False, indent=2))
+        sys.exit(0 if res["allMatch"] else 1)
+
     if args.command == "init":
         if args.run.exists():
             parser.error("本輪檔案已存在；使用 resume，不覆蓋證據")
