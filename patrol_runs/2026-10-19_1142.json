@@ -5,7 +5,7 @@
   "sources": {
     "threads:joe_huang_k_w": {
       "url": "https://www.threads.com/@joe_huang_k_w",
-      "state": "partial",
+      "state": "failed",
       "attempts": [
         {
           "at": "2026-10-19T11:46:12+08:00",
@@ -15,12 +15,21 @@
           "scope": "讀取頁面正文約 1070 字元（Title: 黃冠維（@joe_huang_k_w）• Threads，畅所欲言）；最新摘要片段：黃冠維（@joe_huang_k_w）• Threads，畅所欲言 首页 首页 创建 新建串文 搜索 搜索 消息 消息 通知 动态 主页 主页 成效分析 成效分析 登录 更多 首页 创建 搜索 消息 通知 主页 成效分析 更多 返回 joe",
           "media": "partial",
           "detail": "無頭 Edge 專用設定檔載入成功；讀得字元 1070，未逐一開啟所有相簿海報，記 partial。"
+        },
+        {
+          "at": "2026-10-19T13:28:35+08:00",
+          "method": "recheck-of-dump-dom",
+          "url": "https://www.threads.com/@joe_huang_k_w",
+          "state": "failed",
+          "scope": "複查 11:42 dump-dom 輸出：只有導覽列與登入字樣，無任何貼文正文或日期",
+          "media": "unread",
+          "detail": "原 partial 判定錯誤，依實際輸出更正為 failed"
         }
       ]
     },
     "threads:h.akito_1996": {
       "url": "https://www.threads.com/@h.akito_1996",
-      "state": "partial",
+      "state": "failed",
       "attempts": [
         {
           "at": "2026-10-19T11:46:17+08:00",
@@ -30,12 +39,21 @@
           "scope": "讀取頁面正文約 3000 字元（Title: 尉綸/凱琳（@h.akito_1996）• Threads，畅所欲言）；最新摘要片段：尉綸/凱琳（@h.akito_1996）• Threads，畅所欲言 首页 首页 创建 新建串文 搜索 搜索 消息 消息 通知 动态 主页 主页 成效分析 成效分析 登录 更多 首页 创建 搜索 消息 通知 主页 成效分析 更多 返回 h.",
           "media": "partial",
           "detail": "無頭 Edge 專用設定檔載入成功；讀得字元 3000，未逐一開啟所有相簿海報，記 partial。"
+        },
+        {
+          "at": "2026-10-19T13:28:35+08:00",
+          "method": "recheck-of-dump-dom",
+          "url": "https://www.threads.com/@h.akito_1996",
+          "state": "failed",
+          "scope": "複查 11:42 dump-dom 輸出：只有導覽列與登入字樣，無任何貼文正文或日期",
+          "media": "unread",
+          "detail": "原 partial 判定錯誤，依實際輸出更正為 failed"
         }
       ]
     },
     "threads:the_rin.lpm": {
       "url": "https://www.threads.com/@the_rin.lpm",
-      "state": "partial",
+      "state": "failed",
       "attempts": [
         {
           "at": "2026-10-19T11:46:22+08:00",
@@ -45,12 +63,21 @@
           "scope": "讀取頁面正文約 2569 字元（Title: 阿凜的追戲角色圖鑑🦋（@the_rin.lpm）• Threads，畅所欲言）；最新摘要片段：阿凜的追戲角色圖鑑🦋（@the_rin.lpm）• Threads，畅所欲言 首页 首页 创建 新建串文 搜索 搜索 消息 消息 通知 动态 主页 主页 成效分析 成效分析 登录 更多 首页 创建 搜索 消息 通知 主页 成效分析 更多 返",
           "media": "partial",
           "detail": "無頭 Edge 專用設定檔載入成功；讀得字元 2569，未逐一開啟所有相簿海報，記 partial。"
+        },
+        {
+          "at": "2026-10-19T13:28:35+08:00",
+          "method": "recheck-of-dump-dom",
+          "url": "https://www.threads.com/@the_rin.lpm",
+          "state": "failed",
+          "scope": "複查 11:42 dump-dom 輸出：只有導覽列與登入字樣，無任何貼文正文或日期",
+          "media": "unread",
+          "detail": "原 partial 判定錯誤，依實際輸出更正為 failed"
         }
       ]
     },
     "threads:1013.yr_": {
       "url": "https://www.threads.com/@1013.yr_",
-      "state": "partial",
+      "state": "failed",
       "attempts": [
         {
           "at": "2026-10-19T11:46:26+08:00",
@@ -60,12 +87,21 @@
           "scope": "讀取頁面正文約 59 字元（Title: Threads • 登录）；最新摘要片段：Threads • 登录 扫描即可下载应用 © 2026 Threads 条款 隐私政策 Cookie 政策 报告问题",
           "media": "partial",
           "detail": "無頭 Edge 專用設定檔載入成功；讀得字元 59，未逐一開啟所有相簿海報，記 partial。"
+        },
+        {
+          "at": "2026-10-19T13:28:36+08:00",
+          "method": "recheck-of-dump-dom",
+          "url": "https://www.threads.com/@1013.yr_",
+          "state": "failed",
+          "scope": "複查 11:42 dump-dom 輸出：只有導覽列與登入字樣，無任何貼文正文或日期",
+          "media": "unread",
+          "detail": "原 partial 判定錯誤，依實際輸出更正為 failed"
         }
       ]
     },
     "threads:xuefeng_lu_": {
       "url": "https://www.threads.com/@xuefeng_lu_",
-      "state": "partial",
+      "state": "failed",
       "attempts": [
         {
           "at": "2026-10-19T11:46:32+08:00",
@@ -75,12 +111,21 @@
           "scope": "讀取頁面正文約 1590 字元（Title: 呂雪鳳（@xuefeng_lu_）• Threads，畅所欲言）；最新摘要片段：呂雪鳳（@xuefeng_lu_）• Threads，畅所欲言 首页 首页 创建 新建串文 搜索 搜索 消息 消息 通知 动态 主页 主页 成效分析 成效分析 登录 更多 首页 创建 搜索 消息 通知 主页 成效分析 更多 返回 xuefe",
           "media": "partial",
           "detail": "無頭 Edge 專用設定檔載入成功；讀得字元 1590，未逐一開啟所有相簿海報，記 partial。"
+        },
+        {
+          "at": "2026-10-19T13:28:36+08:00",
+          "method": "recheck-of-dump-dom",
+          "url": "https://www.threads.com/@xuefeng_lu_",
+          "state": "failed",
+          "scope": "複查 11:42 dump-dom 輸出：只有導覽列與登入字樣，無任何貼文正文或日期",
+          "media": "unread",
+          "detail": "原 partial 判定錯誤，依實際輸出更正為 failed"
         }
       ]
     },
     "threads:yuzhongluo": {
       "url": "https://www.threads.com/@yuzhongluo",
-      "state": "partial",
+      "state": "failed",
       "attempts": [
         {
           "at": "2026-10-19T11:46:36+08:00",
@@ -90,12 +135,21 @@
           "scope": "讀取頁面正文約 1106 字元（Title: 羅裕誴歌劇團（@yuzhongluo）• Threads，畅所欲言）；最新摘要片段：羅裕誴歌劇團（@yuzhongluo）• Threads，畅所欲言 首页 首页 创建 新建串文 搜索 搜索 消息 消息 通知 动态 主页 主页 成效分析 成效分析 登录 更多 首页 创建 搜索 消息 通知 主页 成效分析 更多 返回 yuz",
           "media": "partial",
           "detail": "無頭 Edge 專用設定檔載入成功；讀得字元 1106，未逐一開啟所有相簿海報，記 partial。"
+        },
+        {
+          "at": "2026-10-19T13:28:36+08:00",
+          "method": "recheck-of-dump-dom",
+          "url": "https://www.threads.com/@yuzhongluo",
+          "state": "failed",
+          "scope": "複查 11:42 dump-dom 輸出：只有導覽列與登入字樣，無任何貼文正文或日期",
+          "media": "unread",
+          "detail": "原 partial 判定錯誤，依實際輸出更正為 failed"
         }
       ]
     },
     "threads:taiwaneseopera168": {
       "url": "https://www.threads.com/@taiwaneseopera168",
-      "state": "partial",
+      "state": "failed",
       "attempts": [
         {
           "at": "2026-10-19T11:46:41+08:00",
@@ -105,12 +159,21 @@
           "scope": "讀取頁面正文約 2599 字元（Title: 歌仔出少年（@taiwaneseopera168）• Threads，畅所欲言）；最新摘要片段：歌仔出少年（@taiwaneseopera168）• Threads，畅所欲言 首页 首页 创建 新建串文 搜索 搜索 消息 消息 通知 动态 主页 主页 成效分析 成效分析 登录 更多 首页 创建 搜索 消息 通知 主页 成效分析 更多 ",
           "media": "partial",
           "detail": "無頭 Edge 專用設定檔載入成功；讀得字元 2599，未逐一開啟所有相簿海報，記 partial。"
+        },
+        {
+          "at": "2026-10-19T13:28:36+08:00",
+          "method": "recheck-of-dump-dom",
+          "url": "https://www.threads.com/@taiwaneseopera168",
+          "state": "failed",
+          "scope": "複查 11:42 dump-dom 輸出：只有導覽列與登入字樣，無任何貼文正文或日期",
+          "media": "unread",
+          "detail": "原 partial 判定錯誤，依實際輸出更正為 failed"
         }
       ]
     },
     "threads:jing__1017": {
       "url": "https://www.threads.com/@jing__1017",
-      "state": "partial",
+      "state": "failed",
       "attempts": [
         {
           "at": "2026-10-19T11:46:47+08:00",
@@ -120,12 +183,21 @@
           "scope": "讀取頁面正文約 1066 字元（Title: 靜（@jing__1017）• Threads，畅所欲言）；最新摘要片段：靜（@jing__1017）• Threads，畅所欲言 首页 首页 创建 新建串文 搜索 搜索 消息 消息 通知 动态 主页 主页 成效分析 成效分析 登录 更多 首页 创建 搜索 消息 通知 主页 成效分析 更多 返回 jing__10",
           "media": "partial",
           "detail": "無頭 Edge 專用設定檔載入成功；讀得字元 1066，未逐一開啟所有相簿海報，記 partial。"
+        },
+        {
+          "at": "2026-10-19T13:28:36+08:00",
+          "method": "recheck-of-dump-dom",
+          "url": "https://www.threads.com/@jing__1017",
+          "state": "failed",
+          "scope": "複查 11:42 dump-dom 輸出：只有導覽列與登入字樣，無任何貼文正文或日期",
+          "media": "unread",
+          "detail": "原 partial 判定錯誤，依實際輸出更正為 failed"
         }
       ]
     },
     "threads:hilang.on.tour": {
       "url": "https://www.threads.com/@hilang.on.tour",
-      "state": "partial",
+      "state": "failed",
       "attempts": [
         {
           "at": "2026-10-19T11:46:52+08:00",
@@ -135,12 +207,21 @@
           "scope": "讀取頁面正文約 1854 字元（Title: 戲籠出巡｜臺灣傳統戲曲巡演（@hilang.on.tour）• Threads，畅所欲言）；最新摘要片段：戲籠出巡｜臺灣傳統戲曲巡演（@hilang.on.tour）• Threads，畅所欲言 首页 首页 创建 新建串文 搜索 搜索 消息 消息 通知 动态 主页 主页 成效分析 成效分析 登录 更多 首页 创建 搜索 消息 通知 主页 成效分",
           "media": "partial",
           "detail": "無頭 Edge 專用設定檔載入成功；讀得字元 1854，未逐一開啟所有相簿海報，記 partial。"
+        },
+        {
+          "at": "2026-10-19T13:28:36+08:00",
+          "method": "recheck-of-dump-dom",
+          "url": "https://www.threads.com/@hilang.on.tour",
+          "state": "failed",
+          "scope": "複查 11:42 dump-dom 輸出：只有導覽列與登入字樣，無任何貼文正文或日期",
+          "media": "unread",
+          "detail": "原 partial 判定錯誤，依實際輸出更正為 failed"
         }
       ]
     },
     "threads:yolin1991": {
       "url": "https://www.threads.com/@yolin1991",
-      "state": "partial",
+      "state": "failed",
       "attempts": [
         {
           "at": "2026-10-19T11:46:58+08:00",
@@ -150,12 +231,21 @@
           "scope": "讀取頁面正文約 1073 字元（Title: 梵羽（@yolin1991）• Threads，畅所欲言）；最新摘要片段：梵羽（@yolin1991）• Threads，畅所欲言 首页 首页 创建 新建串文 搜索 搜索 消息 消息 通知 动态 主页 主页 成效分析 成效分析 登录 更多 首页 创建 搜索 消息 通知 主页 成效分析 更多 返回 yolin199",
           "media": "partial",
           "detail": "無頭 Edge 專用設定檔載入成功；讀得字元 1073，未逐一開啟所有相簿海報，記 partial。"
+        },
+        {
+          "at": "2026-10-19T13:28:36+08:00",
+          "method": "recheck-of-dump-dom",
+          "url": "https://www.threads.com/@yolin1991",
+          "state": "failed",
+          "scope": "複查 11:42 dump-dom 輸出：只有導覽列與登入字樣，無任何貼文正文或日期",
+          "media": "unread",
+          "detail": "原 partial 判定錯誤，依實際輸出更正為 failed"
         }
       ]
     },
     "facebook:sunhope.fans": {
       "url": "https://www.facebook.com/sunhope.fans",
-      "state": "partial",
+      "state": "failed",
       "attempts": [
         {
           "at": "2026-10-19T11:47:55+08:00",
@@ -165,12 +255,21 @@
           "scope": "讀取頁面正文約 672 字元（Title: 尚和歌仔戲劇團 | Kaohsiung  | Facebook）；最新摘要片段：尚和歌仔戲劇團 | Kaohsiung | Facebook Facebook 登录 登录 忘记账户了？ 尚和歌仔戲劇團&nbsp; 1.6&nbsp;万 位粉丝 • 关注 16 人 帖子 简介 Reels 照片 展开 帖子 简介 Reel",
           "media": "partial",
           "detail": "無頭 Edge 專用設定檔載入成功；讀得字元 672，未逐一開啟所有相簿海報，記 partial。"
+        },
+        {
+          "at": "2026-10-19T13:28:36+08:00",
+          "method": "recheck-of-dump-dom",
+          "url": "https://www.facebook.com/sunhope.fans",
+          "state": "failed",
+          "scope": "複查 11:42 dump-dom 輸出：只有導覽列與登入字樣，無任何貼文正文或日期",
+          "media": "unread",
+          "detail": "原 partial 判定錯誤，依實際輸出更正為 failed"
         }
       ]
     },
     "facebook:HsiaoHsiYuan1913": {
       "url": "https://www.facebook.com/HsiaoHsiYuan1913/",
-      "state": "partial",
+      "state": "failed",
       "attempts": [
         {
           "at": "2026-10-19T11:48:00+08:00",
@@ -180,12 +279,21 @@
           "scope": "讀取頁面正文約 371 字元（Title: 小西園掌中劇團 | Facebook）；最新摘要片段：小西園掌中劇團 | Facebook Facebook 登录 登录 忘记账户了？ 小西園掌中劇團&nbsp; 1,674 位粉丝 • 关注 0 人 帖子 简介 照片 展开 帖子 简介 照片 小西園掌中劇團 个人资料 &nbsp; 小西園掌中",
           "media": "partial",
           "detail": "無頭 Edge 專用設定檔載入成功；讀得字元 371，未逐一開啟所有相簿海報，記 partial。"
+        },
+        {
+          "at": "2026-10-19T13:28:36+08:00",
+          "method": "recheck-of-dump-dom",
+          "url": "https://www.facebook.com/HsiaoHsiYuan1913/",
+          "state": "failed",
+          "scope": "複查 11:42 dump-dom 輸出：只有導覽列與登入字樣，無任何貼文正文或日期",
+          "media": "unread",
+          "detail": "原 partial 判定錯誤，依實際輸出更正為 failed"
         }
       ]
     },
     "facebook:100063868113954": {
       "url": "https://www.facebook.com/p/%E5%90%B3%E5%A5%95%E8%90%B1-Wu-Yihsuan-100063868113954",
-      "state": "partial",
+      "state": "failed",
       "attempts": [
         {
           "at": "2026-10-19T11:48:06+08:00",
@@ -195,12 +303,21 @@
           "scope": "讀取頁面正文約 645 字元（Title: 吳奕萱 Wu-Yihsuan | Facebook）；最新摘要片段：吳奕萱 Wu-Yihsuan | Facebook Facebook 登录 登录 忘记账户了？ 吳奕萱 Wu-Yihsuan&nbsp; 1.2&nbsp;万 位粉丝 • 关注 1 人 帖子 简介 Reels 照片 展开 帖子 简介 Ree",
           "media": "partial",
           "detail": "無頭 Edge 專用設定檔載入成功；讀得字元 645，未逐一開啟所有相簿海報，記 partial。"
+        },
+        {
+          "at": "2026-10-19T13:28:36+08:00",
+          "method": "recheck-of-dump-dom",
+          "url": "https://www.facebook.com/p/%E5%90%B3%E5%A5%95%E8%90%B1-Wu-Yihsuan-100063868113954",
+          "state": "failed",
+          "scope": "複查 11:42 dump-dom 輸出：只有導覽列與登入字樣，無任何貼文正文或日期",
+          "media": "unread",
+          "detail": "原 partial 判定錯誤，依實際輸出更正為 failed"
         }
       ]
     },
     "facebook:MingHuaYuanTianTaiwaneseOpera": {
       "url": "https://www.facebook.com/MingHuaYuanTianTaiwaneseOpera",
-      "state": "partial",
+      "state": "failed",
       "attempts": [
         {
           "at": "2026-10-19T11:48:13+08:00",
@@ -210,12 +327,21 @@
           "scope": "讀取頁面正文約 568 字元（Title: 明華園天字戲劇團 | Facebook）；最新摘要片段：明華園天字戲劇團 | Facebook Facebook 登录 登录 忘记账户了？ 明華園天字戲劇團&nbsp; 3.1&nbsp;万 位粉丝 • 关注 36 人 帖子 简介 Reels 照片 展开 帖子 简介 Reels 照片 明華園天字",
           "media": "partial",
           "detail": "無頭 Edge 專用設定檔載入成功；讀得字元 568，未逐一開啟所有相簿海報，記 partial。"
+        },
+        {
+          "at": "2026-10-19T13:28:36+08:00",
+          "method": "recheck-of-dump-dom",
+          "url": "https://www.facebook.com/MingHuaYuanTianTaiwaneseOpera",
+          "state": "failed",
+          "scope": "複查 11:42 dump-dom 輸出：只有導覽列與登入字樣，無任何貼文正文或日期",
+          "media": "unread",
+          "detail": "原 partial 判定錯誤，依實際輸出更正為 failed"
         }
       ]
     },
     "facebook:61574134933376": {
       "url": "https://www.facebook.com/profile.php?id=61574134933376",
-      "state": "partial",
+      "state": "failed",
       "attempts": [
         {
           "at": "2026-10-19T11:48:18+08:00",
@@ -225,12 +351,21 @@
           "scope": "讀取頁面正文約 634 字元（Title: 繡花園戲劇團x明華園地字戲劇團 | Pingtung  | Facebook）；最新摘要片段：繡花園戲劇團x明華園地字戲劇團 | Pingtung | Facebook Facebook 登录 登录 忘记账户了？ 繡花園戲劇團x明華園地字戲劇團&nbsp; 1,081 位粉丝 • 关注 11 人 帖子 简介 Reels 照片 展开 ",
           "media": "partial",
           "detail": "無頭 Edge 專用設定檔載入成功；讀得字元 634，未逐一開啟所有相簿海報，記 partial。"
+        },
+        {
+          "at": "2026-10-19T13:28:37+08:00",
+          "method": "recheck-of-dump-dom",
+          "url": "https://www.facebook.com/profile.php?id=61574134933376",
+          "state": "failed",
+          "scope": "複查 11:42 dump-dom 輸出：只有導覽列與登入字樣，無任何貼文正文或日期",
+          "media": "unread",
+          "detail": "原 partial 判定錯誤，依實際輸出更正為 failed"
         }
       ]
     },
     "facebook:mhysun": {
       "url": "https://www.facebook.com/mhysun",
-      "state": "partial",
+      "state": "failed",
       "attempts": [
         {
           "at": "2026-10-19T11:48:23+08:00",
@@ -240,12 +375,21 @@
           "scope": "讀取頁面正文約 303 字元（Title: 孫翠鳳 | Facebook）；最新摘要片段：孫翠鳳 | Facebook Facebook 登录 登录 忘记账户了？ 孫翠鳳&nbsp; 已认证账户 21&nbsp;万 位粉丝 • 关注 85 人 帖子 简介 Reels 照片 已关注 展开 帖子 简介 Reels 照片 已关注 孫翠",
           "media": "partial",
           "detail": "無頭 Edge 專用設定檔載入成功；讀得字元 303，未逐一開啟所有相簿海報，記 partial。"
+        },
+        {
+          "at": "2026-10-19T13:28:37+08:00",
+          "method": "recheck-of-dump-dom",
+          "url": "https://www.facebook.com/mhysun",
+          "state": "failed",
+          "scope": "複查 11:42 dump-dom 輸出：只有導覽列與登入字樣，無任何貼文正文或日期",
+          "media": "unread",
+          "detail": "原 partial 判定錯誤，依實際輸出更正為 failed"
         }
       ]
     },
     "facebook:61594936681482": {
       "url": "https://www.facebook.com/profile.php?id=61594936681482",
-      "state": "partial",
+      "state": "failed",
       "attempts": [
         {
           "at": "2026-10-19T11:48:27+08:00",
@@ -255,12 +399,21 @@
           "scope": "讀取頁面正文約 557 字元（Title: 戲籠出巡｜臺灣傳統戲曲巡演 | Facebook）；最新摘要片段：戲籠出巡｜臺灣傳統戲曲巡演 | Facebook Facebook 登录 登录 忘记账户了？ 戲籠出巡｜臺灣傳統戲曲巡演&nbsp; 524 位粉丝 • 关注 1 人 帖子 简介 照片 展开 帖子 简介 照片 戲籠出巡｜臺灣傳統戲曲巡演 个",
           "media": "partial",
           "detail": "無頭 Edge 專用設定檔載入成功；讀得字元 557，未逐一開啟所有相簿海報，記 partial。"
+        },
+        {
+          "at": "2026-10-19T13:28:37+08:00",
+          "method": "recheck-of-dump-dom",
+          "url": "https://www.facebook.com/profile.php?id=61594936681482",
+          "state": "failed",
+          "scope": "複查 11:42 dump-dom 輸出：只有導覽列與登入字樣，無任何貼文正文或日期",
+          "media": "unread",
+          "detail": "原 partial 判定錯誤，依實際輸出更正為 failed"
         }
       ]
     },
     "facebook:lanyang.opera": {
       "url": "https://www.facebook.com/lanyang.opera/",
-      "state": "partial",
+      "state": "failed",
       "attempts": [
         {
           "at": "2026-10-19T11:48:31+08:00",
@@ -270,12 +423,21 @@
           "scope": "讀取頁面正文約 450 字元（Title: 蘭陽戲劇團 | Facebook）；最新摘要片段：蘭陽戲劇團 | Facebook Facebook 登录 登录 忘记账户了？ 蘭陽戲劇團&nbsp; 1&nbsp;万 位粉丝 • 关注 68 人 帖子 简介 Reels 照片 展开 帖子 简介 Reels 照片 蘭陽戲劇團 个人资料 &n",
           "media": "partial",
           "detail": "無頭 Edge 專用設定檔載入成功；讀得字元 450，未逐一開啟所有相簿海報，記 partial。"
+        },
+        {
+          "at": "2026-10-19T13:28:37+08:00",
+          "method": "recheck-of-dump-dom",
+          "url": "https://www.facebook.com/lanyang.opera/",
+          "state": "failed",
+          "scope": "複查 11:42 dump-dom 輸出：只有導覽列與登入字樣，無任何貼文正文或日期",
+          "media": "unread",
+          "detail": "原 partial 判定錯誤，依實際輸出更正為 failed"
         }
       ]
     },
     "facebook:Taichungpuppettheater": {
       "url": "https://www.facebook.com/Taichungpuppettheater/",
-      "state": "partial",
+      "state": "failed",
       "attempts": [
         {
           "at": "2026-10-19T11:48:36+08:00",
@@ -285,6 +447,15 @@
           "scope": "讀取頁面正文約 560 字元（Title: 台中木偶劇團 | Facebook）；最新摘要片段：台中木偶劇團 | Facebook Facebook 登录 登录 忘记账户了？ 台中木偶劇團&nbsp; 3,339 位粉丝 • 关注 25 人 帖子 简介 Reels 照片 展开 帖子 简介 Reels 照片 台中木偶劇團 个人资料 &n",
           "media": "partial",
           "detail": "無頭 Edge 專用設定檔載入成功；讀得字元 560，未逐一開啟所有相簿海報，記 partial。"
+        },
+        {
+          "at": "2026-10-19T13:28:37+08:00",
+          "method": "recheck-of-dump-dom",
+          "url": "https://www.facebook.com/Taichungpuppettheater/",
+          "state": "failed",
+          "scope": "複查 11:42 dump-dom 輸出：只有導覽列與登入字樣，無任何貼文正文或日期",
+          "media": "unread",
+          "detail": "原 partial 判定錯誤，依實際輸出更正為 failed"
         }
       ]
     },
@@ -319,26 +490,9 @@
       ]
     }
   },
-  "finalizedAt": "2026-10-19T11:49:51+08:00",
+  "finalizedAt": "2026-10-19T13:29:18+08:00",
   "publication": {
-    "state": "verified",
-    "sha": "c7871a164f1a0c3cd3c7eadd0ed4877346d6d55e",
-    "actionsRun": "39196599326",
-    "actionsUrl": "https://github.com/eric1810-tw/taiwan-opera-calendar/actions/runs/39196599326",
-    "publicUrl": "https://eric1810-tw.github.io/taiwan-opera-calendar/data/patrol_status.json",
-    "verifiedAt": "2026-10-19T11:52:09+08:00",
-    "publicStatus": {
-      "startedAt": "2026-10-19T11:42:45+08:00",
-      "lastAttemptAt": "2026-10-19T11:48:45+08:00",
-      "status": "partial",
-      "counts": {
-        "complete": 1,
-        "partial": 20,
-        "failed": 0,
-        "pending": 0,
-        "total": 21
-      }
-    }
+    "state": "pending"
   },
   "activeTargets": [
     "threads:joe_huang_k_w",
@@ -362,5 +516,31 @@
     "facebook:Taichungpuppettheater",
     "culture",
     "issues"
+  ],
+  "publicationHistory": [
+    {
+      "publication": {
+        "state": "verified",
+        "sha": "c7871a164f1a0c3cd3c7eadd0ed4877346d6d55e",
+        "actionsRun": "39196599326",
+        "actionsUrl": "https://github.com/eric1810-tw/taiwan-opera-calendar/actions/runs/39196599326",
+        "publicUrl": "https://eric1810-tw.github.io/taiwan-opera-calendar/data/patrol_status.json",
+        "verifiedAt": "2026-10-19T11:52:09+08:00",
+        "publicStatus": {
+          "startedAt": "2026-10-19T11:42:45+08:00",
+          "lastAttemptAt": "2026-10-19T11:48:45+08:00",
+          "status": "partial",
+          "counts": {
+            "complete": 1,
+            "partial": 20,
+            "failed": 0,
+            "pending": 0,
+            "total": 21
+          }
+        }
+      },
+      "reason": "record 新增嘗試使原發布失效",
+      "at": "2026-10-19T13:28:35+08:00"
+    }
   ]
 }
