@@ -28,7 +28,11 @@ THREADS_CANDIDATES_PATH = os.path.join(os.path.dirname(__file__), "data", "threa
 MOC_CANDIDATES_PATH = os.path.join(os.path.dirname(__file__), "data", "moc_candidates.json")
 THREADS_API_URL = "https://graph.threads.net/v1.0/profile_posts"
 API_URL = "https://cloud.culture.tw/frontsite/trans/SearchShowAction.do"
-KEYWORDS = ("歌仔戲", "布袋戲", "掌中戲")
+KEYWORDS = (
+    "歌仔戲", "歌仔", "唸歌", "布袋戲", "布袋", "掌中戲", "掌中劇團",
+    "偶戲", "偶劇", "傀儡"
+)
+MIN_CULTURE_RECORDS = 500
 TIMEOUT_SECONDS = 60
 MAX_ATTEMPTS = 2
 REQUIRED_FIELDS = {
@@ -358,8 +362,18 @@ def culture_candidates(records, today=None):
             if isinstance(record.get(key), str)
         )
         explicit_genre_text = f"{title} {unit_names} {category_text}"
-        if not title or not any(keyword in explicit_genre_text for keyword in KEYWORDS) or "演員" in title:
+        desc_text = str(record.get("descriptionFilterHtml") or "")
+
+        matched_in_title_unit = any(keyword in explicit_genre_text for keyword in KEYWORDS)
+        matched_in_desc = any(keyword in desc_text for keyword in KEYWORDS)
+
+        if not (matched_in_title_unit or matched_in_desc):
             continue
+        if not title or "演員" in title:
+            continue
+
+        matched_in = "title/unit" if matched_in_title_unit else "description"
+
         show_info = record.get("showInfo")
         shows = show_info if isinstance(show_info, list) and show_info else [{}]
         for show in shows:
@@ -372,11 +386,17 @@ def culture_candidates(records, today=None):
                 continue
             if not today <= event_date <= end_date:
                 continue
-            genre = "布袋戲" if any(word in explicit_genre_text for word in ("布袋戲", "掌中戲")) else "歌仔戲"
+            full_match_text = f"{explicit_genre_text} {desc_text}"
+            genre = "布袋戲" if any(word in full_match_text for word in ("布袋", "掌中", "偶戲", "偶劇", "傀儡")) else "歌仔戲"
             location_key = str(show.get("locationName") or show.get("location") or record.get("location") or "").strip()
             digest = hashlib.sha256(f"{title}|{event_date.isoformat()}|{location_key}".encode("utf-8")).hexdigest()[:10]
             event_id = f"moc-{event_date:%Y%m%d}-{digest}"
-            raw_link = show.get("webSales") or record.get("sourceWebPromote") or "https://cloud.culture.tw/"
+            raw_link = (
+                show.get("webSales")
+                or record.get("webSales")
+                or record.get("sourceWebPromote")
+                or "https://cloud.culture.tw/"
+            )
             candidates.append({
                 "id": event_id, "date": event_date.isoformat(),
                 "dateFormatted": event_date.strftime("%Y/%m/%d"), "daysAway": 0,
@@ -396,6 +416,7 @@ def culture_candidates(records, today=None):
                 "link": str(raw_link),
                 "linkLabel": "來源資訊（待核實）", "sourceUrl": str(raw_link),
                 "tags": ["自動發現候選", genre],
+                "matchedIn": matched_in,
             })
     return candidates
 
@@ -404,30 +425,34 @@ def fetch_latest_updates():
     print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] 正在查詢文化部公開藝文活動資料...")
     schedule = load_current_schedule()
     try:
-        discovered = culture_candidates(fetch_culture_events())
-        existing_event_keys = {
-            (event["date"][:10], event["title"])
-            for event in schedule
-        }
-        existing_program_ids = {
-            program_id for event in schedule
-            if event.get("verifyStatus") != "pending"
-            for program_id in (opentix_program_id(event),)
-            if program_id
-        }
-        candidates = []
-        candidate_ids = set()
-        for event in discovered:
-            program_id = opentix_program_id(event)
-            if program_id and program_id in existing_program_ids:
-                continue
-            event_key = (event["date"][:10], event["title"])
-            if event_key in existing_event_keys or event["id"] in candidate_ids:
-                continue
-            candidates.append(event)
-            candidate_ids.add(event["id"])
-        atomic_write_json(MOC_CANDIDATES_PATH, candidates)
-        print(f"文化部資料源取得 {len(candidates)} 筆未發布、待核實候選")
+        raw_events = fetch_culture_events()
+        if len(raw_events) < MIN_CULTURE_RECORDS:
+            print(f"警告：文化部 API 回傳筆數過低（{len(raw_events)} 筆 < {MIN_CULTURE_RECORDS} 筆），保留既有候選檔不覆寫", file=sys.stderr)
+        else:
+            discovered = culture_candidates(raw_events)
+            existing_event_keys = {
+                (event["date"][:10], event["title"])
+                for event in schedule
+            }
+            existing_program_ids = {
+                program_id for event in schedule
+                if event.get("verifyStatus") != "pending"
+                for program_id in (opentix_program_id(event),)
+                if program_id
+            }
+            candidates = []
+            candidate_ids = set()
+            for event in discovered:
+                program_id = opentix_program_id(event)
+                if program_id and program_id in existing_program_ids:
+                    continue
+                event_key = (event["date"][:10], event["title"])
+                if event_key in existing_event_keys or event["id"] in candidate_ids:
+                    continue
+                candidates.append(event)
+                candidate_ids.add(event["id"])
+            atomic_write_json(MOC_CANDIDATES_PATH, candidates)
+            print(f"文化部資料源取得 {len(candidates)} 筆未發布、待核實候選")
     except RuntimeError as error:
         raise RuntimeError(f"文化部資料源巡檢失敗，停止發布以免誤更新時間：{error}") from error
     schedule = update_days_away(schedule)

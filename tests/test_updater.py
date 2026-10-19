@@ -130,6 +130,92 @@ class UpdaterTests(unittest.TestCase):
             self.assertEqual(written[0]["id"], self.sample["id"])
             self.assertEqual(written[0]["daysAway"], 0)
 
+    def test_culture_candidates_matches_zhangzhong_troupe_as_puppet(self):
+        records = [{
+            "title": "長義閣掌中劇團《測試偶戲》", "masterUnit": "長義閣", "category": "戲劇",
+            "showInfo": [{"time": "2026/11/01 15:00", "locationName": "嘉義"}],
+        }]
+        candidates = updater.culture_candidates(records, today=date(2026, 10, 19))
+        self.assertEqual(len(candidates), 1)
+        self.assertEqual(candidates[0]["genre"], "布袋戲")
+        self.assertEqual(candidates[0]["matchedIn"], "title/unit")
+
+    def test_culture_candidates_matches_gezai_short_as_taiwanese_opera(self):
+        records = [{
+            "title": "《歌仔寶玉講唱》", "masterUnit": "李淸照劇團", "category": "戲劇",
+            "showInfo": [{"time": "2026/11/14 15:00", "locationName": "臺南"}],
+        }]
+        candidates = updater.culture_candidates(records, today=date(2026, 10, 19))
+        self.assertEqual(len(candidates), 1)
+        self.assertEqual(candidates[0]["genre"], "歌仔戲")
+        self.assertEqual(candidates[0]["matchedIn"], "title/unit")
+
+    def test_culture_candidates_matches_description_only_sets_matched_in(self):
+        records = [{
+            "title": "特別跨界專題展演", "masterUnit": "藝文中心", "category": "展演",
+            "descriptionFilterHtml": "本節目邀請布袋戲大師親臨現場示範掌中乾坤。",
+            "showInfo": [{"time": "2026/11/20 14:00", "locationName": "台北"}],
+        }]
+        candidates = updater.culture_candidates(records, today=date(2026, 10, 19))
+        self.assertEqual(len(candidates), 1)
+        self.assertEqual(candidates[0]["matchedIn"], "description")
+        self.assertEqual(candidates[0]["genre"], "布袋戲")
+
+    def test_culture_candidates_excludes_actor_in_title(self):
+        records = [{
+            "title": "歌仔戲優秀演員甄選評審活動", "masterUnit": "劇團", "category": "戲劇",
+            "showInfo": [{"time": "2026/11/01 10:00", "locationName": "台北"}],
+        }]
+        candidates = updater.culture_candidates(records, today=date(2026, 10, 19))
+        self.assertEqual(len(candidates), 0)
+
+    def test_fetch_latest_updates_guards_low_culture_records(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            schedule_path = Path(temp_dir) / "schedule.json"
+            metadata_path = Path(temp_dir) / "metadata.json"
+            moc_path = Path(temp_dir) / "moc.json"
+            initial_moc = [{"id": "pre-existing-candidate"}]
+            moc_path.write_text(json.dumps(initial_moc, ensure_ascii=False), encoding="utf-8")
+            schedule_path.write_text(json.dumps([copy.deepcopy(self.sample)], ensure_ascii=False), encoding="utf-8")
+            few_records = [{"title": "歌仔戲短劇", "showInfo": []}]
+            with patch.object(updater, "DATA_PATH", str(schedule_path)), \
+                    patch.object(updater, "METADATA_PATH", str(metadata_path)), \
+                    patch.object(updater, "MOC_CANDIDATES_PATH", str(moc_path)), \
+                    patch.object(updater, "fetch_culture_events", return_value=few_records), \
+                    patch.object(updater, "taiwan_today", return_value=date(2026, 10, 19)), \
+                    patch.dict("os.environ", {}, clear=True), \
+                    patch("builtins.print"), \
+                    patch("sys.stderr.write"):
+                updater.fetch_latest_updates()
+            retained_moc = json.loads(moc_path.read_text(encoding="utf-8"))
+            self.assertEqual(retained_moc, initial_moc)
+            self.assertTrue(schedule_path.exists())
+            self.assertTrue(metadata_path.exists())
+
+    def test_fetch_latest_updates_excludes_candidate_matching_curated_opentix_id(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            schedule_path = Path(temp_dir) / "schedule.json"
+            metadata_path = Path(temp_dir) / "metadata.json"
+            moc_path = Path(temp_dir) / "moc.json"
+            curated_event = copy.deepcopy(self.sample)
+            curated_event.update(link="https://www.opentix.life/program/2054095506013016065", verifyStatus="verified")
+            schedule_path.write_text(json.dumps([curated_event], ensure_ascii=False), encoding="utf-8")
+            raw_records = [
+                {"title": "長義閣掌中劇團《我,哪吒》", "masterUnit": "長義閣", "webSales": "https://www.opentix.life/program/2054095506013016065",
+                 "showInfo": [{"time": "2026/12/05 15:00", "locationName": "華山"}], "startDate": "2026/12/05"}
+            ] * 501
+            with patch.object(updater, "DATA_PATH", str(schedule_path)), \
+                    patch.object(updater, "METADATA_PATH", str(metadata_path)), \
+                    patch.object(updater, "MOC_CANDIDATES_PATH", str(moc_path)), \
+                    patch.object(updater, "fetch_culture_events", return_value=raw_records), \
+                    patch.object(updater, "taiwan_today", return_value=date(2026, 10, 19)), \
+                    patch.dict("os.environ", {}, clear=True), \
+                    patch("builtins.print"):
+                updater.fetch_latest_updates()
+            candidates = json.loads(moc_path.read_text(encoding="utf-8"))
+            self.assertEqual(candidates, [])
+
 
 if __name__ == "__main__":
     unittest.main()
+
