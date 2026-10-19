@@ -35,6 +35,35 @@ class PatrolProgressTests(unittest.TestCase):
         patrol.record(self.run, "threads:test", "complete", "browser", "url", "date range", "complete", "posts and posters checked")
         self.assertEqual(self.run["publication"]["state"], "pending")
         self.assertIsNone(self.run["finalizedAt"])
+        self.assertEqual(len(self.run.get("publicationHistory", [])), 1)
+
+    def test_record_on_verified_run_preserves_publication_in_history(self):
+        """verified 的 run 經 record 後，publicationHistory 最後一筆是原 publication。"""
+        original_pub = {
+            "state": "verified",
+            "sha": "abc1234",
+            "actionsRun": "12345",
+            "publicStatus": {"status": "partial"}
+        }
+        self.run["publication"] = copy.deepcopy(original_pub)
+        self.run["publicationHistory"] = [{"dummy": "old"}]
+        with patch.object(patrol, "now", return_value="2026-10-19T09:30:00+08:00"):
+            patrol.record(self.run, "threads:test", "partial", "browser", "url", "range", "partial", "checked")
+        self.assertEqual(self.run["publication"]["state"], "pending")
+        self.assertIsNone(self.run["finalizedAt"])
+        self.assertEqual(len(self.run["publicationHistory"]), 2)
+        last_history = self.run["publicationHistory"][-1]
+        self.assertEqual(last_history["publication"], original_pub)
+        self.assertEqual(last_history["reason"], "record 新增嘗試使原發布失效")
+        self.assertEqual(last_history["at"], "2026-10-19T09:30:00+08:00")
+
+    def test_record_on_pending_run_does_not_add_to_history(self):
+        """pending 的 run 經 record 不新增歷史。"""
+        self.run["publication"] = {"state": "pending"}
+        self.run.pop("publicationHistory", None)
+        patrol.record(self.run, "threads:test", "partial", "browser", "url", "range", "partial", "checked")
+        self.assertEqual(self.run["publication"]["state"], "pending")
+        self.assertNotIn("publicationHistory", self.run)
 
     def test_resume_preserves_evidence_and_adds_new_target_as_pending(self):
         patrol.record(self.run, "threads:test", "complete", "browser", "url", "date range", "complete", "checked")
@@ -347,4 +376,3 @@ class PatrolProgressTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-

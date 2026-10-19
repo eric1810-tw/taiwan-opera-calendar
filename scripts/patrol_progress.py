@@ -99,6 +99,15 @@ def record(run, key, state, method, url, scope, media, detail):
                                "detail": detail})
     source["state"] = state
     # Any new reading invalidates the previously published coverage receipt.
+    pub = run.get("publication")
+    has_content = isinstance(pub, dict) and bool(pub) and pub != {"state": "pending"}
+    if has_content:
+        entry = {
+            "publication": copy.deepcopy(pub),
+            "reason": "record 新增嘗試使原發布失效",
+            "at": now()
+        }
+        run.setdefault("publicationHistory", []).append(entry)
     run["finalizedAt"] = None
     run["publication"] = {"state": "pending"}
 
