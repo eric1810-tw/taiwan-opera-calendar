@@ -64,3 +64,14 @@
   - `data/metadata.json`: `6b3cf329b4caff24...`（完全一致）
 - **公開網站渲染狀態**：
   - 首頁即時顯示文字：`社群資訊最近巡檢：2026/10/19 11:48（21 個來源：1 完整・20 部分・0 失敗）`
+
+---
+
+## 4. 2026-10-19 13:30 覆查更正說明（依 007 指令修訂）
+
+- **更正原因**：複查 11:42 輪 dump-dom 產物，19 個社群來源（Threads 10 處、Facebook 9 處）抓取到的內容僅為導覽列選單骨架或「Threads • 登录」登入阻擋頁，並無任何實質貼文正文或演出日期。原腳本僅因文字長度 > 0 誤判為 `partial`，現依實際輸出誠實更正為 **`failed`**。
+- **更正後來源涵蓋**：21 個來源（1 complete、1 partial、19 failed、0 pending）。總狀態為 **`failed`**。
+- **更正資料提交**：[`bd3c53832c00944db7e096178d814f87de7e554a`](https://github.com/eric1810-tw/taiwan-opera-calendar/commit/bd3c53832c00944db7e096178d814f87de7e554a)
+- **GitHub Actions Run**：[Run ID 39204882361](https://github.com/eric1810-tw/taiwan-opera-calendar/actions/runs/39204882361)（push / success）
+- **公開網站渲染更新**：`社群資訊最近巡檢：2026/10/19 13:28（21 個來源：1 完整・1 部分・19 失敗）`
+

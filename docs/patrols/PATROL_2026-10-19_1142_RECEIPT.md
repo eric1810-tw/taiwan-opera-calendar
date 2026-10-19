@@ -34,3 +34,17 @@
 社群資訊最近巡檢：2026/10/19 11:48（21 個來源：1 完整・20 部分・0 失敗）
 ```
 上方文字確認無任何未經授權的模型名稱標籤，完全忠實反映 21 個來源的真實巡檢覆蓋成果。
+
+---
+
+## 4. 2026-10-19 13:30 覆查更正收據
+
+- **更正資料提交 SHA**：[`bd3c53832c00944db7e096178d814f87de7e554a`](https://github.com/eric1810-tw/taiwan-opera-calendar/commit/bd3c53832c00944db7e096178d814f87de7e554a)
+- **GitHub Actions Run**：[Run ID 39204882361](https://github.com/eric1810-tw/taiwan-opera-calendar/actions/runs/39204882361)（push / success）
+- **公開驗收指令**：`python3 scripts/patrol_progress.py verify --run patrol_runs/2026-10-19_1142.json --sha bd3c53832c00944db7e096178d814f87de7e554a --actions-run 39204882361`
+- **驗收結果**：`publication.state = "verified"`
+- **更正後公開顯示**：
+```text
+社群資訊最近巡檢：2026/10/19 13:28（21 個來源：1 完整・1 部分・19 失敗）
+```
+
