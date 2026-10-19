@@ -7,7 +7,9 @@ import {
   parseFacebookTime,
   isAuthorPost,
   normalizePostUrl,
-  calculateMinMaxTimes
+  calculateMinMaxTimes,
+  isFacebookLoginWall,
+  isSeeMoreButton
 } from '../scripts/social_reader.mjs';
 
 // --- 原有 5 項保留 ---
@@ -100,4 +102,29 @@ test('最舊與最新：輸入順序打亂時，結果仍然正確', () => {
   const resNo = calculateMinMaxTimes(noTimes);
   assert.equal(resNo.oldestPostAt, null);
   assert.equal(resNo.newestPostAt, null);
+});
+
+// --- 009 新增測試 ---
+
+test('登入牆新判定：無 story_message 且有登入表單/網址才算登入牆', () => {
+  // 有貼文時，就算網頁內有登入按鈕也不算登入牆
+  assert.equal(isFacebookLoginWall({ storyMessageCount: 3, hasEmailInput: true, hasLoginForm: true, isLoginUrl: false }), false);
+
+  // 無貼文且有 email input -> true
+  assert.equal(isFacebookLoginWall({ storyMessageCount: 0, hasEmailInput: true, hasLoginForm: false, isLoginUrl: false }), true);
+
+  // 無貼文且網址含 /login -> true
+  assert.equal(isFacebookLoginWall({ storyMessageCount: 0, hasEmailInput: false, hasLoginForm: false, isLoginUrl: true }), true);
+
+  // 無貼文且無登入欄位/網址 -> false（僅是未發文或未載入，非登入牆）
+  assert.equal(isFacebookLoginWall({ storyMessageCount: 0, hasEmailInput: false, hasLoginForm: false, isLoginUrl: false }), false);
+});
+
+test('查看更多按鈕文字判定：文字去除空白後完全等於指定關鍵字', () => {
+  assert.equal(isSeeMoreButton('查看更多'), true);
+  assert.equal(isSeeMoreButton(' 顯示更多 '), true);
+  assert.equal(isSeeMoreButton('See more'), true);
+  assert.equal(isSeeMoreButton('查看更多留言'), false);
+  assert.equal(isSeeMoreButton('回覆'), false);
+  assert.equal(isSeeMoreButton(''), false);
 });

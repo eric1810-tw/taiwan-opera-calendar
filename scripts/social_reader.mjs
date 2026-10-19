@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { spawn, execSync } from 'node:child_process';
-import { existsSync, mkdirSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, writeFileSync, lstatSync, readlinkSync, readdirSync, statSync, rmSync } from 'node:fs';
 import { createServer } from 'node:net';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -12,6 +12,17 @@ export function determineStatus(posts, loginWall) {
     return { state: 'failed', media: 'unread' };
   }
   return { state: 'partial', media: 'unread' };
+}
+
+export function isFacebookLoginWall({ storyMessageCount = 0, hasEmailInput = false, hasLoginForm = false, isLoginUrl = false }) {
+  const hasLoginField = Boolean(hasEmailInput || hasLoginForm || isLoginUrl);
+  return storyMessageCount === 0 && hasLoginField;
+}
+
+export function isSeeMoreButton(rawText) {
+  if (!rawText || typeof rawText !== 'string') return false;
+  const clean = rawText.replace(/\s+/g, '');
+  return clean === '查看更多' || clean === '顯示更多' || clean === 'Seemore';
 }
 
 export function utcToTaipeiIso(utcStr) {
@@ -181,15 +192,54 @@ function getFreePort() {
 
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
-async function launchEdge(port, profileDir = '/Users/eric/.patrol-edge') {
+export function cleanOldEvidence(evidenceBaseDir = 'patrol_evidence') {
+  if (!existsSync(evidenceBaseDir)) return;
+  const now = Date.now();
+  const fourteenDaysMs = 14 * 24 * 60 * 60 * 1000;
   try {
-    const check = execSync(`pgrep -fl "user-data-dir=${profileDir}"`, { encoding: 'utf-8', stdio: ['ignore', 'pipe', 'ignore'] });
-    if (check && check.trim()) {
-      throw new Error(`設定檔已被其他 Edge 程序佔用，請先關閉：\n${check}`);
+    const entries = readdirSync(evidenceBaseDir, { withFileTypes: true });
+    for (const entry of entries) {
+      if (entry.isDirectory()) {
+        const dirPath = path.join(evidenceBaseDir, entry.name);
+        try {
+          const stat = statSync(dirPath);
+          if (now - stat.mtimeMs > fourteenDaysMs) {
+            rmSync(dirPath, { recursive: true, force: true });
+            console.log(`[清理舊證據] 已刪除 14 天前的證據目錄：${entry.name}`);
+          }
+        } catch {}
+      }
     }
-  } catch (e) {
-    if (e.message.includes('設定檔已被其他 Edge')) throw e;
+  } catch {}
+}
+
+export function checkEdgeLock(profileDir = '/Users/eric/.patrol-edge') {
+  const lockPath = path.join(profileDir, 'SingletonLock');
+  try {
+    const stat = lstatSync(lockPath);
+    if (stat.isSymbolicLink()) {
+      const target = readlinkSync(lockPath);
+      const parts = target.split('-');
+      const pid = parseInt(parts[parts.length - 1], 10);
+      if (!isNaN(pid)) {
+        try {
+          process.kill(pid, 0);
+          throw new Error(`設定檔已被其他 Edge 程序（PID ${pid}）佔用，請先關閉。`);
+        } catch (e) {
+          if (e.code === 'EPERM') {
+            throw new Error(`設定檔已被其他 Edge 程序（PID ${pid}，權限限制）佔用，請先關閉。`);
+          }
+          // ESRCH: 舊 stale lock，程序已結束，略過
+        }
+      }
+    }
+  } catch (err) {
+    if (err.message.includes('設定檔已被其他 Edge')) throw err;
   }
+}
+
+async function launchEdge(port, profileDir = '/Users/eric/.patrol-edge') {
+  checkEdgeLock(profileDir);
 
   const edgeBin = '/Applications/Microsoft Edge.app/Contents/MacOS/Microsoft Edge';
   const args = [
@@ -259,11 +309,32 @@ async function launchEdge(port, profileDir = '/Users/eric/.patrol-edge') {
     return res.result?.result?.value;
   };
 
-  const captureScreenshot = async () => {
-    const shot = await send('Page.captureScreenshot', {
+  const sendEscape = async () => {
+    try {
+      await send('Input.dispatchKeyEvent', {
+        type: 'rawKeyDown',
+        key: 'Escape',
+        code: 'Escape',
+        windowsVirtualKeyCode: 27
+      });
+      await send('Input.dispatchKeyEvent', {
+        type: 'keyUp',
+        key: 'Escape',
+        code: 'Escape',
+        windowsVirtualKeyCode: 27
+      });
+    } catch {}
+  };
+
+  const captureScreenshot = async (clip = null) => {
+    const params = {
       format: 'png',
-      captureBeyondViewport: true
-    });
+      captureBeyondViewport: false
+    };
+    if (clip) {
+      params.clip = clip;
+    }
+    const shot = await send('Page.captureScreenshot', params);
     if (shot.result?.data) {
       return Buffer.from(shot.result.data, 'base64');
     }
@@ -278,7 +349,7 @@ async function launchEdge(port, profileDir = '/Users/eric/.patrol-edge') {
   await send('Page.enable');
   await send('Runtime.enable');
 
-  return { proc, ws, send, evaluate, captureScreenshot, close };
+  return { proc, ws, send, evaluate, sendEscape, captureScreenshot, close };
 }
 
 // --- 登入確認模式 ---
@@ -483,150 +554,211 @@ async function scrapeThreads(cdp, url, handle) {
 async function scrapeFacebook(cdp, url) {
   const fetchedAt = new Date().toISOString();
   await cdp.send('Page.navigate', { url });
-  let hasArticle = false;
+  await sleep(4000);
+
+  // 1. 頁面載入後先送一次 Escape 鍵關閉通知面板
+  await cdp.sendEscape();
+
+  // 等待 story_message 出現（最多 15 秒）
   for (let i = 0; i < 15; i++) {
     await sleep(1000);
-    const n = await cdp.evaluate("document.querySelectorAll('[role=\"article\"]').length");
-    if (n > 0) {
-      hasArticle = true;
+    const n = await cdp.evaluate("document.querySelectorAll('[data-ad-rendering-role=\"story_message\"]').length");
+    if (n > 0) break;
+  }
+
+  const currentUrl = (await cdp.evaluate("window.location.href")) || '';
+  const initialCheck = await cdp.evaluate(`
+    (() => {
+      const storyCount = document.querySelectorAll('[data-ad-rendering-role="story_message"]').length;
+      const hasEmail = Boolean(document.querySelector('input[name="email"]'));
+      const hasForm = Boolean(document.querySelector('form[action*="login"]'));
+      const isLogin = window.location.href.includes('/login');
+      return { storyCount, hasEmail, hasForm, isLogin };
+    })()
+  `) || { storyCount: 0, hasEmail: false, hasForm: false, isLogin: false };
+
+  const loginWall = isFacebookLoginWall({
+    storyMessageCount: initialCheck.storyCount,
+    hasEmailInput: initialCheck.hasEmail,
+    hasLoginForm: initialCheck.hasForm,
+    isLoginUrl: initialCheck.isLogin
+  });
+
+  let scrolls = 0;
+  let lastCount = 0;
+  let noNewCount = 0;
+  const sevenDaysAgo = Date.now() - 7 * 24 * 60 * 60 * 1000;
+
+  for (let i = 0; i < 15; i++) {
+    // 3. 「查看更多」只能點 story_message 裡面的元素
+    await cdp.evaluate(`
+      (() => {
+        const msgs = document.querySelectorAll('[data-ad-rendering-role="story_message"]');
+        for (const msg of msgs) {
+          const btns = Array.from(msg.querySelectorAll('[role="button"], span, div'));
+          for (const b of btns) {
+            const txt = (b.innerText || '').replace(/\\s+/g, '');
+            if (txt === '查看更多' || txt === '顯示更多' || txt === 'Seemore') {
+              try { b.click(); } catch {}
+            }
+          }
+        }
+      })()
+    `);
+    await sleep(300);
+
+    const hasPostDialog = await cdp.evaluate(`
+      (() => {
+        const dlg = document.querySelector('[role="dialog"]');
+        return Boolean(dlg && (dlg.innerText || '').includes('的貼文'));
+      })()
+    `);
+    if (hasPostDialog) {
+      await cdp.sendEscape();
+    }
+
+    // 每次捲動前也送一次 Escape
+    await cdp.sendEscape();
+
+    // 捲動 2500px，間隔 2.5 秒
+    await cdp.evaluate("window.scrollBy(0, 2500)");
+    scrolls++;
+    await sleep(2500);
+
+    const count = (await cdp.evaluate("document.querySelectorAll('[data-ad-rendering-role=\"story_message\"]').length")) || 0;
+    if (count === lastCount) {
+      noNewCount++;
+    } else {
+      noNewCount = 0;
+    }
+    lastCount = count;
+
+    // 檢查已辨識貼文中最舊一篇是否早於 7 天前
+    const oldestCandidateText = await cdp.evaluate(`
+      (() => {
+        const msgs = document.querySelectorAll('[data-ad-rendering-role="story_message"]');
+        for (let idx = msgs.length - 1; idx >= 0; idx--) {
+          const m = msgs[idx];
+          let c = m;
+          for (let k = 0; k < 25 && c.parentElement; k++) {
+            const p = c.parentElement;
+            if (p.querySelectorAll('[data-ad-rendering-role="story_message"]').length > 1) break;
+            c = p;
+          }
+          const links = Array.from(c.querySelectorAll('a[href]'));
+          for (const a of links) {
+            const h = a.getAttribute('href') || '';
+            if (/posts|story_fbid|permalink|videos|reel/.test(h) && !h.includes('comment_id=')) {
+              const aria = a.getAttribute('aria-label');
+              if (aria) return aria;
+            }
+          }
+        }
+        return null;
+      })()
+    `);
+    if (oldestCandidateText) {
+      const parsedDt = parseFacebookTime(oldestCandidateText, fetchedAt);
+      if (parsedDt) {
+        const t = new Date(parsedDt).getTime();
+        if (!isNaN(t) && t < sevenDaysAgo) {
+          break;
+        }
+      }
+    }
+
+    if (noNewCount >= 3) {
       break;
     }
   }
 
-  const currentUrl = (await cdp.evaluate("window.location.href")) || '';
-  const bodyText = (await cdp.evaluate("document.body.innerText.slice(0, 3000)")) || '';
-  const hasDialog = await cdp.evaluate("Boolean(document.querySelector('div[role=\"dialog\"]'))");
-  const loginWall = currentUrl.includes('/login') || /登入|登录|Log in|建立新帳號/.test(bodyText) || (hasDialog && /登入/.test(bodyText));
-
-  let scrolls = 0;
-  for (let i = 0; i < 8; i++) {
-    await cdp.evaluate(`
-      (() => {
-        const btns = Array.from(document.querySelectorAll('div[role="button"]'))
-          .filter(b => /查看更多|顯示更多|See more/.test(b.innerText || ''));
-        for (const b of btns) {
-          try { b.click(); } catch {}
-        }
-      })()
-    `);
-    await sleep(500);
-
-    await cdp.evaluate("window.scrollBy(0, 2500)");
-    scrolls++;
-    await sleep(1500);
-  }
-
-  // 抓取頂層貼文：!art.parentElement.closest('[role="article"]') 且排除留言
+  // 擷取貼文
   const rawPosts = await cdp.evaluate(`
     (() => {
+      const msgs = Array.from(document.querySelectorAll('[data-ad-rendering-role="story_message"]'));
       const res = [];
-      const seenUrls = new Set();
+      const seen = new Set();
 
-      function findTimeText(container) {
-        // 先找 a, span, abbr 標籤
-        const links = Array.from(container.querySelectorAll('a, span, abbr'));
-        for (const el of links) {
-          const raw = (el.getAttribute('aria-label') || el.innerText || '').replace(/[\\u034f\\u200b-\\u200d\\ufeff]/g, '').trim();
-          if (/^(\\d+\\s*(分鐘|小時|天|週)|昨天|\\d+月\\d+日|\\d{4}年)/.test(raw)) {
-            return raw;
-          }
-        }
-        // 如果沒有，從內文 match
-        const fullText = (container.innerText || '').replace(/[\\u034f\\u200b-\\u200d\\ufeff]/g, '');
-        const m = fullText.match(/(\\d{4}年\\d{1,2}月\\d{1,2}日(?:\\s*星期[一二三四五六日天])?\\s*(?:上午|下午)?\\s*\\d{1,2}:\\d{2}|\\d{1,2}月\\d{1,2}日(?:\\s*(?:上午|下午)?\\s*\\d{1,2}:\\d{2})?|昨天\\s*(?:上午|下午)?\\s*\\d{1,2}:\\d{2}|\\d+\\s*(?:分鐘|小時|天|週))/);
-        return m ? m[0] : '';
-      }
+      for (const m of msgs) {
+        // text 取 story_message 自身 innerText，最長 2000 字
+        const text = (m.innerText || '').slice(0, 2000);
 
-      // 1. 檢查 [role="article"]（頂層）
-      const articles = Array.from(document.querySelectorAll('[role="article"]'))
-        .filter(art => !art.parentElement.closest('[role="article"]'));
-
-      for (const art of articles) {
-        const linkElem = art.querySelector('a[href*="/posts/"], a[href*="/permalink"], a[href*="story_fbid"]');
-        const postUrl = linkElem ? linkElem.href : null;
-        if (postUrl && postUrl.includes('comment_id=')) {
-          continue; // 留言
+        // 容器：從 story_message 往上找，取仍只包含 1 個 story_message 的最外層祖先
+        let container = m;
+        for (let k = 0; k < 25 && container.parentElement; k++) {
+          const p = container.parentElement;
+          if (p.querySelectorAll('[data-ad-rendering-role="story_message"]').length > 1) break;
+          container = p;
         }
 
-        const text = (art.innerText || '').replace(/\\s+/g, ' ').trim().slice(0, 2000);
-        if (/^.+·\\s*\\d+\\s*(年|月|週|天|小時|分鐘).*回覆$/.test(text)) {
-          continue; // 留言格式
-        }
+        // 貼文連結：優先找符合 /posts/、story_fbid、/permalink、/videos/、/reel/ 的 a；若無則找 /photo/
+        let postUrl = null;
+        let timeText = null;
+        const links = Array.from(container.querySelectorAll('a[href]'));
 
-        const timeText = findTimeText(art);
-        const imgs = Array.from(art.querySelectorAll('img'))
-          .filter(img => (img.naturalWidth || img.width || 0) > 150)
-          .map(img => img.src);
-
-        if (text.length > 10 || postUrl) {
-          const clean = postUrl ? postUrl.split('?')[0] : '';
-          if (clean) seenUrls.add(clean);
-          res.push({
-            rawUrl: postUrl || '',
-            text,
-            timeText,
-            images: imgs
-          });
-        }
-      }
-
-      // 2. 檢查所有貼文連結（涵蓋粉專卡片未標記 role="article" 的頂層貼文）
-      const postLinks = Array.from(document.querySelectorAll('a[href*="/posts/"], a[href*="/permalink"], a[href*="story_fbid"]'))
-        .filter(a => !a.href.includes('comment_id='));
-
-      for (const a of postLinks) {
-        const clean = a.href.split('?')[0];
-        if (seenUrls.has(clean)) continue;
-
-        let container = a;
-        let cur = a.parentElement;
-        while (cur && cur !== document.body) {
-          if ((cur.innerText || '').length > 50) {
-            container = cur;
+        for (const a of links) {
+          const rawHref = a.getAttribute('href') || a.href || '';
+          if (rawHref.includes('comment_id=')) continue;
+          if (/posts|story_fbid|permalink|videos|reel/.test(rawHref)) {
+            let h = rawHref.split('?')[0];
+            if (h.startsWith('/')) {
+              h = 'https://www.facebook.com' + h;
+            }
+            postUrl = h;
+            const aria = a.getAttribute('aria-label');
+            if (aria) {
+              timeText = aria.trim();
+            }
             break;
           }
-          cur = cur.parentElement;
         }
 
-        const text = (container.innerText || '').replace(/\\s+/g, ' ').trim().slice(0, 2000);
-        if (/^.+·\\s*\\d+\\s*(年|月|週|天|小時|分鐘).*回覆$/.test(text)) {
-          continue;
+        if (!postUrl) {
+          for (const a of links) {
+            const rawHref = a.getAttribute('href') || a.href || '';
+            if (rawHref.includes('comment_id=')) continue;
+            if (/photo/.test(rawHref)) {
+              let h = rawHref.split('?')[0];
+              if (h.startsWith('/')) {
+                h = 'https://www.facebook.com' + h;
+              }
+              postUrl = h;
+              const aria = a.getAttribute('aria-label');
+              if (aria) {
+                timeText = aria.trim();
+              }
+              break;
+            }
+          }
         }
 
-        const timeText = findTimeText(container);
+        // 圖片：容器內寬度 > 150 的 img
         const imgs = Array.from(container.querySelectorAll('img'))
           .filter(img => (img.naturalWidth || img.width || 0) > 150)
           .map(img => img.src);
 
-        seenUrls.add(clean);
+        // 去重：有連結用連結當 key，沒有用 text 前 80 字
+        const key = postUrl || text.slice(0, 80);
+        if (!key || seen.has(key)) continue;
+        seen.add(key);
+
         res.push({
-          rawUrl: a.href,
+          postUrl,
           text,
           timeText,
           images: imgs
         });
       }
-
       return res;
     })()
   `) || [];
 
-  const seenUrls = new Set();
   const posts = [];
   for (const p of rawPosts) {
-    const cleanUrl = normalizePostUrl(p.rawUrl);
-    if (!cleanUrl && p.rawUrl.includes('comment_id=')) {
-      continue;
-    }
-    const key = cleanUrl || p.text.slice(0, 50);
-    if (seenUrls.has(key)) continue;
-    seenUrls.add(key);
-
-    const parsedDt = parseFacebookTime(p.timeText, fetchedAt);
-
+    const parsedDt = p.timeText ? parseFacebookTime(p.timeText, fetchedAt) : null;
     posts.push({
-      url: cleanUrl || '',
-      timeText: extractFacebookTimeText(p.timeText),
+      url: p.postUrl || '',
+      timeText: p.timeText || null,
       datetime: parsedDt,
       text: p.text,
       images: p.images
@@ -652,6 +784,9 @@ async function runScrape(runFile, outDir, targetSource) {
   if (!existsSync(outDir)) {
     mkdirSync(outDir, { recursive: true });
   }
+
+  // 2-5 第 2 點：刪除 patrol_evidence 中 14 天前的子目錄
+  cleanOldEvidence('patrol_evidence');
 
   const summaryOut = execSync(`python3 scripts/patrol_progress.py summary --run ${runFile}`, { encoding: 'utf-8' });
   const summary = JSON.parse(summaryOut);
@@ -723,7 +858,13 @@ async function runScrape(runFile, outDir, targetSource) {
           console.log(`[${key}] 第 2 次重試：等待 30 秒後重新開啟...`);
           await sleep(30000);
         } else if (attempt === 4) {
-          console.log(`[${key}] 第 3 次重試：等待 60 秒後重新開個人頁...`);
+          if (key.startsWith('facebook:')) {
+            const fbHandle = key.replace('facebook:', '');
+            currentUrl = `https://www.facebook.com/${fbHandle}/posts/`;
+            console.log(`[${key}] 第 3 次重試：開 posts 子頁 ${currentUrl}...`);
+          } else {
+            console.log(`[${key}] 第 3 次重試：等待 60 秒後重新開個人頁...`);
+          }
           await sleep(60000);
         }
       }
@@ -732,7 +873,12 @@ async function runScrape(runFile, outDir, targetSource) {
       writeFileSync(jsonPath, JSON.stringify(finalData, null, 2));
 
       try {
-        const shotBuf = await cdp.captureScreenshot();
+        let shotBuf = null;
+        if (key.startsWith('facebook:')) {
+          shotBuf = await cdp.captureScreenshot({ x: 280, y: 0, width: 720, height: 1800, scale: 1 });
+        } else {
+          shotBuf = await cdp.captureScreenshot();
+        }
         if (shotBuf) {
           const pngPath = path.join(outDir, `${key.replace(':', '_')}.png`);
           writeFileSync(pngPath, shotBuf);
