@@ -460,7 +460,7 @@ async function runScrape(runFile, outDir, targetSource) {
       console.log(`\n=== 開始處理來源：${key} ===`);
       // 讀取該來源原始網址
       const runData = JSON.parse(execSync(`cat ${runFile}`, { encoding: 'utf-8' }));
-      const sourceUrl = runData.sources?.[key]?.url || '';
+      let currentUrl = runData.sources?.[key]?.url || '';
 
       let attempt = 1;
       let finalData = null;
@@ -470,13 +470,13 @@ async function runScrape(runFile, outDir, targetSource) {
         let scrapeRes = null;
         try {
           if (key.startsWith('threads:')) {
-            scrapeRes = await scrapeThreads(cdp, sourceUrl);
+            scrapeRes = await scrapeThreads(cdp, currentUrl);
           } else {
-            scrapeRes = await scrapeFacebook(cdp, sourceUrl);
+            scrapeRes = await scrapeFacebook(cdp, currentUrl);
           }
         } catch (err) {
           console.error(`[${key}] 抓取拋出異常：`, err.message);
-          scrapeRes = { url: sourceUrl, fetchedAt: new Date().toISOString(), loginWall: true, posts: [], scrolls: 0 };
+          scrapeRes = { url: currentUrl, fetchedAt: new Date().toISOString(), loginWall: true, posts: [], scrolls: 0 };
         }
 
         scrapeRes.attempt = attempt;
@@ -497,7 +497,7 @@ async function runScrape(runFile, outDir, targetSource) {
           '--source', key,
           '--state', 'failed',
           '--method', 'social-reader-cdp',
-          '--url', sourceUrl,
+          '--url', currentUrl,
           '--media', 'unread',
           '--scope', scope,
           '--detail', `嘗試第 ${attempt} 次失敗`
@@ -516,13 +516,14 @@ async function runScrape(runFile, outDir, targetSource) {
           // 切換網址
           if (key.startsWith('threads:')) {
             const handle = key.replace('threads:', '');
-            sourceUrl = `https://www.threads.com/search?q=${handle}`;
+            currentUrl = `https://www.threads.com/search?q=${handle}`;
           } else {
             const handle = key.replace('facebook:', '');
-            sourceUrl = `https://m.facebook.com/${handle}`;
+            currentUrl = `https://m.facebook.com/${handle}`;
           }
         }
       }
+
 
       // 儲存證據 JSON
       const jsonPath = path.join(outDir, `${key.replace(':', '_')}.json`);
