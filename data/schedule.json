@@ -319,19 +319,22 @@
     "badgeType": "temple",
     "verifyStatus": "community",
     "verifyLabel": "📣 羅裕誴歌劇團 Threads 行程公告",
-    "location": "臺南市南廠武英殿（詳細地址未列）",
+    "location": "台南市大智街135號（南廠武英殿）",
     "region": "南部",
     "status": "劇團行程公告列 10/23–10/24；演出時間未列",
     "description": "羅裕誴歌劇團 Threads 行程公告列農曆九月 14–15 日（國曆 10/23–10/24），鶯藝歌劇團於台南南廠武英殿演出；未列每日演出時間及詳細地址。",
     "link": "https://www.threads.com/@yuzhongluo/post/DdyLu8bicaJ",
     "linkLabel": "Threads 劇團行程公告",
-    "sourceUrl": "https://www.threads.com/@yuzhongluo/post/DdyLu8bicaJ",
+    "sourceUrl": "https://www.threads.com/@yuzhongluo/post/DeqRSuNGRfu",
     "tags": [
       "羅裕誴歌劇團",
       "鶯藝歌劇團",
       "其他歌仔戲"
     ],
-    "endDate": "2026-10-24"
+    "endDate": "2026-10-24",
+    "relatedSourceUrls": [
+      "https://www.threads.com/@yuzhongluo/post/DdyLu8bicaJ"
+    ]
   },
   {
     "id": "mhy-tian-2026-10-23-daidaiwang",
