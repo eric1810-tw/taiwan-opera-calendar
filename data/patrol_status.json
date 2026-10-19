@@ -1,11 +1,11 @@
 {
-  "startedAt": "2026-10-19T11:42:45+08:00",
-  "lastAttemptAt": "2026-10-19T13:28:37+08:00",
+  "startedAt": "2026-10-19T14:04:25+08:00",
+  "lastAttemptAt": "2026-10-19T14:18:53+08:00",
   "status": "failed",
   "counts": {
-    "complete": 1,
-    "partial": 1,
-    "failed": 19,
+    "complete": 2,
+    "partial": 17,
+    "failed": 2,
     "pending": 0,
     "total": 21
   }
