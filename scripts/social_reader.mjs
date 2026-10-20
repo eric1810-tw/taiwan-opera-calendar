@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 import { spawn, execSync } from 'node:child_process';
+import { createHash } from 'node:crypto';
 import { existsSync, mkdirSync, writeFileSync, lstatSync, readlinkSync, readdirSync, statSync, rmSync } from 'node:fs';
 import { createServer } from 'node:net';
 import path from 'node:path';
@@ -156,6 +157,78 @@ export function normalizePostUrl(rawUrl) {
   if (!rawUrl || typeof rawUrl !== 'string') return null;
   if (rawUrl.includes('comment_id=')) return null;
   return rawUrl.split('?')[0];
+}
+
+export function normalizeFacebookPostUrl(rawUrl) {
+  if (!rawUrl || typeof rawUrl !== 'string') return '';
+  if (rawUrl.includes('comment_id=')) return '';
+
+  let isRelative = false;
+  let parsed;
+  try {
+    parsed = new URL(rawUrl);
+  } catch {
+    try {
+      parsed = new URL(rawUrl, 'https://www.facebook.com');
+      isRelative = !rawUrl.startsWith('http://') && !rawUrl.startsWith('https://');
+    } catch {
+      return '';
+    }
+  }
+
+  const pathname = parsed.pathname;
+  const searchParams = parsed.searchParams;
+
+  const isPhoto = /\/photo(?:\.php|\/|$)/.test(pathname) || pathname.includes('/photo');
+  const hasFbidOrStory = searchParams.has('story_fbid') || searchParams.has('fbid') || rawUrl.includes('story_fbid') || rawUrl.includes('fbid=');
+
+  if (isPhoto && !hasFbidOrStory) {
+    return '';
+  }
+
+  if (hasFbidOrStory) {
+    const keptParams = [];
+    for (const key of ['story_fbid', 'fbid', 'id']) {
+      if (searchParams.has(key)) {
+        keptParams.push(`${key}=${searchParams.get(key)}`);
+      }
+    }
+    const queryString = keptParams.length > 0 ? `?${keptParams.join('&')}` : '';
+    if (isRelative) {
+      let cleanPath = pathname;
+      if (!rawUrl.startsWith('/') && cleanPath.startsWith('/')) {
+        cleanPath = cleanPath.slice(1);
+      }
+      return `${cleanPath}${queryString}`;
+    }
+    return `${parsed.origin}${pathname}${queryString}`;
+  }
+
+  if (/\/posts\/|\/videos\/|\/reel\//.test(pathname) || /posts|videos|reel/.test(pathname)) {
+    if (isRelative) {
+      let cleanPath = pathname;
+      if (!rawUrl.startsWith('/') && cleanPath.startsWith('/')) {
+        cleanPath = cleanPath.slice(1);
+      }
+      return cleanPath;
+    }
+    return `${parsed.origin}${pathname}`;
+  }
+
+  return '';
+}
+
+export function generateThreadsPostKey(handle, postUrl) {
+  if (!postUrl) return '';
+  const match = postUrl.match(/\/post\/([A-Za-z0-9_-]+)/);
+  const code = match ? match[1] : '';
+  return `threads:${handle}:${code}`;
+}
+
+export function generateFacebookPostKey(handle, text) {
+  const cleanText = (text || '').replace(/\s+/g, '');
+  const hash = createHash('sha1').update(cleanText.slice(0, 200)).digest('hex').slice(0, 12);
+  return `facebook:${handle}:${hash}`;
 }
 
 export function calculateMinMaxTimes(posts) {
@@ -527,7 +600,10 @@ async function scrapeThreads(cdp, url, handle) {
     if (seenUrls.has(cleanUrl)) continue;
     seenUrls.add(cleanUrl);
 
+    const postKey = generateThreadsPostKey(handle || '', cleanUrl);
+
     posts.push({
+      postKey,
       url: cleanUrl,
       datetime: utcToTaipeiIso(p.rawDatetime) || p.rawDatetime,
       text: p.text,
@@ -551,7 +627,7 @@ async function scrapeThreads(cdp, url, handle) {
 
 // --- 抓取 Facebook 來源 ---
 
-async function scrapeFacebook(cdp, url) {
+async function scrapeFacebook(cdp, url, handle = null) {
   const fetchedAt = new Date().toISOString();
   await cdp.send('Page.navigate', { url });
   await sleep(4000);
@@ -692,7 +768,7 @@ async function scrapeFacebook(cdp, url) {
         }
 
         // 貼文連結：優先找符合 /posts/、story_fbid、/permalink、/videos/、/reel/ 的 a；若無則找 /photo/
-        let postUrl = null;
+        let rawPostHref = null;
         let timeText = null;
         const links = Array.from(container.querySelectorAll('a[href]'));
 
@@ -700,11 +776,7 @@ async function scrapeFacebook(cdp, url) {
           const rawHref = a.getAttribute('href') || a.href || '';
           if (rawHref.includes('comment_id=')) continue;
           if (/posts|story_fbid|permalink|videos|reel/.test(rawHref)) {
-            let h = rawHref.split('?')[0];
-            if (h.startsWith('/')) {
-              h = 'https://www.facebook.com' + h;
-            }
-            postUrl = h;
+            rawPostHref = rawHref;
             const aria = a.getAttribute('aria-label');
             if (aria) {
               timeText = aria.trim();
@@ -713,16 +785,12 @@ async function scrapeFacebook(cdp, url) {
           }
         }
 
-        if (!postUrl) {
+        if (!rawPostHref) {
           for (const a of links) {
             const rawHref = a.getAttribute('href') || a.href || '';
             if (rawHref.includes('comment_id=')) continue;
             if (/photo/.test(rawHref)) {
-              let h = rawHref.split('?')[0];
-              if (h.startsWith('/')) {
-                h = 'https://www.facebook.com' + h;
-              }
-              postUrl = h;
+              rawPostHref = rawHref;
               const aria = a.getAttribute('aria-label');
               if (aria) {
                 timeText = aria.trim();
@@ -737,13 +805,13 @@ async function scrapeFacebook(cdp, url) {
           .filter(img => (img.naturalWidth || img.width || 0) > 150)
           .map(img => img.src);
 
-        // 去重：有連結用連結當 key，沒有用 text 前 80 字
-        const key = postUrl || text.slice(0, 80);
+        // evaluate 內部初步去重：用 text 去除空白前 100 字
+        const key = (text || '').replace(/\s+/g, '').slice(0, 100);
         if (!key || seen.has(key)) continue;
         seen.add(key);
 
         res.push({
-          postUrl,
+          rawPostHref,
           text,
           timeText,
           images: imgs
@@ -754,10 +822,24 @@ async function scrapeFacebook(cdp, url) {
   `) || [];
 
   const posts = [];
+  const seenPostKeys = new Set();
   for (const p of rawPosts) {
+    let cleanUrl = '';
+    if (p.rawPostHref) {
+      let fullUrl = p.rawPostHref;
+      if (fullUrl.startsWith('/')) {
+        fullUrl = 'https://www.facebook.com' + fullUrl;
+      }
+      cleanUrl = normalizeFacebookPostUrl(fullUrl);
+    }
+    const postKey = generateFacebookPostKey(handle || '', p.text);
+    if (!postKey || seenPostKeys.has(postKey)) continue;
+    seenPostKeys.add(postKey);
+
     const parsedDt = p.timeText ? parseFacebookTime(p.timeText, fetchedAt) : null;
     posts.push({
-      url: p.postUrl || '',
+      postKey,
+      url: cleanUrl || '',
       timeText: p.timeText || null,
       datetime: parsedDt,
       text: p.text,
@@ -807,7 +889,7 @@ async function runScrape(runFile, outDir, targetSource) {
       console.log(`\n=== 開始處理來源：${key} ===`);
       const runData = JSON.parse(execSync(`cat ${runFile}`, { encoding: 'utf-8' }));
       let currentUrl = runData.sources?.[key]?.url || '';
-      const handle = key.startsWith('threads:') ? key.replace('threads:', '') : null;
+      const handle = key.startsWith('threads:') ? key.replace('threads:', '') : (key.startsWith('facebook:') ? key.replace('facebook:', '') : null);
 
       let attempt = 1;
       let finalData = null;
@@ -819,7 +901,7 @@ async function runScrape(runFile, outDir, targetSource) {
           if (key.startsWith('threads:')) {
             scrapeRes = await scrapeThreads(cdp, currentUrl, handle);
           } else {
-            scrapeRes = await scrapeFacebook(cdp, currentUrl);
+            scrapeRes = await scrapeFacebook(cdp, currentUrl, handle);
           }
         } catch (err) {
           console.error(`[${key}] 抓取拋出異常：`, err.message);

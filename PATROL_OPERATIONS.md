@@ -46,7 +46,7 @@ python3 scripts/patrol_progress.py record --run <原檔> \
   - 嚴禁使用 `--use-mock-keychain`、`--password-store=basic`、`--no-sandbox`、`--disable-setuid-sandbox`，禁止修改 User-Agent。
   - 執行 `node scripts/social_reader.mjs --run <原檔> --out patrol_evidence/<本輪>/` 逐來源擷取貼文並即時 `record`，狀態由純函式判定（永遠不判 `complete`，有貼文記 `partial`，0 篇記 `failed`）。嚴禁讀取或輸出 cookie、密碼、資料檔；登入態以頁面實際有無登入牆為準。
 
-- **文化部開放資料原生函式**：使用 `python3 -c "import updater; ..."` 匯入 `updater.fetch_culture_events()` 與 `updater.culture_candidates()` 唯讀執行，不執行 updater 主流程、不覆寫檔案。若回傳筆數小於 500 筆門檻（`MIN_CULTURE_RECORDS`），記為 `partial`，並註明「讀取不完整，不可判定無新場次」。候選須與 `data/schedule.json` 比對，列出不在表內者；只有在報告中**逐筆**寫明每一個「不在表」候選的處置（建卡、不建卡及理由），才可以記為 `complete`；否則一律 `partial`。
+- **文化部開放資料完整紀錄**：讀取 `data/moc_records.json`（由每天 07:00 的 GitHub 更新器以白天完整資料產生）。若 `fetchedAt` 超過 36 小時或 `total` 少於 500 筆門檻，記為 `partial` 並寫明原因；否則從 `records` 找出不在 `data/schedule.json` 的戲曲演出，逐筆執行 `python3 scripts/add_card.py --from-moc "<標題>"`，不屬於演出的寫明理由。只有在報告中**逐筆**寫明每一個「不在表」候選的處置（建卡、不建卡及理由），才可以記為 `complete`；否則一律 `partial`。scope 記錄 total、fetchedAt、候選數與建卡數。
 
 - **GitHub Issues**：使用 `gh api` 讀取 `state=all` 的全部 issues 與留言（排除 PR）。
 

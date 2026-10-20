@@ -9,7 +9,10 @@ import {
   normalizePostUrl,
   calculateMinMaxTimes,
   isFacebookLoginWall,
-  isSeeMoreButton
+  isSeeMoreButton,
+  normalizeFacebookPostUrl,
+  generateThreadsPostKey,
+  generateFacebookPostKey
 } from '../scripts/social_reader.mjs';
 
 // --- 原有 5 項保留 ---
@@ -127,4 +130,37 @@ test('查看更多按鈕文字判定：文字去除空白後完全等於指定�
   assert.equal(isSeeMoreButton('查看更多留言'), false);
   assert.equal(isSeeMoreButton('回覆'), false);
   assert.equal(isSeeMoreButton(''), false);
+});
+
+// --- 010 新增測試 ---
+
+test('Facebook 網址正規化：permalink 保留 story_fbid/id/fbid', () => {
+  assert.equal(
+    normalizeFacebookPostUrl('permalink.php?story_fbid=123&id=456&__cft__=x'),
+    'permalink.php?story_fbid=123&id=456'
+  );
+  assert.equal(
+    normalizeFacebookPostUrl('https://www.facebook.com/permalink.php?story_fbid=123&id=456&__cft__=x'),
+    'https://www.facebook.com/permalink.php?story_fbid=123&id=456'
+  );
+});
+
+test('Facebook 網址正規化：沒有 fbid 的 /photo/ 連結 → url 為空', () => {
+  assert.equal(normalizeFacebookPostUrl('https://www.facebook.com/photo/'), '');
+  assert.equal(normalizeFacebookPostUrl('/photo/'), '');
+  assert.equal(normalizeFacebookPostUrl('https://www.facebook.com/photo.php'), '');
+  assert.equal(normalizeFacebookPostUrl('https://www.facebook.com/photo/?set=a.12345'), '');
+  // 若帶有 fbid 則保留
+  assert.equal(
+    normalizeFacebookPostUrl('https://www.facebook.com/photo/?fbid=789&id=101&set=a.12345'),
+    'https://www.facebook.com/photo/?fbid=789&id=101'
+  );
+});
+
+test('postKey 生成：Threads 與 Facebook 唯一識別碼格式正確', () => {
+  const threadsKey = generateThreadsPostKey('joe_huang_k_w', 'https://www.threads.com/@joe_huang_k_w/post/DedaxOSCfHY');
+  assert.equal(threadsKey, 'threads:joe_huang_k_w:DedaxOSCfHY');
+
+  const fbKey = generateFacebookPostKey('lanyang.opera', '10/26（一）晚上7:00 劇目｜《錯配姻緣》');
+  assert.match(fbKey, /^facebook:lanyang\.opera:[a-f0-9]{12}$/);
 });

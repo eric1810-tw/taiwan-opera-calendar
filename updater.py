@@ -26,6 +26,7 @@ METADATA_PATH = os.path.join(os.path.dirname(__file__), "data", "metadata.json")
 THREADS_ACCOUNTS_PATH = os.path.join(os.path.dirname(__file__), "data", "threads_accounts.json")
 THREADS_CANDIDATES_PATH = os.path.join(os.path.dirname(__file__), "data", "threads_candidates.json")
 MOC_CANDIDATES_PATH = os.path.join(os.path.dirname(__file__), "data", "moc_candidates.json")
+MOC_RECORDS_PATH = os.path.join(os.path.dirname(__file__), "data", "moc_records.json")
 THREADS_API_URL = "https://graph.threads.net/v1.0/profile_posts"
 API_URL = "https://cloud.culture.tw/frontsite/trans/SearchShowAction.do"
 KEYWORDS = (
@@ -344,6 +345,26 @@ def fetch_culture_events():
     raise RuntimeError(f"Culture API unavailable after {MAX_ATTEMPTS} attempts: {last_error}")
 
 
+def is_culture_record_keyword_matched(record):
+    """檢查文化部原始紀錄之標題、單位、分類或說明是否符合傳統戲曲關鍵字"""
+    if not isinstance(record, dict):
+        return False
+    title = str(record.get("title", "")).strip()
+    unit_names = " ".join(
+        record.get(key, "") for key in ("masterUnit", "otherUnit")
+        if isinstance(record.get(key), str)
+    )
+    category_text = " ".join(
+        record.get(key, "") for key in ("category", "showUnit", "subUnit")
+        if isinstance(record.get(key), str)
+    )
+    explicit_genre_text = f"{title} {unit_names} {category_text}"
+    desc_text = str(record.get("descriptionFilterHtml") or "")
+    matched_in_title_unit = any(keyword in explicit_genre_text for keyword in KEYWORDS)
+    matched_in_desc = any(keyword in desc_text for keyword in KEYWORDS)
+    return bool(matched_in_title_unit or matched_in_desc)
+
+
 def culture_candidates(records, today=None):
     """Create clearly unverified review candidates; never promote source data to verified."""
     today = today or taiwan_today()
@@ -427,8 +448,18 @@ def fetch_latest_updates():
     try:
         raw_events = fetch_culture_events()
         if len(raw_events) < MIN_CULTURE_RECORDS:
-            print(f"警告：文化部 API 回傳筆數過低（{len(raw_events)} 筆 < {MIN_CULTURE_RECORDS} 筆），保留既有候選檔不覆寫", file=sys.stderr)
+            print(f"警告：文化部 API 回傳筆數過低（{len(raw_events)} 筆 < {MIN_CULTURE_RECORDS} 筆），保留既有候選檔與紀錄檔不覆寫", file=sys.stderr)
         else:
+            # 筆數充足時，原子寫入 data/moc_records.json
+            matched_raw = [r for r in raw_events if is_culture_record_keyword_matched(r)]
+            now_taipei = datetime.now(ZoneInfo("Asia/Taipei")).isoformat(timespec="seconds")
+            moc_records_payload = {
+                "fetchedAt": now_taipei,
+                "total": len(raw_events),
+                "records": matched_raw
+            }
+            atomic_write_json(MOC_RECORDS_PATH, moc_records_payload)
+
             discovered = culture_candidates(raw_events)
             existing_event_keys = {
                 (event["date"][:10], event["title"])

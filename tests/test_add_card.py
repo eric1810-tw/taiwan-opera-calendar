@@ -110,7 +110,7 @@ class TestAddCard(unittest.TestCase):
     def test_02_fake_location_rejected(self):
         """2. 編造地點：提案 location 為「臺南文化中心 原生劇場」，但 quote 裡沒有 → 拒絕，原因含 location"""
         post_url = "https://www.threads.com/@someone/post/1"
-        self.evidence_dir.joinpath("ev.json").write_text(json.dumps({
+        self.evidence_dir.joinpath("threads_someone.json").write_text(json.dumps({
             "posts": [{"permalink": post_url, "datetime": "2026-10-19T10:00:00+08:00", "text": "10月25日 演出在歸仁文化中心"}]
         }, ensure_ascii=False), encoding="utf-8")
 
@@ -135,7 +135,7 @@ class TestAddCard(unittest.TestCase):
     def test_03_fake_time_rejected(self):
         """3. 編造時間：time 為「14:30」，但 quote 只寫 15:00 → 拒絕"""
         post_url = "https://www.threads.com/@someone/post/1"
-        self.evidence_dir.joinpath("ev.json").write_text(json.dumps({
+        self.evidence_dir.joinpath("threads_someone.json").write_text(json.dumps({
             "posts": [{"permalink": post_url, "datetime": "2026-10-19T10:00:00+08:00", "text": "10月25日 15:00 歸仁文化中心 明華園天字戲劇團"}]
         }, ensure_ascii=False), encoding="utf-8")
 
@@ -160,7 +160,7 @@ class TestAddCard(unittest.TestCase):
     def test_04_lunar_only_rejected(self):
         """4. 只有農曆：quote 只寫「農曆9月14日」→ 拒絕 lunar-only"""
         post_url = "https://www.threads.com/@someone/post/1"
-        self.evidence_dir.joinpath("ev.json").write_text(json.dumps({
+        self.evidence_dir.joinpath("threads_someone.json").write_text(json.dumps({
             "posts": [{"permalink": post_url, "datetime": "2026-10-19T10:00:00+08:00", "text": "農曆9月14日 歸仁文化中心 明華園天字戲劇團"}]
         }, ensure_ascii=False), encoding="utf-8")
 
@@ -185,7 +185,7 @@ class TestAddCard(unittest.TestCase):
     def test_05_quote_not_in_evidence_rejected(self):
         """5. quote 不在證據裡 → 拒絕"""
         post_url = "https://www.threads.com/@someone/post/1"
-        self.evidence_dir.joinpath("ev.json").write_text(json.dumps({
+        self.evidence_dir.joinpath("threads_someone.json").write_text(json.dumps({
             "posts": [{"permalink": post_url, "datetime": "2026-10-19T10:00:00+08:00", "text": "今天天氣很好"}]
         }, ensure_ascii=False), encoding="utf-8")
 
@@ -210,7 +210,7 @@ class TestAddCard(unittest.TestCase):
     def test_06_duplicate_rejected(self):
         """6. 重複：同日、同劇團的新提案 → 不新增"""
         post_url = "https://www.threads.com/@someone/post/1"
-        self.evidence_dir.joinpath("ev.json").write_text(json.dumps({
+        self.evidence_dir.joinpath("threads_someone.json").write_text(json.dumps({
             "posts": [{"permalink": post_url, "datetime": "2026-10-19T10:00:00+08:00", "text": "10月23日 南廠武英殿 鶯藝歌劇團 精彩好戲"}]
         }, ensure_ascii=False), encoding="utf-8")
 
@@ -278,7 +278,7 @@ class TestAddCard(unittest.TestCase):
     def test_09_fake_artist_rejected(self):
         """9. 編造主演：artist 為「孫翠鳳」，但 quote 沒有這三個字 → 拒絕"""
         post_url = "https://www.threads.com/@someone/post/1"
-        self.evidence_dir.joinpath("ev.json").write_text(json.dumps({
+        self.evidence_dir.joinpath("threads_someone.json").write_text(json.dumps({
             "posts": [{"permalink": post_url, "datetime": "2026-10-19T10:00:00+08:00", "text": "10月25日 歸仁文化中心 明華園天字戲劇團 精彩好戲"}]
         }, ensure_ascii=False), encoding="utf-8")
 
@@ -304,7 +304,7 @@ class TestAddCard(unittest.TestCase):
     def test_10_badge_type_free_without_keyword_rejected(self):
         """10. badgeType 為 free，但 quote 沒有「免費」→ 拒絕"""
         post_url = "https://www.threads.com/@someone/post/1"
-        self.evidence_dir.joinpath("ev.json").write_text(json.dumps({
+        self.evidence_dir.joinpath("threads_someone.json").write_text(json.dumps({
             "posts": [{"permalink": post_url, "datetime": "2026-10-19T10:00:00+08:00", "text": "10月25日 歸仁文化中心 明華園天字戲劇團 歡迎來看戲"}]
         }, ensure_ascii=False), encoding="utf-8")
 
@@ -361,16 +361,21 @@ class TestAddCard(unittest.TestCase):
         post_url_same = "https://www.threads.com/@yuzhongluo/post/DeqRSuNGRfu"
         post_url_diff = "https://www.threads.com/@otheruser/post/2"
 
-        self.evidence_dir.joinpath("ev_change.json").write_text(json.dumps({
+        self.evidence_dir.joinpath("threads_otheruser.json").write_text(json.dumps({
             "posts": [
-                {"permalink": post_url_same, "datetime": "2026-10-18T10:00:00+08:00", "text": "南廠武英殿演出時間異動為 19:30 開演"},
                 {"permalink": post_url_diff, "datetime": "2026-10-18T10:00:00+08:00", "text": "南廠武英殿演出時間異動為 19:30 開演"}
+            ]
+        }, ensure_ascii=False), encoding="utf-8")
+        self.evidence_dir.joinpath("threads_yuzhongluo.json").write_text(json.dumps({
+            "posts": [
+                {"permalink": post_url_same, "datetime": "2026-10-18T10:00:00+08:00", "text": "南廠武英殿演出時間異動為 19:30 開演"}
             ]
         }, ensure_ascii=False), encoding="utf-8")
 
         # 不同帳號測試
         prop_diff = self.base_dir / "prop_diff.json"
         prop_diff.write_text(json.dumps({
+            "source": "threads:otheruser",
             "postUrl": post_url_diff,
             "quote": "南廠武英殿演出時間異動為 19:30 開演",
             "time": "19:30"
@@ -383,6 +388,7 @@ class TestAddCard(unittest.TestCase):
         # 同帳號測試
         prop_same = self.base_dir / "prop_same.json"
         prop_same.write_text(json.dumps({
+            "source": "threads:yuzhongluo",
             "postUrl": post_url_same,
             "quote": "南廠武英殿演出時間異動為 19:30 開演",
             "time": "19:30"
@@ -402,7 +408,7 @@ class TestAddCard(unittest.TestCase):
         post_url_no_keyword = "https://www.threads.com/@yuzhongluo/post/cancel1"
         post_url_cancel = "https://www.threads.com/@yuzhongluo/post/cancel2"
 
-        self.evidence_dir.joinpath("ev_cancel.json").write_text(json.dumps({
+        self.evidence_dir.joinpath("threads_yuzhongluo.json").write_text(json.dumps({
             "posts": [
                 {"permalink": post_url_no_keyword, "datetime": "2026-10-18T10:00:00+08:00", "text": "10/23 武英殿因雨暫停"},
                 {"permalink": post_url_cancel, "datetime": "2026-10-18T10:00:00+08:00", "text": "10/23 南廠武英殿演出因故取消，請大家見諒"}
@@ -412,6 +418,7 @@ class TestAddCard(unittest.TestCase):
         # quote 不含取消關鍵字測試
         prop_no_kw = self.base_dir / "prop_no_kw.json"
         prop_no_kw.write_text(json.dumps({
+            "source": "threads:yuzhongluo",
             "postUrl": post_url_no_keyword,
             "quote": "10/23 武英殿因雨暫停"
         }, ensure_ascii=False), encoding="utf-8")
@@ -423,6 +430,7 @@ class TestAddCard(unittest.TestCase):
         # 含取消關鍵字與卡片日期
         prop_ok = self.base_dir / "prop_ok.json"
         prop_ok.write_text(json.dumps({
+            "source": "threads:yuzhongluo",
             "postUrl": post_url_cancel,
             "quote": "10/23 南廠武英殿演出因故取消，請大家見諒"
         }, ensure_ascii=False), encoding="utf-8")
@@ -436,6 +444,161 @@ class TestAddCard(unittest.TestCase):
         self.assertTrue(self.cancelled_path.exists())
         cancelled_content = self.cancelled_path.read_text(encoding="utf-8")
         self.assertIn("luo-2026-10-23-wuyingdian", cancelled_content)
+
+    def test_14_scoped_source_and_postkey_lookup(self):
+        """14. 兩個不同 source 的證據檔，都有一篇 url 為 photo 的貼文；以 postKey 提案時，必須找到正確 source 的那一篇"""
+        from scripts.add_card import load_post_from_evidence
+
+        post_a = {"postKey": "facebook:sourceA:hashA", "url": "https://www.facebook.com/photo/", "text": "A 的貼文"}
+        post_b = {"postKey": "facebook:sourceB:hashB", "url": "https://www.facebook.com/photo/", "text": "B 的貼文"}
+
+        (self.evidence_dir / "facebook_sourceA.json").write_text(json.dumps({"posts": [post_a]}, ensure_ascii=False), encoding="utf-8")
+        (self.evidence_dir / "facebook_sourceB.json").write_text(json.dumps({"posts": [post_b]}, ensure_ascii=False), encoding="utf-8")
+
+        found_a = load_post_from_evidence(self.evidence_dir, source="facebook:sourceA", post_key="facebook:sourceA:hashA")
+        self.assertIsNotNone(found_a)
+        self.assertEqual(found_a["text"], "A 的貼文")
+
+        found_b = load_post_from_evidence(self.evidence_dir, source="facebook:sourceB", post_key="facebook:sourceB:hashB")
+        self.assertIsNotNone(found_b)
+        self.assertEqual(found_b["text"], "B 的貼文")
+
+        # 若在 sourceA 找 post_key_B 應回傳 None
+        wrong = load_post_from_evidence(self.evidence_dir, source="facebook:sourceA", post_key="facebook:sourceB:hashB")
+        self.assertIsNone(wrong)
+
+    def test_15_lanyang_real_fixture_pass(self):
+        """15. 用蘭陽真實原文當 fixture，提案 date=2026-10-26、time=19:00、location 桃園顯安巖，--today 2026-10-20 → 通過"""
+        lanyang_text = (
+            "10/26（一）晚上7:00\n"
+            "劇目｜《錯配姻緣》\n"
+            "地點｜桃園顯安巖顯應祖師廟\n"
+            "（桃園市龜山區樂善里樂安街1號）\n"
+            "※免費觀賞\n"
+            "以上場次均無直播"
+        )
+        post_key = "facebook:lanyang.opera:a732ac4abaa5"
+        (self.evidence_dir / "facebook_lanyang.opera.json").write_text(json.dumps({
+            "posts": [{
+                "postKey": post_key,
+                "url": "",
+                "text": lanyang_text,
+                "datetime": "2026-10-18T10:00:00+08:00"
+            }]
+        }, ensure_ascii=False), encoding="utf-8")
+
+        # 更新 fb_accounts
+        accounts = json.loads(self.fb_accounts_path.read_text(encoding="utf-8"))
+        accounts.append({"handle": "lanyang.opera", "name": "蘭陽戲劇團", "url": "https://www.facebook.com/lanyang.opera/"})
+        self.fb_accounts_path.write_text(json.dumps(accounts, ensure_ascii=False), encoding="utf-8")
+
+        prop_file = self.base_dir / "prop_lanyang.json"
+        prop_file.write_text(json.dumps({
+            "source": "facebook:lanyang.opera",
+            "postKey": post_key,
+            "date": "2026-10-26",
+            "time": "19:00",
+            "location": "桃園市龜山區樂善里樂安街1號（桃園顯安巖顯應祖師廟）",
+            "troupe": "蘭陽戲劇團",
+            "title": "錯配姻緣",
+            "badgeType": "free",
+            "quote": "10/26（一）晚上7:00\n劇目｜《錯配姻緣》\n地點｜桃園顯安巖顯應祖師廟\n（桃園市龜山區樂善里樂安街1號）\n※免費觀賞"
+        }, ensure_ascii=False), encoding="utf-8")
+
+        code, out = self.run_cmd(["--proposal", str(prop_file), "--evidence-dir", str(self.evidence_dir), "--today", "2026-10-20"])
+        self.assertEqual(code, 0, f"Expected 0 but got {code}, out: {out}")
+        self.assertEqual(out.get("result"), "added")
+
+        cards = json.loads(self.schedule_path.read_text(encoding="utf-8"))
+        added_card = next(c for c in cards if c["title"] == "錯配姻緣")
+        self.assertEqual(added_card["date"], "2026-10-26")
+        self.assertEqual(added_card["time"], "19:00")
+        self.assertEqual(added_card["badgeType"], "free")
+        # 貼文無 url 時自動替換為粉專首頁
+        self.assertEqual(added_card["link"], "https://www.facebook.com/lanyang.opera/")
+
+    def test_16_lanyang_wrong_source_rejected_post_not_found(self):
+        """16. 同樣的蘭陽提案，但 source 寫成 facebook:mhysun → 拒絕 post-not-found"""
+        lanyang_text = (
+            "10/26（一）晚上7:00\n"
+            "劇目｜《錯配姻緣》\n"
+            "地點｜桃園顯安巖顯應祖師廟\n"
+            "（桃園市龜山區樂善里樂安街1號）\n"
+            "※免費觀賞\n"
+            "以上場次均無直播"
+        )
+        post_key = "facebook:lanyang.opera:a732ac4abaa5"
+        (self.evidence_dir / "facebook_lanyang.opera.json").write_text(json.dumps({
+            "posts": [{
+                "postKey": post_key,
+                "url": "",
+                "text": lanyang_text
+            }]
+        }, ensure_ascii=False), encoding="utf-8")
+
+        prop_file = self.base_dir / "prop_lanyang_wrong.json"
+        prop_file.write_text(json.dumps({
+            "source": "facebook:mhysun",
+            "postKey": post_key,
+            "date": "2026-10-26",
+            "time": "19:00",
+            "location": "桃園市龜山區樂善里樂安街1號（桃園顯安巖顯應祖師廟）",
+            "troupe": "蘭陽戲劇團",
+            "title": "錯配姻緣",
+            "badgeType": "free",
+            "quote": "10/26（一）晚上7:00\n劇目｜《錯配姻緣》\n地點｜桃園顯安巖顯應祖師廟\n（桃園市龜山區樂善里樂安街1號）\n※免費觀賞"
+        }, ensure_ascii=False), encoding="utf-8")
+
+        code, out = self.run_cmd(["--proposal", str(prop_file), "--evidence-dir", str(self.evidence_dir), "--today", "2026-10-20"])
+        self.assertNotEqual(code, 0)
+        self.assertIn("post-not-found", out.get("reasons", []))
+
+    def test_17_moc_records_stale_rejected(self):
+        """17. moc_records 過期（> 36 小時）時，--from-moc 拒絕 moc-records-stale"""
+        stale_file = self.base_dir / "moc_stale.json"
+        stale_file.write_text(json.dumps({
+            "fetchedAt": "2026-10-18T10:00:00+08:00",
+            "total": 1400,
+            "records": [{"title": "某某歌仔戲公演"}]
+        }, ensure_ascii=False), encoding="utf-8")
+
+        code, out = self.run_cmd(["--from-moc", "某某歌仔戲公演", "--culture-records", str(stale_file), "--today", "2026-10-20"])
+        self.assertNotEqual(code, 0)
+        self.assertIn("moc-records-stale", out.get("reasons", []))
+
+    def test_18_fresh_moc_records_adds_card(self):
+        """18. 新鮮的 moc_records → 能依標題建卡，事實欄位全部來自紀錄"""
+        from datetime import datetime, timezone, timedelta
+        now_iso = datetime.now(timezone(timedelta(hours=8))).isoformat(timespec="seconds")
+        fresh_file = self.base_dir / "moc_fresh.json"
+        fresh_record = {
+            "title": "金鷹閣電視木偶劇團《西遊記之鬧天宮》",
+            "masterUnit": "金鷹閣電視木偶劇團",
+            "startDate": "2026/10/25",
+            "webSales": "https://www.opentix.life/program/2090773654423490561",
+            "showInfo": [{
+                "time": "2026/10/25 16:00",
+                "location": "高雄市岡山區岡山南路43號",
+                "locationName": "高雄市岡山文化中心演藝廳",
+                "price": "300,500"
+            }]
+        }
+        fresh_file.write_text(json.dumps({
+            "fetchedAt": now_iso,
+            "total": 1474,
+            "records": [fresh_record]
+        }, ensure_ascii=False), encoding="utf-8")
+
+        code, out = self.run_cmd(["--from-moc", "金鷹閣電視木偶劇團《西遊記之鬧天宮》", "--culture-records", str(fresh_file), "--today", "2026-10-20"])
+        self.assertEqual(code, 0, f"Expected 0, out: {out}")
+        self.assertEqual(out.get("result"), "added")
+
+        cards = json.loads(self.schedule_path.read_text(encoding="utf-8"))
+        added = next(c for c in cards if "鬧天宮" in c["title"])
+        self.assertEqual(added["date"], "2026-10-25")
+        self.assertEqual(added["time"], "16:00")
+        self.assertEqual(added["troupe"], "金鷹閣電視木偶劇團")
+        self.assertIn("高雄市岡山文化中心演藝廳", added["location"])
 
 
 if __name__ == "__main__":

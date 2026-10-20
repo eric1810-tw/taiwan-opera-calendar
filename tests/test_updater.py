@@ -174,13 +174,17 @@ class UpdaterTests(unittest.TestCase):
             schedule_path = Path(temp_dir) / "schedule.json"
             metadata_path = Path(temp_dir) / "metadata.json"
             moc_path = Path(temp_dir) / "moc.json"
+            moc_records_path = Path(temp_dir) / "moc_records.json"
             initial_moc = [{"id": "pre-existing-candidate"}]
+            initial_records = {"fetchedAt": "2026-10-18T10:00:00+08:00", "total": 1400, "records": []}
             moc_path.write_text(json.dumps(initial_moc, ensure_ascii=False), encoding="utf-8")
+            moc_records_path.write_text(json.dumps(initial_records, ensure_ascii=False), encoding="utf-8")
             schedule_path.write_text(json.dumps([copy.deepcopy(self.sample)], ensure_ascii=False), encoding="utf-8")
             few_records = [{"title": "歌仔戲短劇", "showInfo": []}]
             with patch.object(updater, "DATA_PATH", str(schedule_path)), \
                     patch.object(updater, "METADATA_PATH", str(metadata_path)), \
                     patch.object(updater, "MOC_CANDIDATES_PATH", str(moc_path)), \
+                    patch.object(updater, "MOC_RECORDS_PATH", str(moc_records_path)), \
                     patch.object(updater, "fetch_culture_events", return_value=few_records), \
                     patch.object(updater, "taiwan_today", return_value=date(2026, 10, 19)), \
                     patch.dict("os.environ", {}, clear=True), \
@@ -188,9 +192,40 @@ class UpdaterTests(unittest.TestCase):
                     patch("sys.stderr.write"):
                 updater.fetch_latest_updates()
             retained_moc = json.loads(moc_path.read_text(encoding="utf-8"))
+            retained_records = json.loads(moc_records_path.read_text(encoding="utf-8"))
             self.assertEqual(retained_moc, initial_moc)
+            self.assertEqual(retained_records, initial_records)
             self.assertTrue(schedule_path.exists())
             self.assertTrue(metadata_path.exists())
+
+    def test_fetch_latest_updates_writes_moc_records_when_records_sufficient(self):
+        """當文化部回傳筆數 >= 500 門檻時，原子寫入 data/moc_records.json，含 fetchedAt、total 與符合關鍵字的 records"""
+        with tempfile.TemporaryDirectory() as temp_dir:
+            schedule_path = Path(temp_dir) / "schedule.json"
+            metadata_path = Path(temp_dir) / "metadata.json"
+            moc_path = Path(temp_dir) / "moc.json"
+            moc_records_path = Path(temp_dir) / "moc_records.json"
+            schedule_path.write_text(json.dumps([copy.deepcopy(self.sample)], ensure_ascii=False), encoding="utf-8")
+            records = [
+                {"title": "歌仔戲大戲", "masterUnit": "劇團A", "showInfo": []},
+                {"title": "普通舞蹈表演", "masterUnit": "舞團B", "showInfo": []}
+            ] * 260  # 共 520 筆
+            with patch.object(updater, "DATA_PATH", str(schedule_path)), \
+                    patch.object(updater, "METADATA_PATH", str(metadata_path)), \
+                    patch.object(updater, "MOC_CANDIDATES_PATH", str(moc_path)), \
+                    patch.object(updater, "MOC_RECORDS_PATH", str(moc_records_path)), \
+                    patch.object(updater, "fetch_culture_events", return_value=records), \
+                    patch.object(updater, "taiwan_today", return_value=date(2026, 10, 19)), \
+                    patch.dict("os.environ", {}, clear=True), \
+                    patch("builtins.print"):
+                updater.fetch_latest_updates()
+            self.assertTrue(moc_records_path.exists())
+            written = json.loads(moc_records_path.read_text(encoding="utf-8"))
+            self.assertEqual(written["total"], 520)
+            self.assertTrue("fetchedAt" in written)
+            # 只有符合關鍵字的歌仔戲大戲進入 records
+            self.assertEqual(len(written["records"]), 260)
+            self.assertEqual(written["records"][0]["title"], "歌仔戲大戲")
 
     def test_fetch_latest_updates_excludes_candidate_matching_curated_opentix_id(self):
         with tempfile.TemporaryDirectory() as temp_dir:
@@ -207,6 +242,7 @@ class UpdaterTests(unittest.TestCase):
             with patch.object(updater, "DATA_PATH", str(schedule_path)), \
                     patch.object(updater, "METADATA_PATH", str(metadata_path)), \
                     patch.object(updater, "MOC_CANDIDATES_PATH", str(moc_path)), \
+                    patch.object(updater, "MOC_RECORDS_PATH", str(Path(temp_dir) / "moc_records.json")), \
                     patch.object(updater, "fetch_culture_events", return_value=raw_records), \
                     patch.object(updater, "taiwan_today", return_value=date(2026, 10, 19)), \
                     patch.dict("os.environ", {}, clear=True), \

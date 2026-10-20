@@ -5,6 +5,7 @@ scripts/extract_mentions.py
 純 Python 標準函式庫實作。
 """
 
+import hashlib
 import json
 import os
 import re
@@ -89,8 +90,23 @@ def extract_mentions(evidence_dir):
             images = post.get('images', [])
             matched = check_mention(text, images)
             if matched:
+                post_key = post.get('postKey', '')
+                if not post_key:
+                    if source_key.startswith('threads:'):
+                        h = source_key.replace('threads:', '')
+                        u = post.get('url', '')
+                        m = re.search(r'/post/([A-Za-z0-9_-]+)', u)
+                        code = m.group(1) if m else ''
+                        post_key = f"threads:{h}:{code}"
+                    elif source_key.startswith('facebook:'):
+                        h = source_key.replace('facebook:', '')
+                        clean_t = re.sub(r'\s+', '', text)[:200]
+                        hsh = hashlib.sha1(clean_t.encode('utf-8')).hexdigest()[:12]
+                        post_key = f"facebook:{h}:{hsh}"
+
                 mentions.append({
                     'source': source_key,
+                    'postKey': post_key,
                     'postUrl': post.get('url', ''),
                     'datetime': post.get('datetime'),
                     'text': text,

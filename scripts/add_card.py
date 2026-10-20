@@ -35,6 +35,7 @@ DEFAULT_SCHEDULE_PATH = ROOT_DIR / "data" / "schedule.json"
 DEFAULT_REVIEW_QUEUE_PATH = ROOT_DIR / "data" / "review_queue.json"
 DEFAULT_CANCELLED_PATH = ROOT_DIR / "docs" / "patrols" / "cancelled_cards.jsonl"
 DEFAULT_FB_ACCOUNTS_PATH = ROOT_DIR / "data" / "facebook_accounts.json"
+DEFAULT_MOC_RECORDS_PATH = ROOT_DIR / "data" / "moc_records.json"
 
 UNSPECIFIED_KEYWORDS = ("未公布", "未列", "待確認", "時間請查官方公告", "地點請查官方公告", "待查官方公告")
 
@@ -195,22 +196,48 @@ def match_location_in_quote(location: str, quote: str) -> bool:
     return main_loc in quote
 
 
-def load_post_from_evidence(evidence_dir: Path, post_url: str):
-    """自 evidence_dir 尋找指定 post_url 的貼文物件"""
-    norm_post_url = post_url.strip().rstrip("/")
-    for p in evidence_dir.glob("*.json"):
-        if p.name == "mentions.json":
-            continue
-        try:
-            data = json.loads(p.read_text(encoding="utf-8"))
-        except Exception:
-            continue
-        posts = data.get("posts", [])
-        if isinstance(posts, list):
-            for item in posts:
-                item_url = str(item.get("permalink") or item.get("postUrl") or item.get("url") or item.get("link") or "").strip().rstrip("/")
-                if item_url == norm_post_url or item_url.split("?")[0] == norm_post_url.split("?")[0]:
-                    return item
+def load_post_from_evidence(evidence_dir: Path, source: str = "", post_key: str = "", post_url: str = ""):
+    """自 evidence_dir 尋找指定 postKey 或 post_url 的貼文物件。
+    只在檔名對應到提案 source 的證據檔尋找（例如 facebook:lanyang.opera -> facebook_lanyang.opera.json）。
+    postKey 優先於 post_url。找不到則回傳 None。
+    """
+    if not source and post_key:
+        parts = post_key.split(":")
+        if len(parts) >= 3:
+            source = f"{parts[0]}:{parts[1]}"
+
+    if not source:
+        return None
+
+    expected_filename = f"{source.replace(':', '_')}.json"
+    target_file = evidence_dir / expected_filename
+    if not target_file.exists():
+        return None
+
+    try:
+        data = json.loads(target_file.read_text(encoding="utf-8"))
+    except Exception:
+        return None
+
+    posts = data.get("posts", [])
+    if not isinstance(posts, list):
+        return None
+
+    # 1. postKey 優先
+    if post_key:
+        for item in posts:
+            if item.get("postKey") == post_key:
+                return item
+        return None
+
+    # 2. postUrl 相容
+    if post_url:
+        norm_post_url = post_url.strip().rstrip("/")
+        for item in posts:
+            item_url = str(item.get("permalink") or item.get("postUrl") or item.get("url") or item.get("link") or "").strip().rstrip("/")
+            if item_url == norm_post_url or item_url.split("?")[0] == norm_post_url.split("?")[0]:
+                return item
+
     return None
 
 
@@ -230,7 +257,7 @@ def atomic_save_json(path: Path, data):
 
 
 def append_to_review_queue(review_queue_path: Path, proposal: dict, reasons: list):
-    """附加失敗提案至 review_queue.json（依 postUrl 去重）"""
+    """附加失敗提案至 review_queue.json（依 postKey 去重，舊格式依 postUrl 去重，fromMoc 依標題去重）"""
     queue = []
     if review_queue_path.exists():
         try:
@@ -240,15 +267,26 @@ def append_to_review_queue(review_queue_path: Path, proposal: dict, reasons: lis
         except Exception:
             queue = []
 
+    post_key = proposal.get("postKey", "")
     post_url = proposal.get("postUrl", "")
     entry = {
+        "postKey": post_key,
         "postUrl": post_url,
         "proposal": proposal,
         "reasons": reasons,
         "rejectedAt": datetime.now(ZoneInfo("Asia/Taipei")).isoformat(timespec="seconds"),
     }
     # 去重
-    new_queue = [item for item in queue if item.get("postUrl") != post_url]
+    def is_same(item):
+        if post_key and item.get("postKey") == post_key:
+            return True
+        if not post_key and post_url and item.get("postUrl") == post_url:
+            return True
+        if proposal.get("fromMoc") and item.get("proposal", {}).get("fromMoc") == proposal.get("fromMoc"):
+            return True
+        return False
+
+    new_queue = [item for item in queue if not is_same(item)]
     new_queue.append(entry)
     atomic_save_json(review_queue_path, new_queue)
 
@@ -379,8 +417,10 @@ def handle_proposal(args, today: date):
     fb_accounts = json.loads(fb_accounts_path.read_text(encoding="utf-8")) if fb_accounts_path.exists() else []
     schedule = json.loads(schedule_path.read_text(encoding="utf-8")) if schedule_path.exists() else []
 
+    source_id = proposal.get("source", "")
+    post_key = proposal.get("postKey", "")
     post_url = proposal.get("postUrl", "")
-    post = load_post_from_evidence(evidence_dir, post_url)
+    post = load_post_from_evidence(evidence_dir, source=source_id, post_key=post_key, post_url=post_url)
     if not post:
         reasons = ["post-not-found"]
         append_to_review_queue(review_queue_path, proposal, reasons)
@@ -437,6 +477,18 @@ def handle_proposal(args, today: date):
     description = f"依 {source_label} {post_date_label} 公告：「{quote_clip}」"
     status = "依社群公告；未列事項請洽劇團或廟方"
 
+    post_actual_url = post.get("url") or post_url
+    if not post_actual_url:
+        if source_id.startswith("facebook:"):
+            fb_handle = source_id.replace("facebook:", "")
+            matched_fb = next((acc.get("url") for acc in fb_accounts if acc.get("handle") == fb_handle), None)
+            post_actual_url = matched_fb if matched_fb else f"https://www.facebook.com/{fb_handle}"
+        elif source_id.startswith("threads:"):
+            th_handle = source_id.replace("threads:", "")
+            post_actual_url = f"https://www.threads.com/@{th_handle}"
+        else:
+            post_actual_url = ""
+
     card = {
         "id": card_id,
         "date": date_str,
@@ -455,8 +507,8 @@ def handle_proposal(args, today: date):
         "region": region,
         "status": status,
         "description": description,
-        "link": post_url,
-        "sourceUrl": post_url,
+        "link": post_actual_url,
+        "sourceUrl": post_actual_url,
         "tags": [troupe],
     }
     if end_date_str:
@@ -489,8 +541,10 @@ def handle_update(args, today: date):
         print(json.dumps({"result": "rejected", "id": target_id, "reasons": reasons}, ensure_ascii=False))
         return 1
 
+    source = proposal.get("source", "")
+    post_key = proposal.get("postKey", "")
     post_url = proposal.get("postUrl", "")
-    post = load_post_from_evidence(evidence_dir, post_url)
+    post = load_post_from_evidence(evidence_dir, source=source, post_key=post_key, post_url=post_url)
     if not post:
         reasons = ["post-not-found"]
         append_to_review_queue(review_queue_path, proposal, reasons)
@@ -574,8 +628,10 @@ def handle_change(args, today: date):
         print(json.dumps({"result": "rejected", "id": target_id, "reasons": reasons}, ensure_ascii=False))
         return 1
 
+    source = proposal.get("source", "")
+    post_key = proposal.get("postKey", "")
     post_url = proposal.get("postUrl", "")
-    post = load_post_from_evidence(evidence_dir, post_url)
+    post = load_post_from_evidence(evidence_dir, source=source, post_key=post_key, post_url=post_url)
     if not post:
         reasons = ["post-not-found"]
         append_to_review_queue(review_queue_path, proposal, reasons)
@@ -667,8 +723,10 @@ def handle_cancel(args, today: date):
         print(json.dumps({"result": "rejected", "id": target_id, "reasons": reasons}, ensure_ascii=False))
         return 1
 
+    source = proposal.get("source", "")
+    post_key = proposal.get("postKey", "")
     post_url = proposal.get("postUrl", "")
-    post = load_post_from_evidence(evidence_dir, post_url)
+    post = load_post_from_evidence(evidence_dir, source=source, post_key=post_key, post_url=post_url)
     if not post:
         reasons = ["post-not-found"]
         append_to_review_queue(review_queue_path, proposal, reasons)
@@ -728,11 +786,42 @@ def handle_from_moc(args, today: date):
         return 1
 
     # 讀取文化部資料
-    if args.culture_records:
-        records = json.loads(Path(args.culture_records).read_text(encoding="utf-8"))
+    culture_path = Path(args.culture_records) if args.culture_records else DEFAULT_MOC_RECORDS_PATH
+    if not culture_path.exists():
+        reasons = ["moc-records-stale"]
+        proposal = {"fromMoc": title_query}
+        append_to_review_queue(review_queue_path, proposal, reasons)
+        print(json.dumps({"result": "rejected", "id": None, "reasons": reasons}, ensure_ascii=False))
+        return 1
+
+    try:
+        raw_payload = json.loads(culture_path.read_text(encoding="utf-8"))
+    except Exception:
+        reasons = ["moc-records-stale"]
+        append_to_review_queue(review_queue_path, {"fromMoc": title_query}, reasons)
+        print(json.dumps({"result": "rejected", "id": None, "reasons": reasons}, ensure_ascii=False))
+        return 1
+
+    if isinstance(raw_payload, dict):
+        fetched_at_str = raw_payload.get("fetchedAt")
+        if fetched_at_str:
+            try:
+                f_dt = datetime.fromisoformat(fetched_at_str)
+                now_dt = datetime.now(ZoneInfo("Asia/Taipei"))
+                if f_dt.tzinfo is None:
+                    f_dt = f_dt.replace(tzinfo=ZoneInfo("Asia/Taipei"))
+                if (now_dt - f_dt).total_seconds() > 36 * 3600:
+                    reasons = ["moc-records-stale"]
+                    append_to_review_queue(review_queue_path, {"fromMoc": title_query}, reasons)
+                    print(json.dumps({"result": "rejected", "id": None, "reasons": reasons}, ensure_ascii=False))
+                    return 1
+            except Exception:
+                pass
+        records = raw_payload.get("records", [])
+    elif isinstance(raw_payload, list):
+        records = raw_payload
     else:
-        from updater import fetch_culture_events
-        records = fetch_culture_events()
+        records = []
 
     # 尋找匹配紀錄
     target_record = None
