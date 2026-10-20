@@ -1,0 +1,376 @@
+{
+  "version": 1,
+  "startedAt": "2026-10-21T03:04:40+08:00",
+  "resumedAt": [],
+  "sources": {
+    "threads:joe_huang_k_w": {
+      "url": "https://www.threads.com/@joe_huang_k_w",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-21T03:05:01+08:00",
+          "method": "social-reader-cdp",
+          "url": "https://www.threads.com/@joe_huang_k_w",
+          "state": "partial",
+          "scope": "擷取 9 篇（本人／頂層）；最新 2026-10-17T20:06:14+08:00、最舊 2026-10-12T17:35:59+08:00；含未辨識時間 0 篇；登入牆＝否；證據 patrol_evidence/2026-10-21_0304/threads_joe_huang_k_w.json",
+          "media": "unread",
+          "detail": "CDP 捲動 2 次，共保留 9 篇（本人/頂層）貼文"
+        }
+      ]
+    },
+    "threads:h.akito_1996": {
+      "url": "https://www.threads.com/@h.akito_1996",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-21T03:05:08+08:00",
+          "method": "social-reader-cdp",
+          "url": "https://www.threads.com/@h.akito_1996",
+          "state": "partial",
+          "scope": "擷取 8 篇（本人／頂層）；最新 2026-10-17T15:03:11+08:00、最舊 2026-10-09T22:13:43+08:00；含未辨識時間 0 篇；登入牆＝否；證據 patrol_evidence/2026-10-21_0304/threads_h.akito_1996.json",
+          "media": "unread",
+          "detail": "CDP 捲動 3 次，共保留 8 篇（本人/頂層）貼文"
+        }
+      ]
+    },
+    "threads:the_rin.lpm": {
+      "url": "https://www.threads.com/@the_rin.lpm",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-21T03:05:12+08:00",
+          "method": "social-reader-cdp",
+          "url": "https://www.threads.com/@the_rin.lpm",
+          "state": "partial",
+          "scope": "擷取 6 篇（本人／頂層）；最新 2026-10-20T20:27:15+08:00、最舊 2026-09-26T14:32:03+08:00；含未辨識時間 0 篇；登入牆＝否；證據 patrol_evidence/2026-10-21_0304/threads_the_rin.lpm.json",
+          "media": "unread",
+          "detail": "CDP 捲動 1 次，共保留 6 篇（本人/頂層）貼文"
+        }
+      ]
+    },
+    "threads:1013.yr_": {
+      "url": "https://www.threads.com/@1013.yr_",
+      "state": "failed",
+      "attempts": [
+        {
+          "at": "2026-10-21T03:05:30+08:00",
+          "method": "social-reader-cdp",
+          "url": "https://www.threads.com/@1013.yr_",
+          "state": "failed",
+          "scope": "第 1 次嘗試：擷取 0 篇；登入牆＝否",
+          "media": "unread",
+          "detail": "嘗試第 1 次失敗"
+        },
+        {
+          "at": "2026-10-21T03:05:51+08:00",
+          "method": "social-reader-cdp",
+          "url": "https://www.threads.com/@1013.yr_",
+          "state": "failed",
+          "scope": "第 2 次嘗試：擷取 0 篇；登入牆＝否",
+          "media": "unread",
+          "detail": "嘗試第 2 次失敗"
+        },
+        {
+          "at": "2026-10-21T03:06:39+08:00",
+          "method": "social-reader-cdp",
+          "url": "https://www.threads.com/@1013.yr_",
+          "state": "failed",
+          "scope": "第 3 次嘗試：擷取 0 篇；登入牆＝否",
+          "media": "unread",
+          "detail": "嘗試第 3 次失敗"
+        },
+        {
+          "at": "2026-10-21T03:07:58+08:00",
+          "method": "social-reader-cdp",
+          "url": "https://www.threads.com/@1013.yr_",
+          "state": "failed",
+          "scope": "擷取 0 篇（本人／頂層）；最新 無、最舊 無；含未辨識時間 0 篇；登入牆＝否；證據 patrol_evidence/2026-10-21_0304/threads_1013.yr_.json",
+          "media": "unread",
+          "detail": "CDP 捲動 2 次，共保留 0 篇（本人/頂層）貼文"
+        }
+      ]
+    },
+    "threads:xuefeng_lu_": {
+      "url": "https://www.threads.com/@xuefeng_lu_",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-21T03:08:02+08:00",
+          "method": "social-reader-cdp",
+          "url": "https://www.threads.com/@xuefeng_lu_",
+          "state": "partial",
+          "scope": "擷取 7 篇（本人／頂層）；最新 2026-10-20T14:46:29+08:00、最舊 2026-10-08T13:53:36+08:00；含未辨識時間 0 篇；登入牆＝否；證據 patrol_evidence/2026-10-21_0304/threads_xuefeng_lu_.json",
+          "media": "unread",
+          "detail": "CDP 捲動 1 次，共保留 7 篇（本人/頂層）貼文"
+        }
+      ]
+    },
+    "threads:yuzhongluo": {
+      "url": "https://www.threads.com/@yuzhongluo",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-21T03:08:09+08:00",
+          "method": "social-reader-cdp",
+          "url": "https://www.threads.com/@yuzhongluo",
+          "state": "partial",
+          "scope": "擷取 8 篇（本人／頂層）；最新 2026-10-19T11:16:16+08:00、最舊 2026-10-13T01:16:12+08:00；含未辨識時間 0 篇；登入牆＝否；證據 patrol_evidence/2026-10-21_0304/threads_yuzhongluo.json",
+          "media": "unread",
+          "detail": "CDP 捲動 3 次，共保留 8 篇（本人/頂層）貼文"
+        }
+      ]
+    },
+    "threads:taiwaneseopera168": {
+      "url": "https://www.threads.com/@taiwaneseopera168",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-21T03:08:34+08:00",
+          "method": "social-reader-cdp",
+          "url": "https://www.threads.com/@taiwaneseopera168",
+          "state": "partial",
+          "scope": "擷取 8 篇（本人／頂層）；最新 2026-10-16T21:59:36+08:00、最舊 2026-10-16T01:29:53+08:00；含未辨識時間 0 篇；登入牆＝否；證據 patrol_evidence/2026-10-21_0304/threads_taiwaneseopera168.json",
+          "media": "unread",
+          "detail": "CDP 捲動 15 次，共保留 8 篇（本人/頂層）貼文"
+        }
+      ]
+    },
+    "threads:jing__1017": {
+      "url": "https://www.threads.com/@jing__1017",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-21T03:08:41+08:00",
+          "method": "social-reader-cdp",
+          "url": "https://www.threads.com/@jing__1017",
+          "state": "partial",
+          "scope": "擷取 9 篇（本人／頂層）；最新 2026-10-19T01:16:16+08:00、最舊 2026-10-13T23:49:52+08:00；含未辨識時間 0 篇；登入牆＝否；證據 patrol_evidence/2026-10-21_0304/threads_jing__1017.json",
+          "media": "unread",
+          "detail": "CDP 捲動 3 次，共保留 9 篇（本人/頂層）貼文"
+        }
+      ]
+    },
+    "threads:hilang.on.tour": {
+      "url": "https://www.threads.com/@hilang.on.tour",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-21T03:08:45+08:00",
+          "method": "social-reader-cdp",
+          "url": "https://www.threads.com/@hilang.on.tour",
+          "state": "partial",
+          "scope": "擷取 7 篇（本人／頂層）；最新 2026-10-14T11:25:01+08:00、最舊 2026-10-02T11:07:54+08:00；含未辨識時間 0 篇；登入牆＝否；證據 patrol_evidence/2026-10-21_0304/threads_hilang.on.tour.json",
+          "media": "unread",
+          "detail": "CDP 捲動 1 次，共保留 7 篇（本人/頂層）貼文"
+        }
+      ]
+    },
+    "threads:yolin1991": {
+      "url": "https://www.threads.com/@yolin1991",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-21T03:08:48+08:00",
+          "method": "social-reader-cdp",
+          "url": "https://www.threads.com/@yolin1991",
+          "state": "partial",
+          "scope": "擷取 7 篇（本人／頂層）；最新 2026-10-20T21:07:23+08:00、最舊 2026-10-09T19:47:26+08:00；含未辨識時間 0 篇；登入牆＝否；證據 patrol_evidence/2026-10-21_0304/threads_yolin1991.json",
+          "media": "unread",
+          "detail": "CDP 捲動 1 次，共保留 7 篇（本人/頂層）貼文"
+        }
+      ]
+    },
+    "facebook:sunhope.fans": {
+      "url": "https://www.facebook.com/sunhope.fans",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-21T03:09:36+08:00",
+          "method": "social-reader-cdp",
+          "url": "https://www.facebook.com/sunhope.fans",
+          "state": "partial",
+          "scope": "擷取 32 篇（本人／頂層）；最新 無、最舊 無；含未辨識時間 32 篇；登入牆＝否；證據 patrol_evidence/2026-10-21_0304/facebook_sunhope.fans.json",
+          "media": "unread",
+          "detail": "CDP 捲動 15 次，共保留 32 篇（本人/頂層）貼文"
+        }
+      ]
+    },
+    "facebook:HsiaoHsiYuan1913": {
+      "url": "https://www.facebook.com/HsiaoHsiYuan1913/",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-21T03:10:24+08:00",
+          "method": "social-reader-cdp",
+          "url": "https://www.facebook.com/HsiaoHsiYuan1913/",
+          "state": "partial",
+          "scope": "擷取 33 篇（本人／頂層）；最新 無、最舊 無；含未辨識時間 33 篇；登入牆＝否；證據 patrol_evidence/2026-10-21_0304/facebook_HsiaoHsiYuan1913.json",
+          "media": "unread",
+          "detail": "CDP 捲動 15 次，共保留 33 篇（本人/頂層）貼文"
+        }
+      ]
+    },
+    "facebook:100063868113954": {
+      "url": "https://www.facebook.com/p/%E5%90%B3%E5%A5%95%E8%90%B1-Wu-Yihsuan-100063868113954",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-21T03:11:13+08:00",
+          "method": "social-reader-cdp",
+          "url": "https://www.facebook.com/p/%E5%90%B3%E5%A5%95%E8%90%B1-Wu-Yihsuan-100063868113954",
+          "state": "partial",
+          "scope": "擷取 33 篇（本人／頂層）；最新 無、最舊 無；含未辨識時間 33 篇；登入牆＝否；證據 patrol_evidence/2026-10-21_0304/facebook_100063868113954.json",
+          "media": "unread",
+          "detail": "CDP 捲動 15 次，共保留 33 篇（本人/頂層）貼文"
+        }
+      ]
+    },
+    "facebook:MingHuaYuanTianTaiwaneseOpera": {
+      "url": "https://www.facebook.com/MingHuaYuanTianTaiwaneseOpera",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-21T03:12:01+08:00",
+          "method": "social-reader-cdp",
+          "url": "https://www.facebook.com/MingHuaYuanTianTaiwaneseOpera",
+          "state": "partial",
+          "scope": "擷取 29 篇（本人／頂層）；最新 無、最舊 無；含未辨識時間 29 篇；登入牆＝否；證據 patrol_evidence/2026-10-21_0304/facebook_MingHuaYuanTianTaiwaneseOpera.json",
+          "media": "unread",
+          "detail": "CDP 捲動 15 次，共保留 29 篇（本人/頂層）貼文"
+        }
+      ]
+    },
+    "facebook:61574134933376": {
+      "url": "https://www.facebook.com/profile.php?id=61574134933376",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-21T03:13:03+08:00",
+          "method": "social-reader-cdp",
+          "url": "https://www.facebook.com/profile.php?id=61574134933376",
+          "state": "partial",
+          "scope": "擷取 26 篇（本人／頂層）；最新 無、最舊 無；含未辨識時間 26 篇；登入牆＝否；證據 patrol_evidence/2026-10-21_0304/facebook_61574134933376.json",
+          "media": "unread",
+          "detail": "CDP 捲動 15 次，共保留 26 篇（本人/頂層）貼文"
+        }
+      ]
+    },
+    "facebook:mhysun": {
+      "url": "https://www.facebook.com/mhysun",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-21T03:13:51+08:00",
+          "method": "social-reader-cdp",
+          "url": "https://www.facebook.com/mhysun",
+          "state": "partial",
+          "scope": "擷取 29 篇（本人／頂層）；最新 無、最舊 無；含未辨識時間 29 篇；登入牆＝否；證據 patrol_evidence/2026-10-21_0304/facebook_mhysun.json",
+          "media": "unread",
+          "detail": "CDP 捲動 15 次，共保留 29 篇（本人/頂層）貼文"
+        }
+      ]
+    },
+    "facebook:61594936681482": {
+      "url": "https://www.facebook.com/profile.php?id=61594936681482",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-21T03:14:13+08:00",
+          "method": "social-reader-cdp",
+          "url": "https://www.facebook.com/profile.php?id=61594936681482",
+          "state": "partial",
+          "scope": "擷取 6 篇（本人／頂層）；最新 無、最舊 無；含未辨識時間 6 篇；登入牆＝否；證據 patrol_evidence/2026-10-21_0304/facebook_61594936681482.json",
+          "media": "unread",
+          "detail": "CDP 捲動 6 次，共保留 6 篇（本人/頂層）貼文"
+        }
+      ]
+    },
+    "facebook:lanyang.opera": {
+      "url": "https://www.facebook.com/lanyang.opera/",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-21T03:15:02+08:00",
+          "method": "social-reader-cdp",
+          "url": "https://www.facebook.com/lanyang.opera/",
+          "state": "partial",
+          "scope": "擷取 31 篇（本人／頂層）；最新 無、最舊 無；含未辨識時間 31 篇；登入牆＝否；證據 patrol_evidence/2026-10-21_0304/facebook_lanyang.opera.json",
+          "media": "unread",
+          "detail": "CDP 捲動 15 次，共保留 31 篇（本人/頂層）貼文"
+        }
+      ]
+    },
+    "facebook:Taichungpuppettheater": {
+      "url": "https://www.facebook.com/Taichungpuppettheater/",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-21T03:15:50+08:00",
+          "method": "social-reader-cdp",
+          "url": "https://www.facebook.com/Taichungpuppettheater/",
+          "state": "partial",
+          "scope": "擷取 33 篇（本人／頂層）；最新 無、最舊 無；含未辨識時間 33 篇；登入牆＝否；證據 patrol_evidence/2026-10-21_0304/facebook_Taichungpuppettheater.json",
+          "media": "unread",
+          "detail": "CDP 捲動 15 次，共保留 33 篇（本人/頂層）貼文"
+        }
+      ]
+    },
+    "culture": {
+      "url": "data/moc_candidates.json",
+      "state": "complete",
+      "attempts": [
+        {
+          "at": "2026-10-21T03:16:18+08:00",
+          "method": "moc_records",
+          "url": "https://cloud.culture.tw/frontsite/trans/SearchShowAction.do?method=doFindTypeJ&category=all",
+          "state": "complete",
+          "scope": "total=1488, fetchedAt=2026-10-20T09:27:15+08:00, 候選數=35, 建卡數=0",
+          "media": "not_applicable",
+          "detail": "完整讀取 data/moc_records.json，未過期且超過 500 筆。35 筆 records 中 29 筆不在表，逐筆審核皆為展覽/工作坊/既有卡片已收錄/非傳統戲曲，已全數處置完畢。"
+        }
+      ]
+    },
+    "issues": {
+      "url": "https://github.com/eric1810-tw/taiwan-opera-calendar/issues?q=is%3Aissue+sort%3Aupdated-desc",
+      "state": "complete",
+      "attempts": [
+        {
+          "at": "2026-10-21T03:16:22+08:00",
+          "method": "gh_api",
+          "url": "https://github.com/eric1810-tw/taiwan-opera-calendar/issues",
+          "state": "complete",
+          "scope": "state=all 共 2 筆 issues (#1, #2)，排除 PR",
+          "media": "not_applicable",
+          "detail": "Issues #1、#2 檢核皆為 open，無新留言或新 issue。"
+        }
+      ]
+    }
+  },
+  "finalizedAt": "2026-10-21T03:18:12+08:00",
+  "publication": {
+    "state": "pending"
+  },
+  "activeTargets": [
+    "threads:joe_huang_k_w",
+    "threads:h.akito_1996",
+    "threads:the_rin.lpm",
+    "threads:1013.yr_",
+    "threads:xuefeng_lu_",
+    "threads:yuzhongluo",
+    "threads:taiwaneseopera168",
+    "threads:jing__1017",
+    "threads:hilang.on.tour",
+    "threads:yolin1991",
+    "facebook:sunhope.fans",
+    "facebook:HsiaoHsiYuan1913",
+    "facebook:100063868113954",
+    "facebook:MingHuaYuanTianTaiwaneseOpera",
+    "facebook:61574134933376",
+    "facebook:mhysun",
+    "facebook:61594936681482",
+    "facebook:lanyang.opera",
+    "facebook:Taichungpuppettheater",
+    "culture",
+    "issues"
+  ]
+}
