@@ -160,5 +160,59 @@
       "布袋戲"
     ],
     "matchedIn": "description"
+  },
+  {
+    "id": "moc-20261211-a4a542a2ad",
+    "date": "2026-12-11",
+    "dateFormatted": "2026/12/11",
+    "daysAway": 0,
+    "time": "2026/12/11 19:00:00",
+    "troupe": "文化部開放資料候選",
+    "genre": "布袋戲",
+    "artist": "待查官方公告",
+    "title": "「戲來就演！」－布袋戲演師們的大挑戰",
+    "category": "文化部 Open Data 候選（待人工核實）",
+    "badgeType": "plan",
+    "verifyStatus": "pending",
+    "verifyLabel": "⏳ 自動發現・待人工核實",
+    "location": "輔仁大學外語學院華觀劇場",
+    "region": "北部",
+    "status": "待人工核實",
+    "description": "由文化部公開資料關鍵字找到；發布前請人工核對劇種、主辦單位、日期與場地。",
+    "link": "https://www.opentix.life/program/2109890724705943553",
+    "linkLabel": "來源資訊（待核實）",
+    "sourceUrl": "https://www.opentix.life/program/2109890724705943553",
+    "tags": [
+      "自動發現候選",
+      "布袋戲"
+    ],
+    "matchedIn": "title/unit"
+  },
+  {
+    "id": "moc-20261212-f951c68d75",
+    "date": "2026-12-12",
+    "dateFormatted": "2026/12/12",
+    "daysAway": 0,
+    "time": "2026/12/12 14:00:00",
+    "troupe": "文化部開放資料候選",
+    "genre": "布袋戲",
+    "artist": "待查官方公告",
+    "title": "「戲來就演！」－布袋戲演師們的大挑戰",
+    "category": "文化部 Open Data 候選（待人工核實）",
+    "badgeType": "plan",
+    "verifyStatus": "pending",
+    "verifyLabel": "⏳ 自動發現・待人工核實",
+    "location": "輔仁大學外語學院華觀劇場",
+    "region": "北部",
+    "status": "待人工核實",
+    "description": "由文化部公開資料關鍵字找到；發布前請人工核對劇種、主辦單位、日期與場地。",
+    "link": "https://www.opentix.life/program/2109890724705943553",
+    "linkLabel": "來源資訊（待核實）",
+    "sourceUrl": "https://www.opentix.life/program/2109890724705943553",
+    "tags": [
+      "自動發現候選",
+      "布袋戲"
+    ],
+    "matchedIn": "title/unit"
   }
 ]
