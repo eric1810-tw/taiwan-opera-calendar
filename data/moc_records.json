@@ -1,6 +1,6 @@
 {
-  "fetchedAt": "2026-10-21T09:11:17+08:00",
-  "total": 1531,
+  "fetchedAt": "2026-10-22T09:08:47+08:00",
+  "total": 1529,
   "records": [
     {
       "version": "1.4",
@@ -77,7 +77,7 @@
       "sourceWebName": "全國藝文活動資訊系統",
       "startDate": "2026/01/01",
       "endDate": "2026/10/25",
-      "hitRate": 53
+      "hitRate": 57
     },
     {
       "version": "1.4",
@@ -225,7 +225,7 @@
       "sourceWebName": "黃俐瑋",
       "startDate": "2026/04/12",
       "endDate": "2026/11/01",
-      "hitRate": 71
+      "hitRate": 72
     },
     {
       "version": "1.4",
@@ -265,7 +265,7 @@
       "sourceWebName": "黃俐瑋",
       "startDate": "2026/04/12",
       "endDate": "2026/11/01",
-      "hitRate": 71
+      "hitRate": 72
     },
     {
       "version": "1.4",
@@ -305,7 +305,7 @@
       "sourceWebName": "黃俐瑋",
       "startDate": "2026/04/12",
       "endDate": "2026/11/01",
-      "hitRate": 71
+      "hitRate": 72
     },
     {
       "version": "1.4",
@@ -445,7 +445,7 @@
       "sourceWebName": "OPENTIX兩廳院文化生活",
       "startDate": "2026/11/07",
       "endDate": "2026/11/07",
-      "hitRate": 3
+      "hitRate": 4
     },
     {
       "version": "1.4",
@@ -995,7 +995,7 @@
       "sourceWebName": "OPENTIX兩廳院文化生活",
       "startDate": "2026/11/07",
       "endDate": "2026/12/20",
-      "hitRate": 21
+      "hitRate": 22
     },
     {
       "version": "1.4",
@@ -1573,6 +1573,50 @@
       "sourceWebName": "OPENTIX兩廳院文化生活",
       "startDate": "2026/12/11",
       "endDate": "2026/12/12",
+      "hitRate": 0
+    },
+    {
+      "version": "1.4",
+      "UID": "6ad8f32d26b3245efc7536fc",
+      "title": "2026金鷹閣電視木偶劇團《叱吒風雲－新哪吒》臺中巡演",
+      "category": "2",
+      "showInfo": [
+        {
+          "time": "2026/11/21 19:30:00",
+          "location": "臺中市豐原區圓環東路782號",
+          "locationName": "臺中市葫蘆墩文化中心演奏廳",
+          "onSales": "Y",
+          "price": "",
+          "latitude": "24.2529902",
+          "longitude": "120.7304148",
+          "endTime": "2026/11/21 21:30:00"
+        },
+        {
+          "time": "2026/11/22 14:30:00",
+          "location": "臺中市豐原區圓環東路782號",
+          "locationName": "臺中市葫蘆墩文化中心演奏廳",
+          "onSales": "Y",
+          "price": "",
+          "latitude": "24.2529902",
+          "longitude": "120.7304148",
+          "endTime": "2026/11/22 16:30:00"
+        }
+      ],
+      "showUnit": "",
+      "discountInfo": "",
+      "descriptionFilterHtml": "",
+      "imageUrl": "",
+      "masterUnit": [],
+      "subUnit": [],
+      "supportUnit": [],
+      "otherUnit": [],
+      "webSales": "https://www.opentix.life/program/2112035354878472193",
+      "sourceWebPromote": "https://www.opentix.life/program/2112035354878472193",
+      "comment": "",
+      "editModifyDate": "",
+      "sourceWebName": "OPENTIX兩廳院文化生活",
+      "startDate": "2026/11/21",
+      "endDate": "2026/11/22",
       "hitRate": 0
     }
   ]
