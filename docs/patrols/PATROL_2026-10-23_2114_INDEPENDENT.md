@@ -4,9 +4,10 @@
 - **開始時間**：`2026-10-23T21:15:11+08:00`
 - **最後嘗試**：`2026-10-23T21:28:29+08:00`
 - **初次發布驗收**：`2026-10-23T21:35:21+08:00`
-- **Codex 審核修訂**：`2026-10-23T22:35:00+08:00`
+- **Codex 審核修訂（第一階段）**：`2026-10-23T22:35:00+08:00`
+- **Codex 審核修訂（第二階段，漏文補正）**：`2026-10-24T00:00:00+08:00`
 - **執行工具**：Antigravity（原生 spawn Microsoft Edge、設定檔 `~/.patrol-edge`、Chrome DevTools Protocol (CDP)、文化部紀錄解析、GitHub CLI）
-- **規範依據**：`AGENTS.md`、`PATROL_OPERATIONS.md`、`handover/inbox/CODEX_AUDIT_AGY_2026-10-23_2114.md`
+- **規範依據**：`AGENTS.md`、`PATROL_OPERATIONS.md`、`handover/inbox/CODEX_AUDIT_MISSED_De1UV_Ikxkl_2026-10-23.md`
 
 ---
 
@@ -21,7 +22,7 @@
 | `threads:the_rin.lpm` | Threads | partial | 6 篇 | 最新 10/20 20:27、最舊 09/26 14:32 | 0 | 否 | `patrol_evidence/2026-10-23_2114/threads_the_rin.lpm.json` |
 | `threads:1013.yr_` | Threads | failed | 0 篇 | 無 | 3 (共4次) | 否 | `patrol_evidence/2026-10-23_2114/threads_1013.yr_.json` |
 | `threads:xuefeng_lu_` | Threads | partial | 7 篇 | 最新 10/20 14:46、最舊 10/08 13:53 | 0 | 否 | `patrol_evidence/2026-10-23_2114/threads_xuefeng_lu_.json` |
-| `threads:yuzhongluo` | Threads | partial | 7 篇 | 最新 10/19 11:16、最舊 10/14 07:49 | 0 | 否 | `patrol_evidence/2026-10-23_2114/threads_yuzhongluo.json` |
+| `threads:yuzhongluo` | Threads | partial | 10 篇 | 最新 10/23 18:14、最舊 10/11 17:50 | 0 | 否 | `patrol_evidence/2026-10-23_2114/threads_yuzhongluo.json` |
 | `threads:taiwaneseopera168` | Threads | partial | 6 篇 | 最新 10/23 13:29、最舊 10/22 21:11 | 0 | 否 | `patrol_evidence/2026-10-23_2114/threads_taiwaneseopera168.json` |
 | `threads:jing__1017` | Threads | partial | 9 篇 | 最新 10/20 18:17、最舊 10/16 00:52 | 0 | 否 | `patrol_evidence/2026-10-23_2114/threads_jing__1017.json` |
 | `threads:hilang.on.tour` | Threads | partial | 7 篇 | 最新 10/14 11:25、最舊 10/02 11:07 | 0 | 否 | `patrol_evidence/2026-10-23_2114/threads_hilang.on.tour.json` |
@@ -42,9 +43,9 @@
 
 ## 2. 提到未來演出之貼文逐篇判斷與比對結果
 
-經 `scripts/extract_mentions.py` 自巡檢證據中提取 235 篇演出相關貼文，篩選出涉及未來（2026-10-23 及以後）之貼文，逐篇核對 `data/schedule.json` 如下：
+經 `scripts/extract_mentions.py` 自巡檢證據中提取 236 篇演出相關貼文，篩選出涉及未來（2026-10-23 及以後）之貼文，逐篇核對 `data/schedule.json` 如下：
 
-### 【新建卡片】（2 筆社群卡片）
+### 【新建卡片】（共 3 筆社群卡片）
 
 1. **繡花園戲劇團《孫臏兵法》臺南柳營代天院場**
    - **來源**：`facebook:61574134933376:5a5635caeeb3`（繡花園戲劇團x明華園地字戲劇團）
@@ -59,6 +60,14 @@
    - **原文逐字片段**：
      > 「HOLIDAY 午後沉浸式茶戲體驗｜限席茶劇場\n 10/24（六）\n 下午 2:00－3:30\n 司茶 × 戲韻 × 茶食共感體驗\n三周年限定折扣｜單人 $1,100・雙人 $1,900\n本場僅開放 12席，席滿即止。\n田和越・茶劇場\n高雄市美術南一街192號」
    - **性質覆核**：帖文明確載明包含「折子好戲」、「茶戲演出」，非單純茶席體驗，屬尚和於田和越茶劇場之常規茶劇場傳統歌仔戲折子戲演出，符合收錄標準，成功建卡。
+
+3. **羅裕誴歌劇團《府城有神・人間有情》（南瀛國際民俗藝術節 薪瀛舞台）**
+   - **來源**：`threads:yuzhongluo:De1UV_Ikxkl`（羅裕誴個人 Threads 官方原帖）
+   - **卡片 ID**：`auto-20261024-84da22bc`
+   - **原文逐字片段**：
+     > 「#羅裕誴歌劇團 與 #八方傳統藝陣創新藝團\n\n繼 #鍘美藝術節、#松王宴，兩個團隊再次攜手，這回將在新營帶來——\n✨ 《府城有神・人間有情》\n\n神明的守護、先民的骨氣、府城的人情，將透過歌仔戲與藝陣交織呈現。真正的唱腔、身段與舞台震撼，還是要邀大家親自來感受！\n\n🎭 2026 #南瀛國際民俗藝術節\n傳統藝術創新劇場\n《府城有神・人間有情》\n\n📅 就在明天｜10/24（六）16:30\n📍 新營文化中心演藝廳前「薪瀛舞台」」
+   - **新增事實**：日期 2026-10-24、時間 16:30、地點 新營文化中心演藝廳前「薪瀛舞台」、劇團 羅裕誴歌劇團、劇名 府城有神・人間有情。
+   - **根因查核**：本帖發布於 10/23 18:14（台北時間），在 21:15 巡檢前已發布。初次巡檢時，Edge 開啟 `https://www.threads.com/@yuzhongluo` 個人頁，Threads SPA 頁面動態載入的貼文列表未即時水合最新貼文，首頁僅渲染至 10/19 之貼文，導致初次擷取之 `threads_yuzhongluo.json` 遺漏本帖。經 Codex 審核指認原帖後，直接連線貼文確認屬實，納入存證並依標準流程建卡。
 
 ### 【更新既有卡片】（1 筆）
 
@@ -101,7 +110,7 @@
    - **原文片段**：「🗓️演出日期：10月24（六） ⏰演出時間：待公布 📍演出地點：雲林四湖參天宮廣場」
    - **核對結果**：卡片已收錄，資訊一致。
 
-6. **鶯藝歌劇團 南廠武英殿**
+6. **鶯藝歌劇團 南廠武英殿（夜戲）**
    - **來源**：`threads:yuzhongluo:DeqRWvwmTTj`、`threads:yuzhongluo:DeqRSuNGRfu`
    - **比對卡片**：`luo-2026-10-23-wuyingdian`
    - **原文片段**：「國曆10月23、24日 地點：台南市大智街135號~南廠武英殿 鶯藝歌劇團」
@@ -121,7 +130,7 @@
 2. `facebook:Taichungpuppettheater`（`11/1 偶遇科技講座`）：講座工作坊，非演出。
 3. `facebook:Taichungpuppettheater`（`11/14 戶外演出-《波比大冒險》`）：正文未列地點，保留待查。
 4. `threads:the_rin.lpm`（`《戲棚下・逐星路》講座`）：講座活動，非演出。
-5. `threads:yuzhongluo`（`10月24日 八方傳統藝陣創新藝團 八家將+聖王再現`）：藝陣展演，非傳統戲曲。
+5. `threads:yuzhongluo`（`10月24日 八方傳統藝陣創新藝團 八家將+聖王再現`）：純藝陣展演，非傳統戲曲。
 
 ---
 
@@ -171,8 +180,12 @@
 
 - **初次資料提交 SHA**：[`af38779ad5a4c4481c3c7522cfee517417ef09ac`](https://github.com/eric1810-tw/taiwan-opera-calendar/commit/af38779ad5a4c4481c3c7522cfee517417ef09ac)
 - **初次 GitHub Actions Run**：[Run ID 39962234913](https://github.com/eric1810-tw/taiwan-opera-calendar/actions/runs/39962234913)（push / success）
-- **公開驗收指令**：`python3 scripts/patrol_progress.py verify --run patrol_runs/2026-10-23_2114.json --sha af38779ad5a4c4481c3c7522cfee517417ef09ac --actions-run 39962234913`
-- **覆核修訂資料提交**：即將隨本次審核修正提交推送。
+- **審核修訂資料提交 SHA**：[`22b810b1bdf8dc1439e10c1a000b82383852cac9`](https://github.com/eric1810-tw/taiwan-opera-calendar/commit/22b810b1bdf8dc1439e10c1a000b82383852cac9)
+- **修訂 GitHub Actions Run**：[Run ID 39971364072](https://github.com/eric1810-tw/taiwan-opera-calendar/actions/runs/39971364072)（push / success）
+- **漏文補正資料提交 SHA**：[`0ce92708e0bb8a975f2326269e37720acd9d240e`](https://github.com/eric1810-tw/taiwan-opera-calendar/commit/0ce92708e0bb8a975f2326269e37720acd9d240e)
+- **補正 GitHub Actions Run**：[Run ID 39983624250](https://github.com/eric1810-tw/taiwan-opera-calendar/actions/runs/39983624250)（push / success）
+- **公開驗收指令**：`python3 scripts/patrol_progress.py verify --run patrol_runs/2026-10-23_2114.json --sha 0ce92708e0bb8a975f2326269e37720acd9d240e --actions-run 39983624250`
+- **compare-public 比對結果**：全數三檔 `allMatch: true`。
 
 ---
 
@@ -180,4 +193,5 @@
 
 1. `threads:1013.yr_`：經 4 次有界重試（重新載入、等待 30 秒、等待 60 秒開個人頁）皆擷取 0 篇，記為 `failed`。
 2. 尚和《西遊記之芭蕉密碼》11/29 場次：正文未列時間與地點，待圖片海報讀取或專案貼文補齊後建卡。
-3. 社群圖片：目前全數社群媒體記為 `unread`，維持 `partial` 狀態。
+3. Threads 首頁列表水合機制：觀察到 Threads 個人頁在無頭瀏覽器環境下，偶有未即時推播最新發文之現象，後續巡檢排程應考慮在巡檢規程中納入對關鍵監看帳號之快取更新或直連機制。
+4. 社群圖片：目前全數社群媒體記為 `unread`，維持 `partial` 狀態。
