@@ -179,7 +179,7 @@
     "dateFormatted": "國曆：2026/10/23（五）–2026/10/24（六）",
     "lunarDate": "農曆：九月十四至十五",
     "daysAway": 0,
-    "time": "未公布；請洽劇團或廟方",
+    "time": "10/23 下午 3:30、10/24 下午 5:00",
     "troupe": "明華園天字戲劇團",
     "genre": "歌仔戲",
     "artist": "明華園天字戲劇團演出團隊（個別演員未公布）",
@@ -194,9 +194,10 @@
     "description": "明華園天字戲劇團115年農曆九月（國曆10–11月）戲路表列此行程，保留國曆與農曆日期。未列開演時間、劇目與各場演員；同日多地為總表所列，不推定同一組演員跨場。出發前請確認劇團或廟方最新公告。",
     "link": "https://www.facebook.com/MingHuaYuanTianTaiwaneseOpera/posts/pfbid02nbH9JZn25DN81QQgDQnwwBwnPeDmraGQQyTapD33rujkA3WYaUjGEwskEGKfuhrkl?locale=zh_TW",
     "linkLabel": "天字團官方 Facebook 最新戲路表",
-    "sourceUrl": "https://www.facebook.com/MingHuaYuanTianTaiwaneseOpera/posts/pfbid02nbH9JZn25DN81QQgDQnwwBwnPeDmraGQQyTapD33rujkA3WYaUjGEwskEGKfuhrkl?locale=zh_TW",
+    "sourceUrl": "https://www.facebook.com/photo/?fbid=1650076190464636",
     "relatedSourceUrls": [
-      "https://www.facebook.com/photo/?fbid=1534005115438442&set=a.469769225195375"
+      "https://www.facebook.com/photo/?fbid=1534005115438442&set=a.469769225195375",
+      "https://www.facebook.com/MingHuaYuanTianTaiwaneseOpera/posts/pfbid02nbH9JZn25DN81QQgDQnwwBwnPeDmraGQQyTapD33rujkA3WYaUjGEwskEGKfuhrkl?locale=zh_TW"
     ],
     "tags": [
       "明華園天字戲劇團",
@@ -2416,6 +2417,30 @@
     "sourceUrl": "https://www.facebook.com/photo/?fbid=122186687630804497",
     "tags": [
       "繡花園戲劇團"
+    ]
+  },
+  {
+    "id": "auto-20261024-f7a76b26",
+    "date": "2026-10-24",
+    "dateFormatted": "2026/10/24",
+    "daysAway": 1,
+    "time": "下午 2:00",
+    "troupe": "尚和歌仔戲劇團",
+    "genre": "歌仔戲",
+    "artist": "未公布",
+    "title": "HOLIDAY 午後沉浸式茶戲體驗",
+    "category": "預定演出",
+    "badgeType": "plan",
+    "verifyStatus": "community",
+    "verifyLabel": "📣 社群公告（程式比對原文）",
+    "location": "高雄市美術南一街192號（田和越・茶劇場）",
+    "region": "南部",
+    "status": "依社群公告；未列事項請洽劇團或廟方",
+    "description": "依 sunhope.fans 近期 公告：「HOLIDAY 午後沉浸式茶戲體驗｜限席茶劇場\n 10/24（六）\n 下午 2:00－3:30\n 司茶 × 戲韻 × 茶食共感體驗\n三周年限定折扣｜單人 $1,100・雙人 $1,900\n本場僅開放 12席，席滿即止。\n田和越・茶劇場\n高雄市美術南一街192號」",
+    "link": "https://www.facebook.com/photo/?fbid=1751534466978262",
+    "sourceUrl": "https://www.facebook.com/photo/?fbid=1751534466978262",
+    "tags": [
+      "尚和歌仔戲劇團"
     ]
   }
 ]
