@@ -2466,5 +2466,55 @@
     "tags": [
       "羅裕誴歌劇團"
     ]
+  },
+  {
+    "id": "moc-2088104133013299200-dec93f",
+    "date": "2026-12-04",
+    "dateFormatted": "2026/12/04–2026/12/06",
+    "daysAway": 41,
+    "time": "2026/12/04 19:30:00、2026/12/05 14:30:00、2026/12/06 10:30:00、2026/12/06 14:30:00",
+    "troupe": "文化部演出團隊",
+    "genre": "布袋戲",
+    "artist": "文化部演出團隊",
+    "title": "偶偶偶劇團《小狐狸買手套》",
+    "category": "售票演出",
+    "badgeType": "ticket",
+    "verifyStatus": "verified",
+    "verifyLabel": "🛡️ 文化部開放資料",
+    "location": "文山劇場（臺北市文山區景文街32號，捷運景美站1號出口）",
+    "region": "北部",
+    "status": "文化部開放資料",
+    "description": "文化部開放資料：偶偶偶劇團《小狐狸買手套》；文山劇場；2026/12/04 19:30:00、2026/12/05 14:30:00、2026/12/06 10:30:00、2026/12/06 14:30:00",
+    "link": "https://www.opentix.life/program/2088104133013299200",
+    "sourceUrl": "https://www.opentix.life/program/2088104133013299200",
+    "tags": [
+      "文化部演出團隊",
+      "布袋戲"
+    ],
+    "endDate": "2026-12-06"
+  },
+  {
+    "id": "auto-20261024-5717b6a3",
+    "date": "2026-10-24",
+    "dateFormatted": "2026/10/24",
+    "daysAway": 0,
+    "time": "未公布",
+    "troupe": "新吉義林歌劇團",
+    "genre": "歌仔戲",
+    "artist": "未公布",
+    "title": "新吉義林歌劇團 演出資訊",
+    "category": "廟會民俗演出",
+    "badgeType": "temple",
+    "verifyStatus": "community",
+    "verifyLabel": "📣 社群公告（程式比對原文）",
+    "location": "雲林四湖參天宮廣場",
+    "region": "中部",
+    "status": "依社群公告；未列事項請洽劇團或廟方",
+    "description": "依 @yolin1991 2026-10-22 公告：「📌新吉義林歌劇團 演出資訊 📣 🗓️演出日期：10月24（六） ⏰演出時間：待公布 📍演出地點：雲林四湖參天宮廣場」",
+    "link": "https://www.threads.com/@yolin1991/post/DeyBKTzGgA6",
+    "sourceUrl": "https://www.threads.com/@yolin1991/post/DeyBKTzGgA6",
+    "tags": [
+      "新吉義林歌劇團"
+    ]
   }
 ]
