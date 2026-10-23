@@ -1,0 +1,168 @@
+# 2026-10-23 21:14 臺灣戲曲獨立巡檢與發布驗收報告
+
+- **巡檢識別**：`patrol_runs/2026-10-23_2114.json`
+- **開始時間**：`2026-10-23T21:15:11+08:00`
+- **最後嘗試**：`2026-10-23T21:28:29+08:00`
+- **驗收完成**：`2026-10-23T21:35:21+08:00`
+- **執行工具**：Antigravity（原生 spawn Microsoft Edge、設定檔 `~/.patrol-edge`、Chrome DevTools Protocol (CDP)、文化部紀錄解析、GitHub CLI）
+- **規範依據**：`AGENTS.md`、`PATROL_OPERATIONS.md`
+
+---
+
+## 1. 21 個來源逐一巡檢與存證結果
+
+共巡檢 21 個目標來源，狀態動態計算為：**2 complete、18 partial、1 failed、0 pending**。總狀態依覆蓋率規則忠實判定為 **`failed`**（未達 100% 覆蓋，有 1 個 failed 來源）。
+
+| 來源鍵 | 平台／類型 | 狀態 | 擷取篇數 | 最新／最舊貼文時間 | 重試次數 | 登入牆 | 證據檔案 |
+|---|---|---|---|---|---|---|---|
+| `threads:joe_huang_k_w` | Threads | partial | 10 篇 | 最新 10/20 00:35、最舊 10/13 15:11 | 0 | 否 | `patrol_evidence/2026-10-23_2114/threads_joe_huang_k_w.json` |
+| `threads:h.akito_1996` | Threads | partial | 10 篇 | 最新 10/22 20:56、最舊 10/16 00:05 | 0 | 否 | `patrol_evidence/2026-10-23_2114/threads_h.akito_1996.json` |
+| `threads:the_rin.lpm` | Threads | partial | 6 篇 | 最新 10/20 20:27、最舊 09/26 14:32 | 0 | 否 | `patrol_evidence/2026-10-23_2114/threads_the_rin.lpm.json` |
+| `threads:1013.yr_` | Threads | failed | 0 篇 | 無 | 3 (共4次) | 否 | `patrol_evidence/2026-10-23_2114/threads_1013.yr_.json` |
+| `threads:xuefeng_lu_` | Threads | partial | 7 篇 | 最新 10/20 14:46、最舊 10/08 13:53 | 0 | 否 | `patrol_evidence/2026-10-23_2114/threads_xuefeng_lu_.json` |
+| `threads:yuzhongluo` | Threads | partial | 7 篇 | 最新 10/19 11:16、最舊 10/14 07:49 | 0 | 否 | `patrol_evidence/2026-10-23_2114/threads_yuzhongluo.json` |
+| `threads:taiwaneseopera168` | Threads | partial | 6 篇 | 最新 10/23 13:29、最舊 10/22 21:11 | 0 | 否 | `patrol_evidence/2026-10-23_2114/threads_taiwaneseopera168.json` |
+| `threads:jing__1017` | Threads | partial | 9 篇 | 最新 10/20 18:17、最舊 10/16 00:52 | 0 | 否 | `patrol_evidence/2026-10-23_2114/threads_jing__1017.json` |
+| `threads:hilang.on.tour` | Threads | partial | 7 篇 | 最新 10/14 11:25、最舊 10/02 11:07 | 0 | 否 | `patrol_evidence/2026-10-23_2114/threads_hilang.on.tour.json` |
+| `threads:yolin1991` | Threads | partial | 7 篇 | 最新 10/22 11:28、最舊 10/13 21:15 | 0 | 否 | `patrol_evidence/2026-10-23_2114/threads_yolin1991.json` |
+| `facebook:sunhope.fans` | Facebook | partial | 32 篇 | 時間未辨識 32 篇 | 0 | 否 | `patrol_evidence/2026-10-23_2114/facebook_sunhope.fans.json` |
+| `facebook:HsiaoHsiYuan1913` | Facebook | partial | 33 篇 | 時間未辨識 33 篇 | 0 | 否 | `patrol_evidence/2026-10-23_2114/facebook_HsiaoHsiYuan1913.json` |
+| `facebook:100063868113954` | Facebook | partial | 35 篇 | 時間未辨識 35 篇 | 0 | 否 | `patrol_evidence/2026-10-23_2114/facebook_100063868113954.json` |
+| `facebook:MingHuaYuanTianTaiwaneseOpera` | Facebook | partial | 29 篇 | 時間未辨識 29 篇 | 0 | 否 | `patrol_evidence/2026-10-23_2114/facebook_MingHuaYuanTianTaiwaneseOpera.json` |
+| `facebook:61574134933376` | Facebook | partial | 27 篇 | 時間未辨識 27 篇 | 0 | 否 | `patrol_evidence/2026-10-23_2114/facebook_61574134933376.json` |
+| `facebook:mhysun` | Facebook | partial | 30 篇 | 時間未辨識 30 篇 | 0 | 否 | `patrol_evidence/2026-10-23_2114/facebook_mhysun.json` |
+| `facebook:61594936681482` | Facebook | partial | 6 篇 | 時間未辨識 6 篇 | 0 | 否 | `patrol_evidence/2026-10-23_2114/facebook_61594936681482.json` |
+| `facebook:lanyang.opera` | Facebook | partial | 31 篇 | 時間未辨識 31 篇 | 0 | 否 | `patrol_evidence/2026-10-23_2114/facebook_lanyang.opera.json` |
+| `facebook:Taichungpuppettheater` | Facebook | partial | 32 篇 | 時間未辨識 32 篇 | 0 | 否 | `patrol_evidence/2026-10-23_2114/facebook_Taichungpuppettheater.json` |
+| `culture` | 文化部 | complete | 1534 筆 | 候選 37 筆，不在表 30 筆；新增 1 筆，其餘 29 筆逐筆審核處置完成 | 0 | 否 | `data/moc_records.json` |
+| `issues` | GitHub | complete | 2 筆 | Issues #1、#2 檢核皆為 open，無新留言 | 0 | 否 | GitHub CLI & REST API |
+
+---
+
+## 2. 提到未來演出之貼文逐篇判斷與比對結果
+
+經 `scripts/extract_mentions.py` 自巡檢證據中提取 235 篇演出相關貼文，篩選出涉及未來（2026-10-23 及以後）之貼文，逐篇核對 `data/schedule.json` 如下：
+
+### 【新建卡片】（1 筆）
+
+1. **繡花園戲劇團《孫臏兵法》臺南柳營代天院場**
+   - **來源**：`facebook:61574134933376:5a5635caeeb3`（繡花園戲劇團x明華園地字戲劇團）
+   - **卡片 ID**：`auto-20261118-f7e6977b`
+   - **原文逐字片段**：
+     > 「這回，《孫臏兵法》將來到臺南柳營！\n邀請喜愛歌仔戲的朋友，一起走進戲臺前，欣賞這齣融合文戲、武戲與精彩身段的好戲！\n新營五間厝大豐宮 ◎慶讚 柳營代天院｜柳營王醮 \n《敬王爺‧看大戲》\n【柳營代天院】\n三年一科。世紀盛典\n     ｜柳   營   王   醮｜\n臺南市定民俗\n柳營區首項登錄的無形文化資產\n罕見的「內陸型王醮」以及全臺少見「陸地燒王船」\n不僅是一場消除瘟疫、祈求平安的宗教祭典\n更是凝聚柳營、新營、鹽水、六甲等「13庄20聚落」跨區域情感的重要文化紐帶\n邀請大家一起來《敬王爺‧看大戲》\n 好戲在廟口，作伙來捧場！\n 演出資訊\n 演出日期｜2026/11/18（三）\n 演出地點｜臺南市柳營區 柳營代天院\n（臺南市柳營區東昇里中山西路一段362號）\n 晚上 7:00｜三仙大會\n 晚上 7:30｜正戲開演\n11月18日，柳營代天院，咱們戲臺見！\n我們是 #繡花園戲劇團」
+   - **新增事實**：日期 2026-11-18、時間 晚上 7:30、地點 臺南市柳營區東昇里中山西路一段362號（柳營代天院）、劇團 繡花園戲劇團、劇名 孫臏兵法。
+
+### 【已在表且一致】
+
+1. **明華園天字戲劇團 南廠水門宮外台**
+   - **來源**：`facebook:100063868113954`（postKey: `40e6571de221`、`98d53656a912`、`453210617f09`，吳奕萱粉專）
+   - **比對卡片**：`mhy-tian-2026-10-23-shuimen`
+   - **原文片段**：「南廠水門宫 時間：10/23-10/24 地點：台南市南區仁南街86號 外台公演」
+   - **核對結果**：卡片已有收錄 10/23–10/24 臺南市南區文南里仁南街86號（水門宮），資訊一致。
+
+2. **明華園天字戲劇團 2026閩南傳統藝術巡演《八仙傳奇》桃園龜山場**
+   - **來源**：`facebook:MingHuaYuanTianTaiwaneseOpera:0bd067ca1bb5`
+   - **比對卡片**：`mhy-tian-2026-10-25-bade`
+   - **原文片段**：「演出日期｜10/25（日） 演出時間｜19:00－21:30 演出地點｜壽山巖觀音寺停車場（桃園市龜山區嶺頂里萬壽路二段6巷111號）」
+   - **核對結果**：卡片已收錄，日期、時間、劇目與地點完全一致。
+
+3. **台中木偶劇團《聖劍風雲三》**
+   - **來源**：`facebook:Taichungpuppettheater:54ea745e612f`
+   - **比對卡片**：`tcpt-2026-11-07-shengjianfengyun-3`
+   - **原文片段**：「《聖劍風雲三》火熱售票中 11/7（六）歡迎一起進劇場來看戲」
+   - **核對結果**：卡片已收錄 2026-11-07 臺中市屯區藝文中心實驗劇場，資訊一致。
+
+4. **明華園戲劇總團《烏龍天下》**
+   - **來源**：`facebook:mhysun:8fcfb0e9df79`
+   - **比對卡片**：`mhy-flagship-2026-11-20`
+   - **原文片段**：「明華園戲劇總團下半年重頭大戲——《烏龍天下》」
+   - **核對結果**：卡片已收錄，資訊一致。
+
+5. **秀琴歌劇團《玉石變》新莊保元宮**
+   - **來源**：`threads:the_rin.lpm:DdvZekJE9Mm`
+   - **比對卡片**：`sq-2026-11-07-baoyuangong`
+   - **原文片段**：「📅11/07 19：00 🎭戲碼：《玉石變》📍地點：新莊保元宮」
+   - **核對結果**：卡片已收錄，資訊一致。
+
+6. **新吉義林歌劇團 雲林四湖參天宮**
+   - **來源**：`threads:yolin1991:DeyBKTzGgA6`
+   - **比對卡片**：`yolin-2026-10-24-santian`
+   - **原文片段**：「🗓️演出日期：10月24（六） ⏰演出時間：待公布 📍演出地點：雲林四湖參天宮廣場」
+   - **核對結果**：卡片已收錄，資訊一致。
+
+7. **鶯藝歌劇團 南廠武英殿**
+   - **來源**：`threads:yuzhongluo:DeqRWvwmTTj`、`threads:yuzhongluo:DeqRSuNGRfu`
+   - **比對卡片**：`luo-2026-10-23-wuyingdian`
+   - **原文片段**：「國曆10月23、24日 地點：台南市大智街135號~南廠武英殿 鶯藝歌劇團」
+   - **核對結果**：卡片已收錄且地址已更新，資訊一致。
+
+### 【非演出／海報未讀】
+
+- `facebook:Taichungpuppettheater`（`11/1 偶遇科技講座`）：講座工作坊，非演出。
+- `facebook:Taichungpuppettheater`（`11/14 戶外演出-《波比大冒險》`）：正文未列地點，保留待查。
+- `facebook:sunhope.fans`（`10/24 HOLIDAY 午後沉浸式茶戲體驗`）：限席茶劇場體驗，非傳統戲曲演出。
+- `facebook:sunhope.fans`（`尚和秋冬開演啦`）：多場彙總圖表，正文未列未來單場明細，列入「海報未讀」。
+- `threads:the_rin.lpm`（`《戲棚下・逐星路》講座`）：講座活動，非演出。
+- `threads:yuzhongluo`（`10月24日 八方傳統藝陣創新藝團 八家將+聖王再現`）：藝陣展演，非傳統戲曲。
+
+---
+
+## 3. 文化部開放資料比對
+
+- **來源檔案**：`data/moc_records.json`（由 GitHub 更新器產生）
+- **抓取時間（fetchedAt）**：`2026-10-23T09:08:19+08:00`（未逾 36 小時門檻）
+- **資料總筆數（total）**：1534 筆（達 500 筆新鮮度門檻）
+- **篩選候選數**：37 筆
+- **在表數**：7 筆
+- **不在表 30 筆之逐筆處置與理由**：
+
+1. `2026金鷹閣電視木偶劇團《叱吒風雲－新哪吒》臺中巡演`：傳統戲曲木偶劇售票演出，**成功建卡**（卡片 ID `moc-2112035354878472193-f1daf3`）。
+2. `桃園市土地公文化館常設展-302土地公節日慶典與科儀活動`：常設展覽，非演出。
+3. `世紀初戀－楊麗花歌仔戲特展`：特展，非演出。
+4. `2026年1月【雲林布袋戲館-「掌演乾坤」常設展】`：常設展，非演出。
+5. `2026年1月【雲林布袋戲館-《傳藝之魂‧黃海岱與戲偶之道》特展】`：特展，非演出。
+6. `高雄市皮影戲館常設展`：常設展，非演出。
+7. `115年「掌藝薪傳-大師工作坊」`（台北偶戲館）：研習工作坊，非演出。
+8. `115年「掌藝薪傳-大師工作坊」`（類別 200）：研習工作坊，非演出。
+9. `115年「掌藝薪傳-大師工作坊」`（類別 4）：研習工作坊，非演出。
+10. `三昧堂精工布袋戲展`（2026/01/31）：展覽，非演出。
+11. `三昧堂精工布袋戲展`（2027/01/01）：展覽，非演出。
+12. `【掌中戲】五洲勝義閣掌中劇團《濟世降魔傳》`：既有卡片已收錄（ID: `wz-2026-10-31`，2026-10-31 大稻埕戲苑曲藝場）。
+13. `【特展】 「請戲-布袋戲一條街」特展`：特展，非演出。
+14. `金鷹歸來：隆興閣掌中武林特展`：特展，非演出。
+15. `長義閣掌中劇團「銳劇場」系列 -《我,哪吒》`：既有卡片已收錄（ID: `cyg-2026-12-05-nezha`，2026-12-05 ~ 12-06 烏梅劇院）。
+16. `【歌仔戲】元和劇子-鼓震千秋《梁紅玉》`：既有卡片已收錄（ID: `yuanhe-2026-10-30`，2026-10-30 大稻埕戲苑）。
+17. `義興閣掌中劇團《豆花公劇場版－拍斷手骨顛倒勇》`：既有卡片已收錄（ID: `yxg-2026-12-05-douhuagong-chiayi`，嘉義場）。
+18. `義興閣掌中劇團《四靈國：天祥書之謎》`：既有卡片已收錄（ID: `yxg-2026-11-21-silingguo-taipei`，台北場）。
+19. `2026 NTT遇見巨人—唐美雲歌仔戲團《南都幽靈夜譚》`：既有卡片已收錄（ID: `tmy-tc-2026-12-26`，2026-12-26 ~ 12-27 臺中國家歌劇院大劇院）。
+20. `2026歌仔戲旗艦展演補助計畫-明華園總團旗艦製作《烏龍天下》`：標題含展且既有卡片已收錄（ID: `mhy-flagship-2026-11-20`，台北場）。
+21. `2026歌仔戲旗艦展演—唐美雲歌仔戲團《南都幽靈夜譚》`：標題含展且既有卡片已收錄（ID: `tmy-flagship-2026-11-27`，台北場）。
+22. `張雅淳×李婉菁《唸歌去天庭：老仙婆的跨界音樂會》`：既有卡片已收錄（ID: `opentix-2026-10-25-niangetwentian-zhangyachun`，2026-10-25 牯嶺街小劇場）。
+23. `【2026KIPF】錦飛鳳傀儡戲劇團 《靖姑傳奇》`：既有卡片已收錄（ID: `opentix-2026-10-25-jinfeifeng-jingguchuanqi`，2026-10-25 高雄市皮影戲館3樓劇場）。
+24. `【2026KIPF】金鷹閣電視木偶劇團 《西遊記之鬧天宮》`：既有卡片已收錄（ID: `opentix-2026-10-25-jinyingge-naotiangong`，2026-10-25 高雄市岡山文化中心演藝廳）。
+25. `偶偶偶劇團《小狐狸買手套》`：現代兒童劇（物件偶/光影），非傳統戲曲（非歌仔戲/布袋戲/皮影戲/傀儡戲），不建卡。
+26. `兒童布袋戲《焰王現身：心火山的祕密》`：既有卡片已收錄（ID: `child-puppets-2026-10-31`，2026-10-31 ~ 11-01 水源劇場）。
+27. `台中木偶劇團 《聖劍風雲三》`：既有卡片已收錄（ID: `tcpt-2026-11-07-shengjianfengyun-3`，2026-11-07 臺中市屯區藝文中心實驗劇場）。
+28. `登出世界、登入自我！《虛。實─數位與我》插畫創作聯展`（類別 6）：插畫展覽，非戲曲演出。
+29. `登出世界、登入自我！《虛。實─數位與我》插畫創作聯展`（類別 200）：插畫展覽，非戲曲演出。
+30. `登出世界、登入自我！《虛。實─數位與我》插畫創作聯展`（類別 4）：插畫展覽，非戲曲演出。
+
+---
+
+## 4. 發布與公開驗收結果
+
+- **資料提交 SHA**：[`af38779ad5a4c4481c3c7522cfee517417ef09ac`](https://github.com/eric1810-tw/taiwan-opera-calendar/commit/af38779ad5a4c4481c3c7522cfee517417ef09ac)
+- **GitHub Actions Run**：[Run ID 39962234913](https://github.com/eric1810-tw/taiwan-opera-calendar/actions/runs/39962234913)（push / success）
+- **公開驗收指令**：`python3 scripts/patrol_progress.py verify --run patrol_runs/2026-10-23_2114.json --sha af38779ad5a4c4481c3c7522cfee517417ef09ac --actions-run 39962234913`
+- **驗收狀態**：`publication.state = "verified"`
+- **公開檔案一致性**（`python3 scripts/patrol_progress.py compare-public`）：
+  - `data/schedule.json`: `68a24fab5c3883ab2cbfc3210e910bd946966f0558ef6897e64b0deb2841dfe1`（逐位元一致）
+  - `data/patrol_status.json`: `3733c847fec86d84fbb2648e7764e1f7250be68a608bb4cef617bd68b23c58f5`（逐位元一致）
+  - `data/metadata.json`: `950100068bdbe3fe53dfa9c2d0184cd0496a2640b867a1b876f895545d478166`（逐位元一致）
+
+---
+
+## 5. 未完成項目與後續交接
+
+1. `threads:1013.yr_`：經 4 次有界重試（重新載入、等待 30 秒、等待 60 秒開個人頁）皆擷取 0 篇，記為 `failed`。
+2. 社群圖片：目前全數社群媒體記為 `unread`，維持 `partial` 狀態。
