@@ -117,6 +117,15 @@
           "scope": "擷取 7 篇（本人／頂層）；最新 2026-10-19T11:16:16+08:00、最舊 2026-10-14T07:49:23+08:00；含未辨識時間 0 篇；登入牆＝否；證據 patrol_evidence/2026-10-23_2114/threads_yuzhongluo.json",
           "media": "unread",
           "detail": "CDP 捲動 5 次，共保留 7 篇（本人/頂層）貼文"
+        },
+        {
+          "at": "2026-10-23T23:58:31+08:00",
+          "method": "social-reader-cdp",
+          "url": "https://www.threads.com/@yuzhongluo",
+          "state": "partial",
+          "scope": "擷取 9 篇（本人／頂層）；最新 2026-10-19T11:15:44+08:00、最舊 2026-10-11T17:50:34+08:00；含未辨識時間 0 篇；登入牆＝否；證據 patrol_evidence/2026-10-23_2114/threads_yuzhongluo.json",
+          "media": "unread",
+          "detail": "CDP 捲動 5 次，共保留 9 篇（本人/頂層）貼文"
         }
       ]
     },
@@ -346,26 +355,9 @@
       ]
     }
   },
-  "finalizedAt": "2026-10-23T21:32:52+08:00",
+  "finalizedAt": "2026-10-24T00:03:18+08:00",
   "publication": {
-    "state": "verified",
-    "sha": "af38779ad5a4c4481c3c7522cfee517417ef09ac",
-    "actionsRun": "39962234913",
-    "actionsUrl": "https://github.com/eric1810-tw/taiwan-opera-calendar/actions/runs/39962234913",
-    "publicUrl": "https://eric1810-tw.github.io/taiwan-opera-calendar/data/patrol_status.json",
-    "verifiedAt": "2026-10-23T21:35:21+08:00",
-    "publicStatus": {
-      "startedAt": "2026-10-23T21:15:11+08:00",
-      "lastAttemptAt": "2026-10-23T21:28:29+08:00",
-      "status": "failed",
-      "counts": {
-        "complete": 2,
-        "partial": 18,
-        "failed": 1,
-        "pending": 0,
-        "total": 21
-      }
-    }
+    "state": "pending"
   },
   "activeTargets": [
     "threads:joe_huang_k_w",
@@ -389,5 +381,31 @@
     "facebook:Taichungpuppettheater",
     "culture",
     "issues"
+  ],
+  "publicationHistory": [
+    {
+      "publication": {
+        "state": "verified",
+        "sha": "af38779ad5a4c4481c3c7522cfee517417ef09ac",
+        "actionsRun": "39962234913",
+        "actionsUrl": "https://github.com/eric1810-tw/taiwan-opera-calendar/actions/runs/39962234913",
+        "publicUrl": "https://eric1810-tw.github.io/taiwan-opera-calendar/data/patrol_status.json",
+        "verifiedAt": "2026-10-23T21:35:21+08:00",
+        "publicStatus": {
+          "startedAt": "2026-10-23T21:15:11+08:00",
+          "lastAttemptAt": "2026-10-23T21:28:29+08:00",
+          "status": "failed",
+          "counts": {
+            "complete": 2,
+            "partial": 18,
+            "failed": 1,
+            "pending": 0,
+            "total": 21
+          }
+        }
+      },
+      "reason": "record 新增嘗試使原發布失效",
+      "at": "2026-10-23T23:58:31+08:00"
+    }
   ]
 }
