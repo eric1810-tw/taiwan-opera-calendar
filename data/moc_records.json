@@ -1,6 +1,6 @@
 {
-  "fetchedAt": "2026-10-22T09:08:47+08:00",
-  "total": 1529,
+  "fetchedAt": "2026-10-23T09:08:19+08:00",
+  "total": 1534,
   "records": [
     {
       "version": "1.4",
@@ -77,7 +77,7 @@
       "sourceWebName": "全國藝文活動資訊系統",
       "startDate": "2026/01/01",
       "endDate": "2026/10/25",
-      "hitRate": 57
+      "hitRate": 59
     },
     {
       "version": "1.4",
@@ -225,7 +225,7 @@
       "sourceWebName": "黃俐瑋",
       "startDate": "2026/04/12",
       "endDate": "2026/11/01",
-      "hitRate": 72
+      "hitRate": 73
     },
     {
       "version": "1.4",
@@ -265,7 +265,7 @@
       "sourceWebName": "黃俐瑋",
       "startDate": "2026/04/12",
       "endDate": "2026/11/01",
-      "hitRate": 72
+      "hitRate": 73
     },
     {
       "version": "1.4",
@@ -305,7 +305,7 @@
       "sourceWebName": "黃俐瑋",
       "startDate": "2026/04/12",
       "endDate": "2026/11/01",
-      "hitRate": 72
+      "hitRate": 73
     },
     {
       "version": "1.4",
@@ -995,7 +995,7 @@
       "sourceWebName": "OPENTIX兩廳院文化生活",
       "startDate": "2026/11/07",
       "endDate": "2026/12/20",
-      "hitRate": 22
+      "hitRate": 23
     },
     {
       "version": "1.4",
