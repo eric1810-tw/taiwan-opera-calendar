@@ -95,6 +95,8 @@ export function checkInvariants({ finalKeys, firstScreenKeys, headRecheckKeys = 
   if (headLost.length) problems.push('head-recheck-missing');
   const missingKnown = knownPosts
     // 只要求「讀取當下已經發布、且在窗口內」的已知貼文；讀取後才發的不算漏讀
+    // 已確認被作者刪除的（deletedConfirmedAt）不再要求
+    .filter(kp => !kp.deletedConfirmedAt)
     .filter(kp => !kp.postedAt || (new Date(kp.postedAt).getTime() >= windowStartMs && new Date(kp.postedAt).getTime() <= nowMs))
     .map(kp => kp.postKey)
     .filter(k => !final.has(k));

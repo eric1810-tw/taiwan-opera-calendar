@@ -19,13 +19,13 @@ ACTIONS = {"add", "update", "change", "cancel", "confirm"}
 GENRES = {"歌仔戲", "布袋戲"}
 EVENT_TYPES = {"演出", "講座", "體驗"}
 KINDS = {"扮仙", "正戲", "其他"}
-PAGER = re.compile(r"(?<![\d/])\d{1,2}\s+/\s+\d{1,2}(?![\d/])")
+PAGER = re.compile(r"(?<![\d/])(?<!/ )(\d{1,2})\s+/\s+(\d{1,2})(?![\d/])(?!\s*/)")
 TIME_RE = re.compile(r"^(?:[01]?\d|2[0-3]):[0-5]\d$")
 
 
 def strip_pager(text):
-    """Threads 圖片輪播的「1 / 2」「2 / 2」不是日期"""
-    return PAGER.sub(" ", text)
+    """Threads 圖片輪播的「1 / 2」「2 / 2」不是日期（頁碼一定是前數 ≤ 後數 ≤ 20）"""
+    return PAGER.sub(lambda m: " " if int(m.group(1)) <= int(m.group(2)) <= 20 else m.group(0), text)
 
 
 def corpus_for(item, readings):
@@ -39,6 +39,49 @@ def corpus_for(item, readings):
 
 def main_location(loc):
     return re.sub(r"（[^）]*）|\([^)]*\)", "", loc or "").strip()
+
+
+def norm_place(text):
+    t = (text or "").replace("臺", "台").replace("巖", "岩").replace("嚴", "岩")
+    return re.sub(r"[\s　()（）「」『』、，,・·\-–—:：。]", "", t)
+
+
+def subseq_coverage(short, long):
+    """short 的字依序出現在 long 裡的比例（容許地址、廳名、錯字等小差異）"""
+    i = hit = 0
+    for ch in short:
+        j = long.find(ch, i)
+        if j >= 0:
+            hit += 1
+            i = j + 1
+    return hit / len(short) if short else 0.0
+
+
+def place_parts(text):
+    """「地址（場館）」拆成 [整串, 地址, 場館]，兩邊寫法前後顛倒也能比"""
+    text = text or ""
+    parts = [text, main_location(text)] + re.findall(r"[（(]([^）)]*)[）)]", text)
+    return [p for p in parts if len(norm_place(p)) >= 4]
+
+
+def same_place(a, b):
+    na, nb = norm_place(a), norm_place(b)
+    if not na or not nb:
+        return False
+    for pa in place_parts(a):
+        for pb in place_parts(b):
+            if _same(norm_place(pa), norm_place(pb)):
+                return True
+    return _same(na, nb)
+
+
+def _same(na, nb):
+    if not na or not nb:
+        return False
+    if na in nb or nb in na:
+        return True
+    short, long = (na, nb) if len(na) <= len(nb) else (nb, na)
+    return subseq_coverage(short, long) >= 0.8
 
 
 def card_dates(card):
@@ -74,10 +117,9 @@ def diff_against_card(event, card):
     loc = event.get("location")
     if loc and not any(k in loc for k in add_card.UNSPECIFIED_KEYWORDS):
         card_loc = card.get("location") or ""
-        cm, pm = main_location(card_loc), main_location(loc)
-        if any(k in card_loc for k in add_card.UNSPECIFIED_KEYWORDS) or not cm:
+        if any(k in card_loc for k in add_card.UNSPECIFIED_KEYWORDS) or not main_location(card_loc):
             diffs.append({"field": "location", "card": card_loc, "post": loc, "fill": True})
-        elif not (pm and (pm in cm or cm in pm)):
+        elif not same_place(loc, card_loc):
             diffs.append({"field": "location", "card": card_loc, "post": loc})
     return diffs
 
@@ -108,9 +150,9 @@ def check_sessions(event, quote, today, action):
             reasons.append("time-format")
         elif TIME_RE.match(t) and not add_card.match_time_in_quote(t, quote):
             reasons.append("time-not-in-quote")
-        if (s.get("date"), kind) in seen:
+        if (s.get("date"), kind, t) in seen:
             reasons.append("duplicate-session")
-        seen.add((s.get("date"), kind))
+        seen.add((s.get("date"), kind, t))
         if s.get("date") in no_show:
             reasons.append("session-on-no-show-date")
     return reasons
@@ -212,14 +254,15 @@ def validate_batch(pack, proposals, schedule, today=None):
 def find_duplicate(event, schedule):
     """同日＋同地＋同劇團才算同場；同日同地不同劇團不合併"""
     dates = {s["date"] for s in event.get("sessions") or []}
-    pm = main_location(event.get("location"))
     for card in schedule:
-        if card.get("troupe") != event.get("troupe"):
+        if not (dates & set(card_dates(card))):
             continue
-        cm = main_location(card.get("location"))
-        if not (pm and cm and (pm in cm or cm in pm)):
+        if not same_place(event.get("location"), card.get("location")):
             continue
-        if dates & set(card_dates(card)):
+        same_troupe = same_place(event.get("troupe"), card.get("troupe"))
+        titles = re.findall(r"《(.*?)》", event.get("title", ""))
+        same_title = any(t and t in card.get("title", "") for t in titles)
+        if same_troupe or same_title:
             return card["id"]
     return None
 
@@ -231,6 +274,11 @@ def dedupe_within_run(result):
     for change in result["accepted"]:
         ev = change["event"]
         if change["action"] != "add":
+            key = (change["action"], ev.get("targetCardId"))
+            if key in seen:
+                seen[key].setdefault("alsoSources", []).append(change["url"])
+                continue
+            seen[key] = change
             kept.append(change)
             continue
         key = (ev.get("troupe"), main_location(ev.get("location")), tuple(sorted(s["date"] for s in ev.get("sessions") or [])))

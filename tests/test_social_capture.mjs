@@ -72,6 +72,15 @@ test('案例7：03:12 才發的貼文，03:08 讀取時不要求必須出現', (
   assert.equal(r.ok, true);
 });
 
+test('已確認刪除的已知貼文不再要求', () => {
+  const r = checkInvariants({
+    finalKeys: ['a'], firstScreenKeys: ['a'],
+    knownPosts: [{ postKey: 'threads:yuzhongluo:De2R8XSkiWT', postedAt: '2026-10-24T03:12:18+08:00', deletedConfirmedAt: '2026-10-24T23:50:00+08:00' }],
+    windowStartMs: 0, nowMs: Date.parse('2026-10-25T03:00:00+08:00'), loginWall: false,
+  });
+  assert.equal(r.ok, true);
+});
+
 test('不變式：未登入卻首屏 0 篇 → first-screen-empty', () => {
   const r = checkInvariants({ finalKeys: [], firstScreenKeys: [], windowStartMs: 0, loginWall: false });
   assert.ok(r.problems.includes('first-screen-empty'));

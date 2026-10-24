@@ -105,11 +105,38 @@ def match_date_in_quote(target_date: date, quote: str, end_date: date = None) ->
                     return True
         return False
 
-    if not has_single_date(target_date):
+    def in_range(d: date) -> bool:
+        """日期區間：11/20－11/22、11/7（六）－11/8（日）、10/23-24、10月23日至25日"""
+        sep = r"\s*(?:[（(][^）)]{0,4}[）)])?\s*[－~～\-–—至到]\s*"
+        pat = rf"(?<!\d)(\d{{1,2}})\s*[/／月]\s*(\d{{1,2}})\s*日?{sep}(?:(\d{{1,2}})\s*[/／月]\s*)?(\d{{1,2}})(?!\d)"
+        for m in re.finditer(pat, q):
+            m1, d1 = int(m.group(1)), int(m.group(2))
+            m2 = int(m.group(3)) if m.group(3) else m1
+            d2 = int(m.group(4))
+            try:
+                start = date(d.year, m1, d1)
+                end = date(d.year if m2 >= m1 else d.year + 1, m2, d2)
+            except ValueError:
+                continue
+            if start <= d <= end:
+                return True
+        return False
+
+    def iso_or_roc(d: date) -> bool:
+        """2026-10-25、2026/10/25、115/11/7（民國年）"""
+        roc = d.year - 1911
+        pats = [rf"(?<!\d){d.year}\s*[-/／.]\s*0?{d.month}\s*[-/／.]\s*0?{d.day}(?!\d)",
+                rf"(?<!\d){roc}\s*[-/／.]\s*0?{d.month}\s*[-/／.]\s*0?{d.day}(?!\d)"]
+        return any(re.search(pat, q) for pat in pats)
+
+    def found(d: date) -> bool:
+        return has_single_date(d) or iso_or_roc(d) or in_range(d)
+
+    if not found(target_date):
         return False
 
     if end_date and end_date != target_date:
-        if not has_single_date(end_date):
+        if not found(end_date):
             return False
 
     return True
@@ -272,7 +299,7 @@ def validate_sessions(sessions, no_show_dates, quote: str):
             reasons.append("session-kind-invalid")
         if not match_time_in_quote(item.get("time", "未公布"), quote):
             reasons.append("time-not-in-quote")
-        key = (item.get("date"), item.get("kind", "正戲"))
+        key = (item.get("date"), item.get("kind", "正戲"), item.get("time", "未公布"))
         if key in seen:
             reasons.append("duplicate-session")
         seen.add(key)
