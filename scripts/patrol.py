@@ -479,7 +479,8 @@ def step_report(st):
     st.set_step("report", "done")
     outcome = "ok" if not st.data["forEric"] else "needs-eric"
     st.finish(outcome)
-    return {"action": "done", "runId": st.run_id, "outcome": outcome, "report": str(path), "forEric": st.data["forEric"]}
+    return {"action": "done", "runId": st.run_id, "outcome": outcome, "report": str(path), "forEric": st.data["forEric"],
+            "shadowCompare": st.data.get("shadowCompare")}
 
 
 def stop(st, outcome, reason):
