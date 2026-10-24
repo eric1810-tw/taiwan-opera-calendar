@@ -361,3 +361,12 @@ class CaseTwoRoundImages(unittest.TestCase):
         it2 = item("facebook:x:8", "沒有圖的貼文")
         res2 = validate_batch(pack_of(it2), {"dispositions": [disp(it2, "needs-images")]}, [], TODAY)
         self.assertEqual(res2["rejected"][0]["reason"], "needs-images-but-no-images")
+
+
+class CaseDuplicate(unittest.TestCase):
+    def test_same_troupe_same_title_different_place_wording(self):
+        from patrol_v2.validate import find_duplicate
+        ev = {"troupe": "羅裕誴歌劇團", "title": "《府城有神・人間有情》（歌仔戲與藝陣）", "location": "演藝廳戶外廣場大舞台（新營）",
+              "sessions": [{"date": "2026-10-24"}]}
+        card = {**XINYING_CARD, "title": "《府城有神・人間有情》"}
+        self.assertEqual(find_duplicate(ev, [card]), XINYING_CARD["id"])

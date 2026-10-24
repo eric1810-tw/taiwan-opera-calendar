@@ -257,12 +257,12 @@ def find_duplicate(event, schedule):
     for card in schedule:
         if not (dates & set(card_dates(card))):
             continue
-        if not same_place(event.get("location"), card.get("location")):
-            continue
-        same_troupe = same_place(event.get("troupe"), card.get("troupe"))
-        titles = re.findall(r"《(.*?)》", event.get("title", ""))
-        same_title = any(t and t in card.get("title", "") for t in titles)
-        if same_troupe or same_title:
+        place = same_place(event.get("location"), card.get("location"))
+        same_troupe = norm_place(event.get("troupe")) == norm_place(card.get("troupe")) or same_place(event.get("troupe"), card.get("troupe"))
+        titles = re.findall(r"《(.*?)》", event.get("title", "")) or [event.get("title", "")]
+        same_title = any(t and norm_place(t) and norm_place(t) in norm_place(card.get("title", "")) for t in titles)
+        # 同日＋同地＋（同團或同劇目）；或同日＋同團＋同劇目（地點寫法差很多時，例如「演藝廳戶外廣場大舞台」對「薪瀛舞台」）
+        if (place and (same_troupe or same_title)) or (same_troupe and same_title):
             return card["id"]
     return None
 
