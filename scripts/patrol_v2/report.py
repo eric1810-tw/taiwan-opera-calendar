@@ -45,7 +45,7 @@ def write_report(st, work_root, progress_run):
                      ["發布", pub.get("state", "本模式不發布" if st.mode != "production" else "未執行")
                               + (f"；SHA {pub.get('sha')}" if pub.get("sha") else "") + (f"；Actions {pub.get('actionsRun')}" if pub.get("actionsRun") else "")
                               + (f"；原因 {pub.get('reason')}" if pub.get("reason") else "")]]), ""]
-    models = d.get("models", {})
+    models = {**d.get("models", {}), **(read_json(st.dir / "models.json", {}) or {})}
     lines += ["## 模型與用量", "",
               _rows([["角色", "模型", "依據"], ["---", "---", "---"]] +
                     ([[k, v.get("model"), v.get("evidence")] for k, v in models.items()] or [["（未記錄）", "", ""]])), "",

@@ -61,6 +61,8 @@
 4. 「明天」「今晚」依 `datetime` 推算；`datetime` 是 null 的 FB 貼文不能推算相對日期 → `needs-check`。
 5. `quote` 與每個 `evidence.quote` 必須逐字出自該篇 `text` 或該篇海報的判讀紀錄（你自己寫的 reading）。程式會逐字比對，對不上就退回。
 6. 原文沒有的欄位寫「未公布」，不要猜票價、地址、演員。
+6a. `title` 要逐字照抄 quote 裡的劇目（含《》）；沒有劇目才用描述，並含「演出」二字。`troupe` 也要照抄原文寫法。
+6b. `badgeType`：原文寫「免費」才用 free；寫售票、票價、購票或來源是 OPENTIX 才用 ticket；廟會外台用 temple；講座、體驗用 lecture；都看不出來用 plan。
 7. 異動或取消要寫在 `quote` 裡有「異動／更改／改至／改在／延期／取消／停演」等字眼的那段原文。
 8. 一篇可以有多個 events（例如一張戲路表列很多場）。
 

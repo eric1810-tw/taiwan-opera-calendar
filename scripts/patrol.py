@@ -279,7 +279,7 @@ def step_check(st):
         if b.get("round", 1) == 1 and round2_keys:
             # 第二輪看過圖的貼文，以第二輪的處置為準
             pack = {**pack, "items": [i for i in pack["items"] if i["postKey"] not in round2_keys]}
-        res = validate_batch(pack, proposals, schedule, day)
+        res = validate_batch(pack, proposals, schedule, day, st.data["startedAt"][11:16])
         image_requests.extend(res["imageRequests"])
         items = {i["postKey"]: i for i in pack["items"]}
         for sha, reading in res["imageReadings"].items():
@@ -549,10 +549,13 @@ def cmd_next(args):
 
 
 def cmd_models(args):
+    # 另存 models.json：start 可能還在跑（讀社群要十幾分鐘），共用 state.json 會被它存檔時蓋掉
     st = RunState(args.run)
-    st.data.setdefault("models", {})[args.role] = {"model": args.model, "evidence": args.evidence, "at": now()}
-    st.save()
-    return emit({"ok": True, "models": st.data["models"]})
+    path = st.dir / "models.json"
+    models = read_json(path, {}) or {}
+    models[args.role] = {"model": args.model, "evidence": args.evidence, "at": now()}
+    write_json(path, models)
+    return emit({"ok": True, "models": models})
 
 
 def cmd_status(args):

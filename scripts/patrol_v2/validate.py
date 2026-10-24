@@ -124,7 +124,7 @@ def diff_against_card(event, card):
     return diffs
 
 
-def check_sessions(event, quote, today, action):
+def check_sessions(event, quote, today, action, now_hm=None):
     reasons = []
     sessions = event.get("sessions")
     if not isinstance(sessions, list) or not sessions:
@@ -140,6 +140,8 @@ def check_sessions(event, quote, today, action):
             continue
         if action != "cancel" and not (today <= d <= today + timedelta(days=120)):
             reasons.append("date-out-of-range")
+        if action in ("add", "update") and now_hm and d == today and TIME_RE.match(s.get("time", "")) and s["time"].zfill(5) < now_hm:
+            reasons.append("already-past")
         if not add_card.match_date_in_quote(d, q):
             reasons.append("date-not-in-quote")
         kind = s.get("kind", "正戲")
@@ -158,7 +160,8 @@ def check_sessions(event, quote, today, action):
     return reasons
 
 
-def validate_batch(pack, proposals, schedule, today=None):
+def validate_batch(pack, proposals, schedule, today=None, now_hm=None):
+    """now_hm：本輪讀取時間（HH:MM），當天已演完的場次不新建"""
     today = today or date.today()
     cards = {c["id"]: c for c in schedule}
     readings = {r["sha256"]: r for r in proposals.get("imageReadings") or [] if r.get("sha256")}
@@ -221,7 +224,7 @@ def validate_batch(pack, proposals, schedule, today=None):
                 if ev.get("targetCardId") not in cards:
                     reasons.append("target-card-not-found")
             if action != "cancel" or ev.get("sessions"):
-                reasons.extend(check_sessions(ev, quote, today, action))
+                reasons.extend(check_sessions(ev, quote, today, action, now_hm))
             if reasons:
                 bucket = "rejected" if any(r.startswith(("quote-not", "evidence-not", "action", "time-format", "invalid-date")) for r in reasons) else "needsCheck"
                 result[bucket].append({**ref, "reason": ",".join(dict.fromkeys(reasons)), "proposed": ev})

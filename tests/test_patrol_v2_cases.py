@@ -370,3 +370,13 @@ class CaseDuplicate(unittest.TestCase):
               "sessions": [{"date": "2026-10-24"}]}
         card = {**XINYING_CARD, "title": "《府城有神・人間有情》"}
         self.assertEqual(find_duplicate(ev, [card]), XINYING_CARD["id"])
+
+
+class CaseAlreadyPast(unittest.TestCase):
+    def test_same_day_show_already_over_not_added(self):
+        t = "10/24（六）16:30 新營文化中心 羅裕誴歌劇團 演出"
+        it = item("threads:yuzhongluo:x", t)
+        ev = {"action": "add", "genre": "歌仔戲", "eventType": "演出", "troupe": "羅裕誴歌劇團", "title": "新營演出",
+              "location": "新營文化中心", "sessions": [{"date": "2026-10-24", "kind": "正戲", "time": "16:30"}], "quote": t}
+        res = validate_batch(pack_of(it), {"dispositions": [disp(it, "new", [ev])]}, [], date(2026, 10, 24), "23:41")
+        self.assertIn("already-past", res["needsCheck"][0]["reason"])

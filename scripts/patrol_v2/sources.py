@@ -74,7 +74,10 @@ def parse_event_page(page_html):
             "status": ev.get("eventStatus"),
         })
     organizers = [o.get("name") for o in (first.get("organizer") or []) if isinstance(o, dict) and o.get("name")]
+    offers = first.get("offers") or {}
+    prices = [offers.get(k) for k in ("lowPrice", "highPrice", "price") if isinstance(offers, dict) and offers.get(k) not in (None, "")]
     return {
+        "prices": prices,
         "name": html.unescape(first.get("name") or ""),
         "description": html.unescape(re.sub(r"&nbsp;|\s+", " ", first.get("description") or "")).strip(),
         "organizers": organizers,
@@ -84,7 +87,9 @@ def parse_event_page(page_html):
 
 def opentix_text(info):
     """把 JSON-LD 攤平成可引用的正文（add_card 以此比對原文）"""
-    lines = [f"節目：{info['name']}", f"主辦：{'、'.join(info['organizers']) or '未列'}"]
+    lines = [f"節目：{info['name']}", f"主辦：{'、'.join(info['organizers']) or '未列'}", "售票：OPENTIX 售票頁"]
+    if info.get("prices"):
+        lines.append("票價：" + "～".join(f"{p}元" for p in dict.fromkeys(info["prices"])))
     for s in info["sessions"]:
         start = (s.get("start") or "").replace("T", " ")[:16]
         lines.append(f"場次：{start}｜地點：{s.get('place') or '未列'}（{s.get('address') or '未列'}）")
