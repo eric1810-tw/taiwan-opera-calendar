@@ -8,6 +8,12 @@
 
 - `pack.items[]`：每篇要判讀的貼文／售票頁／文化部紀錄／Issue。欄位：`postKey`、`revision`、`url`、`datetime`（台北時間；FB 可能是 null）、`text`、`images[]`（`file` 是本機圖片路徑，**用 Read 工具直接看圖**）、`knownImageReadings[]`（之前已判讀過的海報紀錄，可直接引用，不必重看）。
 - `pack.cards[]`：網站目前的卡片（精簡欄位），用來判斷「已在表」或「異動」。
+- `pack.round`：1＝第一輪只有正文；2＝第二輪附圖片。
+
+## 兩輪看圖（節省額度）
+
+- **第一輪**：`images` 是空的，`imageCount` 告訴你這篇有幾張還沒看過的圖。若圖片可能有演出資訊（戲路表、海報、時間表；或正文寫「如圖」「詳見圖片」；或正文太短看不出內容），而正文本身不足以完整判讀，就回 `decision: "needs-images"`（不寫 events），第二輪會把圖給你。正文已足夠判讀、或圖片明顯只是劇照合照，就直接用正文判讀。
+- **第二輪**：`images[]` 有檔案，每張都要 Read 看圖並寫 imageReadings，再給最終 disposition（第二輪不可再回 needs-images）。
 
 ## 收錄範圍
 
@@ -26,6 +32,7 @@
 - `out-of-scope`：不屬收錄範圍（寫理由）
 - `not-event`：不是活動公告（心得、宣傳照、抽獎等）
 - `needs-check`：資訊不足、海報看不清、來源互相矛盾
+- `needs-images`：只限第一輪，要看圖才能判讀
 
 ## events 欄位
 

@@ -87,7 +87,7 @@ def select_for_judgment(items, store, now_dt, run_id, force_keys=()):
     for item in items:
         status = store.observe(item, run_id)
         item["changeStatus"] = status
-        pending_images = [m["sha256"] for m in item.get("media") or [] if m.get("sha256") and not store.image_done(m["sha256"])]
+        pending_images = [m["sha256"] for m in unique_media(item) if not store.image_done(m["sha256"])]
         item["pendingImages"] = pending_images
         if item["postKey"] in force_keys:
             selected.append(item)
@@ -102,11 +102,15 @@ def select_for_judgment(items, store, now_dt, run_id, force_keys=()):
     return selected, skipped
 
 
-def build_batches(selected, schedule, store=None, max_posts=25, max_images=12):
-    """切批：每批最多 25 篇或 12 張圖，避免單次子代理過大。"""
+def build_batches(selected, schedule, store=None, max_posts=25, max_images=12, with_images=False, start=1, round_no=1):
+    """切批：每批最多 25 篇或 12 張圖，避免單次子代理過大。
+
+    第一輪（with_images=False）只送正文與圖片張數，由判讀員回 needs-images 指定要看圖的貼文；
+    第二輪只送那些貼文的圖片。這樣不會把生活照、合照全部送去看。
+    """
     batches, cur, cur_images = [], [], 0
     for item in selected:
-        n_img = len(item.get("pendingImages") or [])
+        n_img = len(item.get("pendingImages") or []) if with_images else 0
         if cur and (len(cur) >= max_posts or cur_images + n_img > max_images):
             batches.append(cur)
             cur, cur_images = [], 0
@@ -116,23 +120,34 @@ def build_batches(selected, schedule, store=None, max_posts=25, max_images=12):
         batches.append(cur)
     cards = [compact_card(c) for c in schedule]
     packs = []
-    for i, batch in enumerate(batches, 1):
+    for i, batch in enumerate(batches, start):
         packs.append({
             "batch": i,
+            "round": round_no,
             "rulesVersion": RULES_VERSION,
             "cards": cards,
             "items": [{
                 "postKey": it["postKey"], "revision": it["revision"], "source": it.get("source"),
                 "url": it.get("url"), "datetime": it.get("datetime"), "changeStatus": it.get("changeStatus"),
                 "text": it.get("text", ""),
-                "images": [{"sha256": m["sha256"], "file": m["file"]} for m in it.get("media") or []
-                           if m.get("sha256") and m["sha256"] in (it.get("pendingImages") or [])],
+                "imageCount": len(it.get("pendingImages") or []),
+                "images": [{"sha256": m["sha256"], "file": m["file"]} for m in unique_media(it)
+                           if m["sha256"] in (it.get("pendingImages") or [])] if with_images else [],
                 "knownImageReadings": [{"sha256": m["sha256"], "reading": (store.images.get(m["sha256"], {}) if store else {}).get("reading", "")}
                                        for m in it.get("media") or []
                                        if m.get("sha256") and m["sha256"] not in (it.get("pendingImages") or [])],
             } for it in batch],
         })
     return packs
+
+
+def unique_media(item):
+    seen, out = set(), []
+    for m in item.get("media") or []:
+        if m.get("sha256") and m["sha256"] not in seen:
+            seen.add(m["sha256"])
+            out.append(m)
+    return out
 
 
 def pack_stats(packs):

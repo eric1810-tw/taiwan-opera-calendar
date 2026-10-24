@@ -14,7 +14,7 @@ from .common import ROOT, normalize_text
 sys.path.insert(0, str(ROOT / "scripts"))
 import add_card  # noqa: E402
 
-DECISIONS = {"new", "update", "change", "cancel", "already-listed", "out-of-scope", "not-event", "needs-check"}
+DECISIONS = {"new", "update", "change", "cancel", "already-listed", "out-of-scope", "not-event", "needs-check", "needs-images"}
 ACTIONS = {"add", "update", "change", "cancel", "confirm"}
 GENRES = {"歌仔戲", "布袋戲"}
 EVENT_TYPES = {"演出", "講座", "體驗"}
@@ -121,7 +121,8 @@ def validate_batch(pack, proposals, schedule, today=None):
     cards = {c["id"]: c for c in schedule}
     readings = {r["sha256"]: r for r in proposals.get("imageReadings") or [] if r.get("sha256")}
     items = {it["postKey"]: it for it in pack["items"]}
-    result = {"accepted": [], "confirmed": [], "needsCheck": [], "rejected": [], "dispositions": [], "missing": [], "imageReadings": readings}
+    result = {"accepted": [], "confirmed": [], "needsCheck": [], "rejected": [], "dispositions": [], "missing": [],
+              "imageRequests": [], "imageReadings": readings}
 
     # 每張送審圖片都要有判讀紀錄（看不清也要寫 legible=false）
     for it in pack["items"]:
@@ -143,6 +144,12 @@ def validate_batch(pack, proposals, schedule, today=None):
         d = ds[0]
         if d.get("decision") not in DECISIONS:
             result["rejected"].append({"postKey": key, "reason": "decision-invalid", "decision": d.get("decision")})
+            continue
+        if d["decision"] == "needs-images":
+            if it.get("imageCount") or it.get("images"):
+                result["imageRequests"].append(key)
+            else:
+                result["rejected"].append({"postKey": key, "reason": "needs-images-but-no-images"})
             continue
         result["dispositions"].append(d)
         corpus = corpus_for(it, readings)

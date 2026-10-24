@@ -111,6 +111,8 @@ def collect_opentix(cache_path, fetch=http_get, max_pages=250, delay=0.4, today=
             stats["errors"] += 1
             continue
         cache[eid] = {"lastmod": sitemap[eid], "related": bool(info and is_opera_related(info)), "info": info if info and is_opera_related(info) else None}
+        if stats["fetched"] % 50 == 0:
+            write_json(cache_path, cache)  # 中途存檔，中斷後不必重抓
         time.sleep(delay)
     stats["deferred"] = max(0, len(changed) - max_pages)
     write_json(cache_path, cache)

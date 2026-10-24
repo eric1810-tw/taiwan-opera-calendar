@@ -234,6 +234,7 @@ def step_pack(st):
         force.update(p["postKey"] for p in posts if p.get("forceJudge"))
     selected, skipped = ev_mod.select_for_judgment(items, store, now_dt(), st.run_id, force)
     store.save()
+    write_json(st.dir / "selected.json", selected)
     packs = ev_mod.build_batches(selected, schedule, store)
     jdir = st.dir / "judge"
     jdir.mkdir(exist_ok=True)
@@ -241,8 +242,8 @@ def step_pack(st):
     for pack in packs:
         path = jdir / f"batch_{pack['batch']:02d}.json"
         write_json(path, pack)
-        batches.append({"batch": pack["batch"], "pack": str(path), "output": str(jdir / f"proposals_{pack['batch']:02d}.json"),
-                        "posts": len(pack["items"]), "images": sum(len(i["images"]) for i in pack["items"])})
+        batches.append({"batch": pack["batch"], "round": 1, "pack": str(path), "output": str(jdir / f"proposals_{pack['batch']:02d}.json"),
+                        "posts": len(pack["items"]), "images": 0, "imagesAvailable": sum(i["imageCount"] for i in pack["items"])})
     st.data["judgeBatches"] = batches
     st.data["stats"]["pack"] = {**ev_mod.pack_stats(packs), "skipped": skipped, "totalItems": len(items)}
     st.save()
@@ -269,10 +270,17 @@ def step_check(st):
     disposed = set()
     from datetime import date as _date
     day = _date.fromisoformat(today(st))
-    for b in st.data.get("judgeBatches", []):
+    batches = st.data.get("judgeBatches", [])
+    round2_keys = {i["postKey"] for b in batches if b.get("round") == 2 for i in read_json(b["pack"])["items"]}
+    image_requests = []
+    for b in batches:
         pack = read_json(b["pack"])
         proposals = read_json(b["output"], {}) or {}
+        if b.get("round", 1) == 1 and round2_keys:
+            # 第二輪看過圖的貼文，以第二輪的處置為準
+            pack = {**pack, "items": [i for i in pack["items"] if i["postKey"] not in round2_keys]}
         res = validate_batch(pack, proposals, schedule, day)
+        image_requests.extend(res["imageRequests"])
         items = {i["postKey"]: i for i in pack["items"]}
         for sha, reading in res["imageReadings"].items():
             store.remember_image(sha, reading, st.run_id)
@@ -286,6 +294,27 @@ def step_check(st):
         for k in merged:
             merged[k].extend(res.get(k, []))
     store.save()
+    if image_requests and not round2_keys:
+        # 第二輪：只把判讀員指定要看圖的貼文連同圖片送出
+        wanted = set(image_requests)
+        selected = [i for i in read_json(st.dir / "selected.json", []) if i["postKey"] in wanted]
+        for it in selected:
+            it["pendingImages"] = [m["sha256"] for m in ev_mod.unique_media(it) if not store.image_done(m["sha256"])]
+        packs = ev_mod.build_batches(selected, schedule, store, with_images=True, start=len(batches) + 1, round_no=2)
+        jdir = st.dir / "judge"
+        for pack in packs:
+            path = jdir / f"batch_{pack['batch']:02d}.json"
+            write_json(path, pack)
+            batches.append({"batch": pack["batch"], "round": 2, "pack": str(path),
+                            "output": str(jdir / f"proposals_{pack['batch']:02d}.json"),
+                            "posts": len(pack["items"]), "images": sum(len(i["images"]) for i in pack["items"])})
+        st.data["judgeBatches"] = batches
+        st.data["stats"]["pack"]["round2"] = ev_mod.pack_stats(packs)
+        st.data["stats"]["pack"]["images"] = st.data["stats"]["pack"].get("images", 0) + ev_mod.pack_stats(packs)["images"]
+        st.save()
+        st.set_step("judge", "pending", "第二輪：看圖")
+        st.set_step("check", "pending", "等第二輪看圖結果")
+        return None
     for n, change in enumerate(merged["accepted"], 1):
         change["changeId"] = f"chg-{n:03d}"
     items = read_json(st.dir / "items.json", [])

@@ -331,3 +331,33 @@ class CaseSessionsFormat(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class CaseOpentix(unittest.TestCase):
+    def test_sitemap_and_jsonld(self):
+        from patrol_v2 import sources
+        xml = (b'<?xml version="1.0"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
+               b'<url><loc>https://www.opentix.life/event/2088104133013299200</loc><lastmod>2026-10-24T01:00:00.000Z</lastmod></url>'
+               b'<url><loc>https://www.opentix.life/article/1</loc></url></urlset>')
+        self.assertEqual(sources.parse_sitemap(xml), {"2088104133013299200": "2026-10-24T01:00:00.000Z"})
+        page = ('<script type="application/ld+json">{"@type":"BreadcrumbList"}</script>'
+                '<script data-n-head="ssr" type="application/ld+json">{"@context":"http://schema.org","@type":"Event",'
+                '"name":"某歌仔戲團《測試》","description":"歌仔戲&amp;nbsp;新編","organizer":[{"@type":"Organization","name":"某主辦"}],'
+                '"startDate":"2026-12-04T19:30:00","location":{"@type":"Place","name":"文山劇場","address":{"addressLocality":"臺北市","streetAddress":"景文街32號"}}}</script>')
+        info = sources.parse_event_page(page)
+        self.assertEqual(info["name"], "某歌仔戲團《測試》")
+        self.assertTrue(sources.is_opera_related(info))
+        self.assertIn("場次：2026-12-04 19:30｜地點：文山劇場（臺北市 景文街32號）", sources.opentix_text(info))
+        self.assertFalse(sources.is_opera_related({"name": "偶偶偶劇團《小狐狸買手套》", "description": "多元偶戲", "organizers": []}))
+
+
+class CaseTwoRoundImages(unittest.TestCase):
+    def test_needs_images_requested_not_judged(self):
+        it = item("facebook:x:7", "十一月戲路如圖")
+        it["imageCount"] = 2
+        res = validate_batch(pack_of(it), {"dispositions": [disp(it, "needs-images")]}, [], TODAY)
+        self.assertEqual(res["imageRequests"], ["facebook:x:7"])
+        self.assertEqual(res["dispositions"], [])
+        it2 = item("facebook:x:8", "沒有圖的貼文")
+        res2 = validate_batch(pack_of(it2), {"dispositions": [disp(it2, "needs-images")]}, [], TODAY)
+        self.assertEqual(res2["rejected"][0]["reason"], "needs-images-but-no-images")
