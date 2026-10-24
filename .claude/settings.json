@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 scripts/patrol.py:*)",
+      "Bash(python3 /Users/eric/aiwork/taiwan-opera-calendar/scripts/patrol.py:*)",
+      "Bash(python3 /Users/eric/aiwork/taiwan-opera-calendar/.claude/worktrees/claude-patrol-rebuild-f0faa6/scripts/patrol.py:*)",
+      "Read(/patrol_state/**)",
+      "Read(/docs/patrol-v2/**)",
+      "Write(/patrol_state/runs/**)",
+      "Edit(/patrol_state/runs/**)",
+      "mcp__ccd_session_mgmt__get_session",
+      "mcp__ccd_session_mgmt__list_sessions"
+    ],
+    "deny": [
+      "Bash(git add .:*)",
+      "Bash(git add -A:*)",
+      "Bash(git reset --hard:*)",
+      "Bash(git stash:*)",
+      "Bash(git push --force:*)",
+      "Bash(git push -f:*)",
+      "Bash(git clean:*)",
+      "Edit(/data/schedule.json)",
+      "Write(/data/schedule.json)",
+      "Read(~/.patrol-edge/**)",
+      "Read(~/.patrol-browser-profile/**)"
+    ]
+  }
+}
