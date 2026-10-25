@@ -29,7 +29,7 @@ from patrol_v2 import evidence as ev_mod  # noqa: E402
 from patrol_v2 import preflight, publish, report, sources  # noqa: E402
 from patrol_v2.common import (EVIDENCE_DIR, ROOT, STATE_DIR, in_agy_window, now, now_dt,  # noqa: E402
                               read_json, write_json)
-from patrol_v2.state import LockBusy, RunState, acquire_lock, find_today, heartbeat  # noqa: E402
+from patrol_v2.state import LockBusy, RunState, acquire_lock, find_today, heartbeat, missed_days  # noqa: E402
 from patrol_v2.validate import validate_batch  # noqa: E402
 
 CAPTURE = ROOT / "scripts" / "patrol_v2" / "social_capture.mjs"
@@ -532,7 +532,10 @@ def cmd_start(args):
     if existing and not existing.data.get("finished"):
         st = existing
     else:
+        missed = missed_days(args.mode)
         st = RunState.create(args.mode)
+        for text in missed:
+            st.ask_eric(f"前幾天的巡檢沒有完成：{text}")
     try:
         previous = acquire_lock(st.run_id)
     except LockBusy as error:

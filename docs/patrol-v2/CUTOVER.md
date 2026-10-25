@@ -20,6 +20,7 @@
 6. **Claude 桌面版加入登入項目**：系統設定 → 一般 → 登入項目 → 加入 Claude（Eric 自己操作；App 沒開時排程會在下次開啟補跑）。
 7. **第一次正式執行**：當天手動按「立即執行」一次，或等隔天 03:00；確認報告、收據、同 SHA Actions、公開三檔一致。
 8. **刪除影子任務**（若有）。
+9. **（需另外批准）雲端漏跑偵測**：`.github/workflows/daily-update.yml` 的 `patrol-health` 由「超過 30 小時」改為「今天（台北）沒有 startedAt 就失敗」，讓 Mac 沒開、App 沒開導致漏跑時，07:00 的 Actions 會亮紅燈並寄 GitHub 通知信。改前備份 `.bak-YYMMDD`。
 
 ## 回復方法
 

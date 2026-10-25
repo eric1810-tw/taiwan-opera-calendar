@@ -167,6 +167,27 @@ class RunState:
         release_lock(self.run_id, self.state_dir)
 
 
+def missed_days(mode, state_dir=STATE_DIR, at=None, lookback=3):
+    """往前檢查 lookback 天：沒有輪次或沒跑完的日子（第一次執行之前的日子不算）"""
+    at = at or now_dt()
+    days_dir = Path(state_dir) / "days"
+    known = sorted(p.name.split("_")[0] for p in days_dir.glob(f"*_{mode}.json")) if days_dir.exists() else []
+    if not known:
+        return []
+    first = known[0]
+    missed = []
+    for i in range(1, lookback + 1):
+        day = (at - timedelta(days=i)).date().isoformat()
+        if day < first:
+            break
+        index = read_json(day_index_path(day, mode, state_dir))
+        if not index:
+            missed.append(f"{day}：沒有執行紀錄（漏跑）")
+        elif not index.get("finished"):
+            missed.append(f"{day}：輪次 {index.get('runId')} 沒有跑完")
+    return missed
+
+
 def find_today(mode, state_dir=STATE_DIR, at=None):
     """今日（台北）同模式的輪次；沒有回傳 None。"""
     index = read_json(day_index_path(today_str(at), mode, state_dir))

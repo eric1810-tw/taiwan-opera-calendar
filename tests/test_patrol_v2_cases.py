@@ -400,3 +400,16 @@ class CaseRevisionStable(unittest.TestCase):
             items, _ = sources.collect_moc(path, datetime(2026, 10, 25, 10, tzinfo=TPE))
             self.assertEqual(len(items), 1)
             self.assertIn("主辦：陳錫煌傳統掌中劇團", items[0]["text"])
+
+
+class CaseMissedRun(unittest.TestCase):
+    def test_missed_previous_day_detected(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            d1 = datetime(2026, 10, 25, 5, 10, tzinfo=TPE)
+            st = state.RunState.create("shadow", tmp, at=d1)
+            st.finish("ok")
+            # 10/26 沒跑；10/27 開始時要抓到
+            self.assertEqual(state.missed_days("shadow", tmp, at=datetime(2026, 10, 27, 5, 10, tzinfo=TPE)),
+                             ["2026-10-26：沒有執行紀錄（漏跑）"])
+            # 第一次執行之前的日子不算漏跑
+            self.assertEqual(state.missed_days("shadow", tmp, at=datetime(2026, 10, 26, 5, 10, tzinfo=TPE)), [])
