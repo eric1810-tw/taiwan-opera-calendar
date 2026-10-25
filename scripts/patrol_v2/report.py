@@ -129,9 +129,16 @@ def shadow_compare(st, root=ROOT):
     ours = check.get("accepted", [])
     lines = [f"# 影子比對 {st.run_id}", "", f"agy 當日巡檢提交：{len(agy['commits'])} 筆", ""]
     lines += ["## agy 實際變更", ""]
+    confirmed_ids = {x.get("targetCardId") for x in check.get("confirmed", [])}
+    touched_ids = {x.get("proposed", {}).get("targetCardId") for x in check.get("needsCheck", []) if isinstance(x.get("proposed"), dict)}
     for c in agy["added"]:
         hit = [o["changeId"] for o in ours if o["action"] == "add" and o["event"].get("troupe") == c.get("troupe")
                and any(s["date"] == c["date"] for s in o["event"].get("sessions") or [])]
+        hit += [o["changeId"] for o in ours if o["event"].get("targetCardId") == c["id"]]
+        if c["id"] in confirmed_ids:
+            hit.append("已在表且逐欄一致（影子在 agy 之後執行，讀到 agy 建好的卡）")
+        elif c["id"] in touched_ids:
+            hit.append("對到此卡但列待查（見報告）")
         lines.append(f"- 新增 {c['id']}｜{c['date']}｜{c.get('troupe')}｜{c.get('title')}｜{c.get('location')} → 新系統：{'、'.join(hit) or '沒有對應提案'}")
     for c in agy["changed"]:
         hit = [o["changeId"] for o in ours if o["event"].get("targetCardId") == c["id"]]

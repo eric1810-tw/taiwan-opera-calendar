@@ -219,6 +219,10 @@ def step_collect(st):
         stats["issues"] = {"error": str(error)}
         record(st, issues_key, "failed", "gh-api", targets[issues_key], "無法讀取", "not_applicable", str(error)[:300])
 
+    unique = {}
+    for it in items:
+        unique.setdefault(it["postKey"], it)
+    items = list(unique.values())
     write_json(st.dir / "items.json", items)
     st.save()
     st.set_step("collect", "done")

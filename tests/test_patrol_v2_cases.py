@@ -380,3 +380,23 @@ class CaseAlreadyPast(unittest.TestCase):
               "location": "新營文化中心", "sessions": [{"date": "2026-10-24", "kind": "正戲", "time": "16:30"}], "quote": t}
         res = validate_batch(pack_of(it), {"dispositions": [disp(it, "new", [ev])]}, [], date(2026, 10, 24), "23:41")
         self.assertIn("already-past", res["needsCheck"][0]["reason"])
+
+
+class CaseRevisionStable(unittest.TestCase):
+    def test_relative_time_and_counts_do_not_change_revision(self):
+        a = text_revision("yuzhongluo 陳昭瑋 5天 小琉球朋友們看過來 31 4", ["x"])
+        b = text_revision("yuzhongluo 陳昭瑋 6天 小琉球朋友們看過來 31 5", ["x"])
+        self.assertEqual(a, b)
+        self.assertNotEqual(a, text_revision("yuzhongluo 陳昭瑋 6天 小琉球朋友們看過來 改至廟內 31 5", ["x"]))
+        # 日期與時間不可被當成相對時間刪掉
+        self.assertNotEqual(text_revision("10/24 16:30 演出"), text_revision("10/24 17:30 演出"))
+
+    def test_moc_duplicate_uid_collapsed(self):
+        from patrol_v2 import sources
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "moc.json"
+            rec = {"UID": "u1", "title": "掌藝薪傳", "masterUnit": ["陳錫煌傳統掌中劇團"], "showInfo": []}
+            path.write_text(json.dumps({"fetchedAt": "2026-10-25T09:00:00+08:00", "total": 1500, "records": [rec, rec, rec]}), encoding="utf-8")
+            items, _ = sources.collect_moc(path, datetime(2026, 10, 25, 10, tzinfo=TPE))
+            self.assertEqual(len(items), 1)
+            self.assertIn("主辦：陳錫煌傳統掌中劇團", items[0]["text"])

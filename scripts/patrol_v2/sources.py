@@ -160,16 +160,25 @@ def collect_moc(records_path, now_dt, keyword_filter=None):
     if not isinstance(total, int) or total < 500:
         problems.append(f"文化部總筆數 {total} 低於 500 門檻")
     items = []
+    seen = set()
+
+    def unit(value):
+        if isinstance(value, list):
+            return "、".join(str(v) for v in value if v)
+        return str(value or "")
     for r in records:
         if keyword_filter and not keyword_filter(r):
             continue
+        uid = r.get("UID") or sha256_bytes(r.get("title", "").encode())[:16]
+        if uid in seen:  # 文化部資料偶有同一 UID 重複多筆
+            continue
+        seen.add(uid)
         shows = r.get("showInfo") or []
-        lines = [f"活動：{r.get('title', '')}", f"主辦：{r.get('masterUnit') or r.get('showUnit') or '未列'}"]
+        lines = [f"活動：{r.get('title', '')}", f"主辦：{unit(r.get('masterUnit')) or unit(r.get('showUnit')) or '未列'}"]
         for s in shows[:20]:
             lines.append(f"場次：{s.get('time', '')}｜{s.get('locationName', '')}（{s.get('location', '')}）")
         lines.append(f"說明：{normalize_text(r.get('descriptionFilterHtml'))[:1500]}")
         text = "\n".join(lines)
-        uid = r.get("UID") or sha256_bytes(r.get("title", "").encode())[:16]
         items.append({
             "source": "culture",
             "postKey": f"culture:{uid}",

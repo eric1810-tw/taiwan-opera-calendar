@@ -1,5 +1,6 @@
 """新巡檢後端共用工具：路徑、時間、原子寫入、雜湊。"""
 import hashlib
+import re
 import json
 import os
 import tempfile
@@ -100,6 +101,19 @@ def normalize_text(text):
     return " ".join(str(text or "").split())
 
 
+_RELATIVE = re.compile(r"(?<![\d/:])\d{1,3}\s*(?:秒|分鐘|分钟|小時|小时|天|週|周|個月|个月)(?:前)?")
+_TRAILING_COUNTS = re.compile(r"(?:\s+\d{1,7})+\s*$")
+_UI_WORDS = re.compile(r"顯示較少|顯示更多|查看更多|查看翻譯|See more|See translation")
+
+
+def revision_text(text):
+    """版本比對用的正文：去掉「5天」「3小時」等相對時間、結尾讚數留言數、介面字，避免同一篇每天都被當成有變動"""
+    t = _UI_WORDS.sub(" ", str(text or ""))
+    t = _RELATIVE.sub(" ", t)
+    t = normalize_text(t)
+    return _TRAILING_COUNTS.sub("", t)
+
+
 def text_revision(text, image_hashes=()):
-    body = normalize_text(text) + "\n" + "\n".join(sorted(image_hashes))
+    body = revision_text(text) + "\n" + "\n".join(sorted(image_hashes))
     return "sha256:" + sha256_bytes(body.encode("utf-8"))
