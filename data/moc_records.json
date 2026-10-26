@@ -1,6 +1,6 @@
 {
-  "fetchedAt": "2026-10-25T08:43:56+08:00",
-  "total": 1485,
+  "fetchedAt": "2026-10-26T08:56:16+08:00",
+  "total": 1423,
   "records": [
     {
       "version": "1.4",
@@ -39,45 +39,7 @@
       "sourceWebName": "全國藝文活動資訊系統",
       "startDate": "2026/01/02",
       "endDate": "2026/12/31",
-      "hitRate": 13
-    },
-    {
-      "version": "1.4",
-      "UID": "697678ed26b32454e437c439",
-      "title": "世紀初戀－楊麗花歌仔戲特展",
-      "category": "6",
-      "showInfo": [
-        {
-          "time": "2026/01/01 09:00:00",
-          "location": "宜蘭縣五結鄉24鄰五濱路二段201號",
-          "locationName": "國立傳統藝術中心宜蘭園區",
-          "onSales": "Y",
-          "price": "門票--敬老票+75;門票--縣民票+100;門票--優待票+120;門票--普通票+150",
-          "latitude": null,
-          "longitude": null,
-          "endTime": "2026/10/25 18:00:00"
-        }
-      ],
-      "showUnit": "(中華民國)楊麗花",
-      "discountInfo": "優待票對象:6-12兒童.學生",
-      "descriptionFilterHtml": "楊麗花出身戲曲世家，自幼隨母親戲班奔走，7 歲登台，16 歲以《雙槍陸文龍》嶄露頭角。22 歲加入正聲天馬廣播劇團，隔年與台視簽約投入電視歌仔戲領域，並跨足電影、唱片，成為多元發展的明星藝人。她擅長飾演歌仔戲小生，女扮男裝扮相俊美、演技精湛，成為廣大觀眾群心中英俊男性的最佳投射，許多觀眾跟楊麗花都曾經有一段「世紀初戀」。\r\n本展覽以楊麗花及歌仔戲為主題，展出楊麗花珍貴影音、照片、演出戲服、電視道具及布景等，並結合AI技術，讓觀眾可以與楊麗花合照或共同演出，實現與她的「共演夢想」。",
-      "imageUrl": "",
-      "masterUnit": [
-        "國立傳統藝術中心"
-      ],
-      "subUnit": [],
-      "supportUnit": [],
-      "otherUnit": [
-        "(指導)文化部"
-      ],
-      "webSales": "",
-      "sourceWebPromote": "",
-      "comment": "",
-      "editModifyDate": "2026/06/10 09:48:03",
-      "sourceWebName": "全國藝文活動資訊系統",
-      "startDate": "2026/01/01",
-      "endDate": "2026/10/25",
-      "hitRate": 61
+      "hitRate": 14
     },
     {
       "version": "1.4",
@@ -225,7 +187,7 @@
       "sourceWebName": "黃俐瑋",
       "startDate": "2026/04/12",
       "endDate": "2026/11/01",
-      "hitRate": 73
+      "hitRate": 74
     },
     {
       "version": "1.4",
@@ -265,7 +227,7 @@
       "sourceWebName": "黃俐瑋",
       "startDate": "2026/04/12",
       "endDate": "2026/11/01",
-      "hitRate": 73
+      "hitRate": 74
     },
     {
       "version": "1.4",
@@ -305,7 +267,7 @@
       "sourceWebName": "黃俐瑋",
       "startDate": "2026/04/12",
       "endDate": "2026/11/01",
-      "hitRate": 73
+      "hitRate": 74
     },
     {
       "version": "1.4",
@@ -341,7 +303,7 @@
       "sourceWebName": "全國藝文活動資訊系統",
       "startDate": "2026/01/31",
       "endDate": "2026/12/31",
-      "hitRate": 10
+      "hitRate": 14
     },
     {
       "version": "1.4",
@@ -995,7 +957,7 @@
       "sourceWebName": "OPENTIX兩廳院文化生活",
       "startDate": "2026/11/07",
       "endDate": "2026/12/20",
-      "hitRate": 30
+      "hitRate": 31
     },
     {
       "version": "1.4",
@@ -1097,138 +1059,6 @@
     },
     {
       "version": "1.4",
-      "UID": "6a7a04f226b32427d060439d",
-      "title": "張雅淳×李婉菁《唸歌去天庭：老仙婆的跨界音樂會》",
-      "category": "1",
-      "showInfo": [
-        {
-          "time": "2026/10/25 14:30:00",
-          "location": "臺北市中正區牯嶺街5巷2號",
-          "locationName": "牯嶺街小劇場二樓藝文空間",
-          "onSales": "Y",
-          "price": "",
-          "latitude": "25.0317357",
-          "longitude": "121.5153386",
-          "endTime": "2026/10/25 15:10:00"
-        },
-        {
-          "time": "2026/10/25 19:30:00",
-          "location": "臺北市中正區牯嶺街5巷2號",
-          "locationName": "牯嶺街小劇場二樓藝文空間",
-          "onSales": "Y",
-          "price": "",
-          "latitude": "25.0317357",
-          "longitude": "121.5153386",
-          "endTime": "2026/10/25 20:10:00"
-        }
-      ],
-      "showUnit": "",
-      "discountInfo": "",
-      "descriptionFilterHtml": "",
-      "imageUrl": "",
-      "masterUnit": [],
-      "subUnit": [],
-      "supportUnit": [],
-      "otherUnit": [],
-      "webSales": "https://www.opentix.life/program/2084126686540869633",
-      "sourceWebPromote": "https://www.opentix.life/program/2084126686540869633",
-      "comment": "",
-      "editModifyDate": "",
-      "sourceWebName": "OPENTIX兩廳院文化生活",
-      "startDate": "2026/10/25",
-      "endDate": "2026/10/25",
-      "hitRate": 2
-    },
-    {
-      "version": "1.4",
-      "UID": "6a8dca9626b32434f435805a",
-      "title": "【2026KIPF】錦飛鳳傀儡戲劇團 《靖姑傳奇》",
-      "category": "2",
-      "showInfo": [
-        {
-          "time": "2026/10/25 11:00:00",
-          "location": "高雄市岡山區岡山南路42號",
-          "locationName": "高雄市皮影戲館3樓劇場",
-          "onSales": "Y",
-          "price": "",
-          "latitude": "22.783089",
-          "longitude": "120.298557",
-          "endTime": "2026/10/25 11:40:00"
-        },
-        {
-          "time": "2026/10/25 14:30:00",
-          "location": "高雄市岡山區岡山南路42號",
-          "locationName": "高雄市皮影戲館3樓劇場",
-          "onSales": "Y",
-          "price": "",
-          "latitude": "22.783089",
-          "longitude": "120.298557",
-          "endTime": "2026/10/25 15:10:00"
-        }
-      ],
-      "showUnit": "",
-      "discountInfo": "",
-      "descriptionFilterHtml": "",
-      "imageUrl": "",
-      "masterUnit": [],
-      "subUnit": [],
-      "supportUnit": [],
-      "otherUnit": [],
-      "webSales": "https://www.opentix.life/program/2090771847201034240",
-      "sourceWebPromote": "https://www.opentix.life/program/2090771847201034240",
-      "comment": "",
-      "editModifyDate": "",
-      "sourceWebName": "OPENTIX兩廳院文化生活",
-      "startDate": "2026/10/25",
-      "endDate": "2026/10/25",
-      "hitRate": 2
-    },
-    {
-      "version": "1.4",
-      "UID": "6a8dca9626b32434f435805b",
-      "title": "【2026KIPF】金鷹閣電視木偶劇團 《西遊記之鬧天宮》",
-      "category": "2",
-      "showInfo": [
-        {
-          "time": "2026/10/25 16:00:00",
-          "location": "高雄市岡山區岡山南路43號",
-          "locationName": "高雄市岡山文化中心演藝廳",
-          "onSales": "Y",
-          "price": "",
-          "latitude": "22.783110460376314",
-          "longitude": "120.29877373744634",
-          "endTime": "2026/10/25 16:50:00"
-        },
-        {
-          "time": "2026/10/25 19:30:00",
-          "location": "高雄市岡山區岡山南路43號",
-          "locationName": "高雄市岡山文化中心演藝廳",
-          "onSales": "Y",
-          "price": "",
-          "latitude": "22.783110460376314",
-          "longitude": "120.29877373744634",
-          "endTime": "2026/10/25 20:20:00"
-        }
-      ],
-      "showUnit": "",
-      "discountInfo": "",
-      "descriptionFilterHtml": "",
-      "imageUrl": "",
-      "masterUnit": [],
-      "subUnit": [],
-      "supportUnit": [],
-      "otherUnit": [],
-      "webSales": "https://www.opentix.life/program/2090773654423490561",
-      "sourceWebPromote": "https://www.opentix.life/program/2090773654423490561",
-      "comment": "",
-      "editModifyDate": "",
-      "sourceWebName": "OPENTIX兩廳院文化生活",
-      "startDate": "2026/10/25",
-      "endDate": "2026/10/25",
-      "hitRate": 1
-    },
-    {
-      "version": "1.4",
       "UID": "6a8f1c1526b32434f4358068",
       "title": "偶偶偶劇團《小狐狸買手套》",
       "category": "4",
@@ -1289,7 +1119,7 @@
       "sourceWebName": "OPENTIX兩廳院文化生活",
       "startDate": "2026/12/04",
       "endDate": "2026/12/06",
-      "hitRate": 6
+      "hitRate": 7
     },
     {
       "version": "1.4",
@@ -1671,7 +1501,7 @@
       "sourceWebName": "OPENTIX兩廳院文化生活",
       "startDate": "2026/12/18",
       "endDate": "2026/12/20",
-      "hitRate": 1
+      "hitRate": 2
     }
   ]
 }
