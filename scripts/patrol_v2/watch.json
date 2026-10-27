@@ -1,0 +1,15 @@
+{
+  "threads:yuzhongluo": [
+    {
+      "postKey": "threads:yuzhongluo:De1UV_Ikxkl",
+      "postedAt": "2026-10-23T18:14:03+08:00",
+      "note": "10/23 舊讀取器漏抓的新節目公告（回歸守門）"
+    },
+    {
+      "postKey": "threads:yuzhongluo:De2R8XSkiWT",
+      "postedAt": "2026-10-24T03:12:18+08:00",
+      "note": "10/24 改館內公告（03:08 讀取後才發）；10/24 23:50 直開原帖得 error=invalid_post，作者已刪除（De1UV_Ikxkl 同時可正常開啟）",
+      "deletedConfirmedAt": "2026-10-24T23:50:00+08:00"
+    }
+  ]
+}

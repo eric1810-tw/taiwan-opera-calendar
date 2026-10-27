@@ -105,11 +105,38 @@ def match_date_in_quote(target_date: date, quote: str, end_date: date = None) ->
                     return True
         return False
 
-    if not has_single_date(target_date):
+    def in_range(d: date) -> bool:
+        """日期區間：11/20－11/22、11/7（六）－11/8（日）、10/23-24、10月23日至25日"""
+        sep = r"\s*(?:[（(][^）)]{0,4}[）)])?\s*[－~～\-–—至到]\s*"
+        pat = rf"(?<!\d)(\d{{1,2}})\s*[/／月]\s*(\d{{1,2}})\s*日?{sep}(?:(\d{{1,2}})\s*[/／月]\s*)?(\d{{1,2}})(?!\d)"
+        for m in re.finditer(pat, q):
+            m1, d1 = int(m.group(1)), int(m.group(2))
+            m2 = int(m.group(3)) if m.group(3) else m1
+            d2 = int(m.group(4))
+            try:
+                start = date(d.year, m1, d1)
+                end = date(d.year if m2 >= m1 else d.year + 1, m2, d2)
+            except ValueError:
+                continue
+            if start <= d <= end:
+                return True
+        return False
+
+    def iso_or_roc(d: date) -> bool:
+        """2026-10-25、2026/10/25、115/11/7（民國年）"""
+        roc = d.year - 1911
+        pats = [rf"(?<!\d){d.year}\s*[-/／.]\s*0?{d.month}\s*[-/／.]\s*0?{d.day}(?!\d)",
+                rf"(?<!\d){roc}\s*[-/／.]\s*0?{d.month}\s*[-/／.]\s*0?{d.day}(?!\d)"]
+        return any(re.search(pat, q) for pat in pats)
+
+    def found(d: date) -> bool:
+        return has_single_date(d) or iso_or_roc(d) or in_range(d)
+
+    if not found(target_date):
         return False
 
     if end_date and end_date != target_date:
-        if not has_single_date(end_date):
+        if not found(end_date):
             return False
 
     return True
@@ -123,7 +150,8 @@ def match_time_in_quote(time_str: str, quote: str) -> bool:
     if any(k in time_str for k in UNSPECIFIED_KEYWORDS):
         return True
 
-    norm_quote = quote.replace("：", ":")
+    # 原文常見「下午 3:30」中間有空白；候選字串都不含空白，比對前一律去掉空白
+    norm_quote = re.sub(r"[\s\u3000]+", "", quote.replace("：", ":"))
     times = re.findall(r"\b\d{1,2}:\d{2}\b", time_str.replace("：", ":"))
     if not times:
         # 如果不是具體 H:MM 格式，檢查整個字串是否在 quote 內
@@ -241,6 +269,80 @@ def load_post_from_evidence(evidence_dir: Path, source: str = "", post_key: str 
     return None
 
 
+def post_corpus(post: dict) -> str:
+    """貼文正文＋本輪已存檔的海報判讀紀錄（imageReadings），作為原文比對範圍"""
+    parts = [post.get("text", "") or ""]
+    for reading in post.get("imageReadings") or []:
+        if isinstance(reading, dict) and reading.get("sha256") and reading.get("reading"):
+            parts.append(str(reading["reading"]))
+    return normalize_whitespace(" ".join(parts))
+
+
+def validate_sessions(sessions, no_show_dates, quote: str):
+    """sessions：每筆一個日期、時間與種類（扮仙／正戲／其他）；noShowDates 不可有場次"""
+    reasons = []
+    if not isinstance(sessions, list) or not sessions:
+        return ["sessions-invalid"]
+    seen = set()
+    for item in sessions:
+        if not isinstance(item, dict):
+            reasons.append("sessions-invalid")
+            continue
+        try:
+            d = parse_date(item.get("date", ""))
+        except Exception:
+            reasons.append("invalid-date-format")
+            continue
+        if not match_date_in_quote(d, quote):
+            reasons.append("date-not-in-quote")
+        if item.get("kind", "正戲") not in ("扮仙", "正戲", "其他"):
+            reasons.append("session-kind-invalid")
+        if not match_time_in_quote(item.get("time", "未公布"), quote):
+            reasons.append("time-not-in-quote")
+        key = (item.get("date"), item.get("kind", "正戲"), item.get("time", "未公布"))
+        if key in seen:
+            reasons.append("duplicate-session")
+        seen.add(key)
+    session_dates = {item.get("date") for item in sessions if isinstance(item, dict)}
+    for d in no_show_dates or []:
+        if d in session_dates:
+            reasons.append("session-on-no-show-date")
+    return sorted(set(reasons), key=reasons.index)
+
+
+def format_sessions(sessions, no_show_dates=None):
+    """由 sessions 產生網站既有欄位：date、endDate、time、dateFormatted"""
+    ordered = sorted(sessions, key=lambda s: (s["date"], 0 if s.get("kind") == "扮仙" else 1))
+    dates = sorted({s["date"] for s in ordered})
+    time_parts = []
+    for item in ordered:
+        md = f"{int(item['date'][5:7])}/{int(item['date'][8:10])}"
+        t = item.get("time", "未公布")
+        if any(k in t for k in UNSPECIFIED_KEYWORDS):
+            t = "時間未公布"
+        kind = item.get("kind", "正戲")
+        # 時間後留空白：match_time_in_quote 以 \b 擷取 H:MM，緊接中文字會抓不到
+        time_parts.append(f"{md} {t} {kind}" if kind != "其他" else f"{md} {t}")
+    runs = []
+    for d in dates:
+        cur = parse_date(d)
+        if runs and (cur - parse_date(runs[-1][-1])).days == 1:
+            runs[-1].append(d)
+        else:
+            runs.append([d])
+    labels = [r[0].replace("-", "/") if len(r) == 1 else f"{r[0].replace('-', '/')}–{r[-1].replace('-', '/')}" for r in runs]
+    date_formatted = "、".join(labels)
+    if no_show_dates:
+        skipped = "、".join(f"{int(d[5:7])}/{int(d[8:10])}" for d in sorted(no_show_dates))
+        date_formatted += f"（{skipped} 無演出）"
+    return {
+        "date": dates[0],
+        "endDate": dates[-1] if dates[-1] != dates[0] else None,
+        "time": "、".join(time_parts),
+        "dateFormatted": date_formatted,
+    }
+
+
 def atomic_save_json(path: Path, data):
     path.parent.mkdir(parents=True, exist_ok=True)
     fd, temp_path = tempfile.mkstemp(prefix="card-", suffix=".json", dir=path.parent)
@@ -303,16 +405,37 @@ def append_to_cancelled_file(cancelled_path: Path, card: dict, quote: str, post_
         f.write(json.dumps(entry, ensure_ascii=False) + "\n")
 
 
+def apply_sessions_to_proposal(proposal: dict):
+    """有 sessions 時，date／endDate／time／dateFormatted 一律由 sessions 產生，不採用提案自填值"""
+    sessions = proposal.get("sessions")
+    if not sessions or not isinstance(sessions, list):
+        return
+    try:
+        fields = format_sessions(sessions, proposal.get("noShowDates"))
+    except Exception:
+        return
+    proposal["date"] = fields["date"]
+    if fields["endDate"]:
+        proposal["endDate"] = fields["endDate"]
+    else:
+        proposal.pop("endDate", None)
+    proposal["time"] = fields["time"]
+    proposal["dateFormatted"] = fields["dateFormatted"]
+
+
 def validate_proposal_common(proposal: dict, post: dict, schedule: list, today: date, fb_accounts: list, check_duplicate: bool = True):
     reasons = []
     quote = proposal.get("quote", "")
-    post_text = post.get("text", "")
 
-    # 1. postUrl 與 quote 檢查
+    # 1. postUrl 與 quote 檢查（比對範圍＝正文＋已存檔海報判讀）
     norm_quote = normalize_whitespace(quote)
-    norm_text = normalize_whitespace(post_text)
+    norm_text = post_corpus(post)
     if not norm_quote or norm_quote not in norm_text:
         reasons.append("quote-not-in-post")
+
+    # 1a. 多場次（sessions）：逐筆檢查日期、時間、種類與無演出日
+    if "sessions" in proposal:
+        reasons.extend(validate_sessions(proposal["sessions"], proposal.get("noShowDates"), norm_quote))
 
     # 2. 日期檢查
     date_str = proposal.get("date", "")
@@ -428,6 +551,7 @@ def handle_proposal(args, today: date):
         print(json.dumps(out, ensure_ascii=False))
         return 1
 
+    apply_sessions_to_proposal(proposal)
     reasons = validate_proposal_common(proposal, post, schedule, today, fb_accounts, check_duplicate=True)
     if reasons:
         append_to_review_queue(review_queue_path, proposal, reasons)
@@ -447,7 +571,9 @@ def handle_proposal(args, today: date):
     digest = hashlib.sha256(f"{date_str}_{troupe}_{title}_{location}".encode("utf-8")).hexdigest()[:8]
     card_id = f"auto-{date_str.replace('-', '')}-{digest}"
 
-    if end_date_str and end_date_str != date_str:
+    if proposal.get("dateFormatted"):
+        date_formatted = proposal["dateFormatted"]
+    elif end_date_str and end_date_str != date_str:
         date_formatted = f"{date_str.replace('-', '/')}–{end_date_str.replace('-', '/')}"
     else:
         date_formatted = date_str.replace("-", "/")
@@ -461,6 +587,7 @@ def handle_proposal(args, today: date):
         "free": "免費索票/戶外演出",
         "outdoor": "戶外公演",
         "plan": "預定演出",
+        "lecture": "講座／體驗",
     }
     category = category_map.get(badge_type, "廟會民俗演出")
 
@@ -513,6 +640,16 @@ def handle_proposal(args, today: date):
     }
     if end_date_str:
         card["endDate"] = end_date_str
+    if source_id.startswith("opentix:"):
+        # 售票頁屬官方來源；只證明頁面實際列出的欄位
+        card["verifyStatus"] = "verified"
+        card["verifyLabel"] = "🎫 OPENTIX 售票頁（程式比對頁面資料）"
+        card["description"] = f"依 OPENTIX 售票頁：「{quote_clip}」"
+        card["status"] = "依售票頁資料；未列事項請查售票頁"
+    if proposal.get("sessions"):
+        card["sessions"] = proposal["sessions"]
+        if proposal.get("noShowDates"):
+            card["noShowDates"] = sorted(proposal["noShowDates"])
 
     schedule.append(card)
     # 重新計算 daysAway 並排序
@@ -553,7 +690,7 @@ def handle_update(args, today: date):
 
     reasons = []
     norm_quote = normalize_whitespace(proposal.get("quote", ""))
-    norm_text = normalize_whitespace(post.get("text", ""))
+    norm_text = post_corpus(post)
 
     # 1. quote 必須在 post text 內
     if not norm_quote or norm_quote not in norm_text:
@@ -568,6 +705,14 @@ def handle_update(args, today: date):
     new_loc = proposal.get("location")
     if new_loc and not match_location_in_quote(new_loc, norm_quote):
         reasons.append("location-not-in-quote")
+
+    if "sessions" in proposal:
+        apply_sessions_to_proposal(proposal)
+        reasons.extend(validate_sessions(proposal["sessions"], proposal.get("noShowDates"), norm_quote))
+        for field in ("date", "endDate"):
+            if proposal.get(field) and proposal[field] != target_card.get(field, target_card["date"] if field == "endDate" else None):
+                reasons.append("sessions-change-dates")
+                break
 
     # 檢查是否試圖覆寫已有明確值的欄位
     for field in ("location", "time", "artist", "troupe", "title"):
@@ -594,6 +739,11 @@ def handle_update(args, today: date):
                 target_card[field] = proposal[field]
                 if field == "location":
                     target_card["region"] = infer_region(proposal[field])
+
+    if proposal.get("sessions") and any(k in str(target_card.get("time", "")) for k in UNSPECIFIED_KEYWORDS + (proposal["time"],)):
+        target_card["sessions"] = proposal["sessions"]
+        target_card["time"] = proposal["time"]
+        target_card["dateFormatted"] = proposal.get("dateFormatted", target_card.get("dateFormatted"))
 
     # 原 sourceUrl 移到 relatedSourceUrls
     old_source = target_card.get("sourceUrl")
@@ -645,11 +795,15 @@ def handle_change(args, today: date):
         reasons.append("different-account")
 
     norm_quote = normalize_whitespace(proposal.get("quote", ""))
-    norm_text = normalize_whitespace(post.get("text", ""))
+    norm_text = post_corpus(post)
 
-    # 2. quote 必須含「異動」「更正」「更改」「延期」「改期」之一
-    if not any(k in norm_quote for k in ("異動", "更正", "更改", "延期", "改期")):
+    # 2. quote 必須含「異動」「更正」「更改」「延期」「改期」「改至」「改在」之一
+    if not any(k in norm_quote for k in ("異動", "更正", "更改", "延期", "改期", "改至", "改在")):
         reasons.append("no-change-keyword")
+
+    if "sessions" in proposal:
+        apply_sessions_to_proposal(proposal)
+        reasons.extend(validate_sessions(proposal["sessions"], proposal.get("noShowDates"), norm_quote))
 
     # 3. quote 在 post text 內
     if not norm_quote or norm_quote not in norm_text:
@@ -685,7 +839,15 @@ def handle_change(args, today: date):
     if "date" in proposal:
         target_card["date"] = proposal["date"]
         target_card["daysAway"] = max(0, (parse_date(proposal["date"]) - today).days)
-        target_card["dateFormatted"] = proposal["date"].replace("-", "/")
+        target_card["dateFormatted"] = proposal.get("dateFormatted") or proposal["date"].replace("-", "/")
+    if proposal.get("sessions"):
+        target_card["sessions"] = proposal["sessions"]
+        if proposal.get("endDate"):
+            target_card["endDate"] = proposal["endDate"]
+        else:
+            target_card.pop("endDate", None)
+        if proposal.get("noShowDates"):
+            target_card["noShowDates"] = sorted(proposal["noShowDates"])
     if "time" in proposal:
         target_card["time"] = proposal["time"]
     if "location" in proposal:
@@ -740,7 +902,7 @@ def handle_cancel(args, today: date):
         reasons.append("different-account")
 
     norm_quote = normalize_whitespace(proposal.get("quote", ""))
-    norm_text = normalize_whitespace(post.get("text", ""))
+    norm_text = post_corpus(post)
 
     if not norm_quote or norm_quote not in norm_text:
         reasons.append("quote-not-in-post")
