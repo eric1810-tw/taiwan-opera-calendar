@@ -1,6 +1,6 @@
 {
-  "fetchedAt": "2026-10-26T08:56:16+08:00",
-  "total": 1423,
+  "fetchedAt": "2026-10-27T09:46:26+08:00",
+  "total": 1363,
   "records": [
     {
       "version": "1.4",
@@ -39,7 +39,7 @@
       "sourceWebName": "全國藝文活動資訊系統",
       "startDate": "2026/01/02",
       "endDate": "2026/12/31",
-      "hitRate": 14
+      "hitRate": 15
     },
     {
       "version": "1.4",
@@ -303,7 +303,7 @@
       "sourceWebName": "全國藝文活動資訊系統",
       "startDate": "2026/01/31",
       "endDate": "2026/12/31",
-      "hitRate": 14
+      "hitRate": 20
     },
     {
       "version": "1.4",
@@ -657,7 +657,7 @@
       "sourceWebName": "OPENTIX兩廳院文化生活",
       "startDate": "2026/10/30",
       "endDate": "2026/11/01",
-      "hitRate": 4
+      "hitRate": 6
     },
     {
       "version": "1.4",
@@ -957,7 +957,7 @@
       "sourceWebName": "OPENTIX兩廳院文化生活",
       "startDate": "2026/11/07",
       "endDate": "2026/12/20",
-      "hitRate": 31
+      "hitRate": 32
     },
     {
       "version": "1.4",
@@ -1119,7 +1119,7 @@
       "sourceWebName": "OPENTIX兩廳院文化生活",
       "startDate": "2026/12/04",
       "endDate": "2026/12/06",
-      "hitRate": 7
+      "hitRate": 8
     },
     {
       "version": "1.4",
@@ -1183,7 +1183,7 @@
       "sourceWebName": "OPENTIX兩廳院文化生活",
       "startDate": "2026/10/31",
       "endDate": "2026/11/01",
-      "hitRate": 17
+      "hitRate": 18
     },
     {
       "version": "1.4",
@@ -1501,7 +1501,7 @@
       "sourceWebName": "OPENTIX兩廳院文化生活",
       "startDate": "2026/12/18",
       "endDate": "2026/12/20",
-      "hitRate": 2
+      "hitRate": 3
     }
   ]
 }
