@@ -107,21 +107,22 @@ jobs:
           with open('data/patrol_status.json', 'r', encoding='utf-8') as f:
               status = json.load(f)
 
-          time_str = status.get('lastAttemptAt') or status.get('startedAt')
+          time_str = status.get('startedAt')
           if not time_str:
-              print('錯誤：patrol_status.json 內無 lastAttemptAt 或 startedAt', file=sys.stderr)
+              print('錯誤：patrol_status.json 內無 startedAt', file=sys.stderr)
               sys.exit(1)
 
-          last_attempt = datetime.fromisoformat(time_str)
-          now_dt = datetime.now(timezone.utc)
-          age = now_dt - last_attempt
+          # 每天 03:00 巡檢、07:00 檢查：今天（台北）沒有開始過的巡檢就算漏跑
+          taipei = timezone(timedelta(hours=8))
+          started_day = datetime.fromisoformat(time_str).astimezone(taipei).date()
+          today = datetime.now(taipei).date()
 
           counts = status.get('counts', {})
           failed_count = counts.get('failed', 0)
 
           errors = []
-          if age > timedelta(hours=30):
-              errors.append(f'巡檢時間異常：距今已超過 30 小時（{age}）')
+          if started_day != today:
+              errors.append(f'今天（台北 {today}）沒有巡檢紀錄：最後一次開始於 {time_str}')
           if failed_count >= 10:
               errors.append(f'巡檢失敗來源過多：failed = {failed_count}（>= 10）')
 
@@ -130,5 +131,5 @@ jobs:
                   print(f'PATROL HEALTH ERROR: {err}', file=sys.stderr)
               sys.exit(1)
 
-          print(f'巡檢健康檢查通過：距今 {age}，failed={failed_count}')
+          print(f'巡檢健康檢查通過：今天 {today} 已巡檢（開始於 {time_str}），failed={failed_count}')
           "
