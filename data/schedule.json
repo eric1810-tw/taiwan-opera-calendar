@@ -255,9 +255,9 @@
   {
     "id": "sc-2026-10-28-puji",
     "date": "2026-10-28",
-    "dateFormatted": "2026/10/28（三）",
+    "dateFormatted": "2026/10/28",
     "daysAway": 1,
-    "time": "正戲時間未列；請洽劇團或廟方",
+    "time": "10/28 17:30 扮仙",
     "troupe": "秀琴歌劇團",
     "genre": "歌仔戲",
     "artist": "秀琴歌劇團演出團隊",
@@ -272,10 +272,20 @@
     "description": "秀琴歌劇團官方農曆九月戲路表列 10/28 普濟殿；未提供正戲時間與劇目。地址另與臺南旅遊網核對。",
     "link": "https://siouching2008.pixnet.net/blog/posts/944973141053335664",
     "linkLabel": "秀琴歌劇團官方九月戲路表",
-    "sourceUrl": "https://siouching2008.pixnet.net/blog/posts/944973141053335664",
+    "sourceUrl": "https://www.threads.com/@jing__1017/post/De1gDXdCYOT",
     "tags": [
       "秀琴歌劇團",
       "其他歌仔戲"
+    ],
+    "sessions": [
+      {
+        "date": "2026-10-28",
+        "kind": "扮仙",
+        "time": "17:30"
+      }
+    ],
+    "relatedSourceUrls": [
+      "https://siouching2008.pixnet.net/blog/posts/944973141053335664"
     ]
   },
   {
@@ -1842,5 +1852,293 @@
       "其他歌仔戲"
     ],
     "endDate": "2026-12-20"
+  },
+  {
+    "id": "auto-20261031-7d7c89f5",
+    "date": "2026-10-31",
+    "dateFormatted": "2026/10/31",
+    "daysAway": 4,
+    "time": "10/31 17:00 正戲",
+    "troupe": "李靜芳歌仔戲團",
+    "genre": "歌仔戲",
+    "artist": "未公布",
+    "title": "《白蛇傳・遊湖借傘》",
+    "category": "預定演出",
+    "badgeType": "plan",
+    "verifyStatus": "community",
+    "verifyLabel": "📣 社群公告（程式比對原文）",
+    "location": "東海大學人文大樓靠德耀路側樓梯下方",
+    "region": "未分類",
+    "status": "依社群公告；未列事項請洽劇團或廟方",
+    "description": "依 @jing__1017 2026-10-23 公告：「日期時間｜10/31（六）16:00 - 21:00 ✦ 前台入場｜東海大學人文大樓靠德耀路側樓梯下方 16:00 場次 歌劇 ✦ 謎思星球劇團《Belle Nuit》I 當代舞蹈 ✦ 余余劇場《剖開》 現代戲劇 ✦ 《右滑之後》 . 17:00 場次 音樂劇場 ✦ 《我想聽見你聽見的聲音》 歌仔戲 ✦ 李靜芳歌仔戲團《白蛇傳・遊湖借傘》」",
+    "link": "https://www.threads.com/@jing__1017/post/DezjmaXkw2e",
+    "sourceUrl": "https://www.threads.com/@jing__1017/post/DezjmaXkw2e",
+    "tags": [
+      "李靜芳歌仔戲團"
+    ],
+    "sessions": [
+      {
+        "date": "2026-10-31",
+        "kind": "正戲",
+        "time": "17:00"
+      }
+    ]
+  },
+  {
+    "id": "auto-20261029-ea6b0fa6",
+    "date": "2026-10-29",
+    "dateFormatted": "2026/10/29–2026/10/30",
+    "daysAway": 2,
+    "time": "10/29 14:00、10/30 14:00",
+    "troupe": "米雪文化",
+    "genre": "歌仔戲",
+    "artist": "米雪老師、陳太陽老師、李歆媛老師",
+    "title": "《頭飾手作梳妝＆戲曲卡拉OK》工作坊",
+    "category": "講座／體驗",
+    "badgeType": "lecture",
+    "verifyStatus": "community",
+    "verifyLabel": "📣 社群公告（程式比對原文）",
+    "location": "臺南開元排練場 A排練室",
+    "region": "南部",
+    "status": "依社群公告；未列事項請洽劇團或廟方",
+    "description": "依 @jing__1017 2026-10-20 公告：「米雪文化10月歌仔戲《頭飾手作梳妝＆戲曲卡拉OK》工作坊 ✨🎭 想體驗歌仔戲美麗的頭飾與舞臺梳妝嗎？這次米雪文化特別規劃兩天的戲曲體驗工作坊，邀請大家一起動手做、開心玩，感受歌仔戲的獨特魅力！💕 🎀 10/29（四）｜頭飾手作＆梳妝 從基礎技法開始，親手製作小生、小旦的精美頭飾，學習戲曲梳妝技巧，打造屬於自己的舞臺造型！ 🎤 10/30（五）｜戲曲卡拉OK 戴上自己親手製作的頭飾，穿上戲服、畫上美」",
+    "link": "https://www.threads.com/@jing__1017/post/DetmZSJCfNr",
+    "sourceUrl": "https://www.threads.com/@jing__1017/post/DetmZSJCfNr",
+    "tags": [
+      "米雪文化"
+    ],
+    "endDate": "2026-10-30",
+    "sessions": [
+      {
+        "date": "2026-10-29",
+        "kind": "其他",
+        "time": "14:00"
+      },
+      {
+        "date": "2026-10-30",
+        "kind": "其他",
+        "time": "14:00"
+      }
+    ]
+  },
+  {
+    "id": "auto-20261106-57a7e25e",
+    "date": "2026-11-06",
+    "dateFormatted": "2026/11/06–2026/11/07",
+    "daysAway": 10,
+    "time": "11/6 19:30 正戲、11/7 10:30 正戲、11/7 14:00 正戲",
+    "troupe": "風神寶寶兒童劇團",
+    "genre": "歌仔戲",
+    "artist": "未公布",
+    "title": "《王船精靈大冒險》",
+    "category": "預定演出",
+    "badgeType": "plan",
+    "verifyStatus": "community",
+    "verifyLabel": "📣 社群公告（程式比對原文）",
+    "location": "雲林表演廳",
+    "region": "中部",
+    "status": "依社群公告；未列事項請洽劇團或廟方",
+    "description": "依 mhysun 近期 公告：「由昭賢帶領的《風神寶寶兒童劇團》，從2024年開始推出「遊臺趣」系列作品。跟著風神寶寶走訪臺灣各地，把地方傳說與文化，化為孩子能親近的劇場冒險。\n對風神寶寶來說，每一次創作，都要思考怎麼讓孩子看得開心、聽得明白，也對故事裡的地方產生好奇。演員們則用歌仔戲的唱腔、身段與生動表演，讓這些故事在孩子眼前活起來。\n看著他們這樣努力，我很欣慰。歌仔戲陪伴了我們好幾代人，我也期待它能繼續陪著今天的孩子長大。\n」",
+    "link": "https://www.facebook.com/mhysun",
+    "sourceUrl": "https://www.facebook.com/mhysun",
+    "tags": [
+      "風神寶寶兒童劇團"
+    ],
+    "endDate": "2026-11-07",
+    "sessions": [
+      {
+        "date": "2026-11-06",
+        "kind": "正戲",
+        "time": "19:30"
+      },
+      {
+        "date": "2026-11-07",
+        "kind": "正戲",
+        "time": "10:30"
+      },
+      {
+        "date": "2026-11-07",
+        "kind": "正戲",
+        "time": "14:00"
+      }
+    ]
+  },
+  {
+    "id": "auto-20261121-248b34cb",
+    "date": "2026-11-21",
+    "dateFormatted": "2026/11/21–2026/11/22",
+    "daysAway": 25,
+    "time": "11/21 18:00 扮仙、11/22 18:00 扮仙",
+    "troupe": "秀琴歌劇團",
+    "genre": "歌仔戲",
+    "artist": "未公布",
+    "title": "灣裡文聖堂外台演出",
+    "category": "廟會民俗演出",
+    "badgeType": "temple",
+    "verifyStatus": "community",
+    "verifyLabel": "📣 社群公告（程式比對原文）",
+    "location": "黃金海岸方舟對面",
+    "region": "未分類",
+    "status": "依社群公告；未列事項請洽劇團或廟方",
+    "description": "依 @jing__1017 2026-10-23 公告：「【秀琴歌劇團農曆十月戲路表】農曆10/13~10/14 國曆11/21~11/22 灣裡文聖堂 黃金海岸方舟對面 *晚上6:00扮仙」",
+    "link": "https://www.threads.com/@jing__1017/post/De1frPuCR2L",
+    "sourceUrl": "https://www.threads.com/@jing__1017/post/De1frPuCR2L",
+    "tags": [
+      "秀琴歌劇團"
+    ],
+    "endDate": "2026-11-22",
+    "sessions": [
+      {
+        "date": "2026-11-21",
+        "kind": "扮仙",
+        "time": "18:00"
+      },
+      {
+        "date": "2026-11-22",
+        "kind": "扮仙",
+        "time": "18:00"
+      }
+    ]
+  },
+  {
+    "id": "auto-20261126-eb4f2e6e",
+    "date": "2026-11-26",
+    "dateFormatted": "2026/11/26–2026/11/27",
+    "daysAway": 30,
+    "time": "11/26 18:00 扮仙、11/27 18:00 扮仙",
+    "troupe": "秀琴歌劇團",
+    "genre": "歌仔戲",
+    "artist": "未公布",
+    "title": "鳳芸宮外台演出",
+    "category": "廟會民俗演出",
+    "badgeType": "temple",
+    "verifyStatus": "community",
+    "verifyLabel": "📣 社群公告（程式比對原文）",
+    "location": "高雄市林園區鳳芸里鳳芸路78號",
+    "region": "南部",
+    "status": "依社群公告；未列事項請洽劇團或廟方",
+    "description": "依 @jing__1017 2026-10-23 公告：「【秀琴歌劇團農曆十月戲路表】農曆10/18~10/19 國曆11/26~11/27 鳳芸宮 高雄市林園區鳳芸里鳳芸路78號 *晚上6:00扮仙」",
+    "link": "https://www.threads.com/@jing__1017/post/De1frPuCR2L",
+    "sourceUrl": "https://www.threads.com/@jing__1017/post/De1frPuCR2L",
+    "tags": [
+      "秀琴歌劇團"
+    ],
+    "endDate": "2026-11-27",
+    "sessions": [
+      {
+        "date": "2026-11-26",
+        "kind": "扮仙",
+        "time": "18:00"
+      },
+      {
+        "date": "2026-11-27",
+        "kind": "扮仙",
+        "time": "18:00"
+      }
+    ]
+  },
+  {
+    "id": "auto-20261202-14ddfe8c",
+    "date": "2026-12-02",
+    "dateFormatted": "2026/12/02–2026/12/03",
+    "daysAway": 36,
+    "time": "12/2 18:00 扮仙、12/3 18:00 扮仙",
+    "troupe": "秀琴歌劇團",
+    "genre": "歌仔戲",
+    "artist": "未公布",
+    "title": "安海港聚宋宮外台演出",
+    "category": "廟會民俗演出",
+    "badgeType": "temple",
+    "verifyStatus": "community",
+    "verifyLabel": "📣 社群公告（程式比對原文）",
+    "location": "臺南市中西區正興街148號",
+    "region": "南部",
+    "status": "依社群公告；未列事項請洽劇團或廟方",
+    "description": "依 @jing__1017 2026-10-23 公告：「【秀琴歌劇團農曆十月戲路表】農曆10/24~10/25 國曆12/2~12/3 安海港聚宋宮 臺南市中西區正興街148號 *晚上6:00扮仙」",
+    "link": "https://www.threads.com/@jing__1017/post/De1frPuCR2L",
+    "sourceUrl": "https://www.threads.com/@jing__1017/post/De1frPuCR2L",
+    "tags": [
+      "秀琴歌劇團"
+    ],
+    "endDate": "2026-12-03",
+    "sessions": [
+      {
+        "date": "2026-12-02",
+        "kind": "扮仙",
+        "time": "18:00"
+      },
+      {
+        "date": "2026-12-03",
+        "kind": "扮仙",
+        "time": "18:00"
+      }
+    ]
+  },
+  {
+    "id": "auto-20261208-38687fa1",
+    "date": "2026-12-08",
+    "dateFormatted": "2026/12/08",
+    "daysAway": 42,
+    "time": "12/8 22:30 扮仙、12/8 19:30 正戲",
+    "troupe": "秀琴歌劇團",
+    "genre": "歌仔戲",
+    "artist": "未公布",
+    "title": "《蟠桃大會慶狀元》",
+    "category": "廟會民俗演出",
+    "badgeType": "temple",
+    "verifyStatus": "community",
+    "verifyLabel": "📣 社群公告（程式比對原文）",
+    "location": "玉勅代天府三寮灣東隆宮（臺南市北門區三光里95號）",
+    "region": "南部",
+    "status": "依社群公告；未列事項請洽劇團或廟方",
+    "description": "依 @jing__1017 2026-10-23 公告：「【秀琴歌劇團農曆十月戲路表】農曆10/30 國曆12/8 《蟠桃大會慶狀元》 玉勅代天府三寮灣東隆宮（臺南市北門區三光里95號） *晚上7:30演出 *晚上10:30扮仙祝壽」",
+    "link": "https://www.threads.com/@jing__1017/post/De1frPuCR2L",
+    "sourceUrl": "https://www.threads.com/@jing__1017/post/De1frPuCR2L",
+    "tags": [
+      "秀琴歌劇團"
+    ],
+    "sessions": [
+      {
+        "date": "2026-12-08",
+        "kind": "正戲",
+        "time": "19:30"
+      },
+      {
+        "date": "2026-12-08",
+        "kind": "扮仙",
+        "time": "22:30"
+      }
+    ]
+  },
+  {
+    "id": "auto-20261129-9b6b90ae",
+    "date": "2026-11-29",
+    "dateFormatted": "2026/11/29",
+    "daysAway": 33,
+    "time": "11/29 18:15 正戲",
+    "troupe": "尚和歌仔戲劇團",
+    "genre": "歌仔戲",
+    "artist": "未公布",
+    "title": "《西遊記之芭蕉密碼》",
+    "category": "預定演出",
+    "badgeType": "plan",
+    "verifyStatus": "community",
+    "verifyLabel": "📣 社群公告（程式比對原文）",
+    "location": "高雄市永安天文宮廣場",
+    "region": "南部",
+    "status": "依社群公告；未列事項請洽劇團或廟方",
+    "description": "依 sunhope.fans 近期 公告：「尚和歌仔戲劇團 2026秋冬・外部公演訊息 高雄庄頭藝穗節系列 9/6（日）19:00｜《哪吒伏龍》 地點：燕巢區公所前廣場 9/20（日）19:00｜《紅塵觀音－戶外版》 地點：阿蓮區薦善堂 10/11（日）19:00｜《正庄・千波之神》 地點：茄萣區金鑾宮前廟埕 商演場次 10/14（三）18:00｜《三太子哪吒》 地點：八里福朋喜來登酒店 （新北市八里區大崁里觀海大道8號） 親子歌仔戲場次 」",
+    "link": "https://www.facebook.com/photo/?fbid=1716331140498595",
+    "sourceUrl": "https://www.facebook.com/photo/?fbid=1716331140498595",
+    "tags": [
+      "尚和歌仔戲劇團"
+    ],
+    "sessions": [
+      {
+        "date": "2026-11-29",
+        "kind": "正戲",
+        "time": "18:15"
+      }
+    ]
   }
 ]
