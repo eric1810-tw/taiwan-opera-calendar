@@ -1,7 +1,8 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
+import { execFileSync, spawn } from 'node:child_process';
 import { createServer } from 'node:http';
-import { existsSync, mkdtempSync, readFileSync, rmSync } from 'node:fs';
+import { existsSync, lstatSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import {
@@ -10,6 +11,7 @@ import {
   decideStop,
   facebookKey,
   facebookPostId,
+  isOrphanPatrolEdge,
   resolveProfile,
   run,
   threadsPostCode,
@@ -165,6 +167,74 @@ test('動態列表：新讀取器保留首屏的 De1UV_Ikxkl／De2R8XSkiWT（舊
     const event = events.find(e => e.type === 'source');
     assert.equal(event.problems.length, 0);
   } finally {
+    server.close();
+    rmSync(profile, { recursive: true, force: true });
+    rmSync(out, { recursive: true, force: true });
+  }
+});
+
+// --- 2026-10-28 事故回歸：中斷後留下的 Edge 佔住設定檔，下一次 19 個來源全部失敗 ---
+
+const CAPTURE = path.resolve(path.dirname(new URL(import.meta.url).pathname), '../scripts/patrol_v2/social_capture.mjs');
+const edgePids = profile => execFileSync('ps', ['-axww', '-o', 'pid=,command='], { encoding: 'utf-8' })
+  .split('\n').filter(l => l.includes('/MacOS/Microsoft Edge ') && l.includes(`--user-data-dir=${profile} `))
+  .map(l => parseInt(l.trim(), 10));
+const waitFor = async (fn, ms) => { const end = Date.now() + ms; while (Date.now() < end) { if (fn()) return true; await new Promise(r => setTimeout(r, 200)); } return fn(); };
+
+test('殘留 Edge 判定：只認父程序已結束、headless、同一設定檔的 Edge 主程序', () => {
+  const profile = '/Users/eric/.patrol-edge';
+  const cmd = `/Applications/Microsoft Edge.app/Contents/MacOS/Microsoft Edge --headless=new --remote-debugging-port=1 --user-data-dir=${profile} --lang=zh-TW `;
+  assert.equal(isOrphanPatrolEdge({ ppid: 1, command: cmd }, profile), true);
+  assert.equal(isOrphanPatrolEdge({ ppid: 4242, command: cmd }, profile), false, '父程序還在：另一個擷取正在用，不能殺');
+  assert.equal(isOrphanPatrolEdge({ ppid: 1, command: cmd.replace('--headless=new ', '') }, profile), false, '非 headless：使用者自己開的 Edge');
+  assert.equal(isOrphanPatrolEdge({ ppid: 1, command: cmd.replace(profile, profile + '-other') }, profile), false);
+});
+
+test('擷取程式被 SIGTERM 結束時，Edge 一起關掉', { skip: !existsSync(EDGE) || process.env.SKIP_EDGE === '1', timeout: 90000 }, async () => {
+  const server = createServer(() => {});  // 永不回應：讓擷取停在載入頁面
+  await new Promise(r => server.listen(0, '127.0.0.1', r));
+  const profile = mkdtempSync(path.join(os.tmpdir(), 'patrol-capture-term-'));
+  const out = mkdtempSync(path.join(os.tmpdir(), 'patrol-capture-out-'));
+  const sources = path.join(out, 'sources.json');
+  writeFileSync(sources, JSON.stringify([{ key: 'threads:x', kind: 'threads', handle: 'x', url: `http://127.0.0.1:${server.address().port}/@x`, knownPosts: [] }]));
+  const child = spawn(process.execPath, [CAPTURE, '--sources', sources, '--out', out, '--test-profile', profile], { stdio: 'ignore' });
+  try {
+    assert.ok(await waitFor(() => edgePids(profile).length > 0, 30000), 'Edge 應已啟動');
+    child.kill('SIGTERM');
+    await new Promise(r => child.once('exit', r));
+    assert.ok(await waitFor(() => edgePids(profile).length === 0, 10000), `仍有 Edge 殘留：${edgePids(profile)}`);
+  } finally {
+    for (const pid of edgePids(profile)) { try { process.kill(pid, 'SIGKILL'); } catch {} }
+    server.close();
+    rmSync(profile, { recursive: true, force: true });
+    rmSync(out, { recursive: true, force: true });
+  }
+});
+
+test('上一輪留下的 Edge 佔住設定檔：開始前自動結束它，照常讀取', { skip: !existsSync(EDGE) || process.env.SKIP_EDGE === '1', timeout: 180000 }, async () => {
+  const server = createServer((req, res) => { res.writeHead(200, { 'content-type': 'text/html; charset=utf-8' }); res.end(virtualPage()); });
+  await new Promise(r => server.listen(0, '127.0.0.1', r));
+  const profile = mkdtempSync(path.join(os.tmpdir(), 'patrol-capture-orphan-'));
+  const out = mkdtempSync(path.join(os.tmpdir(), 'patrol-capture-out-'));
+  // 中間的 node 開 Edge 後立刻結束 → Edge 的父程序變成 1，重現 10/28 的殘留
+  const launcher = `const { spawn } = require('node:child_process');
+spawn(${JSON.stringify(EDGE)}, ['--headless=new', '--remote-debugging-port=0', '--user-data-dir=${profile}', '--lang=zh-TW', '--no-first-run', '--no-default-browser-check', '--window-size=1280,2000', 'about:blank'], { stdio: 'ignore' }).unref();`;
+  execFileSync(process.execPath, ['-e', launcher]);
+  try {
+    assert.ok(await waitFor(() => edgePids(profile).length > 0 && (() => { try { return lstatSync(path.join(profile, 'SingletonLock')).isSymbolicLink(); } catch { return false; } })(), 30000), '殘留 Edge 應已佔住設定檔');
+    const orphan = edgePids(profile)[0];
+    await run({
+      sources: [{ key: 'threads:yuzhongluo', kind: 'threads', handle: 'yuzhongluo', url: `http://127.0.0.1:${server.address().port}/@yuzhongluo`, knownPosts: [] }],
+      outDir: out, testProfile: profile,
+      opts: { nowMs: Date.parse('2026-10-24T05:00:00+08:00'), threadsWaitMs: 400, readySeconds: 10, retries: 0 },
+      emit: () => {},
+    });
+    const result = JSON.parse(readFileSync(path.join(out, 'threads_yuzhongluo.json'), 'utf-8'));
+    assert.equal(result.error, null);
+    assert.ok(result.posts.length > 0);
+    assert.ok(!edgePids(profile).includes(orphan), '殘留的 Edge 應已結束');
+  } finally {
+    for (const pid of edgePids(profile)) { try { process.kill(pid, 'SIGKILL'); } catch {} }
     server.close();
     rmSync(profile, { recursive: true, force: true });
     rmSync(out, { recursive: true, force: true });

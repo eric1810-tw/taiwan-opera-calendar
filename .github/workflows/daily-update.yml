@@ -123,8 +123,8 @@ jobs:
           errors = []
           if started_day != today:
               errors.append(f'今天（台北 {today}）沒有巡檢紀錄：最後一次開始於 {time_str}')
-          if failed_count >= 10:
-              errors.append(f'巡檢失敗來源過多：failed = {failed_count}（>= 10）')
+          if failed_count >= 5:
+              errors.append(f'巡檢失敗來源過多：failed = {failed_count}（>= 5）')
 
           if errors:
               for err in errors:

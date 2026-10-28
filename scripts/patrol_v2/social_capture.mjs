@@ -3,9 +3,9 @@
 // 啟動方式與 scripts/social_reader.mjs 相同：child_process.spawn 原生 Edge＋~/.patrol-edge，
 // 不用 puppeteer／playwright，不加 mock keychain 等參數，不讀設定檔內任何資料檔。
 // 每個來源完成（含每次重試）就在 stdout 輸出一行 JSON，交給 Python 立即 record。
-import { spawn } from 'node:child_process';
+import { execFileSync, spawn } from 'node:child_process';
 import { createHash } from 'node:crypto';
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, lstatSync, mkdirSync, readFileSync, readlinkSync, writeFileSync } from 'node:fs';
 import { createServer } from 'node:net';
 import os from 'node:os';
 import path from 'node:path';
@@ -127,7 +127,47 @@ export function resolveProfile(testProfile) {
   return resolved;
 }
 
+// 上一輪被中斷時留下的 Edge：父程序已結束（ppid 1）、參數是本程式的 headless 組合、指向同一設定檔
+export function isOrphanPatrolEdge({ ppid, command }, profileDir) {
+  return ppid === 1 && command.includes('/MacOS/Microsoft Edge ') && command.includes('--headless=new')
+    && command.includes(`--user-data-dir=${profileDir} `);
+}
+
+function lockOwnerPid(profileDir) {
+  try {
+    const lockPath = path.join(profileDir, 'SingletonLock');
+    if (!lstatSync(lockPath).isSymbolicLink()) return null;
+    const pid = parseInt(readlinkSync(lockPath).split('-').pop(), 10);
+    return Number.isNaN(pid) ? null : pid;
+  } catch {
+    return null;
+  }
+}
+
+async function releaseOrphanEdge(profileDir) {
+  const pid = lockOwnerPid(profileDir);
+  if (!pid) return null;
+  let info;
+  try {
+    const out = execFileSync('ps', ['-ww', '-o', 'ppid=,command=', '-p', String(pid)], { encoding: 'utf-8' }).trim();
+    const m = out.match(/^(\d+)\s+(.*)$/s);
+    if (!m) return null;
+    info = { ppid: parseInt(m[1], 10), command: m[2] + ' ' };
+  } catch {
+    return null;  // 程序已不在：舊鎖，checkEdgeLock 會略過
+  }
+  if (!isOrphanPatrolEdge(info, profileDir)) return null;
+  const alive = () => { try { process.kill(pid, 0); return true; } catch { return false; } };
+  try { process.kill(pid, 'SIGTERM'); } catch {}
+  for (let i = 0; i < 50 && alive(); i++) await sleep(100);
+  if (alive()) { try { process.kill(pid, 'SIGKILL'); } catch {} }
+  for (let i = 0; i < 30 && alive(); i++) await sleep(100);
+  process.stderr.write(`已結束上一輪留下的 Edge（PID ${pid}）\n`);
+  return pid;
+}
+
 async function launchEdge(profileDir) {
+  await releaseOrphanEdge(profileDir);
   checkEdgeLock(profileDir);
   const port = await getFreePort();
   const args = [
@@ -141,6 +181,15 @@ async function launchEdge(profileDir) {
     'about:blank',
   ];
   const proc = spawn(EDGE_BIN, args, { stdio: 'ignore' });
+  // 本程式被結束（SIGTERM／SIGINT／SIGHUP）時先關 Edge，不留下佔住設定檔的程序
+  const onSignal = sig => {
+    try { proc.kill('SIGKILL'); } catch {}
+    process.exit(sig === 'SIGINT' ? 130 : 143);
+  };
+  const signals = ['SIGTERM', 'SIGINT', 'SIGHUP'];
+  for (const sig of signals) process.on(sig, onSignal);
+  const onExit = () => { try { proc.kill('SIGKILL'); } catch {} };
+  process.on('exit', onExit);
   let tabs = null;
   for (let i = 0; i < 40; i++) {
     try {
@@ -152,8 +201,9 @@ async function launchEdge(profileDir) {
     }
   }
   if (!tabs) {
+    const exited = proc.exitCode !== null;
     proc.kill();
-    throw new Error('無法連線到 Edge DevTools');
+    throw new Error(exited ? 'Edge 啟動後立即結束（設定檔可能被其他程序佔用）' : '無法連線到 Edge DevTools');
   }
   const pageTab = tabs.find(t => t.type === 'page') || tabs[0];
   const ws = new WebSocket(pageTab.webSocketDebuggerUrl);
@@ -190,6 +240,9 @@ async function launchEdge(profileDir) {
     try { ws.close(); } catch {}
     try { proc.kill(); } catch {}
     await new Promise(r => { if (proc.exitCode !== null) r(); else { proc.once('exit', r); setTimeout(r, 5000); } });
+    if (proc.exitCode === null) { try { proc.kill('SIGKILL'); } catch {} }
+    for (const sig of signals) process.off(sig, onSignal);
+    process.off('exit', onExit);
   };
   await send('Page.enable');
   await send('Runtime.enable');

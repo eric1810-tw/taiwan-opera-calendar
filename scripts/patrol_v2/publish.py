@@ -18,7 +18,7 @@ class PublishError(Exception):
     pass
 
 
-def git(args, cwd=ROOT, check=True):
+def git(args, cwd=ROOT, check=True, strip=True):
     lowered = set(args)
     for bad in FORBIDDEN:
         if bad <= lowered:
@@ -26,7 +26,14 @@ def git(args, cwd=ROOT, check=True):
     res = subprocess.run(["git", *args], cwd=cwd, capture_output=True, text=True)
     if check and res.returncode != 0:
         raise PublishError(f"git {' '.join(args)} 失敗：{(res.stderr or res.stdout).strip()}")
-    return res.stdout.strip()
+    return res.stdout.strip() if strip else res.stdout
+
+
+def changed_paths(paths, cwd=ROOT, runner=git):
+    """paths 中有變動（含未追蹤）的檔案。用 -z 且不去頭尾空白：狀態碼開頭的空白（" M"）不能被削掉"""
+    out = runner(["status", "--porcelain", "-z", "--untracked-files=all", "--", *paths], cwd=cwd, strip=False)
+    found = [entry[3:] for entry in out.split("\0") if len(entry) > 3]
+    return [p for p in paths if p in found]
 
 
 def stage_exact(paths, cwd=ROOT, runner=git):
