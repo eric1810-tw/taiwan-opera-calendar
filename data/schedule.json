@@ -2140,5 +2140,73 @@
         "time": "18:15"
       }
     ]
+  },
+  {
+    "id": "auto-20261106-afe598b0",
+    "date": "2026-11-06",
+    "dateFormatted": "2026/11/06",
+    "daysAway": 9,
+    "time": "11/6 19:30 正戲",
+    "troupe": "長義閣掌中劇團",
+    "genre": "布袋戲",
+    "artist": "未公布",
+    "title": "《乘上鸚鵡的記憶飛翔》",
+    "category": "售票演出",
+    "badgeType": "ticket",
+    "verifyStatus": "verified",
+    "verifyLabel": "🎫 OPENTIX 售票頁（程式比對頁面資料）",
+    "location": "新嘉義座（嘉義市 西區中山路616號O棟2樓）",
+    "region": "南部",
+    "status": "依售票頁資料；未列事項請查售票頁",
+    "description": "依 OPENTIX 售票頁：「節目：《乘上鸚鵡的記憶飛翔》\n主辦：長義閣掌中劇團\n售票：OPENTIX 售票頁\n票價：250元\n場次：2026-11-06 19:30｜地點：新嘉義座（嘉義市 西區中山路616號O棟2樓）」",
+    "link": "https://www.opentix.life/event/2101875447018987520",
+    "sourceUrl": "https://www.opentix.life/event/2101875447018987520",
+    "tags": [
+      "長義閣掌中劇團"
+    ],
+    "sessions": [
+      {
+        "date": "2026-11-06",
+        "kind": "正戲",
+        "time": "19:30"
+      }
+    ]
+  },
+  {
+    "id": "auto-20261107-fbfc2e46",
+    "date": "2026-11-07",
+    "dateFormatted": "2026/11/07–2026/11/08",
+    "daysAway": 10,
+    "time": "11/7 19:00 正戲、11/8 14:30 正戲",
+    "troupe": "光興閣掌中劇團",
+    "genre": "布袋戲",
+    "artist": "未公布",
+    "title": "《鬼谷第貳部》",
+    "category": "售票演出",
+    "badgeType": "ticket",
+    "verifyStatus": "verified",
+    "verifyLabel": "🎫 OPENTIX 售票頁（程式比對頁面資料）",
+    "location": "彰化縣文化局員林演藝廳小劇場（彰化縣 員林市員林大道二段99號）",
+    "region": "中部",
+    "status": "依售票頁資料；未列事項請查售票頁",
+    "description": "依 OPENTIX 售票頁：「節目：《鬼谷第貳部》\n主辦：光興閣掌中劇團\n售票：OPENTIX 售票頁\n票價：400元～600元\n場次：2026-11-07 19:00｜地點：彰化縣文化局員林演藝廳小劇場（彰化縣 員林市員林大道二段99號）\n場次：2026-11-08 14:30｜地點：彰化縣文化局員林演藝廳小劇場（彰化縣 員林市員林大道二段99號）」",
+    "link": "https://www.opentix.life/event/2083498970180161537",
+    "sourceUrl": "https://www.opentix.life/event/2083498970180161537",
+    "tags": [
+      "光興閣掌中劇團"
+    ],
+    "endDate": "2026-11-08",
+    "sessions": [
+      {
+        "date": "2026-11-07",
+        "kind": "正戲",
+        "time": "19:00"
+      },
+      {
+        "date": "2026-11-08",
+        "kind": "正戲",
+        "time": "14:30"
+      }
+    ]
   }
 ]
