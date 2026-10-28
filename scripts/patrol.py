@@ -5,19 +5,24 @@
     python3 scripts/patrol.py next --run <runId>
     python3 scripts/patrol.py models --run <runId> --role main --model <模型> --evidence <來源>
     python3 scripts/patrol.py status [--run <runId>]
+    python3 scripts/patrol.py close --run <runId> --reason <原因>
 
 `start`／`next` 都會印出一行 JSON，告訴排程工作階段下一步：
   {"action": "judge", ...}   派判讀子代理（Sonnet／medium）寫出指定的 proposals 檔
   {"action": "review", ...}  派質疑者子代理（Opus／high）寫出 review.json
-  {"action": "continue"}     再跑一次 next
+  {"action": "continue"}     背景程序還在跑（或步驟間銜接），再跑一次 next；每次 start／next 最多約 4 分鐘就回來
   {"action": "done", ...}    本輪結束（含今日已完成而直接結束）
   {"action": "stopped", ...} 前置失敗或其他無法續行的狀況，原因已寫進報告
 模型不得自行改 schedule.json 或執行 git；寫入與發布都只由本程式進行。
 """
 import argparse
 import json
+import os
+import signal
 import subprocess
 import sys
+import threading
+import time
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -36,6 +41,7 @@ CAPTURE = ROOT / "scripts" / "patrol_v2" / "social_capture.mjs"
 WATCH = ROOT / "scripts" / "patrol_v2" / "watch.json"
 JUDGE_PROMPT = "docs/patrol-v2/JUDGE_PROMPT.md"
 REVIEW_PROMPT = "docs/patrol-v2/REVIEW_PROMPT.md"
+CAPTURE_TIMEOUT = 40 * 60  # 社群擷取整體上限（秒）；正常約 20 分鐘
 
 
 def emit(obj):
@@ -88,6 +94,8 @@ def step_preflight(st):
         st.ask_eric(f"前置檢查失敗，本輪沒有巡檢：{error}")
         return stop(st, "preflight-failed", str(error))
     st.data["preflight"] = info
+    if info.get("indexLock"):
+        st.log(info["indexLock"])
     st.save()
     st.set_step("preflight", "done")
     return None
@@ -116,7 +124,44 @@ def run_capture(st, social_sources, edir):
     sources_file = st.dir / "social_sources.json"
     write_json(sources_file, social_sources)
     cmd = ["node", str(CAPTURE), "--sources", str(sources_file), "--out", str(edir), "--media", str(STATE_DIR / "media")]
-    proc = subprocess.Popen(cmd, cwd=ROOT, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+    # 自成一個程序群組：逾時或本程序被結束時，連同 node 開的 Edge 一起收掉
+    proc = subprocess.Popen(cmd, cwd=ROOT, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True,
+                            start_new_session=True)
+    expired = threading.Event()
+    watchdog = threading.Timer(CAPTURE_TIMEOUT, lambda: (expired.set(), kill_group(proc)))
+    watchdog.daemon = True
+    watchdog.start()
+    try:
+        summaries = read_capture(st, proc, social_sources)
+    finally:
+        watchdog.cancel()
+        if proc.poll() is None:
+            kill_group(proc)
+    err = proc.stderr.read()
+    for s in social_sources:
+        if s["key"] not in summaries:
+            reason = f"超過 {CAPTURE_TIMEOUT // 60} 分鐘上限，已強制結束" if expired.is_set() else f"讀取器結束碼 {proc.returncode}"
+            record(st, s["key"], "failed", "social-capture-v2", s["url"], "讀取器未回報此來源", "unread",
+                   f"{reason}：{err.strip()[-300:] or '無錯誤訊息'}")
+    return summaries, proc.returncode, err
+
+
+def kill_group(proc, grace=5):
+    try:
+        os.killpg(proc.pid, signal.SIGTERM)
+    except (ProcessLookupError, PermissionError):
+        return
+    try:
+        proc.wait(timeout=grace)
+    except subprocess.TimeoutExpired:
+        try:
+            os.killpg(proc.pid, signal.SIGKILL)
+        except (ProcessLookupError, PermissionError):
+            pass
+        proc.wait()
+
+
+def read_capture(st, proc, social_sources):
     summaries = {}
     for line in proc.stdout:
         line = line.strip()
@@ -138,12 +183,7 @@ def run_capture(st, social_sources, edir):
         record(st, key, state, "social-capture-v2", url, scope, "unread", f"{detail}；證據 {event['path']}")
         heartbeat(st.run_id)
     proc.wait()
-    err = proc.stderr.read()
-    for s in social_sources:
-        if s["key"] not in summaries:
-            record(st, s["key"], "failed", "social-capture-v2", s["url"], "讀取器未回報此來源", "unread",
-                   f"讀取器結束碼 {proc.returncode}：{err.strip()[-300:] or '無錯誤訊息'}")
-    return summaries, proc.returncode, err
+    return summaries
 
 
 def write_items_evidence(edir, name, items):
@@ -432,8 +472,7 @@ def step_apply(st):
 def step_publish(st):
     paths = ["data/schedule.json", "data/patrol_status.json", f"patrol_runs/{st.run_id}.json",
              "data/review_queue.json", "docs/patrols/cancelled_cards.jsonl"]
-    changed = publish.git(["status", "--porcelain", "--", *paths]).splitlines()
-    to_stage = [line[2:].strip() for line in changed if line[2:].strip() in paths]
+    to_stage = publish.changed_paths(paths)
     try:
         sha = None if not to_stage else publish.commit_and_push(to_stage, f"chore(patrol): {st.run_id} 巡檢紀錄與場次更新（patrol-v2）")
         if not sha and st.data.get("publication", {}).get("sha"):
@@ -529,6 +568,134 @@ def advance(st):
                     "reason": st.data["steps"][name].get("detail") or "步驟失敗", "forEric": list(st.data["forEric"])}
 
 
+# --- 背景程序：耗時的步驟（讀社群約 20 分鐘、等 Actions）不在 start／next 裡同步跑 ---
+# start／next 最多等 WORKER_BUDGET 秒就回來；主流程被中斷或逾時，背景程序照樣跑完。
+
+WORKER_BUDGET = 240
+MAX_WORKER_RESTARTS = 3
+
+
+def worker_path(st):
+    return st.dir / "worker.json"
+
+
+def pid_alive(pid):
+    if not pid:
+        return False
+    try:
+        os.kill(pid, 0)
+        return True
+    except ProcessLookupError:
+        return False
+    except PermissionError:
+        return True
+
+
+def spawn_worker(st):
+    log = open(st.dir / "worker.log", "a", encoding="utf-8")
+    proc = subprocess.Popen([sys.executable, str(Path(__file__).resolve()), "_worker", "--run", st.run_id],
+                            cwd=ROOT, stdin=subprocess.DEVNULL, stdout=log, stderr=log, start_new_session=True)
+    return proc.pid
+
+
+def take_result(path, info):
+    info["consumed"] = True
+    write_json(path, info)
+    return info["result"]
+
+
+def drive(st, budget=WORKER_BUDGET, spawn=spawn_worker, alive=pid_alive, sleep=time.sleep, clock=time.monotonic):
+    path = worker_path(st)
+    info = read_json(path, {}) or {}
+    if info.get("status") == "finished" and not info.get("consumed"):
+        return take_result(path, info)
+    restarts = info.get("restarts", 0)
+    if info.get("status") in ("running", "starting") and not alive(info.get("pid")):
+        restarts += 1
+        st = RunState(st.run_id, st.state_dir)
+        st.log("背景程序中斷，重新啟動", pid=info.get("pid"), restarts=restarts)
+        if restarts > MAX_WORKER_RESTARTS:
+            st.ask_eric(f"背景程序連續中斷 {restarts} 次，本輪停止")
+            result = stop(st, "worker-died", f"背景程序連續中斷 {restarts} 次")
+            write_json(path, {"status": "finished", "result": result, "consumed": True, "restarts": restarts})
+            return result
+        info = {}
+    if info.get("status") not in ("running", "starting"):
+        write_json(path, {"status": "starting", "pid": None, "restarts": restarts, "startedAt": now()})
+        pid = spawn(st)
+        current = read_json(path, {}) or {}
+        if current.get("status") == "starting":
+            current.update({"status": "running", "pid": pid})
+            write_json(path, current)
+    deadline = clock() + budget
+    while True:
+        info = read_json(path, {}) or {}
+        if info.get("status") == "finished" and not info.get("consumed"):
+            return take_result(path, info)
+        if clock() >= deadline or not alive(info.get("pid")):
+            break
+        sleep(2)
+    st = RunState(st.run_id, st.state_dir)
+    running = next((k for k, v in st.data["steps"].items() if v.get("status") == "running"), None)
+    return {"action": "continue", "runId": st.run_id, "waiting": running,
+            "note": "背景程序仍在執行，請再跑一次 next；不要結束任何程序"}
+
+
+def notify(st, result):
+    """這台 Mac 的系統通知（排程工作階段沒有連 Remote Control，手機推播送不出去）"""
+    if result.get("action") == "stopped":
+        text = f"【要處理】巡檢停止：{str(result.get('reason') or result.get('outcome'))[:80]}"
+    else:
+        asks = len(result.get("forEric") or [])
+        text = f"巡檢完成（{result.get('outcome')}）" + (f"，{asks} 件要你看" if asks else "")
+    script = f"display notification {json.dumps(text, ensure_ascii=False)} with title \"臺灣戲曲巡檢 {st.run_id}\""
+    try:
+        subprocess.run(["osascript", "-e", script], capture_output=True, timeout=15)
+    except (OSError, subprocess.TimeoutExpired):
+        pass
+
+
+def cmd_worker(args):
+    st = RunState(args.run)
+    stop_beat = threading.Event()
+
+    def beat():
+        while not stop_beat.wait(60):
+            heartbeat(st.run_id)
+
+    threading.Thread(target=beat, daemon=True).start()
+    try:
+        acquire_lock(st.run_id)
+        result = advance(st)
+    except LockBusy as error:
+        result = {"action": "stopped", "outcome": "reentry-blocked", "reason": str(error)}
+    except Exception as error:  # advance 內已處理步驟錯誤；這裡只接住意外
+        result = {"action": "stopped", "runId": st.run_id, "outcome": "worker-error", "reason": f"{type(error).__name__}: {error}"}
+    finally:
+        stop_beat.set()
+    path = worker_path(st)
+    info = read_json(path, {}) or {}
+    info.update({"status": "finished", "pid": os.getpid(), "result": result, "finishedAt": now(), "consumed": False})
+    write_json(path, info)
+    if result.get("action") in ("done", "stopped") and st.mode == "production":
+        notify(st, result)
+    return 0
+
+
+def cmd_close(args):
+    st = RunState(args.run)
+    if not st.data:
+        return emit({"action": "stopped", "reason": f"找不到本輪 {args.run}"})
+    if st.data.get("finished"):
+        return emit({"ok": False, "reason": f"{args.run} 已結案（{st.data.get('outcome')}）"})
+    if pid_alive((read_json(worker_path(st), {}) or {}).get("pid")) and (read_json(worker_path(st), {}) or {}).get("status") == "running":
+        return emit({"ok": False, "reason": "背景程序仍在執行，不能結案"})
+    st.data["closedReason"] = args.reason
+    st.log("人工結案", reason=args.reason)
+    st.finish("abandoned")
+    return emit({"ok": True, "runId": st.run_id, "outcome": "abandoned", "reason": args.reason})
+
+
 def cmd_start(args):
     existing = find_today(args.mode)
     if existing and existing.data.get("finished") and not args.force_new:
@@ -547,7 +714,7 @@ def cmd_start(args):
         return emit({"action": "stopped", "outcome": "reentry-blocked", "reason": str(error)})
     if previous:
         st.log("接手失效的鎖", previous=previous)
-    return emit(advance(st))
+    return emit(drive(st))
 
 
 def cmd_next(args):
@@ -558,7 +725,7 @@ def cmd_next(args):
         acquire_lock(st.run_id)
     except LockBusy as error:
         return emit({"action": "stopped", "outcome": "reentry-blocked", "reason": str(error)})
-    return emit(advance(st))
+    return emit(drive(st))
 
 
 def cmd_models(args):
@@ -576,7 +743,8 @@ def cmd_status(args):
     if not st or not st.data:
         return emit({"run": None})
     return emit({"runId": st.run_id, "mode": st.mode, "finished": st.data["finished"], "outcome": st.data.get("outcome"),
-                 "steps": {k: v.get("status") for k, v in st.data["steps"].items()}, "stats": st.data.get("stats")})
+                 "steps": {k: v.get("status") for k, v in st.data["steps"].items()}, "stats": st.data.get("stats"),
+                 "worker": {k: v for k, v in (read_json(worker_path(st), {}) or {}).items() if k != "result"}})
 
 
 def main(argv=None):
@@ -592,11 +760,17 @@ def main(argv=None):
     p.add_argument("--role", required=True, choices=("main", "judge", "review"))
     p.add_argument("--model", required=True)
     p.add_argument("--evidence", required=True)
+    p = sub.add_parser("close", help="人工結案一輪沒跑完的巡檢（標為 abandoned）")
+    p.add_argument("--run", required=True)
+    p.add_argument("--reason", required=True)
+    p = sub.add_parser("_worker", help="內部用：背景執行步驟")
+    p.add_argument("--run", required=True)
     p = sub.add_parser("status")
     p.add_argument("--run")
     p.add_argument("--mode", choices=("production", "dry-run", "shadow"), default="production")
     args = parser.parse_args(argv)
-    return {"start": cmd_start, "next": cmd_next, "models": cmd_models, "status": cmd_status}[args.command](args)
+    return {"start": cmd_start, "next": cmd_next, "models": cmd_models, "status": cmd_status,
+            "close": cmd_close, "_worker": cmd_worker}[args.command](args)
 
 
 if __name__ == "__main__":

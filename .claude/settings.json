@@ -22,7 +22,10 @@
       "Edit(/data/schedule.json)",
       "Write(/data/schedule.json)",
       "Read(~/.patrol-edge/**)",
-      "Read(~/.patrol-browser-profile/**)"
+      "Read(~/.patrol-browser-profile/**)",
+      "Bash(kill:*)",
+      "Bash(pkill:*)",
+      "Bash(killall:*)"
     ]
   }
 }
