@@ -1,0 +1,413 @@
+{
+  "version": 1,
+  "startedAt": "2026-10-29T03:11:24+08:00",
+  "resumedAt": [],
+  "sources": {
+    "threads:joe_huang_k_w": {
+      "url": "https://www.threads.com/@joe_huang_k_w",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-29T03:11:36+08:00",
+          "method": "social-capture-v2",
+          "url": "https://www.threads.com/@joe_huang_k_w",
+          "state": "partial",
+          "scope": "首屏 4 篇、累積 11 篇；最新 2026-10-26T21:28:30+08:00、最舊 2026-10-18T13:12:12+08:00；捲動 2 次、停止原因 reached-window；圖片下載 12 張",
+          "media": "unread",
+          "detail": "不變式通過；證據 /Users/eric/aiwork/taiwan-opera-calendar/patrol_evidence/2026-10-29_0311/threads_joe_huang_k_w.json"
+        }
+      ]
+    },
+    "threads:h.akito_1996": {
+      "url": "https://www.threads.com/@h.akito_1996",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-29T03:11:46+08:00",
+          "method": "social-capture-v2",
+          "url": "https://www.threads.com/@h.akito_1996",
+          "state": "partial",
+          "scope": "首屏 6 篇、累積 6 篇；最新 2026-10-28T17:42:12+08:00、最舊 2026-09-27T00:04:33+08:00；捲動 3 次、停止原因 no-new-after-3；圖片下載 6 張",
+          "media": "unread",
+          "detail": "不變式通過；證據 /Users/eric/aiwork/taiwan-opera-calendar/patrol_evidence/2026-10-29_0311/threads_h.akito_1996.json"
+        }
+      ]
+    },
+    "threads:the_rin.lpm": {
+      "url": "https://www.threads.com/@the_rin.lpm",
+      "state": "complete",
+      "attempts": [
+        {
+          "at": "2026-10-29T03:11:53+08:00",
+          "method": "social-capture-v2",
+          "url": "https://www.threads.com/@the_rin.lpm",
+          "state": "partial",
+          "scope": "首屏 4 篇、累積 6 篇；最新 2026-10-20T20:27:15+08:00、最舊 2026-09-26T14:32:03+08:00；捲動 1 次、停止原因 reached-window；圖片下載 7 張",
+          "media": "unread",
+          "detail": "不變式通過；證據 /Users/eric/aiwork/taiwan-opera-calendar/patrol_evidence/2026-10-29_0311/threads_the_rin.lpm.json"
+        },
+        {
+          "at": "2026-10-29T03:40:02+08:00",
+          "method": "social-capture-v2",
+          "url": "https://www.threads.com/@the_rin.lpm",
+          "state": "complete",
+          "scope": "7 天窗口讀完（停止原因 reached-window）；窗口內 0 篇皆有處置；圖片 0 張皆已判讀",
+          "media": "not_applicable",
+          "detail": "不變式通過、逐篇處置完成"
+        }
+      ]
+    },
+    "threads:1013.yr_": {
+      "url": "https://www.threads.com/@1013.yr_",
+      "state": "failed",
+      "attempts": [
+        {
+          "at": "2026-10-29T03:12:21+08:00",
+          "method": "social-capture-v2",
+          "url": "https://www.threads.com/@1013.yr_",
+          "state": "failed",
+          "scope": "第 1 次嘗試：0 篇；登入牆＝否；停止原因 no-new-after-3",
+          "media": "unread",
+          "detail": "失敗：first-screen-empty；換路徑重試"
+        },
+        {
+          "at": "2026-10-29T03:12:51+08:00",
+          "method": "social-capture-v2",
+          "url": "https://www.threads.com/@1013.yr_",
+          "state": "failed",
+          "scope": "第 2 次嘗試：0 篇；登入牆＝否；停止原因 no-new-after-3",
+          "media": "unread",
+          "detail": "失敗：first-screen-empty；換路徑重試"
+        },
+        {
+          "at": "2026-10-29T03:13:49+08:00",
+          "method": "social-capture-v2",
+          "url": "https://www.threads.com/@1013.yr_",
+          "state": "failed",
+          "scope": "第 3 次嘗試：0 篇；登入牆＝否；停止原因 no-new-after-3",
+          "media": "unread",
+          "detail": "失敗：first-screen-empty；換路徑重試"
+        },
+        {
+          "at": "2026-10-29T03:15:17+08:00",
+          "method": "social-capture-v2",
+          "url": "https://www.threads.com/@1013.yr_",
+          "state": "failed",
+          "scope": "首屏 0 篇、累積 0 篇；最新 無、最舊 無；捲動 3 次、停止原因 no-new-after-3；圖片下載 0 張",
+          "media": "unread",
+          "detail": "問題：first-screen-empty；證據 /Users/eric/aiwork/taiwan-opera-calendar/patrol_evidence/2026-10-29_0311/threads_1013.yr_.json"
+        }
+      ]
+    },
+    "threads:xuefeng_lu_": {
+      "url": "https://www.threads.com/@xuefeng_lu_",
+      "state": "complete",
+      "attempts": [
+        {
+          "at": "2026-10-29T03:15:26+08:00",
+          "method": "social-capture-v2",
+          "url": "https://www.threads.com/@xuefeng_lu_",
+          "state": "partial",
+          "scope": "首屏 4 篇、累積 6 篇；最新 2026-10-29T01:32:24+08:00、最舊 2026-10-17T14:49:36+08:00；捲動 2 次、停止原因 reached-window；圖片下載 0 張",
+          "media": "unread",
+          "detail": "不變式通過；證據 /Users/eric/aiwork/taiwan-opera-calendar/patrol_evidence/2026-10-29_0311/threads_xuefeng_lu_.json"
+        },
+        {
+          "at": "2026-10-29T03:40:02+08:00",
+          "method": "social-capture-v2",
+          "url": "https://www.threads.com/@xuefeng_lu_",
+          "state": "complete",
+          "scope": "7 天窗口讀完（停止原因 reached-window）；窗口內 4 篇皆有處置；圖片 0 張皆已判讀",
+          "media": "not_applicable",
+          "detail": "不變式通過、逐篇處置完成"
+        }
+      ]
+    },
+    "threads:yuzhongluo": {
+      "url": "https://www.threads.com/@yuzhongluo",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-29T03:16:06+08:00",
+          "method": "social-capture-v2",
+          "url": "https://www.threads.com/@yuzhongluo",
+          "state": "partial",
+          "scope": "首屏 4 篇、累積 33 篇；最新 2026-10-28T23:34:12+08:00、最舊 2026-10-20T12:05:15+08:00；捲動 15 次、停止原因 reached-window；圖片下載 65 張",
+          "media": "unread",
+          "detail": "不變式通過；證據 /Users/eric/aiwork/taiwan-opera-calendar/patrol_evidence/2026-10-29_0311/threads_yuzhongluo.json"
+        }
+      ]
+    },
+    "threads:taiwaneseopera168": {
+      "url": "https://www.threads.com/@taiwaneseopera168",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-29T03:16:39+08:00",
+          "method": "social-capture-v2",
+          "url": "https://www.threads.com/@taiwaneseopera168",
+          "state": "partial",
+          "scope": "首屏 5 篇、累積 35 篇；最新 2026-10-28T22:06:52+08:00、最舊 2026-08-16T02:33:12+08:00；捲動 15 次、停止原因 reached-window；圖片下載 29 張",
+          "media": "unread",
+          "detail": "不變式通過；證據 /Users/eric/aiwork/taiwan-opera-calendar/patrol_evidence/2026-10-29_0311/threads_taiwaneseopera168.json"
+        }
+      ]
+    },
+    "threads:jing__1017": {
+      "url": "https://www.threads.com/@jing__1017",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-29T03:17:06+08:00",
+          "method": "social-capture-v2",
+          "url": "https://www.threads.com/@jing__1017",
+          "state": "partial",
+          "scope": "首屏 4 篇、累積 28 篇；最新 2026-10-29T01:29:17+08:00、最舊 2026-10-22T01:58:53+08:00；捲動 10 次、停止原因 reached-window；圖片下載 33 張",
+          "media": "unread",
+          "detail": "不變式通過；證據 /Users/eric/aiwork/taiwan-opera-calendar/patrol_evidence/2026-10-29_0311/threads_jing__1017.json"
+        }
+      ]
+    },
+    "threads:hilang.on.tour": {
+      "url": "https://www.threads.com/@hilang.on.tour",
+      "state": "complete",
+      "attempts": [
+        {
+          "at": "2026-10-29T03:17:12+08:00",
+          "method": "social-capture-v2",
+          "url": "https://www.threads.com/@hilang.on.tour",
+          "state": "partial",
+          "scope": "首屏 4 篇、累積 5 篇；最新 2026-10-14T11:25:01+08:00、最舊 2026-10-05T12:01:15+08:00；捲動 1 次、停止原因 reached-window；圖片下載 9 張",
+          "media": "unread",
+          "detail": "不變式通過；證據 /Users/eric/aiwork/taiwan-opera-calendar/patrol_evidence/2026-10-29_0311/threads_hilang.on.tour.json"
+        },
+        {
+          "at": "2026-10-29T03:40:02+08:00",
+          "method": "social-capture-v2",
+          "url": "https://www.threads.com/@hilang.on.tour",
+          "state": "complete",
+          "scope": "7 天窗口讀完（停止原因 reached-window）；窗口內 0 篇皆有處置；圖片 0 張皆已判讀",
+          "media": "not_applicable",
+          "detail": "不變式通過、逐篇處置完成"
+        }
+      ]
+    },
+    "threads:yolin1991": {
+      "url": "https://www.threads.com/@yolin1991",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-29T03:17:21+08:00",
+          "method": "social-capture-v2",
+          "url": "https://www.threads.com/@yolin1991",
+          "state": "partial",
+          "scope": "首屏 4 篇、累積 8 篇；最新 2026-10-28T18:34:21+08:00、最舊 2026-10-20T21:07:23+08:00；捲動 2 次、停止原因 reached-window；圖片下載 8 張",
+          "media": "unread",
+          "detail": "不變式通過；證據 /Users/eric/aiwork/taiwan-opera-calendar/patrol_evidence/2026-10-29_0311/threads_yolin1991.json"
+        }
+      ]
+    },
+    "facebook:sunhope.fans": {
+      "url": "https://www.facebook.com/sunhope.fans",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-29T03:18:26+08:00",
+          "method": "social-capture-v2",
+          "url": "https://www.facebook.com/sunhope.fans",
+          "state": "partial",
+          "scope": "首屏 3 篇、累積 21 篇；最新 無、最舊 無；捲動 20 次、停止原因 max-scrolls；圖片下載 31 張",
+          "media": "unread",
+          "detail": "不變式通過；證據 /Users/eric/aiwork/taiwan-opera-calendar/patrol_evidence/2026-10-29_0311/facebook_sunhope.fans.json"
+        }
+      ]
+    },
+    "facebook:HsiaoHsiYuan1913": {
+      "url": "https://www.facebook.com/HsiaoHsiYuan1913/",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-29T03:19:31+08:00",
+          "method": "social-capture-v2",
+          "url": "https://www.facebook.com/HsiaoHsiYuan1913/",
+          "state": "partial",
+          "scope": "首屏 1 篇、累積 24 篇；最新 無、最舊 無；捲動 20 次、停止原因 max-scrolls；圖片下載 50 張",
+          "media": "unread",
+          "detail": "不變式通過；證據 /Users/eric/aiwork/taiwan-opera-calendar/patrol_evidence/2026-10-29_0311/facebook_HsiaoHsiYuan1913.json"
+        }
+      ]
+    },
+    "facebook:100063868113954": {
+      "url": "https://www.facebook.com/p/%E5%90%B3%E5%A5%95%E8%90%B1-Wu-Yihsuan-100063868113954",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-29T03:20:36+08:00",
+          "method": "social-capture-v2",
+          "url": "https://www.facebook.com/p/%E5%90%B3%E5%A5%95%E8%90%B1-Wu-Yihsuan-100063868113954",
+          "state": "partial",
+          "scope": "首屏 3 篇、累積 21 篇；最新 無、最舊 無；捲動 20 次、停止原因 max-scrolls；圖片下載 49 張",
+          "media": "unread",
+          "detail": "不變式通過；證據 /Users/eric/aiwork/taiwan-opera-calendar/patrol_evidence/2026-10-29_0311/facebook_100063868113954.json"
+        }
+      ]
+    },
+    "facebook:MingHuaYuanTianTaiwaneseOpera": {
+      "url": "https://www.facebook.com/MingHuaYuanTianTaiwaneseOpera",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-29T03:21:41+08:00",
+          "method": "social-capture-v2",
+          "url": "https://www.facebook.com/MingHuaYuanTianTaiwaneseOpera",
+          "state": "partial",
+          "scope": "首屏 1 篇、累積 23 篇；最新 無、最舊 無；捲動 20 次、停止原因 max-scrolls；圖片下載 65 張",
+          "media": "unread",
+          "detail": "不變式通過；證據 /Users/eric/aiwork/taiwan-opera-calendar/patrol_evidence/2026-10-29_0311/facebook_MingHuaYuanTianTaiwaneseOpera.json"
+        }
+      ]
+    },
+    "facebook:61574134933376": {
+      "url": "https://www.facebook.com/profile.php?id=61574134933376",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-29T03:22:46+08:00",
+          "method": "social-capture-v2",
+          "url": "https://www.facebook.com/profile.php?id=61574134933376",
+          "state": "partial",
+          "scope": "首屏 1 篇、累積 20 篇；最新 無、最舊 無；捲動 20 次、停止原因 max-scrolls；圖片下載 61 張",
+          "media": "unread",
+          "detail": "不變式通過；證據 /Users/eric/aiwork/taiwan-opera-calendar/patrol_evidence/2026-10-29_0311/facebook_61574134933376.json"
+        }
+      ]
+    },
+    "facebook:mhysun": {
+      "url": "https://www.facebook.com/mhysun",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-29T03:23:51+08:00",
+          "method": "social-capture-v2",
+          "url": "https://www.facebook.com/mhysun",
+          "state": "partial",
+          "scope": "首屏 1 篇、累積 19 篇；最新 無、最舊 無；捲動 20 次、停止原因 max-scrolls；圖片下載 79 張",
+          "media": "unread",
+          "detail": "不變式通過；證據 /Users/eric/aiwork/taiwan-opera-calendar/patrol_evidence/2026-10-29_0311/facebook_mhysun.json"
+        }
+      ]
+    },
+    "facebook:61594936681482": {
+      "url": "https://www.facebook.com/profile.php?id=61594936681482",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-29T03:24:19+08:00",
+          "method": "social-capture-v2",
+          "url": "https://www.facebook.com/profile.php?id=61594936681482",
+          "state": "partial",
+          "scope": "首屏 1 篇、累積 7 篇；最新 無、最舊 無；捲動 7 次、停止原因 no-new-after-3；圖片下載 23 張",
+          "media": "unread",
+          "detail": "不變式通過；證據 /Users/eric/aiwork/taiwan-opera-calendar/patrol_evidence/2026-10-29_0311/facebook_61594936681482.json"
+        }
+      ]
+    },
+    "facebook:lanyang.opera": {
+      "url": "https://www.facebook.com/lanyang.opera/",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-29T03:25:23+08:00",
+          "method": "social-capture-v2",
+          "url": "https://www.facebook.com/lanyang.opera/",
+          "state": "partial",
+          "scope": "首屏 1 篇、累積 22 篇；最新 無、最舊 無；捲動 20 次、停止原因 max-scrolls；圖片下載 39 張",
+          "media": "unread",
+          "detail": "不變式通過；證據 /Users/eric/aiwork/taiwan-opera-calendar/patrol_evidence/2026-10-29_0311/facebook_lanyang.opera.json"
+        }
+      ]
+    },
+    "facebook:Taichungpuppettheater": {
+      "url": "https://www.facebook.com/Taichungpuppettheater/",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-29T03:26:30+08:00",
+          "method": "social-capture-v2",
+          "url": "https://www.facebook.com/Taichungpuppettheater/",
+          "state": "partial",
+          "scope": "首屏 2 篇、累積 26 篇；最新 無、最舊 無；捲動 20 次、停止原因 max-scrolls；圖片下載 25 張",
+          "media": "unread",
+          "detail": "不變式通過；證據 /Users/eric/aiwork/taiwan-opera-calendar/patrol_evidence/2026-10-29_0311/facebook_Taichungpuppettheater.json"
+        }
+      ]
+    },
+    "culture": {
+      "url": "data/moc_candidates.json",
+      "state": "partial",
+      "attempts": [
+        {
+          "at": "2026-10-29T03:32:51+08:00",
+          "method": "moc-records",
+          "url": "data/moc_records.json",
+          "state": "partial",
+          "scope": "total 1363、fetchedAt 2026-10-27T09:46:26+08:00、戲曲紀錄 30 筆",
+          "media": "not_applicable",
+          "detail": "moc_records 已 41 小時未更新"
+        }
+      ]
+    },
+    "issues": {
+      "url": "https://github.com/eric1810-tw/taiwan-opera-calendar/issues?q=is%3Aissue+sort%3Aupdated-desc",
+      "state": "complete",
+      "attempts": [
+        {
+          "at": "2026-10-29T03:32:52+08:00",
+          "method": "gh-api",
+          "url": "https://github.com/eric1810-tw/taiwan-opera-calendar/issues?q=is%3Aissue+sort%3Aupdated-desc",
+          "state": "partial",
+          "scope": "state=all 共 2 則（含留言）",
+          "media": "not_applicable",
+          "detail": "已讀取；處置待判讀後確認"
+        },
+        {
+          "at": "2026-10-29T03:40:02+08:00",
+          "method": "patrol-v2",
+          "url": "https://github.com/eric1810-tw/taiwan-opera-calendar/issues?q=is%3Aissue+sort%3Aupdated-desc",
+          "state": "complete",
+          "scope": "2 筆皆有處置",
+          "media": "not_applicable",
+          "detail": "逐筆處置完成"
+        }
+      ]
+    }
+  },
+  "finalizedAt": "2026-10-29T03:40:34+08:00",
+  "publication": {
+    "state": "pending"
+  },
+  "engine": "patrol-v2",
+  "activeTargets": [
+    "threads:joe_huang_k_w",
+    "threads:h.akito_1996",
+    "threads:the_rin.lpm",
+    "threads:1013.yr_",
+    "threads:xuefeng_lu_",
+    "threads:yuzhongluo",
+    "threads:taiwaneseopera168",
+    "threads:jing__1017",
+    "threads:hilang.on.tour",
+    "threads:yolin1991",
+    "facebook:sunhope.fans",
+    "facebook:HsiaoHsiYuan1913",
+    "facebook:100063868113954",
+    "facebook:MingHuaYuanTianTaiwaneseOpera",
+    "facebook:61574134933376",
+    "facebook:mhysun",
+    "facebook:61594936681482",
+    "facebook:lanyang.opera",
+    "facebook:Taichungpuppettheater",
+    "culture",
+    "issues"
+  ]
+}

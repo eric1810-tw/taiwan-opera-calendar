@@ -2208,5 +2208,78 @@
         "time": "14:30"
       }
     ]
+  },
+  {
+    "id": "auto-20261113-034ed590",
+    "date": "2026-11-13",
+    "dateFormatted": "2026/11/13–2026/11/15",
+    "daysAway": 15,
+    "time": "11/13 13:30 正戲、11/14 14:30 正戲、11/15 14:30 正戲",
+    "troupe": "明華園星字戲劇團",
+    "genre": "歌仔戲",
+    "artist": "未公布",
+    "title": "2026 正港雄有戲《功德嘉年華》",
+    "category": "售票演出",
+    "badgeType": "ticket",
+    "verifyStatus": "verified",
+    "verifyLabel": "🎫 OPENTIX 售票頁（程式比對頁面資料）",
+    "location": "駁二正港小劇場（高雄市 鼓山區蓬萊路99號 駁二藝術特區蓬萊倉庫 B9棟）",
+    "region": "南部",
+    "status": "依售票頁資料；未列事項請查售票頁",
+    "description": "依 OPENTIX 售票頁：「節目：2026 正港雄有戲《功德嘉年華》\n主辦：明華園星字戲劇團、高雄市政府文化局\n售票：OPENTIX 售票頁\n票價：600元～800元\n場次：2026-11-13 13:30｜地點：駁二正港小劇場（高雄市 鼓山區蓬萊路99號 駁二藝術特區蓬萊倉庫 B9棟）\n場次：2026-11-14 14:30｜地點：駁二正港小劇場（高雄市 鼓山區蓬萊路99號 駁二藝術特區蓬萊倉庫 B9棟）\n場次：2026-」",
+    "link": "https://www.opentix.life/event/2079024127582380033",
+    "sourceUrl": "https://www.opentix.life/event/2079024127582380033",
+    "tags": [
+      "明華園星字戲劇團"
+    ],
+    "endDate": "2026-11-15",
+    "sessions": [
+      {
+        "date": "2026-11-13",
+        "kind": "正戲",
+        "time": "13:30"
+      },
+      {
+        "date": "2026-11-14",
+        "kind": "正戲",
+        "time": "14:30"
+      },
+      {
+        "date": "2026-11-15",
+        "kind": "正戲",
+        "time": "14:30"
+      }
+    ]
+  },
+  {
+    "id": "auto-20261114-ab81bb6c",
+    "date": "2026-11-14",
+    "dateFormatted": "2026/11/14",
+    "daysAway": 16,
+    "time": "11/14 19:30 正戲",
+    "troupe": "全樂閣木偶劇團",
+    "genre": "布袋戲",
+    "artist": "未公布",
+    "title": "2026武俠新篇章《俠虎征途》",
+    "category": "售票演出",
+    "badgeType": "ticket",
+    "verifyStatus": "verified",
+    "verifyLabel": "🎫 OPENTIX 售票頁（程式比對頁面資料）",
+    "location": "屏東演藝廳實驗劇場（屏東縣 屏東市民生路4-17號）",
+    "region": "南部",
+    "status": "依售票頁資料；未列事項請查售票頁",
+    "description": "依 OPENTIX 售票頁：「節目：2026武俠新篇章《俠虎征途》\n主辦：全樂閣木偶劇團\n售票：OPENTIX 售票頁\n票價：200元\n場次：2026-11-14 19:30｜地點：屏東演藝廳實驗劇場（屏東縣 屏東市民生路4-17號）」",
+    "link": "https://www.opentix.life/event/2095095175039627264",
+    "sourceUrl": "https://www.opentix.life/event/2095095175039627264",
+    "tags": [
+      "全樂閣木偶劇團"
+    ],
+    "sessions": [
+      {
+        "date": "2026-11-14",
+        "kind": "正戲",
+        "time": "19:30"
+      }
+    ]
   }
 ]
