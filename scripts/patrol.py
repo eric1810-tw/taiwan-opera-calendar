@@ -433,9 +433,11 @@ def step_publish(st):
     paths = ["data/schedule.json", "data/patrol_status.json", f"patrol_runs/{st.run_id}.json",
              "data/review_queue.json", "docs/patrols/cancelled_cards.jsonl"]
     changed = publish.git(["status", "--porcelain", "--", *paths]).splitlines()
-    to_stage = [line[3:] for line in changed if line[3:] in paths]
+    to_stage = [line[2:].strip() for line in changed if line[2:].strip() in paths]
     try:
-        sha = publish.commit_and_push(to_stage, f"chore(patrol): {st.run_id} 巡檢紀錄與場次更新（patrol-v2）")
+        sha = None if not to_stage else publish.commit_and_push(to_stage, f"chore(patrol): {st.run_id} 巡檢紀錄與場次更新（patrol-v2）")
+        if not sha and st.data.get("publication", {}).get("sha"):
+            sha = st.data["publication"]["sha"]  # 先前已提交推送：沿用該 SHA 續驗證
         st.data["publication"] = {"sha": sha, "staged": to_stage}
         st.save()
         if not sha:
@@ -522,6 +524,9 @@ def advance(st):
                     "hint": "修正後再跑 python3 scripts/patrol.py start 會從此步驟續跑"}
         if result is not None:
             return result
+        if st.data["steps"].get(name, {}).get("status") == "failed":
+            return {"action": "stopped", "runId": st.run_id, "outcome": "step-failed", "step": name,
+                    "reason": st.data["steps"][name].get("detail") or "步驟失敗", "forEric": list(st.data["forEric"])}
 
 
 def cmd_start(args):
