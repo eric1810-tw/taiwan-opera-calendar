@@ -58,5 +58,34 @@
       "badgeType-not-free"
     ],
     "rejectedAt": "2026-10-27T16:14:38+08:00"
+  },
+  {
+    "postKey": "facebook:61574134933376:122186687630804497",
+    "postUrl": "https://www.facebook.com/photo/?fbid=122186687630804497",
+    "proposal": {
+      "source": "facebook:61574134933376",
+      "postKey": "facebook:61574134933376:122186687630804497",
+      "postUrl": "https://www.facebook.com/photo/?fbid=122186687630804497",
+      "quote": " 演出日期｜2026/11/18（三）\n 演出地點｜臺南市柳營區 柳營代天院\n（臺南市柳營區東昇里中山西路一段362號）\n 晚上 7:00｜三仙大會\n 晚上 7:30｜正戲開演\n11月18日，柳營代天院，咱們戲臺見！\n我們是 #繡花園戲劇團",
+      "sessions": [
+        {
+          "date": "2026-11-18",
+          "kind": "扮仙",
+          "time": "19:00"
+        },
+        {
+          "date": "2026-11-18",
+          "kind": "正戲",
+          "time": "19:30"
+        }
+      ],
+      "date": "2026-11-18",
+      "time": "11/18 19:00 扮仙、11/18 19:30 正戲",
+      "dateFormatted": "2026/11/18"
+    },
+    "reasons": [
+      "no-change-keyword"
+    ],
+    "rejectedAt": "2026-10-30T03:42:36+08:00"
   }
 ]

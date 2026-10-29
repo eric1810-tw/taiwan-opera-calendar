@@ -2025,5 +2025,36 @@
         "time": "19:30"
       }
     ]
+  },
+  {
+    "id": "auto-20261115-81e8cc22",
+    "date": "2026-11-15",
+    "dateFormatted": "2026/11/15",
+    "daysAway": 16,
+    "time": "11/15 14:30 正戲",
+    "troupe": "陳錫煌傳統掌中劇團",
+    "genre": "布袋戲",
+    "artist": "未公布",
+    "title": "大稻埕戲苑「115年駐館團隊專場演出」《三國演義之古城會》",
+    "category": "售票演出",
+    "badgeType": "ticket",
+    "verifyStatus": "verified",
+    "verifyLabel": "🎫 OPENTIX 售票頁（程式比對頁面資料）",
+    "location": "大稻埕戲苑曲藝場（臺北市 大同區迪化街一段21號8樓）",
+    "region": "北部",
+    "status": "依售票頁資料；未列事項請查售票頁",
+    "description": "依 OPENTIX 售票頁：「節目：大稻埕戲苑「115年駐館團隊專場演出」《三國演義之古城會》\n主辦：陳錫煌傳統掌中劇團、臺北市藝文推廣處\n售票：OPENTIX 售票頁\n票價：200元\n場次：2026-11-15 14:30｜地點：大稻埕戲苑曲藝場（臺北市 大同區迪化街一段21號8樓）」",
+    "link": "https://www.opentix.life/event/2095045191349043200",
+    "sourceUrl": "https://www.opentix.life/event/2095045191349043200",
+    "tags": [
+      "陳錫煌傳統掌中劇團"
+    ],
+    "sessions": [
+      {
+        "date": "2026-11-15",
+        "kind": "正戲",
+        "time": "14:30"
+      }
+    ]
   }
 ]
