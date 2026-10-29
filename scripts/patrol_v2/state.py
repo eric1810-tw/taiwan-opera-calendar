@@ -157,6 +157,14 @@ class RunState:
             self.data["forEric"].append(text)
             self.save()
 
+    def resolve_eric(self, prefix, how):
+        """已自動補救的問題：從「需要 Eric 決定」移到 autoRecovered，報告另列"""
+        solved = [x for x in self.data["forEric"] if x.startswith(prefix)]
+        if solved:
+            self.data["forEric"] = [x for x in self.data["forEric"] if not x.startswith(prefix)]
+            self.data.setdefault("autoRecovered", []).extend(f"{x} → {how}" for x in solved)
+            self.save()
+
     def finish(self, outcome):
         self.data["finished"] = True
         self.data["outcome"] = outcome

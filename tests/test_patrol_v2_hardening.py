@@ -169,6 +169,94 @@ class BackgroundWorker(unittest.TestCase):
         self.assertEqual((read_json(patrol.worker_path(self.st)) or {}).get("restarts"), 1)
 
 
+class Redeploy(unittest.TestCase):
+    """10/29：Actions 失敗後要人工補發；現在自動用 main 最新重新部署一次"""
+
+    def api_for(self, runs):
+        calls = []
+
+        def api(path):
+            calls.append(path)
+            return {"workflow_runs": runs}
+        return api, calls
+
+    def test_success_same_head(self):
+        api, calls = self.api_for([{"id": 9, "status": "completed", "conclusion": "success",
+                                    "head_sha": "abc", "created_at": "2099-01-01T00:00:00Z"}])
+        git_calls = []
+        run, head = publish.redeploy("abc", runner=lambda a, cwd=None: git_calls.append(a), api=api,
+                                     dispatch=lambda: None, sleep=lambda s: None)
+        self.assertEqual((run["id"], head), (9, "abc"))
+        self.assertIn("event=workflow_dispatch", calls[0])
+        self.assertEqual(git_calls, [], "main 沒前進就不動本機")
+
+    def test_ignores_runs_created_before_dispatch(self):
+        api, _ = self.api_for([{"id": 1, "status": "completed", "conclusion": "success",
+                                "head_sha": "abc", "created_at": "2000-01-01T00:00:00Z"}])
+        with self.assertRaises(publish.PublishError):
+            publish.redeploy("abc", runner=lambda a, cwd=None: "", api=api, dispatch=lambda: None,
+                             sleep=lambda s: None, timeout=60, interval=30)
+
+    def test_main_moved_fast_forwards_local(self):
+        api, _ = self.api_for([{"id": 9, "status": "completed", "conclusion": "success",
+                                "head_sha": "def", "created_at": "2099-01-01T00:00:00Z"}])
+        git_calls = []
+        _, head = publish.redeploy("abc", runner=lambda a, cwd=None: git_calls.append(a), api=api,
+                                   dispatch=lambda: None, sleep=lambda s: None)
+        self.assertEqual(head, "def")
+        self.assertEqual(git_calls[-2:], [["merge-base", "--is-ancestor", "abc", "def"], ["merge", "--ff-only", "def"]])
+
+    def test_failed_redeploy_raises(self):
+        api, _ = self.api_for([{"id": 9, "status": "completed", "conclusion": "failure",
+                                "head_sha": "abc", "created_at": "2099-01-01T00:00:00Z"}])
+        with self.assertRaises(publish.PublishError):
+            publish.redeploy("abc", runner=lambda a, cwd=None: "", api=api, dispatch=lambda: None, sleep=lambda s: None)
+
+
+class PublishSelfHeal(unittest.TestCase):
+    """發布第一次失敗 → 自動重新部署 → 成功就不列「需要 Eric 決定」"""
+
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.st = RunState.create("production", state_dir=self.tmp.name)
+        self.saved = {k: getattr(publish, k) for k in ("changed_paths", "commit_and_push", "wait_for_actions", "redeploy")}
+        self.saved_verify = patrol.verify_publication
+        publish.changed_paths = lambda paths, **kw: ["data/schedule.json"]
+        publish.commit_and_push = lambda paths, msg, **kw: "abc"
+
+    def tearDown(self):
+        for k, v in self.saved.items():
+            setattr(publish, k, v)
+        patrol.verify_publication = self.saved_verify
+        self.tmp.cleanup()
+
+    def fail_actions(self, sha, **kw):
+        raise publish.PublishError("Actions 1 結論 failure")
+
+    def test_recovers_and_clears_for_eric(self):
+        publish.wait_for_actions = self.fail_actions
+        publish.redeploy = lambda sha, **kw: ({"id": 2}, "def")
+        verified = []
+        patrol.verify_publication = lambda st, sha, action: verified.append((sha, action["id"]))
+        self.st.ask_eric("發布未完成：Actions 1 結論 failure")  # 前一次 next 留下的
+        patrol.step_publish(self.st)
+        self.assertEqual(self.st.data["steps"]["publish"]["status"], "done")
+        self.assertEqual(self.st.data["publication"]["state"], "verified")
+        self.assertEqual(verified, [("def", 2)])
+        self.assertEqual(self.st.data["forEric"], [])
+        self.assertTrue(self.st.data["autoRecovered"])
+
+    def test_recovery_failure_stops_with_reason(self):
+        publish.wait_for_actions = self.fail_actions
+
+        def bad(sha, **kw):
+            raise publish.PublishError("重新部署 Actions 2 結論 failure")
+        publish.redeploy = bad
+        patrol.step_publish(self.st)
+        self.assertEqual(self.st.data["steps"]["publish"]["status"], "failed")
+        self.assertIn("重新部署 Actions 2", self.st.data["forEric"][0])
+
+
 def py311_violations(source):
     """Python 3.12 才允許的 f-string：大括號內再用同一種引號（Actions 用 3.11 會 SyntaxError）"""
     if not hasattr(tokenize, "FSTRING_START"):

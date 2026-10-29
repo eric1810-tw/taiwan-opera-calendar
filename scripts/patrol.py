@@ -481,14 +481,17 @@ def step_publish(st):
         st.save()
         if not sha:
             raise publish.PublishError("沒有可提交的變更")
-        action = publish.wait_for_actions(sha)
-        run = load_progress(st)
-        progress.verify(run, sha, str(action["id"]), ROOT / "data/patrol_status.json")
-        progress.write(progress_path(st), run)
-        cmp = progress.compare_public(ROOT)
-        st.data["publication"].update({"actionsRun": action["id"], "actionsUrl": action.get("html_url"), "comparePublic": cmp})
-        if not cmp["allMatch"]:
-            raise publish.PublishError("公開三檔與本機不一致")
+        try:
+            verify_publication(st, sha, publish.wait_for_actions(sha))
+        except (publish.PublishError, ValueError) as first:
+            # 自動補救一次：用 main 最新重新部署（不重跑舊 run），成功就不打擾 Eric
+            st.log("發布失敗，自動重新部署一次", error=str(first))
+            st.data["publication"]["firstAttempt"] = str(first)
+            st.save()
+            action, sha = publish.redeploy(sha)
+            verify_publication(st, sha, action)
+            st.data["publication"]["autoRecovered"] = str(first)
+            st.resolve_eric("發布未完成", "已自動重新部署並驗證")
         st.data["publication"]["state"] = "verified"
     except (publish.PublishError, ValueError, OSError) as error:
         st.data.setdefault("publication", {}).update({"state": "blocked", "reason": str(error)})
@@ -499,6 +502,17 @@ def step_publish(st):
     st.save()
     st.set_step("publish", "done")
     return None
+
+
+def verify_publication(st, sha, action):
+    run = load_progress(st)
+    progress.verify(run, sha, str(action["id"]), ROOT / "data/patrol_status.json")
+    progress.write(progress_path(st), run)
+    cmp = progress.compare_public(ROOT)
+    st.data["publication"].update({"sha": sha, "actionsRun": action["id"], "actionsUrl": action.get("html_url"), "comparePublic": cmp})
+    st.save()
+    if not cmp["allMatch"]:
+        raise publish.PublishError("公開三檔與本機不一致")
 
 
 def step_compare(st):
@@ -516,7 +530,9 @@ def step_report(st):
     if st.mode == "production":
         try:
             receipt = report.write_receipt(st)
-            sha = publish.commit_and_push([str(path.relative_to(ROOT)), str(receipt.relative_to(ROOT))],
+            # 發布驗證後才寫入的進度檔（驗證用的 SHA、Actions）一併提交，不留在本機
+            extra = publish.changed_paths([f"patrol_runs/{st.run_id}.json"])
+            sha = publish.commit_and_push([str(path.relative_to(ROOT)), str(receipt.relative_to(ROOT)), *extra],
                                           f"docs(patrol): {st.run_id} 巡檢報告與驗收收據（patrol-v2） [skip ci]")
             st.data["reportCommit"] = sha
         except publish.PublishError as error:
