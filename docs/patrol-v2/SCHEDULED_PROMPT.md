@@ -41,6 +41,10 @@ ROOT = /Users/eric/aiwork/taiwan-opera-calendar
   - 任何步驟失敗就回 `stopped`，不重跑。
   - 開頭發現 `.git/index.lock`：超過 10 分鐘且沒有 git 程序在跑才自動刪，否則開頭就停下說明。
   - 單元測試會掃出 Python 3.11 不支援的 f-string（Actions 用 3.11）。
+- **出事自動補救（2026-10-29）**：
+  - 只改資料檔的推送（巡檢資料、報告）不跑單元測試；程式在合併時已測過，資料上線不會再被測試偶發失敗擋住。
+  - 發布失敗（Actions 失敗、等不到、公開比對不一致）時，patrol.py 自動用 main 最新「只重新部署」一次（`workflow_dispatch` 的 `deploy_only`）再驗證；成功就列在報告「已自動補救」，不打擾 Eric。不用 rerun 舊 run（會把舊資料蓋回網站）。
+  - 補救也失敗才停下，`forEric` 寫明哪一步、什麼錯誤。
 - **結果送到 Eric**：
   - 這台 Mac 的系統通知（patrol.py 背景程序在 done／stopped 時發出）。
   - 排程工作階段的最後回覆（側邊欄「排程」）。

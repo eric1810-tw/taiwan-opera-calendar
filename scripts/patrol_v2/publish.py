@@ -97,3 +97,41 @@ def wait_for_actions(sha, api=gh_api, timeout=1200, interval=30, sleep=time.slee
         sleep(interval)
         waited += interval
     raise PublishError(f"等待 {timeout} 秒仍沒有 SHA {sha[:12]} 的完成紀錄")
+
+
+def dispatch_deploy():
+    res = subprocess.run(["gh", "workflow", "run", Path(WORKFLOW_PATH).name, "--repo", REPO, "--ref", "main",
+                          "-f", "deploy_only=true"], capture_output=True, text=True, timeout=60)
+    if res.returncode != 0:
+        raise PublishError(f"觸發重新部署失敗：{(res.stderr or res.stdout).strip()}")
+
+
+def redeploy(sha, cwd=ROOT, runner=git, api=gh_api, dispatch=dispatch_deploy,
+             timeout=1500, interval=30, sleep=time.sleep, clock=time.time):
+    """發布失敗時用 main 最新重新部署一次（只部署、不跑更新器）。
+    不 rerun 舊 run：舊 run 部署的是舊提交，會蓋掉之後已上線的新資料（2026-10-29 踩過）。
+    回傳 (run, head)：main 若已前進，本機快轉到 head，公開比對才會一致。"""
+    since = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime(clock() - 5))
+    dispatch()
+    waited = 0
+    while True:
+        sleep(interval)
+        waited += interval
+        data = api(f"repos/{REPO}/actions/workflows/{Path(WORKFLOW_PATH).name}/runs?event=workflow_dispatch&per_page=10")
+        runs = [r for r in data.get("workflow_runs", []) if r.get("created_at", "") >= since]
+        run = runs[0] if runs else None
+        if run and run.get("status") == "completed":
+            break
+        if waited >= timeout:
+            raise PublishError(f"重新部署等待 {timeout} 秒仍未完成")
+    if run.get("conclusion") != "success":
+        raise PublishError(f"重新部署 Actions {run.get('id')} 結論 {run.get('conclusion')}")
+    head = run["head_sha"]
+    if head != sha:
+        runner(["fetch", "origin", "main"], cwd=cwd)
+        try:
+            runner(["merge-base", "--is-ancestor", sha, head], cwd=cwd)
+        except PublishError:
+            raise PublishError(f"重新部署的版本 {head[:12]} 不包含本輪提交 {sha[:12]}")
+        runner(["merge", "--ff-only", head], cwd=cwd)
+    return run, head

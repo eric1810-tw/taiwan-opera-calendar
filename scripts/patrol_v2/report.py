@@ -33,6 +33,8 @@ def write_report(st, work_root, progress_run):
     lines = [f"# 巡檢報告 {st.run_id}（patrol-v2，{ {'production': '正式', 'dry-run': '試跑（不推送）', 'shadow': '影子（只出提案）'}[st.mode] }）", ""]
     if d.get("forEric"):
         lines += ["## 需要 Eric 決定", ""] + [f"- {x}" for x in d["forEric"]] + [""]
+    if d.get("autoRecovered"):
+        lines += ["## 已自動補救（不用處理）", ""] + [f"- {x}" for x in d["autoRecovered"]] + [""]
     counts = (progress_run or {}).get("sources", {})
     n = {k: sum(1 for s in counts.values() if s.get("state") == k) for k in STATE_ZH}
     lines += ["## 結論", "",
