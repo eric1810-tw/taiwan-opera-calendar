@@ -1,7 +1,1253 @@
 {
-  "fetchedAt": "2026-10-27T09:46:26+08:00",
-  "total": 1363,
+  "fetchedAt": "2026-10-29T10:02:34+08:00",
+  "total": 1370,
   "records": [
+    {
+      "version": "1.4",
+      "UID": "69d7db9e26b3242a48a9e1d1",
+      "title": "【掌中戲】五洲勝義閣掌中劇團《濟世降魔傳》",
+      "category": "2",
+      "showInfo": [
+        {
+          "time": "2026/10/31 14:00:00",
+          "location": "臺北市大同區迪化街一段21號8樓",
+          "locationName": "大稻埕戲苑曲藝場",
+          "onSales": "Y",
+          "price": "",
+          "latitude": "25.0552408",
+          "longitude": "121.5103053",
+          "endTime": "2026/10/31 16:00:00"
+        }
+      ],
+      "showUnit": "",
+      "discountInfo": "",
+      "descriptionFilterHtml": "",
+      "imageUrl": "",
+      "masterUnit": [],
+      "subUnit": [],
+      "supportUnit": [],
+      "otherUnit": [],
+      "webSales": "https://www.opentix.life/program/2036015355921928192",
+      "sourceWebPromote": "https://www.opentix.life/program/2036015355921928192",
+      "comment": "",
+      "editModifyDate": "",
+      "sourceWebName": "OPENTIX兩廳院文化生活",
+      "startDate": "2026/10/31",
+      "endDate": "2026/10/31",
+      "hitRate": 14
+    },
+    {
+      "version": "1.4",
+      "UID": "6a97065826b32434f43580af",
+      "title": "兒童布袋戲《焰王現身：心火山的祕密》",
+      "category": "2",
+      "showInfo": [
+        {
+          "time": "2026/10/31 10:30:00",
+          "location": "臺北市中正區羅斯福路四段92號10樓",
+          "locationName": "水源劇場",
+          "onSales": "Y",
+          "price": "",
+          "latitude": "25.013614643862443",
+          "longitude": "121.53490207369424",
+          "endTime": "2026/10/31 11:40:00"
+        },
+        {
+          "time": "2026/10/31 14:30:00",
+          "location": "臺北市中正區羅斯福路四段92號10樓",
+          "locationName": "水源劇場",
+          "onSales": "Y",
+          "price": "",
+          "latitude": "25.013614643862443",
+          "longitude": "121.53490207369424",
+          "endTime": "2026/10/31 15:40:00"
+        },
+        {
+          "time": "2026/11/01 10:30:00",
+          "location": "臺北市中正區羅斯福路四段92號10樓",
+          "locationName": "水源劇場",
+          "onSales": "Y",
+          "price": "",
+          "latitude": "25.013614643862443",
+          "longitude": "121.53490207369424",
+          "endTime": "2026/11/01 11:40:00"
+        },
+        {
+          "time": "2026/11/01 14:30:00",
+          "location": "臺北市中正區羅斯福路四段92號10樓",
+          "locationName": "水源劇場",
+          "onSales": "Y",
+          "price": "",
+          "latitude": "25.013614643862443",
+          "longitude": "121.53490207369424",
+          "endTime": "2026/11/01 15:40:00"
+        }
+      ],
+      "showUnit": "",
+      "discountInfo": "",
+      "descriptionFilterHtml": "",
+      "imageUrl": "",
+      "masterUnit": [],
+      "subUnit": [],
+      "supportUnit": [],
+      "otherUnit": [],
+      "webSales": "https://www.opentix.life/program/2090004484659298305",
+      "sourceWebPromote": "https://www.opentix.life/program/2090004484659298305",
+      "comment": "",
+      "editModifyDate": "",
+      "sourceWebName": "OPENTIX兩廳院文化生活",
+      "startDate": "2026/10/31",
+      "endDate": "2026/11/01",
+      "hitRate": 18
+    },
+    {
+      "version": "1.4",
+      "UID": "69c0ac8beb43f81479e547dc",
+      "title": "115年「掌藝薪傳-大師工作坊」",
+      "category": "19",
+      "showInfo": [
+        {
+          "time": "2026/04/12 10:00:00",
+          "location": "臺北市松山區市民大道五段99號3樓",
+          "locationName": "台北偶戲館",
+          "onSales": "Y",
+          "price": "每班報名費 3,000 元",
+          "latitude": null,
+          "longitude": null,
+          "endTime": "2026/11/01 16:00:00"
+        }
+      ],
+      "showUnit": "",
+      "discountInfo": "",
+      "descriptionFilterHtml": "每年一度的「掌藝薪傳-大師工作坊」報名開跑啦！\r\n\r\n想親手感受布袋戲的操偶神韻，還是想深入研究後場鑼鼓的震撼節奏？亦或是想親手縫製精緻盔帽、雕刻傳統道具？今年我們同樣準備了豐富的課程，邀請您一起走入布袋戲的藝術殿堂。\r\n\r\n🎨 課程四大班別：\r\n1.前場操偶班：學習專業操偶技巧與演出口白，體驗指尖上的藝術 。\r\n2.後場音樂班：掌握鑼鼓操作與扮仙節奏，表現優異者更有機會加入劇團演訓計畫 。\r\n3.工藝製作班：從盔帽到袍仔衣，一針一線親手縫製傳統戲服 。\r\n4.雕刻藝術班：分為基礎班（兵器道具）與進階班（桌椅動物），精進木作工藝 。\r\n\r\n\r\n主辦單位：陳錫煌傳統掌中劇團\r\n協辦單位：台北偶戲館\r\n贊助單位：臺北市政府文化局",
+      "imageUrl": "",
+      "masterUnit": [
+        "陳錫煌傳統掌中劇團"
+      ],
+      "subUnit": [
+        "台北偶戲館"
+      ],
+      "supportUnit": [
+        "臺北市政府文化局"
+      ],
+      "otherUnit": [],
+      "webSales": "https://forms.gle/SebhyKU9i6UmpaQx6",
+      "sourceWebPromote": "https://www.facebook.com/share/p/1BX5mdbRz3/",
+      "comment": "",
+      "editModifyDate": "2026/03/24 18:16:30",
+      "sourceWebName": "黃俐瑋",
+      "startDate": "2026/04/12",
+      "endDate": "2026/11/01",
+      "hitRate": 76
+    },
+    {
+      "version": "1.4",
+      "UID": "69c0ac8beb43f81479e547dc",
+      "title": "115年「掌藝薪傳-大師工作坊」",
+      "category": "200",
+      "showInfo": [
+        {
+          "time": "2026/04/12 10:00:00",
+          "location": "臺北市松山區市民大道五段99號3樓",
+          "locationName": "台北偶戲館",
+          "onSales": "Y",
+          "price": "每班報名費 3,000 元",
+          "latitude": null,
+          "longitude": null,
+          "endTime": "2026/11/01 16:00:00"
+        }
+      ],
+      "showUnit": "",
+      "discountInfo": "",
+      "descriptionFilterHtml": "每年一度的「掌藝薪傳-大師工作坊」報名開跑啦！\r\n\r\n想親手感受布袋戲的操偶神韻，還是想深入研究後場鑼鼓的震撼節奏？亦或是想親手縫製精緻盔帽、雕刻傳統道具？今年我們同樣準備了豐富的課程，邀請您一起走入布袋戲的藝術殿堂。\r\n\r\n🎨 課程四大班別：\r\n1.前場操偶班：學習專業操偶技巧與演出口白，體驗指尖上的藝術 。\r\n2.後場音樂班：掌握鑼鼓操作與扮仙節奏，表現優異者更有機會加入劇團演訓計畫 。\r\n3.工藝製作班：從盔帽到袍仔衣，一針一線親手縫製傳統戲服 。\r\n4.雕刻藝術班：分為基礎班（兵器道具）與進階班（桌椅動物），精進木作工藝 。\r\n\r\n\r\n主辦單位：陳錫煌傳統掌中劇團\r\n協辦單位：台北偶戲館\r\n贊助單位：臺北市政府文化局",
+      "imageUrl": "",
+      "masterUnit": [
+        "陳錫煌傳統掌中劇團"
+      ],
+      "subUnit": [
+        "台北偶戲館"
+      ],
+      "supportUnit": [
+        "臺北市政府文化局"
+      ],
+      "otherUnit": [],
+      "webSales": "https://forms.gle/SebhyKU9i6UmpaQx6",
+      "sourceWebPromote": "https://www.facebook.com/share/p/1BX5mdbRz3/",
+      "comment": "",
+      "editModifyDate": "2026/03/24 18:16:30",
+      "sourceWebName": "黃俐瑋",
+      "startDate": "2026/04/12",
+      "endDate": "2026/11/01",
+      "hitRate": 76
+    },
+    {
+      "version": "1.4",
+      "UID": "69c0ac8beb43f81479e547dc",
+      "title": "115年「掌藝薪傳-大師工作坊」",
+      "category": "4",
+      "showInfo": [
+        {
+          "time": "2026/04/12 10:00:00",
+          "location": "臺北市松山區市民大道五段99號3樓",
+          "locationName": "台北偶戲館",
+          "onSales": "Y",
+          "price": "每班報名費 3,000 元",
+          "latitude": null,
+          "longitude": null,
+          "endTime": "2026/11/01 16:00:00"
+        }
+      ],
+      "showUnit": "",
+      "discountInfo": "",
+      "descriptionFilterHtml": "每年一度的「掌藝薪傳-大師工作坊」報名開跑啦！\r\n\r\n想親手感受布袋戲的操偶神韻，還是想深入研究後場鑼鼓的震撼節奏？亦或是想親手縫製精緻盔帽、雕刻傳統道具？今年我們同樣準備了豐富的課程，邀請您一起走入布袋戲的藝術殿堂。\r\n\r\n🎨 課程四大班別：\r\n1.前場操偶班：學習專業操偶技巧與演出口白，體驗指尖上的藝術 。\r\n2.後場音樂班：掌握鑼鼓操作與扮仙節奏，表現優異者更有機會加入劇團演訓計畫 。\r\n3.工藝製作班：從盔帽到袍仔衣，一針一線親手縫製傳統戲服 。\r\n4.雕刻藝術班：分為基礎班（兵器道具）與進階班（桌椅動物），精進木作工藝 。\r\n\r\n\r\n主辦單位：陳錫煌傳統掌中劇團\r\n協辦單位：台北偶戲館\r\n贊助單位：臺北市政府文化局",
+      "imageUrl": "",
+      "masterUnit": [
+        "陳錫煌傳統掌中劇團"
+      ],
+      "subUnit": [
+        "台北偶戲館"
+      ],
+      "supportUnit": [
+        "臺北市政府文化局"
+      ],
+      "otherUnit": [],
+      "webSales": "https://forms.gle/SebhyKU9i6UmpaQx6",
+      "sourceWebPromote": "https://www.facebook.com/share/p/1BX5mdbRz3/",
+      "comment": "",
+      "editModifyDate": "2026/03/24 18:16:30",
+      "sourceWebName": "黃俐瑋",
+      "startDate": "2026/04/12",
+      "endDate": "2026/11/01",
+      "hitRate": 76
+    },
+    {
+      "version": "1.4",
+      "UID": "6a3abc6926b3243414ccd51f",
+      "title": "【歌仔戲】元和劇子-鼓震千秋《梁紅玉》",
+      "category": "2",
+      "showInfo": [
+        {
+          "time": "2026/10/30 19:30:00",
+          "location": "臺北市大同區迪化街一段21號9樓",
+          "locationName": "大稻埕戲苑",
+          "onSales": "Y",
+          "price": "",
+          "latitude": "25.0552408",
+          "longitude": "121.5103053",
+          "endTime": "2026/10/30 21:30:00"
+        },
+        {
+          "time": "2026/10/31 14:30:00",
+          "location": "臺北市大同區迪化街一段21號9樓",
+          "locationName": "大稻埕戲苑",
+          "onSales": "Y",
+          "price": "",
+          "latitude": "25.0552408",
+          "longitude": "121.5103053",
+          "endTime": "2026/10/31 16:30:00"
+        },
+        {
+          "time": "2026/11/01 14:30:00",
+          "location": "臺北市大同區迪化街一段21號9樓",
+          "locationName": "大稻埕戲苑",
+          "onSales": "Y",
+          "price": "",
+          "latitude": "25.0552408",
+          "longitude": "121.5103053",
+          "endTime": "2026/11/01 16:30:00"
+        }
+      ],
+      "showUnit": "",
+      "discountInfo": "",
+      "descriptionFilterHtml": "",
+      "imageUrl": "",
+      "masterUnit": [],
+      "subUnit": [],
+      "supportUnit": [],
+      "otherUnit": [],
+      "webSales": "https://www.opentix.life/program/2063886748971831297",
+      "sourceWebPromote": "https://www.opentix.life/program/2063886748971831297",
+      "comment": "",
+      "editModifyDate": "",
+      "sourceWebName": "OPENTIX兩廳院文化生活",
+      "startDate": "2026/10/30",
+      "endDate": "2026/11/01",
+      "hitRate": 6
+    },
+    {
+      "version": "1.4",
+      "UID": "6aa97d4126b324165c32e406",
+      "title": "台中木偶劇團 《聖劍風雲三》",
+      "category": "2",
+      "showInfo": [
+        {
+          "time": "2026/11/07 14:30:00",
+          "location": "臺中市太平區光華里大興路201號",
+          "locationName": "臺中市屯區藝文中心實驗劇場",
+          "onSales": "Y",
+          "price": "",
+          "latitude": "24.156848835504007",
+          "longitude": "120.7350438060654",
+          "endTime": "2026/11/07 15:30:00"
+        }
+      ],
+      "showUnit": "",
+      "discountInfo": "",
+      "descriptionFilterHtml": "",
+      "imageUrl": "",
+      "masterUnit": [],
+      "subUnit": [],
+      "supportUnit": [],
+      "otherUnit": [],
+      "webSales": "https://www.opentix.life/program/2080173157578416129",
+      "sourceWebPromote": "https://www.opentix.life/program/2080173157578416129",
+      "comment": "",
+      "editModifyDate": "",
+      "sourceWebName": "OPENTIX兩廳院文化生活",
+      "startDate": "2026/11/07",
+      "endDate": "2026/11/07",
+      "hitRate": 0
+    },
+    {
+      "version": "1.4",
+      "UID": "69d7db9e26b3242a48a9e1d2",
+      "title": "【掌中戲】新西園掌中劇團《文素臣之大義滅親-殺嫂》",
+      "category": "2",
+      "showInfo": [
+        {
+          "time": "2026/11/07 14:00:00",
+          "location": "臺北市大同區迪化街一段21號8樓",
+          "locationName": "大稻埕戲苑曲藝場",
+          "onSales": "Y",
+          "price": "",
+          "latitude": "25.0552408",
+          "longitude": "121.5103053",
+          "endTime": "2026/11/07 16:00:00"
+        }
+      ],
+      "showUnit": "",
+      "discountInfo": "",
+      "descriptionFilterHtml": "",
+      "imageUrl": "",
+      "masterUnit": [],
+      "subUnit": [],
+      "supportUnit": [],
+      "otherUnit": [],
+      "webSales": "https://www.opentix.life/program/2036016610592505856",
+      "sourceWebPromote": "https://www.opentix.life/program/2036016610592505856",
+      "comment": "",
+      "editModifyDate": "",
+      "sourceWebName": "OPENTIX兩廳院文化生活",
+      "startDate": "2026/11/07",
+      "endDate": "2026/11/07",
+      "hitRate": 4
+    },
+    {
+      "version": "1.4",
+      "UID": "6a26f5d926b3243414cccfde",
+      "title": "2026臺南藝術節：李淸照私人劇團感傷動作派《歌仔寶玉講唱》",
+      "category": "2",
+      "showInfo": [
+        {
+          "time": "2026/11/14 15:00:00",
+          "location": "臺南市中西區永福路一段185號",
+          "locationName": "臺南刑務所",
+          "onSales": "Y",
+          "price": "",
+          "latitude": "22.9871693",
+          "longitude": "120.2000224",
+          "endTime": "2026/11/14 15:50:00"
+        },
+        {
+          "time": "2026/11/15 15:00:00",
+          "location": "臺南市中西區永福路一段185號",
+          "locationName": "臺南刑務所",
+          "onSales": "Y",
+          "price": "",
+          "latitude": "22.9871693",
+          "longitude": "120.2000224",
+          "endTime": "2026/11/15 15:50:00"
+        }
+      ],
+      "showUnit": "",
+      "discountInfo": "",
+      "descriptionFilterHtml": "",
+      "imageUrl": "",
+      "masterUnit": [],
+      "subUnit": [],
+      "supportUnit": [],
+      "otherUnit": [],
+      "webSales": "https://www.opentix.life/program/2059826841548611585",
+      "sourceWebPromote": "https://www.opentix.life/program/2059826841548611585",
+      "comment": "",
+      "editModifyDate": "",
+      "sourceWebName": "OPENTIX兩廳院文化生活",
+      "startDate": "2026/11/14",
+      "endDate": "2026/11/15",
+      "hitRate": 2
+    },
+    {
+      "version": "1.4",
+      "UID": "69d7db9e26b3242a48a9e1d3",
+      "title": "【掌中戲】不貳偶劇《天雷報》",
+      "category": "2",
+      "showInfo": [
+        {
+          "time": "2026/11/21 14:00:00",
+          "location": "臺北市大同區迪化街一段21號8樓",
+          "locationName": "大稻埕戲苑曲藝場",
+          "onSales": "Y",
+          "price": "",
+          "latitude": "25.0552408",
+          "longitude": "121.5103053",
+          "endTime": "2026/11/21 16:00:00"
+        }
+      ],
+      "showUnit": "",
+      "discountInfo": "",
+      "descriptionFilterHtml": "",
+      "imageUrl": "",
+      "masterUnit": [],
+      "subUnit": [],
+      "supportUnit": [],
+      "otherUnit": [],
+      "webSales": "https://www.opentix.life/program/2036018024078086145",
+      "sourceWebPromote": "https://www.opentix.life/program/2036018024078086145",
+      "comment": "",
+      "editModifyDate": "",
+      "sourceWebName": "OPENTIX兩廳院文化生活",
+      "startDate": "2026/11/21",
+      "endDate": "2026/11/21",
+      "hitRate": 7
+    },
+    {
+      "version": "1.4",
+      "UID": "6abd43b626b324165c32e559",
+      "title": "拉縴人男聲合唱團《英雄路－布袋戲聲音行旅》",
+      "category": "1",
+      "showInfo": [
+        {
+          "time": "2026/11/22 14:30:00",
+          "location": "雲林縣斗六市大學路三段310號",
+          "locationName": "雲林表演廳",
+          "onSales": "Y",
+          "price": "",
+          "latitude": "23.69595039888417",
+          "longitude": "120.52510397140288",
+          "endTime": "2026/11/22 16:00:00"
+        }
+      ],
+      "showUnit": "",
+      "discountInfo": "",
+      "descriptionFilterHtml": "",
+      "imageUrl": "",
+      "masterUnit": [],
+      "subUnit": [],
+      "supportUnit": [],
+      "otherUnit": [],
+      "webSales": "https://www.opentix.life/program/2101950430852980737",
+      "sourceWebPromote": "https://www.opentix.life/program/2101950430852980737",
+      "comment": "",
+      "editModifyDate": "",
+      "sourceWebName": "OPENTIX兩廳院文化生活",
+      "startDate": "2026/11/22",
+      "endDate": "2026/11/22",
+      "hitRate": 1
+    },
+    {
+      "version": "1.4",
+      "UID": "6ad8f32d26b3245efc7536fc",
+      "title": "2026金鷹閣電視木偶劇團《叱吒風雲－新哪吒》臺中巡演",
+      "category": "2",
+      "showInfo": [
+        {
+          "time": "2026/11/21 19:30:00",
+          "location": "臺中市豐原區圓環東路782號",
+          "locationName": "臺中市葫蘆墩文化中心演奏廳",
+          "onSales": "Y",
+          "price": "",
+          "latitude": "24.2529902",
+          "longitude": "120.7304148",
+          "endTime": "2026/11/21 21:30:00"
+        },
+        {
+          "time": "2026/11/22 14:30:00",
+          "location": "臺中市豐原區圓環東路782號",
+          "locationName": "臺中市葫蘆墩文化中心演奏廳",
+          "onSales": "Y",
+          "price": "",
+          "latitude": "24.2529902",
+          "longitude": "120.7304148",
+          "endTime": "2026/11/22 16:30:00"
+        }
+      ],
+      "showUnit": "",
+      "discountInfo": "",
+      "descriptionFilterHtml": "",
+      "imageUrl": "",
+      "masterUnit": [],
+      "subUnit": [],
+      "supportUnit": [],
+      "otherUnit": [],
+      "webSales": "https://www.opentix.life/program/2112035354878472193",
+      "sourceWebPromote": "https://www.opentix.life/program/2112035354878472193",
+      "comment": "",
+      "editModifyDate": "",
+      "sourceWebName": "OPENTIX兩廳院文化生活",
+      "startDate": "2026/11/21",
+      "endDate": "2026/11/22",
+      "hitRate": 0
+    },
+    {
+      "version": "1.4",
+      "UID": "6acda714eb4399d01039b213",
+      "title": "登出世界、登入自我！《虛。實─數位與我》插畫創作聯展",
+      "category": "6",
+      "showInfo": [
+        {
+          "time": "2026/11/14 10:00:00",
+          "location": "信義區新仁里光復南路133號",
+          "locationName": "松山文創園區【藝異空間】",
+          "onSales": "N",
+          "price": "",
+          "latitude": null,
+          "longitude": null,
+          "endTime": "2026/11/22 17:00:00"
+        }
+      ],
+      "showUnit": "",
+      "discountInfo": "",
+      "descriptionFilterHtml": "我們正處在一個不需要出門，就能擁抱全世界的時代，虛與實，在每一次的滑動與點擊中，漸漸成為我們日復一日的生活。\r\n數位時代讓一切都近了，有些東西，卻悄悄遠了…\r\n\r\n《虛。實─數位與我》插畫創作聯展，集結自「2026紙上躍躍然．典美插畫大賞」脫穎而出的得獎與入圍作品，19位來自不同背景的創作者們，同在這個時代裡生活，他們透過線條與色彩，訴說著最真實的感受。\r\n\r\n你是數位時代中的主人，還是被制約的傀儡？當虛擬與現實的界線逐漸消融，你又將如何為自己保留一片真實的餘地？\r\n\r\n這裡沒有絕對的答案，邀你在畫作中與共鳴相遇，與自己的內心連線，找到那個在數位時代裡，足以安放自我的寧靜角落。\r\n\r\n【展覽資訊】\r\n《虛。實─數位與我》插畫創作聯展\r\n時間：115.11.14(六)～11.22(日)，10:00-17:00，免費參觀\r\n地點：松山文創園區 藝異空間\r\n參展者(依姓名筆畫排序)：白允禔、朱品璇、吳世傑、吳韶寶、李茵琦、孫怡婷、張仁瑜、張淯晴、張筳臻、曹瑋軒、陳品霖、陳雯馨、楊凱凱、葉明俐、蔡琇淇、鄭元欽、謝金蓉、羅傑耀、顧淑梅 \r\n\r\n【展期活動】\r\n11.14(六)14:00-16:00頒獎典禮暨得獎者分享會\r\n11.21(六) 14:00-15:30插畫講座x謝孟穎：從作品到版權桌─走向國際出版的第一線觀察\r\n免費參加，提前報名：https://art.hoss.org.tw/events\r\n\r\n主辦單位：財團法人典美文化基金會\r\n贊助單位：華南金控、Pentel飛龍文具\r\n媒體贊助：小典藏、城市美學新態度、財團法人智邦藝術基金會、DIMANCHE迪夢奇\r\n",
+      "imageUrl": "https://cloud.culture.twhttps://cloud.culture.tw/e_new_upload/signinImage/2026-10-13/2158392f-4728-4f87-8aa2-e24edf56208e/文化部iCulture -1024x768.jpg",
+      "masterUnit": [
+        "財團法人典美文化基金會"
+      ],
+      "subUnit": [],
+      "supportUnit": [],
+      "otherUnit": [],
+      "webSales": "",
+      "sourceWebPromote": "",
+      "comment": "",
+      "editModifyDate": "2026/10/13 18:01:34",
+      "sourceWebName": "財團法人典美文化基金會",
+      "startDate": "2026/11/14",
+      "endDate": "2026/11/22",
+      "hitRate": 1
+    },
+    {
+      "version": "1.4",
+      "UID": "6acda714eb4399d01039b213",
+      "title": "登出世界、登入自我！《虛。實─數位與我》插畫創作聯展",
+      "category": "200",
+      "showInfo": [
+        {
+          "time": "2026/11/14 10:00:00",
+          "location": "信義區新仁里光復南路133號",
+          "locationName": "松山文創園區【藝異空間】",
+          "onSales": "N",
+          "price": "",
+          "latitude": null,
+          "longitude": null,
+          "endTime": "2026/11/22 17:00:00"
+        }
+      ],
+      "showUnit": "",
+      "discountInfo": "",
+      "descriptionFilterHtml": "我們正處在一個不需要出門，就能擁抱全世界的時代，虛與實，在每一次的滑動與點擊中，漸漸成為我們日復一日的生活。\r\n數位時代讓一切都近了，有些東西，卻悄悄遠了…\r\n\r\n《虛。實─數位與我》插畫創作聯展，集結自「2026紙上躍躍然．典美插畫大賞」脫穎而出的得獎與入圍作品，19位來自不同背景的創作者們，同在這個時代裡生活，他們透過線條與色彩，訴說著最真實的感受。\r\n\r\n你是數位時代中的主人，還是被制約的傀儡？當虛擬與現實的界線逐漸消融，你又將如何為自己保留一片真實的餘地？\r\n\r\n這裡沒有絕對的答案，邀你在畫作中與共鳴相遇，與自己的內心連線，找到那個在數位時代裡，足以安放自我的寧靜角落。\r\n\r\n【展覽資訊】\r\n《虛。實─數位與我》插畫創作聯展\r\n時間：115.11.14(六)～11.22(日)，10:00-17:00，免費參觀\r\n地點：松山文創園區 藝異空間\r\n參展者(依姓名筆畫排序)：白允禔、朱品璇、吳世傑、吳韶寶、李茵琦、孫怡婷、張仁瑜、張淯晴、張筳臻、曹瑋軒、陳品霖、陳雯馨、楊凱凱、葉明俐、蔡琇淇、鄭元欽、謝金蓉、羅傑耀、顧淑梅 \r\n\r\n【展期活動】\r\n11.14(六)14:00-16:00頒獎典禮暨得獎者分享會\r\n11.21(六) 14:00-15:30插畫講座x謝孟穎：從作品到版權桌─走向國際出版的第一線觀察\r\n免費參加，提前報名：https://art.hoss.org.tw/events\r\n\r\n主辦單位：財團法人典美文化基金會\r\n贊助單位：華南金控、Pentel飛龍文具\r\n媒體贊助：小典藏、城市美學新態度、財團法人智邦藝術基金會、DIMANCHE迪夢奇\r\n",
+      "imageUrl": "https://cloud.culture.twhttps://cloud.culture.tw/e_new_upload/signinImage/2026-10-13/2158392f-4728-4f87-8aa2-e24edf56208e/文化部iCulture -1024x768.jpg",
+      "masterUnit": [
+        "財團法人典美文化基金會"
+      ],
+      "subUnit": [],
+      "supportUnit": [],
+      "otherUnit": [],
+      "webSales": "",
+      "sourceWebPromote": "",
+      "comment": "",
+      "editModifyDate": "2026/10/13 18:01:34",
+      "sourceWebName": "財團法人典美文化基金會",
+      "startDate": "2026/11/14",
+      "endDate": "2026/11/22",
+      "hitRate": 1
+    },
+    {
+      "version": "1.4",
+      "UID": "6acda714eb4399d01039b213",
+      "title": "登出世界、登入自我！《虛。實─數位與我》插畫創作聯展",
+      "category": "4",
+      "showInfo": [
+        {
+          "time": "2026/11/14 10:00:00",
+          "location": "信義區新仁里光復南路133號",
+          "locationName": "松山文創園區【藝異空間】",
+          "onSales": "N",
+          "price": "",
+          "latitude": null,
+          "longitude": null,
+          "endTime": "2026/11/22 17:00:00"
+        }
+      ],
+      "showUnit": "",
+      "discountInfo": "",
+      "descriptionFilterHtml": "我們正處在一個不需要出門，就能擁抱全世界的時代，虛與實，在每一次的滑動與點擊中，漸漸成為我們日復一日的生活。\r\n數位時代讓一切都近了，有些東西，卻悄悄遠了…\r\n\r\n《虛。實─數位與我》插畫創作聯展，集結自「2026紙上躍躍然．典美插畫大賞」脫穎而出的得獎與入圍作品，19位來自不同背景的創作者們，同在這個時代裡生活，他們透過線條與色彩，訴說著最真實的感受。\r\n\r\n你是數位時代中的主人，還是被制約的傀儡？當虛擬與現實的界線逐漸消融，你又將如何為自己保留一片真實的餘地？\r\n\r\n這裡沒有絕對的答案，邀你在畫作中與共鳴相遇，與自己的內心連線，找到那個在數位時代裡，足以安放自我的寧靜角落。\r\n\r\n【展覽資訊】\r\n《虛。實─數位與我》插畫創作聯展\r\n時間：115.11.14(六)～11.22(日)，10:00-17:00，免費參觀\r\n地點：松山文創園區 藝異空間\r\n參展者(依姓名筆畫排序)：白允禔、朱品璇、吳世傑、吳韶寶、李茵琦、孫怡婷、張仁瑜、張淯晴、張筳臻、曹瑋軒、陳品霖、陳雯馨、楊凱凱、葉明俐、蔡琇淇、鄭元欽、謝金蓉、羅傑耀、顧淑梅 \r\n\r\n【展期活動】\r\n11.14(六)14:00-16:00頒獎典禮暨得獎者分享會\r\n11.21(六) 14:00-15:30插畫講座x謝孟穎：從作品到版權桌─走向國際出版的第一線觀察\r\n免費參加，提前報名：https://art.hoss.org.tw/events\r\n\r\n主辦單位：財團法人典美文化基金會\r\n贊助單位：華南金控、Pentel飛龍文具\r\n媒體贊助：小典藏、城市美學新態度、財團法人智邦藝術基金會、DIMANCHE迪夢奇\r\n",
+      "imageUrl": "https://cloud.culture.twhttps://cloud.culture.tw/e_new_upload/signinImage/2026-10-13/2158392f-4728-4f87-8aa2-e24edf56208e/文化部iCulture -1024x768.jpg",
+      "masterUnit": [
+        "財團法人典美文化基金會"
+      ],
+      "subUnit": [],
+      "supportUnit": [],
+      "otherUnit": [],
+      "webSales": "",
+      "sourceWebPromote": "",
+      "comment": "",
+      "editModifyDate": "2026/10/13 18:01:34",
+      "sourceWebName": "財團法人典美文化基金會",
+      "startDate": "2026/11/14",
+      "endDate": "2026/11/22",
+      "hitRate": 1
+    },
+    {
+      "version": "1.4",
+      "UID": "6a6b845726b32427d06042ff",
+      "title": "2026歌仔戲旗艦展演補助計畫-明華園總團旗艦製作《烏龍天下》",
+      "category": "2",
+      "showInfo": [
+        {
+          "time": "2026/11/20 19:30:00",
+          "location": "臺北市士林區文林路751號",
+          "locationName": "臺灣戲曲中心大表演廳",
+          "onSales": "Y",
+          "price": "",
+          "latitude": "25.1022766",
+          "longitude": "121.5197787",
+          "endTime": "2026/11/20 22:30:00"
+        },
+        {
+          "time": "2026/11/21 14:30:00",
+          "location": "臺北市士林區文林路751號",
+          "locationName": "臺灣戲曲中心大表演廳",
+          "onSales": "Y",
+          "price": "",
+          "latitude": "25.1022766",
+          "longitude": "121.5197787",
+          "endTime": "2026/11/21 17:30:00"
+        },
+        {
+          "time": "2026/11/22 14:30:00",
+          "location": "臺北市士林區文林路751號",
+          "locationName": "臺灣戲曲中心大表演廳",
+          "onSales": "Y",
+          "price": "",
+          "latitude": "25.1022766",
+          "longitude": "121.5197787",
+          "endTime": "2026/11/22 17:30:00"
+        }
+      ],
+      "showUnit": "",
+      "discountInfo": "",
+      "descriptionFilterHtml": "",
+      "imageUrl": "",
+      "masterUnit": [],
+      "subUnit": [],
+      "supportUnit": [],
+      "otherUnit": [],
+      "webSales": "https://www.opentix.life/program/2079450182924001281",
+      "sourceWebPromote": "https://www.opentix.life/program/2079450182924001281",
+      "comment": "",
+      "editModifyDate": "",
+      "sourceWebName": "OPENTIX兩廳院文化生活",
+      "startDate": "2026/11/20",
+      "endDate": "2026/11/22",
+      "hitRate": 6
+    },
+    {
+      "version": "1.4",
+      "UID": "6a7761f826b32427d060438f",
+      "title": "2026歌仔戲旗艦展演—唐美雲歌仔戲團《南都幽靈夜譚》",
+      "category": "2",
+      "showInfo": [
+        {
+          "time": "2026/11/27 19:30:00",
+          "location": "臺北市士林區文林路751號",
+          "locationName": "臺灣戲曲中心大表演廳",
+          "onSales": "Y",
+          "price": "",
+          "latitude": "25.1022766",
+          "longitude": "121.5197787",
+          "endTime": "2026/11/27 22:20:00"
+        },
+        {
+          "time": "2026/11/28 14:30:00",
+          "location": "臺北市士林區文林路751號",
+          "locationName": "臺灣戲曲中心大表演廳",
+          "onSales": "Y",
+          "price": "",
+          "latitude": "25.1022766",
+          "longitude": "121.5197787",
+          "endTime": "2026/11/28 17:20:00"
+        },
+        {
+          "time": "2026/11/29 14:30:00",
+          "location": "臺北市士林區文林路751號",
+          "locationName": "臺灣戲曲中心大表演廳",
+          "onSales": "Y",
+          "price": "",
+          "latitude": "25.1022766",
+          "longitude": "121.5197787",
+          "endTime": "2026/11/29 17:20:00"
+        }
+      ],
+      "showUnit": "",
+      "discountInfo": "",
+      "descriptionFilterHtml": "",
+      "imageUrl": "",
+      "masterUnit": [],
+      "subUnit": [],
+      "supportUnit": [],
+      "otherUnit": [],
+      "webSales": "https://www.opentix.life/program/2084921215902920705",
+      "sourceWebPromote": "https://www.opentix.life/program/2084921215902920705",
+      "comment": "",
+      "editModifyDate": "",
+      "sourceWebName": "OPENTIX兩廳院文化生活",
+      "startDate": "2026/11/27",
+      "endDate": "2026/11/29",
+      "hitRate": 5
+    },
+    {
+      "version": "1.4",
+      "UID": "6a5125ff26b32427d0604199",
+      "title": "義興閣掌中劇團《四靈國：天祥書之謎》",
+      "category": "2",
+      "showInfo": [
+        {
+          "time": "2026/11/21 10:30:00",
+          "location": "臺北市中正區八德路一段1號",
+          "locationName": "華山1914文創園區東3B館 烏梅劇院",
+          "onSales": "Y",
+          "price": "",
+          "latitude": "25.0432788",
+          "longitude": "121.5293005",
+          "endTime": "2026/11/21 11:30:00"
+        },
+        {
+          "time": "2026/11/21 14:30:00",
+          "location": "臺北市中正區八德路一段1號",
+          "locationName": "華山1914文創園區東3B館 烏梅劇院",
+          "onSales": "Y",
+          "price": "",
+          "latitude": "25.0432788",
+          "longitude": "121.5293005",
+          "endTime": "2026/11/21 15:30:00"
+        },
+        {
+          "time": "2026/12/06 14:30:00",
+          "location": "嘉義縣民雄鄉建國路二段265號",
+          "locationName": "嘉義縣表演藝術中心演藝廳",
+          "onSales": "Y",
+          "price": "",
+          "latitude": "23.5441881",
+          "longitude": "120.4320497",
+          "endTime": "2026/12/06 15:30:00"
+        }
+      ],
+      "showUnit": "",
+      "discountInfo": "",
+      "descriptionFilterHtml": "",
+      "imageUrl": "",
+      "masterUnit": [],
+      "subUnit": [],
+      "supportUnit": [],
+      "otherUnit": [],
+      "webSales": "https://www.opentix.life/program/2074023397003329537",
+      "sourceWebPromote": "https://www.opentix.life/program/2074023397003329537",
+      "comment": "",
+      "editModifyDate": "",
+      "sourceWebName": "OPENTIX兩廳院文化生活",
+      "startDate": "2026/11/21",
+      "endDate": "2026/12/06",
+      "hitRate": 6
+    },
+    {
+      "version": "1.4",
+      "UID": "6a07580f26b3243414ccc92f",
+      "title": "長義閣掌中劇團「銳劇場」系列 -《我,哪吒》",
+      "category": "2",
+      "showInfo": [
+        {
+          "time": "2026/12/05 15:00:00",
+          "location": "臺北市中正區八德路一段1號",
+          "locationName": "華山1914文創園區東3B館 烏梅劇院",
+          "onSales": "Y",
+          "price": "",
+          "latitude": "25.0432788",
+          "longitude": "121.5293005",
+          "endTime": "2026/12/05 16:00:00"
+        },
+        {
+          "time": "2026/12/06 15:00:00",
+          "location": "臺北市中正區八德路一段1號",
+          "locationName": "華山1914文創園區東3B館 烏梅劇院",
+          "onSales": "Y",
+          "price": "",
+          "latitude": "25.0432788",
+          "longitude": "121.5293005",
+          "endTime": "2026/12/06 16:00:00"
+        }
+      ],
+      "showUnit": "",
+      "discountInfo": "",
+      "descriptionFilterHtml": "",
+      "imageUrl": "",
+      "masterUnit": [],
+      "subUnit": [],
+      "supportUnit": [],
+      "otherUnit": [],
+      "webSales": "https://www.opentix.life/program/2054095506013016065",
+      "sourceWebPromote": "https://www.opentix.life/program/2054095506013016065",
+      "comment": "",
+      "editModifyDate": "",
+      "sourceWebName": "OPENTIX兩廳院文化生活",
+      "startDate": "2026/12/05",
+      "endDate": "2026/12/06",
+      "hitRate": 3
+    },
+    {
+      "version": "1.4",
+      "UID": "6a8f1c1526b32434f4358068",
+      "title": "偶偶偶劇團《小狐狸買手套》",
+      "category": "4",
+      "showInfo": [
+        {
+          "time": "2026/12/04 19:30:00",
+          "location": "臺北市文山區景文街32號，捷運景美站1號出口",
+          "locationName": "文山劇場",
+          "onSales": "Y",
+          "price": "",
+          "latitude": "24.9920754",
+          "longitude": "121.5411678",
+          "endTime": "2026/12/04 21:00:00"
+        },
+        {
+          "time": "2026/12/05 14:30:00",
+          "location": "臺北市文山區景文街32號，捷運景美站1號出口",
+          "locationName": "文山劇場",
+          "onSales": "Y",
+          "price": "",
+          "latitude": "24.9920754",
+          "longitude": "121.5411678",
+          "endTime": "2026/12/05 16:00:00"
+        },
+        {
+          "time": "2026/12/06 10:30:00",
+          "location": "臺北市文山區景文街32號，捷運景美站1號出口",
+          "locationName": "文山劇場",
+          "onSales": "Y",
+          "price": "",
+          "latitude": "24.9920754",
+          "longitude": "121.5411678",
+          "endTime": "2026/12/06 12:00:00"
+        },
+        {
+          "time": "2026/12/06 14:30:00",
+          "location": "臺北市文山區景文街32號，捷運景美站1號出口",
+          "locationName": "文山劇場",
+          "onSales": "Y",
+          "price": "",
+          "latitude": "24.9920754",
+          "longitude": "121.5411678",
+          "endTime": "2026/12/06 16:00:00"
+        }
+      ],
+      "showUnit": "",
+      "discountInfo": "",
+      "descriptionFilterHtml": "",
+      "imageUrl": "",
+      "masterUnit": [],
+      "subUnit": [],
+      "supportUnit": [],
+      "otherUnit": [],
+      "webSales": "https://www.opentix.life/program/2088104133013299200",
+      "sourceWebPromote": "https://www.opentix.life/program/2088104133013299200",
+      "comment": "",
+      "editModifyDate": "",
+      "sourceWebName": "OPENTIX兩廳院文化生活",
+      "startDate": "2026/12/04",
+      "endDate": "2026/12/06",
+      "hitRate": 8
+    },
+    {
+      "version": "1.4",
+      "UID": "6ad7a1c426b3245efc7536c8",
+      "title": "「戲來就演！」－布袋戲演師們的大挑戰",
+      "category": "2",
+      "showInfo": [
+        {
+          "time": "2026/12/11 19:00:00",
+          "location": "新北市新莊區營盤里中正路510號 舒德樓1樓",
+          "locationName": "輔仁大學外語學院華觀劇場",
+          "onSales": "Y",
+          "price": "",
+          "latitude": "25.033970533638726",
+          "longitude": "121.4340767686022",
+          "endTime": "2026/12/11 21:00:00"
+        },
+        {
+          "time": "2026/12/12 14:00:00",
+          "location": "新北市新莊區營盤里中正路510號 舒德樓1樓",
+          "locationName": "輔仁大學外語學院華觀劇場",
+          "onSales": "Y",
+          "price": "",
+          "latitude": "25.033970533638726",
+          "longitude": "121.4340767686022",
+          "endTime": "2026/12/12 16:00:00"
+        }
+      ],
+      "showUnit": "",
+      "discountInfo": "",
+      "descriptionFilterHtml": "",
+      "imageUrl": "",
+      "masterUnit": [],
+      "subUnit": [],
+      "supportUnit": [],
+      "otherUnit": [],
+      "webSales": "https://www.opentix.life/program/2109890724705943553",
+      "sourceWebPromote": "https://www.opentix.life/program/2109890724705943553",
+      "comment": "",
+      "editModifyDate": "",
+      "sourceWebName": "OPENTIX兩廳院文化生活",
+      "startDate": "2026/12/11",
+      "endDate": "2026/12/12",
+      "hitRate": 0
+    },
+    {
+      "version": "1.4",
+      "UID": "6a7761f926b32427d0604390",
+      "title": "2026唐美雲歌仔戲團《南都幽靈夜譚》高雄場",
+      "category": "2",
+      "showInfo": [
+        {
+          "time": "2026/12/12 14:30:00",
+          "location": "高雄市鳳山區三多一路1號",
+          "locationName": "衛武營國家藝術文化中心歌劇院",
+          "onSales": "Y",
+          "price": "",
+          "latitude": "22.6230179238508",
+          "longitude": "120.342434118507",
+          "endTime": "2026/12/12 17:20:00"
+        },
+        {
+          "time": "2026/12/13 14:30:00",
+          "location": "高雄市鳳山區三多一路1號",
+          "locationName": "衛武營國家藝術文化中心歌劇院",
+          "onSales": "Y",
+          "price": "",
+          "latitude": "22.6230179238508",
+          "longitude": "120.342434118507",
+          "endTime": "2026/12/13 17:20:00"
+        }
+      ],
+      "showUnit": "",
+      "discountInfo": "",
+      "descriptionFilterHtml": "",
+      "imageUrl": "",
+      "masterUnit": [],
+      "subUnit": [],
+      "supportUnit": [],
+      "otherUnit": [],
+      "webSales": "https://www.opentix.life/program/2085264572835840001",
+      "sourceWebPromote": "https://www.opentix.life/program/2085264572835840001",
+      "comment": "",
+      "editModifyDate": "",
+      "sourceWebName": "OPENTIX兩廳院文化生活",
+      "startDate": "2026/12/12",
+      "endDate": "2026/12/13",
+      "hitRate": 0
+    },
+    {
+      "version": "1.4",
+      "UID": "69fa478a26b3243414ccc5c1",
+      "title": "【特展】 「請戲-布袋戲一條街」特展",
+      "category": "6",
+      "showInfo": [
+        {
+          "time": "2026/03/10 09:00:00",
+          "location": "臺北市大同區迪化街1段21號",
+          "locationName": "臺北市藝文推廣處-大稻埕戲苑",
+          "onSales": "N",
+          "price": "",
+          "latitude": null,
+          "longitude": null,
+          "endTime": "2026/12/15 17:00:00"
+        }
+      ],
+      "showUnit": "(中華民國)臺北市藝文推廣處",
+      "discountInfo": "",
+      "descriptionFilterHtml": "十九世紀末，大稻埕商業與藝文活動興盛，聚集許多戲院、劇場，也被稱為「戲窟」。北段的涼州街也因南北貨批發，又鄰近富廟與小吃，日治時期開始就吸引布袋戲團與北管軒社在這裡聚集。1950年代，布袋戲團跟涼州街周邊店家會合作設立聯絡處，讓涼州街成為「布袋戲街」，形成集結商家、軒社與民眾的文化生活圈。本次特展透過介紹當時在涼州街的布袋戲團「亦宛然」、「小西園」、「哈哈笑」等代表性劇團，伴隨民眾重溫布袋戲即日常的生活場景，也展現大稻埕戲苑推動傳統戲曲與在地文化的使命。\r\n",
+      "imageUrl": "",
+      "masterUnit": [
+        "臺北市藝文推廣處"
+      ],
+      "subUnit": [],
+      "supportUnit": [],
+      "otherUnit": [
+        "(策劃)八識文創發展工作室"
+      ],
+      "webSales": "",
+      "sourceWebPromote": "",
+      "comment": "",
+      "editModifyDate": "",
+      "sourceWebName": "全國藝文活動資訊系統",
+      "startDate": "2026/03/10",
+      "endDate": "2026/12/15",
+      "hitRate": 20
+    },
+    {
+      "version": "1.4",
+      "UID": "6a5125ff26b32427d0604198",
+      "title": "義興閣掌中劇團《豆花公劇場版－拍斷手骨顛倒勇》",
+      "category": "2",
+      "showInfo": [
+        {
+          "time": "2026/12/05 10:30:00",
+          "location": "嘉義縣民雄鄉建國路二段265號",
+          "locationName": "嘉義縣表演藝術中心演藝廳",
+          "onSales": "Y",
+          "price": "",
+          "latitude": "23.5441881",
+          "longitude": "120.4320497",
+          "endTime": "2026/12/05 11:50:00"
+        },
+        {
+          "time": "2026/12/19 10:30:00",
+          "location": "新北市樹林區樹新路40-8號",
+          "locationName": "樹林藝文中心演藝廳",
+          "onSales": "Y",
+          "price": "",
+          "latitude": "24.9958085",
+          "longitude": "121.4283305",
+          "endTime": "2026/12/19 11:50:00"
+        },
+        {
+          "time": "2026/12/19 14:30:00",
+          "location": "新北市樹林區樹新路40-8號",
+          "locationName": "樹林藝文中心演藝廳",
+          "onSales": "Y",
+          "price": "",
+          "latitude": "24.9958085",
+          "longitude": "121.4283305",
+          "endTime": "2026/12/19 15:50:00"
+        }
+      ],
+      "showUnit": "",
+      "discountInfo": "",
+      "descriptionFilterHtml": "",
+      "imageUrl": "",
+      "masterUnit": [],
+      "subUnit": [],
+      "supportUnit": [],
+      "otherUnit": [],
+      "webSales": "https://www.opentix.life/program/2072965831309205504",
+      "sourceWebPromote": "https://www.opentix.life/program/2072965831309205504",
+      "comment": "",
+      "editModifyDate": "",
+      "sourceWebName": "OPENTIX兩廳院文化生活",
+      "startDate": "2026/12/05",
+      "endDate": "2026/12/19",
+      "hitRate": 5
+    },
+    {
+      "version": "1.4",
+      "UID": "6a76106d26b32427d060437f",
+      "title": "山宛然劇團兒童布袋戲《鷂婆在哪裡？》",
+      "category": "2",
+      "showInfo": [
+        {
+          "time": "2026/11/07 14:30:00",
+          "location": "臺北市松山區市民大道五段99號4樓",
+          "locationName": "台北偶戲館黑箱劇場",
+          "onSales": "Y",
+          "price": "",
+          "latitude": "25.0477411",
+          "longitude": "121.5613359",
+          "endTime": "2026/11/07 15:30:00"
+        },
+        {
+          "time": "2026/11/08 10:30:00",
+          "location": "臺北市松山區市民大道五段99號4樓",
+          "locationName": "台北偶戲館黑箱劇場",
+          "onSales": "Y",
+          "price": "",
+          "latitude": "25.0477411",
+          "longitude": "121.5613359",
+          "endTime": "2026/11/08 11:30:00"
+        },
+        {
+          "time": "2026/11/08 14:30:00",
+          "location": "臺北市松山區市民大道五段99號4樓",
+          "locationName": "台北偶戲館黑箱劇場",
+          "onSales": "Y",
+          "price": "",
+          "latitude": "25.0477411",
+          "longitude": "121.5613359",
+          "endTime": "2026/11/08 15:30:00"
+        },
+        {
+          "time": "2026/12/19 10:00:00",
+          "location": "新竹縣竹北市縣政九路146號",
+          "locationName": "新竹縣政府文化局實驗劇場",
+          "onSales": "Y",
+          "price": "",
+          "latitude": "24.8301478",
+          "longitude": "121.0121201",
+          "endTime": "2026/12/19 11:00:00"
+        },
+        {
+          "time": "2026/12/19 14:00:00",
+          "location": "新竹縣竹北市縣政九路146號",
+          "locationName": "新竹縣政府文化局實驗劇場",
+          "onSales": "Y",
+          "price": "",
+          "latitude": "24.8301478",
+          "longitude": "121.0121201",
+          "endTime": "2026/12/19 15:00:00"
+        },
+        {
+          "time": "2026/12/20 10:00:00",
+          "location": "新竹縣竹北市縣政九路146號",
+          "locationName": "新竹縣政府文化局實驗劇場",
+          "onSales": "Y",
+          "price": "",
+          "latitude": "24.8301478",
+          "longitude": "121.0121201",
+          "endTime": "2026/12/20 11:00:00"
+        },
+        {
+          "time": "2026/12/20 14:00:00",
+          "location": "新竹縣竹北市縣政九路146號",
+          "locationName": "新竹縣政府文化局實驗劇場",
+          "onSales": "Y",
+          "price": "",
+          "latitude": "24.8301478",
+          "longitude": "121.0121201",
+          "endTime": "2026/12/20 15:00:00"
+        }
+      ],
+      "showUnit": "",
+      "discountInfo": "",
+      "descriptionFilterHtml": "",
+      "imageUrl": "",
+      "masterUnit": [],
+      "subUnit": [],
+      "supportUnit": [],
+      "otherUnit": [],
+      "webSales": "https://www.opentix.life/program/2081990762330185729",
+      "sourceWebPromote": "https://www.opentix.life/program/2081990762330185729",
+      "comment": "",
+      "editModifyDate": "",
+      "sourceWebName": "OPENTIX兩廳院文化生活",
+      "startDate": "2026/11/07",
+      "endDate": "2026/12/20",
+      "hitRate": 34
+    },
+    {
+      "version": "1.4",
+      "UID": "6adb94ba26b3245efc75371d",
+      "title": "《吟遊詩人的新唸歌——桃園米倉》",
+      "category": "2",
+      "showInfo": [
+        {
+          "time": "2026/12/18 19:30:00",
+          "location": "桃園市桃園區新生路169號",
+          "locationName": "米倉劇場",
+          "onSales": "Y",
+          "price": "",
+          "latitude": "24.995975621133713",
+          "longitude": "121.3075297183001",
+          "endTime": "2026/12/18 20:40:00"
+        },
+        {
+          "time": "2026/12/19 14:30:00",
+          "location": "桃園市桃園區新生路169號",
+          "locationName": "米倉劇場",
+          "onSales": "Y",
+          "price": "",
+          "latitude": "24.995975621133713",
+          "longitude": "121.3075297183001",
+          "endTime": "2026/12/19 15:40:00"
+        },
+        {
+          "time": "2026/12/20 14:30:00",
+          "location": "桃園市桃園區新生路169號",
+          "locationName": "米倉劇場",
+          "onSales": "Y",
+          "price": "",
+          "latitude": "24.995975621133713",
+          "longitude": "121.3075297183001",
+          "endTime": "2026/12/20 15:40:00"
+        }
+      ],
+      "showUnit": "",
+      "discountInfo": "",
+      "descriptionFilterHtml": "",
+      "imageUrl": "",
+      "masterUnit": [],
+      "subUnit": [],
+      "supportUnit": [],
+      "otherUnit": [],
+      "webSales": "https://www.opentix.life/program/2110369335028596737",
+      "sourceWebPromote": "https://www.opentix.life/program/2110369335028596737",
+      "comment": "",
+      "editModifyDate": "",
+      "sourceWebName": "OPENTIX兩廳院文化生活",
+      "startDate": "2026/12/18",
+      "endDate": "2026/12/20",
+      "hitRate": 5
+    },
+    {
+      "version": "1.4",
+      "UID": "6a68e16026b32427d06042d9",
+      "title": "2026 NTT遇見巨人—唐美雲歌仔戲團《南都幽靈夜譚》",
+      "category": "2",
+      "showInfo": [
+        {
+          "time": "2026/12/26 14:30:00",
+          "location": "臺中市西屯區惠來路二段101號",
+          "locationName": "臺中國家歌劇院大劇院",
+          "onSales": "Y",
+          "price": "",
+          "latitude": "24.1626492",
+          "longitude": "120.6403028",
+          "endTime": "2026/12/26 17:20:00"
+        },
+        {
+          "time": "2026/12/27 14:30:00",
+          "location": "臺中市西屯區惠來路二段101號",
+          "locationName": "臺中國家歌劇院大劇院",
+          "onSales": "Y",
+          "price": "",
+          "latitude": "24.1626492",
+          "longitude": "120.6403028",
+          "endTime": "2026/12/27 17:20:00"
+        }
+      ],
+      "showUnit": "",
+      "discountInfo": "",
+      "descriptionFilterHtml": "",
+      "imageUrl": "",
+      "masterUnit": [],
+      "subUnit": [],
+      "supportUnit": [],
+      "otherUnit": [],
+      "webSales": "https://www.opentix.life/program/2081542988953264129",
+      "sourceWebPromote": "https://www.opentix.life/program/2081542988953264129",
+      "comment": "",
+      "editModifyDate": "",
+      "sourceWebName": "OPENTIX兩廳院文化生活",
+      "startDate": "2026/12/26",
+      "endDate": "2026/12/27",
+      "hitRate": 1
+    },
     {
       "version": "1.4",
       "UID": "6973eb0c26b32454e437c3ef",
@@ -39,7 +1285,7 @@
       "sourceWebName": "全國藝文活動資訊系統",
       "startDate": "2026/01/02",
       "endDate": "2026/12/31",
-      "hitRate": 15
+      "hitRate": 17
     },
     {
       "version": "1.4",
@@ -147,127 +1393,7 @@
       "sourceWebName": "全國藝文活動資訊系統",
       "startDate": "2026/01/01",
       "endDate": "2026/12/31",
-      "hitRate": 11
-    },
-    {
-      "version": "1.4",
-      "UID": "69c0ac8beb43f81479e547dc",
-      "title": "115年「掌藝薪傳-大師工作坊」",
-      "category": "19",
-      "showInfo": [
-        {
-          "time": "2026/04/12 10:00:00",
-          "location": "臺北市松山區市民大道五段99號3樓",
-          "locationName": "台北偶戲館",
-          "onSales": "Y",
-          "price": "每班報名費 3,000 元",
-          "latitude": null,
-          "longitude": null,
-          "endTime": "2026/11/01 16:00:00"
-        }
-      ],
-      "showUnit": "",
-      "discountInfo": "",
-      "descriptionFilterHtml": "每年一度的「掌藝薪傳-大師工作坊」報名開跑啦！\r\n\r\n想親手感受布袋戲的操偶神韻，還是想深入研究後場鑼鼓的震撼節奏？亦或是想親手縫製精緻盔帽、雕刻傳統道具？今年我們同樣準備了豐富的課程，邀請您一起走入布袋戲的藝術殿堂。\r\n\r\n🎨 課程四大班別：\r\n1.前場操偶班：學習專業操偶技巧與演出口白，體驗指尖上的藝術 。\r\n2.後場音樂班：掌握鑼鼓操作與扮仙節奏，表現優異者更有機會加入劇團演訓計畫 。\r\n3.工藝製作班：從盔帽到袍仔衣，一針一線親手縫製傳統戲服 。\r\n4.雕刻藝術班：分為基礎班（兵器道具）與進階班（桌椅動物），精進木作工藝 。\r\n\r\n\r\n主辦單位：陳錫煌傳統掌中劇團\r\n協辦單位：台北偶戲館\r\n贊助單位：臺北市政府文化局",
-      "imageUrl": "",
-      "masterUnit": [
-        "陳錫煌傳統掌中劇團"
-      ],
-      "subUnit": [
-        "台北偶戲館"
-      ],
-      "supportUnit": [
-        "臺北市政府文化局"
-      ],
-      "otherUnit": [],
-      "webSales": "https://forms.gle/SebhyKU9i6UmpaQx6",
-      "sourceWebPromote": "https://www.facebook.com/share/p/1BX5mdbRz3/",
-      "comment": "",
-      "editModifyDate": "2026/03/24 18:16:30",
-      "sourceWebName": "黃俐瑋",
-      "startDate": "2026/04/12",
-      "endDate": "2026/11/01",
-      "hitRate": 74
-    },
-    {
-      "version": "1.4",
-      "UID": "69c0ac8beb43f81479e547dc",
-      "title": "115年「掌藝薪傳-大師工作坊」",
-      "category": "200",
-      "showInfo": [
-        {
-          "time": "2026/04/12 10:00:00",
-          "location": "臺北市松山區市民大道五段99號3樓",
-          "locationName": "台北偶戲館",
-          "onSales": "Y",
-          "price": "每班報名費 3,000 元",
-          "latitude": null,
-          "longitude": null,
-          "endTime": "2026/11/01 16:00:00"
-        }
-      ],
-      "showUnit": "",
-      "discountInfo": "",
-      "descriptionFilterHtml": "每年一度的「掌藝薪傳-大師工作坊」報名開跑啦！\r\n\r\n想親手感受布袋戲的操偶神韻，還是想深入研究後場鑼鼓的震撼節奏？亦或是想親手縫製精緻盔帽、雕刻傳統道具？今年我們同樣準備了豐富的課程，邀請您一起走入布袋戲的藝術殿堂。\r\n\r\n🎨 課程四大班別：\r\n1.前場操偶班：學習專業操偶技巧與演出口白，體驗指尖上的藝術 。\r\n2.後場音樂班：掌握鑼鼓操作與扮仙節奏，表現優異者更有機會加入劇團演訓計畫 。\r\n3.工藝製作班：從盔帽到袍仔衣，一針一線親手縫製傳統戲服 。\r\n4.雕刻藝術班：分為基礎班（兵器道具）與進階班（桌椅動物），精進木作工藝 。\r\n\r\n\r\n主辦單位：陳錫煌傳統掌中劇團\r\n協辦單位：台北偶戲館\r\n贊助單位：臺北市政府文化局",
-      "imageUrl": "",
-      "masterUnit": [
-        "陳錫煌傳統掌中劇團"
-      ],
-      "subUnit": [
-        "台北偶戲館"
-      ],
-      "supportUnit": [
-        "臺北市政府文化局"
-      ],
-      "otherUnit": [],
-      "webSales": "https://forms.gle/SebhyKU9i6UmpaQx6",
-      "sourceWebPromote": "https://www.facebook.com/share/p/1BX5mdbRz3/",
-      "comment": "",
-      "editModifyDate": "2026/03/24 18:16:30",
-      "sourceWebName": "黃俐瑋",
-      "startDate": "2026/04/12",
-      "endDate": "2026/11/01",
-      "hitRate": 74
-    },
-    {
-      "version": "1.4",
-      "UID": "69c0ac8beb43f81479e547dc",
-      "title": "115年「掌藝薪傳-大師工作坊」",
-      "category": "4",
-      "showInfo": [
-        {
-          "time": "2026/04/12 10:00:00",
-          "location": "臺北市松山區市民大道五段99號3樓",
-          "locationName": "台北偶戲館",
-          "onSales": "Y",
-          "price": "每班報名費 3,000 元",
-          "latitude": null,
-          "longitude": null,
-          "endTime": "2026/11/01 16:00:00"
-        }
-      ],
-      "showUnit": "",
-      "discountInfo": "",
-      "descriptionFilterHtml": "每年一度的「掌藝薪傳-大師工作坊」報名開跑啦！\r\n\r\n想親手感受布袋戲的操偶神韻，還是想深入研究後場鑼鼓的震撼節奏？亦或是想親手縫製精緻盔帽、雕刻傳統道具？今年我們同樣準備了豐富的課程，邀請您一起走入布袋戲的藝術殿堂。\r\n\r\n🎨 課程四大班別：\r\n1.前場操偶班：學習專業操偶技巧與演出口白，體驗指尖上的藝術 。\r\n2.後場音樂班：掌握鑼鼓操作與扮仙節奏，表現優異者更有機會加入劇團演訓計畫 。\r\n3.工藝製作班：從盔帽到袍仔衣，一針一線親手縫製傳統戲服 。\r\n4.雕刻藝術班：分為基礎班（兵器道具）與進階班（桌椅動物），精進木作工藝 。\r\n\r\n\r\n主辦單位：陳錫煌傳統掌中劇團\r\n協辦單位：台北偶戲館\r\n贊助單位：臺北市政府文化局",
-      "imageUrl": "",
-      "masterUnit": [
-        "陳錫煌傳統掌中劇團"
-      ],
-      "subUnit": [
-        "台北偶戲館"
-      ],
-      "supportUnit": [
-        "臺北市政府文化局"
-      ],
-      "otherUnit": [],
-      "webSales": "https://forms.gle/SebhyKU9i6UmpaQx6",
-      "sourceWebPromote": "https://www.facebook.com/share/p/1BX5mdbRz3/",
-      "comment": "",
-      "editModifyDate": "2026/03/24 18:16:30",
-      "sourceWebName": "黃俐瑋",
-      "startDate": "2026/04/12",
-      "endDate": "2026/11/01",
-      "hitRate": 74
+      "hitRate": 13
     },
     {
       "version": "1.4",
@@ -303,7 +1429,7 @@
       "sourceWebName": "全國藝文活動資訊系統",
       "startDate": "2026/01/31",
       "endDate": "2026/12/31",
-      "hitRate": 20
+      "hitRate": 24
     },
     {
       "version": "1.4",
@@ -339,147 +1465,7 @@
       "sourceWebName": "全國藝文活動資訊系統",
       "startDate": "2027/01/01",
       "endDate": "2027/01/31",
-      "hitRate": 3
-    },
-    {
-      "version": "1.4",
-      "UID": "69d7db9e26b3242a48a9e1d1",
-      "title": "【掌中戲】五洲勝義閣掌中劇團《濟世降魔傳》",
-      "category": "2",
-      "showInfo": [
-        {
-          "time": "2026/10/31 14:00:00",
-          "location": "臺北市大同區迪化街一段21號8樓",
-          "locationName": "大稻埕戲苑曲藝場",
-          "onSales": "Y",
-          "price": "",
-          "latitude": "25.0552408",
-          "longitude": "121.5103053",
-          "endTime": "2026/10/31 16:00:00"
-        }
-      ],
-      "showUnit": "",
-      "discountInfo": "",
-      "descriptionFilterHtml": "",
-      "imageUrl": "",
-      "masterUnit": [],
-      "subUnit": [],
-      "supportUnit": [],
-      "otherUnit": [],
-      "webSales": "https://www.opentix.life/program/2036015355921928192",
-      "sourceWebPromote": "https://www.opentix.life/program/2036015355921928192",
-      "comment": "",
-      "editModifyDate": "",
-      "sourceWebName": "OPENTIX兩廳院文化生活",
-      "startDate": "2026/10/31",
-      "endDate": "2026/10/31",
-      "hitRate": 13
-    },
-    {
-      "version": "1.4",
-      "UID": "69d7db9e26b3242a48a9e1d2",
-      "title": "【掌中戲】新西園掌中劇團《文素臣之大義滅親-殺嫂》",
-      "category": "2",
-      "showInfo": [
-        {
-          "time": "2026/11/07 14:00:00",
-          "location": "臺北市大同區迪化街一段21號8樓",
-          "locationName": "大稻埕戲苑曲藝場",
-          "onSales": "Y",
-          "price": "",
-          "latitude": "25.0552408",
-          "longitude": "121.5103053",
-          "endTime": "2026/11/07 16:00:00"
-        }
-      ],
-      "showUnit": "",
-      "discountInfo": "",
-      "descriptionFilterHtml": "",
-      "imageUrl": "",
-      "masterUnit": [],
-      "subUnit": [],
-      "supportUnit": [],
-      "otherUnit": [],
-      "webSales": "https://www.opentix.life/program/2036016610592505856",
-      "sourceWebPromote": "https://www.opentix.life/program/2036016610592505856",
-      "comment": "",
-      "editModifyDate": "",
-      "sourceWebName": "OPENTIX兩廳院文化生活",
-      "startDate": "2026/11/07",
-      "endDate": "2026/11/07",
       "hitRate": 4
-    },
-    {
-      "version": "1.4",
-      "UID": "69d7db9e26b3242a48a9e1d3",
-      "title": "【掌中戲】不貳偶劇《天雷報》",
-      "category": "2",
-      "showInfo": [
-        {
-          "time": "2026/11/21 14:00:00",
-          "location": "臺北市大同區迪化街一段21號8樓",
-          "locationName": "大稻埕戲苑曲藝場",
-          "onSales": "Y",
-          "price": "",
-          "latitude": "25.0552408",
-          "longitude": "121.5103053",
-          "endTime": "2026/11/21 16:00:00"
-        }
-      ],
-      "showUnit": "",
-      "discountInfo": "",
-      "descriptionFilterHtml": "",
-      "imageUrl": "",
-      "masterUnit": [],
-      "subUnit": [],
-      "supportUnit": [],
-      "otherUnit": [],
-      "webSales": "https://www.opentix.life/program/2036018024078086145",
-      "sourceWebPromote": "https://www.opentix.life/program/2036018024078086145",
-      "comment": "",
-      "editModifyDate": "",
-      "sourceWebName": "OPENTIX兩廳院文化生活",
-      "startDate": "2026/11/21",
-      "endDate": "2026/11/21",
-      "hitRate": 7
-    },
-    {
-      "version": "1.4",
-      "UID": "69fa478a26b3243414ccc5c1",
-      "title": "【特展】 「請戲-布袋戲一條街」特展",
-      "category": "6",
-      "showInfo": [
-        {
-          "time": "2026/03/10 09:00:00",
-          "location": "臺北市大同區迪化街1段21號",
-          "locationName": "臺北市藝文推廣處-大稻埕戲苑",
-          "onSales": "N",
-          "price": "",
-          "latitude": null,
-          "longitude": null,
-          "endTime": "2026/12/15 17:00:00"
-        }
-      ],
-      "showUnit": "(中華民國)臺北市藝文推廣處",
-      "discountInfo": "",
-      "descriptionFilterHtml": "十九世紀末，大稻埕商業與藝文活動興盛，聚集許多戲院、劇場，也被稱為「戲窟」。北段的涼州街也因南北貨批發，又鄰近富廟與小吃，日治時期開始就吸引布袋戲團與北管軒社在這裡聚集。1950年代，布袋戲團跟涼州街周邊店家會合作設立聯絡處，讓涼州街成為「布袋戲街」，形成集結商家、軒社與民眾的文化生活圈。本次特展透過介紹當時在涼州街的布袋戲團「亦宛然」、「小西園」、「哈哈笑」等代表性劇團，伴隨民眾重溫布袋戲即日常的生活場景，也展現大稻埕戲苑推動傳統戲曲與在地文化的使命。\r\n",
-      "imageUrl": "",
-      "masterUnit": [
-        "臺北市藝文推廣處"
-      ],
-      "subUnit": [],
-      "supportUnit": [],
-      "otherUnit": [
-        "(策劃)八識文創發展工作室"
-      ],
-      "webSales": "",
-      "sourceWebPromote": "",
-      "comment": "",
-      "editModifyDate": "",
-      "sourceWebName": "全國藝文活動資訊系統",
-      "startDate": "2026/03/10",
-      "endDate": "2026/12/15",
-      "hitRate": 18
     },
     {
       "version": "1.4",
@@ -516,992 +1502,6 @@
       "startDate": "2026/04/23",
       "endDate": "2026/12/31",
       "hitRate": 6
-    },
-    {
-      "version": "1.4",
-      "UID": "6a07580f26b3243414ccc92f",
-      "title": "長義閣掌中劇團「銳劇場」系列 -《我,哪吒》",
-      "category": "2",
-      "showInfo": [
-        {
-          "time": "2026/12/05 15:00:00",
-          "location": "臺北市中正區八德路一段1號",
-          "locationName": "華山1914文創園區東3B館 烏梅劇院",
-          "onSales": "Y",
-          "price": "",
-          "latitude": "25.0432788",
-          "longitude": "121.5293005",
-          "endTime": "2026/12/05 16:00:00"
-        },
-        {
-          "time": "2026/12/06 15:00:00",
-          "location": "臺北市中正區八德路一段1號",
-          "locationName": "華山1914文創園區東3B館 烏梅劇院",
-          "onSales": "Y",
-          "price": "",
-          "latitude": "25.0432788",
-          "longitude": "121.5293005",
-          "endTime": "2026/12/06 16:00:00"
-        }
-      ],
-      "showUnit": "",
-      "discountInfo": "",
-      "descriptionFilterHtml": "",
-      "imageUrl": "",
-      "masterUnit": [],
-      "subUnit": [],
-      "supportUnit": [],
-      "otherUnit": [],
-      "webSales": "https://www.opentix.life/program/2054095506013016065",
-      "sourceWebPromote": "https://www.opentix.life/program/2054095506013016065",
-      "comment": "",
-      "editModifyDate": "",
-      "sourceWebName": "OPENTIX兩廳院文化生活",
-      "startDate": "2026/12/05",
-      "endDate": "2026/12/06",
-      "hitRate": 3
-    },
-    {
-      "version": "1.4",
-      "UID": "6a26f5d926b3243414cccfde",
-      "title": "2026臺南藝術節：李淸照私人劇團感傷動作派《歌仔寶玉講唱》",
-      "category": "2",
-      "showInfo": [
-        {
-          "time": "2026/11/14 15:00:00",
-          "location": "臺南市中西區永福路一段185號",
-          "locationName": "臺南刑務所",
-          "onSales": "Y",
-          "price": "",
-          "latitude": "22.9871693",
-          "longitude": "120.2000224",
-          "endTime": "2026/11/14 15:50:00"
-        },
-        {
-          "time": "2026/11/15 15:00:00",
-          "location": "臺南市中西區永福路一段185號",
-          "locationName": "臺南刑務所",
-          "onSales": "Y",
-          "price": "",
-          "latitude": "22.9871693",
-          "longitude": "120.2000224",
-          "endTime": "2026/11/15 15:50:00"
-        }
-      ],
-      "showUnit": "",
-      "discountInfo": "",
-      "descriptionFilterHtml": "",
-      "imageUrl": "",
-      "masterUnit": [],
-      "subUnit": [],
-      "supportUnit": [],
-      "otherUnit": [],
-      "webSales": "https://www.opentix.life/program/2059826841548611585",
-      "sourceWebPromote": "https://www.opentix.life/program/2059826841548611585",
-      "comment": "",
-      "editModifyDate": "",
-      "sourceWebName": "OPENTIX兩廳院文化生活",
-      "startDate": "2026/11/14",
-      "endDate": "2026/11/15",
-      "hitRate": 1
-    },
-    {
-      "version": "1.4",
-      "UID": "6a3abc6926b3243414ccd51f",
-      "title": "【歌仔戲】元和劇子-鼓震千秋《梁紅玉》",
-      "category": "2",
-      "showInfo": [
-        {
-          "time": "2026/10/30 19:30:00",
-          "location": "臺北市大同區迪化街一段21號9樓",
-          "locationName": "大稻埕戲苑",
-          "onSales": "Y",
-          "price": "",
-          "latitude": "25.0552408",
-          "longitude": "121.5103053",
-          "endTime": "2026/10/30 21:30:00"
-        },
-        {
-          "time": "2026/10/31 14:30:00",
-          "location": "臺北市大同區迪化街一段21號9樓",
-          "locationName": "大稻埕戲苑",
-          "onSales": "Y",
-          "price": "",
-          "latitude": "25.0552408",
-          "longitude": "121.5103053",
-          "endTime": "2026/10/31 16:30:00"
-        },
-        {
-          "time": "2026/11/01 14:30:00",
-          "location": "臺北市大同區迪化街一段21號9樓",
-          "locationName": "大稻埕戲苑",
-          "onSales": "Y",
-          "price": "",
-          "latitude": "25.0552408",
-          "longitude": "121.5103053",
-          "endTime": "2026/11/01 16:30:00"
-        }
-      ],
-      "showUnit": "",
-      "discountInfo": "",
-      "descriptionFilterHtml": "",
-      "imageUrl": "",
-      "masterUnit": [],
-      "subUnit": [],
-      "supportUnit": [],
-      "otherUnit": [],
-      "webSales": "https://www.opentix.life/program/2063886748971831297",
-      "sourceWebPromote": "https://www.opentix.life/program/2063886748971831297",
-      "comment": "",
-      "editModifyDate": "",
-      "sourceWebName": "OPENTIX兩廳院文化生活",
-      "startDate": "2026/10/30",
-      "endDate": "2026/11/01",
-      "hitRate": 6
-    },
-    {
-      "version": "1.4",
-      "UID": "6a5125ff26b32427d0604198",
-      "title": "義興閣掌中劇團《豆花公劇場版－拍斷手骨顛倒勇》",
-      "category": "2",
-      "showInfo": [
-        {
-          "time": "2026/12/05 10:30:00",
-          "location": "嘉義縣民雄鄉建國路二段265號",
-          "locationName": "嘉義縣表演藝術中心演藝廳",
-          "onSales": "Y",
-          "price": "",
-          "latitude": "23.5441881",
-          "longitude": "120.4320497",
-          "endTime": "2026/12/05 11:50:00"
-        },
-        {
-          "time": "2026/12/19 10:30:00",
-          "location": "新北市樹林區樹新路40-8號",
-          "locationName": "樹林藝文中心演藝廳",
-          "onSales": "Y",
-          "price": "",
-          "latitude": "24.9958085",
-          "longitude": "121.4283305",
-          "endTime": "2026/12/19 11:50:00"
-        },
-        {
-          "time": "2026/12/19 14:30:00",
-          "location": "新北市樹林區樹新路40-8號",
-          "locationName": "樹林藝文中心演藝廳",
-          "onSales": "Y",
-          "price": "",
-          "latitude": "24.9958085",
-          "longitude": "121.4283305",
-          "endTime": "2026/12/19 15:50:00"
-        }
-      ],
-      "showUnit": "",
-      "discountInfo": "",
-      "descriptionFilterHtml": "",
-      "imageUrl": "",
-      "masterUnit": [],
-      "subUnit": [],
-      "supportUnit": [],
-      "otherUnit": [],
-      "webSales": "https://www.opentix.life/program/2072965831309205504",
-      "sourceWebPromote": "https://www.opentix.life/program/2072965831309205504",
-      "comment": "",
-      "editModifyDate": "",
-      "sourceWebName": "OPENTIX兩廳院文化生活",
-      "startDate": "2026/12/05",
-      "endDate": "2026/12/19",
-      "hitRate": 5
-    },
-    {
-      "version": "1.4",
-      "UID": "6a5125ff26b32427d0604199",
-      "title": "義興閣掌中劇團《四靈國：天祥書之謎》",
-      "category": "2",
-      "showInfo": [
-        {
-          "time": "2026/11/21 10:30:00",
-          "location": "臺北市中正區八德路一段1號",
-          "locationName": "華山1914文創園區東3B館 烏梅劇院",
-          "onSales": "Y",
-          "price": "",
-          "latitude": "25.0432788",
-          "longitude": "121.5293005",
-          "endTime": "2026/11/21 11:30:00"
-        },
-        {
-          "time": "2026/11/21 14:30:00",
-          "location": "臺北市中正區八德路一段1號",
-          "locationName": "華山1914文創園區東3B館 烏梅劇院",
-          "onSales": "Y",
-          "price": "",
-          "latitude": "25.0432788",
-          "longitude": "121.5293005",
-          "endTime": "2026/11/21 15:30:00"
-        },
-        {
-          "time": "2026/12/06 14:30:00",
-          "location": "嘉義縣民雄鄉建國路二段265號",
-          "locationName": "嘉義縣表演藝術中心演藝廳",
-          "onSales": "Y",
-          "price": "",
-          "latitude": "23.5441881",
-          "longitude": "120.4320497",
-          "endTime": "2026/12/06 15:30:00"
-        }
-      ],
-      "showUnit": "",
-      "discountInfo": "",
-      "descriptionFilterHtml": "",
-      "imageUrl": "",
-      "masterUnit": [],
-      "subUnit": [],
-      "supportUnit": [],
-      "otherUnit": [],
-      "webSales": "https://www.opentix.life/program/2074023397003329537",
-      "sourceWebPromote": "https://www.opentix.life/program/2074023397003329537",
-      "comment": "",
-      "editModifyDate": "",
-      "sourceWebName": "OPENTIX兩廳院文化生活",
-      "startDate": "2026/11/21",
-      "endDate": "2026/12/06",
-      "hitRate": 6
-    },
-    {
-      "version": "1.4",
-      "UID": "6a68e16026b32427d06042d9",
-      "title": "2026 NTT遇見巨人—唐美雲歌仔戲團《南都幽靈夜譚》",
-      "category": "2",
-      "showInfo": [
-        {
-          "time": "2026/12/26 14:30:00",
-          "location": "臺中市西屯區惠來路二段101號",
-          "locationName": "臺中國家歌劇院大劇院",
-          "onSales": "Y",
-          "price": "",
-          "latitude": "24.1626492",
-          "longitude": "120.6403028",
-          "endTime": "2026/12/26 17:20:00"
-        },
-        {
-          "time": "2026/12/27 14:30:00",
-          "location": "臺中市西屯區惠來路二段101號",
-          "locationName": "臺中國家歌劇院大劇院",
-          "onSales": "Y",
-          "price": "",
-          "latitude": "24.1626492",
-          "longitude": "120.6403028",
-          "endTime": "2026/12/27 17:20:00"
-        }
-      ],
-      "showUnit": "",
-      "discountInfo": "",
-      "descriptionFilterHtml": "",
-      "imageUrl": "",
-      "masterUnit": [],
-      "subUnit": [],
-      "supportUnit": [],
-      "otherUnit": [],
-      "webSales": "https://www.opentix.life/program/2081542988953264129",
-      "sourceWebPromote": "https://www.opentix.life/program/2081542988953264129",
-      "comment": "",
-      "editModifyDate": "",
-      "sourceWebName": "OPENTIX兩廳院文化生活",
-      "startDate": "2026/12/26",
-      "endDate": "2026/12/27",
-      "hitRate": 1
-    },
-    {
-      "version": "1.4",
-      "UID": "6a6b845726b32427d06042ff",
-      "title": "2026歌仔戲旗艦展演補助計畫-明華園總團旗艦製作《烏龍天下》",
-      "category": "2",
-      "showInfo": [
-        {
-          "time": "2026/11/20 19:30:00",
-          "location": "臺北市士林區文林路751號",
-          "locationName": "臺灣戲曲中心大表演廳",
-          "onSales": "Y",
-          "price": "",
-          "latitude": "25.1022766",
-          "longitude": "121.5197787",
-          "endTime": "2026/11/20 22:30:00"
-        },
-        {
-          "time": "2026/11/21 14:30:00",
-          "location": "臺北市士林區文林路751號",
-          "locationName": "臺灣戲曲中心大表演廳",
-          "onSales": "Y",
-          "price": "",
-          "latitude": "25.1022766",
-          "longitude": "121.5197787",
-          "endTime": "2026/11/21 17:30:00"
-        },
-        {
-          "time": "2026/11/22 14:30:00",
-          "location": "臺北市士林區文林路751號",
-          "locationName": "臺灣戲曲中心大表演廳",
-          "onSales": "Y",
-          "price": "",
-          "latitude": "25.1022766",
-          "longitude": "121.5197787",
-          "endTime": "2026/11/22 17:30:00"
-        }
-      ],
-      "showUnit": "",
-      "discountInfo": "",
-      "descriptionFilterHtml": "",
-      "imageUrl": "",
-      "masterUnit": [],
-      "subUnit": [],
-      "supportUnit": [],
-      "otherUnit": [],
-      "webSales": "https://www.opentix.life/program/2079450182924001281",
-      "sourceWebPromote": "https://www.opentix.life/program/2079450182924001281",
-      "comment": "",
-      "editModifyDate": "",
-      "sourceWebName": "OPENTIX兩廳院文化生活",
-      "startDate": "2026/11/20",
-      "endDate": "2026/11/22",
-      "hitRate": 6
-    },
-    {
-      "version": "1.4",
-      "UID": "6a76106d26b32427d060437f",
-      "title": "山宛然劇團兒童布袋戲《鷂婆在哪裡？》",
-      "category": "2",
-      "showInfo": [
-        {
-          "time": "2026/11/07 14:30:00",
-          "location": "臺北市松山區市民大道五段99號4樓",
-          "locationName": "台北偶戲館黑箱劇場",
-          "onSales": "Y",
-          "price": "",
-          "latitude": "25.0477411",
-          "longitude": "121.5613359",
-          "endTime": "2026/11/07 15:30:00"
-        },
-        {
-          "time": "2026/11/08 10:30:00",
-          "location": "臺北市松山區市民大道五段99號4樓",
-          "locationName": "台北偶戲館黑箱劇場",
-          "onSales": "Y",
-          "price": "",
-          "latitude": "25.0477411",
-          "longitude": "121.5613359",
-          "endTime": "2026/11/08 11:30:00"
-        },
-        {
-          "time": "2026/11/08 14:30:00",
-          "location": "臺北市松山區市民大道五段99號4樓",
-          "locationName": "台北偶戲館黑箱劇場",
-          "onSales": "Y",
-          "price": "",
-          "latitude": "25.0477411",
-          "longitude": "121.5613359",
-          "endTime": "2026/11/08 15:30:00"
-        },
-        {
-          "time": "2026/12/19 10:00:00",
-          "location": "新竹縣竹北市縣政九路146號",
-          "locationName": "新竹縣政府文化局實驗劇場",
-          "onSales": "Y",
-          "price": "",
-          "latitude": "24.8301478",
-          "longitude": "121.0121201",
-          "endTime": "2026/12/19 11:00:00"
-        },
-        {
-          "time": "2026/12/19 14:00:00",
-          "location": "新竹縣竹北市縣政九路146號",
-          "locationName": "新竹縣政府文化局實驗劇場",
-          "onSales": "Y",
-          "price": "",
-          "latitude": "24.8301478",
-          "longitude": "121.0121201",
-          "endTime": "2026/12/19 15:00:00"
-        },
-        {
-          "time": "2026/12/20 10:00:00",
-          "location": "新竹縣竹北市縣政九路146號",
-          "locationName": "新竹縣政府文化局實驗劇場",
-          "onSales": "Y",
-          "price": "",
-          "latitude": "24.8301478",
-          "longitude": "121.0121201",
-          "endTime": "2026/12/20 11:00:00"
-        },
-        {
-          "time": "2026/12/20 14:00:00",
-          "location": "新竹縣竹北市縣政九路146號",
-          "locationName": "新竹縣政府文化局實驗劇場",
-          "onSales": "Y",
-          "price": "",
-          "latitude": "24.8301478",
-          "longitude": "121.0121201",
-          "endTime": "2026/12/20 15:00:00"
-        }
-      ],
-      "showUnit": "",
-      "discountInfo": "",
-      "descriptionFilterHtml": "",
-      "imageUrl": "",
-      "masterUnit": [],
-      "subUnit": [],
-      "supportUnit": [],
-      "otherUnit": [],
-      "webSales": "https://www.opentix.life/program/2081990762330185729",
-      "sourceWebPromote": "https://www.opentix.life/program/2081990762330185729",
-      "comment": "",
-      "editModifyDate": "",
-      "sourceWebName": "OPENTIX兩廳院文化生活",
-      "startDate": "2026/11/07",
-      "endDate": "2026/12/20",
-      "hitRate": 32
-    },
-    {
-      "version": "1.4",
-      "UID": "6a7761f826b32427d060438f",
-      "title": "2026歌仔戲旗艦展演—唐美雲歌仔戲團《南都幽靈夜譚》",
-      "category": "2",
-      "showInfo": [
-        {
-          "time": "2026/11/27 19:30:00",
-          "location": "臺北市士林區文林路751號",
-          "locationName": "臺灣戲曲中心大表演廳",
-          "onSales": "Y",
-          "price": "",
-          "latitude": "25.1022766",
-          "longitude": "121.5197787",
-          "endTime": "2026/11/27 22:20:00"
-        },
-        {
-          "time": "2026/11/28 14:30:00",
-          "location": "臺北市士林區文林路751號",
-          "locationName": "臺灣戲曲中心大表演廳",
-          "onSales": "Y",
-          "price": "",
-          "latitude": "25.1022766",
-          "longitude": "121.5197787",
-          "endTime": "2026/11/28 17:20:00"
-        },
-        {
-          "time": "2026/11/29 14:30:00",
-          "location": "臺北市士林區文林路751號",
-          "locationName": "臺灣戲曲中心大表演廳",
-          "onSales": "Y",
-          "price": "",
-          "latitude": "25.1022766",
-          "longitude": "121.5197787",
-          "endTime": "2026/11/29 17:20:00"
-        }
-      ],
-      "showUnit": "",
-      "discountInfo": "",
-      "descriptionFilterHtml": "",
-      "imageUrl": "",
-      "masterUnit": [],
-      "subUnit": [],
-      "supportUnit": [],
-      "otherUnit": [],
-      "webSales": "https://www.opentix.life/program/2084921215902920705",
-      "sourceWebPromote": "https://www.opentix.life/program/2084921215902920705",
-      "comment": "",
-      "editModifyDate": "",
-      "sourceWebName": "OPENTIX兩廳院文化生活",
-      "startDate": "2026/11/27",
-      "endDate": "2026/11/29",
-      "hitRate": 5
-    },
-    {
-      "version": "1.4",
-      "UID": "6a7761f926b32427d0604390",
-      "title": "2026唐美雲歌仔戲團《南都幽靈夜譚》高雄場",
-      "category": "2",
-      "showInfo": [
-        {
-          "time": "2026/12/12 14:30:00",
-          "location": "高雄市鳳山區三多一路1號",
-          "locationName": "衛武營國家藝術文化中心歌劇院",
-          "onSales": "Y",
-          "price": "",
-          "latitude": "22.6230179238508",
-          "longitude": "120.342434118507",
-          "endTime": "2026/12/12 17:20:00"
-        },
-        {
-          "time": "2026/12/13 14:30:00",
-          "location": "高雄市鳳山區三多一路1號",
-          "locationName": "衛武營國家藝術文化中心歌劇院",
-          "onSales": "Y",
-          "price": "",
-          "latitude": "22.6230179238508",
-          "longitude": "120.342434118507",
-          "endTime": "2026/12/13 17:20:00"
-        }
-      ],
-      "showUnit": "",
-      "discountInfo": "",
-      "descriptionFilterHtml": "",
-      "imageUrl": "",
-      "masterUnit": [],
-      "subUnit": [],
-      "supportUnit": [],
-      "otherUnit": [],
-      "webSales": "https://www.opentix.life/program/2085264572835840001",
-      "sourceWebPromote": "https://www.opentix.life/program/2085264572835840001",
-      "comment": "",
-      "editModifyDate": "",
-      "sourceWebName": "OPENTIX兩廳院文化生活",
-      "startDate": "2026/12/12",
-      "endDate": "2026/12/13",
-      "hitRate": 0
-    },
-    {
-      "version": "1.4",
-      "UID": "6a8f1c1526b32434f4358068",
-      "title": "偶偶偶劇團《小狐狸買手套》",
-      "category": "4",
-      "showInfo": [
-        {
-          "time": "2026/12/04 19:30:00",
-          "location": "臺北市文山區景文街32號，捷運景美站1號出口",
-          "locationName": "文山劇場",
-          "onSales": "Y",
-          "price": "",
-          "latitude": "24.9920754",
-          "longitude": "121.5411678",
-          "endTime": "2026/12/04 21:00:00"
-        },
-        {
-          "time": "2026/12/05 14:30:00",
-          "location": "臺北市文山區景文街32號，捷運景美站1號出口",
-          "locationName": "文山劇場",
-          "onSales": "Y",
-          "price": "",
-          "latitude": "24.9920754",
-          "longitude": "121.5411678",
-          "endTime": "2026/12/05 16:00:00"
-        },
-        {
-          "time": "2026/12/06 10:30:00",
-          "location": "臺北市文山區景文街32號，捷運景美站1號出口",
-          "locationName": "文山劇場",
-          "onSales": "Y",
-          "price": "",
-          "latitude": "24.9920754",
-          "longitude": "121.5411678",
-          "endTime": "2026/12/06 12:00:00"
-        },
-        {
-          "time": "2026/12/06 14:30:00",
-          "location": "臺北市文山區景文街32號，捷運景美站1號出口",
-          "locationName": "文山劇場",
-          "onSales": "Y",
-          "price": "",
-          "latitude": "24.9920754",
-          "longitude": "121.5411678",
-          "endTime": "2026/12/06 16:00:00"
-        }
-      ],
-      "showUnit": "",
-      "discountInfo": "",
-      "descriptionFilterHtml": "",
-      "imageUrl": "",
-      "masterUnit": [],
-      "subUnit": [],
-      "supportUnit": [],
-      "otherUnit": [],
-      "webSales": "https://www.opentix.life/program/2088104133013299200",
-      "sourceWebPromote": "https://www.opentix.life/program/2088104133013299200",
-      "comment": "",
-      "editModifyDate": "",
-      "sourceWebName": "OPENTIX兩廳院文化生活",
-      "startDate": "2026/12/04",
-      "endDate": "2026/12/06",
-      "hitRate": 8
-    },
-    {
-      "version": "1.4",
-      "UID": "6a97065826b32434f43580af",
-      "title": "兒童布袋戲《焰王現身：心火山的祕密》",
-      "category": "2",
-      "showInfo": [
-        {
-          "time": "2026/10/31 10:30:00",
-          "location": "臺北市中正區羅斯福路四段92號10樓",
-          "locationName": "水源劇場",
-          "onSales": "Y",
-          "price": "",
-          "latitude": "25.013614643862443",
-          "longitude": "121.53490207369424",
-          "endTime": "2026/10/31 11:40:00"
-        },
-        {
-          "time": "2026/10/31 14:30:00",
-          "location": "臺北市中正區羅斯福路四段92號10樓",
-          "locationName": "水源劇場",
-          "onSales": "Y",
-          "price": "",
-          "latitude": "25.013614643862443",
-          "longitude": "121.53490207369424",
-          "endTime": "2026/10/31 15:40:00"
-        },
-        {
-          "time": "2026/11/01 10:30:00",
-          "location": "臺北市中正區羅斯福路四段92號10樓",
-          "locationName": "水源劇場",
-          "onSales": "Y",
-          "price": "",
-          "latitude": "25.013614643862443",
-          "longitude": "121.53490207369424",
-          "endTime": "2026/11/01 11:40:00"
-        },
-        {
-          "time": "2026/11/01 14:30:00",
-          "location": "臺北市中正區羅斯福路四段92號10樓",
-          "locationName": "水源劇場",
-          "onSales": "Y",
-          "price": "",
-          "latitude": "25.013614643862443",
-          "longitude": "121.53490207369424",
-          "endTime": "2026/11/01 15:40:00"
-        }
-      ],
-      "showUnit": "",
-      "discountInfo": "",
-      "descriptionFilterHtml": "",
-      "imageUrl": "",
-      "masterUnit": [],
-      "subUnit": [],
-      "supportUnit": [],
-      "otherUnit": [],
-      "webSales": "https://www.opentix.life/program/2090004484659298305",
-      "sourceWebPromote": "https://www.opentix.life/program/2090004484659298305",
-      "comment": "",
-      "editModifyDate": "",
-      "sourceWebName": "OPENTIX兩廳院文化生活",
-      "startDate": "2026/10/31",
-      "endDate": "2026/11/01",
-      "hitRate": 18
-    },
-    {
-      "version": "1.4",
-      "UID": "6aa97d4126b324165c32e406",
-      "title": "台中木偶劇團 《聖劍風雲三》",
-      "category": "2",
-      "showInfo": [
-        {
-          "time": "2026/11/07 14:30:00",
-          "location": "臺中市太平區光華里大興路201號",
-          "locationName": "臺中市屯區藝文中心實驗劇場",
-          "onSales": "Y",
-          "price": "",
-          "latitude": "24.156848835504007",
-          "longitude": "120.7350438060654",
-          "endTime": "2026/11/07 15:30:00"
-        }
-      ],
-      "showUnit": "",
-      "discountInfo": "",
-      "descriptionFilterHtml": "",
-      "imageUrl": "",
-      "masterUnit": [],
-      "subUnit": [],
-      "supportUnit": [],
-      "otherUnit": [],
-      "webSales": "https://www.opentix.life/program/2080173157578416129",
-      "sourceWebPromote": "https://www.opentix.life/program/2080173157578416129",
-      "comment": "",
-      "editModifyDate": "",
-      "sourceWebName": "OPENTIX兩廳院文化生活",
-      "startDate": "2026/11/07",
-      "endDate": "2026/11/07",
-      "hitRate": 0
-    },
-    {
-      "version": "1.4",
-      "UID": "6abd43b626b324165c32e559",
-      "title": "拉縴人男聲合唱團《英雄路－布袋戲聲音行旅》",
-      "category": "1",
-      "showInfo": [
-        {
-          "time": "2026/11/22 14:30:00",
-          "location": "雲林縣斗六市大學路三段310號",
-          "locationName": "雲林表演廳",
-          "onSales": "Y",
-          "price": "",
-          "latitude": "23.69595039888417",
-          "longitude": "120.52510397140288",
-          "endTime": "2026/11/22 16:00:00"
-        }
-      ],
-      "showUnit": "",
-      "discountInfo": "",
-      "descriptionFilterHtml": "",
-      "imageUrl": "",
-      "masterUnit": [],
-      "subUnit": [],
-      "supportUnit": [],
-      "otherUnit": [],
-      "webSales": "https://www.opentix.life/program/2101950430852980737",
-      "sourceWebPromote": "https://www.opentix.life/program/2101950430852980737",
-      "comment": "",
-      "editModifyDate": "",
-      "sourceWebName": "OPENTIX兩廳院文化生活",
-      "startDate": "2026/11/22",
-      "endDate": "2026/11/22",
-      "hitRate": 1
-    },
-    {
-      "version": "1.4",
-      "UID": "6acda714eb4399d01039b213",
-      "title": "登出世界、登入自我！《虛。實─數位與我》插畫創作聯展",
-      "category": "6",
-      "showInfo": [
-        {
-          "time": "2026/11/14 10:00:00",
-          "location": "信義區新仁里光復南路133號",
-          "locationName": "松山文創園區【藝異空間】",
-          "onSales": "N",
-          "price": "",
-          "latitude": null,
-          "longitude": null,
-          "endTime": "2026/11/22 17:00:00"
-        }
-      ],
-      "showUnit": "",
-      "discountInfo": "",
-      "descriptionFilterHtml": "我們正處在一個不需要出門，就能擁抱全世界的時代，虛與實，在每一次的滑動與點擊中，漸漸成為我們日復一日的生活。\r\n數位時代讓一切都近了，有些東西，卻悄悄遠了…\r\n\r\n《虛。實─數位與我》插畫創作聯展，集結自「2026紙上躍躍然．典美插畫大賞」脫穎而出的得獎與入圍作品，19位來自不同背景的創作者們，同在這個時代裡生活，他們透過線條與色彩，訴說著最真實的感受。\r\n\r\n你是數位時代中的主人，還是被制約的傀儡？當虛擬與現實的界線逐漸消融，你又將如何為自己保留一片真實的餘地？\r\n\r\n這裡沒有絕對的答案，邀你在畫作中與共鳴相遇，與自己的內心連線，找到那個在數位時代裡，足以安放自我的寧靜角落。\r\n\r\n【展覽資訊】\r\n《虛。實─數位與我》插畫創作聯展\r\n時間：115.11.14(六)～11.22(日)，10:00-17:00，免費參觀\r\n地點：松山文創園區 藝異空間\r\n參展者(依姓名筆畫排序)：白允禔、朱品璇、吳世傑、吳韶寶、李茵琦、孫怡婷、張仁瑜、張淯晴、張筳臻、曹瑋軒、陳品霖、陳雯馨、楊凱凱、葉明俐、蔡琇淇、鄭元欽、謝金蓉、羅傑耀、顧淑梅 \r\n\r\n【展期活動】\r\n11.14(六)14:00-16:00頒獎典禮暨得獎者分享會\r\n11.21(六) 14:00-15:30插畫講座x謝孟穎：從作品到版權桌─走向國際出版的第一線觀察\r\n免費參加，提前報名：https://art.hoss.org.tw/events\r\n\r\n主辦單位：財團法人典美文化基金會\r\n贊助單位：華南金控、Pentel飛龍文具\r\n媒體贊助：小典藏、城市美學新態度、財團法人智邦藝術基金會、DIMANCHE迪夢奇\r\n",
-      "imageUrl": "https://cloud.culture.twhttps://cloud.culture.tw/e_new_upload/signinImage/2026-10-13/2158392f-4728-4f87-8aa2-e24edf56208e/文化部iCulture -1024x768.jpg",
-      "masterUnit": [
-        "財團法人典美文化基金會"
-      ],
-      "subUnit": [],
-      "supportUnit": [],
-      "otherUnit": [],
-      "webSales": "",
-      "sourceWebPromote": "",
-      "comment": "",
-      "editModifyDate": "2026/10/13 18:01:34",
-      "sourceWebName": "財團法人典美文化基金會",
-      "startDate": "2026/11/14",
-      "endDate": "2026/11/22",
-      "hitRate": 1
-    },
-    {
-      "version": "1.4",
-      "UID": "6acda714eb4399d01039b213",
-      "title": "登出世界、登入自我！《虛。實─數位與我》插畫創作聯展",
-      "category": "200",
-      "showInfo": [
-        {
-          "time": "2026/11/14 10:00:00",
-          "location": "信義區新仁里光復南路133號",
-          "locationName": "松山文創園區【藝異空間】",
-          "onSales": "N",
-          "price": "",
-          "latitude": null,
-          "longitude": null,
-          "endTime": "2026/11/22 17:00:00"
-        }
-      ],
-      "showUnit": "",
-      "discountInfo": "",
-      "descriptionFilterHtml": "我們正處在一個不需要出門，就能擁抱全世界的時代，虛與實，在每一次的滑動與點擊中，漸漸成為我們日復一日的生活。\r\n數位時代讓一切都近了，有些東西，卻悄悄遠了…\r\n\r\n《虛。實─數位與我》插畫創作聯展，集結自「2026紙上躍躍然．典美插畫大賞」脫穎而出的得獎與入圍作品，19位來自不同背景的創作者們，同在這個時代裡生活，他們透過線條與色彩，訴說著最真實的感受。\r\n\r\n你是數位時代中的主人，還是被制約的傀儡？當虛擬與現實的界線逐漸消融，你又將如何為自己保留一片真實的餘地？\r\n\r\n這裡沒有絕對的答案，邀你在畫作中與共鳴相遇，與自己的內心連線，找到那個在數位時代裡，足以安放自我的寧靜角落。\r\n\r\n【展覽資訊】\r\n《虛。實─數位與我》插畫創作聯展\r\n時間：115.11.14(六)～11.22(日)，10:00-17:00，免費參觀\r\n地點：松山文創園區 藝異空間\r\n參展者(依姓名筆畫排序)：白允禔、朱品璇、吳世傑、吳韶寶、李茵琦、孫怡婷、張仁瑜、張淯晴、張筳臻、曹瑋軒、陳品霖、陳雯馨、楊凱凱、葉明俐、蔡琇淇、鄭元欽、謝金蓉、羅傑耀、顧淑梅 \r\n\r\n【展期活動】\r\n11.14(六)14:00-16:00頒獎典禮暨得獎者分享會\r\n11.21(六) 14:00-15:30插畫講座x謝孟穎：從作品到版權桌─走向國際出版的第一線觀察\r\n免費參加，提前報名：https://art.hoss.org.tw/events\r\n\r\n主辦單位：財團法人典美文化基金會\r\n贊助單位：華南金控、Pentel飛龍文具\r\n媒體贊助：小典藏、城市美學新態度、財團法人智邦藝術基金會、DIMANCHE迪夢奇\r\n",
-      "imageUrl": "https://cloud.culture.twhttps://cloud.culture.tw/e_new_upload/signinImage/2026-10-13/2158392f-4728-4f87-8aa2-e24edf56208e/文化部iCulture -1024x768.jpg",
-      "masterUnit": [
-        "財團法人典美文化基金會"
-      ],
-      "subUnit": [],
-      "supportUnit": [],
-      "otherUnit": [],
-      "webSales": "",
-      "sourceWebPromote": "",
-      "comment": "",
-      "editModifyDate": "2026/10/13 18:01:34",
-      "sourceWebName": "財團法人典美文化基金會",
-      "startDate": "2026/11/14",
-      "endDate": "2026/11/22",
-      "hitRate": 1
-    },
-    {
-      "version": "1.4",
-      "UID": "6acda714eb4399d01039b213",
-      "title": "登出世界、登入自我！《虛。實─數位與我》插畫創作聯展",
-      "category": "4",
-      "showInfo": [
-        {
-          "time": "2026/11/14 10:00:00",
-          "location": "信義區新仁里光復南路133號",
-          "locationName": "松山文創園區【藝異空間】",
-          "onSales": "N",
-          "price": "",
-          "latitude": null,
-          "longitude": null,
-          "endTime": "2026/11/22 17:00:00"
-        }
-      ],
-      "showUnit": "",
-      "discountInfo": "",
-      "descriptionFilterHtml": "我們正處在一個不需要出門，就能擁抱全世界的時代，虛與實，在每一次的滑動與點擊中，漸漸成為我們日復一日的生活。\r\n數位時代讓一切都近了，有些東西，卻悄悄遠了…\r\n\r\n《虛。實─數位與我》插畫創作聯展，集結自「2026紙上躍躍然．典美插畫大賞」脫穎而出的得獎與入圍作品，19位來自不同背景的創作者們，同在這個時代裡生活，他們透過線條與色彩，訴說著最真實的感受。\r\n\r\n你是數位時代中的主人，還是被制約的傀儡？當虛擬與現實的界線逐漸消融，你又將如何為自己保留一片真實的餘地？\r\n\r\n這裡沒有絕對的答案，邀你在畫作中與共鳴相遇，與自己的內心連線，找到那個在數位時代裡，足以安放自我的寧靜角落。\r\n\r\n【展覽資訊】\r\n《虛。實─數位與我》插畫創作聯展\r\n時間：115.11.14(六)～11.22(日)，10:00-17:00，免費參觀\r\n地點：松山文創園區 藝異空間\r\n參展者(依姓名筆畫排序)：白允禔、朱品璇、吳世傑、吳韶寶、李茵琦、孫怡婷、張仁瑜、張淯晴、張筳臻、曹瑋軒、陳品霖、陳雯馨、楊凱凱、葉明俐、蔡琇淇、鄭元欽、謝金蓉、羅傑耀、顧淑梅 \r\n\r\n【展期活動】\r\n11.14(六)14:00-16:00頒獎典禮暨得獎者分享會\r\n11.21(六) 14:00-15:30插畫講座x謝孟穎：從作品到版權桌─走向國際出版的第一線觀察\r\n免費參加，提前報名：https://art.hoss.org.tw/events\r\n\r\n主辦單位：財團法人典美文化基金會\r\n贊助單位：華南金控、Pentel飛龍文具\r\n媒體贊助：小典藏、城市美學新態度、財團法人智邦藝術基金會、DIMANCHE迪夢奇\r\n",
-      "imageUrl": "https://cloud.culture.twhttps://cloud.culture.tw/e_new_upload/signinImage/2026-10-13/2158392f-4728-4f87-8aa2-e24edf56208e/文化部iCulture -1024x768.jpg",
-      "masterUnit": [
-        "財團法人典美文化基金會"
-      ],
-      "subUnit": [],
-      "supportUnit": [],
-      "otherUnit": [],
-      "webSales": "",
-      "sourceWebPromote": "",
-      "comment": "",
-      "editModifyDate": "2026/10/13 18:01:34",
-      "sourceWebName": "財團法人典美文化基金會",
-      "startDate": "2026/11/14",
-      "endDate": "2026/11/22",
-      "hitRate": 1
-    },
-    {
-      "version": "1.4",
-      "UID": "6ad7a1c426b3245efc7536c8",
-      "title": "「戲來就演！」－布袋戲演師們的大挑戰",
-      "category": "2",
-      "showInfo": [
-        {
-          "time": "2026/12/11 19:00:00",
-          "location": "新北市新莊區營盤里中正路510號 舒德樓1樓",
-          "locationName": "輔仁大學外語學院華觀劇場",
-          "onSales": "Y",
-          "price": "",
-          "latitude": "25.033970533638726",
-          "longitude": "121.4340767686022",
-          "endTime": "2026/12/11 21:00:00"
-        },
-        {
-          "time": "2026/12/12 14:00:00",
-          "location": "新北市新莊區營盤里中正路510號 舒德樓1樓",
-          "locationName": "輔仁大學外語學院華觀劇場",
-          "onSales": "Y",
-          "price": "",
-          "latitude": "25.033970533638726",
-          "longitude": "121.4340767686022",
-          "endTime": "2026/12/12 16:00:00"
-        }
-      ],
-      "showUnit": "",
-      "discountInfo": "",
-      "descriptionFilterHtml": "",
-      "imageUrl": "",
-      "masterUnit": [],
-      "subUnit": [],
-      "supportUnit": [],
-      "otherUnit": [],
-      "webSales": "https://www.opentix.life/program/2109890724705943553",
-      "sourceWebPromote": "https://www.opentix.life/program/2109890724705943553",
-      "comment": "",
-      "editModifyDate": "",
-      "sourceWebName": "OPENTIX兩廳院文化生活",
-      "startDate": "2026/12/11",
-      "endDate": "2026/12/12",
-      "hitRate": 0
-    },
-    {
-      "version": "1.4",
-      "UID": "6ad8f32d26b3245efc7536fc",
-      "title": "2026金鷹閣電視木偶劇團《叱吒風雲－新哪吒》臺中巡演",
-      "category": "2",
-      "showInfo": [
-        {
-          "time": "2026/11/21 19:30:00",
-          "location": "臺中市豐原區圓環東路782號",
-          "locationName": "臺中市葫蘆墩文化中心演奏廳",
-          "onSales": "Y",
-          "price": "",
-          "latitude": "24.2529902",
-          "longitude": "120.7304148",
-          "endTime": "2026/11/21 21:30:00"
-        },
-        {
-          "time": "2026/11/22 14:30:00",
-          "location": "臺中市豐原區圓環東路782號",
-          "locationName": "臺中市葫蘆墩文化中心演奏廳",
-          "onSales": "Y",
-          "price": "",
-          "latitude": "24.2529902",
-          "longitude": "120.7304148",
-          "endTime": "2026/11/22 16:30:00"
-        }
-      ],
-      "showUnit": "",
-      "discountInfo": "",
-      "descriptionFilterHtml": "",
-      "imageUrl": "",
-      "masterUnit": [],
-      "subUnit": [],
-      "supportUnit": [],
-      "otherUnit": [],
-      "webSales": "https://www.opentix.life/program/2112035354878472193",
-      "sourceWebPromote": "https://www.opentix.life/program/2112035354878472193",
-      "comment": "",
-      "editModifyDate": "",
-      "sourceWebName": "OPENTIX兩廳院文化生活",
-      "startDate": "2026/11/21",
-      "endDate": "2026/11/22",
-      "hitRate": 0
-    },
-    {
-      "version": "1.4",
-      "UID": "6adb94ba26b3245efc75371d",
-      "title": "《吟遊詩人的新唸歌——桃園米倉》",
-      "category": "2",
-      "showInfo": [
-        {
-          "time": "2026/12/18 19:30:00",
-          "location": "桃園市桃園區新生路169號",
-          "locationName": "米倉劇場",
-          "onSales": "Y",
-          "price": "",
-          "latitude": "24.995975621133713",
-          "longitude": "121.3075297183001",
-          "endTime": "2026/12/18 20:40:00"
-        },
-        {
-          "time": "2026/12/19 14:30:00",
-          "location": "桃園市桃園區新生路169號",
-          "locationName": "米倉劇場",
-          "onSales": "Y",
-          "price": "",
-          "latitude": "24.995975621133713",
-          "longitude": "121.3075297183001",
-          "endTime": "2026/12/19 15:40:00"
-        },
-        {
-          "time": "2026/12/20 14:30:00",
-          "location": "桃園市桃園區新生路169號",
-          "locationName": "米倉劇場",
-          "onSales": "Y",
-          "price": "",
-          "latitude": "24.995975621133713",
-          "longitude": "121.3075297183001",
-          "endTime": "2026/12/20 15:40:00"
-        }
-      ],
-      "showUnit": "",
-      "discountInfo": "",
-      "descriptionFilterHtml": "",
-      "imageUrl": "",
-      "masterUnit": [],
-      "subUnit": [],
-      "supportUnit": [],
-      "otherUnit": [],
-      "webSales": "https://www.opentix.life/program/2110369335028596737",
-      "sourceWebPromote": "https://www.opentix.life/program/2110369335028596737",
-      "comment": "",
-      "editModifyDate": "",
-      "sourceWebName": "OPENTIX兩廳院文化生活",
-      "startDate": "2026/12/18",
-      "endDate": "2026/12/20",
-      "hitRate": 3
     }
   ]
 }
