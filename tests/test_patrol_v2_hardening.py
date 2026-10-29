@@ -150,6 +150,18 @@ class BackgroundWorker(unittest.TestCase):
         nxt = patrol.drive(self.st, budget=0.3, spawn=self.fake_spawn(0.05, {"action": "done"}), alive=self.alive, sleep=lambda s: time.sleep(0.02))
         self.assertEqual(nxt["action"], "done", "用過的結果不能再回傳一次，要開新的背景程序往下做")
 
+    def test_worker_finishing_between_read_and_alive_check(self):
+        """10/29：背景程序在「讀狀態檔」與「查程序還在不在」之間寫完結果並結束，主流程誤回 continue"""
+        def alive(pid):
+            info = read_json(patrol.worker_path(self.st), {}) or {}
+            if info.get("status") == "running":
+                info.update({"status": "finished", "result": {"action": "judge"}, "consumed": False})
+                write_json(patrol.worker_path(self.st), info)
+            return False
+
+        result = patrol.drive(self.st, budget=5, spawn=lambda st: 123456, alive=alive, sleep=lambda s: None)
+        self.assertEqual(result["action"], "judge")
+
     def test_dead_worker_is_restarted(self):
         write_json(patrol.worker_path(self.st), {"status": "running", "pid": 999999, "restarts": 0})
         result = patrol.drive(self.st, budget=5, spawn=self.fake_spawn(0.05, {"action": "done"}), alive=self.alive, sleep=lambda s: time.sleep(0.02))

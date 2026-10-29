@@ -632,7 +632,13 @@ def drive(st, budget=WORKER_BUDGET, spawn=spawn_worker, alive=pid_alive, sleep=t
         info = read_json(path, {}) or {}
         if info.get("status") == "finished" and not info.get("consumed"):
             return take_result(path, info)
-        if clock() >= deadline or not alive(info.get("pid")):
+        if clock() >= deadline:
+            break
+        if not alive(info.get("pid")):
+            # 背景程序可能剛寫完結果才結束：再讀一次，避免誤回 continue
+            info = read_json(path, {}) or {}
+            if info.get("status") == "finished" and not info.get("consumed"):
+                return take_result(path, info)
             break
         sleep(2)
     st = RunState(st.run_id, st.state_dir)
