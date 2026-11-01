@@ -1,67 +1,13 @@
 {
-  "fetchedAt": "2026-10-31T09:57:10+08:00",
-  "total": 1368,
+  "fetchedAt": "2026-11-01T09:46:03+08:00",
+  "total": 1322,
   "records": [
-    {
-      "version": "1.4",
-      "UID": "69d7db9e26b3242a48a9e1d1",
-      "title": "【掌中戲】五洲勝義閣掌中劇團《濟世降魔傳》",
-      "category": "2",
-      "showInfo": [
-        {
-          "time": "2026/10/31 14:00:00",
-          "location": "臺北市大同區迪化街一段21號8樓",
-          "locationName": "大稻埕戲苑曲藝場",
-          "onSales": "Y",
-          "price": "",
-          "latitude": "25.0552408",
-          "longitude": "121.5103053",
-          "endTime": "2026/10/31 16:00:00"
-        }
-      ],
-      "showUnit": "",
-      "discountInfo": "",
-      "descriptionFilterHtml": "",
-      "imageUrl": "",
-      "masterUnit": [],
-      "subUnit": [],
-      "supportUnit": [],
-      "otherUnit": [],
-      "webSales": "https://www.opentix.life/program/2036015355921928192",
-      "sourceWebPromote": "https://www.opentix.life/program/2036015355921928192",
-      "comment": "",
-      "editModifyDate": "",
-      "sourceWebName": "OPENTIX兩廳院文化生活",
-      "startDate": "2026/10/31",
-      "endDate": "2026/10/31",
-      "hitRate": 14
-    },
     {
       "version": "1.4",
       "UID": "6a97065826b32434f43580af",
       "title": "兒童布袋戲《焰王現身：心火山的祕密》",
       "category": "2",
       "showInfo": [
-        {
-          "time": "2026/10/31 10:30:00",
-          "location": "臺北市中正區羅斯福路四段92號10樓",
-          "locationName": "水源劇場",
-          "onSales": "Y",
-          "price": "",
-          "latitude": "25.013614643862443",
-          "longitude": "121.53490207369424",
-          "endTime": "2026/10/31 11:40:00"
-        },
-        {
-          "time": "2026/10/31 14:30:00",
-          "location": "臺北市中正區羅斯福路四段92號10樓",
-          "locationName": "水源劇場",
-          "onSales": "Y",
-          "price": "",
-          "latitude": "25.013614643862443",
-          "longitude": "121.53490207369424",
-          "endTime": "2026/10/31 15:40:00"
-        },
         {
           "time": "2026/11/01 10:30:00",
           "location": "臺北市中正區羅斯福路四段92號10樓",
@@ -96,9 +42,9 @@
       "comment": "",
       "editModifyDate": "",
       "sourceWebName": "OPENTIX兩廳院文化生活",
-      "startDate": "2026/10/31",
+      "startDate": "2026/11/01",
       "endDate": "2026/11/01",
-      "hitRate": 19
+      "hitRate": 20
     },
     {
       "version": "1.4",
@@ -138,7 +84,7 @@
       "sourceWebName": "黃俐瑋",
       "startDate": "2026/04/12",
       "endDate": "2026/11/01",
-      "hitRate": 78
+      "hitRate": 80
     },
     {
       "version": "1.4",
@@ -178,7 +124,7 @@
       "sourceWebName": "黃俐瑋",
       "startDate": "2026/04/12",
       "endDate": "2026/11/01",
-      "hitRate": 78
+      "hitRate": 80
     },
     {
       "version": "1.4",
@@ -218,7 +164,7 @@
       "sourceWebName": "黃俐瑋",
       "startDate": "2026/04/12",
       "endDate": "2026/11/01",
-      "hitRate": 78
+      "hitRate": 80
     },
     {
       "version": "1.4",
@@ -226,16 +172,6 @@
       "title": "【歌仔戲】元和劇子-鼓震千秋《梁紅玉》",
       "category": "2",
       "showInfo": [
-        {
-          "time": "2026/10/31 14:30:00",
-          "location": "臺北市大同區迪化街一段21號9樓",
-          "locationName": "大稻埕戲苑",
-          "onSales": "Y",
-          "price": "",
-          "latitude": "25.0552408",
-          "longitude": "121.5103053",
-          "endTime": "2026/10/31 16:30:00"
-        },
         {
           "time": "2026/11/01 14:30:00",
           "location": "臺北市大同區迪化街一段21號9樓",
@@ -260,9 +196,9 @@
       "comment": "",
       "editModifyDate": "",
       "sourceWebName": "OPENTIX兩廳院文化生活",
-      "startDate": "2026/10/31",
+      "startDate": "2026/11/01",
       "endDate": "2026/11/01",
-      "hitRate": 7
+      "hitRate": 8
     },
     {
       "version": "1.4",
@@ -330,7 +266,7 @@
       "sourceWebName": "OPENTIX兩廳院文化生活",
       "startDate": "2026/11/07",
       "endDate": "2026/11/07",
-      "hitRate": 5
+      "hitRate": 6
     },
     {
       "version": "1.4",
@@ -408,7 +344,7 @@
       "sourceWebName": "OPENTIX兩廳院文化生活",
       "startDate": "2026/11/21",
       "endDate": "2026/11/21",
-      "hitRate": 8
+      "hitRate": 9
     },
     {
       "version": "1.4",
@@ -522,7 +458,7 @@
       "sourceWebName": "財團法人典美文化基金會",
       "startDate": "2026/11/14",
       "endDate": "2026/11/22",
-      "hitRate": 2
+      "hitRate": 3
     },
     {
       "version": "1.4",
@@ -558,7 +494,7 @@
       "sourceWebName": "財團法人典美文化基金會",
       "startDate": "2026/11/14",
       "endDate": "2026/11/22",
-      "hitRate": 2
+      "hitRate": 3
     },
     {
       "version": "1.4",
@@ -594,7 +530,7 @@
       "sourceWebName": "財團法人典美文化基金會",
       "startDate": "2026/11/14",
       "endDate": "2026/11/22",
-      "hitRate": 2
+      "hitRate": 3
     },
     {
       "version": "1.4",
@@ -648,7 +584,7 @@
       "sourceWebName": "OPENTIX兩廳院文化生活",
       "startDate": "2026/11/20",
       "endDate": "2026/11/22",
-      "hitRate": 7
+      "hitRate": 8
     },
     {
       "version": "1.4",
@@ -702,7 +638,7 @@
       "sourceWebName": "OPENTIX兩廳院文化生活",
       "startDate": "2026/11/27",
       "endDate": "2026/11/29",
-      "hitRate": 6
+      "hitRate": 7
     },
     {
       "version": "1.4",
@@ -756,7 +692,7 @@
       "sourceWebName": "OPENTIX兩廳院文化生活",
       "startDate": "2026/11/21",
       "endDate": "2026/12/06",
-      "hitRate": 7
+      "hitRate": 8
     },
     {
       "version": "1.4",
@@ -800,7 +736,7 @@
       "sourceWebName": "OPENTIX兩廳院文化生活",
       "startDate": "2026/12/05",
       "endDate": "2026/12/06",
-      "hitRate": 5
+      "hitRate": 7
     },
     {
       "version": "1.4",
@@ -864,7 +800,7 @@
       "sourceWebName": "OPENTIX兩廳院文化生活",
       "startDate": "2026/12/04",
       "endDate": "2026/12/06",
-      "hitRate": 9
+      "hitRate": 10
     },
     {
       "version": "1.4",
@@ -990,7 +926,7 @@
       "sourceWebName": "全國藝文活動資訊系統",
       "startDate": "2026/03/10",
       "endDate": "2026/12/15",
-      "hitRate": 21
+      "hitRate": 22
     },
     {
       "version": "1.4",
@@ -1138,7 +1074,7 @@
       "sourceWebName": "OPENTIX兩廳院文化生活",
       "startDate": "2026/11/07",
       "endDate": "2026/12/20",
-      "hitRate": 38
+      "hitRate": 40
     },
     {
       "version": "1.4",
@@ -1192,7 +1128,7 @@
       "sourceWebName": "OPENTIX兩廳院文化生活",
       "startDate": "2026/12/18",
       "endDate": "2026/12/20",
-      "hitRate": 7
+      "hitRate": 8
     },
     {
       "version": "1.4",
@@ -1236,7 +1172,7 @@
       "sourceWebName": "OPENTIX兩廳院文化生活",
       "startDate": "2026/12/26",
       "endDate": "2026/12/27",
-      "hitRate": 1
+      "hitRate": 2
     },
     {
       "version": "1.4",
@@ -1275,7 +1211,7 @@
       "sourceWebName": "全國藝文活動資訊系統",
       "startDate": "2026/01/02",
       "endDate": "2026/12/31",
-      "hitRate": 20
+      "hitRate": 21
     },
     {
       "version": "1.4",
@@ -1419,7 +1355,7 @@
       "sourceWebName": "全國藝文活動資訊系統",
       "startDate": "2026/01/31",
       "endDate": "2026/12/31",
-      "hitRate": 30
+      "hitRate": 33
     },
     {
       "version": "1.4",
@@ -1455,7 +1391,7 @@
       "sourceWebName": "全國藝文活動資訊系統",
       "startDate": "2027/01/01",
       "endDate": "2027/01/31",
-      "hitRate": 4
+      "hitRate": 5
     },
     {
       "version": "1.4",
