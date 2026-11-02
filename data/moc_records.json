@@ -1,205 +1,7 @@
 {
-  "fetchedAt": "2026-11-01T09:46:03+08:00",
-  "total": 1322,
+  "fetchedAt": "2026-11-02T10:01:43+08:00",
+  "total": 1287,
   "records": [
-    {
-      "version": "1.4",
-      "UID": "6a97065826b32434f43580af",
-      "title": "兒童布袋戲《焰王現身：心火山的祕密》",
-      "category": "2",
-      "showInfo": [
-        {
-          "time": "2026/11/01 10:30:00",
-          "location": "臺北市中正區羅斯福路四段92號10樓",
-          "locationName": "水源劇場",
-          "onSales": "Y",
-          "price": "",
-          "latitude": "25.013614643862443",
-          "longitude": "121.53490207369424",
-          "endTime": "2026/11/01 11:40:00"
-        },
-        {
-          "time": "2026/11/01 14:30:00",
-          "location": "臺北市中正區羅斯福路四段92號10樓",
-          "locationName": "水源劇場",
-          "onSales": "Y",
-          "price": "",
-          "latitude": "25.013614643862443",
-          "longitude": "121.53490207369424",
-          "endTime": "2026/11/01 15:40:00"
-        }
-      ],
-      "showUnit": "",
-      "discountInfo": "",
-      "descriptionFilterHtml": "",
-      "imageUrl": "",
-      "masterUnit": [],
-      "subUnit": [],
-      "supportUnit": [],
-      "otherUnit": [],
-      "webSales": "https://www.opentix.life/program/2090004484659298305",
-      "sourceWebPromote": "https://www.opentix.life/program/2090004484659298305",
-      "comment": "",
-      "editModifyDate": "",
-      "sourceWebName": "OPENTIX兩廳院文化生活",
-      "startDate": "2026/11/01",
-      "endDate": "2026/11/01",
-      "hitRate": 20
-    },
-    {
-      "version": "1.4",
-      "UID": "69c0ac8beb43f81479e547dc",
-      "title": "115年「掌藝薪傳-大師工作坊」",
-      "category": "19",
-      "showInfo": [
-        {
-          "time": "2026/04/12 10:00:00",
-          "location": "臺北市松山區市民大道五段99號3樓",
-          "locationName": "台北偶戲館",
-          "onSales": "Y",
-          "price": "每班報名費 3,000 元",
-          "latitude": null,
-          "longitude": null,
-          "endTime": "2026/11/01 16:00:00"
-        }
-      ],
-      "showUnit": "",
-      "discountInfo": "",
-      "descriptionFilterHtml": "每年一度的「掌藝薪傳-大師工作坊」報名開跑啦！\r\n\r\n想親手感受布袋戲的操偶神韻，還是想深入研究後場鑼鼓的震撼節奏？亦或是想親手縫製精緻盔帽、雕刻傳統道具？今年我們同樣準備了豐富的課程，邀請您一起走入布袋戲的藝術殿堂。\r\n\r\n🎨 課程四大班別：\r\n1.前場操偶班：學習專業操偶技巧與演出口白，體驗指尖上的藝術 。\r\n2.後場音樂班：掌握鑼鼓操作與扮仙節奏，表現優異者更有機會加入劇團演訓計畫 。\r\n3.工藝製作班：從盔帽到袍仔衣，一針一線親手縫製傳統戲服 。\r\n4.雕刻藝術班：分為基礎班（兵器道具）與進階班（桌椅動物），精進木作工藝 。\r\n\r\n\r\n主辦單位：陳錫煌傳統掌中劇團\r\n協辦單位：台北偶戲館\r\n贊助單位：臺北市政府文化局",
-      "imageUrl": "",
-      "masterUnit": [
-        "陳錫煌傳統掌中劇團"
-      ],
-      "subUnit": [
-        "台北偶戲館"
-      ],
-      "supportUnit": [
-        "臺北市政府文化局"
-      ],
-      "otherUnit": [],
-      "webSales": "https://forms.gle/SebhyKU9i6UmpaQx6",
-      "sourceWebPromote": "https://www.facebook.com/share/p/1BX5mdbRz3/",
-      "comment": "",
-      "editModifyDate": "2026/03/24 18:16:30",
-      "sourceWebName": "黃俐瑋",
-      "startDate": "2026/04/12",
-      "endDate": "2026/11/01",
-      "hitRate": 80
-    },
-    {
-      "version": "1.4",
-      "UID": "69c0ac8beb43f81479e547dc",
-      "title": "115年「掌藝薪傳-大師工作坊」",
-      "category": "200",
-      "showInfo": [
-        {
-          "time": "2026/04/12 10:00:00",
-          "location": "臺北市松山區市民大道五段99號3樓",
-          "locationName": "台北偶戲館",
-          "onSales": "Y",
-          "price": "每班報名費 3,000 元",
-          "latitude": null,
-          "longitude": null,
-          "endTime": "2026/11/01 16:00:00"
-        }
-      ],
-      "showUnit": "",
-      "discountInfo": "",
-      "descriptionFilterHtml": "每年一度的「掌藝薪傳-大師工作坊」報名開跑啦！\r\n\r\n想親手感受布袋戲的操偶神韻，還是想深入研究後場鑼鼓的震撼節奏？亦或是想親手縫製精緻盔帽、雕刻傳統道具？今年我們同樣準備了豐富的課程，邀請您一起走入布袋戲的藝術殿堂。\r\n\r\n🎨 課程四大班別：\r\n1.前場操偶班：學習專業操偶技巧與演出口白，體驗指尖上的藝術 。\r\n2.後場音樂班：掌握鑼鼓操作與扮仙節奏，表現優異者更有機會加入劇團演訓計畫 。\r\n3.工藝製作班：從盔帽到袍仔衣，一針一線親手縫製傳統戲服 。\r\n4.雕刻藝術班：分為基礎班（兵器道具）與進階班（桌椅動物），精進木作工藝 。\r\n\r\n\r\n主辦單位：陳錫煌傳統掌中劇團\r\n協辦單位：台北偶戲館\r\n贊助單位：臺北市政府文化局",
-      "imageUrl": "",
-      "masterUnit": [
-        "陳錫煌傳統掌中劇團"
-      ],
-      "subUnit": [
-        "台北偶戲館"
-      ],
-      "supportUnit": [
-        "臺北市政府文化局"
-      ],
-      "otherUnit": [],
-      "webSales": "https://forms.gle/SebhyKU9i6UmpaQx6",
-      "sourceWebPromote": "https://www.facebook.com/share/p/1BX5mdbRz3/",
-      "comment": "",
-      "editModifyDate": "2026/03/24 18:16:30",
-      "sourceWebName": "黃俐瑋",
-      "startDate": "2026/04/12",
-      "endDate": "2026/11/01",
-      "hitRate": 80
-    },
-    {
-      "version": "1.4",
-      "UID": "69c0ac8beb43f81479e547dc",
-      "title": "115年「掌藝薪傳-大師工作坊」",
-      "category": "4",
-      "showInfo": [
-        {
-          "time": "2026/04/12 10:00:00",
-          "location": "臺北市松山區市民大道五段99號3樓",
-          "locationName": "台北偶戲館",
-          "onSales": "Y",
-          "price": "每班報名費 3,000 元",
-          "latitude": null,
-          "longitude": null,
-          "endTime": "2026/11/01 16:00:00"
-        }
-      ],
-      "showUnit": "",
-      "discountInfo": "",
-      "descriptionFilterHtml": "每年一度的「掌藝薪傳-大師工作坊」報名開跑啦！\r\n\r\n想親手感受布袋戲的操偶神韻，還是想深入研究後場鑼鼓的震撼節奏？亦或是想親手縫製精緻盔帽、雕刻傳統道具？今年我們同樣準備了豐富的課程，邀請您一起走入布袋戲的藝術殿堂。\r\n\r\n🎨 課程四大班別：\r\n1.前場操偶班：學習專業操偶技巧與演出口白，體驗指尖上的藝術 。\r\n2.後場音樂班：掌握鑼鼓操作與扮仙節奏，表現優異者更有機會加入劇團演訓計畫 。\r\n3.工藝製作班：從盔帽到袍仔衣，一針一線親手縫製傳統戲服 。\r\n4.雕刻藝術班：分為基礎班（兵器道具）與進階班（桌椅動物），精進木作工藝 。\r\n\r\n\r\n主辦單位：陳錫煌傳統掌中劇團\r\n協辦單位：台北偶戲館\r\n贊助單位：臺北市政府文化局",
-      "imageUrl": "",
-      "masterUnit": [
-        "陳錫煌傳統掌中劇團"
-      ],
-      "subUnit": [
-        "台北偶戲館"
-      ],
-      "supportUnit": [
-        "臺北市政府文化局"
-      ],
-      "otherUnit": [],
-      "webSales": "https://forms.gle/SebhyKU9i6UmpaQx6",
-      "sourceWebPromote": "https://www.facebook.com/share/p/1BX5mdbRz3/",
-      "comment": "",
-      "editModifyDate": "2026/03/24 18:16:30",
-      "sourceWebName": "黃俐瑋",
-      "startDate": "2026/04/12",
-      "endDate": "2026/11/01",
-      "hitRate": 80
-    },
-    {
-      "version": "1.4",
-      "UID": "6a3abc6926b3243414ccd51f",
-      "title": "【歌仔戲】元和劇子-鼓震千秋《梁紅玉》",
-      "category": "2",
-      "showInfo": [
-        {
-          "time": "2026/11/01 14:30:00",
-          "location": "臺北市大同區迪化街一段21號9樓",
-          "locationName": "大稻埕戲苑",
-          "onSales": "Y",
-          "price": "",
-          "latitude": "25.0552408",
-          "longitude": "121.5103053",
-          "endTime": "2026/11/01 16:30:00"
-        }
-      ],
-      "showUnit": "",
-      "discountInfo": "",
-      "descriptionFilterHtml": "",
-      "imageUrl": "",
-      "masterUnit": [],
-      "subUnit": [],
-      "supportUnit": [],
-      "otherUnit": [],
-      "webSales": "https://www.opentix.life/program/2063886748971831297",
-      "sourceWebPromote": "https://www.opentix.life/program/2063886748971831297",
-      "comment": "",
-      "editModifyDate": "",
-      "sourceWebName": "OPENTIX兩廳院文化生活",
-      "startDate": "2026/11/01",
-      "endDate": "2026/11/01",
-      "hitRate": 8
-    },
     {
       "version": "1.4",
       "UID": "6aa97d4126b324165c32e406",
@@ -232,7 +34,7 @@
       "sourceWebName": "OPENTIX兩廳院文化生活",
       "startDate": "2026/11/07",
       "endDate": "2026/11/07",
-      "hitRate": 1
+      "hitRate": 2
     },
     {
       "version": "1.4",
@@ -266,7 +68,7 @@
       "sourceWebName": "OPENTIX兩廳院文化生活",
       "startDate": "2026/11/07",
       "endDate": "2026/11/07",
-      "hitRate": 6
+      "hitRate": 7
     },
     {
       "version": "1.4",
@@ -344,7 +146,7 @@
       "sourceWebName": "OPENTIX兩廳院文化生活",
       "startDate": "2026/11/21",
       "endDate": "2026/11/21",
-      "hitRate": 9
+      "hitRate": 10
     },
     {
       "version": "1.4",
@@ -422,7 +224,7 @@
       "sourceWebName": "OPENTIX兩廳院文化生活",
       "startDate": "2026/11/21",
       "endDate": "2026/11/22",
-      "hitRate": 0
+      "hitRate": 1
     },
     {
       "version": "1.4",
@@ -638,7 +440,7 @@
       "sourceWebName": "OPENTIX兩廳院文化生活",
       "startDate": "2026/11/27",
       "endDate": "2026/11/29",
-      "hitRate": 7
+      "hitRate": 8
     },
     {
       "version": "1.4",
@@ -926,7 +728,7 @@
       "sourceWebName": "全國藝文活動資訊系統",
       "startDate": "2026/03/10",
       "endDate": "2026/12/15",
-      "hitRate": 22
+      "hitRate": 23
     },
     {
       "version": "1.4",
@@ -980,7 +782,7 @@
       "sourceWebName": "OPENTIX兩廳院文化生活",
       "startDate": "2026/12/05",
       "endDate": "2026/12/19",
-      "hitRate": 5
+      "hitRate": 7
     },
     {
       "version": "1.4",
@@ -1074,7 +876,7 @@
       "sourceWebName": "OPENTIX兩廳院文化生活",
       "startDate": "2026/11/07",
       "endDate": "2026/12/20",
-      "hitRate": 40
+      "hitRate": 46
     },
     {
       "version": "1.4",
@@ -1128,7 +930,7 @@
       "sourceWebName": "OPENTIX兩廳院文化生活",
       "startDate": "2026/12/18",
       "endDate": "2026/12/20",
-      "hitRate": 8
+      "hitRate": 9
     },
     {
       "version": "1.4",
@@ -1172,7 +974,7 @@
       "sourceWebName": "OPENTIX兩廳院文化生活",
       "startDate": "2026/12/26",
       "endDate": "2026/12/27",
-      "hitRate": 2
+      "hitRate": 3
     },
     {
       "version": "1.4",
@@ -1211,7 +1013,7 @@
       "sourceWebName": "全國藝文活動資訊系統",
       "startDate": "2026/01/02",
       "endDate": "2026/12/31",
-      "hitRate": 21
+      "hitRate": 22
     },
     {
       "version": "1.4",
@@ -1355,7 +1157,7 @@
       "sourceWebName": "全國藝文活動資訊系統",
       "startDate": "2026/01/31",
       "endDate": "2026/12/31",
-      "hitRate": 33
+      "hitRate": 35
     },
     {
       "version": "1.4",
