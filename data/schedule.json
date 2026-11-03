@@ -1608,5 +1608,83 @@
         "time": "14:30"
       }
     ]
+  },
+  {
+    "id": "auto-20261107-c97e3a37",
+    "date": "2026-11-07",
+    "dateFormatted": "2026/11/07",
+    "daysAway": 4,
+    "time": "11/7 時間未公布 正戲",
+    "troupe": "新吉義林歌劇團",
+    "genre": "歌仔戲",
+    "artist": "未公布",
+    "title": "高雄左營謝家濟公禪師聖誕外台演出",
+    "category": "廟會民俗演出",
+    "badgeType": "temple",
+    "verifyStatus": "community",
+    "verifyLabel": "📣 社群公告（程式比對原文）",
+    "location": "高雄左營 謝家濟公禪師",
+    "region": "南部",
+    "status": "依社群公告；未列事項請洽劇團或廟方",
+    "description": "依 @yolin1991 2026-11-02 公告：「新吉義林歌劇團 演出資訊 📣 🗓️演出日期：11月7日（六） ⏰演出時間：待公布 📍演出地點：高雄左營 謝家濟公禪師」",
+    "link": "https://www.threads.com/@yolin1991/post/DfPTgGSGshX",
+    "sourceUrl": "https://www.threads.com/@yolin1991/post/DfPTgGSGshX",
+    "tags": [
+      "新吉義林歌劇團"
+    ],
+    "sessions": [
+      {
+        "date": "2026-11-07",
+        "kind": "正戲",
+        "time": "未公布"
+      }
+    ]
+  },
+  {
+    "id": "auto-20261108-055675ef",
+    "date": "2026-11-08",
+    "dateFormatted": "2026/11/08–2026/11/11",
+    "daysAway": 5,
+    "time": "11/8 時間未公布 正戲、11/9 時間未公布 正戲、11/10 時間未公布 正戲、11/11 時間未公布 正戲",
+    "troupe": "新吉義林歌劇團",
+    "genre": "歌仔戲",
+    "artist": "未公布",
+    "title": "雲林四湖參天宮廣場外台演出",
+    "category": "廟會民俗演出",
+    "badgeType": "temple",
+    "verifyStatus": "community",
+    "verifyLabel": "📣 社群公告（程式比對原文）",
+    "location": "雲林四湖參天宮廣場",
+    "region": "中部",
+    "status": "依社群公告；未列事項請洽劇團或廟方",
+    "description": "依 @yolin1991 2026-11-02 公告：「新吉義林歌劇團 演出資訊 📣 🗓️演出日期：11月7日（六） ⏰演出時間：待公布 📍演出地點：高雄左營 謝家濟公禪師 🎉恭祝 高雄左營 謝家 濟公 聖誕千秋🎉 再來一個“古錐風”的宣傳 預告一下11/8-11/11 雲林四湖參天宮廣場 演出四天」",
+    "link": "https://www.threads.com/@yolin1991/post/DfPTgGSGshX",
+    "sourceUrl": "https://www.threads.com/@yolin1991/post/DfPTgGSGshX",
+    "tags": [
+      "新吉義林歌劇團"
+    ],
+    "endDate": "2026-11-11",
+    "sessions": [
+      {
+        "date": "2026-11-08",
+        "kind": "正戲",
+        "time": "未公布"
+      },
+      {
+        "date": "2026-11-09",
+        "kind": "正戲",
+        "time": "未公布"
+      },
+      {
+        "date": "2026-11-10",
+        "kind": "正戲",
+        "time": "未公布"
+      },
+      {
+        "date": "2026-11-11",
+        "kind": "正戲",
+        "time": "未公布"
+      }
+    ]
   }
 ]

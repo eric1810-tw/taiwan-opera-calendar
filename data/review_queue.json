@@ -1,35 +1,5 @@
 [
   {
-    "postKey": "facebook:61574134933376:5a5635caeeb3",
-    "postUrl": "",
-    "proposal": {
-      "source": "facebook:61574134933376",
-      "postKey": "facebook:61574134933376:5a5635caeeb3",
-      "postUrl": "",
-      "quote": "演出日期｜2026/11/18（三）\n 演出地點｜臺南市柳營區 柳營代天院\n（臺南市柳營區東昇里中山西路一段362號）\n 晚上 7:00｜三仙大會\n 晚上 7:30｜正戲開演\n11月18日，柳營代天院，咱們戲臺見！\n我們是 #繡花園戲劇團",
-      "sessions": [
-        {
-          "date": "2026-11-18",
-          "kind": "扮仙",
-          "time": "19:00"
-        },
-        {
-          "date": "2026-11-18",
-          "kind": "正戲",
-          "time": "19:30"
-        }
-      ],
-      "date": "2026-11-18",
-      "time": "11/18 19:00 扮仙、11/18 19:30 正戲",
-      "dateFormatted": "2026/11/18"
-    },
-    "reasons": [
-      "different-account",
-      "no-change-keyword"
-    ],
-    "rejectedAt": "2026-10-27T16:14:38+08:00"
-  },
-  {
     "postKey": "facebook:mhysun:db37090bd66f",
     "postUrl": "https://www.facebook.com/mhysun/reels_tab",
     "proposal": {
@@ -87,5 +57,97 @@
       "no-change-keyword"
     ],
     "rejectedAt": "2026-10-30T03:42:36+08:00"
+  },
+  {
+    "postKey": "threads:the_rin.lpm:DfMv3UpE52E",
+    "postUrl": "https://www.threads.com/@the_rin.lpm/post/DfMv3UpE52E",
+    "proposal": {
+      "source": "threads:the_rin.lpm",
+      "postKey": "threads:the_rin.lpm:DfMv3UpE52E",
+      "postUrl": "https://www.threads.com/@the_rin.lpm/post/DfMv3UpE52E",
+      "quote": "秀琴歌劇團的戲路🙌🙌 ✨️北部的戲迷朋友在哪裡～～ 📍演出日期｜11月7日（星期六） 📍豪華卡司｜張秀琴、莊金梅、伍怡君、楊秀梅、薛詠、林佳欣 📍演出地點｜首醮總醮壇（國營路&莊泰路交叉口，近輔大捷運站3號出口） 💥18:30｜扮仙《大五福三仙大會》 💥19:00｜正式演出《玉石變》",
+      "sessions": [
+        {
+          "date": "2026-11-07",
+          "kind": "扮仙",
+          "time": "18:30"
+        },
+        {
+          "date": "2026-11-07",
+          "kind": "正戲",
+          "time": "19:00"
+        }
+      ],
+      "location": "首醮總醮壇（國營路&莊泰路交叉口，近輔大捷運站3號出口）",
+      "date": "2026-11-07",
+      "time": "11/7 18:30 扮仙、11/7 19:00 正戲",
+      "dateFormatted": "2026/11/07"
+    },
+    "reasons": [
+      "different-account",
+      "no-change-keyword"
+    ],
+    "rejectedAt": "2026-11-03T09:42:55+08:00"
+  },
+  {
+    "postKey": "threads:jing__1017:DfFOKfrCWgq",
+    "postUrl": "https://www.threads.com/@jing__1017/post/DfFOKfrCWgq",
+    "proposal": {
+      "source": "threads:jing__1017",
+      "postKey": "threads:jing__1017:DfFOKfrCWgq",
+      "postUrl": "https://www.threads.com/@jing__1017/post/DfFOKfrCWgq",
+      "quote": "「秀琴歌劇團」盛大公演，集結豪華演員陣容，獻上精彩好戲《玉石變》！ 💥一段青梅竹馬的情緣，一場命運捉弄的巨變！ 昔日溫文儒雅的潘玉郎，含冤入獄；深情守候的柳慧娘，淪落風塵。多年後，神祕貴客「石中天」戴著半臉面具現身醉春樓，究竟面具之下隱藏什麼驚人祕密？ 當面具揭開的那一刻，恩怨情仇，誰才是最後的勝利者？ 一場愛恨交織的命運對決，即將震撼登場🔥 【精彩演出資訊】 📍演出日期｜11月7日（星期六） 📍豪華卡司｜張秀琴、莊金梅、伍怡君、楊秀梅、薛詠、林佳欣 📍演出地點｜首醮總醮壇（國營路&莊泰路交叉口，近輔大捷運站3號出口） 💥18:30｜扮仙《大五福三仙大會》 💥19:00｜正式演出《玉石變》",
+      "sessions": [
+        {
+          "date": "2026-11-07",
+          "kind": "扮仙",
+          "time": "18:30"
+        },
+        {
+          "date": "2026-11-07",
+          "kind": "正戲",
+          "time": "19:00"
+        }
+      ],
+      "location": "首醮總醮壇（國營路&莊泰路交叉口，近輔大捷運站3號出口）",
+      "date": "2026-11-07",
+      "time": "11/7 18:30 扮仙、11/7 19:00 正戲",
+      "dateFormatted": "2026/11/07"
+    },
+    "reasons": [
+      "different-account",
+      "no-change-keyword"
+    ],
+    "rejectedAt": "2026-11-03T09:42:55+08:00"
+  },
+  {
+    "postKey": "facebook:61574134933376:5a5635caeeb3",
+    "postUrl": "",
+    "proposal": {
+      "source": "facebook:61574134933376",
+      "postKey": "facebook:61574134933376:5a5635caeeb3",
+      "postUrl": "",
+      "quote": "《孫臏兵法》將來到臺南柳營！\n邀請喜愛歌仔戲的朋友，一起走進戲臺前，欣賞這齣融合文戲、武戲與精彩身段的好戲！\n新營五間厝大豐宮 ◎慶讚 柳營代天院｜柳營王醮 \n《敬王爺‧看大戲》\n【柳營代天院】\n三年一科。世紀盛典\n     ｜柳   營   王   醮｜\n臺南市定民俗\n柳營區首項登錄的無形文化資產\n罕見的「內陸型王醮」以及全臺少見「陸地燒王船」\n不僅是一場消除瘟疫、祈求平安的宗教祭典\n更是凝聚柳營、新營、鹽水、六甲等「13庄20聚落」跨區域情感的重要文化紐帶\n邀請大家一起來《敬王爺‧看大戲》\n 好戲在廟口，作伙來捧場！\n 演出資訊\n 演出日期｜2026/11/18（三）\n 演出地點｜臺南市柳營區 柳營代天院\n（臺南市柳營區東昇里中山西路一段362號）\n 晚上 7:00｜三仙大會\n 晚上 7:30｜正戲開演\n11月18日，柳營代天院，咱們戲臺見！\n我們是 #繡花園戲劇團",
+      "sessions": [
+        {
+          "date": "2026-11-18",
+          "kind": "扮仙",
+          "time": "19:00"
+        },
+        {
+          "date": "2026-11-18",
+          "kind": "正戲",
+          "time": "19:30"
+        }
+      ],
+      "date": "2026-11-18",
+      "time": "11/18 19:00 扮仙、11/18 19:30 正戲",
+      "dateFormatted": "2026/11/18"
+    },
+    "reasons": [
+      "different-account",
+      "no-change-keyword"
+    ],
+    "rejectedAt": "2026-11-03T09:42:55+08:00"
   }
 ]
