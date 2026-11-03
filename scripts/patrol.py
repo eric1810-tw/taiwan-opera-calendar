@@ -32,15 +32,19 @@ import patrol_progress as progress  # noqa: E402
 from patrol_v2 import apply as apply_mod  # noqa: E402
 from patrol_v2 import evidence as ev_mod  # noqa: E402
 from patrol_v2 import preflight, publish, report, sources  # noqa: E402
+from patrol_v2 import verify as verify_mod  # noqa: E402
 from patrol_v2.common import (EVIDENCE_DIR, ROOT, STATE_DIR, in_agy_window, now, now_dt,  # noqa: E402
                               read_json, write_json)
 from patrol_v2.state import LockBusy, RunState, acquire_lock, find_today, heartbeat, missed_days  # noqa: E402
 from patrol_v2.validate import validate_batch  # noqa: E402
 
+FAR_FUTURE = STATE_DIR / "far_future.json"
+
 CAPTURE = ROOT / "scripts" / "patrol_v2" / "social_capture.mjs"
 WATCH = ROOT / "scripts" / "patrol_v2" / "watch.json"
 JUDGE_PROMPT = "docs/patrol-v2/JUDGE_PROMPT.md"
 REVIEW_PROMPT = "docs/patrol-v2/REVIEW_PROMPT.md"
+VERIFY_PROMPT = "docs/patrol-v2/VERIFY_PROMPT.md"
 CAPTURE_TIMEOUT = 40 * 60  # 社群擷取整體上限（秒）；正常約 20 分鐘
 
 
@@ -96,6 +100,9 @@ def step_preflight(st):
     st.data["preflight"] = info
     if info.get("indexLock"):
         st.log(info["indexLock"])
+    if info.get("syncNote"):
+        st.log(info["syncNote"])
+        st.ask_eric(f"（已自動處理，通知用）{info['syncNote']}")
     st.save()
     st.set_step("preflight", "done")
     return None
@@ -310,7 +317,7 @@ def step_judge(st):
 def step_check(st):
     schedule = read_json(work_root(st) / "data/schedule.json", [])
     store = ev_mod.EvidenceStore()
-    merged = {"accepted": [], "confirmed": [], "needsCheck": [], "rejected": [], "missing": []}
+    merged = {"accepted": [], "confirmed": [], "needsCheck": [], "rejected": [], "missing": [], "expired": [], "farFuture": []}
     disposed = set()
     from datetime import date as _date
     day = _date.fromisoformat(today(st))
@@ -359,6 +366,7 @@ def step_check(st):
         st.set_step("judge", "pending", "第二輪：看圖")
         st.set_step("check", "pending", "等第二輪看圖結果")
         return None
+    far_future_pass(st, merged, schedule, day)
     for n, change in enumerate(merged["accepted"], 1):
         change["changeId"] = f"chg-{n:03d}"
     items = read_json(st.dir / "items.json", [])
@@ -373,9 +381,87 @@ def step_check(st):
     upgrade_coverage(st, items, store)
     st.save()
     st.set_step("check", "done")
-    if st.mode != "shadow" and not merged["accepted"]:
-        st.set_step("review", "skipped", "沒有新增／修改／取消卡片")
     return None
+
+
+def step_verify(st):
+    """判讀後仍不能確定的項目交給質疑者找第二來源；程式重抓佐證頁面再驗，過了才成為變更提案"""
+    check = read_json(st.dir / "check.json", {})
+    if not check.get("needsCheck") and not st.data.get("verifyBatches"):
+        st.set_step("verify", "skipped", "沒有需要查證的項目")
+        return None
+    vdir = st.dir / "verify"
+    batches = st.data.get("verifyBatches")
+    if batches is None:
+        items = {i["postKey"]: i for i in read_json(st.dir / "items.json", [])}
+        cards = {c["id"]: c for c in read_json(work_root(st) / "data/schedule.json", [])}
+        store = ev_mod.EvidenceStore()
+        packs = verify_mod.build_batches(check["needsCheck"], items, cards, lambda sha: (store.images.get(sha) or {}).get("reading"))
+        batches = []
+        for n, rows in enumerate(packs, 1):
+            path = vdir / f"batch_{n:02d}.json"
+            write_json(path, {"runId": st.run_id, "today": today(st), "batch": n, "items": rows})
+            batches.append({"batch": n, "pack": str(path), "output": str(vdir / f"verdicts_{n:02d}.json"), "items": len(rows)})
+        st.data["verifyBatches"] = batches
+        st.data["verifyAsks"] = 0
+        st.save()
+    pending = [b for b in batches if not Path(b["output"]).exists()]
+    if pending and st.data.get("verifyAsks", 0) < 2:
+        # 子代理沒寫出檔案：再要一次；第三次就把沒回答的當成查無佐證
+        st.data["verifyAsks"] = st.data.get("verifyAsks", 0) + 1
+        st.set_step("verify", "waiting")
+        return {"action": "verify", "runId": st.run_id, "promptFile": VERIFY_PROMPT,
+                "agent": {"model": "opus", "effort": "medium"}, "batches": pending}
+    candidates = {r["verifyId"]: r for b in batches for r in read_json(b["pack"], {}).get("items", [])}
+    verdicts = [v for b in batches for v in (read_json(b["output"], {}) or {}).get("verdicts", [])]
+    from datetime import date as _date
+    schedule = read_json(work_root(st) / "data/schedule.json", [])
+    res = verify_mod.process(verdicts, candidates, schedule, _date.fromisoformat(today(st)))
+    taken = {(c["action"], c["event"].get("targetCardId")) for c in check.get("accepted", []) if c["action"] != "add"}
+    res["accepted"] = [c for c in res["accepted"] if c["action"] == "add" or (c["action"], c["event"].get("targetCardId")) not in taken]
+    start = len(check.get("accepted", []))
+    for n, change in enumerate(res["accepted"], start + 1):
+        change["changeId"] = f"chg-{n:03d}"
+    check["accepted"] = check.get("accepted", []) + res["accepted"]
+    check["sentToVerify"] = len(check.get("needsCheck", []))
+    check["verifiedSame"] = res["confirmed"]
+    check["unverified"] = res["unverified"]
+    check["needsCheck"] = []
+    write_json(st.dir / "check.json", check)
+    if res["items"]:
+        items = read_json(st.dir / "items.json", [])
+        items.extend(res["items"])
+        write_json(st.dir / "items.json", items)
+        write_items_evidence(evidence_dir(st), "verify", [i for i in items if i.get("source") == "verify"])
+    st.data["stats"]["check"] = {k: len(v) if isinstance(v, list) else v for k, v in check.items()}
+    st.data["stats"]["verify"] = {"sent": check["sentToVerify"], "changes": len(res["accepted"]),
+                                  "sameAsCard": len(res["confirmed"]), "unverified": len(res["unverified"])}
+    st.save()
+    st.set_step("verify", "done")
+    return None
+
+
+def far_future_pass(st, merged, schedule, day):
+    """遠期場次（超過 120 天）存在 far_future.json；先前存的進入 120 天內，就用當時的原文重驗並併入本輪。
+    非正式模式只讀正式檔、寫到本輪資料夾，不動正式檔。"""
+    stored = read_json(FAR_FUTURE, []) or []
+    keep, seen = [], set()
+    for e in stored:
+        res = validate_batch({"items": [e["item"]]}, {"dispositions": [e["disposition"]], "imageReadings": e.get("imageReadings") or []},
+                             schedule, day)
+        if res["farFuture"]:
+            keep.append(e)
+            continue
+        for k in ("accepted", "confirmed", "needsCheck", "rejected", "expired"):
+            merged[k].extend({**x, "fromFarFuture": True} for x in res[k])
+    held = []
+    for e in keep + merged["farFuture"]:
+        key = (e["postKey"], json.dumps(e["proposed"].get("sessions"), sort_keys=True), e["proposed"].get("title"))
+        if key not in seen:
+            seen.add(key)
+            held.append(e)
+    write_json(FAR_FUTURE if st.mode == "production" else st.dir / "far_future.json", held)
+    merged["farFuture"] = [{k: v for k, v in e.items() if k not in ("item", "disposition", "imageReadings")} for e in held]
 
 
 def upgrade_coverage(st, items, store):
@@ -436,7 +522,7 @@ def step_review(st):
     write_json(st.dir / "review_pack.json", pack)
     st.set_step("review", "waiting")
     return {"action": "review", "runId": st.run_id, "promptFile": REVIEW_PROMPT,
-            "agent": {"model": "opus", "effort": "high"}, "pack": str(st.dir / "review_pack.json"), "output": str(out),
+            "agent": {"model": "opus", "effort": "medium"}, "pack": str(st.dir / "review_pack.json"), "output": str(out),
             "changes": len(pack["changes"])}
 
 
@@ -557,7 +643,7 @@ def stop(st, outcome, reason):
 
 
 STEP_FUNCS = {"preflight": step_preflight, "collect": step_collect, "pack": step_pack, "judge": step_judge,
-              "check": step_check, "review": step_review, "apply": step_apply, "publish": step_publish,
+              "check": step_check, "verify": step_verify, "review": step_review, "apply": step_apply, "publish": step_publish,
               "compare": step_compare, "report": step_report}
 
 
@@ -779,7 +865,7 @@ def main(argv=None):
     p.add_argument("--run", required=True)
     p = sub.add_parser("models")
     p.add_argument("--run", required=True)
-    p.add_argument("--role", required=True, choices=("main", "judge", "review"))
+    p.add_argument("--role", required=True, choices=("main", "judge", "verify", "review"))
     p.add_argument("--model", required=True)
     p.add_argument("--evidence", required=True)
     p = sub.add_parser("close", help="人工結案一輪沒跑完的巡檢（標為 abandoned）")

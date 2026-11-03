@@ -129,8 +129,10 @@ class CaseJudgment(unittest.TestCase):
               "sessions": [{"date": "2026-10-24", "kind": "正戲", "time": "15:00"}], "quote": XINYING_OLD_TEXT}
         res = validate_batch(pack_of(it), {"dispositions": [disp(it, "already-listed", [ev])]}, [XINYING_CARD], TODAY)
         self.assertEqual(res["confirmed"], [])
-        self.assertEqual(res["accepted"][0]["action"], "change")
-        self.assertEqual(res["accepted"][0]["diffs"][0]["field"], "time")
+        # 原文沒有異動字眼，add_card 一定擋 → 先送查證（11/03 起），不直接成為變更提案
+        self.assertEqual(res["accepted"], [])
+        self.assertIn("no-change-keyword", res["needsCheck"][0]["reason"])
+        self.assertEqual(res["needsCheck"][0]["diffs"][0]["field"], "time")
 
     def test_05_wangfu_no_show_date(self):
         fields = add_card.format_sessions(
@@ -413,3 +415,212 @@ class CaseMissedRun(unittest.TestCase):
                              ["2026-10-26：沒有執行紀錄（漏跑）"])
             # 第一次執行之前的日子不算漏跑
             self.assertEqual(state.missed_days("shadow", tmp, at=datetime(2026, 10, 26, 5, 10, tzinfo=TPE)), [])
+
+
+class CaseTriage(unittest.TestCase):
+    """11/03：過期貼文、遠期場次不該混在待查裡"""
+
+    TEXT = "某劇團 11/1（日）、11/20（五）19:00 某某宮廣場 演出《戲名》；2027/6/5 14:30 臺灣戲曲中心《遠期戲》"
+
+    def ev(self, dates, title="《戲名》", location="某某宮廣場", time="19:00"):
+        return {"action": "add", "genre": "歌仔戲", "eventType": "演出", "troupe": "某劇團", "title": title, "location": location,
+                "sessions": [{"date": d, "kind": "正戲", "time": time} for d in dates], "quote": self.TEXT}
+
+    def test_all_past_is_expired_not_needs_check(self):
+        it = item("threads:x:1", self.TEXT)
+        res = validate_batch(pack_of(it), {"dispositions": [disp(it, "new", [self.ev(["2026-11-01"])])]}, [], date(2026, 11, 3))
+        self.assertEqual((len(res["expired"]), res["needsCheck"], res["accepted"]), (1, [], []))
+
+    def test_judge_expired_decision_is_settled(self):
+        it = item("threads:x:1", self.TEXT)
+        res = validate_batch(pack_of(it), {"dispositions": [disp(it, "expired")]}, [], date(2026, 11, 3))
+        self.assertEqual(res["expired"][0]["reason"], "judge-expired")
+        self.assertEqual(len(res["dispositions"]), 1)
+        self.assertEqual(res["needsCheck"], [])
+
+    def test_past_sessions_dropped_upcoming_kept(self):
+        it = item("threads:x:1", self.TEXT)
+        res = validate_batch(pack_of(it), {"dispositions": [disp(it, "new", [self.ev(["2026-11-01", "2026-11-20"])])]}, [], date(2026, 11, 3))
+        self.assertEqual(len(res["accepted"]), 1, res)
+        self.assertEqual([s["date"] for s in res["accepted"][0]["event"]["sessions"]], ["2026-11-20"])
+
+    def test_far_future_held_then_revalidated(self):
+        it = item("threads:x:2", self.TEXT)
+        far = self.ev(["2027-06-05"], "《遠期戲》", "臺灣戲曲中心", "14:30")
+        res = validate_batch(pack_of(it), {"dispositions": [disp(it, "new", [far])]}, [], date(2026, 11, 3))
+        self.assertEqual((len(res["farFuture"]), res["needsCheck"]), (1, []))
+        with tempfile.TemporaryDirectory() as tmp:
+            st = mock.Mock(mode="production", dir=Path(tmp))
+            path = Path(tmp) / "far_future.json"
+            with mock.patch.object(patrol, "FAR_FUTURE", path):
+                merged = {"accepted": [], "confirmed": [], "needsCheck": [], "rejected": [], "expired": [], "farFuture": res["farFuture"]}
+                patrol.far_future_pass(st, merged, [], date(2026, 11, 3))
+                self.assertEqual(len(json.loads(path.read_text())), 1)
+                self.assertNotIn("item", merged["farFuture"][0])
+                # 隔年 2 月：進入 120 天內，用當時原文重驗、併入本輪變更
+                merged = {"accepted": [], "confirmed": [], "needsCheck": [], "rejected": [], "expired": [], "farFuture": []}
+                patrol.far_future_pass(st, merged, [], date(2027, 2, 10))
+                self.assertEqual(len(merged["accepted"]), 1)
+                self.assertTrue(merged["accepted"][0]["fromFarFuture"])
+                self.assertEqual(json.loads(path.read_text()), [])
+
+    def test_far_but_quote_missing_date_stays_needs_check(self):
+        it = item("threads:x:3", "某劇團 明年大戲 臺灣戲曲中心")
+        far = {**self.ev(["2027-06-05"]), "quote": "某劇團 明年大戲 臺灣戲曲中心"}
+        res = validate_batch(pack_of(it), {"dispositions": [disp(it, "new", [far])]}, [], date(2026, 11, 3))
+        self.assertEqual(res["farFuture"], [])
+        self.assertIn("date-too-far", res["needsCheck"][0]["reason"])
+
+
+class CaseVerify(unittest.TestCase):
+    """11/03：待查不等 Eric，質疑者找第二來源；程式重抓佐證頁面再驗，查不到就不收"""
+
+    PAGE = "最新消息 秀琴歌劇團《玉石變》 演出日期：2026年11月7日 18:30 扮仙 19:00 正戲 地點：新莊首醮總醮壇 歡迎觀賞"
+    QUOTE = "秀琴歌劇團《玉石變》 演出日期：2026年11月7日 18:30 扮仙 19:00 正戲 地點：新莊首醮總醮壇"
+    CARD = {**XINYING_CARD, "id": "sc-2026-11-07-yushibian", "date": "2026-11-07", "time": "19:00", "troupe": "秀琴歌劇團",
+            "title": "《玉石變》", "location": "新北市新莊區中正路143號（保元宮）",
+            "link": "https://www.threads.com/@other/post/X", "sourceUrl": "https://www.threads.com/@other/post/X"}
+
+    def cand(self):
+        return {"v-001": {"verifyId": "v-001", "postKey": "threads:the_rin.lpm:DfMv3UpE52E",
+                          "url": "https://www.threads.com/@the_rin.lpm/post/DfMv3UpE52E", "whyUnsure": "different-account-change"}}
+
+    def verdict(self, url="https://example.org/news/1", quote=None, action="change"):
+        return {"verifyId": "v-001", "result": "confirmed", "reason": "官網公告",
+                "corroboration": {"url": url, "quote": quote or self.QUOTE},
+                "event": {"action": action, "targetCardId": self.CARD["id"], "genre": "歌仔戲", "eventType": "演出",
+                          "troupe": "秀琴歌劇團", "title": "《玉石變》", "location": "新莊首醮總醮壇",
+                          "sessions": [{"date": "2026-11-07", "kind": "扮仙", "time": "18:30"},
+                                       {"date": "2026-11-07", "kind": "正戲", "time": "19:00"}]}}
+
+    def run_process(self, verdicts, page=None):
+        from patrol_v2 import verify as verify_mod
+        fetch = (lambda url: page if page is not None else self.PAGE)
+        return verify_mod.process(verdicts, self.cand(), [self.CARD], date(2026, 11, 3), fetch=fetch)
+
+    def test_confirmed_with_page_becomes_change(self):
+        res = self.run_process([self.verdict()])
+        self.assertEqual(len(res["accepted"]), 1, res)
+        change = res["accepted"][0]
+        self.assertEqual((change["action"], change["verifiedFrom"]["verifyId"]), ("change", "v-001"))
+        self.assertTrue(change["postKey"].startswith("verify:"))
+        self.assertEqual(res["unverified"], [])
+
+    def test_social_url_not_accepted(self):
+        res = self.run_process([self.verdict(url="https://www.facebook.com/photo/?fbid=1")])
+        self.assertEqual((res["accepted"], res["unverified"][0]["reason"]), ([], "corroboration-url-not-fetchable"))
+
+    def test_quote_not_on_page_is_unverified(self):
+        res = self.run_process([self.verdict()], page="這個頁面沒有那段文字 秀琴歌劇團")
+        self.assertEqual(res["accepted"], [])
+        self.assertEqual(res["unverified"][0]["reason"], "corroboration-failed-check")
+
+    def test_fetch_error_and_no_answer(self):
+        from patrol_v2 import verify as verify_mod
+
+        def boom(url):
+            raise OSError("timeout")
+        res = verify_mod.process([self.verdict()], self.cand(), [self.CARD], date(2026, 11, 3), fetch=boom)
+        self.assertEqual(res["unverified"][0]["reason"], "corroboration-fetch-failed")
+        res = verify_mod.process([], self.cand(), [self.CARD], date(2026, 11, 3), fetch=boom)
+        self.assertEqual(res["unverified"][0]["reason"], "verifier-no-answer")
+
+    def test_unconfirmed_is_counted_only(self):
+        res = self.run_process([{"verifyId": "v-001", "result": "unconfirmed", "reason": "查無"}])
+        self.assertEqual((res["accepted"], res["unverified"][0]["reason"]), ([], "no-corroboration"))
+
+    def test_html_to_text(self):
+        from patrol_v2 import verify as verify_mod
+        raw = "<html><script>x=1</script><p>秀琴&nbsp;歌劇團</p><div>11月7日</div></html>"
+        self.assertEqual(verify_mod.html_to_text(raw), "秀琴 歌劇團 11月7日")
+
+    def test_add_card_accepts_corroborated_change_from_other_account(self):
+        res = self.run_process([self.verdict()])
+        change = {**res["accepted"][0], "changeId": "chg-001"}
+        item = res["items"][0]
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "data").mkdir()
+            (root / "docs/patrols").mkdir(parents=True)
+            (root / "data/schedule.json").write_text(json.dumps([self.CARD], ensure_ascii=False), encoding="utf-8")
+            (root / "data/facebook_accounts.json").write_text("[]", encoding="utf-8")
+            edir = root / "ev"
+            edir.mkdir()
+            (edir / "verify.json").write_text(json.dumps({"posts": [item]}, ensure_ascii=False), encoding="utf-8")
+            out = apply_mod.apply_changes([change], {"chg-001": {"verdict": "approve"}}, root, edir, "2026-11-03",
+                                          {item["postKey"]: "verify"})
+            self.assertEqual(out[0].get("exit"), 0, out)
+            card = json.loads((root / "data/schedule.json").read_text(encoding="utf-8"))[0]
+            self.assertIn("首醮總醮壇", card["location"])
+
+    def test_converted_change_from_other_account_goes_to_verify(self):
+        text = self.QUOTE
+        it = item("threads:the_rin.lpm:DfMv3UpE52E", text, "https://www.threads.com/@the_rin.lpm/post/DfMv3UpE52E")
+        ev = {**self.verdict()["event"], "action": "confirm", "quote": text}
+        res = validate_batch(pack_of(it), {"dispositions": [disp(it, "already-listed", [ev])]}, [self.CARD], date(2026, 11, 3))
+        self.assertEqual(res["accepted"], [])
+        self.assertIn("different-account-change", res["needsCheck"][0]["reason"])
+
+    def test_step_verify_end_to_end(self):
+        from patrol_v2 import verify as verify_mod
+        with tempfile.TemporaryDirectory() as tmp:
+            st = state.RunState.create("dry-run", tmp)
+            work = Path(tmp) / "work"
+            (work / "data").mkdir(parents=True)
+            (work / "data/schedule.json").write_text(json.dumps([self.CARD], ensure_ascii=False), encoding="utf-8")
+            st.data.update({"workRoot": str(work), "day": "2026-11-03", "stats": {}})
+            st.save()
+            c = self.cand()["v-001"]
+            (st.dir / "items.json").write_text(json.dumps([{"postKey": c["postKey"], "url": c["url"], "text": self.QUOTE}], ensure_ascii=False))
+            (st.dir / "check.json").write_text(json.dumps({"accepted": [], "needsCheck": [
+                {"postKey": c["postKey"], "url": c["url"], "reason": "different-account-change"},
+                {"postKey": c["postKey"], "url": c["url"], "reason": "judge-needs-check"}]}, ensure_ascii=False))
+            with mock.patch.object(patrol, "EVIDENCE_DIR", Path(tmp) / "ev"), \
+                    mock.patch.object(verify_mod, "fetch_page_text", lambda url: self.PAGE):
+                ask = patrol.step_verify(st)
+                self.assertEqual((ask["action"], len(ask["batches"])), ("verify", 1))
+                verdict = {**self.verdict(), "verifyId": "v-001"}
+                Path(ask["batches"][0]["output"]).write_text(json.dumps({"verdicts": [verdict]}, ensure_ascii=False))
+                self.assertIsNone(patrol.step_verify(st))
+            check = json.loads((st.dir / "check.json").read_text())
+            self.assertEqual([c["changeId"] for c in check["accepted"]], ["chg-001"])
+            self.assertEqual((check["needsCheck"], check["sentToVerify"], len(check["unverified"])), ([], 2, 1))
+            self.assertEqual(check["unverified"][0]["reason"], "verifier-no-answer")
+            self.assertTrue((Path(tmp) / "ev" / st.run_id / "verify.json").exists())
+            self.assertEqual(st.data["steps"]["verify"]["status"], "done")
+
+    def test_step_verify_gives_up_after_two_asks(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            st = state.RunState.create("dry-run", tmp)
+            st.data.update({"workRoot": tmp, "day": "2026-11-03", "stats": {}})
+            st.save()
+            (st.dir / "items.json").write_text("[]")
+            (st.dir / "check.json").write_text(json.dumps({"accepted": [], "needsCheck": [{"postKey": "threads:a:1", "reason": "x"}]}))
+            with mock.patch.object(patrol, "EVIDENCE_DIR", Path(tmp) / "ev"):
+                self.assertEqual(patrol.step_verify(st)["action"], "verify")
+                self.assertEqual(patrol.step_verify(st)["action"], "verify")
+                self.assertIsNone(patrol.step_verify(st))
+            check = json.loads((st.dir / "check.json").read_text())
+            self.assertEqual(check["unverified"][0]["reason"], "verifier-no-answer")
+
+    def test_two_corroborations_same_card_applied_once(self):
+        from patrol_v2 import verify as verify_mod
+        cands = {**self.cand(), "v-002": {**self.cand()["v-001"], "verifyId": "v-002", "postKey": "threads:jing__1017:DfFOKfrCWgq"}}
+        res = verify_mod.process([self.verdict(), {**self.verdict(), "verifyId": "v-002"}], cands, [self.CARD], date(2026, 11, 3),
+                                 fetch=lambda url: self.PAGE)
+        self.assertEqual(len(res["accepted"]), 1)
+        self.assertEqual(len(res["accepted"][0]["alsoSources"]), 1)
+
+    def test_one_page_many_events(self):
+        from patrol_v2 import verify as verify_mod
+        page = "節目表 11/06（五）19:30 小舞台 民權歌劇團《鐵弓緣》 11/14（六）14:30 小舞台 薪傳歌仔戲劇團《蒼原孤雁》 京劇不收"
+        def ev(troupe, title, d, t, q):
+            return {"action": "add", "genre": "歌仔戲", "eventType": "演出", "troupe": troupe, "title": title, "location": "小舞台",
+                    "sessions": [{"date": d, "kind": "正戲", "time": t}], "quote": q}
+        v = {"verifyId": "v-001", "result": "confirmed", "corroboration": {"url": "https://example.org/p"},
+             "events": [ev("民權歌劇團", "《鐵弓緣》", "2026-11-06", "19:30", "11/06（五）19:30 小舞台 民權歌劇團《鐵弓緣》"),
+                        ev("薪傳歌仔戲劇團", "《蒼原孤雁》", "2026-11-14", "14:30", "11/14（六）14:30 小舞台 薪傳歌仔戲劇團《蒼原孤雁》"),
+                        ev("某團", "《不存在》", "2026-11-20", "19:30", "11/20 不存在的引文")]}
+        res = verify_mod.process([v], self.cand(), [], date(2026, 11, 3), fetch=lambda url: page)
+        self.assertEqual(len(res["accepted"]), 2, res)
+        self.assertIn("1 場未過", res["unverified"][0]["detail"])

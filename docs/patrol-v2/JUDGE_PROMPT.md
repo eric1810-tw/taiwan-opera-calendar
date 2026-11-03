@@ -31,7 +31,8 @@
 - `already-listed`：已在表——**仍要寫 events，action=confirm，填 targetCardId 與你從原文讀到的 sessions、location**。程式會自己逐欄比對；你不要寫「一致」當結論。
 - `out-of-scope`：不屬收錄範圍（寫理由）
 - `not-event`：不是活動公告（心得、宣傳照、抽獎等）
-- `needs-check`：資訊不足、海報看不清、來源互相矛盾
+- `expired`：是演出公告，但所有場次都在今天以前、已經演完（不寫 events）。部分場次已過、部分還沒到的，照常判 new／already-listed 並寫出全部場次，程式會自己剔除已過的場次
+- `needs-check`：資訊不足、海報看不清、來源互相矛盾（已過期的不要用這個，用 `expired`）
 - `needs-images`：只限第一輪，要看圖才能判讀
 
 ## events 欄位

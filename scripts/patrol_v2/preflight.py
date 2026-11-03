@@ -66,6 +66,31 @@ def _git_running():
     return bool(res.stdout.strip())
 
 
+def sync_main(root=ROOT, runner=git, today=None):
+    """ff-only 對齊 origin/main。10/30：commit 在 main 以外 rebase 後推上去，本機 main 留著內容相同的舊版，
+    之後每天 ff-only 失敗、連停 4 天。本機多出來的 commit 若都已在遠端（git cherry 全為 -），
+    留備份分支後 reset --keep 對齊；只要有一筆本機獨有就照舊停止。回傳說明文字或 None。"""
+    try:
+        runner(["merge", "--ff-only", "origin/main"], cwd=root)
+        return None
+    except PreflightError as error:
+        ff_error = error
+    lines = [line.split() for line in runner(["cherry", "origin/main", "HEAD"], cwd=root).splitlines() if line.strip()]
+    unique = [sha for mark, sha in lines if mark == "+"]
+    if not lines or unique:
+        if unique:
+            raise PreflightError(f"本機 main 有 {len(unique)} 筆遠端沒有的 commit（{', '.join(s[:7] for s in unique)}），"
+                                 f"不能自動對齊，請人工處理：{ff_error}")
+        raise ff_error
+    head = runner(["rev-parse", "--short", "HEAD"], cwd=root)
+    backup = f"backup/main-{head}-{(today or time.strftime('%y%m%d'))}"
+    if not runner(["branch", "--list", backup], cwd=root):
+        runner(["branch", backup, "HEAD"], cwd=root)
+    runner(["reset", "--keep", "origin/main"], cwd=root)
+    return (f"本機 main 與 origin/main 分岔，但本機多出的 {len(lines)} 筆 commit 內容遠端都已有，"
+            f"已自動對齊 origin/main（舊版備份在分支 {backup}）")
+
+
 def check_production(root=ROOT, runner=git):
     lock_note = clear_stale_index_lock(root, runner)
     branch = runner(["rev-parse", "--abbrev-ref", "HEAD"], cwd=root)
@@ -75,9 +100,10 @@ def check_production(root=ROOT, runner=git):
     if staged:
         raise PreflightError(f"正式資料夾已有 staged 檔案，停止以免混入提交：{staged}")
     retries = fetch_with_retry(root, runner)
-    runner(["merge", "--ff-only", "origin/main"], cwd=root)
+    sync_note = sync_main(root, runner)
     head = runner(["rev-parse", "HEAD"], cwd=root)
-    return {"branch": branch, "head": head, "fetchRetries": retries, "protected": protected_hashes(root), "indexLock": lock_note}
+    return {"branch": branch, "head": head, "fetchRetries": retries, "protected": protected_hashes(root),
+            "indexLock": lock_note, "syncNote": sync_note}
 
 
 def build_sandbox(sandbox, root=ROOT, runner=git):

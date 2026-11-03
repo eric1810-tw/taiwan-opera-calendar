@@ -300,3 +300,64 @@ class Python311Compat(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class DivergedMain(unittest.TestCase):
+    """10/30：commit 在 main 以外 rebase 後推上去，本機 main 留舊版，ff-only 連 4 天失敗"""
+
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        base = Path(self.tmp.name)
+        self.origin, self.local, self.other = base / "origin.git", base / "local", base / "other"
+        preflight.git(["init", "-q", "--bare", "-b", "main", str(self.origin)], cwd=base)
+        preflight.git(["clone", "-q", str(self.origin), str(self.local)], cwd=base)
+        self.commit(self.local, "data.txt", "1", "base")
+        preflight.git(["push", "-q", "origin", "HEAD:main"], cwd=self.local)
+        preflight.git(["clone", "-q", str(self.origin), str(self.other)], cwd=base)
+
+    def tearDown(self):
+        self.tmp.cleanup()
+
+    def commit(self, repo, name, text, msg):
+        Path(repo, name).write_text(text)
+        preflight.git(["add", name], cwd=repo)
+        preflight.git(["-c", "user.email=t@t", "-c", "user.name=t", "commit", "-qm", msg], cwd=repo)
+
+    def remote_moves_on(self):
+        """Actions 在遠端推資料 commit"""
+        self.commit(self.other, "data.txt", "2", "actions")
+        preflight.git(["push", "-q", "origin", "HEAD:main"], cwd=self.other)
+
+    def test_fast_forward_unchanged(self):
+        self.remote_moves_on()
+        preflight.git(["fetch", "-q", "origin"], cwd=self.local)
+        self.assertIsNone(preflight.sync_main(self.local))
+        self.assertEqual(Path(self.local, "data.txt").read_text(), "2")
+
+    def test_equivalent_commit_is_realigned_with_backup(self):
+        self.commit(self.local, "accounts.txt", "x", "remove source")
+        old = preflight.git(["rev-parse", "--short", "HEAD"], cwd=self.local)
+        self.remote_moves_on()
+        # 同一筆修改在別處 rebase 後推上去
+        preflight.git(["pull", "-q", "--rebase", "origin", "main"], cwd=self.other)
+        self.commit(self.other, "accounts.txt", "x", "remove source")
+        preflight.git(["push", "-q", "origin", "HEAD:main"], cwd=self.other)
+        Path(self.local, "notes.md").write_text("未提交")
+        preflight.git(["fetch", "-q", "origin"], cwd=self.local)
+        note = preflight.sync_main(self.local, today="261103")
+        self.assertIn("已自動對齊", note)
+        self.assertEqual(preflight.git(["rev-parse", "HEAD"], cwd=self.local),
+                         preflight.git(["rev-parse", "origin/main"], cwd=self.local))
+        self.assertEqual(preflight.git(["rev-parse", "--short", f"backup/main-{old}-261103"], cwd=self.local), old)
+        self.assertEqual(Path(self.local, "notes.md").read_text(), "未提交")
+
+    def test_unique_local_commit_stops(self):
+        self.commit(self.local, "only-here.txt", "y", "local only")
+        head = preflight.git(["rev-parse", "HEAD"], cwd=self.local)
+        self.remote_moves_on()
+        preflight.git(["fetch", "-q", "origin"], cwd=self.local)
+        with self.assertRaises(preflight.PreflightError) as ctx:
+            preflight.sync_main(self.local)
+        self.assertIn("遠端沒有的 commit", str(ctx.exception))
+        self.assertEqual(preflight.git(["rev-parse", "HEAD"], cwd=self.local), head)
+        self.assertEqual(preflight.git(["branch", "--list", "backup/*"], cwd=self.local), "")

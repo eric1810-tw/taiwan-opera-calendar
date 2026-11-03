@@ -40,6 +40,9 @@ DEFAULT_MOC_RECORDS_PATH = ROOT_DIR / "data" / "moc_records.json"
 UNSPECIFIED_KEYWORDS = ("未公布", "未列", "待確認", "時間請查官方公告", "地點請查官方公告", "待查官方公告")
 
 
+CHANGE_KEYWORDS = ("異動", "更正", "更改", "延期", "改期", "改至", "改在")
+
+
 def normalize_whitespace(text: str) -> str:
     """將所有空白（含換行、全形空白、tab）正規化為單一空格並去除首尾空白"""
     if not text:
@@ -791,14 +794,16 @@ def handle_change(args, today: date):
     reasons = []
     # 1. 同帳號檢查
     card_source = target_card.get("sourceUrl") or target_card.get("link", "")
-    if extract_account_id(card_source) != extract_account_id(post_url):
+    # 查證來源（patrol-v2 程式自己重抓的佐證頁面）本來就是另一個來源，不比帳號
+    corroborated = proposal.get("source") == "verify"
+    if not corroborated and extract_account_id(card_source) != extract_account_id(post_url):
         reasons.append("different-account")
 
     norm_quote = normalize_whitespace(proposal.get("quote", ""))
     norm_text = post_corpus(post)
 
     # 2. quote 必須含「異動」「更正」「更改」「延期」「改期」「改至」「改在」之一
-    if not any(k in norm_quote for k in ("異動", "更正", "更改", "延期", "改期", "改至", "改在")):
+    if not corroborated and not any(k in norm_quote for k in CHANGE_KEYWORDS):
         reasons.append("no-change-keyword")
 
     if "sessions" in proposal:
@@ -898,7 +903,9 @@ def handle_cancel(args, today: date):
     reasons = []
     # 1. 同帳號檢查
     card_source = target_card.get("sourceUrl") or target_card.get("link", "")
-    if extract_account_id(card_source) != extract_account_id(post_url):
+    # 查證來源（patrol-v2 程式自己重抓的佐證頁面）本來就是另一個來源，不比帳號
+    corroborated = proposal.get("source") == "verify"
+    if not corroborated and extract_account_id(card_source) != extract_account_id(post_url):
         reasons.append("different-account")
 
     norm_quote = normalize_whitespace(proposal.get("quote", ""))

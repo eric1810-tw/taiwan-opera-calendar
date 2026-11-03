@@ -4,6 +4,8 @@
 - accepted：可進入第二次審查與寫入的卡片變更
 - needsCheck：證據不足、衝突、跨帳號異動等，保留待查並列入報告
 - rejected：格式或引用錯誤（例如引用的原文不在貼文內）
+- expired：場次全部已過（判讀員判 expired，或程式剔除過去場次後沒剩），只計數、記為已判讀
+- farFuture：場次全在 120 天以後，存進 far_future.json，進入 120 天內再自動重驗
 """
 import re
 import sys
@@ -14,8 +16,9 @@ from .common import ROOT, normalize_text
 sys.path.insert(0, str(ROOT / "scripts"))
 import add_card  # noqa: E402
 
-DECISIONS = {"new", "update", "change", "cancel", "already-listed", "out-of-scope", "not-event", "needs-check", "needs-images"}
+DECISIONS = {"new", "update", "change", "cancel", "already-listed", "out-of-scope", "not-event", "needs-check", "needs-images", "expired"}
 ACTIONS = {"add", "update", "change", "cancel", "confirm"}
+FAR_DAYS = 120
 GENRES = {"歌仔戲", "布袋戲"}
 EVENT_TYPES = {"演出", "講座", "體驗"}
 KINDS = {"扮仙", "正戲", "其他"}
@@ -138,8 +141,10 @@ def check_sessions(event, quote, today, action, now_hm=None):
         except Exception:
             reasons.append("invalid-date-format")
             continue
-        if action != "cancel" and not (today <= d <= today + timedelta(days=120)):
-            reasons.append("date-out-of-range")
+        if action != "cancel" and d < today:
+            reasons.append("date-past")
+        elif action != "cancel" and d > today + timedelta(days=FAR_DAYS):
+            reasons.append("date-too-far")
         if action in ("add", "update") and now_hm and d == today and TIME_RE.match(s.get("time", "")) and s["time"].zfill(5) < now_hm:
             reasons.append("already-past")
         if not add_card.match_date_in_quote(d, q):
@@ -167,7 +172,7 @@ def validate_batch(pack, proposals, schedule, today=None, now_hm=None):
     readings = {r["sha256"]: r for r in proposals.get("imageReadings") or [] if r.get("sha256")}
     items = {it["postKey"]: it for it in pack["items"]}
     result = {"accepted": [], "confirmed": [], "needsCheck": [], "rejected": [], "dispositions": [], "missing": [],
-              "imageRequests": [], "imageReadings": readings}
+              "expired": [], "farFuture": [], "imageRequests": [], "imageReadings": readings}
 
     # 每張送審圖片都要有判讀紀錄（看不清也要寫 legible=false）
     for it in pack["items"]:
@@ -199,6 +204,8 @@ def validate_batch(pack, proposals, schedule, today=None, now_hm=None):
         result["dispositions"].append(d)
         corpus = corpus_for(it, readings)
         social = key.startswith(("threads:", "facebook:"))
+        if d["decision"] == "expired":
+            result["expired"].append({"postKey": key, "url": it.get("url"), "reason": "judge-expired"})
         if d["decision"] == "needs-check":
             result["needsCheck"].append({"postKey": key, "url": it.get("url"), "reason": "judge-needs-check", "detail": d.get("reason")})
         for n, ev in enumerate(d.get("events") or []):
@@ -207,6 +214,14 @@ def validate_batch(pack, proposals, schedule, today=None, now_hm=None):
             if action not in ACTIONS:
                 result["rejected"].append({**ref, "reason": "action-invalid"})
                 continue
+            if action != "cancel" and isinstance(ev.get("sessions"), list) and ev["sessions"]:
+                # 已演完的場次直接剔除；全部演完就只計數，不列待查
+                upcoming = [s for s in ev["sessions"] if not _is_past(s, today)]
+                if not upcoming:
+                    result["expired"].append({**ref, "reason": "all-sessions-past"})
+                    continue
+                if len(upcoming) < len(ev["sessions"]):
+                    ev = {**ev, "sessions": upcoming, "droppedPastSessions": len(ev["sessions"]) - len(upcoming)}
             quote = normalize_text(ev.get("quote", ""))
             reasons = []
             if not quote or quote not in corpus:
@@ -225,6 +240,12 @@ def validate_batch(pack, proposals, schedule, today=None, now_hm=None):
                     reasons.append("target-card-not-found")
             if action != "cancel" or ev.get("sessions"):
                 reasons.extend(check_sessions(ev, quote, today, action, now_hm))
+            if set(reasons) == {"date-too-far"}:
+                # 遠期場次：只差在太遠，先存著，進入 120 天內再用同一份原文重驗
+                used = {img["sha256"]: readings[img["sha256"]] for img in it.get("images") or [] if img["sha256"] in readings}
+                result["farFuture"].append({**ref, "reason": "date-too-far", "proposed": ev, "item": it,
+                                            "disposition": {**d, "events": [ev]}, "imageReadings": list(used.values())})
+                continue
             if reasons:
                 bucket = "rejected" if any(r.startswith(("quote-not", "evidence-not", "action", "time-format", "invalid-date")) for r in reasons) else "needsCheck"
                 result[bucket].append({**ref, "reason": ",".join(dict.fromkeys(reasons)), "proposed": ev})
@@ -234,6 +255,12 @@ def validate_batch(pack, proposals, schedule, today=None, now_hm=None):
                 if diffs:
                     # 程式比對出差異：不得當成一致；只是補未公布欄位→update，否則→change，都交第二次審查
                     new_action = "update" if all(x.get("fill") for x in diffs) else "change"
+                    blocked = change_blockers(ev, cards[ev["targetCardId"]], it, quote) if new_action == "change" else []
+                    if blocked:
+                        # add_card 一定會擋的（跨帳號、原文沒有異動字眼）：先送查證找第二來源
+                        result["needsCheck"].append({**ref, "reason": ",".join(blocked), "proposed": {**ev, "action": "change"},
+                                                     "targetCardId": ev["targetCardId"], "diffs": diffs})
+                        continue
                     result["accepted"].append({**ref, "action": new_action, "event": ev, "diffs": diffs, "convertedFrom": "confirm"})
                 else:
                     result["confirmed"].append({**ref, "targetCardId": ev["targetCardId"]})
@@ -252,6 +279,26 @@ def validate_batch(pack, proposals, schedule, today=None, now_hm=None):
             result["accepted"].append({**ref, "action": action, "event": ev, "diffs": diffs})
     dedupe_within_run(result)
     return result
+
+
+def change_blockers(event, card, item, quote):
+    """add_card --change 的硬規則：同帳號、quote 含異動字眼。佐證來源（verify）不比"""
+    if item.get("source") == "verify":
+        return []
+    reasons = []
+    if item["postKey"].startswith(("threads:", "facebook:")) and \
+            add_card.extract_account_id(card.get("sourceUrl") or card.get("link", "")) != add_card.extract_account_id(item.get("url", "")):
+        reasons.append("different-account-change")
+    if not any(k in quote for k in add_card.CHANGE_KEYWORDS):
+        reasons.append("no-change-keyword")
+    return reasons
+
+
+def _is_past(session, today):
+    try:
+        return add_card.parse_date(session.get("date", "")) < today
+    except Exception:
+        return False  # 格式錯誤交給 check_sessions 退回
 
 
 def find_duplicate(event, schedule):

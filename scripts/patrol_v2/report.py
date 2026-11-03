@@ -42,7 +42,9 @@ def write_report(st, work_root, progress_run):
                      ["執行", f"開始 {d['startedAt']}；結果 {d.get('outcome') or '進行中'}；步驟 " + "、".join(f"{k}:{v.get('status')}" for k, v in d['steps'].items())],
                      ["來源", f"{len(counts)} 個：完整 {n['complete']}、部分 {n['partial']}、失敗 {n['failed']}、未讀 {n['pending']}"],
                      ["資料", f"送判讀 {stats.get('pack', {}).get('posts', 0)} 篇／圖 {stats.get('pack', {}).get('images', 0)} 張；"
-                              f"變更提案 {len(check.get('accepted', []))}、確認一致 {len(check.get('confirmed', []))}、待查 {len(check.get('needsCheck', []))}、退回 {len(check.get('rejected', []))}、漏處置 {len(check.get('missing', []))}"],
+                              f"變更提案 {len(check.get('accepted', []))}、確認一致 {len(check.get('confirmed', []))}、"
+                              f"送查證 {check.get('sentToVerify', len(check.get('needsCheck', [])))}（成立 {sum(1 for c in check.get('accepted', []) if c.get('verifiedFrom'))}、與卡相同 {len(check.get('verifiedSame', []))}、查無佐證不收 {len(check.get('unverified', []))}）、退回 {len(check.get('rejected', []))}、漏處置 {len(check.get('missing', []))}；"
+                              f"已過期不收 {len(check.get('expired', []))}、遠期暫存 {len(check.get('farFuture', []))}"],
                      ["寫入", f"寫入 {sum(1 for r in applied if r.get('exit') == 0)}、add_card 拒絕 {sum(1 for r in applied if r.get('exit') not in (0, None))}、審查未通過 {sum(1 for r in applied if r.get('result') == 'held')}"],
                      ["發布", pub.get("state", "本模式不發布" if st.mode != "production" else "未執行")
                               + (f"；SHA {pub.get('sha')}" if pub.get("sha") else "") + (f"；Actions {pub.get('actionsRun')}" if pub.get("actionsRun") else "")
@@ -62,7 +64,8 @@ def write_report(st, work_root, progress_run):
               f"戲曲相關且未過期 {ot.get('related', '?')}、延後 {ot.get('deferred', 0)}、錯誤 {ot.get('errors', ot.get('error', 0))}", ""]
     if check.get("accepted"):
         lines += ["## 卡片變更", "", _rows([["編號", "動作", "來源", "內容", "差異", "審查", "寫入"], ["---"] * 7] + [
-            [c["changeId"], c["action"] + ("（由「一致」轉）" if c.get("convertedFrom") else ""), c.get("url") or c["postKey"],
+            [c["changeId"], c["action"] + ("（由「一致」轉）" if c.get("convertedFrom") else "") + ("（查證成立）" if c.get("verifiedFrom") else ""),
+             (c.get("url") or c["postKey"]) + (f"（原貼文 {c['verifiedFrom'].get('url')}）" if c.get("verifiedFrom") else ""),
              _short(f"{c['event'].get('troupe')}｜{c['event'].get('title')}｜{c['event'].get('location')}｜" +
                     "、".join(f"{s['date']} {s.get('kind', '')} {s.get('time', '')}" for s in c["event"].get("sessions") or []), 120),
              _short("；".join(f"{x['field']}：卡 {x['card']} → 文 {x['post']}" for x in c.get("diffs") or []), 120),
@@ -74,6 +77,11 @@ def write_report(st, work_root, progress_run):
                                          [["待查", x.get("url") or x["postKey"], x.get("reason"), _short(x.get("detail") or x.get("notes") or "", 100)] for x in check.get("needsCheck", [])] +
                                          [["退回", x.get("url") or x["postKey"], x.get("reason"), ""] for x in check.get("rejected", [])] +
                                          [["漏處置", x["postKey"], x.get("reason"), ""] for x in check.get("missing", [])]), ""]
+    if check.get("farFuture"):
+        lines += ["## 遠期場次（超過 120 天，進入 120 天內自動重驗）", "", _rows([["貼文", "內容"], ["---", "---"]] + [
+            [x.get("url") or x["postKey"], _short(f"{x['proposed'].get('troupe')}｜{x['proposed'].get('title')}｜{x['proposed'].get('location')}｜" +
+                                                 "、".join(s['date'] for s in x['proposed'].get('sessions') or []), 120)]
+            for x in check["farFuture"]]), ""]
     if d.get("shadowCompare"):
         lines += [f"影子比對：{d['shadowCompare']}", ""]
     lines += ["## 紀錄檔", "", f"- 本輪狀態：{st.path}", f"- 巡檢紀錄：patrol_runs/{st.run_id}.json（{work_root}）",

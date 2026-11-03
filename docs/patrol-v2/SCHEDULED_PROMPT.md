@@ -18,15 +18,16 @@ ROOT = /Users/eric/aiwork/taiwan-opera-calendar
 3. 依最新一次輸出的 `action` 處理，處理完再執行 `python3 ROOT/scripts/patrol.py next --run <runId>`（同樣前景執行、逾時 600000 毫秒），重複到 `done` 或 `stopped`：
    - `continue`：背景程序還在跑（例如讀社群約 20 分鐘、等 GitHub Actions 約 5 分鐘），**直接再跑一次 next**，不需等待、不要查程序、不要結束任何東西。連續出現幾十次 `continue` 都是正常的。
    - `judge`：對 `batches` 裡的每一批，用 Agent 工具派一個子代理，**參數 `model: "sonnet"`、`effort: "medium"`**，subagent_type 用 `general-purpose`，prompt 寫：「請先讀 ROOT/docs/patrol-v2/JUDGE_PROMPT.md 並完全照做。pack = <pack 路徑>，output = <output 路徑>。」同時最多派 4 個，全部寫完後執行 `python3 ROOT/scripts/patrol.py models --run <runId> --role judge --model sonnet --evidence "Agent 工具 model 參數；effort=medium"`。
-   - `review`：用 Agent 工具派一個子代理，**參數 `model: "opus"`、`effort: "high"`**，subagent_type 用 `general-purpose`，prompt 寫：「請先讀 ROOT/docs/patrol-v2/REVIEW_PROMPT.md 並完全照做。pack = <pack 路徑>，output = <output 路徑>。」完成後執行 `python3 ROOT/scripts/patrol.py models --run <runId> --role review --model opus --evidence "Agent 工具 model 參數；effort=high"`。
+   - `verify`：對 `batches` 裡的每一批，用 Agent 工具派一個子代理，**參數 `model: "opus"`、`effort: "medium"`**，subagent_type 用 `general-purpose`，prompt 寫：「請先讀 ROOT/docs/patrol-v2/VERIFY_PROMPT.md 並完全照做。pack = <pack 路徑>，output = <output 路徑>。」同時最多派 4 個，全部寫完後執行 `python3 ROOT/scripts/patrol.py models --run <runId> --role verify --model opus --evidence "Agent 工具 model 參數；effort=medium"`。查證子代理會上網搜尋與讀網頁，這是正常的。
+   - `review`：用 Agent 工具派一個子代理，**參數 `model: "opus"`、`effort: "medium"`**，subagent_type 用 `general-purpose`，prompt 寫：「請先讀 ROOT/docs/patrol-v2/REVIEW_PROMPT.md 並完全照做。pack = <pack 路徑>，output = <output 路徑>。」完成後執行 `python3 ROOT/scripts/patrol.py models --run <runId> --role review --model opus --evidence "Agent 工具 model 參數；effort=medium"`。
    - `done` 或 `stopped`：結束迴圈。
-   - 子代理失敗或沒寫出檔案：重派一次；仍失敗就再跑 next（patrol.py 會把沒寫出的批次列為待查），並在最後回覆寫明是哪一批。
+   - 子代理失敗或沒寫出檔案：重派一次；仍失敗就再跑 next（判讀批次會被列為漏處置；查證批次會被當成查無佐證），並在最後回覆寫明是哪一批。
    - 如果 `start`／`next` 本身報錯（不是 JSON），再跑一次同一個指令；連續 3 次都報錯就停止，把錯誤訊息原文寫進最後回覆。
 4. 有 `report` 就用 Read 讀報告，最後回覆（給 Eric 看的）：
-   - 第一行：一句主結論（例如「今天已發布；20 來源可讀、1 失敗；新增 2 張卡、修改 1 張，1 張海報看不清列待查」；`stopped` 就寫「巡檢停止：<reason>」）。
+   - 第一行：一句主結論（例如「今天已發布；20 來源可讀、1 失敗；新增 2 張卡、修改 1 張；送查證 12 項，成立 3、查無佐證不收 9」；`stopped` 就寫「巡檢停止：<reason>」）。
    - 若輸出有 `forEric`，逐條列在最上方，標「需要 Eric 決定」。
    - 新增、修改、取消的卡片逐筆列出（卡片 id、來源網址）。
-   - 失敗的來源與原因、待查數量、發布結果（資料 SHA、Actions、公開比對）。
+   - 失敗的來源與原因、查證結果（送查證、成立、查無佐證不收的數量）、發布結果（資料 SHA、Actions、公開比對）。
    - 報告檔路徑。
    - 本輪有沒有遇到權限確認或被擋下的工具呼叫（照實寫）。
    不要宣稱 patrol.py 或報告沒有寫的事情。

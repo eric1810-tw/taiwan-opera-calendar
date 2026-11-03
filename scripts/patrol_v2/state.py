@@ -9,8 +9,8 @@ from pathlib import Path
 from .common import STATE_DIR, now, now_dt, read_json, today_str, write_json
 
 STEPS_BY_MODE = {
-    "production": ["preflight", "collect", "pack", "judge", "check", "review", "apply", "publish", "report"],
-    "dry-run": ["preflight", "collect", "pack", "judge", "check", "review", "apply", "report"],
+    "production": ["preflight", "collect", "pack", "judge", "check", "verify", "review", "apply", "publish", "report"],
+    "dry-run": ["preflight", "collect", "pack", "judge", "check", "verify", "review", "apply", "report"],
     "shadow": ["preflight", "collect", "pack", "judge", "check", "compare", "report"],
 }
 LOCK_STALE = timedelta(minutes=15)
