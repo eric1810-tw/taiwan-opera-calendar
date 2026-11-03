@@ -1686,5 +1686,36 @@
         "time": "未公布"
       }
     ]
+  },
+  {
+    "id": "auto-20261122-cc89973e",
+    "date": "2026-11-22",
+    "dateFormatted": "2026/11/22",
+    "daysAway": 18,
+    "time": "11/22 14:30 正戲",
+    "troupe": "陳錫煌傳統掌中劇團",
+    "genre": "布袋戲",
+    "artist": "未公布",
+    "title": "《孫臏鬥海潮》",
+    "category": "售票演出",
+    "badgeType": "ticket",
+    "verifyStatus": "community",
+    "verifyLabel": "📣 社群公告（程式比對原文）",
+    "location": "臺灣戲曲中心小舞台（臺北市士林區文林路751號）",
+    "region": "北部",
+    "status": "依社群公告；未列事項請洽劇團或廟方",
+    "description": "依 verify 近期 公告：「演出地點：臺灣戲曲中心小舞台 11/06(五)19:30民權歌劇團《鐵弓緣》 11/08(日)14:30臺北木偶劇團《雷萬春打虎》 11/15(日)19:30江之翠劇場《陳三五娘》—〈睇燈〉、〈留傘〉、《鄭元和與李亞仙》—〈蓮花落〉 11/21(六)14:30台北曲藝團《四唱數來寶》、《好呀好》、《論拳》、《板舞》、《歪批三國》 11/22(日)14:30陳錫煌傳統掌中劇團《孫臏鬥海潮》」",
+    "link": "https://www.ncfta.gov.tw/News_Content.aspx?n=5178&s=264641",
+    "sourceUrl": "https://www.ncfta.gov.tw/News_Content.aspx?n=5178&s=264641",
+    "tags": [
+      "陳錫煌傳統掌中劇團"
+    ],
+    "sessions": [
+      {
+        "date": "2026-11-22",
+        "kind": "正戲",
+        "time": "14:30"
+      }
+    ]
   }
 ]

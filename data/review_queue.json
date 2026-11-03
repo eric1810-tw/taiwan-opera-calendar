@@ -149,5 +149,125 @@
       "no-change-keyword"
     ],
     "rejectedAt": "2026-11-03T09:42:55+08:00"
+  },
+  {
+    "postKey": "threads:taiwaneseopera168:DfQ5lKaiQVF",
+    "postUrl": "https://www.threads.com/@taiwaneseopera168/post/DfQ5lKaiQVF",
+    "proposal": {
+      "source": "threads:taiwaneseopera168",
+      "postKey": "threads:taiwaneseopera168:DfQ5lKaiQVF",
+      "postUrl": "https://www.threads.com/@taiwaneseopera168/post/DfQ5lKaiQVF",
+      "quote": "12/13(日)明華園星字戲劇團《斷案青天－陰錯陽差》 🕖 每場次開演時間｜19:00 📍 演出地點｜高雄中山堂劇場戶外陽光草坪",
+      "troupe": "明華園星字戲劇團",
+      "title": "《斷案青天－陰錯陽差》",
+      "location": "高雄中山堂劇場戶外陽光草坪",
+      "genre": "歌仔戲",
+      "artist": "未公布",
+      "badgeType": "free",
+      "sessions": [
+        {
+          "date": "2026-12-13",
+          "kind": "正戲",
+          "time": "19:00"
+        }
+      ],
+      "date": "2026-12-13",
+      "time": "12/13 19:00 正戲",
+      "dateFormatted": "2026/12/13"
+    },
+    "reasons": [
+      "badgeType-not-free"
+    ],
+    "rejectedAt": "2026-11-04T03:37:27+08:00"
+  },
+  {
+    "postKey": "facebook:lanyang.opera:1572037354954872",
+    "postUrl": "https://www.facebook.com/photo/?fbid=1572037354954872",
+    "proposal": {
+      "source": "facebook:lanyang.opera",
+      "postKey": "facebook:lanyang.opera:1572037354954872",
+      "postUrl": "https://www.facebook.com/photo/?fbid=1572037354954872",
+      "quote": "11/26（四）晚上7:30    \n劇目｜《求草救夫》\n地點｜利澤簡永安宮",
+      "troupe": "蘭陽戲劇團",
+      "title": "《求草救夫》",
+      "location": "利澤簡永安宮（宜蘭縣五結鄉利澤村利澤路26號）",
+      "genre": "歌仔戲",
+      "artist": "未公布",
+      "badgeType": "free",
+      "sessions": [
+        {
+          "date": "2026-11-26",
+          "kind": "正戲",
+          "time": "19:30"
+        }
+      ],
+      "date": "2026-11-26",
+      "time": "11/26 19:30 正戲",
+      "dateFormatted": "2026/11/26"
+    },
+    "reasons": [
+      "badgeType-not-free"
+    ],
+    "rejectedAt": "2026-11-04T03:37:27+08:00"
+  },
+  {
+    "postKey": "verify:4b0d11a24fbd",
+    "postUrl": "https://n.yam.com/Article/20261026226244",
+    "proposal": {
+      "source": "verify",
+      "postKey": "verify:4b0d11a24fbd",
+      "postUrl": "https://n.yam.com/Article/20261026226244",
+      "quote": "11月7日週六，陳錫煌掌中戲安排在保元宮本廟，官方海報列出三個時段：11:00至12:00扮仙戲、14:00至16:00《天下財主》，以及18:30至20:30《劈山救母》。想看不同劇目的民眾，可依本廟三場時間安排參拜與休息。 同一天的總醮壇，則由秀琴歌劇團演出。18:30至19:00是扮仙戲《大五福三仙大會》，19:00至21:00演出《玉石變》。",
+      "sessions": [
+        {
+          "date": "2026-11-07",
+          "kind": "扮仙",
+          "time": "18:30"
+        },
+        {
+          "date": "2026-11-07",
+          "kind": "正戲",
+          "time": "19:00"
+        }
+      ],
+      "location": "新北市新莊區莊泰路與國營路交叉口（保元宮建醮總醮壇）",
+      "date": "2026-11-07",
+      "time": "11/7 18:30 扮仙、11/7 19:00 正戲",
+      "dateFormatted": "2026/11/07"
+    },
+    "reasons": [
+      "location-not-in-quote"
+    ],
+    "rejectedAt": "2026-11-04T03:37:27+08:00"
+  },
+  {
+    "postKey": "verify:9941e7007cee",
+    "postUrl": "https://www.ncfta.gov.tw/News_Content.aspx?n=5178&s=264641",
+    "proposal": {
+      "source": "verify",
+      "postKey": "verify:9941e7007cee",
+      "postUrl": "https://www.ncfta.gov.tw/News_Content.aspx?n=5178&s=264641",
+      "quote": "演出地點：臺灣戲曲中心小表演廳 11/07(六)14:30一心戲劇團 經典折子《借扇》、《秀嬋申冤》、《虹霓關》 11/14(六)14:30薪傳歌仔戲劇團《蒼原孤雁》",
+      "troupe": "薪傳歌仔戲劇團",
+      "title": "《蒼原孤雁》",
+      "location": "臺灣戲曲中心小表演廳（臺北市士林區文林路751號）",
+      "genre": "歌仔戲",
+      "artist": "未公布",
+      "badgeType": "ticket",
+      "sessions": [
+        {
+          "date": "2026-11-14",
+          "kind": "正戲",
+          "time": "14:30"
+        }
+      ],
+      "date": "2026-11-14",
+      "time": "11/14 14:30 正戲",
+      "dateFormatted": "2026/11/14"
+    },
+    "reasons": [
+      "badgeType-not-ticket"
+    ],
+    "rejectedAt": "2026-11-04T03:37:28+08:00"
   }
 ]
