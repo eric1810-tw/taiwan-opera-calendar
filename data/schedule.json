@@ -738,9 +738,9 @@
   {
     "id": "mhy-oolong-tc-2026-12-05",
     "date": "2026-12-05",
-    "dateFormatted": "2026/12/05（六）–12/06（日）",
+    "dateFormatted": "2026/12/05–2026/12/06",
     "daysAway": 31,
-    "time": "未公布",
+    "time": "12/5 14:30 正戲、12/6 14:30 正戲",
     "troupe": "明華園戲劇總團",
     "genre": "歌仔戲",
     "artist": "孫翠鳳",
@@ -755,9 +755,10 @@
     "description": "孫翠鳳已驗證 Facebook 帳號列明《烏龍天下》12/5–6於臺中國家歌劇院演出，並連至 OPENTIX 活動頁；售票頁未顯示逐場演出時間，故保留未公布。",
     "link": "https://www.opentix.life/event/2079821135483363329",
     "linkLabel": "OPENTIX 臺中國家歌劇院活動頁",
-    "sourceUrl": "https://www.facebook.com/reel/1836919060822921",
+    "sourceUrl": "https://www.opentix.life/event/2079821135483363329",
     "relatedSourceUrls": [
-      "https://www.facebook.com/mhysun"
+      "https://www.facebook.com/mhysun",
+      "https://www.facebook.com/reel/1836919060822921"
     ],
     "tags": [
       "明華園總團",
@@ -765,7 +766,19 @@
       "歌仔戲",
       "社群來源"
     ],
-    "endDate": "2026-12-06"
+    "endDate": "2026-12-06",
+    "sessions": [
+      {
+        "date": "2026-12-05",
+        "kind": "正戲",
+        "time": "14:30"
+      },
+      {
+        "date": "2026-12-06",
+        "kind": "正戲",
+        "time": "14:30"
+      }
+    ]
   },
   {
     "id": "taiwan-bangzi-2026-12-05-qianyaobanjia",
@@ -1751,6 +1764,259 @@
         "date": "2026-11-07",
         "kind": "正戲",
         "time": "14:00"
+      }
+    ]
+  },
+  {
+    "id": "auto-20261107-52899d34",
+    "date": "2026-11-07",
+    "dateFormatted": "2026/11/07",
+    "daysAway": 2,
+    "time": "11/7 18:30 正戲",
+    "troupe": "蘭陽戲劇團",
+    "genre": "歌仔戲",
+    "artist": "未公布",
+    "title": "《錯配姻緣》",
+    "category": "免費索票/戶外演出",
+    "badgeType": "free",
+    "verifyStatus": "community",
+    "verifyLabel": "📣 社群公告（程式比對原文）",
+    "location": "新城紫雲宮（宜蘭縣蘇澳鎮新城里新城南路175號）",
+    "region": "北部",
+    "status": "依社群公告；未列事項請洽劇團或廟方",
+    "description": "依 lanyang.opera 近期 公告：「11/7（六）晚上6:30    ※本場次為福宴場\n劇目｜《錯配姻緣》\n地點｜新城紫雲宮\n（宜蘭縣蘇澳鎮新城里新城南路175號）\n※免費觀賞\n11/22（日）晚上6:00    ※本場次為福宴場\n劇目｜《錯配姻緣》\n地點｜嶺腳永安宮\n（宜蘭縣蘇澳鎮港邊里嶺腳路104號）\n※免費觀賞\n11/23（一）晚上6:30    ※本場次為福宴場\n劇目｜《福氣臨門》\n地點｜大湖普恩廟\n（宜蘭縣員山鄉逸仙村大安」",
+    "link": "https://www.facebook.com/lanyang.opera/reels_tab",
+    "sourceUrl": "https://www.facebook.com/lanyang.opera/reels_tab",
+    "tags": [
+      "蘭陽戲劇團"
+    ],
+    "sessions": [
+      {
+        "date": "2026-11-07",
+        "kind": "正戲",
+        "time": "18:30"
+      }
+    ]
+  },
+  {
+    "id": "auto-20261122-4fa5326e",
+    "date": "2026-11-22",
+    "dateFormatted": "2026/11/22",
+    "daysAway": 17,
+    "time": "11/22 18:00 正戲",
+    "troupe": "蘭陽戲劇團",
+    "genre": "歌仔戲",
+    "artist": "未公布",
+    "title": "《錯配姻緣》",
+    "category": "免費索票/戶外演出",
+    "badgeType": "free",
+    "verifyStatus": "community",
+    "verifyLabel": "📣 社群公告（程式比對原文）",
+    "location": "嶺腳永安宮（宜蘭縣蘇澳鎮港邊里嶺腳路104號）",
+    "region": "北部",
+    "status": "依社群公告；未列事項請洽劇團或廟方",
+    "description": "依 lanyang.opera 近期 公告：「11/22（日）晚上6:00    ※本場次為福宴場\n劇目｜《錯配姻緣》\n地點｜嶺腳永安宮\n（宜蘭縣蘇澳鎮港邊里嶺腳路104號）\n※免費觀賞\n11/23（一）晚上6:30    ※本場次為福宴場\n劇目｜《福氣臨門》\n地點｜大湖普恩廟\n（宜蘭縣員山鄉逸仙村大安路121號）\n※免費觀賞\n11/26（四）晚上7:30    \n劇目｜《求草救夫》\n地點｜利澤簡永安宮\n（宜蘭縣五結鄉利澤村利澤路26號）\n※」",
+    "link": "https://www.facebook.com/lanyang.opera/reels_tab",
+    "sourceUrl": "https://www.facebook.com/lanyang.opera/reels_tab",
+    "tags": [
+      "蘭陽戲劇團"
+    ],
+    "sessions": [
+      {
+        "date": "2026-11-22",
+        "kind": "正戲",
+        "time": "18:00"
+      }
+    ]
+  },
+  {
+    "id": "auto-20261123-ae8108fd",
+    "date": "2026-11-23",
+    "dateFormatted": "2026/11/23",
+    "daysAway": 18,
+    "time": "11/23 18:30 正戲",
+    "troupe": "蘭陽戲劇團",
+    "genre": "歌仔戲",
+    "artist": "未公布",
+    "title": "《福氣臨門》",
+    "category": "免費索票/戶外演出",
+    "badgeType": "free",
+    "verifyStatus": "community",
+    "verifyLabel": "📣 社群公告（程式比對原文）",
+    "location": "大湖普恩廟（宜蘭縣員山鄉逸仙村大安路121號）",
+    "region": "北部",
+    "status": "依社群公告；未列事項請洽劇團或廟方",
+    "description": "依 lanyang.opera 近期 公告：「11/23（一）晚上6:30    ※本場次為福宴場\n劇目｜《福氣臨門》\n地點｜大湖普恩廟\n（宜蘭縣員山鄉逸仙村大安路121號）\n※免費觀賞\n11/26（四）晚上7:30    \n劇目｜《求草救夫》\n地點｜利澤簡永安宮\n（宜蘭縣五結鄉利澤村利澤路26號）\n※免費觀賞\n以上場次均無直播\n更多詳細資訊請留意後續公告\n#工商服務\n提供多元化服務\n婚禮、喜慶、滿月、酬神、拍片、尾牙\n歡迎各式慶典邀約\n工作」",
+    "link": "https://www.facebook.com/lanyang.opera/reels_tab",
+    "sourceUrl": "https://www.facebook.com/lanyang.opera/reels_tab",
+    "tags": [
+      "蘭陽戲劇團"
+    ],
+    "sessions": [
+      {
+        "date": "2026-11-23",
+        "kind": "正戲",
+        "time": "18:30"
+      }
+    ]
+  },
+  {
+    "id": "auto-20261126-d8876366",
+    "date": "2026-11-26",
+    "dateFormatted": "2026/11/26",
+    "daysAway": 21,
+    "time": "11/26 19:30 正戲",
+    "troupe": "蘭陽戲劇團",
+    "genre": "歌仔戲",
+    "artist": "未公布",
+    "title": "《求草救夫》",
+    "category": "免費索票/戶外演出",
+    "badgeType": "free",
+    "verifyStatus": "community",
+    "verifyLabel": "📣 社群公告（程式比對原文）",
+    "location": "利澤簡永安宮（宜蘭縣五結鄉利澤村利澤路26號）",
+    "region": "北部",
+    "status": "依社群公告；未列事項請洽劇團或廟方",
+    "description": "依 lanyang.opera 近期 公告：「11/26（四）晚上7:30    \n劇目｜《求草救夫》\n地點｜利澤簡永安宮\n（宜蘭縣五結鄉利澤村利澤路26號）\n※免費觀賞\n以上場次均無直播\n更多詳細資訊請留意後續公告\n#工商服務\n提供多元化服務\n婚禮、喜慶、滿月、酬神、拍片、尾牙\n歡迎各式慶典邀約\n工作邀約及道具佈景租借請洽：\nlanyangoperacompany@gmail.com\n或（03）9333414\n將由專人為您服務～\n#蘭陽戲劇」",
+    "link": "https://www.facebook.com/lanyang.opera/reels_tab",
+    "sourceUrl": "https://www.facebook.com/lanyang.opera/reels_tab",
+    "tags": [
+      "蘭陽戲劇團"
+    ],
+    "sessions": [
+      {
+        "date": "2026-11-26",
+        "kind": "正戲",
+        "time": "19:30"
+      }
+    ]
+  },
+  {
+    "id": "auto-20261129-f75cc61d",
+    "date": "2026-11-29",
+    "dateFormatted": "2026/11/29",
+    "daysAway": 24,
+    "time": "11/29 14:30 正戲",
+    "troupe": "吳萬響掌中劇團",
+    "genre": "布袋戲",
+    "artist": "未公布",
+    "title": "雲林奇譚麥寮借屍還魂",
+    "category": "售票演出",
+    "badgeType": "ticket",
+    "verifyStatus": "verified",
+    "verifyLabel": "🎫 OPENTIX 售票頁（程式比對頁面資料）",
+    "location": "雲林表演廳",
+    "region": "中部",
+    "status": "依售票頁資料；未列事項請查售票頁",
+    "description": "依 OPENTIX 售票頁：「節目：雲林奇譚麥寮借屍還魂\n主辦：吳萬響掌中劇團\n售票：OPENTIX 售票頁\n票價：100元\n場次：2026-11-29 14:30｜地點：雲林表演廳（雲林縣 斗六市大學路三段310號）」",
+    "link": "https://www.opentix.life/event/2042431673524826113",
+    "sourceUrl": "https://www.opentix.life/event/2042431673524826113",
+    "tags": [
+      "吳萬響掌中劇團"
+    ],
+    "sessions": [
+      {
+        "date": "2026-11-29",
+        "kind": "正戲",
+        "time": "14:30"
+      }
+    ]
+  },
+  {
+    "id": "auto-20261212-3d54eb22",
+    "date": "2026-12-12",
+    "dateFormatted": "2026/12/12",
+    "daysAway": 37,
+    "time": "12/12 14:30 正戲",
+    "troupe": "五洲勝義閣掌中劇團",
+    "genre": "布袋戲",
+    "artist": "未公布",
+    "title": "《原來你佇咧》",
+    "category": "售票演出",
+    "badgeType": "ticket",
+    "verifyStatus": "verified",
+    "verifyLabel": "🎫 OPENTIX 售票頁（程式比對頁面資料）",
+    "location": "米倉劇場",
+    "region": "未分類",
+    "status": "依售票頁資料；未列事項請查售票頁",
+    "description": "依 OPENTIX 售票頁：「節目：《原來你佇咧》\n主辦：五洲勝義閣掌中劇團\n售票：OPENTIX 售票頁\n票價：200元\n場次：2026-12-12 14:30｜地點：米倉劇場（桃園市 桃園區新生路169號）」",
+    "link": "https://www.opentix.life/event/2041775304994054145",
+    "sourceUrl": "https://www.opentix.life/event/2041775304994054145",
+    "tags": [
+      "五洲勝義閣掌中劇團"
+    ],
+    "sessions": [
+      {
+        "date": "2026-12-12",
+        "kind": "正戲",
+        "time": "14:30"
+      }
+    ]
+  },
+  {
+    "id": "auto-20261128-91dc9b16",
+    "date": "2026-11-28",
+    "dateFormatted": "2026/11/28–2026/11/29、2026/12/12–2026/12/13",
+    "daysAway": 23,
+    "time": "11/28 11:00 正戲、11/28 14:30 正戲、11/29 11:00 正戲、11/29 14:30 正戲、12/12 11:00 正戲、12/12 14:30 正戲、12/13 11:00 正戲、12/13 14:30 正戲",
+    "troupe": "烏貓戲出",
+    "genre": "歌仔戲",
+    "artist": "未公布",
+    "title": "《燈殼樓的委託-小戲蟲拜先生》",
+    "category": "售票演出",
+    "badgeType": "ticket",
+    "verifyStatus": "community",
+    "verifyLabel": "📣 社群公告（程式比對原文）",
+    "location": "大稻埕戲苑曲藝場",
+    "region": "未分類",
+    "status": "依社群公告；未列事項請洽劇團或廟方",
+    "description": "依 verify 近期 公告：「烏貓戲出《燈殼樓的委託-小戲蟲拜先生》 主辦 烏貓戲出 場地 大稻埕戲苑曲藝場 ・臺北市 🗺 演期 2026-11-28 – 2026-12-13 長度 約60分鐘 票價 NT$350 場次 8 個未來場次 場次與購票 節目介紹 前往購票 ↗ ♡ 收藏 💬 分享 未來場次 8 NT$350 11/28（週六） 最近 11:00 14:30 11/29（週日） 11:00 14:30 12/12（週」",
+    "link": "https://kinotw.com/show/moc-6aaacec826b324165c32e41c-dba40c9c",
+    "sourceUrl": "https://kinotw.com/show/moc-6aaacec826b324165c32e41c-dba40c9c",
+    "tags": [
+      "烏貓戲出"
+    ],
+    "endDate": "2026-12-13",
+    "sessions": [
+      {
+        "date": "2026-11-28",
+        "kind": "正戲",
+        "time": "11:00"
+      },
+      {
+        "date": "2026-11-28",
+        "kind": "正戲",
+        "time": "14:30"
+      },
+      {
+        "date": "2026-11-29",
+        "kind": "正戲",
+        "time": "11:00"
+      },
+      {
+        "date": "2026-11-29",
+        "kind": "正戲",
+        "time": "14:30"
+      },
+      {
+        "date": "2026-12-12",
+        "kind": "正戲",
+        "time": "11:00"
+      },
+      {
+        "date": "2026-12-12",
+        "kind": "正戲",
+        "time": "14:30"
+      },
+      {
+        "date": "2026-12-13",
+        "kind": "正戲",
+        "time": "11:00"
+      },
+      {
+        "date": "2026-12-13",
+        "kind": "正戲",
+        "time": "14:30"
       }
     ]
   }
