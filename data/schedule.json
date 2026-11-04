@@ -1717,5 +1717,41 @@
         "time": "14:30"
       }
     ]
+  },
+  {
+    "id": "auto-20261107-92a4b49e",
+    "date": "2026-11-07",
+    "dateFormatted": "2026/11/07",
+    "daysAway": 3,
+    "time": "11/7 11:00 扮仙、11/7 14:00 正戲",
+    "troupe": "陳錫煌掌中戲",
+    "genre": "布袋戲",
+    "artist": "未公布",
+    "title": "《天下財主》",
+    "category": "廟會民俗演出",
+    "badgeType": "temple",
+    "verifyStatus": "community",
+    "verifyLabel": "📣 社群公告（程式比對原文）",
+    "location": "保元宮本廟",
+    "region": "未分類",
+    "status": "依社群公告；未列事項請洽劇團或廟方",
+    "description": "依 verify 近期 公告：「11月7日週六，陳錫煌掌中戲安排在保元宮本廟，官方海報列出三個時段：11:00至12:00扮仙戲、14:00至16:00《天下財主》，以及18:30至20:30《劈山救母》。」",
+    "link": "https://n.yam.com/Article/20261026226244",
+    "sourceUrl": "https://n.yam.com/Article/20261026226244",
+    "tags": [
+      "陳錫煌掌中戲"
+    ],
+    "sessions": [
+      {
+        "date": "2026-11-07",
+        "kind": "扮仙",
+        "time": "11:00"
+      },
+      {
+        "date": "2026-11-07",
+        "kind": "正戲",
+        "time": "14:00"
+      }
+    ]
   }
 ]
