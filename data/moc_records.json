@@ -1,6 +1,6 @@
 {
-  "fetchedAt": "2026-11-03T11:48:15+08:00",
-  "total": 1315,
+  "fetchedAt": "2026-11-04T10:51:44+08:00",
+  "total": 1316,
   "records": [
     {
       "version": "1.4",
@@ -260,7 +260,7 @@
       "sourceWebName": "財團法人典美文化基金會",
       "startDate": "2026/11/14",
       "endDate": "2026/11/22",
-      "hitRate": 4
+      "hitRate": 6
     },
     {
       "version": "1.4",
@@ -296,7 +296,7 @@
       "sourceWebName": "財團法人典美文化基金會",
       "startDate": "2026/11/14",
       "endDate": "2026/11/22",
-      "hitRate": 4
+      "hitRate": 6
     },
     {
       "version": "1.4",
@@ -332,7 +332,7 @@
       "sourceWebName": "財團法人典美文化基金會",
       "startDate": "2026/11/14",
       "endDate": "2026/11/22",
-      "hitRate": 4
+      "hitRate": 6
     },
     {
       "version": "1.4",
@@ -762,7 +762,7 @@
       "sourceWebName": "全國藝文活動資訊系統",
       "startDate": "2026/03/10",
       "endDate": "2026/12/15",
-      "hitRate": 25
+      "hitRate": 27
     },
     {
       "version": "1.4",
@@ -910,7 +910,7 @@
       "sourceWebName": "OPENTIX兩廳院文化生活",
       "startDate": "2026/11/07",
       "endDate": "2026/12/20",
-      "hitRate": 48
+      "hitRate": 50
     },
     {
       "version": "1.4",
@@ -964,7 +964,7 @@
       "sourceWebName": "OPENTIX兩廳院文化生活",
       "startDate": "2026/12/18",
       "endDate": "2026/12/20",
-      "hitRate": 10
+      "hitRate": 11
     },
     {
       "version": "1.4",
@@ -1047,7 +1047,7 @@
       "sourceWebName": "全國藝文活動資訊系統",
       "startDate": "2026/01/02",
       "endDate": "2026/12/31",
-      "hitRate": 23
+      "hitRate": 24
     },
     {
       "version": "1.4",
@@ -1191,7 +1191,7 @@
       "sourceWebName": "全國藝文活動資訊系統",
       "startDate": "2026/01/31",
       "endDate": "2026/12/31",
-      "hitRate": 37
+      "hitRate": 41
     },
     {
       "version": "1.4",
