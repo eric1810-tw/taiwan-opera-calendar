@@ -1147,12 +1147,15 @@
     "status": "文化部開放資料",
     "description": "文化部開放資料：2026金鷹閣電視木偶劇團《叱吒風雲－新哪吒》臺中巡演；臺中市葫蘆墩文化中心演奏廳；2026/11/21 19:30:00、2026/11/22 14:30:00",
     "link": "https://www.opentix.life/program/2112035354878472193",
-    "sourceUrl": "https://www.opentix.life/program/2112035354878472193",
+    "sourceUrl": "https://activity.culture.taichung.gov.tw/activites/index-1.asp?id=160094",
     "tags": [
       "文化部演出團隊",
       "布袋戲"
     ],
-    "endDate": "2026-11-22"
+    "endDate": "2026-11-22",
+    "relatedSourceUrls": [
+      "https://www.opentix.life/program/2112035354878472193"
+    ]
   },
   {
     "id": "auto-20261118-f7e6977b",
@@ -2017,6 +2020,159 @@
         "date": "2026-12-13",
         "kind": "正戲",
         "time": "14:30"
+      }
+    ]
+  },
+  {
+    "id": "auto-20261125-b78dfc5a",
+    "date": "2026-11-25",
+    "dateFormatted": "2026/11/25",
+    "daysAway": 19,
+    "time": "11/25 19:00 正戲",
+    "troupe": "秀琴歌劇團",
+    "genre": "歌仔戲",
+    "artist": "未公布",
+    "title": "范蠡獻西施",
+    "category": "廟會民俗演出",
+    "badgeType": "temple",
+    "verifyStatus": "community",
+    "verifyLabel": "📣 社群公告（程式比對原文）",
+    "location": "大龍峒保安宮庭園廣場",
+    "region": "未分類",
+    "status": "依社群公告；未列事項請洽劇團或廟方",
+    "description": "依 @the_rin.lpm 2026-11-05 公告：「秀琴歌劇團 13小时 讓我插播一下演出資訊🫪 ✨️又來宣傳一場北部公演啦✨️ 🎭演出戲碼：范蠡獻西施 📆演出時間：11/25（三）19：00 📍演出地點：大龍峒保安宮庭園廣場」",
+    "link": "https://www.threads.com/@the_rin.lpm/post/DfW4GsIk7Xz",
+    "sourceUrl": "https://www.threads.com/@the_rin.lpm/post/DfW4GsIk7Xz",
+    "tags": [
+      "秀琴歌劇團"
+    ],
+    "sessions": [
+      {
+        "date": "2026-11-25",
+        "kind": "正戲",
+        "time": "19:00"
+      }
+    ]
+  },
+  {
+    "id": "auto-20261109-56bb4512",
+    "date": "2026-11-09",
+    "dateFormatted": "2026/11/09–2026/11/12、2026/11/14（11/13 無演出）",
+    "daysAway": 3,
+    "time": "11/9 時間未公布、11/10 時間未公布、11/11 時間未公布、11/12 時間未公布、11/14 時間未公布",
+    "troupe": "文君歌劇團",
+    "genre": "歌仔戲",
+    "artist": "未公布",
+    "title": "文君歌劇團下土地建醮慶典外台演出",
+    "category": "廟會民俗演出",
+    "badgeType": "temple",
+    "verifyStatus": "community",
+    "verifyLabel": "📣 社群公告（程式比對原文）",
+    "location": "台南市中西區忠義路下土地",
+    "region": "南部",
+    "status": "依社群公告；未列事項請洽劇團或廟方",
+    "description": "依 @yuzhongluo 2026-11-05 公告：「國曆11月9、10、11、12、14 台南市中西區忠義路下土地 羅團長支援二姐文君歌劇團」",
+    "link": "https://www.threads.com/@yuzhongluo/post/DfWIzCdmUwz",
+    "sourceUrl": "https://www.threads.com/@yuzhongluo/post/DfWIzCdmUwz",
+    "tags": [
+      "文君歌劇團"
+    ],
+    "endDate": "2026-11-14",
+    "sessions": [
+      {
+        "date": "2026-11-09",
+        "kind": "其他",
+        "time": "未公布"
+      },
+      {
+        "date": "2026-11-10",
+        "kind": "其他",
+        "time": "未公布"
+      },
+      {
+        "date": "2026-11-11",
+        "kind": "其他",
+        "time": "未公布"
+      },
+      {
+        "date": "2026-11-12",
+        "kind": "其他",
+        "time": "未公布"
+      },
+      {
+        "date": "2026-11-14",
+        "kind": "其他",
+        "time": "未公布"
+      }
+    ],
+    "noShowDates": [
+      "2026-11-13"
+    ]
+  },
+  {
+    "id": "auto-20261111-855acd1b",
+    "date": "2026-11-11",
+    "dateFormatted": "2026/11/11–2026/11/18",
+    "daysAway": 5,
+    "time": "11/11 時間未公布 正戲、11/12 時間未公布 正戲、11/13 時間未公布 正戲、11/14 時間未公布 正戲、11/15 時間未公布 正戲、11/16 時間未公布 正戲、11/17 時間未公布 正戲、11/18 時間未公布 正戲",
+    "troupe": "明華園天字戲劇團",
+    "genre": "歌仔戲",
+    "artist": "未公布",
+    "title": "嵵裡水仙宮外台演出",
+    "category": "廟會民俗演出",
+    "badgeType": "temple",
+    "verifyStatus": "community",
+    "verifyLabel": "📣 社群公告（程式比對原文）",
+    "location": "澎湖縣馬公市嵵裡里24號之1號",
+    "region": "南部",
+    "status": "依社群公告；未列事項請洽劇團或廟方",
+    "description": "依 100063868113954 近期 公告：「嵵裡水仙宮\n時間：11/11-11/18\n地點：澎湖縣馬公市嵵裡里24號之1號」",
+    "link": "https://www.facebook.com/photo/?fbid=1664087395730182",
+    "sourceUrl": "https://www.facebook.com/photo/?fbid=1664087395730182",
+    "tags": [
+      "明華園天字戲劇團"
+    ],
+    "endDate": "2026-11-18",
+    "sessions": [
+      {
+        "date": "2026-11-11",
+        "kind": "正戲",
+        "time": "未公布"
+      },
+      {
+        "date": "2026-11-12",
+        "kind": "正戲",
+        "time": "未公布"
+      },
+      {
+        "date": "2026-11-13",
+        "kind": "正戲",
+        "time": "未公布"
+      },
+      {
+        "date": "2026-11-14",
+        "kind": "正戲",
+        "time": "未公布"
+      },
+      {
+        "date": "2026-11-15",
+        "kind": "正戲",
+        "time": "未公布"
+      },
+      {
+        "date": "2026-11-16",
+        "kind": "正戲",
+        "time": "未公布"
+      },
+      {
+        "date": "2026-11-17",
+        "kind": "正戲",
+        "time": "未公布"
+      },
+      {
+        "date": "2026-11-18",
+        "kind": "正戲",
+        "time": "未公布"
       }
     ]
   }

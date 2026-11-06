@@ -211,36 +211,6 @@
     "rejectedAt": "2026-11-04T03:37:28+08:00"
   },
   {
-    "postKey": "threads:taiwaneseopera168:DfQ5lKaiQVF",
-    "postUrl": "https://www.threads.com/@taiwaneseopera168/post/DfQ5lKaiQVF",
-    "proposal": {
-      "source": "threads:taiwaneseopera168",
-      "postKey": "threads:taiwaneseopera168:DfQ5lKaiQVF",
-      "postUrl": "https://www.threads.com/@taiwaneseopera168/post/DfQ5lKaiQVF",
-      "quote": "12/13(日)明華園星字戲劇團《斷案青天－陰錯陽差》 🕖 每場次開演時間｜19:00 📍 演出地點｜高雄中山堂劇場戶外陽光草坪",
-      "troupe": "明華園星字戲劇團",
-      "title": "《斷案青天－陰錯陽差》",
-      "location": "高雄中山堂劇場戶外陽光草坪",
-      "genre": "歌仔戲",
-      "artist": "未公布",
-      "badgeType": "free",
-      "sessions": [
-        {
-          "date": "2026-12-13",
-          "kind": "正戲",
-          "time": "19:00"
-        }
-      ],
-      "date": "2026-12-13",
-      "time": "12/13 19:00 正戲",
-      "dateFormatted": "2026/12/13"
-    },
-    "reasons": [
-      "badgeType-not-free"
-    ],
-    "rejectedAt": "2026-11-04T23:21:25+08:00"
-  },
-  {
     "postKey": "facebook:61574134933376:122315789156250015",
     "postUrl": "https://www.facebook.com/photo/?fbid=122315789156250015",
     "proposal": {
@@ -269,67 +239,6 @@
       "badgeType-not-free"
     ],
     "rejectedAt": "2026-11-05T03:53:02+08:00"
-  },
-  {
-    "postKey": "verify:4b0d11a24fbd",
-    "postUrl": "https://n.yam.com/Article/20261026226244",
-    "proposal": {
-      "source": "verify",
-      "postKey": "verify:4b0d11a24fbd",
-      "postUrl": "https://n.yam.com/Article/20261026226244",
-      "quote": "11月7日兩地好戲連台 掌中戲與歌仔戲晚場同時段 11月7日週六，陳錫煌掌中戲安排在保元宮本廟，官方海報列出三個時段：11:00至12:00扮仙戲、14:00至16:00《天下財主》，以及18:30至20:30《劈山救母》。想看不同劇目的民眾，可依本廟三場時間安排參拜與休息。 同一天的總醮壇，則由秀琴歌劇團演出。18:30至19:00是扮仙戲《大五福三仙大會》，19:00至21:00演出《玉石變》。",
-      "sessions": [
-        {
-          "date": "2026-11-07",
-          "kind": "扮仙",
-          "time": "18:30"
-        },
-        {
-          "date": "2026-11-07",
-          "kind": "正戲",
-          "time": "19:00"
-        }
-      ],
-      "location": "新北市新莊區莊泰路與國營路交叉口（保元宮建醮總醮壇）",
-      "date": "2026-11-07",
-      "time": "11/7 18:30 扮仙、11/7 19:00 正戲",
-      "dateFormatted": "2026/11/07"
-    },
-    "reasons": [
-      "location-not-in-quote"
-    ],
-    "rejectedAt": "2026-11-05T03:53:03+08:00"
-  },
-  {
-    "postKey": "verify:d38af6d0c6ce",
-    "postUrl": "https://www.opentix.life/event/2090269380048343041",
-    "proposal": {
-      "source": "verify",
-      "postKey": "verify:d38af6d0c6ce",
-      "postUrl": "https://www.opentix.life/event/2090269380048343041",
-      "quote": "【小表演廳】 11/07（六）14:30 一心戲劇團 經典折子《借扇》、《秀嬋申冤》、《虹霓關》 前場習藝生｜禇宥辰、鄭逸嘉、施羿慈、陳韡慈 11/14（六）14:30 薪傳歌仔戲劇團《蒼原孤雁》",
-      "troupe": "薪傳歌仔戲劇團",
-      "title": "《蒼原孤雁》",
-      "location": "臺灣戲曲中心小表演廳",
-      "genre": "歌仔戲",
-      "artist": "未公布",
-      "badgeType": "ticket",
-      "sessions": [
-        {
-          "date": "2026-11-14",
-          "kind": "正戲",
-          "time": "14:30"
-        }
-      ],
-      "date": "2026-11-14",
-      "time": "11/14 14:30 正戲",
-      "dateFormatted": "2026/11/14"
-    },
-    "reasons": [
-      "location-not-in-quote",
-      "badgeType-not-ticket"
-    ],
-    "rejectedAt": "2026-11-05T03:53:03+08:00"
   },
   {
     "postKey": "verify:987058fba2db",
@@ -366,5 +275,162 @@
       "artist-not-in-quote"
     ],
     "rejectedAt": "2026-11-05T03:53:03+08:00"
+  },
+  {
+    "postKey": "threads:taiwaneseopera168:DfQ5lKaiQVF",
+    "postUrl": "https://www.threads.com/@taiwaneseopera168/post/DfQ5lKaiQVF",
+    "proposal": {
+      "source": "threads:taiwaneseopera168",
+      "postKey": "threads:taiwaneseopera168:DfQ5lKaiQVF",
+      "postUrl": "https://www.threads.com/@taiwaneseopera168/post/DfQ5lKaiQVF",
+      "quote": "12/13(日)明華園星字戲劇團《斷案青天－陰錯陽差》 🕖 每場次開演時間｜19:00 📍 演出地點｜高雄中山堂劇場戶外陽光草坪",
+      "troupe": "明華園星字戲劇團",
+      "title": "《斷案青天－陰錯陽差》",
+      "location": "高雄中山堂劇場戶外陽光草坪",
+      "genre": "歌仔戲",
+      "artist": "未公布",
+      "badgeType": "free",
+      "sessions": [
+        {
+          "date": "2026-12-13",
+          "kind": "正戲",
+          "time": "19:00"
+        }
+      ],
+      "date": "2026-12-13",
+      "time": "12/13 19:00 正戲",
+      "dateFormatted": "2026/12/13"
+    },
+    "reasons": [
+      "badgeType-not-free"
+    ],
+    "rejectedAt": "2026-11-06T09:30:48+08:00"
+  },
+  {
+    "postKey": "facebook:MingHuaYuanTianTaiwaneseOpera:67a492174a7d",
+    "postUrl": "https://www.facebook.com/MingHuaYuanTianTaiwaneseOpera/reels_tab",
+    "proposal": {
+      "source": "facebook:MingHuaYuanTianTaiwaneseOpera",
+      "postKey": "facebook:MingHuaYuanTianTaiwaneseOpera:67a492174a7d",
+      "postUrl": "https://www.facebook.com/MingHuaYuanTianTaiwaneseOpera/reels_tab",
+      "quote": "明華園天字戲劇團 農曆10/14 國曆11/22 日 屏東縣潮州鎮彭城路 125 巷 42-3 號【財神宮】",
+      "troupe": "明華園天字戲劇團",
+      "title": "財神宮外台演出",
+      "location": "屏東縣潮州鎮彭城路 125 巷 42-3 號【財神宮】",
+      "genre": "歌仔戲",
+      "artist": "未公布",
+      "badgeType": "temple",
+      "sessions": [
+        {
+          "date": "2026-11-22",
+          "kind": "其他",
+          "time": "未公布"
+        }
+      ],
+      "date": "2026-11-22",
+      "time": "11/22 時間未公布",
+      "dateFormatted": "2026/11/22"
+    },
+    "reasons": [
+      "quote-not-in-post"
+    ],
+    "rejectedAt": "2026-11-06T09:30:48+08:00"
+  },
+  {
+    "postKey": "verify:4b0d11a24fbd",
+    "postUrl": "https://n.yam.com/Article/20261026226244",
+    "proposal": {
+      "source": "verify",
+      "postKey": "verify:4b0d11a24fbd",
+      "postUrl": "https://n.yam.com/Article/20261026226244",
+      "quote": "11月7日週六，陳錫煌掌中戲安排在保元宮本廟，官方海報列出三個時段：11:00至12:00扮仙戲、14:00至16:00《天下財主》，以及18:30至20:30《劈山救母》。想看不同劇目的民眾，可依本廟三場時間安排參拜與休息。 同一天的總醮壇，則由秀琴歌劇團演出。18:30至19:00是扮仙戲《大五福三仙大會》，19:00至21:00演出《玉石變》。",
+      "sessions": [
+        {
+          "date": "2026-11-07",
+          "kind": "扮仙",
+          "time": "18:30"
+        },
+        {
+          "date": "2026-11-07",
+          "kind": "正戲",
+          "time": "19:00"
+        }
+      ],
+      "location": "新莊保元宮建醮總醮壇（新北市新莊區莊泰路、國營路交叉口）",
+      "date": "2026-11-07",
+      "time": "11/7 18:30 扮仙、11/7 19:00 正戲",
+      "dateFormatted": "2026/11/07"
+    },
+    "reasons": [
+      "location-not-in-quote"
+    ],
+    "rejectedAt": "2026-11-06T09:30:48+08:00"
+  },
+  {
+    "postKey": "verify:d38af6d0c6ce",
+    "postUrl": "https://www.opentix.life/event/2090269380048343041",
+    "proposal": {
+      "source": "verify",
+      "postKey": "verify:d38af6d0c6ce",
+      "postUrl": "https://www.opentix.life/event/2090269380048343041",
+      "quote": "【小表演廳】 11/07（六）14:30 一心戲劇團 經典折子《借扇》、《秀嬋申冤》、《虹霓關》 前場習藝生｜禇宥辰、鄭逸嘉、施羿慈、陳韡慈 11/14（六）14:30 薪傳歌仔戲劇團《蒼原孤雁》",
+      "troupe": "薪傳歌仔戲劇團",
+      "title": "《蒼原孤雁》",
+      "location": "臺灣戲曲中心小表演廳",
+      "genre": "歌仔戲",
+      "artist": "未公布",
+      "badgeType": "ticket",
+      "sessions": [
+        {
+          "date": "2026-11-14",
+          "kind": "正戲",
+          "time": "14:30"
+        }
+      ],
+      "date": "2026-11-14",
+      "time": "11/14 14:30 正戲",
+      "dateFormatted": "2026/11/14"
+    },
+    "reasons": [
+      "location-not-in-quote",
+      "badgeType-not-ticket"
+    ],
+    "rejectedAt": "2026-11-06T09:30:48+08:00"
+  },
+  {
+    "postKey": "verify:5ea8fe25a938",
+    "postUrl": "http://karensie.blogspot.com/2015/12/1041224.html",
+    "proposal": {
+      "source": "verify",
+      "postKey": "verify:5ea8fe25a938",
+      "postUrl": "http://karensie.blogspot.com/2015/12/1041224.html",
+      "quote": "12/05(六)-12/06(日)14:30 一心戲劇團 《閻王的假期》 臺北市藝文推廣處城市舞台",
+      "troupe": "一心戲劇團",
+      "title": "《閻王的假期》",
+      "location": "臺北市藝文推廣處城市舞台",
+      "genre": "歌仔戲",
+      "artist": "未公布",
+      "badgeType": "ticket",
+      "sessions": [
+        {
+          "date": "2026-12-05",
+          "kind": "正戲",
+          "time": "14:30"
+        },
+        {
+          "date": "2026-12-06",
+          "kind": "正戲",
+          "time": "14:30"
+        }
+      ],
+      "date": "2026-12-05",
+      "endDate": "2026-12-06",
+      "time": "12/5 14:30 正戲、12/6 14:30 正戲",
+      "dateFormatted": "2026/12/05–2026/12/06"
+    },
+    "reasons": [
+      "badgeType-not-ticket"
+    ],
+    "rejectedAt": "2026-11-06T09:30:48+08:00"
   }
 ]
