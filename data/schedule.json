@@ -2175,5 +2175,36 @@
         "time": "未公布"
       }
     ]
+  },
+  {
+    "id": "auto-20261124-7ac65a66",
+    "date": "2026-11-24",
+    "dateFormatted": "2026/11/24",
+    "daysAway": 17,
+    "time": "11/24 19:00 正戲",
+    "troupe": "明華園天字戲劇團",
+    "genre": "歌仔戲",
+    "artist": "未公布",
+    "title": "《喜脈緣》",
+    "category": "戶外公演",
+    "badgeType": "outdoor",
+    "verifyStatus": "community",
+    "verifyLabel": "📣 社群公告（程式比對原文）",
+    "location": "成功大學校園(歷史系館前方小廣場)",
+    "region": "未分類",
+    "status": "依社群公告；未列事項請洽劇團或廟方",
+    "description": "依 @taiwaneseopera168 2026-11-05 公告：「11/24 10/16 成功大學 95 週年校慶活動 明華園天字戲劇團-《喜脈緣》 演出時間：11/24 18:15｜開放進場 19:00｜正式開演 演出地點：成功大學校園(歷史系館前方小廣場)」",
+    "link": "https://www.threads.com/@taiwaneseopera168/post/DfWONmSCdfQ",
+    "sourceUrl": "https://www.threads.com/@taiwaneseopera168/post/DfWONmSCdfQ",
+    "tags": [
+      "明華園天字戲劇團"
+    ],
+    "sessions": [
+      {
+        "date": "2026-11-24",
+        "kind": "正戲",
+        "time": "19:00"
+      }
+    ]
   }
 ]
