@@ -1,6 +1,6 @@
 {
-  "fetchedAt": "2026-11-05T11:01:40+08:00",
-  "total": 1328,
+  "fetchedAt": "2026-11-06T11:02:19+08:00",
+  "total": 1335,
   "records": [
     {
       "version": "1.4",
@@ -34,7 +34,7 @@
       "sourceWebName": "OPENTIX兩廳院文化生活",
       "startDate": "2026/11/07",
       "endDate": "2026/11/07",
-      "hitRate": 4
+      "hitRate": 7
     },
     {
       "version": "1.4",
@@ -68,7 +68,7 @@
       "sourceWebName": "OPENTIX兩廳院文化生活",
       "startDate": "2026/11/07",
       "endDate": "2026/11/07",
-      "hitRate": 7
+      "hitRate": 8
     },
     {
       "version": "1.4",
@@ -260,7 +260,7 @@
       "sourceWebName": "財團法人典美文化基金會",
       "startDate": "2026/11/14",
       "endDate": "2026/11/22",
-      "hitRate": 12
+      "hitRate": 14
     },
     {
       "version": "1.4",
@@ -296,7 +296,7 @@
       "sourceWebName": "財團法人典美文化基金會",
       "startDate": "2026/11/14",
       "endDate": "2026/11/22",
-      "hitRate": 12
+      "hitRate": 14
     },
     {
       "version": "1.4",
@@ -332,7 +332,7 @@
       "sourceWebName": "財團法人典美文化基金會",
       "startDate": "2026/11/14",
       "endDate": "2026/11/22",
-      "hitRate": 12
+      "hitRate": 14
     },
     {
       "version": "1.4",
@@ -762,7 +762,7 @@
       "sourceWebName": "全國藝文活動資訊系統",
       "startDate": "2026/03/10",
       "endDate": "2026/12/15",
-      "hitRate": 27
+      "hitRate": 30
     },
     {
       "version": "1.4",
@@ -816,7 +816,7 @@
       "sourceWebName": "OPENTIX兩廳院文化生活",
       "startDate": "2026/12/05",
       "endDate": "2026/12/19",
-      "hitRate": 7
+      "hitRate": 8
     },
     {
       "version": "1.4",
@@ -910,7 +910,7 @@
       "sourceWebName": "OPENTIX兩廳院文化生活",
       "startDate": "2026/11/07",
       "endDate": "2026/12/20",
-      "hitRate": 51
+      "hitRate": 53
     },
     {
       "version": "1.4",
@@ -964,7 +964,7 @@
       "sourceWebName": "OPENTIX兩廳院文化生活",
       "startDate": "2026/12/18",
       "endDate": "2026/12/20",
-      "hitRate": 12
+      "hitRate": 13
     },
     {
       "version": "1.4",
@@ -1047,7 +1047,7 @@
       "sourceWebName": "全國藝文活動資訊系統",
       "startDate": "2026/01/02",
       "endDate": "2026/12/31",
-      "hitRate": 25
+      "hitRate": 26
     },
     {
       "version": "1.4",
@@ -1191,7 +1191,7 @@
       "sourceWebName": "全國藝文活動資訊系統",
       "startDate": "2026/01/31",
       "endDate": "2026/12/31",
-      "hitRate": 45
+      "hitRate": 48
     },
     {
       "version": "1.4",
