@@ -373,36 +373,6 @@
     "rejectedAt": "2026-11-07T03:49:50+08:00"
   },
   {
-    "postKey": "threads:taiwaneseopera168:DfQ5lKaiQVF",
-    "postUrl": "https://www.threads.com/@taiwaneseopera168/post/DfQ5lKaiQVF",
-    "proposal": {
-      "source": "threads:taiwaneseopera168",
-      "postKey": "threads:taiwaneseopera168:DfQ5lKaiQVF",
-      "postUrl": "https://www.threads.com/@taiwaneseopera168/post/DfQ5lKaiQVF",
-      "quote": "12/13(日)明華園星字戲劇團《斷案青天－陰錯陽差》 🕖 每場次開演時間｜19:00 📍 演出地點｜高雄中山堂劇場戶外陽光草坪",
-      "troupe": "明華園星字戲劇團",
-      "title": "《斷案青天－陰錯陽差》",
-      "location": "高雄中山堂劇場戶外陽光草坪",
-      "genre": "歌仔戲",
-      "artist": "未公布",
-      "badgeType": "free",
-      "sessions": [
-        {
-          "date": "2026-12-13",
-          "kind": "正戲",
-          "time": "19:00"
-        }
-      ],
-      "date": "2026-12-13",
-      "time": "12/13 19:00 正戲",
-      "dateFormatted": "2026/12/13"
-    },
-    "reasons": [
-      "badgeType-not-free"
-    ],
-    "rejectedAt": "2026-11-07T03:49:51+08:00"
-  },
-  {
     "postKey": "facebook:mhysun:7f43e38c9e26",
     "postUrl": "https://www.facebook.com/mhysun/reels_tab",
     "proposal": {
@@ -493,5 +463,35 @@
       "badgeType-not-ticket"
     ],
     "rejectedAt": "2026-11-07T03:49:51+08:00"
+  },
+  {
+    "postKey": "threads:taiwaneseopera168:DfQ5lKaiQVF",
+    "postUrl": "https://www.threads.com/@taiwaneseopera168/post/DfQ5lKaiQVF",
+    "proposal": {
+      "source": "threads:taiwaneseopera168",
+      "postKey": "threads:taiwaneseopera168:DfQ5lKaiQVF",
+      "postUrl": "https://www.threads.com/@taiwaneseopera168/post/DfQ5lKaiQVF",
+      "quote": "12/13(日)明華園星字戲劇團《斷案青天－陰錯陽差》 🕖 每場次開演時間｜19:00 📍 演出地點｜高雄中山堂劇場戶外陽光草坪",
+      "troupe": "明華園星字戲劇團",
+      "title": "《斷案青天－陰錯陽差》",
+      "location": "高雄中山堂劇場戶外陽光草坪",
+      "genre": "歌仔戲",
+      "artist": "未公布",
+      "badgeType": "free",
+      "sessions": [
+        {
+          "date": "2026-12-13",
+          "kind": "正戲",
+          "time": "19:00"
+        }
+      ],
+      "date": "2026-12-13",
+      "time": "12/13 19:00 正戲",
+      "dateFormatted": "2026/12/13"
+    },
+    "reasons": [
+      "badgeType-not-free"
+    ],
+    "rejectedAt": "2026-11-08T03:51:09+08:00"
   }
 ]

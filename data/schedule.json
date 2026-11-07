@@ -2141,5 +2141,129 @@
         "time": "19:00"
       }
     ]
+  },
+  {
+    "id": "auto-20261108-83d69ed8",
+    "date": "2026-11-08",
+    "dateFormatted": "2026/11/08",
+    "daysAway": 0,
+    "time": "11/8 19:00 正戲",
+    "troupe": "明華園總團",
+    "genre": "歌仔戲",
+    "artist": "未公布",
+    "title": "《劍神呂洞賓》",
+    "category": "免費索票/戶外演出",
+    "badgeType": "free",
+    "verifyStatus": "community",
+    "verifyLabel": "📣 社群公告（程式比對原文）",
+    "location": "北港1911好庫文化產業園區停車場",
+    "region": "未分類",
+    "status": "依社群公告；未列事項請洽劇團或廟方",
+    "description": "依 mhysun 近期 公告：「11/8（日）雲林北港｜《劍神呂洞賓》\n說到呂洞賓，大家一定不陌生！但這次，劍神竟然把最重要的青龍劍弄丟了！\n少了寶劍的呂洞賓，究竟該如何面對接下來的挑戰？這齣戲有神仙、有武打，還有許多意想不到的精彩情節，保證讓大家看得過癮！\n 這次雲林場更特別架設兩座400吋超大銀幕同步轉播！\n希望讓更多鄉親朋友，不論坐在哪個位置，都能透過大銀幕欣賞舞臺上的精彩演出，連演員細膩的表情與身段，都能看得清清楚楚！\n」",
+    "link": "https://www.facebook.com/photo/?fbid=1690749119084639",
+    "sourceUrl": "https://www.facebook.com/photo/?fbid=1690749119084639",
+    "tags": [
+      "明華園總團"
+    ],
+    "sessions": [
+      {
+        "date": "2026-11-08",
+        "kind": "正戲",
+        "time": "19:00"
+      }
+    ]
+  },
+  {
+    "id": "auto-20261108-9a74eeda",
+    "date": "2026-11-08",
+    "dateFormatted": "2026/11/08",
+    "daysAway": 0,
+    "time": "11/8 19:00 正戲",
+    "troupe": "明華園黃字戲劇團",
+    "genre": "歌仔戲",
+    "artist": "未公布",
+    "title": "《三抄府》",
+    "category": "免費索票/戶外演出",
+    "badgeType": "free",
+    "verifyStatus": "community",
+    "verifyLabel": "📣 社群公告（程式比對原文）",
+    "location": "嘉義市北香湖廣場",
+    "region": "南部",
+    "status": "依社群公告；未列事項請洽劇團或廟方",
+    "description": "依 verify 近期 公告：「11月8日（日）晚上7點明華園黃字戲劇團《三抄府》嘉義市北香湖廣場，免費入場。」",
+    "link": "https://taiwanpost.net/2026/lubaimedia/179261",
+    "sourceUrl": "https://taiwanpost.net/2026/lubaimedia/179261",
+    "tags": [
+      "明華園黃字戲劇團"
+    ],
+    "sessions": [
+      {
+        "date": "2026-11-08",
+        "kind": "正戲",
+        "time": "19:00"
+      }
+    ]
+  },
+  {
+    "id": "auto-20261113-982ba682",
+    "date": "2026-11-13",
+    "dateFormatted": "2026/11/13",
+    "daysAway": 5,
+    "time": "11/13 19:00 正戲",
+    "troupe": "大地華園劇團",
+    "genre": "歌仔戲",
+    "artist": "未公布",
+    "title": "《劉全進瓜》",
+    "category": "免費索票/戶外演出",
+    "badgeType": "free",
+    "verifyStatus": "community",
+    "verifyLabel": "📣 社群公告（程式比對原文）",
+    "location": "嘉義市北香湖廣場",
+    "region": "南部",
+    "status": "依社群公告；未列事項請洽劇團或廟方",
+    "description": "依 verify 近期 公告：「11月13日（五）晚上7點大地華園劇團《劉全進瓜》嘉義市北香湖廣場，免費入場。」",
+    "link": "https://taiwanpost.net/2026/lubaimedia/179261",
+    "sourceUrl": "https://taiwanpost.net/2026/lubaimedia/179261",
+    "tags": [
+      "大地華園劇團"
+    ],
+    "sessions": [
+      {
+        "date": "2026-11-13",
+        "kind": "正戲",
+        "time": "19:00"
+      }
+    ]
+  },
+  {
+    "id": "auto-20261114-55ee0e6c",
+    "date": "2026-11-14",
+    "dateFormatted": "2026/11/14",
+    "daysAway": 6,
+    "time": "11/14 19:00 正戲",
+    "troupe": "明華園戲劇總團",
+    "genre": "歌仔戲",
+    "artist": "未公布",
+    "title": "《貓神》",
+    "category": "免費索票/戶外演出",
+    "badgeType": "free",
+    "verifyStatus": "community",
+    "verifyLabel": "📣 社群公告（程式比對原文）",
+    "location": "嘉義舊燈會區—空軍市場",
+    "region": "南部",
+    "status": "依社群公告；未列事項請洽劇團或廟方",
+    "description": "依 verify 近期 公告：「11月14日晚上7點明華園戲劇總團《貓神》嘉義舊燈會區—空軍市場，免費入場。」",
+    "link": "https://taiwanpost.net/2026/lubaimedia/179261",
+    "sourceUrl": "https://taiwanpost.net/2026/lubaimedia/179261",
+    "tags": [
+      "明華園戲劇總團"
+    ],
+    "sessions": [
+      {
+        "date": "2026-11-14",
+        "kind": "正戲",
+        "time": "19:00"
+      }
+    ]
   }
 ]
