@@ -1,32 +1,5 @@
 [
   {
-    "id": "moc-20261107-dc8bac4bd7",
-    "date": "2026-11-07",
-    "dateFormatted": "2026/11/07",
-    "daysAway": 0,
-    "time": "2026/11/07 14:30:00",
-    "troupe": "文化部開放資料候選",
-    "genre": "布袋戲",
-    "artist": "待查官方公告",
-    "title": "台中木偶劇團 《聖劍風雲三》",
-    "category": "文化部 Open Data 候選（待人工核實）",
-    "badgeType": "plan",
-    "verifyStatus": "pending",
-    "verifyLabel": "⏳ 自動發現・待人工核實",
-    "location": "臺中市屯區藝文中心實驗劇場",
-    "region": "中部",
-    "status": "待人工核實",
-    "description": "由文化部公開資料關鍵字找到；發布前請人工核對劇種、主辦單位、日期與場地。",
-    "link": "https://www.opentix.life/program/2080173157578416129",
-    "linkLabel": "來源資訊（待核實）",
-    "sourceUrl": "https://www.opentix.life/program/2080173157578416129",
-    "tags": [
-      "自動發現候選",
-      "布袋戲"
-    ],
-    "matchedIn": "title/unit"
-  },
-  {
     "id": "moc-20261114-5ff7e031e9",
     "date": "2026-11-14",
     "dateFormatted": "2026/11/14",
@@ -52,33 +25,6 @@
       "布袋戲"
     ],
     "matchedIn": "description"
-  },
-  {
-    "id": "moc-20261213-91aabdd1f5",
-    "date": "2026-12-13",
-    "dateFormatted": "2026/12/13",
-    "daysAway": 0,
-    "time": "2026/12/13 14:00:00",
-    "troupe": "文化部開放資料候選",
-    "genre": "布袋戲",
-    "artist": "待查官方公告",
-    "title": "2026偶樂迴響布袋戲音樂劇音樂會",
-    "category": "文化部 Open Data 候選（待人工核實）",
-    "badgeType": "plan",
-    "verifyStatus": "pending",
-    "verifyLabel": "⏳ 自動發現・待人工核實",
-    "location": "嘉義縣表演藝術中心實驗劇場",
-    "region": "南部",
-    "status": "待人工核實",
-    "description": "由文化部公開資料關鍵字找到；發布前請人工核對劇種、主辦單位、日期與場地。",
-    "link": "https://www.opentix.life/program/2110252942473105409",
-    "linkLabel": "來源資訊（待核實）",
-    "sourceUrl": "https://www.opentix.life/program/2110252942473105409",
-    "tags": [
-      "自動發現候選",
-      "布袋戲"
-    ],
-    "matchedIn": "title/unit"
   },
   {
     "id": "moc-20270101-e7a4fdae35",
