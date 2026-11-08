@@ -1,6 +1,6 @@
 {
-  "fetchedAt": "2026-11-07T10:29:46+08:00",
-  "total": 510,
+  "fetchedAt": "2026-11-08T09:58:57+08:00",
+  "total": 504,
   "records": [
     {
       "version": "1.4",
@@ -36,7 +36,7 @@
       "sourceWebName": "財團法人典美文化基金會",
       "startDate": "2026/11/14",
       "endDate": "2026/11/22",
-      "hitRate": 14
+      "hitRate": 16
     },
     {
       "version": "1.4",
@@ -72,7 +72,7 @@
       "sourceWebName": "財團法人典美文化基金會",
       "startDate": "2026/11/14",
       "endDate": "2026/11/22",
-      "hitRate": 14
+      "hitRate": 16
     },
     {
       "version": "1.4",
@@ -108,7 +108,7 @@
       "sourceWebName": "財團法人典美文化基金會",
       "startDate": "2026/11/14",
       "endDate": "2026/11/22",
-      "hitRate": 14
+      "hitRate": 16
     },
     {
       "version": "1.4",
@@ -185,7 +185,43 @@
       "sourceWebName": "全國藝文活動資訊系統",
       "startDate": "2026/01/02",
       "endDate": "2026/12/31",
-      "hitRate": 27
+      "hitRate": 28
+    },
+    {
+      "version": "1.4",
+      "UID": "69b1c11f26b3242a48a9da89",
+      "title": "高雄市皮影戲館常設展",
+      "category": "6",
+      "showInfo": [
+        {
+          "time": "2026/01/01 09:00:00",
+          "location": "高雄市岡山區009鄰岡山南路42號",
+          "locationName": "高雄市政府文化局﹝岡山文化中心﹞",
+          "onSales": "N",
+          "price": "",
+          "latitude": "22.7832758",
+          "longitude": "120.2982709",
+          "endTime": "2026/12/31 17:00:00"
+        }
+      ],
+      "showUnit": "(中華民國)高雄市立歷史博物館",
+      "discountInfo": "",
+      "descriptionFilterHtml": "館內常設展覽亦重新規劃，不僅展示皮影戲偶、樂器、燈光、影窗等文物，更強調互動體驗與視覺效果的變化，像是設計早期皮影戲演出的暗室，搭設原始牛車戲台，享受最真實的古早味光、影演出實境。創新的親子劇場則設計可移動式舞台及親子座位，除讓偶戲演出有無限的可能，更拉近民眾之間的距離。難到來到皮影戲館的民眾，還可以在影藏1號店選購皮影戲館獨家設計的文創商品作為紀念。",
+      "imageUrl": "",
+      "masterUnit": [
+        "高雄市立歷史博物館"
+      ],
+      "subUnit": [],
+      "supportUnit": [],
+      "otherUnit": [],
+      "webSales": "",
+      "sourceWebPromote": "",
+      "comment": "",
+      "editModifyDate": "",
+      "sourceWebName": "全國藝文活動資訊系統",
+      "startDate": "2026/01/01",
+      "endDate": "2026/12/31",
+      "hitRate": 13
     },
     {
       "version": "1.4",
@@ -261,42 +297,6 @@
     },
     {
       "version": "1.4",
-      "UID": "69b1c11f26b3242a48a9da89",
-      "title": "高雄市皮影戲館常設展",
-      "category": "6",
-      "showInfo": [
-        {
-          "time": "2026/01/01 09:00:00",
-          "location": "高雄市岡山區009鄰岡山南路42號",
-          "locationName": "高雄市政府文化局﹝岡山文化中心﹞",
-          "onSales": "N",
-          "price": "",
-          "latitude": "22.7832758",
-          "longitude": "120.2982709",
-          "endTime": "2026/12/31 17:00:00"
-        }
-      ],
-      "showUnit": "(中華民國)高雄市立歷史博物館",
-      "discountInfo": "",
-      "descriptionFilterHtml": "館內常設展覽亦重新規劃，不僅展示皮影戲偶、樂器、燈光、影窗等文物，更強調互動體驗與視覺效果的變化，像是設計早期皮影戲演出的暗室，搭設原始牛車戲台，享受最真實的古早味光、影演出實境。創新的親子劇場則設計可移動式舞台及親子座位，除讓偶戲演出有無限的可能，更拉近民眾之間的距離。難到來到皮影戲館的民眾，還可以在影藏1號店選購皮影戲館獨家設計的文創商品作為紀念。",
-      "imageUrl": "",
-      "masterUnit": [
-        "高雄市立歷史博物館"
-      ],
-      "subUnit": [],
-      "supportUnit": [],
-      "otherUnit": [],
-      "webSales": "",
-      "sourceWebPromote": "",
-      "comment": "",
-      "editModifyDate": "",
-      "sourceWebName": "全國藝文活動資訊系統",
-      "startDate": "2026/01/01",
-      "endDate": "2026/12/31",
-      "hitRate": 13
-    },
-    {
-      "version": "1.4",
       "UID": "69cc269326b3242a48a9dfc1",
       "title": "三昧堂精工布袋戲展",
       "category": "6",
@@ -329,7 +329,7 @@
       "sourceWebName": "全國藝文活動資訊系統",
       "startDate": "2026/01/31",
       "endDate": "2026/12/31",
-      "hitRate": 50
+      "hitRate": 52
     },
     {
       "version": "1.4",
