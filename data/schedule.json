@@ -1955,5 +1955,98 @@
         "time": "19:00"
       }
     ]
+  },
+  {
+    "id": "auto-20261122-d9f70fb6",
+    "date": "2026-11-22",
+    "dateFormatted": "2026/11/22",
+    "daysAway": 13,
+    "time": "11/22 時間未公布",
+    "troupe": "明華園天字戲劇團",
+    "genre": "歌仔戲",
+    "artist": "未公布",
+    "title": "財神宮外台演出",
+    "category": "廟會民俗演出",
+    "badgeType": "temple",
+    "verifyStatus": "community",
+    "verifyLabel": "📣 社群公告（程式比對原文）",
+    "location": "屏東縣潮州鎮彭城路125巷42-3號【財神宮】",
+    "region": "南部",
+    "status": "依社群公告；未列事項請洽劇團或廟方",
+    "description": "依 MingHuaYuanTianTaiwaneseOpera 近期 公告：「明華園天字戲劇團 國曆11/22 屏東縣潮州鎮彭城路125巷42-3號【財神宮】 時間未標示」",
+    "link": "https://www.facebook.com/MingHuaYuanTianTaiwaneseOpera/reels_tab",
+    "sourceUrl": "https://www.facebook.com/MingHuaYuanTianTaiwaneseOpera/reels_tab",
+    "tags": [
+      "明華園天字戲劇團"
+    ],
+    "sessions": [
+      {
+        "date": "2026-11-22",
+        "kind": "其他",
+        "time": "未公布"
+      }
+    ]
+  },
+  {
+    "id": "auto-20261115-78fc7a02",
+    "date": "2026-11-15",
+    "dateFormatted": "2026/11/15",
+    "daysAway": 6,
+    "time": "11/15 19:00 正戲",
+    "troupe": "明華園總團",
+    "genre": "歌仔戲",
+    "artist": "未公布",
+    "title": "《蓬萊仙島・漢鍾離》",
+    "category": "預定演出",
+    "badgeType": "plan",
+    "verifyStatus": "community",
+    "verifyLabel": "📣 社群公告（程式比對原文）",
+    "location": "斗六藝術水岸園區",
+    "region": "未分類",
+    "status": "依社群公告；未列事項請洽劇團或廟方",
+    "description": "依 mhysun 近期 公告：「11/15（日）晚上7:00\n明華園總團將再次來到雲林，在斗六藝術水岸園區帶來《蓬萊仙島・漢鍾離》2026傳承版！」",
+    "link": "https://www.facebook.com/mhysun/reels_tab",
+    "sourceUrl": "https://www.facebook.com/mhysun/reels_tab",
+    "tags": [
+      "明華園總團"
+    ],
+    "sessions": [
+      {
+        "date": "2026-11-15",
+        "kind": "正戲",
+        "time": "19:00"
+      }
+    ]
+  },
+  {
+    "id": "auto-20261114-31a84bb3",
+    "date": "2026-11-14",
+    "dateFormatted": "2026/11/14",
+    "daysAway": 5,
+    "time": "11/14 15:00 正戲",
+    "troupe": "台中木偶劇團",
+    "genre": "布袋戲",
+    "artist": "未公布",
+    "title": "『波比大冒險』",
+    "category": "免費索票/戶外演出",
+    "badgeType": "free",
+    "verifyStatus": "community",
+    "verifyLabel": "📣 社群公告（程式比對原文）",
+    "location": "臺中市屯區藝文中心-茄苳樹區",
+    "region": "中部",
+    "status": "依社群公告；未列事項請洽劇團或廟方",
+    "description": "依 Taichungpuppettheater 近期 公告：「台中木偶劇團親子兒童劇『波比大冒險』\n一場充滿勇氣、智慧與歡笑的冒險，就要登場啦！\n波比在回家的路上，意外遇上了大野狼，究竟牠能不能運用智慧化解危機？途中又會遇見哪些有趣的夥伴呢？\n生動有趣的故事，帶著大朋友、小朋友一起進入奇幻的冒險世界～\n週末歡迎爸爸媽媽帶著孩子，一起來看戲\n 演出時間｜11月14日（六）15:00\n 節目長度｜60分鐘\n 入場方式｜免費入場\n 演出地點｜臺中市屯區藝文中心-茄」",
+    "link": "https://www.facebook.com/Taichungpuppettheater/reels_tab",
+    "sourceUrl": "https://www.facebook.com/Taichungpuppettheater/reels_tab",
+    "tags": [
+      "台中木偶劇團"
+    ],
+    "sessions": [
+      {
+        "date": "2026-11-14",
+        "kind": "正戲",
+        "time": "15:00"
+      }
+    ]
   }
 ]

@@ -433,38 +433,6 @@
     "rejectedAt": "2026-11-07T03:49:51+08:00"
   },
   {
-    "postKey": "verify:d38af6d0c6ce",
-    "postUrl": "https://www.opentix.life/event/2090269380048343041",
-    "proposal": {
-      "source": "verify",
-      "postKey": "verify:d38af6d0c6ce",
-      "postUrl": "https://www.opentix.life/event/2090269380048343041",
-      "quote": "【小表演廳】 11/07（六）14:30 一心戲劇團 經典折子《借扇》、《秀嬋申冤》、《虹霓關》 前場習藝生｜禇宥辰、鄭逸嘉、施羿慈、陳韡慈 11/14（六）14:30 薪傳歌仔戲劇團《蒼原孤雁》",
-      "troupe": "薪傳歌仔戲劇團",
-      "title": "戲釀青春──2026育成聯合展演：薪傳歌仔戲劇團《蒼原孤雁》",
-      "location": "臺灣戲曲中心小表演廳（臺北市士林區文林路751號）",
-      "genre": "歌仔戲",
-      "artist": "未公布",
-      "badgeType": "ticket",
-      "sessions": [
-        {
-          "date": "2026-11-14",
-          "kind": "正戲",
-          "time": "14:30"
-        }
-      ],
-      "date": "2026-11-14",
-      "time": "11/14 14:30 正戲",
-      "dateFormatted": "2026/11/14"
-    },
-    "reasons": [
-      "location-not-in-quote",
-      "title-not-in-quote",
-      "badgeType-not-ticket"
-    ],
-    "rejectedAt": "2026-11-07T03:49:51+08:00"
-  },
-  {
     "postKey": "threads:taiwaneseopera168:DfQ5lKaiQVF",
     "postUrl": "https://www.threads.com/@taiwaneseopera168/post/DfQ5lKaiQVF",
     "proposal": {
@@ -492,6 +460,38 @@
     "reasons": [
       "badgeType-not-free"
     ],
-    "rejectedAt": "2026-11-08T03:51:09+08:00"
+    "rejectedAt": "2026-11-09T03:45:20+08:00"
+  },
+  {
+    "postKey": "verify:d38af6d0c6ce",
+    "postUrl": "https://www.opentix.life/event/2090269380048343041",
+    "proposal": {
+      "source": "verify",
+      "postKey": "verify:d38af6d0c6ce",
+      "postUrl": "https://www.opentix.life/event/2090269380048343041",
+      "quote": "【小表演廳】 11/07（六）14:30 一心戲劇團 經典折子《借扇》、《秀嬋申冤》、《虹霓關》 前場習藝生｜禇宥辰、鄭逸嘉、施羿慈、陳韡慈 11/14（六）14:30 薪傳歌仔戲劇團《蒼原孤雁》",
+      "troupe": "薪傳歌仔戲劇團",
+      "title": "戲釀青春──2026育成聯合展演《蒼原孤雁》",
+      "location": "臺灣戲曲中心小表演廳",
+      "genre": "歌仔戲",
+      "artist": "未公布",
+      "badgeType": "ticket",
+      "sessions": [
+        {
+          "date": "2026-11-14",
+          "kind": "正戲",
+          "time": "14:30"
+        }
+      ],
+      "date": "2026-11-14",
+      "time": "11/14 14:30 正戲",
+      "dateFormatted": "2026/11/14"
+    },
+    "reasons": [
+      "location-not-in-quote",
+      "title-not-in-quote",
+      "badgeType-not-ticket"
+    ],
+    "rejectedAt": "2026-11-09T03:45:20+08:00"
   }
 ]
