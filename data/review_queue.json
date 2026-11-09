@@ -211,36 +211,6 @@
     "rejectedAt": "2026-11-04T03:37:28+08:00"
   },
   {
-    "postKey": "facebook:61574134933376:122315789156250015",
-    "postUrl": "https://www.facebook.com/photo/?fbid=122315789156250015",
-    "proposal": {
-      "source": "facebook:61574134933376",
-      "postKey": "facebook:61574134933376:122315789156250015",
-      "postUrl": "https://www.facebook.com/photo/?fbid=122315789156250015",
-      "quote": "12/13（日）明華園星字戲劇團《斷案青天－陰錯陽差》\n 每場次開演時間｜19:00  \n 演出地點｜高雄中山堂劇場戶外陽光草坪",
-      "troupe": "明華園星字戲劇團",
-      "title": "《斷案青天－陰錯陽差》",
-      "location": "高雄中山堂劇場戶外陽光草坪",
-      "genre": "歌仔戲",
-      "artist": "未公布",
-      "badgeType": "free",
-      "sessions": [
-        {
-          "date": "2026-12-13",
-          "kind": "正戲",
-          "time": "19:00"
-        }
-      ],
-      "date": "2026-12-13",
-      "time": "12/13 19:00 正戲",
-      "dateFormatted": "2026/12/13"
-    },
-    "reasons": [
-      "badgeType-not-free"
-    ],
-    "rejectedAt": "2026-11-05T03:53:02+08:00"
-  },
-  {
     "postKey": "verify:987058fba2db",
     "postUrl": "https://kinotw.com/show/moc-6a7a050026b32427d06043a4-83f10878",
     "proposal": {
@@ -463,6 +433,36 @@
     "rejectedAt": "2026-11-09T03:45:20+08:00"
   },
   {
+    "postKey": "facebook:61574134933376:122315789156250015",
+    "postUrl": "https://www.facebook.com/photo/?fbid=122315789156250015",
+    "proposal": {
+      "source": "facebook:61574134933376",
+      "postKey": "facebook:61574134933376:122315789156250015",
+      "postUrl": "https://www.facebook.com/photo/?fbid=122315789156250015",
+      "quote": "12/13（日）明華園星字戲劇團《斷案青天－陰錯陽差》\n 每場次開演時間｜19:00  \n 演出地點｜高雄中山堂劇場戶外陽光草坪",
+      "troupe": "明華園星字戲劇團",
+      "title": "《斷案青天－陰錯陽差》",
+      "location": "高雄中山堂劇場戶外陽光草坪",
+      "genre": "歌仔戲",
+      "artist": "未公布",
+      "badgeType": "free",
+      "sessions": [
+        {
+          "date": "2026-12-13",
+          "kind": "正戲",
+          "time": "19:00"
+        }
+      ],
+      "date": "2026-12-13",
+      "time": "12/13 19:00 正戲",
+      "dateFormatted": "2026/12/13"
+    },
+    "reasons": [
+      "badgeType-not-free"
+    ],
+    "rejectedAt": "2026-11-10T03:46:39+08:00"
+  },
+  {
     "postKey": "verify:d38af6d0c6ce",
     "postUrl": "https://www.opentix.life/event/2090269380048343041",
     "proposal": {
@@ -471,7 +471,7 @@
       "postUrl": "https://www.opentix.life/event/2090269380048343041",
       "quote": "【小表演廳】 11/07（六）14:30 一心戲劇團 經典折子《借扇》、《秀嬋申冤》、《虹霓關》 前場習藝生｜禇宥辰、鄭逸嘉、施羿慈、陳韡慈 11/14（六）14:30 薪傳歌仔戲劇團《蒼原孤雁》",
       "troupe": "薪傳歌仔戲劇團",
-      "title": "戲釀青春──2026育成聯合展演《蒼原孤雁》",
+      "title": "《蒼原孤雁》",
       "location": "臺灣戲曲中心小表演廳",
       "genre": "歌仔戲",
       "artist": "未公布",
@@ -489,9 +489,8 @@
     },
     "reasons": [
       "location-not-in-quote",
-      "title-not-in-quote",
       "badgeType-not-ticket"
     ],
-    "rejectedAt": "2026-11-09T03:45:20+08:00"
+    "rejectedAt": "2026-11-10T03:46:39+08:00"
   }
 ]

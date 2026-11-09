@@ -1831,5 +1831,36 @@
         "time": "15:00"
       }
     ]
+  },
+  {
+    "id": "auto-20261114-3ca6debc",
+    "date": "2026-11-14",
+    "dateFormatted": "2026/11/14",
+    "daysAway": 4,
+    "time": "11/14 17:00",
+    "troupe": "春美歌劇團",
+    "genre": "歌仔戲",
+    "artist": "未公布",
+    "title": "灣裡文聖堂外台演出",
+    "category": "預定演出",
+    "badgeType": "plan",
+    "verifyStatus": "community",
+    "verifyLabel": "📣 社群公告（程式比對原文）",
+    "location": "灣裡文聖堂",
+    "region": "未分類",
+    "status": "依社群公告；未列事項請洽劇團或廟方",
+    "description": "依 @jing__1017 2026-11-10 公告：「美食餐車市集&春美歌劇團 邊吃著美食邊看歌劇，等待海口宮ㄟ煙火秀 這次活動招商比較多廠商進場，所以有更多的美食可以選擇，就像似美食商街一樣 📅 活動日期｜11/14（六） 🕔 活動時間｜17：00 📍 活動地點｜灣裡文聖堂」",
+    "link": "https://www.threads.com/@jing__1017/post/DfhzTPJj2HJ",
+    "sourceUrl": "https://www.threads.com/@jing__1017/post/DfhzTPJj2HJ",
+    "tags": [
+      "春美歌劇團"
+    ],
+    "sessions": [
+      {
+        "date": "2026-11-14",
+        "kind": "其他",
+        "time": "17:00"
+      }
+    ]
   }
 ]
