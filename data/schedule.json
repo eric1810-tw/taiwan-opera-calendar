@@ -562,9 +562,9 @@
   {
     "id": "mhy-oolong-wv-2026-12-19",
     "date": "2026-12-19",
-    "dateFormatted": "2026/12/19（六）–12/20（日）",
+    "dateFormatted": "2026/12/19–2026/12/20",
     "daysAway": 38,
-    "time": "未公布",
+    "time": "12/19 14:30 正戲、12/20 14:30 正戲",
     "troupe": "明華園戲劇總團",
     "genre": "歌仔戲",
     "artist": "孫翠鳳",
@@ -579,9 +579,10 @@
     "description": "孫翠鳳已驗證 Facebook 帳號列明《烏龍天下》12/19–20於衛武營演出，並連至 OPENTIX 活動頁；售票頁未顯示逐場演出時間，故保留未公布。",
     "link": "https://www.opentix.life/event/2105624453117001729",
     "linkLabel": "OPENTIX 衛武營活動頁",
-    "sourceUrl": "https://www.facebook.com/reel/1836919060822921",
+    "sourceUrl": "https://www.npac-weiwuying.org/news/69f7f60b28083100085720f3",
     "relatedSourceUrls": [
-      "https://www.facebook.com/mhysun"
+      "https://www.facebook.com/mhysun",
+      "https://www.facebook.com/reel/1836919060822921"
     ],
     "tags": [
       "明華園總團",
@@ -589,7 +590,19 @@
       "歌仔戲",
       "社群來源"
     ],
-    "endDate": "2026-12-20"
+    "endDate": "2026-12-20",
+    "sessions": [
+      {
+        "date": "2026-12-19",
+        "kind": "正戲",
+        "time": "14:30"
+      },
+      {
+        "date": "2026-12-20",
+        "kind": "正戲",
+        "time": "14:30"
+      }
+    ]
   },
   {
     "id": "moc-20261219-1d14d3c2af",
@@ -1800,6 +1813,229 @@
         "date": "2026-11-14",
         "kind": "其他",
         "time": "17:00"
+      }
+    ]
+  },
+  {
+    "id": "auto-20270306-b7a67ab6",
+    "date": "2027-03-06",
+    "dateFormatted": "2027/03/06–2027/03/07",
+    "daysAway": 114,
+    "time": "3/6 14:30 正戲、3/7 14:30 正戲",
+    "troupe": "後場作戲",
+    "genre": "歌仔戲",
+    "artist": "陳芸楚",
+    "title": "出塵入凡—陳芸楚小旦專場",
+    "category": "預定演出",
+    "badgeType": "plan",
+    "verifyStatus": "community",
+    "verifyLabel": "📣 社群公告（程式比對原文）",
+    "location": "高雄中山堂劇場",
+    "region": "南部",
+    "status": "依社群公告；未列事項請洽劇團或廟方",
+    "description": "依 @taiwaneseopera168 2026-11-05 公告：「後場作戲 出塵入凡—陳芸楚小旦專場 2027戲曲新秀專場舞臺 3/6 Sat. 14:30 3/7 Sun. 14:30 高雄中山堂劇場 國立傳統藝術中心」",
+    "link": "https://www.threads.com/@taiwaneseopera168/post/DfWAAt6CT5a",
+    "sourceUrl": "https://www.threads.com/@taiwaneseopera168/post/DfWAAt6CT5a",
+    "tags": [
+      "後場作戲"
+    ],
+    "endDate": "2027-03-07",
+    "sessions": [
+      {
+        "date": "2027-03-06",
+        "kind": "正戲",
+        "time": "14:30"
+      },
+      {
+        "date": "2027-03-07",
+        "kind": "正戲",
+        "time": "14:30"
+      }
+    ]
+  },
+  {
+    "id": "auto-20261128-1abe1686",
+    "date": "2026-11-28",
+    "dateFormatted": "2026/11/28",
+    "daysAway": 16,
+    "time": "11/28 19:00 正戲",
+    "troupe": "民安歌劇團",
+    "genre": "歌仔戲",
+    "artist": "未公布",
+    "title": "《包公審烏盆》",
+    "category": "預定演出",
+    "badgeType": "plan",
+    "verifyStatus": "community",
+    "verifyLabel": "📣 社群公告（程式比對原文）",
+    "location": "松山車站南側交4廣場",
+    "region": "未分類",
+    "status": "依社群公告；未列事項請洽劇團或廟方",
+    "description": "依 @jing__1017 2026-11-11 公告：「民安歌劇團 11/28（六）19:00 《包公審烏盆》 演出地點：松山車站南側交4廣場」",
+    "link": "https://www.threads.com/@jing__1017/post/DfmopfwicDS",
+    "sourceUrl": "https://www.threads.com/@jing__1017/post/DfmopfwicDS",
+    "tags": [
+      "民安歌劇團"
+    ],
+    "sessions": [
+      {
+        "date": "2026-11-28",
+        "kind": "正戲",
+        "time": "19:00"
+      }
+    ]
+  },
+  {
+    "id": "auto-20261129-49ba0075",
+    "date": "2026-11-29",
+    "dateFormatted": "2026/11/29",
+    "daysAway": 17,
+    "time": "11/29 19:00 正戲",
+    "troupe": "明華園日團歌仔戲",
+    "genre": "歌仔戲",
+    "artist": "未公布",
+    "title": "《鬼菩薩》",
+    "category": "預定演出",
+    "badgeType": "plan",
+    "verifyStatus": "community",
+    "verifyLabel": "📣 社群公告（程式比對原文）",
+    "location": "松山車站南側交4廣場",
+    "region": "未分類",
+    "status": "依社群公告；未列事項請洽劇團或廟方",
+    "description": "依 @jing__1017 2026-11-11 公告：「明華園日團歌仔戲 11/29（日）19:00 《鬼菩薩》 演出地點：松山車站南側交4廣場」",
+    "link": "https://www.threads.com/@jing__1017/post/DfmopfwicDS",
+    "sourceUrl": "https://www.threads.com/@jing__1017/post/DfmopfwicDS",
+    "tags": [
+      "明華園日團歌仔戲"
+    ],
+    "sessions": [
+      {
+        "date": "2026-11-29",
+        "kind": "正戲",
+        "time": "19:00"
+      }
+    ]
+  },
+  {
+    "id": "auto-20261130-34e110be",
+    "date": "2026-11-30",
+    "dateFormatted": "2026/11/30",
+    "daysAway": 18,
+    "time": "11/30 19:00 正戲",
+    "troupe": "新聲劇坊",
+    "genre": "歌仔戲",
+    "artist": "未公布",
+    "title": "《新．女兒國》",
+    "category": "預定演出",
+    "badgeType": "plan",
+    "verifyStatus": "community",
+    "verifyLabel": "📣 社群公告（程式比對原文）",
+    "location": "松山車站南側交4廣場",
+    "region": "未分類",
+    "status": "依社群公告；未列事項請洽劇團或廟方",
+    "description": "依 @jing__1017 2026-11-11 公告：「新聲劇坊 11/30（一）19:00 《新．女兒國》 演出地點：松山車站南側交4廣場」",
+    "link": "https://www.threads.com/@jing__1017/post/DfmopfwicDS",
+    "sourceUrl": "https://www.threads.com/@jing__1017/post/DfmopfwicDS",
+    "tags": [
+      "新聲劇坊"
+    ],
+    "sessions": [
+      {
+        "date": "2026-11-30",
+        "kind": "正戲",
+        "time": "19:00"
+      }
+    ]
+  },
+  {
+    "id": "auto-20261201-ac636bf1",
+    "date": "2026-12-01",
+    "dateFormatted": "2026/12/01",
+    "daysAway": 19,
+    "time": "12/1 19:00 正戲",
+    "troupe": "薪傳歌仔戲劇團",
+    "genre": "歌仔戲",
+    "artist": "未公布",
+    "title": "《三娘教子》",
+    "category": "預定演出",
+    "badgeType": "plan",
+    "verifyStatus": "community",
+    "verifyLabel": "📣 社群公告（程式比對原文）",
+    "location": "松山車站南側交4廣場",
+    "region": "未分類",
+    "status": "依社群公告；未列事項請洽劇團或廟方",
+    "description": "依 @jing__1017 2026-11-11 公告：「薪傳歌仔戲劇團 12/01（二）19:00 《三娘教子》 演出地點：松山車站南側交4廣場」",
+    "link": "https://www.threads.com/@jing__1017/post/DfmopfwicDS",
+    "sourceUrl": "https://www.threads.com/@jing__1017/post/DfmopfwicDS",
+    "tags": [
+      "薪傳歌仔戲劇團"
+    ],
+    "sessions": [
+      {
+        "date": "2026-12-01",
+        "kind": "正戲",
+        "time": "19:00"
+      }
+    ]
+  },
+  {
+    "id": "auto-20261202-fccc1e03",
+    "date": "2026-12-02",
+    "dateFormatted": "2026/12/02",
+    "daysAway": 20,
+    "time": "12/2 19:00 正戲",
+    "troupe": "金麟戲劇團",
+    "genre": "歌仔戲",
+    "artist": "未公布",
+    "title": "《青石引—九尾傾心》",
+    "category": "預定演出",
+    "badgeType": "plan",
+    "verifyStatus": "community",
+    "verifyLabel": "📣 社群公告（程式比對原文）",
+    "location": "松山車站南側交4廣場",
+    "region": "未分類",
+    "status": "依社群公告；未列事項請洽劇團或廟方",
+    "description": "依 @jing__1017 2026-11-11 公告：「金麟戲劇團 12/02（三）19:00 《青石引—九尾傾心》 演出地點：松山車站南側交4廣場」",
+    "link": "https://www.threads.com/@jing__1017/post/DfmopfwicDS",
+    "sourceUrl": "https://www.threads.com/@jing__1017/post/DfmopfwicDS",
+    "tags": [
+      "金麟戲劇團"
+    ],
+    "sessions": [
+      {
+        "date": "2026-12-02",
+        "kind": "正戲",
+        "time": "19:00"
+      }
+    ]
+  },
+  {
+    "id": "auto-20261203-f90f56f1",
+    "date": "2026-12-03",
+    "dateFormatted": "2026/12/03",
+    "daysAway": 21,
+    "time": "12/3 19:00 正戲",
+    "troupe": "陳美雲歌劇團",
+    "genre": "歌仔戲",
+    "artist": "未公布",
+    "title": "《父子情》",
+    "category": "預定演出",
+    "badgeType": "plan",
+    "verifyStatus": "community",
+    "verifyLabel": "📣 社群公告（程式比對原文）",
+    "location": "松山車站南側交4廣場",
+    "region": "未分類",
+    "status": "依社群公告；未列事項請洽劇團或廟方",
+    "description": "依 @jing__1017 2026-11-11 公告：「陳美雲歌劇團 12/03（四）19:00 《父子情》 演出地點：松山車站南側交4廣場」",
+    "link": "https://www.threads.com/@jing__1017/post/DfmopfwicDS",
+    "sourceUrl": "https://www.threads.com/@jing__1017/post/DfmopfwicDS",
+    "tags": [
+      "陳美雲歌劇團"
+    ],
+    "sessions": [
+      {
+        "date": "2026-12-03",
+        "kind": "正戲",
+        "time": "19:00"
       }
     ]
   }

@@ -460,7 +460,7 @@
     "reasons": [
       "badgeType-not-free"
     ],
-    "rejectedAt": "2026-11-11T03:42:02+08:00"
+    "rejectedAt": "2026-11-12T03:51:01+08:00"
   },
   {
     "postKey": "verify:d38af6d0c6ce",
@@ -491,6 +491,6 @@
       "location-not-in-quote",
       "badgeType-not-ticket"
     ],
-    "rejectedAt": "2026-11-11T03:42:02+08:00"
+    "rejectedAt": "2026-11-12T03:51:02+08:00"
   }
 ]
