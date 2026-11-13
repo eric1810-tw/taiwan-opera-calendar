@@ -181,36 +181,6 @@
     "rejectedAt": "2026-11-04T03:37:27+08:00"
   },
   {
-    "postKey": "verify:9941e7007cee",
-    "postUrl": "https://www.ncfta.gov.tw/News_Content.aspx?n=5178&s=264641",
-    "proposal": {
-      "source": "verify",
-      "postKey": "verify:9941e7007cee",
-      "postUrl": "https://www.ncfta.gov.tw/News_Content.aspx?n=5178&s=264641",
-      "quote": "演出地點：臺灣戲曲中心小表演廳 11/07(六)14:30一心戲劇團 經典折子《借扇》、《秀嬋申冤》、《虹霓關》 11/14(六)14:30薪傳歌仔戲劇團《蒼原孤雁》",
-      "troupe": "薪傳歌仔戲劇團",
-      "title": "《蒼原孤雁》",
-      "location": "臺灣戲曲中心小表演廳（臺北市士林區文林路751號）",
-      "genre": "歌仔戲",
-      "artist": "未公布",
-      "badgeType": "ticket",
-      "sessions": [
-        {
-          "date": "2026-11-14",
-          "kind": "正戲",
-          "time": "14:30"
-        }
-      ],
-      "date": "2026-11-14",
-      "time": "11/14 14:30 正戲",
-      "dateFormatted": "2026/11/14"
-    },
-    "reasons": [
-      "badgeType-not-ticket"
-    ],
-    "rejectedAt": "2026-11-04T03:37:28+08:00"
-  },
-  {
     "postKey": "verify:987058fba2db",
     "postUrl": "https://kinotw.com/show/moc-6a7a050026b32427d06043a4-83f10878",
     "proposal": {
@@ -529,5 +499,36 @@
       "badgeType-not-ticket"
     ],
     "rejectedAt": "2026-11-13T03:44:41+08:00"
+  },
+  {
+    "postKey": "verify:9941e7007cee",
+    "postUrl": "https://www.ncfta.gov.tw/News_Content.aspx?n=5178&s=264641",
+    "proposal": {
+      "source": "verify",
+      "postKey": "verify:9941e7007cee",
+      "postUrl": "https://www.ncfta.gov.tw/News_Content.aspx?n=5178&s=264641",
+      "quote": "演出地點：臺灣戲曲中心小表演廳 11/07(六)14:30一心戲劇團 經典折子《借扇》、《秀嬋申冤》、《虹霓關》 11/14(六)14:30薪傳歌仔戲劇團《蒼原孤雁》",
+      "troupe": "薪傳歌仔戲劇團",
+      "title": "《蒼原孤雁》（戲釀青春──2026駐團演訓計畫 育成聯合展演）",
+      "location": "臺灣戲曲中心小表演廳",
+      "genre": "歌仔戲",
+      "artist": "未公布",
+      "badgeType": "ticket",
+      "sessions": [
+        {
+          "date": "2026-11-14",
+          "kind": "正戲",
+          "time": "14:30"
+        }
+      ],
+      "date": "2026-11-14",
+      "time": "11/14 14:30 正戲",
+      "dateFormatted": "2026/11/14"
+    },
+    "reasons": [
+      "title-not-in-quote",
+      "badgeType-not-ticket"
+    ],
+    "rejectedAt": "2026-11-14T03:46:08+08:00"
   }
 ]
