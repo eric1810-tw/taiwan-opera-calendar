@@ -1,6 +1,6 @@
 {
-  "fetchedAt": "2026-11-08T09:58:57+08:00",
-  "total": 504,
+  "fetchedAt": "2026-11-13T11:05:45+08:00",
+  "total": 508,
   "records": [
     {
       "version": "1.4",
@@ -36,7 +36,7 @@
       "sourceWebName": "財團法人典美文化基金會",
       "startDate": "2026/11/14",
       "endDate": "2026/11/22",
-      "hitRate": 16
+      "hitRate": 24
     },
     {
       "version": "1.4",
@@ -72,7 +72,7 @@
       "sourceWebName": "財團法人典美文化基金會",
       "startDate": "2026/11/14",
       "endDate": "2026/11/22",
-      "hitRate": 16
+      "hitRate": 24
     },
     {
       "version": "1.4",
@@ -108,7 +108,7 @@
       "sourceWebName": "財團法人典美文化基金會",
       "startDate": "2026/11/14",
       "endDate": "2026/11/22",
-      "hitRate": 16
+      "hitRate": 24
     },
     {
       "version": "1.4",
@@ -146,7 +146,7 @@
       "sourceWebName": "全國藝文活動資訊系統",
       "startDate": "2026/03/10",
       "endDate": "2026/12/15",
-      "hitRate": 33
+      "hitRate": 40
     },
     {
       "version": "1.4",
@@ -185,7 +185,7 @@
       "sourceWebName": "全國藝文活動資訊系統",
       "startDate": "2026/01/02",
       "endDate": "2026/12/31",
-      "hitRate": 28
+      "hitRate": 33
     },
     {
       "version": "1.4",
@@ -221,7 +221,79 @@
       "sourceWebName": "全國藝文活動資訊系統",
       "startDate": "2026/01/01",
       "endDate": "2026/12/31",
-      "hitRate": 13
+      "hitRate": 15
+    },
+    {
+      "version": "1.4",
+      "UID": "69cc269326b3242a48a9dfc1",
+      "title": "三昧堂精工布袋戲展",
+      "category": "6",
+      "showInfo": [
+        {
+          "time": "2026/01/31 10:00:00",
+          "location": "嘉義縣民雄鄉建國路二段265號",
+          "locationName": "嘉義縣表演藝術中心",
+          "onSales": "N",
+          "price": "",
+          "latitude": null,
+          "longitude": null,
+          "endTime": "2026/12/31 17:00:00"
+        }
+      ],
+      "showUnit": "(中華民國)三昧堂創意木偶團隊",
+      "discountInfo": "索票入場",
+      "descriptionFilterHtml": "展覽以「游於偶藝」為主題，展示由三昧堂創意木偶團隊製作的精緻戲偶，展現結合傳統工藝與現代時尚的「精工布袋戲」之美。",
+      "imageUrl": "",
+      "masterUnit": [
+        "嘉義縣表演藝術中心"
+      ],
+      "subUnit": [],
+      "supportUnit": [],
+      "otherUnit": [],
+      "webSales": "",
+      "sourceWebPromote": "",
+      "comment": "",
+      "editModifyDate": "",
+      "sourceWebName": "全國藝文活動資訊系統",
+      "startDate": "2026/01/31",
+      "endDate": "2026/12/31",
+      "hitRate": 66
+    },
+    {
+      "version": "1.4",
+      "UID": "6a022afe26b3243414ccc75f",
+      "title": "金鷹歸來：隆興閣掌中武林特展",
+      "category": "6",
+      "showInfo": [
+        {
+          "time": "2026/04/23 09:00:00",
+          "location": "新北市新莊區中平路133號",
+          "locationName": "新莊文化藝術中心",
+          "onSales": "N",
+          "price": "",
+          "latitude": null,
+          "longitude": null,
+          "endTime": "2026/12/31 17:00:00"
+        }
+      ],
+      "showUnit": "(中華民國)隆興閣",
+      "discountInfo": "",
+      "descriptionFilterHtml": "臺灣布袋戲歷經不同時期的發展，演變多樣演出型態、內涵，讓它得以不斷成長、深根，乃至茁壯，可說是臺灣三大偶戲中最具活力，且影響最為廣泛的一項戲劇藝術。在臺灣布袋戲發展歷程中，往往因師承不同而分出譜系，如洲、閣…等之別。然而在不同時代中創立的劇團，能傳承傳統；亦須開創格局。在雲林縣所謂「布袋戲故鄉」，有重要傳承系統，如「五洲園」、「新興閣」，各自開枝散葉，對臺灣布袋戲影響深遠。雲林縣內有諸多名團，當中出自西螺閣派的「隆興閣」，歷經兩代人經營，再傳承開來，由現任團長廖昭堂傳承並發揚，擅演古冊戲、金光戲，尤其主打代表作《五爪金鷹一生傳》，將該劇推展各地，獲得廣大觀眾迴響喜愛、學術界、公家單位等各界支持肯定。",
+      "imageUrl": "",
+      "masterUnit": [],
+      "subUnit": [
+        "新莊文化藝術中心"
+      ],
+      "supportUnit": [],
+      "otherUnit": [],
+      "webSales": "",
+      "sourceWebPromote": "https://www.xzcac.ntpc.gov.tw/xmdoc/cont?xsmsid=0G286658855814597144&sid=0Q104505578179667774",
+      "comment": "",
+      "editModifyDate": "",
+      "sourceWebName": "全國藝文活動資訊系統",
+      "startDate": "2026/04/23",
+      "endDate": "2026/12/31",
+      "hitRate": 6
     },
     {
       "version": "1.4",
@@ -297,42 +369,6 @@
     },
     {
       "version": "1.4",
-      "UID": "69cc269326b3242a48a9dfc1",
-      "title": "三昧堂精工布袋戲展",
-      "category": "6",
-      "showInfo": [
-        {
-          "time": "2026/01/31 10:00:00",
-          "location": "嘉義縣民雄鄉建國路二段265號",
-          "locationName": "嘉義縣表演藝術中心",
-          "onSales": "N",
-          "price": "",
-          "latitude": null,
-          "longitude": null,
-          "endTime": "2026/12/31 17:00:00"
-        }
-      ],
-      "showUnit": "(中華民國)三昧堂創意木偶團隊",
-      "discountInfo": "索票入場",
-      "descriptionFilterHtml": "展覽以「游於偶藝」為主題，展示由三昧堂創意木偶團隊製作的精緻戲偶，展現結合傳統工藝與現代時尚的「精工布袋戲」之美。",
-      "imageUrl": "",
-      "masterUnit": [
-        "嘉義縣表演藝術中心"
-      ],
-      "subUnit": [],
-      "supportUnit": [],
-      "otherUnit": [],
-      "webSales": "",
-      "sourceWebPromote": "",
-      "comment": "",
-      "editModifyDate": "",
-      "sourceWebName": "全國藝文活動資訊系統",
-      "startDate": "2026/01/31",
-      "endDate": "2026/12/31",
-      "hitRate": 52
-    },
-    {
-      "version": "1.4",
       "UID": "69cc269326b3242a48a9dfc2",
       "title": "三昧堂精工布袋戲展",
       "category": "6",
@@ -365,43 +401,7 @@
       "sourceWebName": "全國藝文活動資訊系統",
       "startDate": "2027/01/01",
       "endDate": "2027/01/31",
-      "hitRate": 7
-    },
-    {
-      "version": "1.4",
-      "UID": "6a022afe26b3243414ccc75f",
-      "title": "金鷹歸來：隆興閣掌中武林特展",
-      "category": "6",
-      "showInfo": [
-        {
-          "time": "2026/04/23 09:00:00",
-          "location": "新北市新莊區中平路133號",
-          "locationName": "新莊文化藝術中心",
-          "onSales": "N",
-          "price": "",
-          "latitude": null,
-          "longitude": null,
-          "endTime": "2026/12/31 17:00:00"
-        }
-      ],
-      "showUnit": "(中華民國)隆興閣",
-      "discountInfo": "",
-      "descriptionFilterHtml": "臺灣布袋戲歷經不同時期的發展，演變多樣演出型態、內涵，讓它得以不斷成長、深根，乃至茁壯，可說是臺灣三大偶戲中最具活力，且影響最為廣泛的一項戲劇藝術。在臺灣布袋戲發展歷程中，往往因師承不同而分出譜系，如洲、閣…等之別。然而在不同時代中創立的劇團，能傳承傳統；亦須開創格局。在雲林縣所謂「布袋戲故鄉」，有重要傳承系統，如「五洲園」、「新興閣」，各自開枝散葉，對臺灣布袋戲影響深遠。雲林縣內有諸多名團，當中出自西螺閣派的「隆興閣」，歷經兩代人經營，再傳承開來，由現任團長廖昭堂傳承並發揚，擅演古冊戲、金光戲，尤其主打代表作《五爪金鷹一生傳》，將該劇推展各地，獲得廣大觀眾迴響喜愛、學術界、公家單位等各界支持肯定。",
-      "imageUrl": "",
-      "masterUnit": [],
-      "subUnit": [
-        "新莊文化藝術中心"
-      ],
-      "supportUnit": [],
-      "otherUnit": [],
-      "webSales": "",
-      "sourceWebPromote": "https://www.xzcac.ntpc.gov.tw/xmdoc/cont?xsmsid=0G286658855814597144&sid=0Q104505578179667774",
-      "comment": "",
-      "editModifyDate": "",
-      "sourceWebName": "全國藝文活動資訊系統",
-      "startDate": "2026/04/23",
-      "endDate": "2026/12/31",
-      "hitRate": 6
+      "hitRate": 9
     }
   ]
 }
