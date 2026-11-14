@@ -1,6 +1,6 @@
 {
-  "fetchedAt": "2026-11-13T11:05:45+08:00",
-  "total": 508,
+  "fetchedAt": "2026-11-14T10:51:34+08:00",
+  "total": 505,
   "records": [
     {
       "version": "1.4",
@@ -36,7 +36,7 @@
       "sourceWebName": "財團法人典美文化基金會",
       "startDate": "2026/11/14",
       "endDate": "2026/11/22",
-      "hitRate": 24
+      "hitRate": 26
     },
     {
       "version": "1.4",
@@ -72,7 +72,7 @@
       "sourceWebName": "財團法人典美文化基金會",
       "startDate": "2026/11/14",
       "endDate": "2026/11/22",
-      "hitRate": 24
+      "hitRate": 26
     },
     {
       "version": "1.4",
@@ -108,7 +108,7 @@
       "sourceWebName": "財團法人典美文化基金會",
       "startDate": "2026/11/14",
       "endDate": "2026/11/22",
-      "hitRate": 24
+      "hitRate": 26
     },
     {
       "version": "1.4",
@@ -146,7 +146,7 @@
       "sourceWebName": "全國藝文活動資訊系統",
       "startDate": "2026/03/10",
       "endDate": "2026/12/15",
-      "hitRate": 40
+      "hitRate": 41
     },
     {
       "version": "1.4",
@@ -185,7 +185,7 @@
       "sourceWebName": "全國藝文活動資訊系統",
       "startDate": "2026/01/02",
       "endDate": "2026/12/31",
-      "hitRate": 33
+      "hitRate": 35
     },
     {
       "version": "1.4",
@@ -221,7 +221,7 @@
       "sourceWebName": "全國藝文活動資訊系統",
       "startDate": "2026/01/01",
       "endDate": "2026/12/31",
-      "hitRate": 15
+      "hitRate": 16
     },
     {
       "version": "1.4",
@@ -257,7 +257,7 @@
       "sourceWebName": "全國藝文活動資訊系統",
       "startDate": "2026/01/31",
       "endDate": "2026/12/31",
-      "hitRate": 66
+      "hitRate": 69
     },
     {
       "version": "1.4",
@@ -365,7 +365,7 @@
       "sourceWebName": "全國藝文活動資訊系統",
       "startDate": "2026/01/02",
       "endDate": "2026/12/31",
-      "hitRate": 12
+      "hitRate": 13
     },
     {
       "version": "1.4",
