@@ -439,36 +439,6 @@
     "rejectedAt": "2026-11-13T03:44:40+08:00"
   },
   {
-    "postKey": "facebook:61574134933376:122315789156250015",
-    "postUrl": "https://www.facebook.com/photo/?fbid=122315789156250015",
-    "proposal": {
-      "source": "facebook:61574134933376",
-      "postKey": "facebook:61574134933376:122315789156250015",
-      "postUrl": "https://www.facebook.com/photo/?fbid=122315789156250015",
-      "quote": "11/27（五）小金枝歌劇團《棄老山傳奇》  \n11/28（六）新和興總團《秦英掛帥》  \n11/29（日）藝華園戲劇團《八仙傳奇－張果老與藍采和》\n12/03（四）新藝芳歌劇團《金蟾緣》  \n12/04（五）佩儀歌劇團《吳漢殺妻》  \n12/05（六）文惜歌仔戲劇團《焰火長槍：火帥與玉龍的背影》  \n12/06（日）繡花園戲劇團《姜子牙下山》\n12/11（五）春明歌劇團《玉虛戰歌．天命之戰》  \n12/12（六）水錦歌劇團《對面夫妻～韋馱與觀音》  \n12/13（日）明華園星字戲劇團《斷案青天－陰錯陽差》\n 每場次開演時間｜19:00  \n 演出地點｜高雄中山堂劇場戶外陽光草坪",
-      "troupe": "明華園星字戲劇團",
-      "title": "《斷案青天－陰錯陽差》",
-      "location": "高雄中山堂劇場戶外陽光草坪",
-      "genre": "歌仔戲",
-      "artist": "未公布",
-      "badgeType": "free",
-      "sessions": [
-        {
-          "date": "2026-12-13",
-          "kind": "正戲",
-          "time": "19:00"
-        }
-      ],
-      "date": "2026-12-13",
-      "time": "12/13 19:00 正戲",
-      "dateFormatted": "2026/12/13"
-    },
-    "reasons": [
-      "badgeType-not-free"
-    ],
-    "rejectedAt": "2026-11-13T03:44:41+08:00"
-  },
-  {
     "postKey": "verify:d38af6d0c6ce",
     "postUrl": "https://www.opentix.life/event/2090269380048343041",
     "proposal": {
@@ -530,5 +500,72 @@
       "badgeType-not-ticket"
     ],
     "rejectedAt": "2026-11-14T03:46:08+08:00"
+  },
+  {
+    "postKey": "facebook:61574134933376:122315789156250015",
+    "postUrl": "https://www.facebook.com/photo/?fbid=122315789156250015",
+    "proposal": {
+      "source": "facebook:61574134933376",
+      "postKey": "facebook:61574134933376:122315789156250015",
+      "postUrl": "https://www.facebook.com/photo/?fbid=122315789156250015",
+      "quote": "12/13（日）明華園星字戲劇團《斷案青天－陰錯陽差》\n 每場次開演時間｜19:00  \n 演出地點｜高雄中山堂劇場戶外陽光草坪",
+      "troupe": "明華園星字戲劇團",
+      "title": "《斷案青天－陰錯陽差》",
+      "location": "高雄中山堂劇場戶外陽光草坪",
+      "genre": "歌仔戲",
+      "artist": "未公布",
+      "badgeType": "free",
+      "sessions": [
+        {
+          "date": "2026-12-13",
+          "kind": "正戲",
+          "time": "19:00"
+        }
+      ],
+      "date": "2026-12-13",
+      "time": "12/13 19:00 正戲",
+      "dateFormatted": "2026/12/13"
+    },
+    "reasons": [
+      "badgeType-not-free"
+    ],
+    "rejectedAt": "2026-11-15T09:08:59+08:00"
+  },
+  {
+    "postKey": "verify:ec3b91040f21",
+    "postUrl": "https://www.tw-yishin.com/%e6%bc%94%e5%87%ba%e6%96%b0%e8%a8%8a/2026%e4%b8%80%e5%bf%83%e6%88%b2%e5%8a%87%e5%9c%98%e3%80%8a%e9%96%bb%e7%8e%8b%e7%9a%84%e5%81%87%e6%9c%9f%e3%80%8b/",
+    "proposal": {
+      "source": "verify",
+      "postKey": "verify:ec3b91040f21",
+      "postUrl": "https://www.tw-yishin.com/%e6%bc%94%e5%87%ba%e6%96%b0%e8%a8%8a/2026%e4%b8%80%e5%bf%83%e6%88%b2%e5%8a%87%e5%9c%98%e3%80%8a%e9%96%bb%e7%8e%8b%e7%9a%84%e5%81%87%e6%9c%9f%e3%80%8b/",
+      "quote": "2026一心戲劇團《閻王的假期》 ◎ 演出時間：2026/12/05(六)14:30 2026/12/06(日)14:30 ◎ 票 價： 300 、 500 、 600 、 800 、 1,200 、 1,600 、 2,000 、 2,500 <購票請上OPENTIX售票系統> ◎ 網站連結： https://reurl.cc/DYRXKN ◎ 地 點： 城市舞台",
+      "troupe": "一心戲劇團",
+      "title": "《閻王的假期》",
+      "location": "臺北市藝文推廣處城市舞台（臺北市松山區八德路三段25號）",
+      "genre": "歌仔戲",
+      "artist": "孫詩珮、孫詩詠、林冠妃、柯進龍",
+      "badgeType": "ticket",
+      "sessions": [
+        {
+          "date": "2026-12-05",
+          "kind": "正戲",
+          "time": "14:30"
+        },
+        {
+          "date": "2026-12-06",
+          "kind": "正戲",
+          "time": "14:30"
+        }
+      ],
+      "date": "2026-12-05",
+      "endDate": "2026-12-06",
+      "time": "12/5 14:30 正戲、12/6 14:30 正戲",
+      "dateFormatted": "2026/12/05–2026/12/06"
+    },
+    "reasons": [
+      "location-not-in-quote",
+      "artist-not-in-quote"
+    ],
+    "rejectedAt": "2026-11-15T09:08:59+08:00"
   }
 ]
