@@ -529,7 +529,7 @@
     "reasons": [
       "badgeType-not-free"
     ],
-    "rejectedAt": "2026-11-15T09:08:59+08:00"
+    "rejectedAt": "2026-11-16T10:54:07+08:00"
   },
   {
     "postKey": "verify:ec3b91040f21",
@@ -543,7 +543,7 @@
       "title": "《閻王的假期》",
       "location": "臺北市藝文推廣處城市舞台（臺北市松山區八德路三段25號）",
       "genre": "歌仔戲",
-      "artist": "孫詩珮、孫詩詠、林冠妃、柯進龍",
+      "artist": "未公布",
       "badgeType": "ticket",
       "sessions": [
         {
@@ -563,9 +563,8 @@
       "dateFormatted": "2026/12/05–2026/12/06"
     },
     "reasons": [
-      "location-not-in-quote",
-      "artist-not-in-quote"
+      "location-not-in-quote"
     ],
-    "rejectedAt": "2026-11-15T09:08:59+08:00"
+    "rejectedAt": "2026-11-16T10:54:07+08:00"
   }
 ]
