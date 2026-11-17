@@ -1535,5 +1535,36 @@
         "time": "19:00"
       }
     ]
+  },
+  {
+    "id": "auto-20261208-84b82584",
+    "date": "2026-12-08",
+    "dateFormatted": "2026/12/08",
+    "daysAway": 21,
+    "time": "12/8 時間未公布 正戲",
+    "troupe": "明華園天字戲劇團",
+    "genre": "歌仔戲",
+    "artist": "未公布",
+    "title": "東隆宮外台演出",
+    "category": "廟會民俗演出",
+    "badgeType": "temple",
+    "verifyStatus": "community",
+    "verifyLabel": "📣 社群公告（程式比對原文）",
+    "location": "高雄市鳳山區林森路60巷49號【東隆宮】",
+    "region": "南部",
+    "status": "依社群公告；未列事項請洽劇團或廟方",
+    "description": "依 MingHuaYuanTianTaiwaneseOpera 近期 公告：「明華園天字戲劇團 國曆12/08 高雄市鳳山區林森路60巷49號【東隆宮】 時間未標示」",
+    "link": "https://www.facebook.com/MingHuaYuanTianTaiwaneseOpera/reels_tab",
+    "sourceUrl": "https://www.facebook.com/MingHuaYuanTianTaiwaneseOpera/reels_tab",
+    "tags": [
+      "明華園天字戲劇團"
+    ],
+    "sessions": [
+      {
+        "date": "2026-12-08",
+        "kind": "正戲",
+        "time": "未公布"
+      }
+    ]
   }
 ]

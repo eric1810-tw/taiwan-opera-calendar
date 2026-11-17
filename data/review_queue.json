@@ -247,42 +247,6 @@
     "rejectedAt": "2026-11-06T09:30:48+08:00"
   },
   {
-    "postKey": "verify:5ea8fe25a938",
-    "postUrl": "http://karensie.blogspot.com/2015/12/1041224.html",
-    "proposal": {
-      "source": "verify",
-      "postKey": "verify:5ea8fe25a938",
-      "postUrl": "http://karensie.blogspot.com/2015/12/1041224.html",
-      "quote": "12/05(六)-12/06(日)14:30 一心戲劇團 《閻王的假期》 臺北市藝文推廣處城市舞台",
-      "troupe": "一心戲劇團",
-      "title": "《閻王的假期》",
-      "location": "臺北市藝文推廣處城市舞台",
-      "genre": "歌仔戲",
-      "artist": "未公布",
-      "badgeType": "ticket",
-      "sessions": [
-        {
-          "date": "2026-12-05",
-          "kind": "正戲",
-          "time": "14:30"
-        },
-        {
-          "date": "2026-12-06",
-          "kind": "正戲",
-          "time": "14:30"
-        }
-      ],
-      "date": "2026-12-05",
-      "endDate": "2026-12-06",
-      "time": "12/5 14:30 正戲、12/6 14:30 正戲",
-      "dateFormatted": "2026/12/05–2026/12/06"
-    },
-    "reasons": [
-      "badgeType-not-ticket"
-    ],
-    "rejectedAt": "2026-11-06T09:30:48+08:00"
-  },
-  {
     "postKey": "threads:taiwaneseopera168:DfZcD7ciVYP",
     "postUrl": "https://www.threads.com/@taiwaneseopera168/post/DfZcD7ciVYP",
     "proposal": {
@@ -502,36 +466,6 @@
     "rejectedAt": "2026-11-14T03:46:08+08:00"
   },
   {
-    "postKey": "facebook:61574134933376:122315789156250015",
-    "postUrl": "https://www.facebook.com/photo/?fbid=122315789156250015",
-    "proposal": {
-      "source": "facebook:61574134933376",
-      "postKey": "facebook:61574134933376:122315789156250015",
-      "postUrl": "https://www.facebook.com/photo/?fbid=122315789156250015",
-      "quote": "12/13（日）明華園星字戲劇團《斷案青天－陰錯陽差》\n 每場次開演時間｜19:00  \n 演出地點｜高雄中山堂劇場戶外陽光草坪",
-      "troupe": "明華園星字戲劇團",
-      "title": "《斷案青天－陰錯陽差》",
-      "location": "高雄中山堂劇場戶外陽光草坪",
-      "genre": "歌仔戲",
-      "artist": "未公布",
-      "badgeType": "free",
-      "sessions": [
-        {
-          "date": "2026-12-13",
-          "kind": "正戲",
-          "time": "19:00"
-        }
-      ],
-      "date": "2026-12-13",
-      "time": "12/13 19:00 正戲",
-      "dateFormatted": "2026/12/13"
-    },
-    "reasons": [
-      "badgeType-not-free"
-    ],
-    "rejectedAt": "2026-11-16T10:54:07+08:00"
-  },
-  {
     "postKey": "verify:ec3b91040f21",
     "postUrl": "https://www.tw-yishin.com/%e6%bc%94%e5%87%ba%e6%96%b0%e8%a8%8a/2026%e4%b8%80%e5%bf%83%e6%88%b2%e5%8a%87%e5%9c%98%e3%80%8a%e9%96%bb%e7%8e%8b%e7%9a%84%e5%81%87%e6%9c%9f%e3%80%8b/",
     "proposal": {
@@ -566,5 +500,101 @@
       "location-not-in-quote"
     ],
     "rejectedAt": "2026-11-16T10:54:07+08:00"
+  },
+  {
+    "postKey": "threads:yuzhongluo:Dfz1sz3GeC4",
+    "postUrl": "https://www.threads.com/@yuzhongluo/post/Dfz1sz3GeC4",
+    "proposal": {
+      "source": "threads:yuzhongluo",
+      "postKey": "threads:yuzhongluo:Dfz1sz3GeC4",
+      "postUrl": "https://www.threads.com/@yuzhongluo/post/Dfz1sz3GeC4",
+      "quote": "羅裕誴歌劇團《楊排風掛帥》 時間：115.11.20 [農曆10/12] (五)19:00 地點：大龍峒保安宮庭園廣場",
+      "troupe": "羅裕誴歌劇團",
+      "title": "《楊排風掛帥》",
+      "location": "大龍峒保安宮庭園廣場",
+      "genre": "歌仔戲",
+      "artist": "羅文惜、陳民福、何俊衛、羅孟宏",
+      "badgeType": "plan",
+      "sessions": [
+        {
+          "date": "2026-11-20",
+          "kind": "正戲",
+          "time": "19:00"
+        }
+      ],
+      "date": "2026-11-20",
+      "time": "11/20 19:00 正戲",
+      "dateFormatted": "2026/11/20"
+    },
+    "reasons": [
+      "artist-not-in-quote"
+    ],
+    "rejectedAt": "2026-11-17T09:39:20+08:00"
+  },
+  {
+    "postKey": "facebook:61574134933376:122315789156250015",
+    "postUrl": "https://www.facebook.com/photo/?fbid=122315789156250015",
+    "proposal": {
+      "source": "facebook:61574134933376",
+      "postKey": "facebook:61574134933376:122315789156250015",
+      "postUrl": "https://www.facebook.com/photo/?fbid=122315789156250015",
+      "quote": "12/13（日）明華園星字戲劇團《斷案青天－陰錯陽差》\n 每場次開演時間｜19:00  \n 演出地點｜高雄中山堂劇場戶外陽光草坪",
+      "troupe": "明華園星字戲劇團",
+      "title": "《斷案青天－陰錯陽差》",
+      "location": "高雄中山堂劇場戶外陽光草坪",
+      "genre": "歌仔戲",
+      "artist": "未公布",
+      "badgeType": "free",
+      "sessions": [
+        {
+          "date": "2026-12-13",
+          "kind": "正戲",
+          "time": "19:00"
+        }
+      ],
+      "date": "2026-12-13",
+      "time": "12/13 19:00 正戲",
+      "dateFormatted": "2026/12/13"
+    },
+    "reasons": [
+      "badgeType-not-free"
+    ],
+    "rejectedAt": "2026-11-17T09:39:20+08:00"
+  },
+  {
+    "postKey": "verify:5ea8fe25a938",
+    "postUrl": "http://karensie.blogspot.com/2015/12/1041224.html",
+    "proposal": {
+      "source": "verify",
+      "postKey": "verify:5ea8fe25a938",
+      "postUrl": "http://karensie.blogspot.com/2015/12/1041224.html",
+      "quote": "12/05(六)-12/06(日)14:30 一心戲劇團 《閻王的假期》 臺北市藝文推廣處城市舞台",
+      "troupe": "一心戲劇團",
+      "title": "《閻王的假期》",
+      "location": "臺北市藝文推廣處城市舞台",
+      "genre": "歌仔戲",
+      "artist": "未公布",
+      "badgeType": "ticket",
+      "sessions": [
+        {
+          "date": "2026-12-05",
+          "kind": "正戲",
+          "time": "14:30"
+        },
+        {
+          "date": "2026-12-06",
+          "kind": "正戲",
+          "time": "14:30"
+        }
+      ],
+      "date": "2026-12-05",
+      "endDate": "2026-12-06",
+      "time": "12/5 14:30 正戲、12/6 14:30 正戲",
+      "dateFormatted": "2026/12/05–2026/12/06"
+    },
+    "reasons": [
+      "badgeType-not-ticket"
+    ],
+    "rejectedAt": "2026-11-17T09:39:21+08:00"
   }
 ]
