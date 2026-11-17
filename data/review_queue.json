@@ -466,42 +466,6 @@
     "rejectedAt": "2026-11-14T03:46:08+08:00"
   },
   {
-    "postKey": "verify:ec3b91040f21",
-    "postUrl": "https://www.tw-yishin.com/%e6%bc%94%e5%87%ba%e6%96%b0%e8%a8%8a/2026%e4%b8%80%e5%bf%83%e6%88%b2%e5%8a%87%e5%9c%98%e3%80%8a%e9%96%bb%e7%8e%8b%e7%9a%84%e5%81%87%e6%9c%9f%e3%80%8b/",
-    "proposal": {
-      "source": "verify",
-      "postKey": "verify:ec3b91040f21",
-      "postUrl": "https://www.tw-yishin.com/%e6%bc%94%e5%87%ba%e6%96%b0%e8%a8%8a/2026%e4%b8%80%e5%bf%83%e6%88%b2%e5%8a%87%e5%9c%98%e3%80%8a%e9%96%bb%e7%8e%8b%e7%9a%84%e5%81%87%e6%9c%9f%e3%80%8b/",
-      "quote": "2026一心戲劇團《閻王的假期》 ◎ 演出時間：2026/12/05(六)14:30 2026/12/06(日)14:30 ◎ 票 價： 300 、 500 、 600 、 800 、 1,200 、 1,600 、 2,000 、 2,500 <購票請上OPENTIX售票系統> ◎ 網站連結： https://reurl.cc/DYRXKN ◎ 地 點： 城市舞台",
-      "troupe": "一心戲劇團",
-      "title": "《閻王的假期》",
-      "location": "臺北市藝文推廣處城市舞台（臺北市松山區八德路三段25號）",
-      "genre": "歌仔戲",
-      "artist": "未公布",
-      "badgeType": "ticket",
-      "sessions": [
-        {
-          "date": "2026-12-05",
-          "kind": "正戲",
-          "time": "14:30"
-        },
-        {
-          "date": "2026-12-06",
-          "kind": "正戲",
-          "time": "14:30"
-        }
-      ],
-      "date": "2026-12-05",
-      "endDate": "2026-12-06",
-      "time": "12/5 14:30 正戲、12/6 14:30 正戲",
-      "dateFormatted": "2026/12/05–2026/12/06"
-    },
-    "reasons": [
-      "location-not-in-quote"
-    ],
-    "rejectedAt": "2026-11-16T10:54:07+08:00"
-  },
-  {
     "postKey": "threads:yuzhongluo:Dfz1sz3GeC4",
     "postUrl": "https://www.threads.com/@yuzhongluo/post/Dfz1sz3GeC4",
     "proposal": {
@@ -596,5 +560,101 @@
       "badgeType-not-ticket"
     ],
     "rejectedAt": "2026-11-17T09:39:21+08:00"
+  },
+  {
+    "postKey": "threads:yuzhongluo:Dfy2Iecj_pR",
+    "postUrl": "https://www.threads.com/@yuzhongluo/post/Dfy2Iecj_pR",
+    "proposal": {
+      "source": "threads:yuzhongluo",
+      "postKey": "threads:yuzhongluo:Dfy2Iecj_pR",
+      "postUrl": "https://www.threads.com/@yuzhongluo/post/Dfy2Iecj_pR",
+      "quote": "羅裕誴歌劇團《楊排風掛帥》 時間：115.11.20 [農曆10/12] (五)19:00 地點：大龍峒保安宮庭園廣場",
+      "troupe": "羅裕誴歌劇團",
+      "title": "《楊排風掛帥》",
+      "location": "大龍峒保安宮庭園廣場",
+      "genre": "歌仔戲",
+      "artist": "羅文惜、陳民福、何俊衛、羅孟宏",
+      "badgeType": "plan",
+      "sessions": [
+        {
+          "date": "2026-11-20",
+          "kind": "正戲",
+          "time": "19:00"
+        }
+      ],
+      "date": "2026-11-20",
+      "time": "11/20 19:00 正戲",
+      "dateFormatted": "2026/11/20"
+    },
+    "reasons": [
+      "artist-not-in-quote"
+    ],
+    "rejectedAt": "2026-11-18T03:41:49+08:00"
+  },
+  {
+    "postKey": "threads:taiwaneseopera168:Df1vFr_oF6y",
+    "postUrl": "https://www.threads.com/@taiwaneseopera168/post/Df1vFr_oF6y",
+    "proposal": {
+      "source": "threads:taiwaneseopera168",
+      "postKey": "threads:taiwaneseopera168:Df1vFr_oF6y",
+      "postUrl": "https://www.threads.com/@taiwaneseopera168/post/Df1vFr_oF6y",
+      "quote": "明華園黃字戲劇團 當家小生翁妙嬅 主演 《神仙孝子 • 劈山救母》 2026/11/19(四)19:00大戲開鑼 台南市⛩️安平開台天后宮",
+      "troupe": "明華園黃字戲劇團",
+      "title": "《神仙孝子 • 劈山救母》",
+      "location": "台南市安平開台天后宮",
+      "genre": "歌仔戲",
+      "artist": "翁妙嬅",
+      "badgeType": "temple",
+      "sessions": [
+        {
+          "date": "2026-11-19",
+          "kind": "正戲",
+          "time": "19:00"
+        }
+      ],
+      "date": "2026-11-19",
+      "time": "11/19 19:00 正戲",
+      "dateFormatted": "2026/11/19"
+    },
+    "reasons": [
+      "location-not-in-quote"
+    ],
+    "rejectedAt": "2026-11-18T03:41:49+08:00"
+  },
+  {
+    "postKey": "verify:ec3b91040f21",
+    "postUrl": "https://www.tw-yishin.com/%e6%bc%94%e5%87%ba%e6%96%b0%e8%a8%8a/2026%e4%b8%80%e5%bf%83%e6%88%b2%e5%8a%87%e5%9c%98%e3%80%8a%e9%96%bb%e7%8e%8b%e7%9a%84%e5%81%87%e6%9c%9f%e3%80%8b/",
+    "proposal": {
+      "source": "verify",
+      "postKey": "verify:ec3b91040f21",
+      "postUrl": "https://www.tw-yishin.com/%e6%bc%94%e5%87%ba%e6%96%b0%e8%a8%8a/2026%e4%b8%80%e5%bf%83%e6%88%b2%e5%8a%87%e5%9c%98%e3%80%8a%e9%96%bb%e7%8e%8b%e7%9a%84%e5%81%87%e6%9c%9f%e3%80%8b/",
+      "quote": "2026一心戲劇團《閻王的假期》 ◎ 演出時間：2026/12/05(六)14:30 2026/12/06(日)14:30 ◎ 票 價： 300 、 500 、 600 、 800 、 1,200 、 1,600 、 2,000 、 2,500 <購票請上OPENTIX售票系統> ◎ 網站連結： https://reurl.cc/DYRXKN ◎ 地 點： 城市舞台",
+      "troupe": "一心戲劇團",
+      "title": "《閻王的假期》",
+      "location": "城市舞台",
+      "genre": "歌仔戲",
+      "artist": "孫詩珮、孫詩詠",
+      "badgeType": "ticket",
+      "sessions": [
+        {
+          "date": "2026-12-05",
+          "kind": "正戲",
+          "time": "14:30"
+        },
+        {
+          "date": "2026-12-06",
+          "kind": "正戲",
+          "time": "14:30"
+        }
+      ],
+      "date": "2026-12-05",
+      "endDate": "2026-12-06",
+      "time": "12/5 14:30 正戲、12/6 14:30 正戲",
+      "dateFormatted": "2026/12/05–2026/12/06"
+    },
+    "reasons": [
+      "artist-not-in-quote"
+    ],
+    "rejectedAt": "2026-11-18T03:41:49+08:00"
   }
 ]
