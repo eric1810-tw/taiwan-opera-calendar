@@ -1617,5 +1617,42 @@
         "time": "18:30"
       }
     ]
+  },
+  {
+    "id": "auto-20261120-0c33622b",
+    "date": "2026-11-20",
+    "dateFormatted": "2026/11/20–2026/11/21",
+    "daysAway": 0,
+    "time": "11/20 時間未公布、11/21 時間未公布",
+    "troupe": "明華園天字戲劇團",
+    "genre": "歌仔戲",
+    "artist": "未公布",
+    "title": "清雲寺外台演出",
+    "category": "廟會民俗演出",
+    "badgeType": "temple",
+    "verifyStatus": "community",
+    "verifyLabel": "📣 社群公告（程式比對原文）",
+    "location": "屏東縣鹽埔鄉彭厝村清雲街1號",
+    "region": "南部",
+    "status": "依社群公告；未列事項請洽劇團或廟方",
+    "description": "依 MingHuaYuanTianTaiwaneseOpera 近期 公告：「明華園天字戲劇團 【清雲寺】【琉球水仙宮】 演出時間：國曆 115/11/20~11/21 農曆 115/10/12~10/13 演出地點：屏東縣鹽埔鄉彭厝村清雲街1號 屏東縣琉球鄉本福村中山路223號」",
+    "link": "https://www.facebook.com/MingHuaYuanTianTaiwaneseOpera/reels_tab",
+    "sourceUrl": "https://www.facebook.com/MingHuaYuanTianTaiwaneseOpera/reels_tab",
+    "tags": [
+      "明華園天字戲劇團"
+    ],
+    "endDate": "2026-11-21",
+    "sessions": [
+      {
+        "date": "2026-11-20",
+        "kind": "其他",
+        "time": "未公布"
+      },
+      {
+        "date": "2026-11-21",
+        "kind": "其他",
+        "time": "未公布"
+      }
+    ]
   }
 ]
