@@ -1583,5 +1583,39 @@
         "time": "14:00"
       }
     ]
+  },
+  {
+    "id": "manual-20261121-lsf-yilan",
+    "date": "2026-11-21",
+    "dateFormatted": "2026/11/21 (六)",
+    "daysAway": 2,
+    "time": "11/21 18:30–19:00",
+    "troupe": "未公布",
+    "genre": "歌仔戲",
+    "artist": "呂雪鳳（來賓）",
+    "title": "宜蘭歌仔・台派市集｜呂雪鳳老師大來賓",
+    "category": "免費索票/戶外演出",
+    "badgeType": "free",
+    "verifyStatus": "community",
+    "verifyLabel": "📣 藝人本人貼文＋海報（使用者提供）",
+    "location": "喜互惠慈安店停車場（宜蘭縣宜蘭市林森路225號）",
+    "region": "北部",
+    "status": "市集來賓亮相（非完整演出）；查無主辦方公告，請以現場為準",
+    "description": "海報：「宜蘭歌仔・台派市集　宜蘭歌仔・大來賓　呂雪鳳老師　11/21（六）18:30-19:00　喜互惠慈安店停車場」。來源為呂雪鳳老師本人 Threads 貼文，貼文文字僅「歡迎光臨批評指教」，活動資訊在海報圖中。",
+    "link": "https://www.threads.com/@xuefeng_lu_/post/Df62tY7kp2h",
+    "linkLabel": "呂雪鳳 Threads 貼文",
+    "sourceUrl": "https://www.threads.com/@xuefeng_lu_/post/Df62tY7kp2h",
+    "tags": [
+      "歌仔戲",
+      "呂雪鳳",
+      "宜蘭"
+    ],
+    "sessions": [
+      {
+        "date": "2026-11-21",
+        "kind": "來賓",
+        "time": "18:30"
+      }
+    ]
   }
 ]
