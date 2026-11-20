@@ -653,96 +653,6 @@
     "rejectedAt": "2026-11-20T03:43:26+08:00"
   },
   {
-    "postKey": "threads:yilan_taiwan:Df6uUXUH881",
-    "postUrl": "https://www.threads.com/@yilan_taiwan/post/Df6uUXUH881",
-    "proposal": {
-      "source": "threads:yilan_taiwan",
-      "postKey": "threads:yilan_taiwan:Df6uUXUH881",
-      "postUrl": "https://www.threads.com/@yilan_taiwan/post/Df6uUXUH881",
-      "quote": "歌仔戲演出 - 神童歌劇團 歌仔戲的原鄉在宜蘭，這一次的市集活動，以「歌仔」為主題，因此在活動當天，17:30-18:30，我們特別邀請到「神童歌劇團」 現場演出《醉八仙》。 📅 日期｜11/21（六） ⏰ 時間｜15:00–19:00 📍 地點｜喜互惠慈安店停車場",
-      "troupe": "神童歌劇團",
-      "title": "《醉八仙》",
-      "location": "喜互惠慈安店停車場",
-      "genre": "歌仔戲",
-      "artist": "未公布",
-      "badgeType": "plan",
-      "sessions": [
-        {
-          "date": "2026-11-21",
-          "kind": "正戲",
-          "time": "17:30"
-        }
-      ],
-      "date": "2026-11-21",
-      "time": "11/21 17:30 正戲",
-      "dateFormatted": "2026/11/21"
-    },
-    "reasons": [
-      "duplicate"
-    ],
-    "rejectedAt": "2026-11-20T03:43:26+08:00"
-  },
-  {
-    "postKey": "facebook:61574134933376:122315789156250015",
-    "postUrl": "https://www.facebook.com/photo/?fbid=122315789156250015",
-    "proposal": {
-      "source": "facebook:61574134933376",
-      "postKey": "facebook:61574134933376:122315789156250015",
-      "postUrl": "https://www.facebook.com/photo/?fbid=122315789156250015",
-      "quote": "12/13（日）明華園星字戲劇團《斷案青天－陰錯陽差》\n 每場次開演時間｜19:00  \n 演出地點｜高雄中山堂劇場戶外陽光草坪",
-      "troupe": "明華園星字戲劇團",
-      "title": "《斷案青天－陰錯陽差》",
-      "location": "高雄中山堂劇場戶外陽光草坪",
-      "genre": "歌仔戲",
-      "artist": "未公布",
-      "badgeType": "free",
-      "sessions": [
-        {
-          "date": "2026-12-13",
-          "kind": "正戲",
-          "time": "19:00"
-        }
-      ],
-      "date": "2026-12-13",
-      "time": "12/13 19:00 正戲",
-      "dateFormatted": "2026/12/13"
-    },
-    "reasons": [
-      "badgeType-not-free"
-    ],
-    "rejectedAt": "2026-11-20T03:43:27+08:00"
-  },
-  {
-    "postKey": "facebook:lanyang.opera:468916d4689b",
-    "postUrl": "https://www.facebook.com/lanyang.opera/reels_tab",
-    "proposal": {
-      "source": "facebook:lanyang.opera",
-      "postKey": "facebook:lanyang.opera:468916d4689b",
-      "postUrl": "https://www.facebook.com/lanyang.opera/reels_tab",
-      "quote": "劇目：《楊宗保與穆桂英》\n演出日期： 115/12/13（日）14:30（14:00開放入場）\n演出地點： 基隆表演藝術中心演藝廳(基隆市信一路181號)\n入場方式： 索票入場（115/11/23上午9點起）\n實體索票地點：（每人限索4張，數量有限，索完為止）\n基隆市文化觀光局4F表演藝術科\n周一至周五 09：00-12：00  14：00-17：00\n上雅數位影像 (基隆市中正區德義里信一路158號) \n周一至周四 10：30-19：00 周日 11：00-17：00\n線上索票連結：（115/11/23上午9點同步開放）\n※線上索票開放60個名額，完成索票者會email通知(姓名、email重覆擇一通知)\n※索票方式：每人限索4張，數量有限，索完為止\n主辦單位/宜蘭縣政府文化局\n指導單位/基隆市文化觀光局\n演出單位/蘭陽戲劇團",
-      "troupe": "蘭陽戲劇團",
-      "title": "《楊宗保與穆桂英》",
-      "location": "基隆表演藝術中心演藝廳(基隆市信一路181號)",
-      "genre": "歌仔戲",
-      "artist": "未公布",
-      "badgeType": "free",
-      "sessions": [
-        {
-          "date": "2026-12-13",
-          "kind": "正戲",
-          "time": "14:30"
-        }
-      ],
-      "date": "2026-12-13",
-      "time": "12/13 14:30 正戲",
-      "dateFormatted": "2026/12/13"
-    },
-    "reasons": [
-      "badgeType-not-free"
-    ],
-    "rejectedAt": "2026-11-20T03:43:27+08:00"
-  },
-  {
     "postKey": "facebook:MingHuaYuanTianTaiwaneseOpera:7783d076ee8f",
     "postUrl": "https://www.facebook.com/MingHuaYuanTianTaiwaneseOpera/reels_tab",
     "proposal": {
@@ -779,6 +689,96 @@
     "rejectedAt": "2026-11-20T03:43:27+08:00"
   },
   {
+    "postKey": "threads:yilan_taiwan:Df6uUXUH881",
+    "postUrl": "https://www.threads.com/@yilan_taiwan/post/Df6uUXUH881",
+    "proposal": {
+      "source": "threads:yilan_taiwan",
+      "postKey": "threads:yilan_taiwan:Df6uUXUH881",
+      "postUrl": "https://www.threads.com/@yilan_taiwan/post/Df6uUXUH881",
+      "quote": "歌仔戲演出 - 神童歌劇團 歌仔戲的原鄉在宜蘭，這一次的市集活動，以「歌仔」為主題，因此在活動當天，17:30-18:30，我們特別邀請到「神童歌劇團」 現場演出《醉八仙》。 📅 日期｜11/21（六） ⏰ 時間｜15:00–19:00 📍 地點｜喜互惠慈安店停車場",
+      "troupe": "神童歌劇團",
+      "title": "《醉八仙》",
+      "location": "喜互惠慈安店停車場",
+      "genre": "歌仔戲",
+      "artist": "未公布",
+      "badgeType": "plan",
+      "sessions": [
+        {
+          "date": "2026-11-21",
+          "kind": "正戲",
+          "time": "17:30"
+        }
+      ],
+      "date": "2026-11-21",
+      "time": "11/21 17:30 正戲",
+      "dateFormatted": "2026/11/21"
+    },
+    "reasons": [
+      "duplicate"
+    ],
+    "rejectedAt": "2026-11-21T03:44:22+08:00"
+  },
+  {
+    "postKey": "facebook:61574134933376:122315789156250015",
+    "postUrl": "https://www.facebook.com/photo/?fbid=122315789156250015",
+    "proposal": {
+      "source": "facebook:61574134933376",
+      "postKey": "facebook:61574134933376:122315789156250015",
+      "postUrl": "https://www.facebook.com/photo/?fbid=122315789156250015",
+      "quote": "12/13（日）明華園星字戲劇團《斷案青天－陰錯陽差》\n 每場次開演時間｜19:00  \n 演出地點｜高雄中山堂劇場戶外陽光草坪",
+      "troupe": "明華園星字戲劇團",
+      "title": "《斷案青天－陰錯陽差》",
+      "location": "高雄中山堂劇場戶外陽光草坪",
+      "genre": "歌仔戲",
+      "artist": "未公布",
+      "badgeType": "free",
+      "sessions": [
+        {
+          "date": "2026-12-13",
+          "kind": "正戲",
+          "time": "19:00"
+        }
+      ],
+      "date": "2026-12-13",
+      "time": "12/13 19:00 正戲",
+      "dateFormatted": "2026/12/13"
+    },
+    "reasons": [
+      "badgeType-not-free"
+    ],
+    "rejectedAt": "2026-11-21T03:44:23+08:00"
+  },
+  {
+    "postKey": "facebook:lanyang.opera:468916d4689b",
+    "postUrl": "https://www.facebook.com/lanyang.opera/reels_tab",
+    "proposal": {
+      "source": "facebook:lanyang.opera",
+      "postKey": "facebook:lanyang.opera:468916d4689b",
+      "postUrl": "https://www.facebook.com/lanyang.opera/reels_tab",
+      "quote": "劇目：《楊宗保與穆桂英》\n演出日期： 115/12/13（日）14:30（14:00開放入場）\n演出地點： 基隆表演藝術中心演藝廳(基隆市信一路181號)",
+      "troupe": "蘭陽戲劇團",
+      "title": "《楊宗保與穆桂英》",
+      "location": "基隆表演藝術中心演藝廳(基隆市信一路181號)",
+      "genre": "歌仔戲",
+      "artist": "未公布",
+      "badgeType": "free",
+      "sessions": [
+        {
+          "date": "2026-12-13",
+          "kind": "正戲",
+          "time": "14:30"
+        }
+      ],
+      "date": "2026-12-13",
+      "time": "12/13 14:30 正戲",
+      "dateFormatted": "2026/12/13"
+    },
+    "reasons": [
+      "badgeType-not-free"
+    ],
+    "rejectedAt": "2026-11-21T03:44:23+08:00"
+  },
+  {
     "postKey": "verify:5ea8fe25a938",
     "postUrl": "http://karensie.blogspot.com/2015/12/1041224.html",
     "proposal": {
@@ -812,6 +812,6 @@
     "reasons": [
       "badgeType-not-ticket"
     ],
-    "rejectedAt": "2026-11-20T03:43:28+08:00"
+    "rejectedAt": "2026-11-21T03:44:23+08:00"
   }
 ]
