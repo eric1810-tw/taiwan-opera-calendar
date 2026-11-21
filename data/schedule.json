@@ -1628,5 +1628,36 @@
         "time": "未公布"
       }
     ]
+  },
+  {
+    "id": "auto-20261213-8a80266b",
+    "date": "2026-12-13",
+    "dateFormatted": "2026/12/13",
+    "daysAway": 21,
+    "time": "12/13 14:00 正戲",
+    "troupe": "三昧堂創意木偶團隊",
+    "genre": "布袋戲",
+    "artist": "未公布",
+    "title": "2026偶樂迴響布袋戲音樂劇音樂會",
+    "category": "售票演出",
+    "badgeType": "ticket",
+    "verifyStatus": "verified",
+    "verifyLabel": "🎫 OPENTIX 售票頁（程式比對頁面資料）",
+    "location": "嘉義縣表演藝術中心實驗劇場（嘉義縣 民雄鄉建國路二段265號）",
+    "region": "南部",
+    "status": "依售票頁資料；未列事項請查售票頁",
+    "description": "依 OPENTIX 售票頁：「節目：2026偶樂迴響布袋戲音樂劇音樂會\n主辦：三昧堂創意木偶團隊\n售票：OPENTIX 售票頁\n票價：250元\n場次：2026-12-13 14:00｜地點：嘉義縣表演藝術中心實驗劇場（嘉義縣 民雄鄉建國路二段265號）」",
+    "link": "https://www.opentix.life/event/2110252942473105409",
+    "sourceUrl": "https://www.opentix.life/event/2110252942473105409",
+    "tags": [
+      "三昧堂創意木偶團隊"
+    ],
+    "sessions": [
+      {
+        "date": "2026-12-13",
+        "kind": "正戲",
+        "time": "14:00"
+      }
+    ]
   }
 ]

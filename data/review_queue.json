@@ -813,5 +813,72 @@
       "badgeType-not-ticket"
     ],
     "rejectedAt": "2026-11-21T03:44:23+08:00"
+  },
+  {
+    "postKey": "verify:730ed5abe7f8",
+    "postUrl": "https://udn.com/news/story/7266/9893679",
+    "proposal": {
+      "source": "verify",
+      "postKey": "verify:730ed5abe7f8",
+      "postUrl": "https://udn.com/news/story/7266/9893679",
+      "quote": "「一心戲劇團」將於12月5日、12月6日於台北市藝文推廣處城市舞台，推出年度新製作‧浮世輕喜劇《閻王的假期》。本劇同時獲得「115年城市舞台創作徵選演出節目」及國立傳統藝術中心「傳統藝術開枝散葉─戲曲新作發表計畫入選節目」雙重肯定及支持。",
+      "troupe": "一心戲劇團",
+      "title": "《閻王的假期》",
+      "location": "台北市藝文推廣處城市舞台",
+      "genre": "歌仔戲",
+      "artist": "未公布",
+      "badgeType": "ticket",
+      "sessions": [
+        {
+          "date": "2026-12-05",
+          "kind": "正戲",
+          "time": "未公布"
+        },
+        {
+          "date": "2026-12-06",
+          "kind": "正戲",
+          "time": "未公布"
+        }
+      ],
+      "date": "2026-12-05",
+      "endDate": "2026-12-06",
+      "time": "12/5 時間未公布 正戲、12/6 時間未公布 正戲",
+      "dateFormatted": "2026/12/05–2026/12/06"
+    },
+    "reasons": [
+      "badgeType-not-ticket"
+    ],
+    "rejectedAt": "2026-11-22T03:39:35+08:00"
+  },
+  {
+    "postKey": "verify:bdbd70f8289f",
+    "postUrl": "https://klpas.klcg.gov.tw/News_Photo_Content.aspx?n=8045&s=19143",
+    "proposal": {
+      "source": "verify",
+      "postKey": "verify:bdbd70f8289f",
+      "postUrl": "https://klpas.klcg.gov.tw/News_Photo_Content.aspx?n=8045&s=19143",
+      "quote": "辦理日期時間(起) 115-12-13 14:30 \u0000\u0000\u0000\u0000 辦理日期時間(迄) 115-12-13 17:30 \u0000\u0000\u0000\u0000 活動地點 基隆表演藝術中心演藝廳 入場方式 索票、自由入座 \u0000\u0000\u0000\u0000 演出單位 蘭陽戲劇團",
+      "troupe": "蘭陽戲劇團",
+      "title": "《楊宗保與穆桂英》",
+      "location": "基隆表演藝術中心演藝廳",
+      "genre": "歌仔戲",
+      "artist": "陳書宴、廖欣慈",
+      "badgeType": "plan",
+      "sessions": [
+        {
+          "date": "2026-12-13",
+          "kind": "正戲",
+          "time": "14:30"
+        }
+      ],
+      "date": "2026-12-13",
+      "time": "12/13 14:30 正戲",
+      "dateFormatted": "2026/12/13"
+    },
+    "reasons": [
+      "title-not-in-quote",
+      "artist-not-in-quote"
+    ],
+    "rejectedAt": "2026-11-22T03:39:35+08:00"
   }
 ]
