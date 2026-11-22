@@ -779,42 +779,6 @@
     "rejectedAt": "2026-11-21T03:44:23+08:00"
   },
   {
-    "postKey": "verify:5ea8fe25a938",
-    "postUrl": "http://karensie.blogspot.com/2015/12/1041224.html",
-    "proposal": {
-      "source": "verify",
-      "postKey": "verify:5ea8fe25a938",
-      "postUrl": "http://karensie.blogspot.com/2015/12/1041224.html",
-      "quote": "12/05(六)-12/06(日)14:30 一心戲劇團 《閻王的假期》 臺北市藝文推廣處城市舞台",
-      "troupe": "一心戲劇團",
-      "title": "《閻王的假期》",
-      "location": "臺北市藝文推廣處城市舞台",
-      "genre": "歌仔戲",
-      "artist": "未公布",
-      "badgeType": "ticket",
-      "sessions": [
-        {
-          "date": "2026-12-05",
-          "kind": "正戲",
-          "time": "14:30"
-        },
-        {
-          "date": "2026-12-06",
-          "kind": "正戲",
-          "time": "14:30"
-        }
-      ],
-      "date": "2026-12-05",
-      "endDate": "2026-12-06",
-      "time": "12/5 14:30 正戲、12/6 14:30 正戲",
-      "dateFormatted": "2026/12/05–2026/12/06"
-    },
-    "reasons": [
-      "badgeType-not-ticket"
-    ],
-    "rejectedAt": "2026-11-21T03:44:23+08:00"
-  },
-  {
     "postKey": "verify:730ed5abe7f8",
     "postUrl": "https://udn.com/news/story/7266/9893679",
     "proposal": {
@@ -880,5 +844,71 @@
       "artist-not-in-quote"
     ],
     "rejectedAt": "2026-11-22T03:39:35+08:00"
+  },
+  {
+    "postKey": "facebook:100063868113954:pfbid035yrs3sdbyzzLWJV1WbpfxqYc2j1HxfZ5RCVMus3Ky58MWkAHYvXnQuXJcSRzN9dWl",
+    "postUrl": "https://www.facebook.com/dadaochen2011/posts/pfbid035yrs3sdbyzzLWJV1WbpfxqYc2j1HxfZ5RCVMus3Ky58MWkAHYvXnQuXJcSRzN9dWl",
+    "proposal": {
+      "source": "facebook:100063868113954",
+      "postKey": "facebook:100063868113954:pfbid035yrs3sdbyzzLWJV1WbpfxqYc2j1HxfZ5RCVMus3Ky58MWkAHYvXnQuXJcSRzN9dWl",
+      "postUrl": "https://www.facebook.com/dadaochen2011/posts/pfbid035yrs3sdbyzzLWJV1WbpfxqYc2j1HxfZ5RCVMus3Ky58MWkAHYvXnQuXJcSRzN9dWl",
+      "quote": "地點：松山車站南側交4廣場｜11/27(五) 19:00｜葉麗珠三姊妹歌劇團《斬鄭英》｜全程直播",
+      "troupe": "葉麗珠三姊妹歌劇團",
+      "title": "《斬鄭英》",
+      "location": "松山車站南側交4廣場",
+      "genre": "歌仔戲",
+      "artist": "未公布",
+      "badgeType": "free",
+      "sessions": [
+        {
+          "date": "2026-11-27",
+          "kind": "正戲",
+          "time": "19:00"
+        }
+      ],
+      "date": "2026-11-27",
+      "time": "11/27 19:00 正戲",
+      "dateFormatted": "2026/11/27"
+    },
+    "reasons": [
+      "badgeType-not-free"
+    ],
+    "rejectedAt": "2026-11-23T03:30:59+08:00"
+  },
+  {
+    "postKey": "verify:5ea8fe25a938",
+    "postUrl": "http://karensie.blogspot.com/2015/12/1041224.html",
+    "proposal": {
+      "source": "verify",
+      "postKey": "verify:5ea8fe25a938",
+      "postUrl": "http://karensie.blogspot.com/2015/12/1041224.html",
+      "quote": "12/05(六)-12/06(日)14:30 一心戲劇團 《閻王的假期》 臺北市藝文推廣處城市舞台",
+      "troupe": "一心戲劇團",
+      "title": "《閻王的假期》",
+      "location": "臺北市藝文推廣處城市舞台",
+      "genre": "歌仔戲",
+      "artist": "未公布",
+      "badgeType": "ticket",
+      "sessions": [
+        {
+          "date": "2026-12-05",
+          "kind": "正戲",
+          "time": "14:30"
+        },
+        {
+          "date": "2026-12-06",
+          "kind": "正戲",
+          "time": "14:30"
+        }
+      ],
+      "date": "2026-12-05",
+      "endDate": "2026-12-06",
+      "time": "12/5 14:30 正戲、12/6 14:30 正戲",
+      "dateFormatted": "2026/12/05–2026/12/06"
+    },
+    "reasons": [
+      "badgeType-not-ticket"
+    ],
+    "rejectedAt": "2026-11-23T03:30:59+08:00"
   }
 ]

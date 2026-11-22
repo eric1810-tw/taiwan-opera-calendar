@@ -1511,5 +1511,36 @@
         "time": "14:00"
       }
     ]
+  },
+  {
+    "id": "auto-20261213-60317695",
+    "date": "2026-12-13",
+    "dateFormatted": "2026/12/13",
+    "daysAway": 20,
+    "time": "12/13 14:30 正戲",
+    "troupe": "蘭陽戲劇團",
+    "genre": "歌仔戲",
+    "artist": "未公布",
+    "title": "《楊宗保與穆桂英》",
+    "category": "預定演出",
+    "badgeType": "plan",
+    "verifyStatus": "community",
+    "verifyLabel": "📣 社群公告（程式比對原文）",
+    "location": "基隆表演藝術中心 演藝廳（基隆市中正區信一路181號）",
+    "region": "北部",
+    "status": "依社群公告；未列事項請洽劇團或廟方",
+    "description": "依 lanyang.opera 2026-11-20 公告：「蘭陽戲劇團《楊宗保與穆桂英》12/13 (Sun.) 14:30 基隆表演藝術中心 演藝廳（基隆市中正區信一路181號）」",
+    "link": "https://www.facebook.com/lanyang.opera/posts/pfbid02fzCMQWgdc9UYpsqU7MCcjupqHxRhoLJLiBJjJSKSohNZfwX5uy94jLcoKVAqtADFl",
+    "sourceUrl": "https://www.facebook.com/lanyang.opera/posts/pfbid02fzCMQWgdc9UYpsqU7MCcjupqHxRhoLJLiBJjJSKSohNZfwX5uy94jLcoKVAqtADFl",
+    "tags": [
+      "蘭陽戲劇團"
+    ],
+    "sessions": [
+      {
+        "date": "2026-12-13",
+        "kind": "正戲",
+        "time": "14:30"
+      }
+    ]
   }
 ]
