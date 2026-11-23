@@ -375,7 +375,24 @@
   },
   "finalizedAt": "2026-11-24T03:33:41+08:00",
   "publication": {
-    "state": "pending"
+    "state": "verified",
+    "sha": "78e7e07828bef145b53ab39331ccc6a9cb908747",
+    "actionsRun": "45250217377",
+    "actionsUrl": "https://github.com/eric1810-tw/taiwan-opera-calendar/actions/runs/45250217377",
+    "publicUrl": "https://eric1810-tw.github.io/taiwan-opera-calendar/data/patrol_status.json",
+    "verifiedAt": "2026-11-24T03:34:46+08:00",
+    "publicStatus": {
+      "startedAt": "2026-11-24T03:10:51+08:00",
+      "lastAttemptAt": "2026-11-24T03:24:57+08:00",
+      "status": "partial",
+      "counts": {
+        "complete": 6,
+        "partial": 15,
+        "failed": 0,
+        "pending": 0,
+        "total": 21
+      }
+    }
   },
   "engine": "patrol-v2",
   "activeTargets": [
