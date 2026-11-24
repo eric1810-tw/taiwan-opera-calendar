@@ -910,5 +910,42 @@
       "badgeType-not-ticket"
     ],
     "rejectedAt": "2026-11-23T03:30:59+08:00"
+  },
+  {
+    "postKey": "verify:672ff2d73371",
+    "postUrl": "https://www.tw-yishin.com/%E6%BC%94%E5%87%BA%E6%96%B0%E8%A8%8A/2026%E4%B8%80%E5%BF%83%E6%88%B2%E5%8A%87%E5%9C%98%E3%80%8A%E9%96%BB%E7%8E%8B%E7%9A%84%E5%81%87%E6%9C%9F%E3%80%8B/",
+    "proposal": {
+      "source": "verify",
+      "postKey": "verify:672ff2d73371",
+      "postUrl": "https://www.tw-yishin.com/%E6%BC%94%E5%87%BA%E6%96%B0%E8%A8%8A/2026%E4%B8%80%E5%BF%83%E6%88%B2%E5%8A%87%E5%9C%98%E3%80%8A%E9%96%BB%E7%8E%8B%E7%9A%84%E5%81%87%E6%9C%9F%E3%80%8B/",
+      "quote": "2026一心戲劇團《閻王的假期》 ◎ 演出時間：2026/12/05(六)14:30 2026/12/06(日)14:30 ◎ 票 價： 300 、 500 、 600 、 800 、 1,200 、 1,600 、 2,000 、 2,500 <購票請上OPENTIX售票系統> ◎ 網站連結： https://reurl.cc/DYRXKN ◎ 地 點： 城市舞台",
+      "troupe": "一心戲劇團",
+      "title": "《閻王的假期》",
+      "location": "臺北市藝文推廣處城市舞台（臺北市松山區八德路三段25號）",
+      "genre": "歌仔戲",
+      "artist": "孫詩珮、孫詩詠",
+      "badgeType": "ticket",
+      "sessions": [
+        {
+          "date": "2026-12-05",
+          "kind": "正戲",
+          "time": "14:30"
+        },
+        {
+          "date": "2026-12-06",
+          "kind": "正戲",
+          "time": "14:30"
+        }
+      ],
+      "date": "2026-12-05",
+      "endDate": "2026-12-06",
+      "time": "12/5 14:30 正戲、12/6 14:30 正戲",
+      "dateFormatted": "2026/12/05–2026/12/06"
+    },
+    "reasons": [
+      "location-not-in-quote",
+      "artist-not-in-quote"
+    ],
+    "rejectedAt": "2026-11-25T03:29:31+08:00"
   }
 ]

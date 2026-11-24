@@ -1297,5 +1297,73 @@
         "time": "14:30"
       }
     ]
+  },
+  {
+    "id": "auto-20261205-b487d024",
+    "date": "2026-12-05",
+    "dateFormatted": "2026/12/05",
+    "daysAway": 10,
+    "time": "12/5 時間未公布 正戲",
+    "troupe": "文惜歌仔戲劇團",
+    "genre": "歌仔戲",
+    "artist": "未公布",
+    "title": "《焰火長槍：火帥與玉龍的背影》",
+    "category": "預定演出",
+    "badgeType": "plan",
+    "verifyStatus": "community",
+    "verifyLabel": "📣 社群公告（程式比對原文）",
+    "location": "左營中山堂",
+    "region": "未分類",
+    "status": "依社群公告；未列事項請洽劇團或廟方",
+    "description": "依 @yuzhongluo 2026-11-24 公告：「文惜歌仔戲劇團 為妳精心呈現~~ 《焰火長槍：火帥與玉龍的背影》 邀請大家12月5日來左營中山堂」",
+    "link": "https://www.threads.com/@yuzhongluo/post/DgGjHE2j9ob",
+    "sourceUrl": "https://www.threads.com/@yuzhongluo/post/DgGjHE2j9ob",
+    "tags": [
+      "文惜歌仔戲劇團"
+    ],
+    "sessions": [
+      {
+        "date": "2026-12-05",
+        "kind": "正戲",
+        "time": "未公布"
+      }
+    ]
+  },
+  {
+    "id": "auto-20261126-2868c7f7",
+    "date": "2026-11-26",
+    "dateFormatted": "2026/11/26–2026/11/27",
+    "daysAway": 1,
+    "time": "11/26 時間未公布 正戲、11/27 時間未公布 正戲",
+    "troupe": "新吉義林歌劇團",
+    "genre": "歌仔戲",
+    "artist": "未公布",
+    "title": "鹽水外台演出",
+    "category": "廟會民俗演出",
+    "badgeType": "temple",
+    "verifyStatus": "community",
+    "verifyLabel": "📣 社群公告（程式比對原文）",
+    "location": "鹽水",
+    "region": "未分類",
+    "status": "依社群公告；未列事項請洽劇團或廟方",
+    "description": "依 @yolin1991 2026-11-23 公告：「11/26（四）.11/27（五） 新吉義林歌劇團在鹽水演出2天」",
+    "link": "https://www.threads.com/@yolin1991/post/DgEWdsTGi0g",
+    "sourceUrl": "https://www.threads.com/@yolin1991/post/DgEWdsTGi0g",
+    "tags": [
+      "新吉義林歌劇團"
+    ],
+    "endDate": "2026-11-27",
+    "sessions": [
+      {
+        "date": "2026-11-26",
+        "kind": "正戲",
+        "time": "未公布"
+      },
+      {
+        "date": "2026-11-27",
+        "kind": "正戲",
+        "time": "未公布"
+      }
+    ]
   }
 ]
