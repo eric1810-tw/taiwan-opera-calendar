@@ -556,42 +556,6 @@
     "rejectedAt": "2026-11-19T03:43:56+08:00"
   },
   {
-    "postKey": "verify:ec3b91040f21",
-    "postUrl": "https://www.tw-yishin.com/%e6%bc%94%e5%87%ba%e6%96%b0%e8%a8%8a/2026%e4%b8%80%e5%bf%83%e6%88%b2%e5%8a%87%e5%9c%98%e3%80%8a%e9%96%bb%e7%8e%8b%e7%9a%84%e5%81%87%e6%9c%9f%e3%80%8b/",
-    "proposal": {
-      "source": "verify",
-      "postKey": "verify:ec3b91040f21",
-      "postUrl": "https://www.tw-yishin.com/%e6%bc%94%e5%87%ba%e6%96%b0%e8%a8%8a/2026%e4%b8%80%e5%bf%83%e6%88%b2%e5%8a%87%e5%9c%98%e3%80%8a%e9%96%bb%e7%8e%8b%e7%9a%84%e5%81%87%e6%9c%9f%e3%80%8b/",
-      "quote": "2026一心戲劇團《閻王的假期》 ◎ 演出時間：2026/12/05(六)14:30 2026/12/06(日)14:30 ◎ 票 價： 300 、 500 、 600 、 800 、 1,200 、 1,600 、 2,000 、 2,500 <購票請上OPENTIX售票系統> ◎ 網站連結： https://reurl.cc/DYRXKN ◎ 地 點： 城市舞台",
-      "troupe": "一心戲劇團",
-      "title": "《閻王的假期》",
-      "location": "臺北市藝文推廣處城市舞台（臺北市松山區八德路三段25號）",
-      "genre": "歌仔戲",
-      "artist": "未公布",
-      "badgeType": "ticket",
-      "sessions": [
-        {
-          "date": "2026-12-05",
-          "kind": "正戲",
-          "time": "14:30"
-        },
-        {
-          "date": "2026-12-06",
-          "kind": "正戲",
-          "time": "14:30"
-        }
-      ],
-      "date": "2026-12-05",
-      "endDate": "2026-12-06",
-      "time": "12/5 14:30 正戲、12/6 14:30 正戲",
-      "dateFormatted": "2026/12/05–2026/12/06"
-    },
-    "reasons": [
-      "location-not-in-quote"
-    ],
-    "rejectedAt": "2026-11-19T03:43:56+08:00"
-  },
-  {
     "postKey": "threads:yuzhongluo:Dfy2Iecj_pR",
     "postUrl": "https://www.threads.com/@yuzhongluo/post/Dfy2Iecj_pR",
     "proposal": {
@@ -947,5 +911,41 @@
       "artist-not-in-quote"
     ],
     "rejectedAt": "2026-11-25T03:29:31+08:00"
+  },
+  {
+    "postKey": "verify:ec3b91040f21",
+    "postUrl": "https://www.tw-yishin.com/%e6%bc%94%e5%87%ba%e6%96%b0%e8%a8%8a/2026%e4%b8%80%e5%bf%83%e6%88%b2%e5%8a%87%e5%9c%98%e3%80%8a%e9%96%bb%e7%8e%8b%e7%9a%84%e5%81%87%e6%9c%9f%e3%80%8b/",
+    "proposal": {
+      "source": "verify",
+      "postKey": "verify:ec3b91040f21",
+      "postUrl": "https://www.tw-yishin.com/%e6%bc%94%e5%87%ba%e6%96%b0%e8%a8%8a/2026%e4%b8%80%e5%bf%83%e6%88%b2%e5%8a%87%e5%9c%98%e3%80%8a%e9%96%bb%e7%8e%8b%e7%9a%84%e5%81%87%e6%9c%9f%e3%80%8b/",
+      "quote": "2026一心戲劇團《閻王的假期》 ◎ 演出時間：2026/12/05(六)14:30 2026/12/06(日)14:30 ◎ 票 價： 300 、 500 、 600 、 800 、 1,200 、 1,600 、 2,000 、 2,500 <購票請上OPENTIX售票系統> ◎ 網站連結： https://reurl.cc/DYRXKN ◎ 地 點： 城市舞台",
+      "troupe": "一心戲劇團",
+      "title": "《閻王的假期》",
+      "location": "臺北市藝文推廣處城市舞台",
+      "genre": "歌仔戲",
+      "artist": "未公布",
+      "badgeType": "ticket",
+      "sessions": [
+        {
+          "date": "2026-12-05",
+          "kind": "正戲",
+          "time": "14:30"
+        },
+        {
+          "date": "2026-12-06",
+          "kind": "正戲",
+          "time": "14:30"
+        }
+      ],
+      "date": "2026-12-05",
+      "endDate": "2026-12-06",
+      "time": "12/5 14:30 正戲、12/6 14:30 正戲",
+      "dateFormatted": "2026/12/05–2026/12/06"
+    },
+    "reasons": [
+      "location-not-in-quote"
+    ],
+    "rejectedAt": "2026-11-27T03:35:10+08:00"
   }
 ]

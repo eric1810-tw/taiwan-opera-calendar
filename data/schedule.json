@@ -1303,5 +1303,42 @@
         "time": "未公布"
       }
     ]
+  },
+  {
+    "id": "auto-20261202-76fb361a",
+    "date": "2026-12-02",
+    "dateFormatted": "2026/12/02–2026/12/03",
+    "daysAway": 5,
+    "time": "12/2 19:00 正戲、12/3 19:00 正戲",
+    "troupe": "古都木偶劇團",
+    "genre": "布袋戲",
+    "artist": "未公布",
+    "title": "《聖劍鋒雲》",
+    "category": "廟會民俗演出",
+    "badgeType": "temple",
+    "verifyStatus": "community",
+    "verifyLabel": "📣 社群公告（程式比對原文）",
+    "location": "湖內區保生路30號",
+    "region": "未分類",
+    "status": "依社群公告；未列事項請洽劇團或廟方",
+    "description": "依 @joe_huang_k_w 2026-11-26 公告：「古都木偶劇團 《聖劍鋒雲》 日月才子二度風塵 大型金光布袋戲演出 太爺·公舘福安宮 王船文化季 演出日期 115年12月2日(三) 12月3日(四) 農曆10月24日 10月25日 演出時間 晚上7:00 王船駐駕地點: 湖內區保生路30號」",
+    "link": "https://www.threads.com/@joe_huang_k_w/post/DgM-fnkkuBJ",
+    "sourceUrl": "https://www.threads.com/@joe_huang_k_w/post/DgM-fnkkuBJ",
+    "tags": [
+      "古都木偶劇團"
+    ],
+    "endDate": "2026-12-03",
+    "sessions": [
+      {
+        "date": "2026-12-02",
+        "kind": "正戲",
+        "time": "19:00"
+      },
+      {
+        "date": "2026-12-03",
+        "kind": "正戲",
+        "time": "19:00"
+      }
+    ]
   }
 ]
