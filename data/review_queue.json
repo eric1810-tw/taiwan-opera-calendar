@@ -947,5 +947,66 @@
       "location-not-in-quote"
     ],
     "rejectedAt": "2026-11-27T03:35:10+08:00"
+  },
+  {
+    "postKey": "threads:taiwaneseopera168:DgO4Q7VEfN8",
+    "postUrl": "https://www.threads.com/@taiwaneseopera168/post/DgO4Q7VEfN8",
+    "proposal": {
+      "source": "threads:taiwaneseopera168",
+      "postKey": "threads:taiwaneseopera168:DgO4Q7VEfN8",
+      "postUrl": "https://www.threads.com/@taiwaneseopera168/post/DgO4Q7VEfN8",
+      "quote": "2026/11/27-2026/12/13 傳藝高雄園區 中山堂劇場戶外陽光草坪 新和興總團《秦英掛帥》 11/28(六)19:00 開演",
+      "troupe": "新和興總團",
+      "title": "《秦英掛帥》",
+      "location": "傳藝高雄園區 中山堂劇場戶外陽光草坪",
+      "genre": "歌仔戲",
+      "artist": "秦英｜江怡璇",
+      "badgeType": "plan",
+      "sessions": [
+        {
+          "date": "2026-11-28",
+          "kind": "正戲",
+          "time": "19:00"
+        }
+      ],
+      "date": "2026-11-28",
+      "time": "11/28 19:00 正戲",
+      "dateFormatted": "2026/11/28"
+    },
+    "reasons": [
+      "artist-not-in-quote"
+    ],
+    "rejectedAt": "2026-11-28T03:27:36+08:00"
+  },
+  {
+    "postKey": "facebook:MingHuaYuanTianTaiwaneseOpera:pfbid04gqa3jQTw7TEzSgsRkBsx3F9fqLFJjwi8M2CnWvfHrUfg6HtVrd49y3F7g71gXo1l",
+    "postUrl": "https://www.facebook.com/MingHuaYuanTianTaiwaneseOpera/posts/pfbid04gqa3jQTw7TEzSgsRkBsx3F9fqLFJjwi8M2CnWvfHrUfg6HtVrd49y3F7g71gXo1l",
+    "proposal": {
+      "source": "facebook:MingHuaYuanTianTaiwaneseOpera",
+      "postKey": "facebook:MingHuaYuanTianTaiwaneseOpera:pfbid04gqa3jQTw7TEzSgsRkBsx3F9fqLFJjwi8M2CnWvfHrUfg6HtVrd49y3F7g71gXo1l",
+      "postUrl": "https://www.facebook.com/MingHuaYuanTianTaiwaneseOpera/posts/pfbid04gqa3jQTw7TEzSgsRkBsx3F9fqLFJjwi8M2CnWvfHrUfg6HtVrd49y3F7g71gXo1l",
+      "quote": "明華園天字戲劇團 陳昭錦 場次 11/29 (日) 09:30-11:30 屏東縣立圖書館總館 免費線上、現場報名",
+      "troupe": "明華園天字戲劇團",
+      "title": "《一曲台灣情．歌聲傳戲韻》",
+      "location": "屏東縣立圖書館總館",
+      "genre": "歌仔戲",
+      "artist": "陳昭錦",
+      "badgeType": "free",
+      "sessions": [
+        {
+          "date": "2026-11-29",
+          "kind": "其他",
+          "time": "09:30"
+        }
+      ],
+      "date": "2026-11-29",
+      "time": "11/29 09:30",
+      "dateFormatted": "2026/11/29"
+    },
+    "reasons": [
+      "title-not-in-quote",
+      "duplicate"
+    ],
+    "rejectedAt": "2026-11-28T03:27:36+08:00"
   }
 ]
