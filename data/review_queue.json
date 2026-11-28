@@ -1008,5 +1008,35 @@
       "duplicate"
     ],
     "rejectedAt": "2026-11-28T03:27:36+08:00"
+  },
+  {
+    "postKey": "threads:jing__1017:DgStg20E-YB",
+    "postUrl": "https://www.threads.com/@jing__1017/post/DgStg20E-YB",
+    "proposal": {
+      "source": "threads:jing__1017",
+      "postKey": "threads:jing__1017:DgStg20E-YB",
+      "postUrl": "https://www.threads.com/@jing__1017/post/DgStg20E-YB",
+      "quote": "12/13（日）明華園星字戲劇團《斷案青天－陰錯陽差》 🕖 每場次開演時間｜19:00 📍 演出地點｜高雄中山堂劇場戶外陽光草坪",
+      "troupe": "明華園星字戲劇團",
+      "title": "《斷案青天－陰錯陽差》",
+      "location": "高雄中山堂劇場戶外陽光草坪",
+      "genre": "歌仔戲",
+      "artist": "未公布",
+      "badgeType": "free",
+      "sessions": [
+        {
+          "date": "2026-12-13",
+          "kind": "正戲",
+          "time": "19:00"
+        }
+      ],
+      "date": "2026-12-13",
+      "time": "12/13 19:00 正戲",
+      "dateFormatted": "2026/12/13"
+    },
+    "reasons": [
+      "badgeType-not-free"
+    ],
+    "rejectedAt": "2026-11-29T03:28:45+08:00"
   }
 ]
